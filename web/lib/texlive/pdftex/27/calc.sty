@@ -13,8 +13,8 @@
 %% (but please observe conditions on bug reports sent to that address!)
 %% 
 %% 
-%% Copyright (C) 1993-2025
-%% The LaTeX Project and any individual authors listed elsewhere
+%% Copyright (C) 1993-2020
+%% The LaTeX3 Project and any individual authors listed elsewhere
 %% in this file.
 %% 
 %% This file was generated from file(s) of the Standard LaTeX `Tools Bundle'.
@@ -39,7 +39,7 @@
 %% Copyright (C) 1992--1995
 %%          Kresten Krab Thorup and Frank Jensen.
 %% Copyright (C) 1997--2007
-%%          Kresten Krab Thorup, Frank Jensen and the LaTeX Project.
+%%          Kresten Krab Thorup, Frank Jensen and the LaTeX3 Project.
 %%
 %% The original authors (fj@hugin.dk and  krab@daimi.aau.dk) have
 %% contributed this package to the LaTeX distribution.
@@ -47,7 +47,7 @@
 %% the normal LaTeX bug report address.
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{calc}
-          [2025/03/01 v4.3b Infix arithmetic (KKT,FJ)]
+          [2017/05/25 v4.3 Infix arithmetic (KKT,FJ)]
 \def\calc@assign@generic#1#2#3#4{\let\calc@A#1\let\calc@B#2%
     \calc@open(#4!%
     \global\calc@A\calc@B\endgroup#3\calc@B}
@@ -67,22 +67,16 @@
     \begingroup
       \let\@elt\@stpelt \csname cl@#1\endcsname
     \endgroup}}%
-\AtBeginDocument{%
-  \@ifpackageloaded{amstext}{%
-  \def\addtocounter#1#2{\iffirstchoice@
-    \@ifundefined{c@#1}{\@nocounterr{#1}}%
-    {\calc@assign@count{\global\advance\csname c@#1\endcsname}{#2}}%
-      \fi}%
-  \def\stepcounter#1{\iffirstchoice@
-   \@ifundefined {c@#1}%
-    {\@nocounterr {#1}}%
-    {\global\advance\csname c@#1\endcsname \@ne
-    \begingroup
-      \let\@elt\@stpelt \csname cl@#1\endcsname
-      \endgroup}%
-    \fi}%
-}{}%
-}
+\@ifpackageloaded{amstext}{%
+ \expandafter\def\expandafter\stepcounter
+    \expandafter#\expandafter1\expandafter{%
+    \expandafter\iffirstchoice@\stepcounter{#1}\fi
+ }
+ \expandafter\def\expandafter\addtocounter
+    \expandafter#\expandafter1\expandafter#\expandafter2\expandafter{%
+    \expandafter\iffirstchoice@\addtocounter{#1}{#2}\fi
+ }
+}{}
 \DeclareRobustCommand\setlength{\calc@assign@skip}
 \DeclareRobustCommand\addtolength[1]{\calc@assign@skip{\advance#1}}
 \def\calc@pre@scan#1{%
@@ -283,8 +277,7 @@
      {`#1' invalid at this point}%
      {I expected to see one of: + - * / )}}
 \def\@settodim#1#2#3{%
-  \setbox\@tempboxa\hbox
-    {{\SuspendTagging{\@settodim}#3\ResumeTagging{\@settodim}}}%
+  \setbox\@tempboxa\hbox{{#3}}%
   \dimen@ii=\z@
   \@tf@r\reserved@a #1\do{%
   \advance\dimen@ii\reserved@a\@tempboxa}%
