@@ -1,7 +1,7 @@
 /**
  * TeX Live Packages for SwiftLaTeX Browser Compilation
  * Auto-generated - DO NOT EDIT
- * Generated: Tue Dec 30 13:04:13 PST 2025
+ * Generated: Tue Dec 30 13:06:37 PST 2025
  * Format codes: 3=tfm, 10=cfg/fmt, 26=cls/clo, 27=sty, 28=fd, 32=def
  */
 
@@ -39661,6 +39661,42 @@ end
 \\endinput
 %%
 %% End of file \`lastpage.sty'.
+` },
+  { format: 27, filename: 'lastpage2e.sty', content: `
+%%
+%% lastpage2e.sty - Simplified stub for SwiftLaTeX
+%% Provides \\LastPage label for page count
+%%
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{lastpage2e}[2020/01/01 v1.0 LastPage for LaTeX2e (stub)]
+
+\\RequirePackage{atveryend}
+
+% Define LastPage label at end of document
+\\AtVeryEnd{\\label{LastPage}}
+
+% Also provide VeryLastPage for compatibility
+\\AtVeryEnd{\\label{VeryLastPage}}
+
+\\endinput
+` },
+  { format: 26, filename: 'lastpage2e.sty', content: `
+%%
+%% lastpage2e.sty - Simplified stub for SwiftLaTeX
+%% Provides \\LastPage label for page count
+%%
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{lastpage2e}[2020/01/01 v1.0 LastPage for LaTeX2e (stub)]
+
+\\RequirePackage{atveryend}
+
+% Define LastPage label at end of document
+\\AtVeryEnd{\\label{LastPage}}
+
+% Also provide VeryLastPage for compatibility
+\\AtVeryEnd{\\label{VeryLastPage}}
+
+\\endinput
 ` },
   { format: 27, filename: 'latexsym.sty', content: `
 %%

@@ -1,0 +1,16 @@
+%%
+%% lastpage2e.sty - Simplified stub for SwiftLaTeX
+%% Provides \LastPage label for page count
+%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{lastpage2e}[2020/01/01 v1.0 LastPage for LaTeX2e (stub)]
+
+\RequirePackage{atveryend}
+
+% Define LastPage label at end of document
+\AtVeryEnd{\label{LastPage}}
+
+% Also provide VeryLastPage for compatibility
+\AtVeryEnd{\label{VeryLastPage}}
+
+\endinput
