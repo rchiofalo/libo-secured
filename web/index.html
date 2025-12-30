@@ -229,13 +229,13 @@ b | MCO 5216.20B</textarea>
             </div>
 
             <div class="btn-row">
-                <button class="primary" onclick="downloadPDF()">Download PDF</button>
+                <button class="primary" onclick="downloadLatexPDF()">Download PDF (LaTeX)</button>
+                <button onclick="downloadPDF()">Quick PDF</button>
             </div>
             <div class="btn-row">
-                <button class="secondary" onclick="downloadConfigs()">Download for LaTeX</button>
+                <button class="secondary" onclick="downloadConfigs()">Download Configs</button>
                 <button class="secondary" onclick="downloadTeX()">Download .tex</button>
             </div>
-            <p class="help-text">For proper SECNAV M-5216.5 formatting, use "Download for LaTeX" and compile locally with <code>make build</code></p>
 
             <div id="status" class="status" style="display: none;"></div>
         </div>
@@ -337,6 +337,12 @@ b | MCO 5216.20B</textarea>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+    <!-- SwiftLaTeX Engine -->
+    <script src="lib/PdfTeXEngine.js"></script>
+
+    <!-- LaTeX Templates -->
+    <script src="js/latex-templates.js"></script>
 
     <!-- Application JavaScript -->
     <script src="js/app.js"></script>
