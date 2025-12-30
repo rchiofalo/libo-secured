@@ -380,23 +380,27 @@ b | MCO 5216.20B</textarea>
 
         <!-- LIVE PREVIEW PANEL -->
         <div class="preview-panel" id="livePreview">
-            <div class="letterhead">
+            <div class="letterhead" id="prev-letterhead">
                 <div class="letterhead-title">UNITED STATES MARINE CORPS</div>
                 <div class="letterhead-unit" id="prev-unit1">1ST BATTALION, 6TH MARINES</div>
                 <div class="letterhead-hq" id="prev-unit2">6TH MARINE REGIMENT</div>
                 <div class="letterhead-address" id="prev-address">PSC BOX 20123, CAMP LEJEUNE, NC 28542</div>
             </div>
 
-            <div class="ssic-block">
+            <div class="memo-header" id="prev-memo-header" style="display: none; text-align: center; font-weight: bold; margin-bottom: 20px;"></div>
+
+            <div class="ssic-block" id="prev-ssic-block">
                 <span id="prev-ssic">5216</span><br>
                 <span id="prev-serial">Ser ADM/001</span><br>
                 <span id="prev-date">1 Jan 2025</span>
             </div>
 
-            <div class="address-block">
+            <div class="date-only" id="prev-date-only" style="display: none; text-align: right; margin-bottom: 20px;"></div>
+
+            <div class="address-block" id="prev-from-block">
                 From:  <span id="prev-from">Commanding Officer, 1st Battalion, 6th Marines</span>
             </div>
-            <div class="address-block">
+            <div class="address-block" id="prev-to-block">
                 To:    <span id="prev-to">Commanding Officer, 6th Marine Regiment</span>
             </div>
             <div class="address-block" id="prev-via-block" style="display: none;">
@@ -501,32 +505,115 @@ b | MCO 5216.20B</textarea>
             }).filter(e => e.num && e.title);
         }
 
+        // Document type configurations
+        const docTypeConfig = {
+            // Letters - have letterhead, SSIC, From/To
+            naval_letter: { letterhead: true, ssic: true, fromTo: true, via: true, memoHeader: false, signature: 'abbrev' },
+            standard_letter: { letterhead: false, ssic: true, fromTo: true, via: true, memoHeader: false, signature: 'abbrev' },
+            business_letter: { letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: false, signature: 'full', business: true },
+            multiple_address_letter: { letterhead: true, ssic: true, fromTo: true, via: true, memoHeader: false, signature: 'abbrev' },
+            joint_letter: { letterhead: true, ssic: true, fromTo: true, via: false, memoHeader: false, signature: 'abbrev' },
+            // Endorsements
+            same_page_endorsement: { letterhead: false, ssic: false, fromTo: true, via: false, memoHeader: false, signature: 'abbrev', endorsement: true },
+            new_page_endorsement: { letterhead: true, ssic: true, fromTo: true, via: false, memoHeader: false, signature: 'abbrev', endorsement: true },
+            // Memorandums
+            mfr: { letterhead: false, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM FOR THE RECORD', signature: 'full' },
+            plain_paper_memorandum: { letterhead: false, ssic: false, fromTo: true, via: false, memoHeader: 'MEMORANDUM', signature: 'full' },
+            letterhead_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'MEMORANDUM', signature: 'full' },
+            decision_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'DECISION MEMORANDUM', signature: 'full' },
+            moa: { letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM OF AGREEMENT', signature: 'full' },
+            mou: { letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM OF UNDERSTANDING', signature: 'full' },
+            joint_memorandum: { letterhead: true, ssic: true, fromTo: true, via: false, memoHeader: 'JOINT MEMORANDUM', signature: 'full' },
+            // Executive
+            standard_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'MEMORANDUM', signature: 'full' },
+            action_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'ACTION MEMORANDUM', signature: 'full' },
+            information_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'INFORMATION MEMORANDUM', signature: 'full' },
+            // USMC-Specific
+            mf: { letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM FOR', signature: 'full', memoFor: true }
+        };
+
+        // Get full signature (First M. LASTNAME)
+        function getFullSignature(data) {
+            const lastName = data.sigLast ? data.sigLast.toUpperCase() : '';
+            const middleInit = data.sigMiddle ? data.sigMiddle.replace('.', '') + '.' : '';
+            return `${data.sigFirst} ${middleInit} ${lastName}`.replace(/\s+/g, ' ').trim();
+        }
+
         // Update live preview
         function updatePreview() {
             const data = collectData();
             const refs = parseRefs(data.refs);
             const encls = parseEncls(data.encls);
+            const config = docTypeConfig[data.docType] || docTypeConfig.naval_letter;
 
-            document.getElementById('prev-unit1').textContent = data.unitLine1;
-            document.getElementById('prev-unit2').textContent = data.unitLine2;
-            document.getElementById('prev-address').textContent = data.unitAddress;
-            document.getElementById('prev-ssic').textContent = data.ssic;
-            document.getElementById('prev-serial').textContent = data.serial;
-            document.getElementById('prev-date').textContent = data.date;
-            document.getElementById('prev-from').textContent = data.from;
-            document.getElementById('prev-to').textContent = data.to;
-            document.getElementById('prev-subject').textContent = data.subject.toUpperCase();
-            document.getElementById('prev-body').textContent = data.body;
-            document.getElementById('prev-sig').textContent = getAbbrevSignature(data);
+            // Letterhead
+            const letterhead = document.getElementById('prev-letterhead');
+            if (config.letterhead) {
+                letterhead.style.display = 'block';
+                document.getElementById('prev-unit1').textContent = data.unitLine1;
+                document.getElementById('prev-unit2').textContent = data.unitLine2;
+                document.getElementById('prev-address').textContent = data.unitAddress;
+            } else {
+                letterhead.style.display = 'none';
+            }
+
+            // Memo header
+            const memoHeader = document.getElementById('prev-memo-header');
+            if (config.memoHeader) {
+                memoHeader.style.display = 'block';
+                memoHeader.textContent = config.memoHeader;
+            } else {
+                memoHeader.style.display = 'none';
+            }
+
+            // SSIC block
+            const ssicBlock = document.getElementById('prev-ssic-block');
+            if (config.ssic) {
+                ssicBlock.style.display = 'block';
+                document.getElementById('prev-ssic').textContent = data.ssic;
+                document.getElementById('prev-serial').textContent = data.serial;
+                document.getElementById('prev-date').textContent = data.date;
+            } else {
+                ssicBlock.style.display = 'none';
+            }
+
+            // Date only (for memos without SSIC)
+            const dateOnly = document.getElementById('prev-date-only');
+            if (!config.ssic && !config.business) {
+                dateOnly.style.display = 'block';
+                dateOnly.textContent = data.date;
+            } else {
+                dateOnly.style.display = 'none';
+            }
+
+            // From/To block
+            const fromBlock = document.getElementById('prev-from-block');
+            const toBlock = document.getElementById('prev-to-block');
+            if (config.fromTo) {
+                fromBlock.style.display = 'block';
+                toBlock.style.display = 'block';
+                document.getElementById('prev-from').textContent = data.from;
+                document.getElementById('prev-to').textContent = data.to;
+            } else if (config.memoFor) {
+                fromBlock.style.display = 'none';
+                toBlock.style.display = 'block';
+                document.getElementById('prev-to').textContent = data.to;
+            } else {
+                fromBlock.style.display = 'none';
+                toBlock.style.display = 'none';
+            }
 
             // Via
             const viaBlock = document.getElementById('prev-via-block');
-            if (data.via.trim()) {
+            if (config.via && data.via.trim()) {
                 viaBlock.style.display = 'block';
                 document.getElementById('prev-via').innerHTML = data.via.split('\n').join('<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
             } else {
                 viaBlock.style.display = 'none';
             }
+
+            // Subject
+            document.getElementById('prev-subject').textContent = data.subject.toUpperCase();
 
             // References
             const refBlock = document.getElementById('prev-ref-block');
@@ -544,6 +631,16 @@ b | MCO 5216.20B</textarea>
                 document.getElementById('prev-encls').innerHTML = encls.map(e => `(${e.num}) ${e.title}`).join('<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
             } else {
                 enclBlock.style.display = 'none';
+            }
+
+            // Body
+            document.getElementById('prev-body').textContent = data.body;
+
+            // Signature
+            if (config.signature === 'full') {
+                document.getElementById('prev-sig').innerHTML = `${getFullSignature(data)}<br>${data.sigRank}<br>${data.sigTitle}`;
+            } else {
+                document.getElementById('prev-sig').textContent = getAbbrevSignature(data);
             }
         }
 
