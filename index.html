@@ -27,16 +27,21 @@
             background: #16213e;
             border-radius: 8px;
             padding: 20px;
-            max-width: 500px;
+            max-width: 450px;
+            max-height: 90vh;
+            overflow-y: auto;
         }
         .preview-panel {
             flex: 1.5;
             background: #fff;
             border-radius: 8px;
-            padding: 0;
+            padding: 40px 60px;
             min-height: 800px;
-            display: flex;
-            flex-direction: column;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
         h1 {
             text-align: center;
@@ -58,22 +63,22 @@
         }
         label {
             display: block;
-            margin-top: 12px;
+            margin-top: 10px;
             color: #bbe1fa;
-            font-size: 11px;
+            font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         input, textarea, select {
             width: 100%;
-            padding: 8px 10px;
-            margin-top: 4px;
+            padding: 6px 8px;
+            margin-top: 3px;
             background: #0f3460;
             border: 1px solid #3282b8;
             color: #fff;
             border-radius: 4px;
             font-family: 'Courier New', monospace;
-            font-size: 13px;
+            font-size: 12px;
         }
         input:focus, textarea:focus, select:focus {
             outline: none;
@@ -81,24 +86,24 @@
             box-shadow: 0 0 0 2px rgba(187, 225, 250, 0.2);
         }
         textarea {
-            min-height: 200px;
+            min-height: 150px;
             resize: vertical;
             line-height: 1.5;
         }
         .btn-row {
             display: flex;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 8px;
+            margin-top: 15px;
         }
         button {
             flex: 1;
-            padding: 12px 20px;
+            padding: 10px 15px;
             background: #3282b8;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             transition: background 0.2s;
         }
@@ -121,32 +126,55 @@
             margin-bottom: 20px;
             font-size: 11px;
         }
-        /* PDF Preview Styling */
-        #pdfPreview {
-            flex: 1;
-            border: none;
-            border-radius: 8px;
-        }
-        .preview-placeholder {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            color: #666;
-            font-style: italic;
-            background: #f5f5f5;
-            border-radius: 8px;
-        }
         .status {
-            padding: 8px 12px;
+            padding: 6px 10px;
             margin-top: 10px;
             border-radius: 4px;
             text-align: center;
-            font-size: 12px;
+            font-size: 11px;
         }
         .status.success { background: #1b4332; color: #d4edda; }
         .status.error { background: #5c1a1a; color: #f8d7da; }
-        .status.loading { background: #3d3d0a; color: #fff3cd; }
+
+        /* Live Preview Styling */
+        .letterhead {
+            text-align: center;
+            color: #002855;
+            margin-bottom: 36px;
+        }
+        .letterhead-title {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        .letterhead-unit {
+            font-weight: bold;
+            font-size: 9px;
+        }
+        .letterhead-hq {
+            font-size: 9px;
+        }
+        .letterhead-address {
+            font-size: 8px;
+        }
+        .ssic-block {
+            text-align: right;
+            margin-bottom: 24px;
+        }
+        .address-block {
+            margin-bottom: 8px;
+        }
+        .subject-block {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .body-content {
+            white-space: pre-wrap;
+            margin-bottom: 36px;
+        }
+        .signature-block {
+            margin-left: 50%;
+        }
+
         /* Responsive */
         @media (max-width: 1200px) {
             .container {
@@ -154,9 +182,10 @@
             }
             .form-panel {
                 max-width: 100%;
+                max-height: none;
             }
             .preview-panel {
-                min-height: 600px;
+                min-height: 500px;
             }
         }
     </style>
@@ -172,7 +201,7 @@
         <!-- FORM PANEL -->
         <div class="form-panel">
             <h2>Document Type</h2>
-            <select id="docType" onchange="updatePreview()">
+            <select id="docType" oninput="updatePreview()">
                 <option value="naval_letter">Naval Letter</option>
                 <option value="mfr">Memorandum for the Record</option>
                 <option value="standard_letter">Standard Letter (Plain Bond)</option>
@@ -182,42 +211,42 @@
             <h2>Header Information</h2>
 
             <label>Unit Name (Line 1)</label>
-            <input type="text" id="unitLine1" value="1ST BATTALION, 6TH MARINES" onchange="updatePreview()">
+            <input type="text" id="unitLine1" value="1ST BATTALION, 6TH MARINES" oninput="updatePreview()">
 
             <label>Higher HQ (Line 2)</label>
-            <input type="text" id="unitLine2" value="6TH MARINE REGIMENT, 2D MARINE DIVISION" onchange="updatePreview()">
+            <input type="text" id="unitLine2" value="6TH MARINE REGIMENT, 2D MARINE DIVISION" oninput="updatePreview()">
 
             <label>Address</label>
-            <input type="text" id="unitAddress" value="PSC BOX 20123, CAMP LEJEUNE, NC 28542" onchange="updatePreview()">
+            <input type="text" id="unitAddress" value="PSC BOX 20123, CAMP LEJEUNE, NC 28542" oninput="updatePreview()">
 
             <div style="display: flex; gap: 10px;">
                 <div style="flex: 1;">
                     <label>SSIC</label>
-                    <input type="text" id="ssic" value="5216" onchange="updatePreview()">
+                    <input type="text" id="ssic" value="5216" oninput="updatePreview()">
                 </div>
                 <div style="flex: 1;">
                     <label>Serial</label>
-                    <input type="text" id="serial" value="Ser ADM/001" onchange="updatePreview()">
+                    <input type="text" id="serial" value="Ser ADM/001" oninput="updatePreview()">
                 </div>
             </div>
 
             <label>Date</label>
-            <input type="text" id="date" value="1 Jan 2025" onchange="updatePreview()">
+            <input type="text" id="date" value="1 Jan 2025" oninput="updatePreview()">
 
             <h2>Addressing</h2>
 
             <label>From</label>
-            <input type="text" id="from" value="Commanding Officer, 1st Battalion, 6th Marines" onchange="updatePreview()">
+            <input type="text" id="from" value="Commanding Officer, 1st Battalion, 6th Marines" oninput="updatePreview()">
 
             <label>To</label>
-            <input type="text" id="to" value="Commanding Officer, 6th Marine Regiment" onchange="updatePreview()">
+            <input type="text" id="to" value="Commanding Officer, 6th Marine Regiment" oninput="updatePreview()">
 
             <label>Subject</label>
-            <input type="text" id="subject" value="REQUEST FOR ADMINISTRATIVE SUPPORT" onchange="updatePreview()">
+            <input type="text" id="subject" value="REQUEST FOR ADMINISTRATIVE SUPPORT" oninput="updatePreview()">
 
             <h2>Body</h2>
 
-            <textarea id="body" onchange="updatePreview()">1.  Per reference (a), this correspondence serves as an example of the naval letter format.
+            <textarea id="body" oninput="updatePreview()">1.  Per reference (a), this correspondence serves as an example of the naval letter format.
 
 2.  The purpose of this letter is to demonstrate proper formatting in accordance with SECNAV M-5216.5.
 
@@ -228,31 +257,60 @@
             <div style="display: flex; gap: 10px;">
                 <div style="flex: 1;">
                     <label>First Name</label>
-                    <input type="text" id="sigFirst" value="John" onchange="updatePreview()">
+                    <input type="text" id="sigFirst" value="John" oninput="updatePreview()">
                 </div>
                 <div style="flex: 0.5;">
                     <label>M.I.</label>
-                    <input type="text" id="sigMiddle" value="A." onchange="updatePreview()">
+                    <input type="text" id="sigMiddle" value="A." oninput="updatePreview()">
                 </div>
                 <div style="flex: 1;">
                     <label>Last Name</label>
-                    <input type="text" id="sigLast" value="Doe" onchange="updatePreview()">
+                    <input type="text" id="sigLast" value="Doe" oninput="updatePreview()">
                 </div>
             </div>
 
             <div class="btn-row">
-                <button onclick="generatePDF()">Generate PDF</button>
+                <button onclick="downloadPDF()">Download PDF</button>
                 <button class="secondary" onclick="downloadTeX()">Download .tex</button>
             </div>
 
             <div id="status" class="status" style="display: none;"></div>
         </div>
 
-        <!-- PREVIEW PANEL -->
-        <div class="preview-panel">
-            <iframe id="pdfPreview" style="display: none;"></iframe>
-            <div id="previewPlaceholder" class="preview-placeholder">
-                Click "Generate PDF" to preview your document
+        <!-- LIVE PREVIEW PANEL -->
+        <div class="preview-panel" id="livePreview">
+            <div class="letterhead">
+                <div class="letterhead-title">UNITED STATES MARINE CORPS</div>
+                <div class="letterhead-unit" id="prev-unit1">1ST BATTALION, 6TH MARINES</div>
+                <div class="letterhead-hq" id="prev-unit2">6TH MARINE REGIMENT, 2D MARINE DIVISION</div>
+                <div class="letterhead-address" id="prev-address">PSC BOX 20123, CAMP LEJEUNE, NC 28542</div>
+            </div>
+
+            <div class="ssic-block">
+                <span id="prev-ssic">5216</span><br>
+                <span id="prev-serial">Ser ADM/001</span><br>
+                <span id="prev-date">1 Jan 2025</span>
+            </div>
+
+            <div class="address-block">
+                From:  <span id="prev-from">Commanding Officer, 1st Battalion, 6th Marines</span>
+            </div>
+            <div class="address-block">
+                To:    <span id="prev-to">Commanding Officer, 6th Marine Regiment</span>
+            </div>
+
+            <div class="subject-block">
+                Subj:  <span id="prev-subject">REQUEST FOR ADMINISTRATIVE SUPPORT</span>
+            </div>
+
+            <div class="body-content" id="prev-body">1.  Per reference (a), this correspondence serves as an example of the naval letter format.
+
+2.  The purpose of this letter is to demonstrate proper formatting in accordance with SECNAV M-5216.5.
+
+3.  Point of contact for this matter is the undersigned at (910) 555-1234.</div>
+
+            <div class="signature-block">
+                <span id="prev-sig">J. A. DOE</span>
             </div>
         </div>
     </div>
@@ -264,13 +322,13 @@
         const { jsPDF } = window.jspdf;
 
         // Constants for SECNAV M-5216.5 compliance (in points, 72pt = 1 inch)
-        const PAGE_WIDTH = 612;   // 8.5 inches
-        const PAGE_HEIGHT = 792;  // 11 inches
-        const MARGIN_LEFT = 72;   // 1 inch
-        const MARGIN_RIGHT = 72;  // 1 inch
-        const MARGIN_TOP = 72;    // 1 inch
-        const MARGIN_BOTTOM = 72; // 1 inch
-        const CONTENT_WIDTH = PAGE_WIDTH - MARGIN_LEFT - MARGIN_RIGHT; // 468pt = 6.5 inches
+        const PAGE_WIDTH = 612;
+        const PAGE_HEIGHT = 792;
+        const MARGIN_LEFT = 72;
+        const MARGIN_RIGHT = 72;
+        const MARGIN_TOP = 72;
+        const MARGIN_BOTTOM = 72;
+        const CONTENT_WIDTH = PAGE_WIDTH - MARGIN_LEFT - MARGIN_RIGHT;
 
         // Collect form data
         function collectData() {
@@ -300,11 +358,28 @@
             return `${firstInit} ${middleInit} ${lastName}`.replace(/\s+/g, ' ').trim();
         }
 
-        // Generate PDF using jsPDF
-        function generatePDF() {
+        // Update live preview (instant, as you type)
+        function updatePreview() {
+            const data = collectData();
+
+            document.getElementById('prev-unit1').textContent = data.unitLine1;
+            document.getElementById('prev-unit2').textContent = data.unitLine2;
+            document.getElementById('prev-address').textContent = data.unitAddress;
+            document.getElementById('prev-ssic').textContent = data.ssic;
+            document.getElementById('prev-serial').textContent = data.serial;
+            document.getElementById('prev-date').textContent = data.date;
+            document.getElementById('prev-from').textContent = data.from;
+            document.getElementById('prev-to').textContent = data.to;
+            document.getElementById('prev-subject').textContent = data.subject.toUpperCase();
+            document.getElementById('prev-body').textContent = data.body;
+            document.getElementById('prev-sig').textContent = getAbbrevSignature(data);
+        }
+
+        // Generate and download PDF
+        function downloadPDF() {
             const status = document.getElementById('status');
             status.style.display = 'block';
-            status.className = 'status loading';
+            status.className = 'status';
             status.textContent = 'Generating PDF...';
 
             try {
@@ -320,9 +395,8 @@
                 // --- LETTERHEAD ---
                 pdf.setFont('helvetica', 'bold');
                 pdf.setFontSize(11);
-                pdf.setTextColor(0, 40, 85); // Navy blue
+                pdf.setTextColor(0, 40, 85);
 
-                // UNITED STATES MARINE CORPS
                 pdf.text('UNITED STATES MARINE CORPS', PAGE_WIDTH / 2, y, { align: 'center' });
                 y += 14;
 
@@ -338,7 +412,7 @@
                 pdf.text(data.unitAddress, PAGE_WIDTH / 2, y, { align: 'center' });
                 y += 36;
 
-                // --- SSIC/SERIAL/DATE BLOCK (right aligned) ---
+                // --- SSIC/SERIAL/DATE BLOCK ---
                 pdf.setFont('courier', 'normal');
                 pdf.setFontSize(12);
                 pdf.setTextColor(0, 0, 0);
@@ -364,14 +438,11 @@
                 // --- BODY ---
                 const bodyLines = data.body.split('\n');
                 for (const line of bodyLines) {
-                    // Word wrap long lines
                     const wrappedLines = pdf.splitTextToSize(line, CONTENT_WIDTH);
                     for (const wrappedLine of wrappedLines) {
-                        // Check if we need a new page
                         if (y > PAGE_HEIGHT - MARGIN_BOTTOM - 72) {
                             pdf.addPage();
                             y = MARGIN_TOP;
-                            // Add continuation header
                             pdf.setFontSize(10);
                             pdf.text('Subj:  ' + data.subject.toUpperCase(), MARGIN_LEFT, y);
                             y += 28;
@@ -380,40 +451,25 @@
                         pdf.text(wrappedLine, MARGIN_LEFT, y);
                         y += 14;
                     }
-                    y += 4; // Extra space between paragraphs
+                    y += 4;
                 }
 
                 // --- SIGNATURE BLOCK ---
                 y += 28;
-
-                // Check if signature fits on current page
                 if (y > PAGE_HEIGHT - MARGIN_BOTTOM - 36) {
                     pdf.addPage();
                     y = MARGIN_TOP + 72;
                 }
 
-                const sigX = PAGE_WIDTH / 2 + 36; // Right half of page
+                const sigX = PAGE_WIDTH / 2 + 36;
                 pdf.text(getAbbrevSignature(data), sigX, y);
 
-                // --- OUTPUT ---
-                const pdfBlob = pdf.output('blob');
-                const pdfUrl = URL.createObjectURL(pdfBlob);
-
-                // Show in preview
-                const iframe = document.getElementById('pdfPreview');
-                const placeholder = document.getElementById('previewPlaceholder');
-                iframe.src = pdfUrl;
-                iframe.style.display = 'block';
-                placeholder.style.display = 'none';
+                // --- DOWNLOAD ---
+                pdf.save('correspondence.pdf');
 
                 status.className = 'status success';
-                status.textContent = 'PDF generated! Right-click preview to save.';
-
-                // Auto-download
-                const link = document.createElement('a');
-                link.href = pdfUrl;
-                link.download = 'correspondence.pdf';
-                link.click();
+                status.textContent = 'PDF downloaded!';
+                setTimeout(() => { status.style.display = 'none'; }, 2000);
 
             } catch (error) {
                 console.error(error);
@@ -502,6 +558,12 @@ ${data.body.split('\n').map(line => escapeLatex(line)).join('\n\n')}
             a.download = 'correspondence.tex';
             a.click();
             URL.revokeObjectURL(url);
+
+            const status = document.getElementById('status');
+            status.style.display = 'block';
+            status.className = 'status success';
+            status.textContent = 'LaTeX file downloaded!';
+            setTimeout(() => { status.style.display = 'none'; }, 2000);
         }
 
         // Escape special LaTeX characters
@@ -520,18 +582,8 @@ ${data.body.split('\n').map(line => escapeLatex(line)).join('\n\n')}
                 .replace(/\^/g, '\\textasciicircum{}');
         }
 
-        // Update preview (debounced)
-        let previewTimeout;
-        function updatePreview() {
-            clearTimeout(previewTimeout);
-            previewTimeout = setTimeout(() => {
-                // Only auto-update if preview is already visible
-                const iframe = document.getElementById('pdfPreview');
-                if (iframe.style.display !== 'none') {
-                    generatePDF();
-                }
-            }, 500);
-        }
+        // Initialize preview on page load
+        updatePreview();
     </script>
 </body>
 </html>
