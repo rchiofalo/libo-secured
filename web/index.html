@@ -64,6 +64,10 @@
             <input type="text" id="unitAddress" value="PSC BOX 20123, CAMP LEJEUNE, NC 28542" oninput="updatePreview()">
 
             <h2>Document Info</h2>
+            <div class="checkbox-row">
+                <input type="checkbox" id="inReplyTo" onchange="updatePreview()">
+                <label for="inReplyTo" class="checkbox-label">IN REPLY REFER TO (for replies to previous correspondence)</label>
+            </div>
             <div class="row">
                 <div>
                     <label>SSIC</label>
@@ -165,6 +169,11 @@ b | MCO 5216.20B</textarea>
 
             <!-- Memo Header (for MFR, MOA, etc) -->
             <div class="memo-header" id="prev-memo-header" style="display: none;"></div>
+
+            <!-- In Reply Refer To (optional) -->
+            <div class="in-reply-block" id="prev-in-reply" style="display: none;">
+                <span class="in-reply-text">IN REPLY REFER TO</span>
+            </div>
 
             <!-- SSIC Block - right aligned -->
             <div class="ssic-block" id="prev-ssic-block">

@@ -124,6 +124,27 @@ textarea.small {
     min-height: 60px;
 }
 
+/* Checkbox styling */
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.checkbox-row input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.checkbox-label {
+    display: inline;
+    margin: 0;
+    font-size: 10px;
+    color: #bbe1fa;
+    text-transform: none;
+}
+
 /* =============================================================================
    BUTTONS
    ============================================================================= */
@@ -263,6 +284,18 @@ button.primary:hover {
     font-weight: bold;
     font-size: 12pt;
     margin-bottom: 24pt;
+}
+
+/* In Reply Refer To - per SECNAV M-5216.5 App C, Para 1.a */
+.in-reply-block {
+    text-align: right;
+    margin-bottom: 4pt;
+}
+
+.in-reply-text {
+    font-size: 6pt;
+    font-variant: small-caps;
+    letter-spacing: 0.5px;
 }
 
 /* SSIC block - right aligned */

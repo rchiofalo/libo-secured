@@ -83,6 +83,7 @@ function collectData() {
         unitLine1: document.getElementById('unitLine1').value,
         unitLine2: document.getElementById('unitLine2').value,
         unitAddress: document.getElementById('unitAddress').value,
+        inReplyTo: document.getElementById('inReplyTo').checked,
         ssic: document.getElementById('ssic').value,
         serial: document.getElementById('serial').value,
         date: document.getElementById('date').value,
@@ -181,6 +182,14 @@ function updatePreview() {
         memoHeader.textContent = config.memoHeader;
     } else {
         memoHeader.style.display = 'none';
+    }
+
+    // In Reply Refer To (per SECNAV M-5216.5 App C, Para 1.a)
+    const inReplyBlock = document.getElementById('prev-in-reply');
+    if (data.inReplyTo && config.ssic) {
+        inReplyBlock.style.display = 'block';
+    } else {
+        inReplyBlock.style.display = 'none';
     }
 
     // SSIC block
@@ -292,6 +301,8 @@ function generateDocumentTex(data) {
 %=============================================================================
 
 \\setDocumentType{${data.docType}}
+
+${data.inReplyTo ? '\\enableInReplyReferTo' : '% \\enableInReplyReferTo'}
 
 \\setSSIC{${escapeLatex(data.ssic)}}
 \\setSerial{${escapeLatex(data.serial)}}
