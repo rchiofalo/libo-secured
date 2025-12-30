@@ -40,8 +40,8 @@
 
 \def\NR@name#1#2#3#4#5\@nil{#3}
 
-%% For compatibility
-\newcommand*{\GetTitleStringSetup}[1]{}
+%% For compatibility - use providecommand to avoid redefinition error
+\providecommand*{\GetTitleStringSetup}[1]{}
 
 %% Label name extraction
 \let\NR@gettitle\@firstofone
