@@ -1,0 +1,326 @@
+/**
+ * libo-secured - USMC Correspondence Generator
+ * Main Stylesheet
+ */
+
+/* =============================================================================
+   BASE STYLES
+   ============================================================================= */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #1a1a2e;
+    color: #eee;
+    min-height: 100vh;
+}
+
+/* =============================================================================
+   LAYOUT
+   ============================================================================= */
+
+.container {
+    display: flex;
+    gap: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.form-panel {
+    flex: 1;
+    background: #16213e;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.preview-panel {
+    flex: 1.5;
+    background: #fff;
+    border-radius: 8px;
+    padding: 40px 60px;
+    min-height: 800px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    overflow-y: auto;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.row > div {
+    flex: 1;
+}
+
+/* =============================================================================
+   TYPOGRAPHY
+   ============================================================================= */
+
+h1 {
+    text-align: center;
+    color: #3282b8;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+h2 {
+    color: #3282b8;
+    border-bottom: 1px solid #3282b8;
+    padding-bottom: 8px;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+label {
+    display: block;
+    margin-top: 8px;
+    color: #bbe1fa;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hint {
+    font-size: 9px;
+    color: #666;
+    margin-top: 2px;
+}
+
+/* =============================================================================
+   FORM ELEMENTS
+   ============================================================================= */
+
+input, textarea, select {
+    width: 100%;
+    padding: 6px 8px;
+    margin-top: 3px;
+    background: #0f3460;
+    border: 1px solid #3282b8;
+    color: #fff;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #bbe1fa;
+    box-shadow: 0 0 0 2px rgba(187, 225, 250, 0.2);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+textarea.small {
+    min-height: 60px;
+}
+
+/* =============================================================================
+   BUTTONS
+   ============================================================================= */
+
+.btn-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    flex: 1;
+    padding: 10px 12px;
+    background: #3282b8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+    transition: background 0.2s;
+    min-width: 100px;
+}
+
+button:hover {
+    background: #0f4c75;
+}
+
+button.secondary {
+    background: #0f3460;
+    border: 1px solid #3282b8;
+}
+
+button.secondary:hover {
+    background: #16213e;
+}
+
+button.primary {
+    background: #28a745;
+}
+
+button.primary:hover {
+    background: #218838;
+}
+
+/* =============================================================================
+   STATUS & NOTIFICATIONS
+   ============================================================================= */
+
+.security-note {
+    text-align: center;
+    color: #155724;
+    background: #d4edda;
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 11px;
+}
+
+.status {
+    padding: 6px 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 11px;
+}
+
+.status.success {
+    background: #1b4332;
+    color: #d4edda;
+}
+
+.status.error {
+    background: #5c1a1a;
+    color: #f8d7da;
+}
+
+/* =============================================================================
+   LIVE PREVIEW - DOCUMENT STYLING
+   ============================================================================= */
+
+.letterhead {
+    text-align: center;
+    color: #002855;
+    margin-bottom: 30px;
+}
+
+.letterhead-title {
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.letterhead-unit {
+    font-weight: bold;
+    font-size: 9px;
+}
+
+.letterhead-hq {
+    font-size: 9px;
+}
+
+.letterhead-address {
+    font-size: 8px;
+}
+
+.memo-header {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.ssic-block {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.date-only {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.address-block {
+    margin-bottom: 6px;
+}
+
+.subject-block {
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.ref-block, .encl-block {
+    margin-bottom: 8px;
+}
+
+.body-content {
+    white-space: pre-wrap;
+    margin-top: 16px;
+    margin-bottom: 30px;
+}
+
+.signature-block {
+    margin-left: 50%;
+}
+
+/* =============================================================================
+   COLLAPSIBLE SECTIONS
+   ============================================================================= */
+
+.collapsible {
+    cursor: pointer;
+    user-select: none;
+}
+
+.collapsible::before {
+    content: '▼ ';
+    font-size: 10px;
+}
+
+.collapsible.collapsed::before {
+    content: '▶ ';
+}
+
+.collapsible-content {
+    display: block;
+}
+
+.collapsible-content.hidden {
+    display: none;
+}
+
+/* =============================================================================
+   RESPONSIVE
+   ============================================================================= */
+
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+    .form-panel {
+        max-width: 100%;
+        max-height: none;
+    }
+    .preview-panel {
+        min-height: 500px;
+    }
+}
