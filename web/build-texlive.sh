@@ -62,6 +62,11 @@ for f in web/lib/texlive/pdftex/10/*.cfg; do
     [ -f "$f" ] && add_file "$f" "$(basename "$f")" 10
 done
 
+# Add pdftex.map (format 11 - font map)
+for f in web/lib/texlive/pdftex/11/*.map; do
+    [ -f "$f" ] && add_file "$f" "$(basename "$f")" 11
+done
+
 echo "];" >> "$OUTPUT"
 echo "" >> "$OUTPUT"
 
@@ -74,6 +79,21 @@ for f in web/lib/texlive/pdftex/3/*; do
         filename=$(basename "$f")
         echo "  { format: 3, filename: '$filename', content: '$(base64 < "$f" | tr -d '\n')' }," >> "$OUTPUT"
         echo "  Added font: $filename"
+    fi
+done
+
+echo "];" >> "$OUTPUT"
+echo "" >> "$OUTPUT"
+
+# Type1 fonts (binary - base64 encoded, format 4)
+echo "// Type1 fonts (binary - base64 encoded, format 4)" >> "$OUTPUT"
+echo "const TEXLIVE_TYPE1_FONTS = [" >> "$OUTPUT"
+
+for f in web/lib/texlive/pdftex/pfb/*.pfb; do
+    if [ -f "$f" ]; then
+        filename=$(basename "$f")
+        echo "  { format: 4, filename: '$filename', content: '$(base64 < "$f" | tr -d '\n')' }," >> "$OUTPUT"
+        echo "  Added Type1 font: $filename"
     fi
 done
 

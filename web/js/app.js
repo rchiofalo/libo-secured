@@ -72,9 +72,26 @@ async function initLatexEngine() {
             console.log(`Preloaded ${fontCount} font metrics`);
         }
 
+        // Pre-load Type1 fonts (base64 decoded)
+        if (typeof TEXLIVE_TYPE1_FONTS !== 'undefined' && Array.isArray(TEXLIVE_TYPE1_FONTS)) {
+            console.log('Preloading Type1 fonts...');
+            let type1Count = 0;
+            for (const font of TEXLIVE_TYPE1_FONTS) {
+                // Decode base64 to binary
+                const binaryString = atob(font.content);
+                const bytes = new Uint8Array(binaryString.length);
+                for (let i = 0; i < binaryString.length; i++) {
+                    bytes[i] = binaryString.charCodeAt(i);
+                }
+                pdfTexEngine.preloadTexliveFile(font.format, font.filename, bytes);
+                type1Count++;
+            }
+            console.log(`Preloaded ${type1Count} Type1 fonts`);
+        }
+
         // Wait for worker to process all preload messages
         // postMessage is async, so we need to give the worker time to process
-        await new Promise(resolve => setTimeout(resolve, 100));
+        await new Promise(resolve => setTimeout(resolve, 200));
 
         engineReady = true;
         engineLoading = false;
