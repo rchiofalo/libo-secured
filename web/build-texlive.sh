@@ -46,9 +46,10 @@ for f in web/lib/texlive/pdftex/27/*.sty; do
     [ -f "$f" ] && add_file "$f" "$(basename "$f")" 27
 done
 
-# Add .def files (format 32)
+# Add .def files (format 32 AND format 26 - TeX may request either)
 for f in web/lib/texlive/pdftex/32/*.def; do
     [ -f "$f" ] && add_file "$f" "$(basename "$f")" 32
+    [ -f "$f" ] && add_file "$f" "$(basename "$f")" 26
 done
 
 # Add .fd files (format 28)

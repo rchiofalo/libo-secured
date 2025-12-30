@@ -1,7 +1,7 @@
 /**
  * TeX Live Packages for SwiftLaTeX Browser Compilation
  * Auto-generated - DO NOT EDIT
- * Generated: Tue Dec 30 01:42:34 PST 2025
+ * Generated: Tue Dec 30 01:45:44 PST 2025
  * Format codes: 3=tfm, 10=cfg/fmt, 26=cls/clo, 27=sty, 28=fd, 32=def
  */
 
@@ -29121,7 +29121,2879 @@ Test file integrity:  ASCII 32-57, 58-126:  !"#\$%&'()*+,-./0123456789
 %%
 %% End of file \`hpdftex.def'.
 ` },
+  { format: 26, filename: 'hpdftex.def', content: `
+%%
+%% This is file \`hpdftex.def',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% hyperref.dtx  (with options: \`pdftex,pdfform,outlines')
+%% 
+%% Copyright
+%% 1995-2001 Sebastian Rahtz, with portions written by David Carlisle and Heiko Oberdiek
+%% 2001-2015 Heiko Oberdiek
+%% 2016-2019 Oberdiek Package Support Group
+%% 2019-2025 LaTeX Project
+%%      https://github.com/latex3/hyperref/issues
+%% 
+%% This file is part of the \`Hyperref Bundle'.
+%% -------------------------------------------
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%% 
+%% This work has the LPPL maintenance status \`maintained'.
+%% 
+%% The Current Maintainer of this work is the LaTeX Project.
+%% 
+%% The list of all files belonging to the \`Hyperref Bundle' is
+%% given in the file \`manifest.txt'.
+%% 
+%% File: hyperref.dtx
+\\ProvidesFile{hpdftex.def}
+  [2025-07-12 v7.01o %
+  Hyperref driver for pdfTeX]
+\\Hy@VersionCheck{hpdftex.def}
+\\pdf@ifdraftmode{%
+  \\let\\Hy@PutCatalog\\@gobble
+}{%
+  \\let\\Hy@PutCatalog\\pdfcatalog
+}
+\\ifHy@pdfpagelabels
+  \\def\\HyPL@StorePageLabel#1{%
+    \\toks@\\expandafter{\\HyPL@Labels}%
+    \\xdef\\HyPL@Labels{%
+      \\the\\toks@
+      \\the\\Hy@abspage<<#1>>%
+    }%
+  }%
+  \\AddToHook{enddocument/afteraux}{%
+    \\HyPL@SetPageLabels
+  }%
+\\fi
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname pdf@escapestring\\endcsname\\relax
+  \\begingroup
+    \\catcode\`\\|=0 %
+    \\@makeother\\\\%
+  |@firstofone{|endgroup
+    |def|Hy@pstringdef#1#2{%
+      |begingroup
+        |edef~{|string~}%
+        |xdef|Hy@gtemp{#2}%
+      |endgroup
+      |let#1|Hy@gtemp
+      |@onelevel@sanitize#1%
+      |edef#1{|expandafter|Hy@ExchangeBackslash#1\\|@nil}%
+      |edef#1{|expandafter|Hy@ExchangeLeftParenthesis#1(|@nil}%
+      |edef#1{|expandafter|Hy@ExchangeRightParenthesis#1)|@nil}%
+    }%
+    |def|Hy@ExchangeBackslash#1\\#2|@nil{%
+      #1%
+      |ifx|\\#2|\\%%
+      |else
+        \\\\%
+        |Hy@ReturnAfterFi{%
+          |Hy@ExchangeBackslash#2|@nil
+        }%
+      |fi
+    }%
+  }%
+  \\def\\Hy@ExchangeLeftParenthesis#1(#2\\@nil{%
+    #1%
+    \\ifx\\\\#2\\\\%
+    \\else
+      \\@backslashchar(%
+      \\Hy@ReturnAfterFi{%
+        \\Hy@ExchangeLeftParenthesis#2\\@nil
+      }%
+    \\fi
+  }%
+  \\def\\Hy@ExchangeRightParenthesis#1)#2\\@nil{%
+    #1%
+    \\ifx\\\\#2\\\\%
+    \\else
+      \\@backslashchar)%
+      \\Hy@ReturnAfterFi{%
+        \\Hy@ExchangeRightParenthesis#2\\@nil
+      }%
+    \\fi
+  }%
+\\else
+  \\def\\Hy@pstringdef#1#2{%
+    \\begingroup
+      \\edef~{\\string~}%
+      \\xdef\\Hy@gtemp{\\pdf@escapestring{#2}}%
+    \\endgroup
+    \\let#1\\Hy@gtemp
+  }%
+\\fi
+\\providecommand*{\\XR@ext}{pdf}
+\\Hy@setbreaklinks{true}
+\\def\\HyPat@ObjRef{%
+  [0-9]*[1-9][0-9]* 0 R%
+}
+\\def\\Hy@pdfminorversion{\\pdfoptionpdfminorversion}%
+\\def\\Hy@pdfminorversion{\\pdfminorversion}%
+\\ifHy@ocgcolorlinks
+  \\ifnum\\Hy@pdfmajorminor@version<105 %
+    \\kvsetkeys{Hyp}{pdfversion=1.5}%
+  \\fi
+\\fi
+\\ifHy@setpdfversion
+  \\ifnum\\Hy@pdf@majorminor@version<105 %
+    \\@ifundefined{pdfobjcompresslevel}{%
+    }{%
+      \\ifHy@verbose
+        \\Hy@InfoNoLine{%
+          PDF object streams are disabled, because they are%
+          \\MessageBreak
+          not supported in requested PDF version %
+          \\Hy@pdf@majorversion.\\Hy@pdf@minorversion
+        }%
+      \\fi
+      \\pdfobjcompresslevel=\\z@
+    }%
+  \\fi
+  \\ifnum\\Hy@pdfmajorminor@version=\\Hy@pdf@majorminor@version\\relax
+  \\else
+    \\let\\Hy@temp\\@empty
+    \\def\\Hy@temp@A#1#2{%
+      \\ifnum#1>\\z@
+        \\edef\\Hy@temp{%
+          \\Hy@temp
+          \\space\\space
+          \\the#1\\space #2%
+          \\ifnum#1=\\@ne\\else s\\fi
+          \\MessageBreak
+        }%
+      \\fi
+    }%
+    \\Hy@temp@A\\pdflastobj{PDF object}%
+    \\Hy@temp@A\\pdflastxform{form XObject}%
+    \\Hy@temp@A\\pdflastximage{image XObject}%
+    \\Hy@temp@A\\pdflastannot{annotation}%
+    \\@ifundefined{pdflastlink}{%
+    }{%
+       \\Hy@temp@A\\pdflastlink{link}%
+    }%
+    \\ifx\\Hy@temp\\@empty
+      \\Hy@pdfmajorversion=\\Hy@pdf@majorversion\\relax
+      \\Hy@pdfminorversion=\\Hy@pdf@minorversion\\relax
+    \\else
+      \\let\\Hy@temp@A\\@empty
+      \\ifnum\\Hy@pdf@majorminor@version=104 %
+        \\IfFileExists{pdf14.sty}{%
+          \\def\\Hy@temp@A{%
+            \\MessageBreak
+            Or \\string\\RequirePackage{pdf14} can be used%
+            \\MessageBreak
+            before \\string\\documentclass\\space as shortcut%
+          }%
+        }{}%
+      \\fi
+      \\Hy@WarningNoLine{%
+        The PDF version number could not be set,\\MessageBreak
+        because some PDF objects are already written:%
+        \\MessageBreak
+        \\Hy@temp
+        The version should be set as early as possible:%
+        \\MessageBreak
+        \\space\\space
+        \\expandafter\\string\\Hy@pdfmajorversion=\\Hy@pdf@majorversion, %
+        \\expandafter\\string\\Hy@pdfminorversion=\\Hy@pdf@minorversion
+        \\string\\relax
+        \\ifnum\\Hy@pdf@majorminor@version<105 %
+          \\@ifundefined{pdfobjcompresslevel}{%
+          }{%
+            \\MessageBreak
+            \\space\\space
+            \\string\\pdfobjcompresslevel=0\\string\\relax
+          }%
+        \\fi
+        \\Hy@temp@A
+      }%
+    \\fi
+  \\fi
+  \\PackageInfo{hyperref}{%
+    \\expandafter\\string\\Hy@pdfmajorversion.%
+    \\expandafter\\string\\Hy@pdfminorversion
+    :=\\number\\Hy@pdf@majorversion.\\number\\Hy@pdf@minorversion\\space
+  }%
+\\fi
+\\edef\\Hy@pdf@majorversion{\\number\\Hy@pdfmajorversion}%
+\\edef\\Hy@pdf@minorversion{\\number\\Hy@pdfminorversion}%
+\\Hy@DisableOption{pdfversion}%
+\\ifHy@ocgcolorlinks
+  \\pdf@ifdraftmode{}{%
+    \\immediate\\pdfobj{%
+      <<%
+        /Type/OCG%
+        /Name(View)%
+        /Usage<<%
+          /Print<<%
+            /PrintState/OFF%
+          >>%
+          /View<<%
+            /ViewState/ON%
+          >>%
+        >>%
+      >>%
+    }%
+    \\edef\\OBJ@OCG@view{\\the\\pdflastobj\\space 0 R}%
+    \\immediate\\pdfobj{%
+      <<%
+        /Type/OCG%
+        /Name(Print)%
+        /Usage<<%
+          /Print<<%
+            /PrintState/ON%
+          >>%
+          /View<<%
+            /ViewState/OFF%
+          >>%
+        >>%
+      >>%
+    }%
+    \\edef\\OBJ@OCG@print{\\the\\pdflastobj\\space 0 R}%
+    \\immediate\\pdfobj{%
+      [%
+        \\OBJ@OCG@view\\space\\OBJ@OCG@print
+      ]%
+    }%
+    \\edef\\OBJ@OCGs{\\the\\pdflastobj\\space 0 R}%
+    \\pdfcatalog{%
+      /OCProperties<<%
+        /OCGs \\OBJ@OCGs
+        /D<<%
+          /OFF[\\OBJ@OCG@print]%
+          /AS[%
+            <<%
+              /Event/View%
+              /OCGs \\OBJ@OCGs
+              /Category[/View]%
+            >>%
+            <<%
+              /Event/Print%
+              /OCGs \\OBJ@OCGs
+              /Category[/Print]%
+            >>%
+            <<%
+              /Event/Export%
+              /OCGs \\OBJ@OCGs
+              /Category[/Print]%
+            >>%
+          ]%
+        >>%
+      >>%
+    }%
+    \\begingroup
+      \\edef\\x{\\endgroup
+        \\pdfpageresources{%
+          \\the\\pdfpageresources
+          /Properties<<%
+            /OCView \\OBJ@OCG@view
+            /OCPrint \\OBJ@OCG@print
+          >>%
+        }%
+      }%
+    \\x
+  }%
+  \\Hy@AtBeginDocument{%
+    \\def\\Hy@colorlink#1{%
+      \\begingroup
+        \\ifHy@ocgcolorlinks
+          \\def\\Hy@ocgcolor{#1}%
+          \\setbox0=\\hbox\\bgroup\\color@begingroup
+        \\else
+          \\HyColor@UseColor#1%
+        \\fi
+    }%
+    \\def\\Hy@endcolorlink{%
+      \\ifHy@ocgcolorlinks
+        \\color@endgroup\\egroup
+        \\mbox{%
+          \\pdfliteral page{/OC/OCPrint BDC}%
+          \\rlap{\\copy0}%
+          \\pdfliteral page{EMC/OC/OCView BDC}%
+          \\begingroup
+            \\expandafter\\HyColor@UseColor\\Hy@ocgcolor
+            \\box0 %
+          \\endgroup
+          \\pdfliteral page{EMC}%
+        }%
+      \\fi
+      \\endgroup
+    }%
+  }%
+\\else
+  \\Hy@DisableOption{ocgcolorlinks}%
+\\fi
+\\def\\setpdflinkmargin#1{%
+  \\begingroup
+    \\setlength{\\dimen@}{#1}%
+  \\expandafter\\endgroup
+  \\expandafter\\pdflinkmargin\\the\\dimen@\\relax
+}
+\\pdflinkmargin1pt %
+\\providecommand*\\@pdfview{XYZ}
+\\Hy@WrapperDef\\new@pdflink#1{%
+  \\ifhmode
+    \\@savsf\\spacefactor
+  \\fi
+  \\Hy@SaveLastskip
+  \\Hy@VerboseAnchor{#1}%
+  \\Hy@pstringdef\\Hy@pstringDest{\\HyperDestNameFilter{#1}}%
+  \\Hy@DestName\\Hy@pstringDest\\@pdfview
+  \\Hy@RestoreLastskip
+  \\ifhmode
+    \\spacefactor\\@savsf
+  \\fi
+}
+\\let\\pdf@endanchor\\@empty
+\\def\\Hy@DestName#1#2{%
+  \\pdfdest name{#1}#2\\relax
+}
+\\providecommand*\\@pdfborder{0 0 1}
+\\providecommand*\\@pdfborderstyle{}
+\\def\\Hy@undefinedname{UNDEFINED}
+\\def\\find@pdflink#1#2{%
+  \\leavevmode
+  \\protected@edef\\Hy@testname{#2}%
+  \\ifx\\Hy@testname\\@empty
+    \\Hy@Warning{%
+      Empty destination name,\\MessageBreak
+      using \`\\Hy@undefinedname'%
+    }%
+    \\let\\Hy@testname\\Hy@undefinedname
+  \\else
+    \\Hy@pstringdef\\Hy@testname{%
+      \\expandafter\\HyperDestNameFilter\\expandafter{\\Hy@testname}%
+    }%
+  \\fi
+  \\Hy@StartlinkName{%
+    \\ifHy@pdfa /F 4\\fi
+    \\Hy@setpdfborder
+    \\Hy@setpdfhighlight
+    \\ifx\\CurrentBorderColor\\relax
+    \\else
+      /C[\\CurrentBorderColor]%
+    \\fi
+  }\\Hy@testname
+  \\expandafter\\Hy@colorlink\\csname @#1color\\endcsname
+}
+\\def\\Hy@StartlinkName#1#2{%
+  \\pdfstartlink attr{#1}goto name{#2}\\relax
+}
+\\def\\close@pdflink{%
+  \\Hy@endcolorlink
+  \\Hy@VerboseLinkStop
+  \\pdfendlink
+}
+\\def\\hyper@anchor#1{%
+  \\new@pdflink{#1}\\anchor@spot\\pdf@endanchor
+}
+\\def\\hyper@anchorstart#1{%
+  \\new@pdflink{#1}%
+  \\Hy@activeanchortrue
+}
+\\def\\hyper@anchorend{%
+  \\pdf@endanchor
+  \\Hy@activeanchorfalse
+}
+\\def\\hyper@linkstart#1#2{%
+  \\Hy@VerboseLinkStart{#1}{#2}%
+  \\@ifundefined{@#1bordercolor}{%
+    \\let\\CurrentBorderColor\\relax
+  }{%
+    \\edef\\CurrentBorderColor{\\csname @#1bordercolor\\endcsname}%
+  }%
+  \\find@pdflink{#1}{#2}%
+}
+\\def\\hyper@linkend{\\close@pdflink}
+\\def\\hyper@link#1#2#3{%
+  \\Hy@VerboseLinkStart{#1}{#2}%
+  \\@ifundefined{@#1bordercolor}{%
+    \\let\\CurrentBorderColor\\relax
+  }{%
+    \\edef\\CurrentBorderColor{\\csname @#1bordercolor\\endcsname}%
+  }%
+  \\find@pdflink{#1}{#2}#3\\Hy@xspace@end
+  \\close@pdflink
+}
+\\let\\CurrentBorderColor\\@linkbordercolor
+\\def\\hyper@linkurl#1#2{%
+  \\begingroup
+    \\Hy@pstringdef\\Hy@pstringURI{#2}%
+    \\hyper@chars
+    \\leavevmode
+    \\pdfstartlink
+      attr{%
+        \\Hy@setpdfborder
+        \\Hy@setpdfhighlight
+        \\ifx\\@urlbordercolor\\relax
+        \\else
+          /C[\\@urlbordercolor]%
+        \\fi
+      }%
+      user{%
+       /Subtype/Link%
+       \\ifHy@pdfa /F 4\\fi
+       /A<<%
+         /Type/Action%
+         /S/URI%
+         /URI(\\Hy@pstringURI)%
+         \\ifHy@href@ismap
+           /IsMap true%
+         \\fi
+         \\Hy@href@nextactionraw
+       >>%
+      }%
+      \\relax
+    \\Hy@colorlink\\@urlcolor#1\\Hy@xspace@end
+    \\close@pdflink
+  \\endgroup
+}
+\\def\\hyper@linkfile#1#2#3{% anchor text, filename, linkname
+  \\begingroup
+    \\def\\Hy@pstringF{#2}%
+    \\Hy@CleanupFile\\Hy@pstringF
+    \\Hy@pstringdef\\Hy@pstringF\\Hy@pstringF
+    \\Hy@pstringdef\\Hy@pstringD{#3}%
+    \\Hy@MakeRemoteAction
+    \\leavevmode
+    \\pdfstartlink
+      attr{%
+        \\Hy@setpdfborder
+        \\Hy@setpdfhighlight
+        \\ifx\\@filebordercolor\\relax
+        \\else
+          /C[\\@filebordercolor]%
+        \\fi
+      }%
+      user {%
+        /Subtype/Link%
+        \\ifHy@pdfa /F 4\\fi
+        /A<<%
+          /F(\\Hy@pstringF)%
+          /S/GoToR%
+          \\Hy@SetNewWindow
+          \\ifx\\\\#3\\\\%
+            /D[\\Hy@href@page\\@pdfremotestartview]%
+          \\else
+            /D(\\Hy@pstringD)%
+          \\fi
+          \\Hy@href@nextactionraw
+        >>%
+      }%
+      \\relax
+    \\Hy@colorlink\\@filecolor#1\\Hy@xspace@end
+    \\close@pdflink
+  \\endgroup
+}
+\\def\\@hyper@launch run:#1\\\\#2#3{% filename, anchor text linkname
+  \\begingroup
+    \\Hy@pstringdef\\Hy@pstringF{#1}%
+    \\Hy@pstringdef\\Hy@pstringP{#3}%
+    \\leavevmode
+    \\pdfstartlink
+      attr{%
+        \\Hy@setpdfborder
+        \\Hy@setpdfhighlight
+        \\ifx\\@runbordercolor\\relax
+        \\else
+          /C[\\@runbordercolor]%
+        \\fi
+      }%
+      user {%
+        /Subtype/Link%
+        \\ifHy@pdfa /F 4\\fi
+        /A<<%
+          /F(\\Hy@pstringF)%
+          /S/Launch%
+          \\Hy@SetNewWindow
+          \\ifx\\\\#3\\\\%
+          \\else
+            /Win<</P(\\Hy@pstringP)/F(\\Hy@pstringF)>>%
+          \\fi
+          \\Hy@href@nextactionraw
+        >>%
+      }%
+      \\relax
+    \\Hy@colorlink\\@runcolor#2\\Hy@xspace@end
+    \\close@pdflink
+  \\endgroup
+}
+\\def\\PDF@SetupDoc{%
+  \\ifx\\@pdfpagescrop\\@empty
+  \\else
+    \\edef\\process@me{%
+      \\pdfpagesattr={%
+        /CropBox[\\@pdfpagescrop]%
+        \\expandafter\\ifx\\expandafter\\\\\\the\\pdfpagesattr\\\\%
+        \\else
+          ^^J\\the\\pdfpagesattr
+        \\fi
+      }%
+    }%
+    \\process@me
+  \\fi
+  \\Hy@pstringdef\\Hy@pstringB{\\@baseurl}%
+  \\pdfcatalog{%
+    /PageMode/\\@pdfpagemode
+    \\ifx\\@baseurl\\@empty
+    \\else
+      /URI<</Base(\\Hy@pstringB)>>%
+    \\fi
+  }%
+  \\ifx\\@pdfstartpage\\@empty
+  \\else
+    \\ifx\\@pdfstartview\\@empty
+    \\else
+      openaction goto page\\@pdfstartpage{\\@pdfstartview}%
+    \\fi
+  \\fi
+  \\edef\\Hy@temp{%
+    \\ifHy@pdftoolbar\\else /HideToolbar true\\fi
+    \\ifHy@pdfmenubar\\else /HideMenubar true\\fi
+    \\ifHy@pdfwindowui\\else /HideWindowUI true\\fi
+    \\ifHy@pdffitwindow /FitWindow true\\fi
+    \\ifHy@pdfcenterwindow /CenterWindow true\\fi
+    \\ifHy@pdfdisplaydoctitle /DisplayDocTitle true\\fi
+    \\Hy@UseNameKey{NonFullScreenPageMode}\\@pdfnonfullscreenpagemode
+    \\Hy@UseNameKey{Direction}\\@pdfdirection
+    \\Hy@UseNameKey{ViewArea}\\@pdfviewarea
+    \\Hy@UseNameKey{ViewClip}\\@pdfviewclip
+    \\Hy@UseNameKey{PrintArea}\\@pdfprintarea
+    \\Hy@UseNameKey{PrintClip}\\@pdfprintclip
+    \\Hy@UseNameKey{PrintScaling}\\@pdfprintscaling
+    \\Hy@UseNameKey{Duplex}\\@pdfduplex
+    \\ifx\\@pdfpicktraybypdfsize\\@empty
+    \\else
+      /PickTrayByPDFSize \\@pdfpicktraybypdfsize
+    \\fi
+    \\ifx\\@pdfprintpagerange\\@empty
+    \\else
+      /PrintPageRange[\\@pdfprintpagerange]%
+    \\fi
+    \\ifx\\@pdfnumcopies\\@empty
+    \\else
+      /NumCopies \\@pdfnumcopies
+    \\fi
+  }%
+  \\pdfcatalog{%
+    \\ifx\\Hy@temp\\@empty
+    \\else
+      /ViewerPreferences<<\\Hy@temp>>%
+    \\fi
+    \\Hy@UseNameKey{PageLayout}\\@pdfpagelayout
+    \\ifx\\@pdflang\\relax
+    \\else
+      /Lang(\\@pdflang)%
+    \\fi
+  }%
+}
+\\def\\PDF@FinishDoc{%
+  \\pdf@ifdraftmode{}{%
+    \\Hy@UseMaketitleInfos
+    \\HyInfo@GenerateAddons
+    \\pdfinfo{%
+      /Author(\\@pdfauthor)%
+      /Title(\\@pdftitle)%
+      /Subject(\\@pdfsubject)%
+      /Creator(\\@pdfcreator)%
+      \\ifx\\@pdfcreationdate\\@empty
+      \\else
+        /CreationDate(\\@pdfcreationdate)%
+      \\fi
+      \\ifx\\@pdfmoddate\\@empty
+      \\else
+        /ModDate(\\@pdfmoddate)%
+      \\fi
+      \\ifx\\@pdfproducer\\relax
+      \\else
+        /Producer(\\@pdfproducer)%
+      \\fi
+      /Keywords(\\@pdfkeywords)%
+      \\ifx\\@pdftrapped\\@empty
+      \\else
+        /Trapped/\\@pdftrapped
+      \\fi
+      \\HyInfo@Addons
+    }%
+  }%
+  \\Hy@DisableOption{pdfauthor}%
+  \\Hy@DisableOption{pdftitle}%
+  \\Hy@DisableOption{pdfsubject}%
+  \\Hy@DisableOption{pdfcreator}%
+  \\Hy@DisableOption{addtopdfcreator}%
+  \\Hy@DisableOption{pdfcreationdate}%
+  \\Hy@DisableOption{pdfmoddate}%
+  \\Hy@DisableOption{pdfproducer}%
+  \\Hy@DisableOption{pdfkeywords}%
+  \\Hy@DisableOption{pdftrapped}%
+  \\Hy@DisableOption{pdfinfo}%
+}
+\\def\\hyper@pagetransition{%
+  \\ifx\\@pdfpagetransition\\relax
+  \\else
+    \\expandafter\\Hy@RemoveTransPageAttr
+    \\the\\pdfpageattr^^J/Trans{}>>\\END
+    \\ifx\\@pdfpagetransition\\@empty
+    \\else
+      \\edef\\@processme{%
+        \\global\\pdfpageattr{%
+          \\the\\pdfpageattr
+          ^^J/Trans << /S /\\@pdfpagetransition\\space >>%
+        }%
+      }%
+      \\@processme
+    \\fi
+  \\fi
+}
+\\gdef\\Hy@RemoveTransPageAttr#1^^J/Trans#2#3>>#4\\END{%
+  \\ifx\\\\#2\\\\%
+    \\global\\pdfpageattr{#1}%
+  \\else
+    \\Hy@RemoveTransPageAttr#1#4\\END
+  \\fi
+}
+\\def\\hyper@pageduration{%
+  \\ifx\\@pdfpageduration\\relax
+  \\else
+    \\expandafter
+    \\Hy@RemoveDurPageAttr\\the\\pdfpageattr^^J/Dur{} \\END
+    \\ifx\\@pdfpageduration\\@empty
+    \\else
+      \\edef\\@processme{%
+        \\global\\pdfpageattr{%
+          \\the\\pdfpageattr
+          ^^J/Dur \\@pdfpageduration\\space
+        }%
+      }%
+      \\@processme
+    \\fi
+  \\fi
+}
+\\gdef\\Hy@RemoveDurPageAttr#1^^J/Dur#2#3 #4\\END{%
+  \\ifx\\\\#2\\\\%
+    \\global\\pdfpageattr{#1}%
+  \\else
+    \\Hy@RemoveDurPageAttr#1#4\\END
+  \\fi
+}
+\\pdf@ifdraftmode{}{%
+  \\g@addto@macro\\Hy@EveryPageHook{%
+    \\hyper@pagetransition
+    \\hyper@pageduration
+  }%
+}
+\\Hy@AtBeginDocument{%
+  \\ifHy@setpagesize
+    \\expandafter\\@firstofone
+  \\else
+    \\expandafter\\@gobble
+  \\fi
+  {%
+    \\@ifclassloaded{seminar}{%
+      \\setlength{\\pdfhorigin}{1truein}%
+      \\setlength{\\pdfvorigin}{1truein}%
+      \\ifportrait
+        \\ifdim\\paperwidth=\\z@
+        \\else
+          \\setlength{\\pdfpagewidth}{\\strip@pt\\paperwidth truept}%
+        \\fi
+        \\ifdim\\paperheight=\\z@
+        \\else
+          \\setlength{\\pdfpageheight}{\\strip@pt\\paperheight truept}%
+        \\fi
+      \\else
+        \\ifdim\\paperheight=\\z@
+        \\else
+          \\setlength{\\pdfpagewidth}{\\strip@pt\\paperheight truept}%
+        \\fi
+        \\ifdim\\paperwidth=\\z@
+        \\else
+          \\setlength{\\pdfpageheight}{\\strip@pt\\paperwidth truept}%
+        \\fi
+      \\fi
+    }{%
+      \\ifnum\\mag=\\@m
+        \\ifdim\\stockwidth>\\z@
+          \\ifdim\\stockheight>\\z@
+           \\setlength{\\pdfpagewidth}{\\stockwidth}%
+           \\setlength{\\pdfpageheight}{\\stockheight}%
+          \\else
+            \\ifdim\\paperwidth>\\z@
+              \\ifdim\\paperheight>\\z@
+                \\setlength{\\pdfpagewidth}{\\paperwidth}%
+                \\setlength{\\pdfpageheight}{\\paperheight}%
+              \\fi
+            \\fi
+          \\fi
+        \\else
+          \\ifdim\\stockwidth=\\z@
+            \\ifdim\\paperwidth>\\z@
+              \\ifdim\\paperheight>\\z@
+                \\setlength{\\pdfpagewidth}{\\paperwidth}%
+                \\setlength{\\pdfpageheight}{\\paperheight}%
+              \\fi
+            \\fi
+          \\fi
+        \\fi
+      \\fi
+    }%
+  }%
+  \\Hy@DisableOption{setpagesize}%
+}
+\\def\\Acrobatmenu#1#2{%
+  \\Hy@Acrobatmenu{#1}{#2}{%
+    \\leavevmode
+    \\EdefEscapeName\\Hy@temp@menu{#1}%
+    \\pdfstartlink
+      attr{%
+        \\Hy@setpdfborder
+        \\Hy@setpdfhighlight
+        \\ifx\\@menubordercolor\\relax
+        \\else
+          /C[\\@menubordercolor]%
+        \\fi
+      }%
+      user{%
+        /Subtype/Link%
+        \\ifHy@pdfa /F 4\\fi
+        /A<<%
+          /S/Named%
+          /N/\\Hy@temp@menu
+          \\Hy@href@nextactionraw
+        >>%
+      }%
+      \\relax
+    \\Hy@colorlink\\@menucolor#2%
+    \\close@pdflink
+  }%
+}
+\\def\\@Gauge[#1]#2#3#4{% parameters, label, minimum, maximum
+  \\Hy@Message{Sorry, pdftex does not support FORM gauges}%
+}
+\\def\\MakeFieldObject#1#2{\\sbox0{#1}%
+  \\immediate\\pdfxform0 %
+  \\expandafter\\edef\\csname #2Object\\endcsname{%
+    \\the\\pdflastxform\\space 0 R%
+  }%
+}%
+\\let\\HyField@afields\\@empty
+\\let\\HyField@cofields\\@empty
+\\@ifundefined{pdflastlink}
+ {%
+  \\let\\HyField@AddToFields\\relax
+  \\PackageInfo{hyperref}{%
+    You need pdfTeX 1.40.0 for setting the /Fields entry.%
+    \\MessageBreak
+    Adobe Reader/Acrobat accepts an empty /Field array,%
+    \\MessageBreak
+    but other PDF viewers might complain%
+  }}%
+ {%
+  \\let\\HyField@AuxAddToFields\\@gobble
+  \\let\\HyField@AuxAddToCoFields\\@gobbletwo
+  \\def\\HyField@AfterAuxOpen{\\Hy@AtBeginDocument}%
+  \\def\\HyField@ABD@AuxAddToCoFields#1#2{%
+    \\begingroup
+      \\Hy@safe@activestrue
+      \\let\\@secondoftwo\\relax
+      \\ifx\\HyField@cofields\\@empty
+        \\xdef\\HyField@cofields{%
+          \\@secondoftwo{#1}{ #2 0 R}%
+        }%
+      \\else
+        \\let\\@secondoftwo\\relax
+        \\def\\HyField@AddCoField##1##2##3{%
+          \\ifx##1\\@empty
+            \\@secondoftwo{#1}{ #2 0 R}%
+            \\expandafter\\@gobble
+          \\else
+            \\ifnum\\pdfstrcmp{##2}{#1}>\\z@
+              \\@secondoftwo{#1}{ #2 0 R}%
+              \\@secondoftwo{##2}{##3}%
+              \\expandafter\\expandafter\\expandafter\\@gobble
+            \\else
+              \\@secondoftwo{##2}{##3}%
+            \\fi
+          \\fi
+          \\HyField@AddCoField
+        }%
+        \\xdef\\HyField@cofields{%
+          \\expandafter\\HyField@AddCoField
+          \\HyField@cofields\\@empty\\@empty\\@empty
+        }%
+      \\fi
+    \\endgroup
+  }%
+  \\Hy@AtBeginDocument{%
+    \\if@filesw
+      \\immediate\\write\\@mainaux{%
+        \\string\\providecommand\\string\\HyField@AuxAddToFields[1]{}%
+      }%
+      \\immediate\\write\\@mainaux{%
+        \\string\\providecommand\\string\\HyField@AuxAddToCoFields[2]{}%
+      }%
+    \\fi
+    \\let\\HyField@AfterAuxOpen\\@firstofone
+    \\def\\HyField@AuxAddToFields#1{%
+      \\xdef\\HyField@afields{%
+        \\ifx\\HyField@afields\\@empty
+        \\else
+          \\HyField@afields
+          \\space
+        \\fi
+        #1 0 R%
+      }%
+    }%
+    \\let\\HyField@AuxAddToCoFields\\HyField@ABD@AuxAddToCoFields
+  }%
+  \\def\\HyField@AddToFields{%
+    \\expandafter\\HyField@@AddToFields\\expandafter{%
+      \\the\\pdflastlink
+    }%
+    \\ifx\\Fld@calculate@code\\@empty
+    \\else
+      \\begingroup
+        \\Hy@safe@activestrue
+        \\edef\\Hy@temp{%
+          \\endgroup
+          \\if@filesw
+            \\write\\@mainaux{%
+              \\string\\HyField@AuxAddToCoFields{%
+                \\Fld@calculate@sortkey
+              }{%
+                \\the\\pdflastlink
+              }%
+            }%
+          \\fi
+        }%
+      \\Hy@temp
+    \\fi
+  }%
+  \\def\\HyField@@AddToFields#1{%
+    \\HyField@AfterAuxOpen{%
+      \\if@filesw
+        \\write\\@mainaux{%
+          \\string\\HyField@AuxAddToFields{#1}%
+        }%
+      \\fi
+    }%
+  }%
+ }
+\\def\\@Form[#1]{%
+  \\@ifundefined{textcolor}{\\let\\textcolor\\@gobble}{}%
+  \\kvsetkeys{Form}{#1}%
+  \\pdf@ifdraftmode{}{%
+    \\Hy@FormObjects
+    \\ifnum\\pdftexversion>13 %
+      \\pdfrefobj\\OBJ@pdfdocencoding
+      \\pdfrefobj\\OBJ@ZaDb
+      \\pdfrefobj\\OBJ@Helv
+    \\fi
+    \\AddToHook{enddocument/afteraux}{%
+      \\immediate\\pdfobj{%
+        <<%
+          /Fields[\\HyField@afields]%
+          \\ifx\\HyField@cofields\\@empty
+          \\else
+            /CO[\\romannumeral-\`\\Q\\HyField@cofields]%
+          \\fi
+          /DR<<%
+            /Font<<%
+              /ZaDb \\OBJ@ZaDb\\space 0 R%
+              /Helv \\OBJ@Helv\\space 0 R%
+            >>%
+          >>%
+          /DA(/Helv 10 Tf 0 g)%
+          \\ifHy@pdfa
+          \\else
+            \\ifHyField@NeedAppearances
+              /NeedAppearances true%
+            \\fi
+          \\fi
+        >>%
+      }%
+      \\edef\\OBJ@acroform{\\the\\pdflastobj}%
+      \\pdfcatalog{/AcroForm \\OBJ@acroform\\space 0 R}%
+    }%
+  }%
+  \\MakeFieldObject{%
+    \\begingroup
+      \\fontfamily{pzd}%
+      \\fontencoding{U}%
+      \\fontseries{m}%
+      \\fontshape{n}%
+      \\selectfont
+      \\char123 %
+    \\endgroup
+  }{Ding}%
+  \\MakeFieldObject{%
+    \\fbox{\\textcolor{yellow}{\\textsf{Submit}}}%
+  }{Submit}%
+  \\MakeFieldObject{%
+    \\fbox{\\textcolor{yellow}{\\textsf{SubmitP}}}%
+  }{SubmitP}%
+}
+\\let\\@endForm\\@empty
+\\let\\HyAnn@AbsPageLabel\\@empty
+\\let\\Fld@pageobjref\\@empty
+\\@ifundefined{pdfpageref}{%
+}{%
+  \\@ifpackageloaded{zref-abspage}{%
+    \\newcount\\HyAnn@Count
+    \\HyAnn@Count=\\z@
+    \\def\\HyAnn@AbsPageLabel{%
+      \\global\\advance\\HyAnn@Count by\\@ne
+      \\zref@labelbyprops{HyAnn@\\the\\HyAnn@Count}{abspage}%
+      \\zref@refused{HyAnn@\\the\\HyAnn@Count}%
+    }%
+    \\def\\Fld@pageobjref{%
+      \\zref@ifrefundefined{HyAnn@\\the\\HyAnn@Count}{%
+      }{%
+        \\zref@ifrefcontainsprop{HyAnn@\\the\\HyAnn@Count}{abspage}{%
+          /P \\pdfpageref
+          \\zref@extractdefault{HyAnn@\\the\\HyAnn@Count}{abspage}{1} %
+          \\space 0 R%
+        }{%
+        }%
+      }%
+    }%
+  }{%
+  }%
+}
+\\def\\@TextField[#1]#2{% parameters, label
+  \\def\\Fld@name{#2}%
+  \\let\\Fld@default\\@empty
+  \\let\\Fld@value\\@empty
+  \\def\\Fld@width{\\DefaultWidthofText}%
+  \\def\\Fld@height{%
+    \\ifFld@multiline
+      \\DefaultHeightofTextMultiline
+    \\else
+      \\DefaultHeightofText
+    \\fi
+  }%
+  \\begingroup
+    \\expandafter\\HyField@SetKeys\\expandafter{%
+      \\DefaultOptionsofText,#1%
+    }%
+    \\PDFForm@Name
+    \\HyField@FlagsText
+    \\ifFld@hidden\\def\\Fld@width{1sp}\\fi
+    \\ifx\\Fld@value\\@empty\\def\\Fld@value{\\Fld@default}\\fi
+    \\LayoutTextField{#2}{%
+      \\leavevmode
+      \\HyAnn@AbsPageLabel
+      \\Hy@escapeform\\PDFForm@Text
+      \\pdfstartlink user {\\PDFForm@Text}\\relax
+      \\MakeTextField{\\Fld@width}{\\Fld@height}\\pdfendlink
+      \\HyField@AddToFields
+    }%
+  \\endgroup
+}
+\\def\\@ChoiceMenu[#1]#2#3{% parameters, label, choices
+  \\def\\Fld@name{#2}%
+  \\let\\Fld@default\\relax
+  \\let\\Fld@value\\relax
+  \\def\\Fld@width{\\DefaultWidthofChoiceMenu}%
+  \\def\\Fld@height{\\DefaultHeightofChoiceMenu}%
+  \\begingroup
+    \\Fld@menulength=0 %
+    \\@tempdima\\z@
+    \\@for\\@curropt:=#3\\do{%
+      \\expandafter\\Fld@checkequals\\@curropt==\\\\%
+      \\Hy@StepCount\\Fld@menulength
+      \\settowidth{\\@tempdimb}{\\@currDisplay}%
+      \\ifdim\\@tempdimb>\\@tempdima\\@tempdima\\@tempdimb\\fi
+    }%
+    \\advance\\@tempdima by 15\\p@
+    \\begingroup
+      \\HyField@SetKeys{#1}%
+    \\edef\\x{\\endgroup
+      \\noexpand\\expandafter
+      \\noexpand\\HyField@SetKeys
+      \\noexpand\\expandafter{%
+        \\expandafter\\noexpand\\csname DefaultOptionsof%
+          \\ifFld@radio
+            Radio%
+          \\else
+            \\ifFld@combo
+              \\ifFld@popdown
+                PopdownBox%
+              \\else
+                ComboBox%
+              \\fi
+            \\else
+              ListBox%
+            \\fi
+          \\fi
+        \\endcsname
+      }%
+    }\\x
+    \\HyField@SetKeys{#1}%
+    \\PDFForm@Name
+    \\ifFld@hidden\\def\\Fld@width{1sp}\\fi
+    \\ifx\\Fld@value\\relax
+      \\let\\Fld@value\\Fld@default
+    \\fi
+    \\LayoutChoiceField{#2}{%
+      \\ifFld@radio
+        \\HyField@FlagsRadioButton
+        \\@@Radio{#3}%
+      \\else
+        \\begingroup
+          \\HyField@FlagsChoice
+          \\ifdim\\Fld@width<\\@tempdima
+            \\ifdim\\@tempdima<1cm\\@tempdima1cm\\fi
+            \\edef\\Fld@width{\\the\\@tempdima}%
+          \\fi
+          \\ifFld@combo
+          \\else
+            \\@tempdima=\\the\\Fld@menulength\\Fld@charsize
+            \\advance\\@tempdima by \\Fld@borderwidth bp %
+            \\advance\\@tempdima by \\Fld@borderwidth bp %
+            \\edef\\Fld@height{\\the\\@tempdima}%
+          \\fi
+          \\@@Listbox{#3}%
+        \\endgroup
+      \\fi
+    }%
+  \\endgroup
+}
+\\def\\@@Radio#1{%
+  \\Fld@listcount=0 %
+  \\EdefEscapeName\\Fld@default{\\Fld@default}%
+  \\@for\\@curropt:=#1\\do{%
+    \\expandafter\\Fld@checkequals\\@curropt==\\\\%
+    \\EdefEscapeName\\@currValue{\\@currValue}%
+    \\Hy@StepCount\\Fld@listcount
+    \\@currDisplay\\space
+    \\leavevmode
+    \\HyAnn@AbsPageLabel
+    \\Hy@escapeform\\PDFForm@Radio
+    \\pdfstartlink user {%
+      \\PDFForm@Radio
+      /AP<<%
+        /N<<%
+          /\\@currValue\\space \\DingObject
+        >>%
+      >>%
+    }%
+    \\relax
+    \\MakeRadioField{\\Fld@width}{\\Fld@height}\\pdfendlink
+    \\ifnum\\Fld@listcount=1 %
+      \\HyField@AddToFields
+    \\fi
+    \\space % deliberate space between radio buttons
+  }%
+}
+\\newcount\\Fld@listcount
+\\def\\@@Listbox#1{%
+  \\HyField@PDFChoices{#1}%
+  \\leavevmode
+  \\HyAnn@AbsPageLabel
+  \\Hy@escapeform\\PDFForm@List
+  \\pdfstartlink user {\\PDFForm@List}\\relax
+  \\MakeChoiceField{\\Fld@width}{\\Fld@height}%
+  \\pdfendlink
+  \\HyField@AddToFields
+}
+\\def\\@PushButton[#1]#2{% parameters, label
+  \\def\\Fld@name{#2}%
+  \\begingroup
+    \\expandafter\\HyField@SetKeys\\expandafter{%
+      \\DefaultOptionsofPushButton,#1%
+    }%
+    \\PDFForm@Name
+    \\ifHy@pdfa
+      \\Hy@Error{%
+        PDF/A: Push button with JavaScript is prohibited%
+      }\\@ehc
+      \\LayoutPushButtonField{%
+        \\leavevmode
+        \\MakeButtonField{#2}%
+      }%
+    \\else
+      \\HyField@FlagsPushButton
+      \\ifFld@hidden\\def\\Fld@width{1sp}\\fi
+      \\LayoutPushButtonField{%
+        \\leavevmode
+        \\HyAnn@AbsPageLabel
+        \\Hy@escapeform\\PDFForm@Push
+        \\pdfstartlink user {\\PDFForm@Push}\\relax
+        \\MakeButtonField{#2}%
+        \\pdfendlink
+        \\HyField@AddToFields
+      }%
+    \\fi
+  \\endgroup
+}
+\\def\\@Submit[#1]#2{%
+  \\def\\Fld@width{\\DefaultWidthofSubmit}%
+  \\def\\Fld@height{\\DefaultHeightofSubmit}%
+  \\begingroup
+    \\expandafter\\HyField@SetKeys\\expandafter{%
+      \\DefaultOptionsofSubmit,#1%
+    }%
+    \\HyField@FlagsPushButton
+    \\HyField@FlagsSubmit
+    \\ifFld@hidden\\def\\Fld@width{1sp}\\fi
+    \\leavevmode
+    \\HyAnn@AbsPageLabel
+    \\Hy@escapeform\\PDFForm@Submit
+    \\pdfstartlink user {%
+      \\PDFForm@Submit
+      /AP<</N \\SubmitObject/D \\SubmitPObject>>%
+    }%
+    \\relax
+    \\MakeButtonField{#2}%
+    \\pdfendlink
+    \\HyField@AddToFields
+  \\endgroup
+}
+\\def\\@Reset[#1]#2{%
+  \\def\\Fld@width{\\DefaultWidthofReset}%
+  \\def\\Fld@height{\\DefaultHeightofReset}%
+  \\begingroup
+    \\expandafter\\HyField@SetKeys\\expandafter{%
+      \\DefaultOptionsofReset,#1%
+    }%
+    \\leavevmode
+    \\ifHy@pdfa
+      \\Hy@Error{%
+        PDF/A: Reset action is prohibited%
+      }\\@ehc
+      \\MakeButtonField{#2}%
+    \\else
+      \\HyField@FlagsPushButton
+      \\ifFld@hidden\\def\\Fld@width{1sp}\\fi
+      \\HyAnn@AbsPageLabel
+      \\Hy@escapeform\\PDFForm@Reset
+      \\pdfstartlink user {\\PDFForm@Reset}\\relax
+      \\MakeButtonField{#2}%
+      \\pdfendlink
+      \\HyField@AddToFields
+    \\fi
+  \\endgroup
+}
+\\def\\@CheckBox[#1]#2{% parameters, label
+  \\def\\Fld@name{#2}%
+  \\def\\Fld@default{0}%
+  \\begingroup
+    \\def\\Fld@width{\\DefaultWidthofCheckBox}%
+    \\def\\Fld@height{\\DefaultHeightofCheckBox}%
+    \\expandafter\\HyField@SetKeys\\expandafter{%
+      \\DefaultOptionsofCheckBox,#1%
+    }%
+    \\PDFForm@Name
+    \\HyField@FlagsCheckBox
+    \\ifFld@hidden\\def\\Fld@width{1sp}\\fi
+    \\LayoutCheckField{#2}{%
+      \\leavevmode
+      \\HyAnn@AbsPageLabel
+      \\Hy@escapeform\\PDFForm@Check
+      \\pdfstartlink user {\\PDFForm@Check}\\relax
+      \\MakeCheckField{\\Fld@width}{\\Fld@height}%
+      \\pdfendlink
+      \\HyField@AddToFields
+    }%
+  \\endgroup
+}
+\\def\\Hy@FormObjects{%
+  \\pdfobj {%
+    <<%
+      /Type/Encoding%
+      /Differences[%
+        24/breve/caron/circumflex/dotaccent/hungarumlaut/ogonek%
+          /ring/tilde %
+        39/quotesingle %
+        96/grave %
+        128/bullet/dagger/daggerdbl/ellipsis/emdash/endash/florin%
+           /fraction/guilsinglleft/guilsinglright/minus/perthousand%
+           /quotedblbase/quotedblleft/quotedblright/quoteleft%
+           /quoteright/quotesinglbase/trademark/fi/fl/Lslash/OE%
+           /Scaron/Ydieresis/Zcaron/dotlessi/lslash/oe/scaron/zcaron %
+        160/Euro %
+        164/currency %
+        166/brokenbar %
+        168/dieresis/copyright/ordfeminine %
+        172/logicalnot/.notdef/registered/macron/degree/plusminus%
+           /twosuperior/threesuperior/acute/mu %
+        183/periodcentered/cedilla/onesuperior/ordmasculine %
+        188/onequarter/onehalf/threequarters %
+        192/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE%
+           /Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave%
+           /Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute%
+           /Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave%
+           /Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls%
+           /agrave/aacute/acircumflex/atilde/adieresis/aring/ae%
+           /ccedilla/egrave/eacute/ecircumflex/edieresis/igrave%
+           /iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute%
+           /ocircumflex/otilde/odieresis/divide/oslash/ugrave%
+           /uacute/ucircumflex/udieresis/yacute/thorn/ydieresis%
+      ]%
+    >>%
+  }%
+  \\xdef\\OBJ@pdfdocencoding{\\the\\pdflastobj}%
+  \\pdfobj{%
+    <<%
+      /Type/Font%
+      /Subtype/Type1%
+      /Name/ZaDb%
+      /BaseFont/ZapfDingbats%
+    >>%
+  }%
+  \\xdef\\OBJ@ZaDb{\\the\\pdflastobj}%
+  \\pdfobj{%
+    <<%
+      /Type/Font%
+      /Subtype/Type1%
+      /Name/Helv%
+      /BaseFont/Helvetica%
+      /Encoding \\OBJ@pdfdocencoding\\space 0 R%
+    >>%
+  }%
+  \\xdef\\OBJ@Helv{\\the\\pdflastobj}%
+  \\global\\let\\Hy@FormObjects\\relax
+}
+\\providecommand*{\\Fld@pageobjref}{}
+\\@ifundefined{pdf@escapestring}
+ {%
+  \\let\\Hy@escapestring\\@firstofone
+  \\def\\Hy@escapeform#1{%
+    \\ifHy@pdfescapeform
+      \\def\\Hy@escapestring##1{%
+        \\noexpand\\Hy@escapestring{\\noexpand##1}%
+      }%
+      \\edef\\Hy@temp{#1}%
+      \\expandafter\\Hy@@escapeform\\Hy@temp\\Hy@escapestring{}\\@nil
+      \\def\\Hy@escapestring##1{%
+        \\@ifundefined{Hy@esc@\\string##1}{%
+          ##1%
+          \\ThisShouldNotHappen
+        }{%
+          \\csname Hy@esc@\\string##1\\endcsname
+        }%
+      }%
+    \\else
+      \\let\\Hy@escapestring\\@firstofone
+    \\fi
+  }%
+  \\def\\Hy@@escapeform#1\\Hy@escapestring#2#3\\@nil{%
+    \\ifx\\\\#3\\\\%
+    \\else
+      \\expandafter
+      \\Hy@pstringdef\\csname Hy@esc@\\string#2\\endcsname{#2}%
+      \\Hy@ReturnAfterFi{%
+        \\Hy@@escapeform#3\\@nil
+      }%
+    \\fi
+  }%
+ }{%
+  \\def\\Hy@escapeform#1{%
+    \\ifHy@pdfescapeform
+      \\let\\Hy@escapestring\\pdfescapestring
+    \\else
+      \\let\\Hy@escapestring\\@firstofone
+    \\fi
+  }%
+  \\Hy@escapeform{}%
+ }
+\\def\\PDFForm@Name{%
+  \\PDFForm@@Name\\Fld@name
+  \\ifx\\Fld@altname\\relax
+  \\else
+    \\PDFForm@@Name\\Fld@altname
+  \\fi
+  \\ifx\\Fld@mappingname\\relax
+  \\else
+    \\PDFForm@@Name\\Fld@mappingname
+  \\fi
+}
+\\def\\PDFForm@@Name#1{%
+  \\begingroup
+    \\ifnum\\Hy@pdf@majorminor@version<105 % implementation note 117, PDF spec 1.7
+      \\ifHy@unicode
+        \\Hy@unicodefalse
+      \\fi
+    \\fi
+    \\pdfstringdef\\Hy@gtemp#1%
+  \\endgroup
+  \\let#1\\Hy@gtemp
+}
+\\def\\Fld@@additionalactions{%
+  \\ifx\\Fld@keystroke@code\\@empty
+  \\else
+    /K<</S/JavaScript/JS(\\Hy@escapestring{\\Fld@keystroke@code})>>%
+  \\fi
+  \\ifx\\Fld@format@code\\@empty
+  \\else
+    /F<</S/JavaScript/JS(\\Hy@escapestring{\\Fld@format@code})>>%
+  \\fi
+  \\ifx\\Fld@validate@code\\@empty
+  \\else
+    /V<</S/JavaScript/JS(\\Hy@escapestring{\\Fld@validate@code})>>%
+  \\fi
+  \\ifx\\Fld@calculate@code\\@empty
+  \\else
+    /C<</S/JavaScript/JS(\\Hy@escapestring{\\Fld@calculate@code})>>%
+  \\fi
+  \\ifx\\Fld@onfocus@code\\@empty
+  \\else
+    /Fo<</S/JavaScript/JS(\\Hy@escapestring{\\Fld@onfocus@code})>>%
+  \\fi
+  \\ifx\\Fld@onblur@code\\@empty
+  \\else
+    /Bl<</S/JavaScript/JS(\\Hy@escapestring{\\Fld@onblur@code})>>%
+  \\fi
+  \\ifx\\Fld@onmousedown@code\\@empty
+  \\else
+    /D<</S/JavaScript/JS(\\Hy@escapestring{\\Fld@onmousedown@code})>>%
+  \\fi
+  \\ifx\\Fld@onmouseup@code\\@empty
+  \\else
+    /U<</S/JavaScript/JS(\\Hy@escapestring{\\Fld@onmouseup@code})>>%
+  \\fi
+  \\ifx\\Fld@onenter@code\\@empty
+  \\else
+    /E<</S/JavaScript/JS(\\Hy@escapestring{\\Fld@onenter@code})>>%
+  \\fi
+  \\ifx\\Fld@onexit@code\\@empty
+  \\else
+    /X<</S/JavaScript/JS(\\Hy@escapestring{\\Fld@onexit@code})>>%
+  \\fi
+}
+\\def\\Fld@additionalactions{%
+  \\if-\\Fld@@additionalactions-%
+  \\else
+    \\ifHy@pdfa
+    \\else
+      /AA<<\\Fld@@additionalactions>>%
+    \\fi
+  \\fi
+}
+\\def\\Fld@annotnames{%
+  /T(\\Fld@name)%
+  \\ifx\\Fld@altname\\relax
+  \\else
+    /TU(\\Fld@altname)%
+  \\fi
+  \\ifx\\Fld@mappingname\\relax
+  \\else
+    /TM(\\Fld@mappingname)%
+  \\fi
+}
+\\def\\PDFForm@Check{%
+  /Subtype/Widget%
+  \\Fld@annotflags
+  \\Fld@pageobjref
+  \\Fld@annotnames
+  /FT/Btn%
+  \\Fld@flags
+  /Q \\Fld@align
+  /BS<</W \\Fld@borderwidth /S/\\Fld@borderstyle>>%
+  /AP<< /N <</Yes<<>>>> >>  %new string /Yes is from below
+  /MK<<%
+    \\ifnum\\Fld@rotation=\\z@
+    \\else
+      /R \\Fld@rotation
+    \\fi
+    \\ifx\\Fld@bordercolor\\relax
+    \\else
+      /BC[\\Fld@bordercolor]%
+    \\fi
+    \\ifx\\Fld@bcolor\\relax
+    \\else
+      /BG[\\Fld@bcolor]%
+    \\fi
+    /CA(\\Hy@escapestring{\\Fld@cbsymbol})%
+  >>%
+  /DA(/ZaDb \\strip@pt\\Fld@charsize\\space Tf%
+      \\ifx\\Fld@color\\@empty\\else\\space\\Fld@color\\fi)%
+  /H/P%
+  \\ifFld@checked /V/Yes/AS/Yes\\else /V/Off/AS/Off\\fi
+  \\Fld@additionalactions
+}
+\\ifHy@pdfa
+\\else
+  \\def\\PDFForm@Push{%
+    /Subtype/Widget%
+    \\Fld@annotflags
+    \\Fld@pageobjref
+    \\Fld@annotnames
+    /FT/Btn%
+    \\Fld@flags
+    /H/P%
+    /BS<</W \\Fld@borderwidth/S/\\Fld@borderstyle>>%
+    \\ifcase0\\ifnum\\Fld@rotation=\\z@   \\else 1\\fi
+            \\ifx\\Fld@bordercolor\\relax\\else 1\\fi
+            \\space
+    \\else
+      /MK<<%
+        \\ifnum\\Fld@rotation=\\z@
+        \\else
+          /R \\Fld@rotation
+        \\fi
+        \\ifx\\Fld@bordercolor\\relax
+        \\else
+          /BC[\\Fld@bordercolor]%
+        \\fi
+      >>%
+    \\fi
+    /A<</S/JavaScript/JS(\\Hy@escapestring{\\Fld@onclick@code})>>%
+    \\Fld@additionalactions
+  }%
+\\fi
+\\def\\PDFForm@List{%
+  /Subtype/Widget%
+  \\Fld@annotflags
+  \\Fld@pageobjref
+  \\Fld@annotnames
+  /FT/Ch%
+  \\Fld@flags
+  /Q \\Fld@align
+  /BS<</W \\Fld@borderwidth/S/\\Fld@borderstyle>>%
+  \\ifcase0\\ifnum\\Fld@rotation=\\z@   \\else 1\\fi
+          \\ifx\\Fld@bordercolor\\relax\\else 1\\fi
+          \\ifx\\fld@bcolor\\relax     \\else 1\\fi
+          \\space
+  \\else
+    /MK<<%
+      \\ifnum\\Fld@rotation=\\z@
+      \\else
+        /R \\Fld@rotation
+      \\fi
+      \\ifx\\Fld@bordercolor\\relax
+      \\else
+        /BC[\\Fld@bordercolor]%
+      \\fi
+      \\ifx\\Fld@bcolor\\relax
+      \\else
+        /BG[\\Fld@bcolor]%
+      \\fi
+    >>%
+  \\fi
+  /DA(/Helv \\strip@pt\\Fld@charsize\\space Tf%
+      \\ifx\\Fld@color\\@empty\\else\\space\\Fld@color\\fi)%
+  \\Fld@choices
+  \\Fld@additionalactions
+}
+\\def\\PDFForm@Radio{%
+  /Subtype/Widget%
+  \\Fld@annotflags
+  \\Fld@pageobjref
+  \\Fld@annotnames
+  /FT/Btn%
+  \\Fld@flags
+  /H/P%
+  /BS<</W \\Fld@borderwidth/S/\\Fld@borderstyle>>%
+  /MK<<%
+    \\ifnum\\Fld@rotation=\\z@
+    \\else
+      /R \\Fld@rotation
+    \\fi
+    \\ifx\\Fld@bordercolor\\relax
+    \\else
+      /BC[\\Fld@bordercolor]%
+    \\fi
+    \\ifx\\Fld@bcolor\\relax
+    \\else
+      /BG[\\Fld@bcolor]%
+    \\fi
+    /CA(\\Hy@escapestring{\\Fld@radiosymbol})%
+  >>%
+  /DA(/ZaDb \\strip@pt\\Fld@charsize\\space Tf%
+      \\ifx\\Fld@color\\@empty\\else\\space\\Fld@color\\fi)%
+  \\ifx\\Fld@default\\@empty
+    /V/Off%
+    /DV/Off%
+  \\else
+   /V/\\Fld@default
+   /DV/\\Fld@default
+  \\fi
+  \\Fld@additionalactions
+}
+\\def\\PDFForm@Text{%
+  /Subtype/Widget%
+  \\Fld@annotflags
+  \\Fld@pageobjref
+  \\Fld@annotnames
+  /FT/Tx%
+  \\Fld@flags
+  /Q \\Fld@align
+  /BS<</W \\Fld@borderwidth\\space /S /\\Fld@borderstyle>>%
+  \\ifcase0\\ifnum\\Fld@rotation=\\z@   \\else 1\\fi
+          \\ifx\\Fld@bordercolor\\relax\\else 1\\fi
+          \\ifx\\Fld@bcolor\\relax     \\else 1\\fi
+          \\space
+  \\else
+    /MK<<%
+      \\ifnum\\Fld@rotation=\\z@
+      \\else
+        /R \\Fld@rotation
+      \\fi
+      \\ifx\\Fld@bordercolor\\relax
+      \\else
+        /BC[\\Fld@bordercolor]%
+      \\fi
+      \\ifx\\Fld@bcolor\\relax
+      \\else
+        /BG[\\Fld@bcolor]%
+      \\fi
+    >>%
+  \\fi
+  /DA(/Helv \\strip@pt\\Fld@charsize\\space Tf%
+      \\ifx\\Fld@color\\@empty\\else\\space\\Fld@color\\fi)%
+  /DV(\\Hy@escapestring{\\Fld@default})%
+  /V(\\Hy@escapestring{\\Fld@value})%
+  \\Fld@additionalactions
+  \\ifnum\\Fld@maxlen>\\z@/MaxLen \\Fld@maxlen \\fi
+}
+\\def\\PDFForm@Submit{%
+  /Subtype/Widget%
+  \\Fld@annotflags
+  \\Fld@pageobjref
+  \\Fld@annotnames
+  /FT/Btn%
+  \\Fld@flags
+  /H/P%
+  /BS<</W \\Fld@borderwidth/S/\\Fld@borderstyle>>%
+  \\ifcase0\\ifnum\\Fld@rotation=\\z@   \\else 1\\fi
+          \\ifx\\Fld@bordercolor\\relax\\else 1\\fi
+          \\space
+  \\else
+    /MK<<%
+      \\ifnum\\Fld@rotation=\\z@
+      \\else
+        /R \\Fld@rotation
+      \\fi
+      \\ifx\\Fld@bordercolor\\relax
+      \\else
+        /BC[\\Fld@bordercolor]%
+      \\fi
+    >>%
+  \\fi
+  /A<<%
+    /S/SubmitForm%
+    /F<<%
+      /FS/URL%
+      /F(\\Hy@escapestring{\\Form@action})%
+    >>%
+    \\Fld@submitflags
+  >>%
+  \\Fld@additionalactions
+}
+\\ifHy@pdfa
+\\else
+  \\def\\PDFForm@Reset{%
+    /Subtype/Widget%
+    \\Fld@annotflags
+    \\Fld@pageobjref
+    \\Fld@annotnames
+    /FT/Btn%
+    \\Fld@flags
+    /H/P%
+    /DA(/Helv \\strip@pt\\Fld@charsize\\space Tf 0 0 1 rg)%
+    \\ifcase0\\ifnum\\Fld@rotation=\\z@   \\else 1\\fi
+            \\ifx\\Fld@bordercolor\\relax\\else 1\\fi
+            \\space
+    \\else
+      /MK<<%
+        \\ifnum\\Fld@rotation=\\z@
+        \\else
+          /R \\Fld@rotation
+        \\fi
+        \\ifx\\Fld@bordercolor\\relax
+        \\else
+          /BC[\\Fld@bordercolor]%
+        \\fi
+      >>%
+    \\fi
+    /BS<</W \\Fld@borderwidth/S/\\Fld@borderstyle>>%
+    /A<</S/ResetForm>>%
+    \\Fld@additionalactions
+  }%
+\\fi
+\\def\\Hy@writebookmark#1#2#3#4#5{%
+    % section number, text, label, level, file
+  \\ifx\\WriteBookmarks\\relax%
+  \\else
+    \\ifnum#4>\\Hy@bookmarksdepth\\relax
+    \\else
+      \\@@writetorep{#1}{#2}{#3}{#4}{#5}%
+    \\fi
+  \\fi
+}
+\\def\\Hy@currentbookmarklevel{0}
+\\def\\Hy@numberline#1{#1 }
+\\def\\@@writetorep#1#2#3#4#5{%
+  \\begingroup
+    \\edef\\Hy@tempa{#5}%
+    \\ifx\\Hy@tempa\\Hy@bookmarkstype
+      \\edef\\Hy@level{#4}%
+      \\ifx\\Hy@levelcheck Y%
+        \\@tempcnta\\Hy@level\\relax
+        \\advance\\@tempcnta by -1 %
+        \\ifnum\\Hy@currentbookmarklevel<\\@tempcnta
+          \\advance\\@tempcnta by -\\Hy@currentbookmarklevel\\relax
+          \\advance\\@tempcnta by 1 %
+          \\Hy@Warning{%
+            Difference (\\the\\@tempcnta) between bookmark levels is %
+            greater \\MessageBreak than one, level fixed%
+          }%
+          \\@tempcnta\\Hy@currentbookmarklevel
+          \\advance\\@tempcnta by 1 %
+          \\edef\\Hy@level{\\the\\@tempcnta}%
+        \\fi
+      \\else
+        \\global\\let\\Hy@levelcheck Y%
+      \\fi
+      \\global\\let\\Hy@currentbookmarklevel\\Hy@level
+      \\@tempcnta\\Hy@level\\relax
+      \\expandafter\\xdef\\csname Parent\\Hy@level\\endcsname{#3}%
+      \\advance\\@tempcnta by -1 %
+      \\edef\\Hy@tempa{#3}%
+      \\edef\\Hy@tempb{\\csname Parent\\the\\@tempcnta\\endcsname}%
+      \\ifx\\Hy@tempa\\Hy@tempb
+        \\Hy@Warning{%
+          The anchor of a bookmark and its parent's must not%
+          \\MessageBreak be the same. Added a new anchor%
+        }%
+        \\phantomsection
+      \\fi
+      \\ifHy@bookmarksnumbered
+        \\let\\numberline\\Hy@numberline
+        \\let\\booknumberline\\Hy@numberline
+        \\let\\partnumberline\\Hy@numberline
+        \\let\\chapternumberline\\Hy@numberline
+      \\else
+        \\let\\numberline\\@gobble
+        \\let\\booknumberline\\@gobble
+        \\let\\partnumberline\\@gobble
+        \\let\\chapternumberline\\@gobble
+      \\fi
+      \\pdfstringdef\\Hy@tempa{#2}%
+      \\HyPsd@SanitizeForOutFile\\Hy@tempa
+      \\if@filesw
+        \\stepcounter{bookmark@seq@number}%
+        \\@ifundefined{@outlinefile}{%
+        }{%
+          \\protected@write\\@outlinefile{}{%
+            \\protect\\BOOKMARK
+              [\\Hy@level][\\@bookmarkopenstatus{\\Hy@level}]{#3}%
+              {\\Hy@tempa}{\\Hy@tempb}%
+              \\@percentchar\\space\\thebookmark@seq@number
+          }%
+        }%
+      \\fi
+    \\fi
+  \\endgroup
+}
+\\newcounter{bookmark@seq@number}
+\\begingroup
+  \\lccode\`(=\`{%
+  \\lccode\`)=\`}%
+  \\lccode\`1=\\z@
+  \\lccode\`2=\\z@
+  \\lccode\`3=\\z@
+  \\lccode\`5=\\z@
+  \\lccode\`7=\\z@
+  \\lccode\`\\#=\\z@
+  \\lccode\`\\\`=\\z@
+  \\lccode\`\\{=\\z@
+  \\lccode\`\\}=\\z@
+\\lowercase{%
+  \\endgroup
+  \\def\\HyPsd@SanitizeForOutFile#1{%
+    \\@onelevel@sanitize\\Hy@tempa
+    \\escapechar\`\\\\%
+    \\edef\\Hy@tempa{%
+      \\expandafter\\HyPsd@SanitizeOut@BraceLeft\\Hy@tempa(\\@nil
+    }%
+    \\edef\\Hy@tempa{%
+      \\expandafter\\HyPsd@SanitizeOut@BraceRight\\Hy@tempa)\\@nil
+    }%
+  }%
+  \\def\\HyPsd@SanitizeOut@BraceLeft#1(#2\\@nil{%
+    #1%
+    \\ifx\\\\#2\\\\%
+      \\expandafter\\@gobble
+    \\else
+      \\expandafter\\@firstofone
+    \\fi
+    {%
+      \\string\\173%
+      \\HyPsd@SanitizeOut@BraceLeft#2\\@nil
+    }%
+  }%
+  \\def\\HyPsd@SanitizeOut@BraceRight#1)#2\\@nil{%
+    #1%
+    \\ifx\\\\#2\\\\%
+      \\expandafter\\@gobble
+    \\else
+      \\expandafter\\@firstofone
+    \\fi
+    {%
+      \\string\\175%
+      \\HyPsd@SanitizeOut@BraceRight#2\\@nil
+    }%
+  }%
+}
+\\newcommand{\\currentpdfbookmark}{%
+  \\pdfbookmark[\\Hy@currentbookmarklevel]%
+}
+\\newcommand{\\subpdfbookmark}{%
+  \\@tempcnta\\Hy@currentbookmarklevel
+  \\Hy@StepCount\\@tempcnta
+  \\expandafter\\pdfbookmark\\expandafter[\\the\\@tempcnta]%
+}
+\\newcommand{\\belowpdfbookmark}[2]{%
+  \\@tempcnta\\Hy@currentbookmarklevel
+  \\Hy@StepCount\\@tempcnta
+  \\expandafter\\pdfbookmark\\expandafter[\\the\\@tempcnta]{#1}{#2}%
+  \\advance\\@tempcnta by -1 %
+  \\xdef\\Hy@currentbookmarklevel{\\the\\@tempcnta}%
+}
+\\renewcommand\\pdfbookmark[3][0]{%
+  \\Hy@writebookmark{}{#2}{#3.#1}{#1}{toc}%
+  \\hyper@anchorstart{#3.#1}\\hyper@anchorend
+}
+\\def\\BOOKMARK{%
+  \\@ifnextchar[{\\@BOOKMARK}{\\@@BOOKMARK[1][-]}%
+}
+\\def\\@BOOKMARK[#1]{%
+  \\@ifnextchar[{\\@@BOOKMARK[{#1}]}{\\@@BOOKMARK[{#1}][-]}%
+}
+\\RequirePackage{rerunfilecheck}[2009/12/10]
+\\def\\Hy@OutlineRerunCheck{%
+  \\RerunFileCheck{\\jobname.out}{%
+    \\immediate\\closeout\\@outlinefile
+  }{%
+    Rerun to get outlines right\\MessageBreak
+    or use package \`bookmark'%
+  }%
+}
+\\def\\ReadBookmarks{%
+  \\pdf@ifdraftmode{}{%
+    \\begingroup
+      \\def\\do##1{%
+        \\ifnum\\catcode\`##1=\\active
+          \\@makeother##1%
+        \\else
+          \\ifnum\\catcode\`##1=6 %
+            \\@makeother##1%
+          \\fi
+        \\fi
+      }%
+      \\dospecials
+      \\Hy@safe@activestrue
+      \\escapechar=\`\\\\%
+      \\def\\@@BOOKMARK[##1][##2]##3##4##5{%
+        \\calc@bm@number{##5}%
+      }%
+      \\InputIfFileExists{\\jobname.out}{}{}%
+      \\ifx\\WriteBookmarks\\relax
+        \\global\\let\\WriteBookmarks\\relax
+      \\fi
+      \\def\\@@BOOKMARK[##1][##2]##3##4##5{%
+        \\def\\Hy@temp{##4}%
+        \\Hy@pstringdef\\Hy@pstringName{\\HyperDestNameFilter{##3}}%
+        \\Hy@OutlineName{}\\Hy@pstringName{%
+          ##2\\check@bm@number{##3}%
+        }{%
+          \\expandafter\\strip@prefix\\meaning\\Hy@temp
+        }%
+      }%
+      \\begingroup
+        \\def\\WriteBookmarks{0}%
+        \\InputIfFileExists{\\jobname.out}{}{}%
+      \\endgroup
+      %{\\escapechar\\m@ne\\InputIfFileExists{\\jobname.out}{}{}}%
+    \\endgroup
+  }%
+  \\ifx\\WriteBookmarks\\relax
+  \\else
+    \\if@filesw
+      \\newwrite\\@outlinefile
+      \\Hy@OutlineRerunCheck
+      \\immediate\\openout\\@outlinefile=\\jobname.out\\relax
+    \\fi
+  \\fi
+}
+\\def\\Hy@OutlineName#1#2#3#4{%
+  \\pdfoutline goto name{#2}count#3{#4}%
+}
+\\def\\check@bm@number#1{%
+  \\expandafter\\ifx\\csname B_#1\\endcsname\\relax
+    0%
+  \\else
+    \\csname B_#1\\endcsname
+  \\fi
+}
+\\def\\calc@bm@number#1{%
+  \\@tempcnta=\\check@bm@number{#1}\\relax
+  \\advance\\@tempcnta by 1 %
+  \\expandafter\\xdef\\csname B_#1\\endcsname{\\the\\@tempcnta}%
+}
+\\ifHy@implicit
+\\else
+  \\expandafter\\endinput
+\\fi
+\\newlength\\Hy@SectionHShift
+\\def\\Hy@SectionAnchorHref#1{%
+  \\ifx\\protect\\@typeset@protect
+    \\Hy@@SectionAnchor{#1}%
+  \\fi
+}
+\\DeclareRobustCommand*{\\Hy@@SectionAnchor}[1]{%
+  \\leavevmode
+  \\hbox to 0pt{%
+    \\kern-\\Hy@SectionHShift
+    \\Hy@raisedlink{%
+      \\hyper@anchorstart{#1}\\hyper@anchorend
+    }%
+    \\hss
+  }%
+}
+\\AddToNoCaseChangeList{\\Hy@@SectionAnchor}
+\\@ifundefined{hyper@nopatch@sectioning}
+{
+\\let\\H@old@ssect\\@ssect
+\\def\\@ssect#1#2#3#4#5{%
+  \\Hy@MakeCurrentHrefAuto{section*}%
+  \\setlength{\\Hy@SectionHShift}{#1}%
+  \\begingroup
+    \\toks@{\\H@old@ssect{#1}{#2}{#3}{#4}}%
+    \\toks\\tw@\\expandafter{%
+      \\expandafter\\Hy@SectionAnchorHref\\expandafter{\\@currentHref}%
+      #5%
+    }%
+  \\edef\\x{\\endgroup
+    \\the\\toks@{\\the\\toks\\tw@}%
+  }\\x
+}
+\\let\\H@old@schapter\\@schapter
+\\def\\@schapter#1{%
+  \\begingroup
+    \\let\\@mkboth\\@gobbletwo
+    \\Hy@MakeCurrentHrefAuto{\\Hy@chapapp*}%
+    \\Hy@raisedlink{%
+      \\hyper@anchorstart{\\@currentHref}\\hyper@anchorend
+    }%
+  \\endgroup
+  \\H@old@schapter{#1}%
+}
+\\@ifundefined{@chapter}{}{%
+  \\let\\Hy@org@chapter\\@chapter
+  \\def\\@chapter{%
+    \\def\\Hy@next{%
+      \\Hy@MakeCurrentHrefAuto{\\Hy@chapapp*}%
+      \\Hy@raisedlink{%
+        \\hyper@anchorstart{\\@currentHref}\\hyper@anchorend
+      }%
+    }%
+    \\ifnum\\c@secnumdepth>\\m@ne
+      \\@ifundefined{if@mainmatter}%
+      \\iftrue{\\csname if@mainmatter\\endcsname}%
+        \\let\\Hy@next\\relax
+      \\fi
+    \\fi
+    \\Hy@next
+    \\Hy@org@chapter
+  }%
+}
+\\let\\H@old@part\\@part
+\\@ifundefined{chapter}
+  {\\let\\Hy@secnum@part\\z@}
+  {\\let\\Hy@secnum@part\\m@ne}
+\\def\\@part{%
+  \\ifnum\\Hy@secnum@part>\\c@secnumdepth
+    \\phantomsection
+  \\fi
+  \\H@old@part
+}
+\\let\\H@old@spart\\@spart
+\\def\\@spart#1{%
+  \\Hy@MakeCurrentHrefAuto{part*}%
+  \\Hy@raisedlink{%
+    \\hyper@anchorstart{\\@currentHref}\\hyper@anchorend
+  }%
+  \\H@old@spart{#1}%
+}
+\\let\\H@old@sect\\@sect
+\\def\\@sect#1#2#3#4#5#6[#7]#8{%
+  \\ifnum #2>\\c@secnumdepth
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+  \\fi
+  {%
+    \\Hy@MakeCurrentHrefAuto{section*}%
+    \\setlength{\\Hy@SectionHShift}{#3}%
+    \\begingroup
+      \\toks@{\\H@old@sect{#1}{#2}{#3}{#4}{#5}{#6}[{#7}]}%
+      \\toks\\tw@\\expandafter{%
+        \\expandafter\\Hy@SectionAnchorHref\\expandafter{\\@currentHref}%
+        #8%
+      }%
+    \\edef\\x{\\endgroup
+      \\the\\toks@{\\the\\toks\\tw@}%
+    }\\x
+  }{%
+    \\H@old@sect{#1}{#2}{#3}{#4}{#5}{#6}[{#7}]{#8}%
+  }%
+}
+}{}
+\\expandafter\\def\\csname Parent-4\\endcsname{}
+\\expandafter\\def\\csname Parent-3\\endcsname{}
+\\expandafter\\def\\csname Parent-2\\endcsname{}
+\\expandafter\\def\\csname Parent-1\\endcsname{}
+\\expandafter\\def\\csname Parent0\\endcsname{}
+\\expandafter\\def\\csname Parent1\\endcsname{}
+\\expandafter\\def\\csname Parent2\\endcsname{}
+\\expandafter\\def\\csname Parent3\\endcsname{}
+\\expandafter\\def\\csname Parent4\\endcsname{}
+\\endinput
+%%
+%% End of file \`hpdftex.def'.
+` },
   { format: 32, filename: 'l3backend-pdfmode.def', content: `
+%%
+%% This is file \`l3backend-pdftex.def',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% l3backend-basics.dtx  (with options: \`package,pdftex')
+%% l3backend-color.dtx  (with options: \`package,pdftex')
+%% l3backend-box.dtx  (with options: \`package,pdftex')
+%% l3backend-draw.dtx  (with options: \`package,pdftex')
+%% l3backend-graphics.dtx  (with options: \`package,pdftex')
+%% l3backend-pdf.dtx  (with options: \`package,pdftex')
+%% l3backend-pdfannot.dtx  (with options: \`package,pdftex')
+%% l3backend-opacity.dtx  (with options: \`package,pdftex')
+%% 
+%% Copyright (C) 2019-2025 The LaTeX Project
+%% 
+%% It may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License (LPPL), either version 1.3c of
+%% this license or (at your option) any later version.  The latest
+%% version of this license is in the file:
+%% 
+%%    https://www.latex-project.org/lppl.txt
+%% 
+%% This file is part of the "l3backend bundle" (The Work in LPPL)
+%% and all files in that bundle must be distributed together.
+%% 
+%% File: l3backend-basics.dtx
+\\ProvidesExplFile
+  {l3backend-pdftex.def}{2025-10-09}{}
+  {L3 backend support: PDF output (pdfTeX)}
+\\cs_if_exist:NTF \\__kernel_dependency_version_check:nn
+  {
+    \\__kernel_dependency_version_check:nn {2023-10-10}
+      {l3backend-pdftex.def}
+  }
+  {
+    \\cs_if_exist_use:cF { @latex@error } { \\errmessage }
+      {
+        Mismatched~LaTeX~support~files~detected. \\MessageBreak
+        Loading~aborted!
+      }
+      { \\use:c { @ehd } }
+    \\tex_endinput:D
+  }
+\\cs_new_eq:NN \\__kernel_backend_literal:e \\tex_special:D
+\\cs_new_protected:Npn \\__kernel_backend_literal:n #1
+  { \\__kernel_backend_literal:e { \\exp_not:n {#1} } }
+\\cs_if_exist:NTF \\@ifl@t@r
+  {
+    \\@ifl@t@r \\fmtversion { 2020-10-01 }
+      {
+        \\cs_new_protected:Npn \\__kernel_backend_first_shipout:n #1
+          { \\hook_gput_code:nnn { shipout / firstpage } { l3backend } {#1} }
+      }
+      { \\cs_new_eq:NN \\__kernel_backend_first_shipout:n \\AtBeginDvi }
+  }
+  { \\cs_new_eq:NN \\__kernel_backend_first_shipout:n \\use:n }
+\\cs_new_protected:Npn \\__kernel_backend_literal_pdf:n #1
+  {
+    \\tex_pdfliteral:D
+      { \\exp_not:n {#1} }
+  }
+\\cs_new_protected:Npn \\__kernel_backend_literal_pdf:e #1
+  {
+    \\tex_pdfliteral:D
+      {#1}
+  }
+\\cs_new_protected:Npn \\__kernel_backend_literal_page:n #1
+  {
+    \\tex_pdfliteral:D
+        page { \\exp_not:n {#1} }
+  }
+\\cs_new_protected:Npn \\__kernel_backend_literal_page:e #1
+  {
+    \\tex_pdfliteral:D
+        page {#1}
+  }
+\\cs_new_protected:Npn \\__kernel_backend_scope_begin:
+  {
+    \\tex_pdfsave:D
+  }
+\\cs_new_protected:Npn \\__kernel_backend_scope_end:
+  {
+    \\tex_pdfrestore:D
+  }
+\\cs_new_protected:Npn \\__kernel_backend_matrix:n #1
+  {
+    \\tex_pdfsetmatrix:D
+        { \\exp_not:n {#1} }
+  }
+\\cs_new_protected:Npn \\__kernel_backend_matrix:e #1
+  {
+    \\tex_pdfsetmatrix:D
+        {#1}
+  }
+%% File: l3backend-color.dtx
+\\int_new:N \\l__color_backend_stack_int
+\\cs_new_protected:Npn \\__kernel_color_backend_stack_init:Nnn #1#2#3
+  {
+    \\int_const:Nn #1
+      {
+        \\tex_pdfcolorstackinit:D
+        \\tl_if_blank:nF {#2} { #2 ~ }
+        {#3}
+      }
+  }
+\\cs_new_protected:Npn \\__kernel_color_backend_stack_push:nn #1#2
+  {
+    \\tex_pdfcolorstack:D
+      \\int_eval:n {#1} ~ push ~ {#2}
+  }
+\\cs_new_protected:Npn \\__kernel_color_backend_stack_pop:n #1
+  {
+    \\tex_pdfcolorstack:D
+      \\int_eval:n {#1} ~ pop \\scan_stop:
+  }
+\\tl_new:N \\l__color_backend_fill_tl
+\\tl_new:N \\l__color_backend_stroke_tl
+\\tl_set:Nn \\l__color_backend_fill_tl { 0 ~ g }
+\\tl_set:Nn \\l__color_backend_stroke_tl { 0 ~ G }
+\\cs_new_protected:Npn \\__color_backend_select_cmyk:n #1
+  { \\__color_backend_select:nn { #1 ~ k } { #1 ~ K } }
+\\cs_new_protected:Npn \\__color_backend_select_gray:n #1
+  { \\__color_backend_select:nn { #1 ~ g } { #1 ~ G } }
+\\cs_new_protected:Npn \\__color_backend_select_rgb:n #1
+  { \\__color_backend_select:nn { #1 ~ rg } { #1 ~ RG } }
+\\cs_new_protected:Npn \\__color_backend_select:nn #1#2
+  {
+    \\tl_set:Nn \\l__color_backend_fill_tl {#1}
+    \\tl_set:Nn \\l__color_backend_stroke_tl {#2}
+    \\__kernel_color_backend_stack_push:nn \\l__color_backend_stack_int { #1 ~ #2 }
+  }
+\\cs_new_protected:Npn \\__color_backend_reset:
+  { \\__kernel_color_backend_stack_pop:n \\l__color_backend_stack_int }
+\\prop_new:N \\g__color_backend_colorant_prop
+\\cs_new:Npe \\__color_backend_devicen_colorants:n #1
+  {
+    \\exp_not:N \\tl_if_blank:nF {#1}
+      {
+        \\c_space_tl
+        << ~
+          /Colorants ~
+            << ~
+              \\exp_not:N \\__color_backend_devicen_colorants:w #1 ~
+                \\exp_not:N \\q_recursion_tail \\c_space_tl
+                \\exp_not:N \\q_recursion_stop
+            >> ~
+        >>
+      }
+  }
+\\cs_new:Npn \\__color_backend_devicen_colorants:w #1 ~
+  {
+    \\quark_if_recursion_tail_stop:n {#1}
+    \\prop_if_in:NnT \\g__color_backend_colorant_prop {#1}
+      {
+        #1 ~
+        \\prop_item:Nn \\g__color_backend_colorant_prop {#1} ~
+      }
+    \\__color_backend_devicen_colorants:w
+  }
+\\cs_new_protected:Npn \\__color_backend_select_separation:nn #1#2
+  { \\__color_backend_select:nn { /#1 ~ cs ~ #2 ~ scn  } { /#1 ~ CS ~ #2 ~ SCN } }
+\\cs_new_eq:NN \\__color_backend_select_devicen:nn \\__color_backend_select_separation:nn
+\\cs_new_eq:NN \\__color_backend_select_iccbased:nn \\__color_backend_select_separation:nn
+\\cs_new_protected:Npn \\__color_backend_init_resource:n #1
+  {
+    \\bool_lazy_and:nnT
+      { \\cs_if_exist_p:N \\pdfmanagement_if_active_p: }
+      { \\pdfmanagement_if_active_p: }
+      {
+        \\use:e
+          {
+            \\pdfmanagement_add:nnn
+              { Page / Resources / ColorSpace }
+              { #1 }
+              { \\pdf_object_ref_last: }
+          }
+      }
+  }
+\\cs_new_protected:Npn \\__color_backend_separation_init:nnnnn #1#2#3#4#5
+  {
+    \\pdf_object_unnamed_write:ne { dict }
+      {
+        /FunctionType ~ 2
+        /Domain ~ [0 ~ 1]
+        \\tl_if_blank:nF {#3} { /Range ~ [#3] }
+        /C0 ~ [#4] ~
+        /C1 ~ [#5] /N ~ 1
+      }
+    \\exp_args:Ne \\__color_backend_separation_init:nn
+      { \\str_convert_pdfname:n {#1} } {#2}
+    \\__color_backend_init_resource:n { color \\int_use:N \\g__color_model_int }
+  }
+\\cs_new_protected:Npn \\__color_backend_separation_init:nn #1#2
+  {
+    \\use:e
+      {
+        \\pdf_object_new:n { color \\int_use:N \\g__color_model_int }
+        \\pdf_object_write:nnn { color \\int_use:N \\g__color_model_int } { array }
+          { /Separation /#1 ~ #2 ~ \\pdf_object_ref_last: }
+      }
+    \\prop_gput:Nne \\g__color_backend_colorant_prop { /#1 }
+      { \\pdf_object_ref_last: }
+  }
+\\cs_new_protected:Npn \\__color_backend_separation_init_CIELAB:nnn #1#2#3
+  {
+    \\pdf_object_if_exist:nF { __color_illuminant_CIELAB_ #1 }
+      {
+        \\pdf_object_new:n { __color_illuminant_CIELAB_ #1 }
+        \\pdf_object_write:nne { __color_illuminant_CIELAB_ #1 } { array }
+          {
+            /Lab ~
+            <<
+              /WhitePoint ~
+                [ \\tl_use:c { c__color_model_whitepoint_CIELAB_ #1 _tl } ]
+              /Range ~ [ \\c__color_model_range_CIELAB_tl ]
+            >>
+          }
+      }
+    \\__color_backend_separation_init:nnnnn
+      {#2}
+      { \\pdf_object_ref:n { __color_illuminant_CIELAB_ #1 } }
+      { \\c__color_model_range_CIELAB_tl }
+      { 100 ~ 0 ~ 0 }
+      {#3}
+  }
+\\cs_new_protected:Npn \\__color_backend_devicen_init:nnn #1#2#3
+  {
+    \\pdf_object_unnamed_write:ne { stream }
+      {
+        {
+          /FunctionType ~ 4 ~
+          /Domain ~
+            [ ~
+              \\prg_replicate:nn
+                { 0 \\__color_backend_devicen_init:w #1 ~ \\s__color_stop }
+                { 0 ~ 1 ~ }
+            ] ~
+          /Range ~
+            [ ~
+              \\str_case:nn {#2}
+                {
+                  { /DeviceCMYK } { 0 ~ 1 ~ 0 ~ 1 ~ 0 ~ 1 ~ 0 ~ 1 }
+                  { /DeviceGray } { 0 ~ 1 }
+                  { /DeviceRGB }  { 0 ~ 1 ~ 0 ~ 1 ~ 0 ~ 1 }
+                } ~
+            ]
+        }
+        { {#3} }
+      }
+    \\use:e
+      {
+        \\pdf_object_new:n { color \\int_use:N \\g__color_model_int }
+        \\pdf_object_write:nnn { color \\int_use:N \\g__color_model_int } { array }
+          {
+            /DeviceN ~
+            [ ~ #1 ~ ] ~
+            #2 ~
+            \\pdf_object_ref_last:
+            \\__color_backend_devicen_colorants:n {#1}
+          }
+      }
+    \\__color_backend_init_resource:n { color \\int_use:N \\g__color_model_int }
+  }
+\\cs_new:Npn \\__color_backend_devicen_init:w #1 ~ #2 \\s__color_stop
+  {
+    + 1
+    \\tl_if_blank:nF {#2}
+      { \\__color_backend_devicen_init:w #2 \\s__color_stop }
+  }
+\\cs_new_protected:Npn \\__color_backend_iccbased_init:nnn #1#2#3
+  {
+    \\pdf_object_if_exist:nF { __color_icc_ #1 }
+      {
+        \\pdf_object_new:n { __color_icc_ #1 }
+        \\pdf_object_write:nne { __color_icc_ #1 } { fstream }
+          {
+            {
+              /N ~ \\exp_not:n { #2 } ~
+              \\tl_if_empty:nF { #3 } { /Range~[ #3 ] }
+            }
+            {#1}
+          }
+      }
+    \\pdf_object_unnamed_write:ne { array }
+      { /ICCBased ~ \\pdf_object_ref:n { __color_icc_ #1 } }
+    \\__color_backend_init_resource:n { color \\int_use:N \\g__color_model_int }
+  }
+\\cs_new_protected:Npn \\__color_backend_iccbased_device:nnn #1#2#3
+  {
+    \\pdf_object_if_exist:nF { __color_icc_ #1 }
+      {
+        \\pdf_object_new:n { __color_icc_ #1 }
+        \\pdf_object_write:nnn { __color_icc_ #1 } { fstream }
+          {
+            { /N ~ #3 }
+            {#1}
+          }
+      }
+    \\pdf_object_unnamed_write:ne { array }
+      { /ICCBased ~ \\pdf_object_ref:n { __color_icc_ #1 } }
+    \\__color_backend_init_resource:n { Default #2 }
+  }
+\\cs_new_protected:Npn \\__color_backend_fill_cmyk:n #1
+  { \\__color_backend_fill:n { #1 ~ k } }
+\\cs_new_protected:Npn \\__color_backend_fill_gray:n #1
+  { \\__color_backend_fill:n { #1 ~ g } }
+\\cs_new_protected:Npn \\__color_backend_fill_rgb:n #1
+  { \\__color_backend_fill:n { #1 ~ rg } }
+\\cs_new_protected:Npn \\__color_backend_fill:n #1
+  {
+    \\tl_set:Nn \\l__color_backend_fill_tl {#1}
+    \\__kernel_color_backend_stack_push:nn \\l__color_backend_stack_int
+      { #1 ~ \\l__color_backend_stroke_tl }
+  }
+\\cs_new_protected:Npn \\__color_backend_stroke_cmyk:n #1
+  { \\__color_backend_stroke:n { #1 ~ K } }
+\\cs_new_protected:Npn \\__color_backend_stroke_gray:n #1
+  { \\__color_backend_stroke:n { #1 ~ G } }
+\\cs_new_protected:Npn \\__color_backend_stroke_rgb:n #1
+  { \\__color_backend_stroke:n { #1 ~ RG } }
+\\cs_new_protected:Npn \\__color_backend_stroke:n #1
+  {
+    \\tl_set:Nn \\l__color_backend_stroke_tl {#1}
+    \\__kernel_color_backend_stack_push:nn \\l__color_backend_stack_int
+      { \\l__color_backend_fill_tl \\c_space_tl #1 }
+  }
+\\cs_new_protected:Npn \\__color_backend_fill_separation:nn #1#2
+  { \\__color_backend_fill:n { /#1 ~ cs ~ #2 ~ scn } }
+\\cs_new_protected:Npn \\__color_backend_stroke_separation:nn #1#2
+  { \\__color_backend_stroke:n { /#1 ~ CS ~ #2 ~ SCN } }
+\\cs_new_eq:NN \\__color_backend_fill_devicen:nn \\__color_backend_fill_separation:nn
+\\cs_new_eq:NN \\__color_backend_stroke_devicen:nn \\__color_backend_stroke_separation:nn
+\\cs_new_eq:NN \\__color_backend_fill_reset: \\__color_backend_reset:
+\\cs_new_eq:NN \\__color_backend_stroke_reset: \\__color_backend_reset:
+%% File: l3backend-box.dtx
+\\cs_new_protected:Npn \\__box_backend_clip:N #1
+  {
+    \\__kernel_backend_scope_begin:
+    \\__kernel_backend_literal_pdf:e
+      {
+        0~
+        \\dim_to_decimal_in_bp:n { -\\box_dp:N #1 } ~
+        \\dim_to_decimal_in_bp:n { \\box_wd:N #1 } ~
+        \\dim_to_decimal_in_bp:n { \\box_ht:N #1 + \\box_dp:N #1 } ~
+        re~W~n
+      }
+    \\hbox_overlap_right:n { \\box_use:N #1 }
+    \\__kernel_backend_scope_end:
+    \\skip_horizontal:n { \\box_wd:N #1 }
+  }
+\\cs_new_protected:Npn \\__box_backend_rotate:Nn #1#2
+  { \\exp_args:NNf \\__box_backend_rotate_aux:Nn #1 { \\fp_eval:n {#2} } }
+\\cs_new_protected:Npn \\__box_backend_rotate_aux:Nn #1#2
+  {
+    \\__kernel_backend_scope_begin:
+    \\box_set_wd:Nn #1 { 0pt }
+    \\fp_set:Nn \\l__box_backend_cos_fp { round ( cosd ( #2 ) , 5 ) }
+    \\fp_compare:nNnT \\l__box_backend_cos_fp = \\c_zero_fp
+      { \\fp_zero:N \\l__box_backend_cos_fp }
+    \\fp_set:Nn \\l__box_backend_sin_fp { round ( sind ( #2 ) , 5 ) }
+    \\__kernel_backend_matrix:e
+      {
+        \\fp_use:N \\l__box_backend_cos_fp \\c_space_tl
+        \\fp_compare:nNnTF \\l__box_backend_sin_fp = \\c_zero_fp
+          { 0~0 }
+          {
+            \\fp_use:N \\l__box_backend_sin_fp
+            \\c_space_tl
+            \\fp_eval:n { -\\l__box_backend_sin_fp }
+          }
+        \\c_space_tl
+        \\fp_use:N \\l__box_backend_cos_fp
+      }
+    \\box_use:N #1
+    \\__kernel_backend_scope_end:
+  }
+\\fp_new:N \\l__box_backend_cos_fp
+\\fp_new:N \\l__box_backend_sin_fp
+\\cs_new_protected:Npn \\__box_backend_scale:Nnn #1#2#3
+  {
+    \\__kernel_backend_scope_begin:
+    \\__kernel_backend_matrix:e
+      {
+        \\fp_eval:n { round ( #2 , 5 ) } ~
+        0~0~
+        \\fp_eval:n { round ( #3 , 5 ) }
+      }
+    \\hbox_overlap_right:n { \\box_use:N #1 }
+    \\__kernel_backend_scope_end:
+  }
+%% File: l3backend-draw.dtx
+\\cs_new_eq:NN \\__draw_backend_literal:n \\__kernel_backend_literal_pdf:n
+\\cs_new_eq:NN \\__draw_backend_literal:e \\__kernel_backend_literal_pdf:e
+\\cs_new_protected:Npn \\__draw_backend_begin:
+  { \\__draw_backend_scope_begin: }
+\\cs_new_protected:Npn \\__draw_backend_end:
+  { \\__draw_backend_scope_end: }
+\\cs_new_eq:NN \\__draw_backend_scope_begin: \\__kernel_backend_scope_begin:
+\\cs_new_eq:NN \\__draw_backend_scope_end: \\__kernel_backend_scope_end:
+\\cs_new_protected:Npn \\__draw_backend_moveto:nn #1#2
+  {
+    \\__draw_backend_literal:e
+      { \\dim_to_decimal_in_bp:n {#1} ~ \\dim_to_decimal_in_bp:n {#2} ~ m }
+  }
+\\cs_new_protected:Npn \\__draw_backend_lineto:nn #1#2
+  {
+    \\__draw_backend_literal:e
+      { \\dim_to_decimal_in_bp:n {#1} ~ \\dim_to_decimal_in_bp:n {#2} ~ l }
+  }
+\\cs_new_protected:Npn \\__draw_backend_curveto:nnnnnn #1#2#3#4#5#6
+  {
+    \\__draw_backend_literal:e
+      {
+        \\dim_to_decimal_in_bp:n {#1} ~ \\dim_to_decimal_in_bp:n {#2} ~
+        \\dim_to_decimal_in_bp:n {#3} ~ \\dim_to_decimal_in_bp:n {#4} ~
+        \\dim_to_decimal_in_bp:n {#5} ~ \\dim_to_decimal_in_bp:n {#6} ~
+        c
+      }
+  }
+\\cs_new_protected:Npn \\__draw_backend_rectangle:nnnn #1#2#3#4
+  {
+    \\__draw_backend_literal:e
+      {
+        \\dim_to_decimal_in_bp:n {#1} ~ \\dim_to_decimal_in_bp:n {#2} ~
+        \\dim_to_decimal_in_bp:n {#3} ~ \\dim_to_decimal_in_bp:n {#4} ~
+        re
+      }
+  }
+\\cs_new_protected:Npn \\__draw_backend_evenodd_rule:
+  { \\bool_gset_true:N \\g__draw_draw_eor_bool }
+\\cs_new_protected:Npn \\__draw_backend_nonzero_rule:
+  { \\bool_gset_false:N \\g__draw_draw_eor_bool }
+\\bool_new:N \\g__draw_draw_eor_bool
+\\cs_new_protected:Npn \\__draw_backend_closepath:
+  { \\__draw_backend_literal:n { h } }
+\\cs_new_protected:Npn \\__draw_backend_stroke:
+  { \\__draw_backend_literal:n { S } }
+\\cs_new_protected:Npn \\__draw_backend_closestroke:
+  { \\__draw_backend_literal:n { s } }
+\\cs_new_protected:Npn \\__draw_backend_fill:
+  {
+    \\__draw_backend_literal:e
+      { f \\bool_if:NT \\g__draw_draw_eor_bool * }
+  }
+\\cs_new_protected:Npn \\__draw_backend_fillstroke:
+  {
+    \\__draw_backend_literal:e
+      { B \\bool_if:NT \\g__draw_draw_eor_bool * }
+  }
+\\cs_new_protected:Npn \\__draw_backend_clip:
+  {
+    \\__draw_backend_literal:e
+      { W \\bool_if:NT \\g__draw_draw_eor_bool * }
+  }
+\\cs_new_protected:Npn \\__draw_backend_discardpath:
+  { \\__draw_backend_literal:n { n } }
+\\cs_new_protected:Npn \\__draw_backend_dash_pattern:nn #1#2
+  {
+    \\__draw_backend_literal:e
+      {
+        [
+          \\exp_args:Nf \\use:n
+            { \\clist_map_function:nN {#1} \\__draw_backend_dash:n }
+        ] ~
+        \\dim_to_decimal_in_bp:n {#2} ~ d
+      }
+  }
+\\cs_new:Npn \\__draw_backend_dash:n #1
+  { ~ \\dim_to_decimal_in_bp:n {#1} }
+\\cs_new_protected:Npn \\__draw_backend_linewidth:n #1
+  {
+    \\__draw_backend_literal:e
+      { \\dim_to_decimal_in_bp:n {#1} ~ w }
+  }
+\\cs_new_protected:Npn \\__draw_backend_miterlimit:n #1
+  { \\__draw_backend_literal:e { #1 ~ M } }
+\\cs_new_protected:Npn \\__draw_backend_cap_butt:
+  { \\__draw_backend_literal:n { 0 ~ J } }
+\\cs_new_protected:Npn \\__draw_backend_cap_round:
+  { \\__draw_backend_literal:n { 1 ~ J } }
+\\cs_new_protected:Npn \\__draw_backend_cap_rectangle:
+  { \\__draw_backend_literal:n { 2 ~ J } }
+\\cs_new_protected:Npn \\__draw_backend_join_miter:
+  { \\__draw_backend_literal:n { 0 ~ j } }
+\\cs_new_protected:Npn \\__draw_backend_join_round:
+  { \\__draw_backend_literal:n { 1 ~ j } }
+\\cs_new_protected:Npn \\__draw_backend_join_bevel:
+  { \\__draw_backend_literal:n { 2 ~ j } }
+\\cs_new_protected:Npn \\__draw_backend_transform:nnnn #1#2#3#4
+  {
+    \\__kernel_backend_matrix:n { #1 ~ #2 ~ #3 ~ #4 }
+  }
+\\cs_new_protected:Npn \\__draw_backend_shift:nn #1#2
+  {
+    \\__draw_backend_literal:n
+      { 1 ~ 0 ~ 0 ~ 1 ~ #1 ~ #2 ~ cm }
+  }
+\\cs_new_protected:Npn \\__draw_backend_box_use:Nnnnn #1#2#3#4#5
+  {
+    \\__kernel_backend_scope_begin:
+    \\__kernel_backend_matrix:n { #2 ~ #3 ~ #4 ~ #5 }
+    \\hbox_overlap_right:n { \\box_use:N #1 }
+    \\__kernel_backend_scope_end:
+  }
+%% File: l3backend-graphics.dtx
+\\seq_set_from_clist:Nn \\l_graphics_search_ext_seq
+  { .pdf , .eps , .ps , .png , .jpg , .jpeg  }
+\\tl_new:N \\l__graphics_attr_tl
+\\bool_new:N \\l__graphics_transgroup_bool
+\\cs_new_protected:Npn \\__graphics_backend_getbb_jpg:n #1
+  {
+    \\int_zero:N \\l__graphics_page_int
+    \\tl_clear:N \\l__graphics_pagebox_tl
+    \\bool_set_false:N\\l__graphics_transgroup_bool
+    \\tl_set:Ne \\l__graphics_attr_tl
+      {
+        \\tl_if_empty:NF \\l__graphics_decodearray_str
+          { :D \\l__graphics_decodearray_str }
+        \\bool_if:NT \\l__graphics_interpolate_bool
+          { :I }
+        \\str_if_empty:NF \\l__graphics_pdf_str
+          { :X \\l__graphics_pdf_str }
+      }
+    \\__graphics_backend_getbb_auxi:n {#1}
+  }
+\\cs_new_eq:NN \\__graphics_backend_getbb_jpeg:n \\__graphics_backend_getbb_jpg:n
+\\cs_new_eq:NN \\__graphics_backend_getbb_png:n \\__graphics_backend_getbb_jpg:n
+\\cs_new_protected:Npn \\__graphics_backend_getbb_pdf:n #1
+  {
+    \\tl_clear:N \\l__graphics_decodearray_str
+    \\bool_set_true:N \\l__graphics_transgroup_bool
+    \\bool_set_false:N \\l__graphics_interpolate_bool
+    \\tl_set:Ne \\l__graphics_attr_tl
+      {
+        : \\l__graphics_pagebox_tl
+        \\int_compare:nNnT \\l__graphics_page_int > 1
+          { :P \\int_use:N \\l__graphics_page_int }
+        \\str_if_empty:NF \\l__graphics_pdf_str
+          { :X \\l__graphics_pdf_str }
+      }
+    \\__graphics_backend_getbb_auxi:n {#1}
+  }
+\\cs_new_protected:Npn \\__graphics_backend_getbb_auxi:n #1
+  {
+    \\__graphics_bb_restore:eF { #1 \\l__graphics_attr_tl }
+      { \\__graphics_backend_getbb_auxii:n {#1} }
+  }
+\\cs_new_protected:Npn \\__graphics_backend_getbb_auxii:n #1
+  {
+    \\exp_args:Ne \\__graphics_backend_getbb_auxiii:n
+      { \\__graphics_backend_dequote:w #1 " #1 " \\s__graphics_stop }
+    \\int_const:cn { c__graphics_ #1 \\l__graphics_attr_tl _int }
+      { \\tex_the:D \\tex_pdflastximage:D }
+    \\__graphics_bb_save:e { #1 \\l__graphics_attr_tl }
+  }
+\\cs_new_protected:Npn \\__graphics_backend_getbb_auxiii:n #1
+  {
+    \\tex_immediate:D \\tex_pdfximage:D
+      \\bool_lazy_any:nT
+        {
+          { \\l__graphics_interpolate_bool }
+          { \\l__graphics_transgroup_bool }
+          { ! \\tl_if_empty_p:N \\l__graphics_decodearray_str }
+          { ! \\str_if_empty_p:N \\l__graphics_pdf_str }
+        }
+        {
+          attr ~
+            {
+              \\tl_if_empty:NF \\l__graphics_decodearray_str
+                { /Decode~[ \\l__graphics_decodearray_str ] }
+              \\bool_if:NT \\l__graphics_transgroup_bool
+                { /Group << /S /Transparency /K ~ false /I ~ false >> }
+              \\bool_if:NT \\l__graphics_interpolate_bool
+                { /Interpolate~true }
+              \\l__graphics_pdf_str
+            }
+        }
+      \\int_compare:nNnT \\l__graphics_page_int > 0
+        { page ~ \\int_use:N \\l__graphics_page_int }
+      \\tl_if_empty:NF \\l__graphics_pagebox_tl
+        { \\l__graphics_pagebox_tl }
+      {#1}
+    \\hbox_set:Nn \\l__graphics_tmp_box
+      { \\tex_pdfrefximage:D \\tex_pdflastximage:D }
+    \\dim_set:Nn \\l__graphics_urx_dim { \\box_wd:N \\l__graphics_tmp_box }
+    \\dim_set:Nn \\l__graphics_ury_dim { \\box_ht:N \\l__graphics_tmp_box }
+  }
+\\cs_new:Npn \\__graphics_backend_dequote:w #1 " #2 " #3 \\s__graphics_stop {#2}
+\\cs_new_protected:Npn \\__graphics_backend_include_jpg:n #1
+  {
+    \\tex_pdfrefximage:D
+      \\int_use:c { c__graphics_ #1 \\l__graphics_attr_tl _int }
+  }
+\\cs_new_eq:NN \\__graphics_backend_include_jpeg:n \\__graphics_backend_include_jpg:n
+\\cs_new_eq:NN \\__graphics_backend_include_pdf:n \\__graphics_backend_include_jpg:n
+\\cs_new_eq:NN \\__graphics_backend_include_png:n \\__graphics_backend_include_jpg:n
+\\sys_if_shell:T
+  {
+    \\str_new:N \\l__graphics_backend_dir_str
+    \\str_new:N \\l__graphics_backend_name_str
+    \\str_new:N \\l__graphics_backend_ext_str
+    \\cs_new_protected:Npn \\__graphics_backend_getbb_eps:n #1
+      {
+        \\file_parse_full_name:nNNN {#1}
+          \\l__graphics_backend_dir_str
+          \\l__graphics_backend_name_str
+          \\l__graphics_backend_ext_str
+        \\exp_args:Ne \\__graphics_backend_getbb_eps:nn
+          {
+            \\exp_args:Ne \\__kernel_file_name_quote:n
+              {
+                \\l__graphics_backend_name_str
+                - \\str_tail:N \\l__graphics_backend_ext_str
+                -converted-to.pdf
+              }
+          }
+          {#1}
+      }
+    \\cs_new_eq:NN \\__graphics_backend_getbb_ps:n \\__graphics_backend_getbb_eps:n
+    \\cs_new_protected:Npn \\__graphics_backend_getbb_eps:nn #1#2
+      {
+        \\file_compare_timestamp:nNnT {#2} > {#1}
+          {
+            \\sys_shell_now:n
+              { repstopdf ~ #2 ~ #1 }
+          }
+        \\tl_set:Nn \\l__graphics_final_name_str {#1}
+        \\__graphics_backend_getbb_pdf:n {#1}
+      }
+    \\cs_new_protected:Npn \\__graphics_backend_include_eps:n #1
+      {
+        \\file_parse_full_name:nNNN {#1}
+          \\l__graphics_backend_dir_str \\l__graphics_backend_name_str \\l__graphics_backend_ext_str
+        \\exp_args:Ne \\__graphics_backend_include_pdf:n
+          {
+            \\exp_args:Ne \\__kernel_file_name_quote:n
+              {
+                \\l__graphics_backend_name_str
+                - \\str_tail:N \\l__graphics_backend_ext_str
+                -converted-to.pdf
+              }
+          }
+      }
+    \\cs_new_eq:NN \\__graphics_backend_include_ps:n \\__graphics_backend_include_eps:n
+  }
+\\cs_new_protected:Npn \\__graphics_backend_get_pagecount:n #1
+  {
+    \\tex_pdfximage:D {#1}
+    \\int_const:cn { c__graphics_ #1 _pages_int }
+      { \\int_use:N \\tex_pdflastximagepages:D }
+  }
+%% File: l3backend-pdf.dtx
+\\cs_new_protected:Npn \\__pdf_backend_destination:nn #1#2
+  {
+    \\tex_pdfdest:D
+        name {#1}
+        \\str_case:nnF {#2}
+          {
+            { xyz }   { xyz }
+            { fit }   { fit }
+            { fitb }  { fitb }
+            { fitbh } { fitbh }
+            { fitbv } { fitbv }
+            { fith }  { fith }
+            { fitv }  { fitv }
+            { fitr }  { fitr }
+          }
+          { xyz ~ zoom \\fp_eval:n { #2 * 10 } }
+        \\scan_stop:
+  }
+\\cs_new_protected:Npn \\__pdf_backend_destination:nnnn #1#2#3#4
+  {
+    \\tex_pdfdest:D
+    name {#1}
+    fitr ~
+      width  \\dim_eval:n {#2} ~
+      height \\dim_eval:n {#3} ~
+      depth  \\dim_eval:n {#4} \\scan_stop:
+  }
+\\cs_new_protected:Npn \\__pdf_backend_catalog_gput:nn #1#2
+  {
+    \\tex_pdfcatalog:D
+      { / #1 ~ #2 }
+  }
+\\cs_new_protected:Npn \\__pdf_backend_info_gput:nn #1#2
+  {
+    \\tex_pdfinfo:D
+      { / #1 ~ #2 }
+  }
+\\prop_new:N \\g__pdf_backend_object_prop
+\\cs_new_protected:Npn \\__pdf_backend_object_new:
+  {
+    \\tex_pdfobj:D
+      reserveobjnum ~
+    \\int_gset:Nn \\g__pdf_backend_object_int
+      { \\tex_pdflastobj:D }
+  }
+\\cs_new:Npn \\__pdf_backend_object_ref:n #1 { #1 ~ 0 ~ R }
+\\cs_new:Npn \\__pdf_backend_object_id:n #1 {#1}
+\\cs_new_protected:Npn \\__pdf_backend_object_write:nnn #1#2#3
+  {
+    \\tex_immediate:D \\tex_pdfobj:D
+      useobjnum ~ #1
+    \\__pdf_backend_object_write:nn {#2} {#3}
+  }
+\\cs_new:Npn \\__pdf_backend_object_write:nn #1#2
+  {
+    \\str_case:nn {#1}
+      {
+        { array } { { [ ~ \\exp_not:n {#2} ~ ] } }
+        { dict }  { { << ~ \\exp_not:n {#2} ~ >> } }
+        { fstream }
+          {
+            stream ~ attr ~ { \\__pdf_exp_not_i:nn #2 } ~
+              file ~ { \\__pdf_exp_not_ii:nn #2 }
+          }
+        { stream }
+          {
+            stream ~ attr ~ { \\__pdf_exp_not_i:nn #2 } ~
+              { \\__pdf_exp_not_ii:nn #2 }
+          }
+      }
+  }
+\\cs_generate_variant:Nn \\__pdf_backend_object_write:nnn { nne }
+\\cs_new:Npn \\__pdf_exp_not_i:nn #1#2 { \\exp_not:n {#1} }
+\\cs_new:Npn \\__pdf_exp_not_ii:nn #1#2 { \\exp_not:n {#2} }
+\\cs_new_protected:Npn \\__pdf_backend_object_now:nn #1#2
+  {
+    \\tex_immediate:D \\tex_pdfobj:D
+      \\__pdf_backend_object_write:nn {#1} {#2}
+  }
+\\cs_generate_variant:Nn \\__pdf_backend_object_now:nn { ne }
+\\cs_new:Npe \\__pdf_backend_object_last:
+  {
+    \\exp_not:N \\int_value:w
+      \\exp_not:N \\tex_pdflastobj:D
+      \\c_space_tl 0 ~ R
+  }
+\\cs_new:Npe \\__pdf_backend_pageobject_ref:n #1
+  {
+    \\exp_not:N \\int_value:w
+      \\exp_not:N \\tex_pdfpageref:D
+          \\c_space_tl #1 \\c_space_tl \\c_space_tl \\c_space_tl 0 ~ R
+  }
+\\cs_new_protected:Npn \\__pdf_backend_compresslevel:n #1
+  {
+    \\tex_global:D
+      \\tex_pdfcompresslevel:D
+        \\int_value:w \\int_eval:n {#1} \\scan_stop:
+  }
+\\cs_new_protected:Npn \\__pdf_backend_compress_objects:n #1
+  {
+    \\bool_if:nTF {#1}
+      { \\__pdf_backend_objcompresslevel:n { 2 } }
+      { \\__pdf_backend_objcompresslevel:n { 0 } }
+  }
+\\cs_new_protected:Npn \\__pdf_backend_objcompresslevel:n #1
+  {
+    \\tex_global:D
+      \\tex_pdfobjcompresslevel:D
+        #1 \\scan_stop:
+  }
+\\cs_new_protected:Npe \\__pdf_backend_version_major_gset:n #1
+  {
+    \\cs_if_exist:NT \\tex_pdfmajorversion:D
+      {
+        \\exp_not:N \\tex_global:D \\tex_pdfmajorversion:D
+          \\exp_not:N \\int_eval:n {#1} \\scan_stop:
+      }
+  }
+\\cs_new_protected:Npn \\__pdf_backend_version_minor_gset:n #1
+  {
+    \\tex_global:D
+      \\tex_pdfminorversion:D
+        \\int_eval:n {#1} \\scan_stop:
+  }
+\\cs_new:Npe \\__pdf_backend_version_major:
+  {
+    \\cs_if_exist:NTF \\tex_pdfmajorversion:D
+      { \\exp_not:N \\tex_the:D \\tex_pdfmajorversion:D }
+      { 1 }
+  }
+\\cs_new:Npn \\__pdf_backend_version_minor:
+  {
+    \\tex_the:D
+      \\tex_pdfminorversion:D
+  }
+\\cs_new_protected:Npn \\__pdf_backend_bdc:nn #1#2
+  { \\__kernel_backend_literal_page:n { /#1 ~ #2 ~ BDC } }
+\\cs_new_protected:Npn \\__pdf_backend_emc:
+  { \\__kernel_backend_literal_page:n { EMC } }
+\\cs_new_protected:Npn \\__pdf_backend_pagesize_gset:nn #1#2
+  {
+    \\dim_gset:Nn \\tex_pagewidth:D  {#1}
+    \\dim_gset:Nn \\tex_pageheight:D {#2}
+  }
+%% File: l3backend-pdfannot.dtx
+\\cs_new_protected:Npn \\__pdfannot_backend_generic:nnnn #1#2#3#4
+  {
+    \\tex_pdfannot:D
+      width  ~ \\dim_eval:n {#1} ~
+      height ~ \\dim_eval:n {#2} ~
+      depth  ~ \\dim_eval:n {#3} ~
+      {#4}
+  }
+\\cs_new:Npe \\__pdfannot_backend_last:
+  {
+    \\exp_not:N \\int_value:w
+      \\exp_not:N \\tex_pdflastannot:D
+      \\c_space_tl 0 ~ R
+  }
+\\cs_new_protected:Npn \\__pdfannot_backend_link_begin_goto:nnw #1#2
+  { \\__pdfannot_backend_link_begin:nnnw {#1} { goto~name } {#2} }
+\\cs_new_protected:Npn \\__pdfannot_backend_link_begin_user:nnw #1#2
+  { \\__pdfannot_backend_link_begin:nnnw {#1} { user } {#2} }
+\\cs_new_protected:Npn \\__pdfannot_backend_link_begin:nnnw #1#2#3
+  {
+    \\tex_pdfstartlink:D
+      attr {#1}
+      #2 {#3}
+  }
+\\cs_new_protected:Npn \\__pdfannot_backend_link_end:
+  {
+    \\tex_pdfendlink:D
+  }
+\\cs_new:Npe \\__pdfannot_backend_link_last:
+  {
+    \\exp_not:N \\int_value:w
+      \\exp_not:N \\tex_pdflastlink:D
+      \\c_space_tl 0 ~ R
+  }
+\\cs_new_protected:Npn \\__pdfannot_backend_link_margin:n #1
+  {
+    \\tex_pdflinkmargin:D
+      \\dim_eval:n {#1} \\scan_stop:
+  }
+\\cs_new_protected:Npn \\__pdfannot_backend_link_on:
+   { \\tex_pdfrunninglinkon:D }
+\\cs_new_protected:Npn \\__pdfannot_backend_link_off:
+  { \\tex_pdfrunninglinkoff:D }
+\\cs_new_eq:NN \\__pdf_backend_annotation:nnnn \\__pdfannot_backend_generic:nnnn
+\\cs_new_eq:NN \\__pdf_backend_annotation_last: \\__pdfannot_backend_last:
+\\clist_map_inline:nn
+  {
+    begin_goto:nnw ,
+    begin_user:nnw ,
+    begin:nnnw     ,
+    end:           ,
+    last:          ,
+    margin:n
+  }
+  { \\cs_new_eq:cc { __pdf_backend_link_ #1 } { __pdfannot_backend_link_ #1 } }
+%% File: l3backend-opacity.dtx
+\\bool_lazy_and:nnT
+  { \\cs_if_exist_p:N \\pdfmanagement_if_active_p: }
+  { \\pdfmanagement_if_active_p: }
+  {
+    \\__kernel_color_backend_stack_init:Nnn \\c__opacity_backend_stack_int
+      { page ~ direct } { /opacity 1 ~ gs }
+    \\pdfmanagement_add:nnn { Page / Resources / ExtGState }
+      { opacity 1 } { << /ca ~ 1 /CA ~ 1 >> }
+  }
+\\tl_new:N \\l__opacity_backend_fill_tl
+\\tl_new:N \\l__opacity_backend_stroke_tl
+\\tl_set:Nn \\l__opacity_backend_fill_tl { 1 }
+\\tl_set:Nn \\l__opacity_backend_stroke_tl { 1 }
+\\cs_new_protected:Npn \\__opacity_backend_select:n #1
+  {
+    \\tl_set:Nn \\l__opacity_backend_fill_tl {#1}
+    \\tl_set:Nn \\l__opacity_backend_stroke_tl {#1}
+    \\pdfmanagement_add:nnn { Page / Resources / ExtGState }
+      { opacity #1 }
+      { << /ca ~ #1 /CA ~ #1 >> }
+    \\__kernel_color_backend_stack_push:nn \\c__opacity_backend_stack_int
+      { /opacity #1 ~ gs }
+    \\group_insert_after:N \\__opacity_backend_reset:
+  }
+\\cs_new_protected:Npn \\__opacity_backend_reset:
+  {
+    \\__kernel_color_backend_stack_pop:n \\c__opacity_backend_stack_int
+  }
+\\cs_new_protected:Npn \\__opacity_backend_fill:n #1
+  {
+    \\exp_args:Nno \\__opacity_backend_fill_stroke:nn
+      { #1 }
+      { \\l__opacity_backend_stroke_tl }
+  }
+\\cs_new_protected:Npn \\__opacity_backend_stroke:n #1
+  {
+    \\exp_args:No \\__opacity_backend_fill_stroke:nn
+      { \\l__opacity_backend_fill_tl }
+      { #1 }
+  }
+\\cs_new_protected:Npn \\__opacity_backend_fill_stroke:nn #1#2
+  {
+    \\str_if_eq:nnTF {#1} {#2}
+      { \\__opacity_backend_select:n {#1} }
+      {
+        \\tl_set:Nn \\l__opacity_backend_fill_tl {#1}
+        \\tl_set:Nn \\l__opacity_backend_stroke_tl {#2}
+        \\pdfmanagement_add:nnn { Page / Resources / ExtGState }
+          { opacity.fill #1 }
+          { << /ca ~ #1 >> }
+        \\pdfmanagement_add:nnn { Page / Resources / ExtGState }
+          { opacity.stroke #2 }
+          { << /CA ~ #2 >> }
+        \\__kernel_color_backend_stack_push:nn \\c__opacity_backend_stack_int
+          { /opacity.fill #1 ~ gs /opacity.stroke #2 ~ gs }
+        \\group_insert_after:N \\__opacity_backend_reset:
+      }
+  }
+\\bool_lazy_and:nnF
+  { \\cs_if_exist_p:N \\pdfmanagement_if_active_p: }
+  { \\pdfmanagement_if_active_p: }
+  {
+    \\cs_gset_protected:Npn \\__opacity_backend_select:n #1 { }
+    \\cs_gset_protected:Npn \\__opacity_backend_fill_stroke:nn #1#2 { }
+  }
+%% 
+%%
+%% End of file \`l3backend-pdftex.def'.
+` },
+  { format: 26, filename: 'l3backend-pdfmode.def', content: `
 %%
 %% This is file \`l3backend-pdftex.def',
 %% generated with the docstrip utility.
@@ -30971,7 +33843,1217 @@ Test file integrity:  ASCII 32-57, 58-126:  !"#\$%&'()*+,-./0123456789
 %%
 %% End of file \`l3backend-pdftex.def'.
 ` },
+  { format: 26, filename: 'l3backend-pdftex.def', content: `
+%%
+%% This is file \`l3backend-pdftex.def',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% l3backend-basics.dtx  (with options: \`package,pdftex')
+%% l3backend-color.dtx  (with options: \`package,pdftex')
+%% l3backend-box.dtx  (with options: \`package,pdftex')
+%% l3backend-draw.dtx  (with options: \`package,pdftex')
+%% l3backend-graphics.dtx  (with options: \`package,pdftex')
+%% l3backend-pdf.dtx  (with options: \`package,pdftex')
+%% l3backend-pdfannot.dtx  (with options: \`package,pdftex')
+%% l3backend-opacity.dtx  (with options: \`package,pdftex')
+%% 
+%% Copyright (C) 2019-2025 The LaTeX Project
+%% 
+%% It may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License (LPPL), either version 1.3c of
+%% this license or (at your option) any later version.  The latest
+%% version of this license is in the file:
+%% 
+%%    https://www.latex-project.org/lppl.txt
+%% 
+%% This file is part of the "l3backend bundle" (The Work in LPPL)
+%% and all files in that bundle must be distributed together.
+%% 
+%% File: l3backend-basics.dtx
+\\ProvidesExplFile
+  {l3backend-pdftex.def}{2025-10-09}{}
+  {L3 backend support: PDF output (pdfTeX)}
+\\cs_if_exist:NTF \\__kernel_dependency_version_check:nn
+  {
+    \\__kernel_dependency_version_check:nn {2023-10-10}
+      {l3backend-pdftex.def}
+  }
+  {
+    \\cs_if_exist_use:cF { @latex@error } { \\errmessage }
+      {
+        Mismatched~LaTeX~support~files~detected. \\MessageBreak
+        Loading~aborted!
+      }
+      { \\use:c { @ehd } }
+    \\tex_endinput:D
+  }
+\\cs_new_eq:NN \\__kernel_backend_literal:e \\tex_special:D
+\\cs_new_protected:Npn \\__kernel_backend_literal:n #1
+  { \\__kernel_backend_literal:e { \\exp_not:n {#1} } }
+\\cs_if_exist:NTF \\@ifl@t@r
+  {
+    \\@ifl@t@r \\fmtversion { 2020-10-01 }
+      {
+        \\cs_new_protected:Npn \\__kernel_backend_first_shipout:n #1
+          { \\hook_gput_code:nnn { shipout / firstpage } { l3backend } {#1} }
+      }
+      { \\cs_new_eq:NN \\__kernel_backend_first_shipout:n \\AtBeginDvi }
+  }
+  { \\cs_new_eq:NN \\__kernel_backend_first_shipout:n \\use:n }
+\\cs_new_protected:Npn \\__kernel_backend_literal_pdf:n #1
+  {
+    \\tex_pdfliteral:D
+      { \\exp_not:n {#1} }
+  }
+\\cs_new_protected:Npn \\__kernel_backend_literal_pdf:e #1
+  {
+    \\tex_pdfliteral:D
+      {#1}
+  }
+\\cs_new_protected:Npn \\__kernel_backend_literal_page:n #1
+  {
+    \\tex_pdfliteral:D
+        page { \\exp_not:n {#1} }
+  }
+\\cs_new_protected:Npn \\__kernel_backend_literal_page:e #1
+  {
+    \\tex_pdfliteral:D
+        page {#1}
+  }
+\\cs_new_protected:Npn \\__kernel_backend_scope_begin:
+  {
+    \\tex_pdfsave:D
+  }
+\\cs_new_protected:Npn \\__kernel_backend_scope_end:
+  {
+    \\tex_pdfrestore:D
+  }
+\\cs_new_protected:Npn \\__kernel_backend_matrix:n #1
+  {
+    \\tex_pdfsetmatrix:D
+        { \\exp_not:n {#1} }
+  }
+\\cs_new_protected:Npn \\__kernel_backend_matrix:e #1
+  {
+    \\tex_pdfsetmatrix:D
+        {#1}
+  }
+%% File: l3backend-color.dtx
+\\int_new:N \\l__color_backend_stack_int
+\\cs_new_protected:Npn \\__kernel_color_backend_stack_init:Nnn #1#2#3
+  {
+    \\int_const:Nn #1
+      {
+        \\tex_pdfcolorstackinit:D
+        \\tl_if_blank:nF {#2} { #2 ~ }
+        {#3}
+      }
+  }
+\\cs_new_protected:Npn \\__kernel_color_backend_stack_push:nn #1#2
+  {
+    \\tex_pdfcolorstack:D
+      \\int_eval:n {#1} ~ push ~ {#2}
+  }
+\\cs_new_protected:Npn \\__kernel_color_backend_stack_pop:n #1
+  {
+    \\tex_pdfcolorstack:D
+      \\int_eval:n {#1} ~ pop \\scan_stop:
+  }
+\\tl_new:N \\l__color_backend_fill_tl
+\\tl_new:N \\l__color_backend_stroke_tl
+\\tl_set:Nn \\l__color_backend_fill_tl { 0 ~ g }
+\\tl_set:Nn \\l__color_backend_stroke_tl { 0 ~ G }
+\\cs_new_protected:Npn \\__color_backend_select_cmyk:n #1
+  { \\__color_backend_select:nn { #1 ~ k } { #1 ~ K } }
+\\cs_new_protected:Npn \\__color_backend_select_gray:n #1
+  { \\__color_backend_select:nn { #1 ~ g } { #1 ~ G } }
+\\cs_new_protected:Npn \\__color_backend_select_rgb:n #1
+  { \\__color_backend_select:nn { #1 ~ rg } { #1 ~ RG } }
+\\cs_new_protected:Npn \\__color_backend_select:nn #1#2
+  {
+    \\tl_set:Nn \\l__color_backend_fill_tl {#1}
+    \\tl_set:Nn \\l__color_backend_stroke_tl {#2}
+    \\__kernel_color_backend_stack_push:nn \\l__color_backend_stack_int { #1 ~ #2 }
+  }
+\\cs_new_protected:Npn \\__color_backend_reset:
+  { \\__kernel_color_backend_stack_pop:n \\l__color_backend_stack_int }
+\\prop_new:N \\g__color_backend_colorant_prop
+\\cs_new:Npe \\__color_backend_devicen_colorants:n #1
+  {
+    \\exp_not:N \\tl_if_blank:nF {#1}
+      {
+        \\c_space_tl
+        << ~
+          /Colorants ~
+            << ~
+              \\exp_not:N \\__color_backend_devicen_colorants:w #1 ~
+                \\exp_not:N \\q_recursion_tail \\c_space_tl
+                \\exp_not:N \\q_recursion_stop
+            >> ~
+        >>
+      }
+  }
+\\cs_new:Npn \\__color_backend_devicen_colorants:w #1 ~
+  {
+    \\quark_if_recursion_tail_stop:n {#1}
+    \\prop_if_in:NnT \\g__color_backend_colorant_prop {#1}
+      {
+        #1 ~
+        \\prop_item:Nn \\g__color_backend_colorant_prop {#1} ~
+      }
+    \\__color_backend_devicen_colorants:w
+  }
+\\cs_new_protected:Npn \\__color_backend_select_separation:nn #1#2
+  { \\__color_backend_select:nn { /#1 ~ cs ~ #2 ~ scn  } { /#1 ~ CS ~ #2 ~ SCN } }
+\\cs_new_eq:NN \\__color_backend_select_devicen:nn \\__color_backend_select_separation:nn
+\\cs_new_eq:NN \\__color_backend_select_iccbased:nn \\__color_backend_select_separation:nn
+\\cs_new_protected:Npn \\__color_backend_init_resource:n #1
+  {
+    \\bool_lazy_and:nnT
+      { \\cs_if_exist_p:N \\pdfmanagement_if_active_p: }
+      { \\pdfmanagement_if_active_p: }
+      {
+        \\use:e
+          {
+            \\pdfmanagement_add:nnn
+              { Page / Resources / ColorSpace }
+              { #1 }
+              { \\pdf_object_ref_last: }
+          }
+      }
+  }
+\\cs_new_protected:Npn \\__color_backend_separation_init:nnnnn #1#2#3#4#5
+  {
+    \\pdf_object_unnamed_write:ne { dict }
+      {
+        /FunctionType ~ 2
+        /Domain ~ [0 ~ 1]
+        \\tl_if_blank:nF {#3} { /Range ~ [#3] }
+        /C0 ~ [#4] ~
+        /C1 ~ [#5] /N ~ 1
+      }
+    \\exp_args:Ne \\__color_backend_separation_init:nn
+      { \\str_convert_pdfname:n {#1} } {#2}
+    \\__color_backend_init_resource:n { color \\int_use:N \\g__color_model_int }
+  }
+\\cs_new_protected:Npn \\__color_backend_separation_init:nn #1#2
+  {
+    \\use:e
+      {
+        \\pdf_object_new:n { color \\int_use:N \\g__color_model_int }
+        \\pdf_object_write:nnn { color \\int_use:N \\g__color_model_int } { array }
+          { /Separation /#1 ~ #2 ~ \\pdf_object_ref_last: }
+      }
+    \\prop_gput:Nne \\g__color_backend_colorant_prop { /#1 }
+      { \\pdf_object_ref_last: }
+  }
+\\cs_new_protected:Npn \\__color_backend_separation_init_CIELAB:nnn #1#2#3
+  {
+    \\pdf_object_if_exist:nF { __color_illuminant_CIELAB_ #1 }
+      {
+        \\pdf_object_new:n { __color_illuminant_CIELAB_ #1 }
+        \\pdf_object_write:nne { __color_illuminant_CIELAB_ #1 } { array }
+          {
+            /Lab ~
+            <<
+              /WhitePoint ~
+                [ \\tl_use:c { c__color_model_whitepoint_CIELAB_ #1 _tl } ]
+              /Range ~ [ \\c__color_model_range_CIELAB_tl ]
+            >>
+          }
+      }
+    \\__color_backend_separation_init:nnnnn
+      {#2}
+      { \\pdf_object_ref:n { __color_illuminant_CIELAB_ #1 } }
+      { \\c__color_model_range_CIELAB_tl }
+      { 100 ~ 0 ~ 0 }
+      {#3}
+  }
+\\cs_new_protected:Npn \\__color_backend_devicen_init:nnn #1#2#3
+  {
+    \\pdf_object_unnamed_write:ne { stream }
+      {
+        {
+          /FunctionType ~ 4 ~
+          /Domain ~
+            [ ~
+              \\prg_replicate:nn
+                { 0 \\__color_backend_devicen_init:w #1 ~ \\s__color_stop }
+                { 0 ~ 1 ~ }
+            ] ~
+          /Range ~
+            [ ~
+              \\str_case:nn {#2}
+                {
+                  { /DeviceCMYK } { 0 ~ 1 ~ 0 ~ 1 ~ 0 ~ 1 ~ 0 ~ 1 }
+                  { /DeviceGray } { 0 ~ 1 }
+                  { /DeviceRGB }  { 0 ~ 1 ~ 0 ~ 1 ~ 0 ~ 1 }
+                } ~
+            ]
+        }
+        { {#3} }
+      }
+    \\use:e
+      {
+        \\pdf_object_new:n { color \\int_use:N \\g__color_model_int }
+        \\pdf_object_write:nnn { color \\int_use:N \\g__color_model_int } { array }
+          {
+            /DeviceN ~
+            [ ~ #1 ~ ] ~
+            #2 ~
+            \\pdf_object_ref_last:
+            \\__color_backend_devicen_colorants:n {#1}
+          }
+      }
+    \\__color_backend_init_resource:n { color \\int_use:N \\g__color_model_int }
+  }
+\\cs_new:Npn \\__color_backend_devicen_init:w #1 ~ #2 \\s__color_stop
+  {
+    + 1
+    \\tl_if_blank:nF {#2}
+      { \\__color_backend_devicen_init:w #2 \\s__color_stop }
+  }
+\\cs_new_protected:Npn \\__color_backend_iccbased_init:nnn #1#2#3
+  {
+    \\pdf_object_if_exist:nF { __color_icc_ #1 }
+      {
+        \\pdf_object_new:n { __color_icc_ #1 }
+        \\pdf_object_write:nne { __color_icc_ #1 } { fstream }
+          {
+            {
+              /N ~ \\exp_not:n { #2 } ~
+              \\tl_if_empty:nF { #3 } { /Range~[ #3 ] }
+            }
+            {#1}
+          }
+      }
+    \\pdf_object_unnamed_write:ne { array }
+      { /ICCBased ~ \\pdf_object_ref:n { __color_icc_ #1 } }
+    \\__color_backend_init_resource:n { color \\int_use:N \\g__color_model_int }
+  }
+\\cs_new_protected:Npn \\__color_backend_iccbased_device:nnn #1#2#3
+  {
+    \\pdf_object_if_exist:nF { __color_icc_ #1 }
+      {
+        \\pdf_object_new:n { __color_icc_ #1 }
+        \\pdf_object_write:nnn { __color_icc_ #1 } { fstream }
+          {
+            { /N ~ #3 }
+            {#1}
+          }
+      }
+    \\pdf_object_unnamed_write:ne { array }
+      { /ICCBased ~ \\pdf_object_ref:n { __color_icc_ #1 } }
+    \\__color_backend_init_resource:n { Default #2 }
+  }
+\\cs_new_protected:Npn \\__color_backend_fill_cmyk:n #1
+  { \\__color_backend_fill:n { #1 ~ k } }
+\\cs_new_protected:Npn \\__color_backend_fill_gray:n #1
+  { \\__color_backend_fill:n { #1 ~ g } }
+\\cs_new_protected:Npn \\__color_backend_fill_rgb:n #1
+  { \\__color_backend_fill:n { #1 ~ rg } }
+\\cs_new_protected:Npn \\__color_backend_fill:n #1
+  {
+    \\tl_set:Nn \\l__color_backend_fill_tl {#1}
+    \\__kernel_color_backend_stack_push:nn \\l__color_backend_stack_int
+      { #1 ~ \\l__color_backend_stroke_tl }
+  }
+\\cs_new_protected:Npn \\__color_backend_stroke_cmyk:n #1
+  { \\__color_backend_stroke:n { #1 ~ K } }
+\\cs_new_protected:Npn \\__color_backend_stroke_gray:n #1
+  { \\__color_backend_stroke:n { #1 ~ G } }
+\\cs_new_protected:Npn \\__color_backend_stroke_rgb:n #1
+  { \\__color_backend_stroke:n { #1 ~ RG } }
+\\cs_new_protected:Npn \\__color_backend_stroke:n #1
+  {
+    \\tl_set:Nn \\l__color_backend_stroke_tl {#1}
+    \\__kernel_color_backend_stack_push:nn \\l__color_backend_stack_int
+      { \\l__color_backend_fill_tl \\c_space_tl #1 }
+  }
+\\cs_new_protected:Npn \\__color_backend_fill_separation:nn #1#2
+  { \\__color_backend_fill:n { /#1 ~ cs ~ #2 ~ scn } }
+\\cs_new_protected:Npn \\__color_backend_stroke_separation:nn #1#2
+  { \\__color_backend_stroke:n { /#1 ~ CS ~ #2 ~ SCN } }
+\\cs_new_eq:NN \\__color_backend_fill_devicen:nn \\__color_backend_fill_separation:nn
+\\cs_new_eq:NN \\__color_backend_stroke_devicen:nn \\__color_backend_stroke_separation:nn
+\\cs_new_eq:NN \\__color_backend_fill_reset: \\__color_backend_reset:
+\\cs_new_eq:NN \\__color_backend_stroke_reset: \\__color_backend_reset:
+%% File: l3backend-box.dtx
+\\cs_new_protected:Npn \\__box_backend_clip:N #1
+  {
+    \\__kernel_backend_scope_begin:
+    \\__kernel_backend_literal_pdf:e
+      {
+        0~
+        \\dim_to_decimal_in_bp:n { -\\box_dp:N #1 } ~
+        \\dim_to_decimal_in_bp:n { \\box_wd:N #1 } ~
+        \\dim_to_decimal_in_bp:n { \\box_ht:N #1 + \\box_dp:N #1 } ~
+        re~W~n
+      }
+    \\hbox_overlap_right:n { \\box_use:N #1 }
+    \\__kernel_backend_scope_end:
+    \\skip_horizontal:n { \\box_wd:N #1 }
+  }
+\\cs_new_protected:Npn \\__box_backend_rotate:Nn #1#2
+  { \\exp_args:NNf \\__box_backend_rotate_aux:Nn #1 { \\fp_eval:n {#2} } }
+\\cs_new_protected:Npn \\__box_backend_rotate_aux:Nn #1#2
+  {
+    \\__kernel_backend_scope_begin:
+    \\box_set_wd:Nn #1 { 0pt }
+    \\fp_set:Nn \\l__box_backend_cos_fp { round ( cosd ( #2 ) , 5 ) }
+    \\fp_compare:nNnT \\l__box_backend_cos_fp = \\c_zero_fp
+      { \\fp_zero:N \\l__box_backend_cos_fp }
+    \\fp_set:Nn \\l__box_backend_sin_fp { round ( sind ( #2 ) , 5 ) }
+    \\__kernel_backend_matrix:e
+      {
+        \\fp_use:N \\l__box_backend_cos_fp \\c_space_tl
+        \\fp_compare:nNnTF \\l__box_backend_sin_fp = \\c_zero_fp
+          { 0~0 }
+          {
+            \\fp_use:N \\l__box_backend_sin_fp
+            \\c_space_tl
+            \\fp_eval:n { -\\l__box_backend_sin_fp }
+          }
+        \\c_space_tl
+        \\fp_use:N \\l__box_backend_cos_fp
+      }
+    \\box_use:N #1
+    \\__kernel_backend_scope_end:
+  }
+\\fp_new:N \\l__box_backend_cos_fp
+\\fp_new:N \\l__box_backend_sin_fp
+\\cs_new_protected:Npn \\__box_backend_scale:Nnn #1#2#3
+  {
+    \\__kernel_backend_scope_begin:
+    \\__kernel_backend_matrix:e
+      {
+        \\fp_eval:n { round ( #2 , 5 ) } ~
+        0~0~
+        \\fp_eval:n { round ( #3 , 5 ) }
+      }
+    \\hbox_overlap_right:n { \\box_use:N #1 }
+    \\__kernel_backend_scope_end:
+  }
+%% File: l3backend-draw.dtx
+\\cs_new_eq:NN \\__draw_backend_literal:n \\__kernel_backend_literal_pdf:n
+\\cs_new_eq:NN \\__draw_backend_literal:e \\__kernel_backend_literal_pdf:e
+\\cs_new_protected:Npn \\__draw_backend_begin:
+  { \\__draw_backend_scope_begin: }
+\\cs_new_protected:Npn \\__draw_backend_end:
+  { \\__draw_backend_scope_end: }
+\\cs_new_eq:NN \\__draw_backend_scope_begin: \\__kernel_backend_scope_begin:
+\\cs_new_eq:NN \\__draw_backend_scope_end: \\__kernel_backend_scope_end:
+\\cs_new_protected:Npn \\__draw_backend_moveto:nn #1#2
+  {
+    \\__draw_backend_literal:e
+      { \\dim_to_decimal_in_bp:n {#1} ~ \\dim_to_decimal_in_bp:n {#2} ~ m }
+  }
+\\cs_new_protected:Npn \\__draw_backend_lineto:nn #1#2
+  {
+    \\__draw_backend_literal:e
+      { \\dim_to_decimal_in_bp:n {#1} ~ \\dim_to_decimal_in_bp:n {#2} ~ l }
+  }
+\\cs_new_protected:Npn \\__draw_backend_curveto:nnnnnn #1#2#3#4#5#6
+  {
+    \\__draw_backend_literal:e
+      {
+        \\dim_to_decimal_in_bp:n {#1} ~ \\dim_to_decimal_in_bp:n {#2} ~
+        \\dim_to_decimal_in_bp:n {#3} ~ \\dim_to_decimal_in_bp:n {#4} ~
+        \\dim_to_decimal_in_bp:n {#5} ~ \\dim_to_decimal_in_bp:n {#6} ~
+        c
+      }
+  }
+\\cs_new_protected:Npn \\__draw_backend_rectangle:nnnn #1#2#3#4
+  {
+    \\__draw_backend_literal:e
+      {
+        \\dim_to_decimal_in_bp:n {#1} ~ \\dim_to_decimal_in_bp:n {#2} ~
+        \\dim_to_decimal_in_bp:n {#3} ~ \\dim_to_decimal_in_bp:n {#4} ~
+        re
+      }
+  }
+\\cs_new_protected:Npn \\__draw_backend_evenodd_rule:
+  { \\bool_gset_true:N \\g__draw_draw_eor_bool }
+\\cs_new_protected:Npn \\__draw_backend_nonzero_rule:
+  { \\bool_gset_false:N \\g__draw_draw_eor_bool }
+\\bool_new:N \\g__draw_draw_eor_bool
+\\cs_new_protected:Npn \\__draw_backend_closepath:
+  { \\__draw_backend_literal:n { h } }
+\\cs_new_protected:Npn \\__draw_backend_stroke:
+  { \\__draw_backend_literal:n { S } }
+\\cs_new_protected:Npn \\__draw_backend_closestroke:
+  { \\__draw_backend_literal:n { s } }
+\\cs_new_protected:Npn \\__draw_backend_fill:
+  {
+    \\__draw_backend_literal:e
+      { f \\bool_if:NT \\g__draw_draw_eor_bool * }
+  }
+\\cs_new_protected:Npn \\__draw_backend_fillstroke:
+  {
+    \\__draw_backend_literal:e
+      { B \\bool_if:NT \\g__draw_draw_eor_bool * }
+  }
+\\cs_new_protected:Npn \\__draw_backend_clip:
+  {
+    \\__draw_backend_literal:e
+      { W \\bool_if:NT \\g__draw_draw_eor_bool * }
+  }
+\\cs_new_protected:Npn \\__draw_backend_discardpath:
+  { \\__draw_backend_literal:n { n } }
+\\cs_new_protected:Npn \\__draw_backend_dash_pattern:nn #1#2
+  {
+    \\__draw_backend_literal:e
+      {
+        [
+          \\exp_args:Nf \\use:n
+            { \\clist_map_function:nN {#1} \\__draw_backend_dash:n }
+        ] ~
+        \\dim_to_decimal_in_bp:n {#2} ~ d
+      }
+  }
+\\cs_new:Npn \\__draw_backend_dash:n #1
+  { ~ \\dim_to_decimal_in_bp:n {#1} }
+\\cs_new_protected:Npn \\__draw_backend_linewidth:n #1
+  {
+    \\__draw_backend_literal:e
+      { \\dim_to_decimal_in_bp:n {#1} ~ w }
+  }
+\\cs_new_protected:Npn \\__draw_backend_miterlimit:n #1
+  { \\__draw_backend_literal:e { #1 ~ M } }
+\\cs_new_protected:Npn \\__draw_backend_cap_butt:
+  { \\__draw_backend_literal:n { 0 ~ J } }
+\\cs_new_protected:Npn \\__draw_backend_cap_round:
+  { \\__draw_backend_literal:n { 1 ~ J } }
+\\cs_new_protected:Npn \\__draw_backend_cap_rectangle:
+  { \\__draw_backend_literal:n { 2 ~ J } }
+\\cs_new_protected:Npn \\__draw_backend_join_miter:
+  { \\__draw_backend_literal:n { 0 ~ j } }
+\\cs_new_protected:Npn \\__draw_backend_join_round:
+  { \\__draw_backend_literal:n { 1 ~ j } }
+\\cs_new_protected:Npn \\__draw_backend_join_bevel:
+  { \\__draw_backend_literal:n { 2 ~ j } }
+\\cs_new_protected:Npn \\__draw_backend_transform:nnnn #1#2#3#4
+  {
+    \\__kernel_backend_matrix:n { #1 ~ #2 ~ #3 ~ #4 }
+  }
+\\cs_new_protected:Npn \\__draw_backend_shift:nn #1#2
+  {
+    \\__draw_backend_literal:n
+      { 1 ~ 0 ~ 0 ~ 1 ~ #1 ~ #2 ~ cm }
+  }
+\\cs_new_protected:Npn \\__draw_backend_box_use:Nnnnn #1#2#3#4#5
+  {
+    \\__kernel_backend_scope_begin:
+    \\__kernel_backend_matrix:n { #2 ~ #3 ~ #4 ~ #5 }
+    \\hbox_overlap_right:n { \\box_use:N #1 }
+    \\__kernel_backend_scope_end:
+  }
+%% File: l3backend-graphics.dtx
+\\seq_set_from_clist:Nn \\l_graphics_search_ext_seq
+  { .pdf , .eps , .ps , .png , .jpg , .jpeg  }
+\\tl_new:N \\l__graphics_attr_tl
+\\bool_new:N \\l__graphics_transgroup_bool
+\\cs_new_protected:Npn \\__graphics_backend_getbb_jpg:n #1
+  {
+    \\int_zero:N \\l__graphics_page_int
+    \\tl_clear:N \\l__graphics_pagebox_tl
+    \\bool_set_false:N\\l__graphics_transgroup_bool
+    \\tl_set:Ne \\l__graphics_attr_tl
+      {
+        \\tl_if_empty:NF \\l__graphics_decodearray_str
+          { :D \\l__graphics_decodearray_str }
+        \\bool_if:NT \\l__graphics_interpolate_bool
+          { :I }
+        \\str_if_empty:NF \\l__graphics_pdf_str
+          { :X \\l__graphics_pdf_str }
+      }
+    \\__graphics_backend_getbb_auxi:n {#1}
+  }
+\\cs_new_eq:NN \\__graphics_backend_getbb_jpeg:n \\__graphics_backend_getbb_jpg:n
+\\cs_new_eq:NN \\__graphics_backend_getbb_png:n \\__graphics_backend_getbb_jpg:n
+\\cs_new_protected:Npn \\__graphics_backend_getbb_pdf:n #1
+  {
+    \\tl_clear:N \\l__graphics_decodearray_str
+    \\bool_set_true:N \\l__graphics_transgroup_bool
+    \\bool_set_false:N \\l__graphics_interpolate_bool
+    \\tl_set:Ne \\l__graphics_attr_tl
+      {
+        : \\l__graphics_pagebox_tl
+        \\int_compare:nNnT \\l__graphics_page_int > 1
+          { :P \\int_use:N \\l__graphics_page_int }
+        \\str_if_empty:NF \\l__graphics_pdf_str
+          { :X \\l__graphics_pdf_str }
+      }
+    \\__graphics_backend_getbb_auxi:n {#1}
+  }
+\\cs_new_protected:Npn \\__graphics_backend_getbb_auxi:n #1
+  {
+    \\__graphics_bb_restore:eF { #1 \\l__graphics_attr_tl }
+      { \\__graphics_backend_getbb_auxii:n {#1} }
+  }
+\\cs_new_protected:Npn \\__graphics_backend_getbb_auxii:n #1
+  {
+    \\exp_args:Ne \\__graphics_backend_getbb_auxiii:n
+      { \\__graphics_backend_dequote:w #1 " #1 " \\s__graphics_stop }
+    \\int_const:cn { c__graphics_ #1 \\l__graphics_attr_tl _int }
+      { \\tex_the:D \\tex_pdflastximage:D }
+    \\__graphics_bb_save:e { #1 \\l__graphics_attr_tl }
+  }
+\\cs_new_protected:Npn \\__graphics_backend_getbb_auxiii:n #1
+  {
+    \\tex_immediate:D \\tex_pdfximage:D
+      \\bool_lazy_any:nT
+        {
+          { \\l__graphics_interpolate_bool }
+          { \\l__graphics_transgroup_bool }
+          { ! \\tl_if_empty_p:N \\l__graphics_decodearray_str }
+          { ! \\str_if_empty_p:N \\l__graphics_pdf_str }
+        }
+        {
+          attr ~
+            {
+              \\tl_if_empty:NF \\l__graphics_decodearray_str
+                { /Decode~[ \\l__graphics_decodearray_str ] }
+              \\bool_if:NT \\l__graphics_transgroup_bool
+                { /Group << /S /Transparency /K ~ false /I ~ false >> }
+              \\bool_if:NT \\l__graphics_interpolate_bool
+                { /Interpolate~true }
+              \\l__graphics_pdf_str
+            }
+        }
+      \\int_compare:nNnT \\l__graphics_page_int > 0
+        { page ~ \\int_use:N \\l__graphics_page_int }
+      \\tl_if_empty:NF \\l__graphics_pagebox_tl
+        { \\l__graphics_pagebox_tl }
+      {#1}
+    \\hbox_set:Nn \\l__graphics_tmp_box
+      { \\tex_pdfrefximage:D \\tex_pdflastximage:D }
+    \\dim_set:Nn \\l__graphics_urx_dim { \\box_wd:N \\l__graphics_tmp_box }
+    \\dim_set:Nn \\l__graphics_ury_dim { \\box_ht:N \\l__graphics_tmp_box }
+  }
+\\cs_new:Npn \\__graphics_backend_dequote:w #1 " #2 " #3 \\s__graphics_stop {#2}
+\\cs_new_protected:Npn \\__graphics_backend_include_jpg:n #1
+  {
+    \\tex_pdfrefximage:D
+      \\int_use:c { c__graphics_ #1 \\l__graphics_attr_tl _int }
+  }
+\\cs_new_eq:NN \\__graphics_backend_include_jpeg:n \\__graphics_backend_include_jpg:n
+\\cs_new_eq:NN \\__graphics_backend_include_pdf:n \\__graphics_backend_include_jpg:n
+\\cs_new_eq:NN \\__graphics_backend_include_png:n \\__graphics_backend_include_jpg:n
+\\sys_if_shell:T
+  {
+    \\str_new:N \\l__graphics_backend_dir_str
+    \\str_new:N \\l__graphics_backend_name_str
+    \\str_new:N \\l__graphics_backend_ext_str
+    \\cs_new_protected:Npn \\__graphics_backend_getbb_eps:n #1
+      {
+        \\file_parse_full_name:nNNN {#1}
+          \\l__graphics_backend_dir_str
+          \\l__graphics_backend_name_str
+          \\l__graphics_backend_ext_str
+        \\exp_args:Ne \\__graphics_backend_getbb_eps:nn
+          {
+            \\exp_args:Ne \\__kernel_file_name_quote:n
+              {
+                \\l__graphics_backend_name_str
+                - \\str_tail:N \\l__graphics_backend_ext_str
+                -converted-to.pdf
+              }
+          }
+          {#1}
+      }
+    \\cs_new_eq:NN \\__graphics_backend_getbb_ps:n \\__graphics_backend_getbb_eps:n
+    \\cs_new_protected:Npn \\__graphics_backend_getbb_eps:nn #1#2
+      {
+        \\file_compare_timestamp:nNnT {#2} > {#1}
+          {
+            \\sys_shell_now:n
+              { repstopdf ~ #2 ~ #1 }
+          }
+        \\tl_set:Nn \\l__graphics_final_name_str {#1}
+        \\__graphics_backend_getbb_pdf:n {#1}
+      }
+    \\cs_new_protected:Npn \\__graphics_backend_include_eps:n #1
+      {
+        \\file_parse_full_name:nNNN {#1}
+          \\l__graphics_backend_dir_str \\l__graphics_backend_name_str \\l__graphics_backend_ext_str
+        \\exp_args:Ne \\__graphics_backend_include_pdf:n
+          {
+            \\exp_args:Ne \\__kernel_file_name_quote:n
+              {
+                \\l__graphics_backend_name_str
+                - \\str_tail:N \\l__graphics_backend_ext_str
+                -converted-to.pdf
+              }
+          }
+      }
+    \\cs_new_eq:NN \\__graphics_backend_include_ps:n \\__graphics_backend_include_eps:n
+  }
+\\cs_new_protected:Npn \\__graphics_backend_get_pagecount:n #1
+  {
+    \\tex_pdfximage:D {#1}
+    \\int_const:cn { c__graphics_ #1 _pages_int }
+      { \\int_use:N \\tex_pdflastximagepages:D }
+  }
+%% File: l3backend-pdf.dtx
+\\cs_new_protected:Npn \\__pdf_backend_destination:nn #1#2
+  {
+    \\tex_pdfdest:D
+        name {#1}
+        \\str_case:nnF {#2}
+          {
+            { xyz }   { xyz }
+            { fit }   { fit }
+            { fitb }  { fitb }
+            { fitbh } { fitbh }
+            { fitbv } { fitbv }
+            { fith }  { fith }
+            { fitv }  { fitv }
+            { fitr }  { fitr }
+          }
+          { xyz ~ zoom \\fp_eval:n { #2 * 10 } }
+        \\scan_stop:
+  }
+\\cs_new_protected:Npn \\__pdf_backend_destination:nnnn #1#2#3#4
+  {
+    \\tex_pdfdest:D
+    name {#1}
+    fitr ~
+      width  \\dim_eval:n {#2} ~
+      height \\dim_eval:n {#3} ~
+      depth  \\dim_eval:n {#4} \\scan_stop:
+  }
+\\cs_new_protected:Npn \\__pdf_backend_catalog_gput:nn #1#2
+  {
+    \\tex_pdfcatalog:D
+      { / #1 ~ #2 }
+  }
+\\cs_new_protected:Npn \\__pdf_backend_info_gput:nn #1#2
+  {
+    \\tex_pdfinfo:D
+      { / #1 ~ #2 }
+  }
+\\prop_new:N \\g__pdf_backend_object_prop
+\\cs_new_protected:Npn \\__pdf_backend_object_new:
+  {
+    \\tex_pdfobj:D
+      reserveobjnum ~
+    \\int_gset:Nn \\g__pdf_backend_object_int
+      { \\tex_pdflastobj:D }
+  }
+\\cs_new:Npn \\__pdf_backend_object_ref:n #1 { #1 ~ 0 ~ R }
+\\cs_new:Npn \\__pdf_backend_object_id:n #1 {#1}
+\\cs_new_protected:Npn \\__pdf_backend_object_write:nnn #1#2#3
+  {
+    \\tex_immediate:D \\tex_pdfobj:D
+      useobjnum ~ #1
+    \\__pdf_backend_object_write:nn {#2} {#3}
+  }
+\\cs_new:Npn \\__pdf_backend_object_write:nn #1#2
+  {
+    \\str_case:nn {#1}
+      {
+        { array } { { [ ~ \\exp_not:n {#2} ~ ] } }
+        { dict }  { { << ~ \\exp_not:n {#2} ~ >> } }
+        { fstream }
+          {
+            stream ~ attr ~ { \\__pdf_exp_not_i:nn #2 } ~
+              file ~ { \\__pdf_exp_not_ii:nn #2 }
+          }
+        { stream }
+          {
+            stream ~ attr ~ { \\__pdf_exp_not_i:nn #2 } ~
+              { \\__pdf_exp_not_ii:nn #2 }
+          }
+      }
+  }
+\\cs_generate_variant:Nn \\__pdf_backend_object_write:nnn { nne }
+\\cs_new:Npn \\__pdf_exp_not_i:nn #1#2 { \\exp_not:n {#1} }
+\\cs_new:Npn \\__pdf_exp_not_ii:nn #1#2 { \\exp_not:n {#2} }
+\\cs_new_protected:Npn \\__pdf_backend_object_now:nn #1#2
+  {
+    \\tex_immediate:D \\tex_pdfobj:D
+      \\__pdf_backend_object_write:nn {#1} {#2}
+  }
+\\cs_generate_variant:Nn \\__pdf_backend_object_now:nn { ne }
+\\cs_new:Npe \\__pdf_backend_object_last:
+  {
+    \\exp_not:N \\int_value:w
+      \\exp_not:N \\tex_pdflastobj:D
+      \\c_space_tl 0 ~ R
+  }
+\\cs_new:Npe \\__pdf_backend_pageobject_ref:n #1
+  {
+    \\exp_not:N \\int_value:w
+      \\exp_not:N \\tex_pdfpageref:D
+          \\c_space_tl #1 \\c_space_tl \\c_space_tl \\c_space_tl 0 ~ R
+  }
+\\cs_new_protected:Npn \\__pdf_backend_compresslevel:n #1
+  {
+    \\tex_global:D
+      \\tex_pdfcompresslevel:D
+        \\int_value:w \\int_eval:n {#1} \\scan_stop:
+  }
+\\cs_new_protected:Npn \\__pdf_backend_compress_objects:n #1
+  {
+    \\bool_if:nTF {#1}
+      { \\__pdf_backend_objcompresslevel:n { 2 } }
+      { \\__pdf_backend_objcompresslevel:n { 0 } }
+  }
+\\cs_new_protected:Npn \\__pdf_backend_objcompresslevel:n #1
+  {
+    \\tex_global:D
+      \\tex_pdfobjcompresslevel:D
+        #1 \\scan_stop:
+  }
+\\cs_new_protected:Npe \\__pdf_backend_version_major_gset:n #1
+  {
+    \\cs_if_exist:NT \\tex_pdfmajorversion:D
+      {
+        \\exp_not:N \\tex_global:D \\tex_pdfmajorversion:D
+          \\exp_not:N \\int_eval:n {#1} \\scan_stop:
+      }
+  }
+\\cs_new_protected:Npn \\__pdf_backend_version_minor_gset:n #1
+  {
+    \\tex_global:D
+      \\tex_pdfminorversion:D
+        \\int_eval:n {#1} \\scan_stop:
+  }
+\\cs_new:Npe \\__pdf_backend_version_major:
+  {
+    \\cs_if_exist:NTF \\tex_pdfmajorversion:D
+      { \\exp_not:N \\tex_the:D \\tex_pdfmajorversion:D }
+      { 1 }
+  }
+\\cs_new:Npn \\__pdf_backend_version_minor:
+  {
+    \\tex_the:D
+      \\tex_pdfminorversion:D
+  }
+\\cs_new_protected:Npn \\__pdf_backend_bdc:nn #1#2
+  { \\__kernel_backend_literal_page:n { /#1 ~ #2 ~ BDC } }
+\\cs_new_protected:Npn \\__pdf_backend_emc:
+  { \\__kernel_backend_literal_page:n { EMC } }
+\\cs_new_protected:Npn \\__pdf_backend_pagesize_gset:nn #1#2
+  {
+    \\dim_gset:Nn \\tex_pagewidth:D  {#1}
+    \\dim_gset:Nn \\tex_pageheight:D {#2}
+  }
+%% File: l3backend-pdfannot.dtx
+\\cs_new_protected:Npn \\__pdfannot_backend_generic:nnnn #1#2#3#4
+  {
+    \\tex_pdfannot:D
+      width  ~ \\dim_eval:n {#1} ~
+      height ~ \\dim_eval:n {#2} ~
+      depth  ~ \\dim_eval:n {#3} ~
+      {#4}
+  }
+\\cs_new:Npe \\__pdfannot_backend_last:
+  {
+    \\exp_not:N \\int_value:w
+      \\exp_not:N \\tex_pdflastannot:D
+      \\c_space_tl 0 ~ R
+  }
+\\cs_new_protected:Npn \\__pdfannot_backend_link_begin_goto:nnw #1#2
+  { \\__pdfannot_backend_link_begin:nnnw {#1} { goto~name } {#2} }
+\\cs_new_protected:Npn \\__pdfannot_backend_link_begin_user:nnw #1#2
+  { \\__pdfannot_backend_link_begin:nnnw {#1} { user } {#2} }
+\\cs_new_protected:Npn \\__pdfannot_backend_link_begin:nnnw #1#2#3
+  {
+    \\tex_pdfstartlink:D
+      attr {#1}
+      #2 {#3}
+  }
+\\cs_new_protected:Npn \\__pdfannot_backend_link_end:
+  {
+    \\tex_pdfendlink:D
+  }
+\\cs_new:Npe \\__pdfannot_backend_link_last:
+  {
+    \\exp_not:N \\int_value:w
+      \\exp_not:N \\tex_pdflastlink:D
+      \\c_space_tl 0 ~ R
+  }
+\\cs_new_protected:Npn \\__pdfannot_backend_link_margin:n #1
+  {
+    \\tex_pdflinkmargin:D
+      \\dim_eval:n {#1} \\scan_stop:
+  }
+\\cs_new_protected:Npn \\__pdfannot_backend_link_on:
+   { \\tex_pdfrunninglinkon:D }
+\\cs_new_protected:Npn \\__pdfannot_backend_link_off:
+  { \\tex_pdfrunninglinkoff:D }
+\\cs_new_eq:NN \\__pdf_backend_annotation:nnnn \\__pdfannot_backend_generic:nnnn
+\\cs_new_eq:NN \\__pdf_backend_annotation_last: \\__pdfannot_backend_last:
+\\clist_map_inline:nn
+  {
+    begin_goto:nnw ,
+    begin_user:nnw ,
+    begin:nnnw     ,
+    end:           ,
+    last:          ,
+    margin:n
+  }
+  { \\cs_new_eq:cc { __pdf_backend_link_ #1 } { __pdfannot_backend_link_ #1 } }
+%% File: l3backend-opacity.dtx
+\\bool_lazy_and:nnT
+  { \\cs_if_exist_p:N \\pdfmanagement_if_active_p: }
+  { \\pdfmanagement_if_active_p: }
+  {
+    \\__kernel_color_backend_stack_init:Nnn \\c__opacity_backend_stack_int
+      { page ~ direct } { /opacity 1 ~ gs }
+    \\pdfmanagement_add:nnn { Page / Resources / ExtGState }
+      { opacity 1 } { << /ca ~ 1 /CA ~ 1 >> }
+  }
+\\tl_new:N \\l__opacity_backend_fill_tl
+\\tl_new:N \\l__opacity_backend_stroke_tl
+\\tl_set:Nn \\l__opacity_backend_fill_tl { 1 }
+\\tl_set:Nn \\l__opacity_backend_stroke_tl { 1 }
+\\cs_new_protected:Npn \\__opacity_backend_select:n #1
+  {
+    \\tl_set:Nn \\l__opacity_backend_fill_tl {#1}
+    \\tl_set:Nn \\l__opacity_backend_stroke_tl {#1}
+    \\pdfmanagement_add:nnn { Page / Resources / ExtGState }
+      { opacity #1 }
+      { << /ca ~ #1 /CA ~ #1 >> }
+    \\__kernel_color_backend_stack_push:nn \\c__opacity_backend_stack_int
+      { /opacity #1 ~ gs }
+    \\group_insert_after:N \\__opacity_backend_reset:
+  }
+\\cs_new_protected:Npn \\__opacity_backend_reset:
+  {
+    \\__kernel_color_backend_stack_pop:n \\c__opacity_backend_stack_int
+  }
+\\cs_new_protected:Npn \\__opacity_backend_fill:n #1
+  {
+    \\exp_args:Nno \\__opacity_backend_fill_stroke:nn
+      { #1 }
+      { \\l__opacity_backend_stroke_tl }
+  }
+\\cs_new_protected:Npn \\__opacity_backend_stroke:n #1
+  {
+    \\exp_args:No \\__opacity_backend_fill_stroke:nn
+      { \\l__opacity_backend_fill_tl }
+      { #1 }
+  }
+\\cs_new_protected:Npn \\__opacity_backend_fill_stroke:nn #1#2
+  {
+    \\str_if_eq:nnTF {#1} {#2}
+      { \\__opacity_backend_select:n {#1} }
+      {
+        \\tl_set:Nn \\l__opacity_backend_fill_tl {#1}
+        \\tl_set:Nn \\l__opacity_backend_stroke_tl {#2}
+        \\pdfmanagement_add:nnn { Page / Resources / ExtGState }
+          { opacity.fill #1 }
+          { << /ca ~ #1 >> }
+        \\pdfmanagement_add:nnn { Page / Resources / ExtGState }
+          { opacity.stroke #2 }
+          { << /CA ~ #2 >> }
+        \\__kernel_color_backend_stack_push:nn \\c__opacity_backend_stack_int
+          { /opacity.fill #1 ~ gs /opacity.stroke #2 ~ gs }
+        \\group_insert_after:N \\__opacity_backend_reset:
+      }
+  }
+\\bool_lazy_and:nnF
+  { \\cs_if_exist_p:N \\pdfmanagement_if_active_p: }
+  { \\pdfmanagement_if_active_p: }
+  {
+    \\cs_gset_protected:Npn \\__opacity_backend_select:n #1 { }
+    \\cs_gset_protected:Npn \\__opacity_backend_fill_stroke:nn #1#2 { }
+  }
+%% 
+%%
+%% End of file \`l3backend-pdftex.def'.
+` },
   { format: 32, filename: 'pd1enc.def', content: `
+%%
+%% This is file \`pd1enc.def',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% hyperref.dtx  (with options: \`pd1enc')
+%% 
+%% Copyright
+%% 1995-2001 Sebastian Rahtz, with portions written by David Carlisle and Heiko Oberdiek
+%% 2001-2015 Heiko Oberdiek
+%% 2016-2019 Oberdiek Package Support Group
+%% 2019-2025 LaTeX Project
+%%      https://github.com/latex3/hyperref/issues
+%% 
+%% This file is part of the \`Hyperref Bundle'.
+%% -------------------------------------------
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%% 
+%% This work has the LPPL maintenance status \`maintained'.
+%% 
+%% The Current Maintainer of this work is the LaTeX Project.
+%% 
+%% The list of all files belonging to the \`Hyperref Bundle' is
+%% given in the file \`manifest.txt'.
+%% 
+%% File: hyperref.dtx
+\\ProvidesFile{pd1enc.def}
+  [2025-07-12 v7.01o %
+  Hyperref: PDFDocEncoding definition (HO)]
+\\DeclareFontEncoding{PD1}{}{}
+\\DeclareTextAccent{\\\`}{PD1}{\\textasciigrave}
+\\DeclareTextAccent{\\'}{PD1}{\\textacute}
+\\DeclareTextAccent{\\^}{PD1}{\\textasciicircum}
+\\DeclareTextAccent{\\~}{PD1}{\\texttilde}
+\\DeclareTextAccent{\\"}{PD1}{\\textasciidieresis}
+\\DeclareTextAccent{\\r}{PD1}{\\textring}
+\\DeclareTextAccent{\\v}{PD1}{\\textasciicaron}
+\\DeclareTextAccent{\\.}{PD1}{\\textdotaccent}
+\\DeclareTextAccent{\\c}{PD1}{\\textcedilla}
+\\DeclareTextAccent{\\=}{PD1}{\\textasciimacron}
+\\DeclareTextAccent{\\b}{PD1}{\\textmacronbelow}
+\\DeclareTextAccent{\\d}{PD1}{\\textdotbelow}
+\\DeclareTextCompositeCommand{\\\`}{PD1}{\\@empty}{\\textasciigrave}
+\\DeclareTextCompositeCommand{\\'}{PD1}{\\@empty}{\\textacute}
+\\DeclareTextCompositeCommand{\\^}{PD1}{\\@empty}{\\textasciicircum}
+\\DeclareTextCompositeCommand{\\~}{PD1}{\\@empty}{\\texttilde}
+\\DeclareTextCompositeCommand{\\"}{PD1}{\\@empty}{\\textasciidieresis}
+\\DeclareTextCompositeCommand{\\r}{PD1}{\\@empty}{\\textring}
+\\DeclareTextCompositeCommand{\\v}{PD1}{\\@empty}{\\textasciicaron}
+\\DeclareTextCompositeCommand{\\.}{PD1}{\\@empty}{\\textdotaccent}
+\\DeclareTextCompositeCommand{\\c}{PD1}{\\@empty}{\\textcedilla}
+\\DeclareTextCompositeCommand{\\=}{PD1}{\\@empty}{\\textasciimacron}
+\\DeclareTextCompositeCommand{\\b}{PD1}{\\@empty}{\\textmacronbelow}
+\\DeclareTextCompositeCommand{\\d}{PD1}{\\@empty}{\\textdotbelow}
+\\DeclareTextCompositeCommand{\\\`}{PD1}{\\ }{\\textasciigrave}
+\\DeclareTextCompositeCommand{\\'}{PD1}{\\ }{\\textacute}
+\\DeclareTextCompositeCommand{\\^}{PD1}{\\ }{\\textasciicircum}
+\\DeclareTextCompositeCommand{\\~}{PD1}{\\ }{\\texttilde}
+\\DeclareTextCompositeCommand{\\"}{PD1}{\\ }{\\textasciidieresis}
+\\DeclareTextCompositeCommand{\\r}{PD1}{\\ }{\\textring}
+\\DeclareTextCompositeCommand{\\v}{PD1}{\\ }{\\textasciicaron}
+\\DeclareTextCompositeCommand{\\.}{PD1}{\\ }{\\textdotaccent}
+\\DeclareTextCompositeCommand{\\c}{PD1}{\\ }{\\textcedilla}
+\\DeclareTextCompositeCommand{\\=}{PD1}{\\ }{\\textasciimacron}
+\\DeclareTextCompositeCommand{\\b}{PD1}{\\ }{\\textmacronbelow}
+\\DeclareTextCompositeCommand{\\d}{PD1}{\\ }{\\textdotbelow}
+\\DeclareTextCommand{\\k}{PD1}[1]{\\TextSymbolUnavailable{\\k{#1}}#1}
+\\DeclareTextCommand{\\t}{PD1}[1]{\\TextSymbolUnavailable{\\t{#1}}#1}
+\\DeclareTextCommand{\\newtie}{PD1}[1]{%
+  \\TextSymbolUnavailable{\\newtie{#1}}#1%
+}
+\\DeclareTextCommand{\\textHT}{PD1}{\\011}% U+0009
+\\DeclareTextCommand{\\textLF}{PD1}{\\012}% U+000A
+\\DeclareTextCommand{\\textCR}{PD1}{\\015}% U+000D
+\\DeclareTextCommand{\\textasciibreve}{PD1}{\\030}% U+02D8
+\\DeclareTextCommand{\\textasciicaron}{PD1}{\\031}% U+02C7
+\\DeclareTextCommand{\\textcircumflex}{PD1}{\\032}% U+02C6
+\\DeclareTextCommand{\\textdotaccent}{PD1}{\\033}% U+02D9
+\\DeclareTextCommand{\\texthungarumlaut}{PD1}{\\034}% U+02DD
+\\DeclareTextCommand{\\textogonek}{PD1}{\\035}% U+02DB
+\\DeclareTextCommand{\\textring}{PD1}{\\036}% U+02DA
+\\DeclareTextCommand{\\texttilde}{PD1}{\\037}% U+02DC
+\\DeclareTextCommand{\\textquotedbl}{PD1}{"}% \\042 U+0022
+\\DeclareTextCommand{\\textnumbersign}{PD1}{\\043}% U+0023
+\\DeclareTextCommand{\\textdollar}{PD1}{\\044}% U+0024
+\\DeclareTextCommand{\\textpercent}{PD1}{\\045}% U+0025
+\\DeclareTextCommand{\\textampersand}{PD1}{\\046}% U+0026
+\\DeclareTextCommand{\\textparenleft}{PD1}{\\string\\(}% \\050 U+0028
+\\DeclareTextCommand{\\textparenright}{PD1}{\\string\\)}% \\051 U+0029
+\\DeclareTextCommand{\\textdotbelow}{PD1}{.}% \\056 U+002E
+\\DeclareTextCommand{\\textless}{PD1}{<}% \\074 U+003C
+\\DeclareTextCommand{\\textgreater}{PD1}{>}% \\076 U+003E
+\\DeclareTextCommand{\\textbackslash}{PD1}{\\134}% U+005C
+\\DeclareTextCommand{\\textsetminus}{PD1}{\\textbackslash}
+\\DeclareTextCommand{\\textasciicircum}{PD1}{\\136}% U+005E
+\\DeclareTextCommand{\\textunderscore}{PD1}{\\137}% U+005F
+\\DeclareTextCommand{\\textmacronbelow}{PD1}{\\137}% U+005F
+\\DeclareTextCommand{\\textasciigrave}{PD1}{\\140}% U+0060
+\\DeclareTextCompositeCommand{\\.}{PD1}{i}{i}% \\151 U+0069
+\\DeclareTextCommand{\\textbraceleft}{PD1}{\\173}% U+007B
+\\DeclareTextCommand{\\textbar}{PD1}{|}% U+007C
+\\DeclareTextCommand{\\textbraceright}{PD1}{\\175}% U+007D
+\\DeclareTextCommand{\\textasciitilde}{PD1}{\\176}% U+007E
+\\DeclareTextCommand{\\textbullet}{PD1}{\\200}% U+2022
+\\DeclareTextCommand{\\textdagger}{PD1}{\\201}% U+2020
+\\DeclareTextCommand{\\textdaggerdbl}{PD1}{\\202}% U+2021
+\\DeclareTextCommand{\\textddagger}{PD1}{\\textdaggerdbl}
+\\DeclareTextCommand{\\textellipsis}{PD1}{\\203}% U+2026
+\\DeclareTextCommand{\\textemdash}{PD1}{\\204}% U+2014
+\\DeclareTextCommand{\\textendash}{PD1}{\\205}% U+2013
+\\DeclareTextCommand{\\textflorin}{PD1}{\\206}% U+0192
+\\DeclareTextCommand{\\textfractionsolidus}{PD1}{\\207}% U+2044
+\\DeclareTextCommand{\\guilsinglleft}{PD1}{\\210}% U+2039
+\\DeclareTextCommand{\\guilsinglright}{PD1}{\\211}% U+203A
+\\DeclareTextCommand{\\textminus}{PD1}{\\212}% U+2212
+\\DeclareTextCommand{\\textperthousand}{PD1}{\\213}% U+2030
+\\DeclareTextCommand{\\quotedblbase}{PD1}{\\214}% U+201E
+\\DeclareTextCommand{\\textquotedblleft}{PD1}{\\215}% U+201C
+\\DeclareTextCommand{\\textquotedblright}{PD1}{\\216}% U+201D
+\\DeclareTextCommand{\\textquoteleft}{PD1}{\\217}% U+2018
+\\DeclareTextCommand{\\textquoteright}{PD1}{\\220}% U+2019
+\\DeclareTextCommand{\\quotesinglbase}{PD1}{\\221}% U+201A
+\\DeclareTextCommand{\\texttrademark}{PD1}{\\222}% U+2122
+\\DeclareTextCommand{\\textfi}{PD1}{\\223}% U+FB01
+\\DeclareTextCommand{\\textfl}{PD1}{\\224}% U+FB02
+\\DeclareTextCommand{\\L}{PD1}{\\225}% U+0141
+\\DeclareTextCommand{\\OE}{PD1}{\\226}% U+0152
+\\DeclareTextCompositeCommand{\\v}{PD1}{S}{\\227}% U+0160
+\\DeclareTextCompositeCommand{\\"}{PD1}{Y}{\\230}% U+0178
+\\DeclareTextCommand{\\IJ}{PD1}{IJ}% ligature U+0049 U+004A
+\\DeclareTextCompositeCommand{\\v}{PD1}{Z}{\\231}% U+017D
+\\DeclareTextCommand{\\i}{PD1}{\\232}% U+0131
+\\DeclareTextCommand{\\l}{PD1}{\\233}% U+0142
+\\DeclareTextCommand{\\oe}{PD1}{\\234}% U+0153
+\\DeclareTextCompositeCommand{\\v}{PD1}{s}{\\235}% U+0161
+\\DeclareTextCompositeCommand{\\v}{PD1}{z}{\\236}% U+017E
+\\DeclareTextCommand{\\texteuro}{PD1}{\\240}% U+20AC
+\\DeclareTextCommand{\\textexclamdown}{PD1}{\\241}% U+00A1
+\\DeclareTextCommand{\\textcent}{PD1}{\\242}% U+00A2
+\\DeclareTextCommand{\\textsterling}{PD1}{\\243}% U+00A3
+\\DeclareTextCommand{\\textcurrency}{PD1}{\\244}% U+00A4
+\\DeclareTextCommand{\\textyen}{PD1}{\\245}% U+00A5
+\\DeclareTextCommand{\\textbrokenbar}{PD1}{\\246}% U+00A6
+\\DeclareTextCommand{\\textsection}{PD1}{\\247}% U+00A7
+\\DeclareTextCommand{\\textasciidieresis}{PD1}{\\250}% U+00A8
+\\DeclareTextCommand{\\textcopyright}{PD1}{\\251}% U+00A9
+\\DeclareTextCommand{\\textordfeminine}{PD1}{\\252}% U+00AA
+\\DeclareTextCommand{\\guillemotleft}{PD1}{\\253}% U+00AB
+\\DeclareTextCommand{\\guillemetleft}{PD1}{\\253}% U+00AB
+\\DeclareTextCommand{\\textlogicalnot}{PD1}{\\254}% U+00AC
+\\DeclareTextCommand{\\textlnot}{PD1}{\\254}% logical not
+\\DeclareTextCommand{\\textregistered}{PD1}{\\256}% U+00AE
+\\DeclareTextCommand{\\textasciimacron}{PD1}{\\257}% U+00AF
+\\DeclareTextCommand{\\textdegree}{PD1}{\\260}% U+00B0
+\\DeclareTextCommand{\\textplusminus}{PD1}{\\261}% U+00B1
+\\DeclareTextCommand{\\texttwosuperior}{PD1}{\\262}%* U+00B2
+\\DeclareTextCommand{\\textthreesuperior}{PD1}{\\263}%* U+00B3
+\\DeclareTextCommand{\\textacute}{PD1}{\\264}% U+00B4
+\\DeclareTextCommand{\\textmu}{PD1}{\\265}% U+00B5
+\\DeclareTextCommand{\\textparagraph}{PD1}{\\266}% U+00B6
+\\DeclareTextCommand{\\textperiodcentered}{PD1}{\\267}% U+00B7
+\\DeclareTextCommand{\\textcedilla}{PD1}{\\270}% U+00B8
+\\DeclareTextCommand{\\textonesuperior}{PD1}{\\271}%* U+00B9
+\\DeclareTextCommand{\\textordmasculine}{PD1}{\\272}% U+00BA
+\\DeclareTextCommand{\\guillemotright}{PD1}{\\273}% U+00BB
+\\DeclareTextCommand{\\guillemetright}{PD1}{\\273}% U+00BB
+\\DeclareTextCommand{\\textonequarter}{PD1}{\\274}% U+00BC
+\\DeclareTextCommand{\\textonehalf}{PD1}{\\275}% U+00BD
+\\DeclareTextCommand{\\textthreequarters}{PD1}{\\276}% U+00BE
+\\DeclareTextCommand{\\textquestiondown}{PD1}{\\277}% U+00BF
+\\DeclareTextCompositeCommand{\\\`}{PD1}{A}{\\300}% U+00C0
+\\DeclareTextCompositeCommand{\\'}{PD1}{A}{\\301}% U+00C1
+\\DeclareTextCompositeCommand{\\^}{PD1}{A}{\\302}% U+00C2
+\\DeclareTextCompositeCommand{\\~}{PD1}{A}{\\303}% U+00C3
+\\DeclareTextCompositeCommand{\\"}{PD1}{A}{\\304}% U+00C4
+\\DeclareTextCompositeCommand{\\r}{PD1}{A}{\\305}% U+00C5
+\\DeclareTextCommand{\\AE}{PD1}{\\306}% U+00C6
+\\DeclareTextCompositeCommand{\\c}{PD1}{C}{\\307}% U+00C7
+\\DeclareTextCompositeCommand{\\\`}{PD1}{E}{\\310}% U+00C8
+\\DeclareTextCompositeCommand{\\'}{PD1}{E}{\\311}% U+00C9
+\\DeclareTextCompositeCommand{\\^}{PD1}{E}{\\312}% U+00CA
+\\DeclareTextCompositeCommand{\\"}{PD1}{E}{\\313}% U+00CB
+\\DeclareTextCompositeCommand{\\\`}{PD1}{I}{\\314}% U+00CC
+\\DeclareTextCompositeCommand{\\'}{PD1}{I}{\\315}% U+00CD
+\\DeclareTextCompositeCommand{\\^}{PD1}{I}{\\316}% U+00CE
+\\DeclareTextCompositeCommand{\\"}{PD1}{I}{\\317}% U+00CF
+\\DeclareTextCommand{\\DH}{PD1}{\\320}% U+00D0
+\\DeclareTextCommand{\\DJ}{PD1}{\\320}% U+00D0
+\\DeclareTextCompositeCommand{\\~}{PD1}{N}{\\321}% U+00D1
+\\DeclareTextCompositeCommand{\\\`}{PD1}{O}{\\322}% U+00D2
+\\DeclareTextCompositeCommand{\\'}{PD1}{O}{\\323}% U+00D3
+\\DeclareTextCompositeCommand{\\^}{PD1}{O}{\\324}% U+00D4
+\\DeclareTextCompositeCommand{\\~}{PD1}{O}{\\325}% U+00D5
+\\DeclareTextCompositeCommand{\\"}{PD1}{O}{\\326}% U+00D6
+\\DeclareTextCommand{\\textmultiply}{PD1}{\\327}% U+00D7
+\\DeclareTextCommand{\\O}{PD1}{\\330}% U+00D8
+\\DeclareTextCompositeCommand{\\\`}{PD1}{U}{\\331}% U+00D9
+\\DeclareTextCompositeCommand{\\'}{PD1}{U}{\\332}% U+00DA
+\\DeclareTextCompositeCommand{\\^}{PD1}{U}{\\333}% U+00DB
+\\DeclareTextCompositeCommand{\\"}{PD1}{U}{\\334}% U+00DC
+\\DeclareTextCompositeCommand{\\'}{PD1}{Y}{\\335}% U+00DD
+\\DeclareTextCommand{\\TH}{PD1}{\\336}% U+00DE
+\\DeclareTextCommand{\\textThorn}{PD1}{\\336}%* U+00DE
+\\DeclareTextCommand{\\ss}{PD1}{\\337}% U+00DF
+\\DeclareTextCompositeCommand{\\\`}{PD1}{a}{\\340}% U+00E0
+\\DeclareTextCompositeCommand{\\'}{PD1}{a}{\\341}% U+00E1
+\\DeclareTextCompositeCommand{\\^}{PD1}{a}{\\342}% U+00E2
+\\DeclareTextCompositeCommand{\\~}{PD1}{a}{\\343}% U+00E3
+\\DeclareTextCompositeCommand{\\"}{PD1}{a}{\\344}% U+00E4
+\\DeclareTextCompositeCommand{\\r}{PD1}{a}{\\345}% U+00E5
+\\DeclareTextCommand{\\ae}{PD1}{\\346}% U+00E6
+\\DeclareTextCompositeCommand{\\c}{PD1}{c}{\\347}% U+00E7
+\\DeclareTextCompositeCommand{\\\`}{PD1}{e}{\\350}% U+00E8
+\\DeclareTextCompositeCommand{\\'}{PD1}{e}{\\351}% U+00E9
+\\DeclareTextCompositeCommand{\\^}{PD1}{e}{\\352}% U+00EA
+\\DeclareTextCompositeCommand{\\"}{PD1}{e}{\\353}% U+00EB
+\\DeclareTextCompositeCommand{\\\`}{PD1}{i}{\\354}% U+00EC
+\\DeclareTextCompositeCommand{\\\`}{PD1}{\\i}{\\354}% U+00EC
+\\DeclareTextCompositeCommand{\\'}{PD1}{i}{\\355}% U+00ED
+\\DeclareTextCompositeCommand{\\'}{PD1}{\\i}{\\355}% U+00ED
+\\DeclareTextCompositeCommand{\\^}{PD1}{i}{\\356}% U+00EE
+\\DeclareTextCompositeCommand{\\^}{PD1}{\\i}{\\356}% U+00EE
+\\DeclareTextCompositeCommand{\\"}{PD1}{i}{\\357}% U+00EF
+\\DeclareTextCompositeCommand{\\"}{PD1}{\\i}{\\357}% U+00EF
+\\DeclareTextCommand{\\dh}{PD1}{\\360}% U+00F0
+\\DeclareTextCompositeCommand{\\~}{PD1}{n}{\\361}% U+00F1
+\\DeclareTextCompositeCommand{\\\`}{PD1}{o}{\\362}% U+00F2
+\\DeclareTextCompositeCommand{\\'}{PD1}{o}{\\363}% U+00F3
+\\DeclareTextCompositeCommand{\\^}{PD1}{o}{\\364}% U+00F4
+\\DeclareTextCompositeCommand{\\~}{PD1}{o}{\\365}% U+00F5
+\\DeclareTextCompositeCommand{\\"}{PD1}{o}{\\366}% U+00F6
+\\DeclareTextCommand{\\textdivide}{PD1}{\\367}% U+00F7
+\\DeclareTextCommand{\\o}{PD1}{\\370}% U+00F8
+\\DeclareTextCompositeCommand{\\\`}{PD1}{u}{\\371}% U+00F9
+\\DeclareTextCompositeCommand{\\'}{PD1}{u}{\\372}% U+00FA
+\\DeclareTextCompositeCommand{\\^}{PD1}{u}{\\373}% U+00FB
+\\DeclareTextCompositeCommand{\\"}{PD1}{u}{\\374}% U+00FC
+\\DeclareTextCompositeCommand{\\'}{PD1}{y}{\\375}% U+00FD
+\\DeclareTextCommand{\\th}{PD1}{\\376}% U+00FE
+\\DeclareTextCommand{\\textthorn}{PD1}{\\376}%* U+00FE
+\\DeclareTextCompositeCommand{\\"}{PD1}{y}{\\377}% U+00FF
+\\DeclareTextCommand{\\ij}{PD1}{ij}% ligature U+0069 U+006A
+\\DeclareTextCommand{\\SS}{PD1}{SS}%
+\\DeclareTextCommand{\\textcelsius}{PD1}{\\textdegree C}%
+\\DeclareTextCommand{\\textglqq}{PD1}{\\quotedblbase}%
+\\DeclareTextCommand{\\textgrqq}{PD1}{\\textquotedblleft}%
+\\DeclareTextCommand{\\textglq}{PD1}{\\quotesinglbase}%
+\\DeclareTextCommand{\\textgrq}{PD1}{\\textquoteleft}%
+\\DeclareTextCommand{\\textflqq}{PD1}{\\guillemetleft}%
+\\DeclareTextCommand{\\textfrqq}{PD1}{\\guillemetright}%
+\\DeclareTextCommand{\\textflq}{PD1}{\\guilsinglleft}%
+\\DeclareTextCommand{\\textfrq}{PD1}{\\guilsinglright}%
+\\DeclareTextCommand{\\textneg}{PD1}{\\textlogicalnot}%
+\\DeclareTextCommand{\\texttimes}{PD1}{\\textmultiply}%
+\\DeclareTextCommand{\\textdiv}{PD1}{\\textdivide}%
+\\DeclareTextCommand{\\textpm}{PD1}{\\textplusminus}%
+\\DeclareTextCommand{\\textcdot}{PD1}{\\textperiodcentered}%
+\\DeclareTextCommand{\\textbeta}{PD1}{\\ss}%
+\\DeclareTextCompositeCommand{\\k}{PD1}{a}{a}% aogonek
+\\DeclareTextCompositeCommand{\\'}{PD1}{c}{c}% cacute
+\\DeclareTextCompositeCommand{\\k}{PD1}{e}{e}% eogonek
+\\DeclareTextCompositeCommand{\\'}{PD1}{n}{n}% nacute
+\\DeclareTextCompositeCommand{\\'}{PD1}{s}{s}% sacute
+\\DeclareTextCompositeCommand{\\'}{PD1}{z}{z}% zacute
+\\DeclareTextCompositeCommand{\\.}{PD1}{z}{z}% zdot
+\\DeclareTextCompositeCommand{\\k}{PD1}{A}{A}% Aogonek
+\\DeclareTextCompositeCommand{\\'}{PD1}{C}{C}% Cacute
+\\DeclareTextCompositeCommand{\\k}{PD1}{E}{E}% Eogonek
+\\DeclareTextCompositeCommand{\\'}{PD1}{N}{N}% Nacute
+\\DeclareTextCompositeCommand{\\'}{PD1}{S}{S}% Sacute
+\\DeclareTextCompositeCommand{\\'}{PD1}{Z}{Z}% Zacute
+\\DeclareTextCompositeCommand{\\.}{PD1}{Z}{Z}% Zdot
+\\endinput
+%%
+%% End of file \`pd1enc.def'.
+` },
+  { format: 26, filename: 'pd1enc.def', content: `
 %%
 %% This is file \`pd1enc.def',
 %% generated with the docstrip utility.
@@ -31960,7 +36042,923 @@ E     \\else
 \\fi % DoNotLoadEpstopdf not defined
 \\endinput
 ` },
+  { format: 26, filename: 'pdftex.def', content: `
+%% pdftex.def
+%% Copyright (C) 2000-2015 David Carlisle, Sebastian Rahtz,
+%%                         Hans Hagen, Heiko Oberdiek and
+%%                         Martin Schr\\"oder
+%% Copyright (C) 2016-2018 LaTeX3 project and Heiko Oberdiek
+%% Copyright (C) 2018-2025 LaTeX3 project
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status \`maintained'.
+%%
+%% The Current Maintainer of this work is the LaTeX3 Project.
+%%
+%% https://github.com/latex3/graphics-def/issues
+%%
+\\ProvidesFile{pdftex.def}
+  [2025/09/29 v1.2d Graphics/color driver for pdftex]
+\\def\\GPT@space{ }
+\\def\\c@lor@arg#1{%
+  \\dimen@#1\\p@
+  \\ifdim\\dimen@<\\z@\\dimen@\\maxdimen\\fi
+  \\ifdim\\dimen@>\\p@
+    \\PackageError{color}{Argument \`#1' not in range [0,1]}\\@ehd
+  \\fi}
+\\def\\color@gray#1#2{%
+  \\c@lor@arg{#2}%
+  \\edef#1{#2 g #2 G}%
+  }
+\\def\\color@cmyk#1#2{\\c@lor@@cmyk#2\\@@#1}
+\\def\\c@lor@@cmyk#1,#2,#3,#4\\@@#5{%
+  \\c@lor@arg{#4}%
+  \\c@lor@arg{#1}%
+  \\c@lor@arg{#2}%
+  \\c@lor@arg{#3}%
+  \\edef#5{#1 #2 #3 #4 k #1 #2 #3 #4 K}%
+  }
+\\def\\color@rgb#1#2{\\c@lor@@rgb#2\\@@#1}
+\\def\\c@lor@@rgb#1,#2,#3\\@@#4{%
+  \\c@lor@arg{#1}%
+  \\c@lor@arg{#2}%
+  \\c@lor@arg{#3}%
+  \\edef#4{#1 #2 #3 rg #1 #2 #3 RG}%
+  }
+\\def\\color@RGB#1#2{\\c@lor@@RGB#2\\@@#1}
+\\def\\c@lor@@RGB#1,#2,#3\\@@#4{%
+ \\c@lor@RGB@rgb{#1}\\@tempa
+ \\c@lor@RGB@rgb{#2}\\@tempb
+ \\c@lor@RGB@rgb{#3}\\@tempc
+ \\c@lor@@rgb\\@tempa,\\@tempb,\\@tempc\\@@#4%
+  }
+\\def\\c@lor@RGB@rgb#1#2{%
+  \\dimen@#1\\p@
+  \\divide\\dimen@\\@cclv
+  \\edef#2{\\strip@pt\\dimen@}}
+\\def\\color@named#1#2{\\c@lor@@named#2,,\\@@#1}
+\\def\\c@lor@@named#1,#2,#3\\@@#4{%
+  \\@ifundefined{col@#1}%
+    {\\PackageError{color}{Undefined color \`#1'}\\@ehd}%
+  {\\edef#4{\\csname col@#1\\endcsname}}%
+  }
+\\chardef\\main@pdfcolorstack=0 %
+\\@ifundefined{@pdfcolorstack}
+  {\\def\\@pdfcolorstack{\\main@pdfcolorstack}}{}
+\\def\\current@color{0 g 0 G}
+\\def\\set@color{%
+  \\pdfcolorstack\\@pdfcolorstack push{\\current@color}%
+  \\aftergroup\\reset@color}
+\\def\\reset@color{\\pdfcolorstack\\@pdfcolorstack pop\\relax}
+\\newif\\ifGPT@pagecolor
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname currentgrouplevel\\endcsname\\relax
+  \\catcode\`X=9  % ignore
+  \\catcode\`E=14 % comment
+\\else
+  \\catcode\`X=14 % comment
+  \\catcode\`E=9  % ignore
+\\fi
+\\def\\set@page@color{%
+  \\global\\GPT@pagecolortrue
+  \\global\\let\\current@page@color\\current@color
+  \\@ifundefined{GPT@outputbox}{%
+    % \\newbox is outer in plain
+    \\csname newbox\\endcsname\\GPT@outputbox
+  }{}%
+  \\@ifundefined{GPTorg@shipout}{%
+    \\global\\let\\GPTorg@shipout\\shipout
+    \\gdef\\shipout{%
+X     % ensure \\GPT@outputbox is really void
+X     \\begingroup
+X       \\setbox\\GPT@outputbox=\\box\\GPT@outputbox
+X     \\endgroup
+E     \\edef\\GPT@saved@grouplevel{\\number\\currentgrouplevel}%
+      \\afterassignment\\GPT@shipout
+      \\global\\setbox\\GPT@outputbox=%
+    }%
+    \\gdef\\GPT@shipout{%
+X     \\ifvoid\\GPT@outputbox\\relax
+E     \\ifnum\\GPT@saved@grouplevel=\\currentgrouplevel
+E     \\else
+        \\expandafter\\aftergroup
+      \\fi
+      \\GPT@@shipout
+    }%
+    \\gdef\\GPT@@shipout{%
+      \\ifvoid\\GPT@outputbox\\relax
+        \\PackageInfo{pdftex.def}{Ignoring void output box}%
+      \\else
+        \\setbox\\GPT@outputbox=\\vbox{%
+          \\GPT@pageliteral
+          \\box\\GPT@outputbox
+        }%
+        \\GPTorg@shipout\\box\\GPT@outputbox\\relax
+      \\fi
+    }%
+    \\gdef\\GPT@pageliteral{%
+      \\ifGPT@pagecolor
+        \\pdfliteral page{%
+          q % gsave
+          \\current@page@color\\GPT@space
+          n % newpath
+          0 0 \\strip@pt\\pdfpagewidth\\GPT@space
+          \\strip@pt\\pdfpageheight\\GPT@space re % rectangle
+          % there is no need to convert to bp
+          f % fill
+          Q% grestore
+        }%
+      \\fi
+    }%
+  }{}%
+}
+\\catcode\`\\X=11 %
+\\catcode\`\\E=11 %
+\\def\\define@color@named#1#2{%
+  \\expandafter\\edef\\csname col@#1\\endcsname{#2}}
+\\def\\no@page@color{%
+  \\global\\GPT@pagecolorfalse
+}
+
+\\def\\@tempa{LaTeX2e}%
+\\ifx\\fmtname\\@tempa
+  \\expandafter\\@firstofone
+\\else
+  \\expandafter\\@gobble
+\\fi
+ {%
+ \\@ifl@t@r\\fmtversion{2020/10/01}
+  {%
+    \\def\\set@page@color{%
+     \\global\\GPT@pagecolortrue
+     \\global\\let\\current@page@color\\current@color
+     \\IfHookEmptyTF{shipout/background}{\\AddToHook{shipout/background}{\\relax}}{}%
+    }%
+    \\g@addto@macro\\@kernel@before@shipout@background
+     {%
+      \\ifGPT@pagecolor
+        \\put(-\\hoffset,-\\pdfpageheight+\\voffset)%
+          {%
+           \\pdfcolorstack\\@pdfcolorstack push{\\current@page@color}%
+            \\aftergroup\\reset@color
+            \\rule{\\pdfpagewidth}{\\pdfpageheight}%
+          }%
+      \\fi
+     }%
+  }{}%
+ }
+\\AtBeginDocument{%
+  \\def\\KV@Gin@bbllx{%
+    \\PackageError{pdftex.def}{%
+      Options \`bblly', \`bblly', \`bburx', \`bbury',\\MessageBreak
+      \`natheight' and \`natwidth' are not\\MessageBreak
+      supported by pdftex driver:\\MessageBreak
+      use \`viewport' instead%
+    }\\@ehc
+  }%
+  \\let\\KV@Gin@bblly\\KV@Gin@bbllx
+  \\let\\KV@Gin@bburx\\KV@Gin@bbllx
+  \\let\\KV@Gin@bbury\\KV@Gin@bbllx
+  \\let\\KV@Gin@natwidth\\KV@Gin@bbllx
+  \\let\\KV@Gin@natheight\\KV@Gin@bbllx
+  \\def\\KV@Gin@bb{%
+    \\PackageInfo{pdftex.def}%
+      {Option \`bb' equivalent to \`viewport' with the pdftex driver}%
+    \\KV@Gin@viewport
+  }%
+  \\let\\Gin@iii\\Gin@iii@vp
+}
+
+%%% this definition will be added to graphics.sty
+\\def\\Gin@iii@vp[#1,#2][#3,#4]#5{%
+  \\begingroup
+  \\let\\Gin@viewport@code\\Gin@viewport
+  \\Gin@defaultbp\\Gin@vllx{#1}%
+  \\Gin@defaultbp\\Gin@vlly{#2}%
+  \\Gin@defaultbp\\Gin@vurx{#3}%
+  \\Gin@defaultbp\\Gin@vury{#4}%
+  \\Ginclude@graphics{#5}%
+  \\endgroup}
+
+
+%%% this definition needs moving from graphicx.sty to graphics.sty
+\\def\\Gin@viewport{%
+  \\let\\Gin@ollx\\Gin@llx
+  \\let\\Gin@olly\\Gin@lly
+  \\let\\Gin@ourx\\Gin@urx
+  \\let\\Gin@oury\\Gin@ury
+  \\dimen@\\Gin@llx\\p@\\advance\\dimen@ \\Gin@vurx\\p@
+                      \\edef\\Gin@urx{\\strip@pt\\dimen@}%
+  \\dimen@\\Gin@lly\\p@\\advance\\dimen@ \\Gin@vury\\p@
+                      \\edef\\Gin@ury{\\strip@pt\\dimen@}%
+  \\dimen@\\Gin@llx\\p@\\advance\\dimen@ \\Gin@vllx\\p@
+                      \\edef\\Gin@llx{\\strip@pt\\dimen@}%
+  \\dimen@\\Gin@lly\\p@\\advance\\dimen@ \\Gin@vlly\\p@
+                      \\edef\\Gin@lly{\\strip@pt\\dimen@}}
+%%% end of temp addition
+
+
+\\def\\Gread@pdftex#1{%
+  \\expandafter\\ifx\\expandafter\\relax\\pdffilesize{#1}\\relax
+    \\expandafter\\@secondoftwo
+  \\else
+    \\expandafter\\@firstoftwo
+  \\fi
+    {\\Gread@@pdftex{#1}}%
+    {%
+      \\def\\Gin@llx{0}%
+      \\let\\Gin@lly\\Gin@llx
+      \\def\\Gin@urx{72}%
+      \\let\\Gin@ury\\Gin@urx
+      \\ifGin@draft
+      \\else
+        \\PackageError{pdftex.def}{File \`#1' not found: using draft setting}%
+        \\@ehc
+        \\Gin@drafttrue
+      \\fi
+    }%
+}
+\\let\\Gin@attr@hash\\@empty
+\\@ifundefined{Gin@decode}
+  {\\let\\Gin@decode\\@empty}
+  {}
+\\@ifundefined{Gin@log}
+  {\\let\\Gin@log\\wlog}
+  {}
+\\@ifundefined{Gin@page}
+  {\\let\\Gin@page\\@empty}
+  {}
+\\def\\GPT@page{\\Gin@page}
+\\@ifundefined{Gin@pagebox}
+  {\\def\\Gin@pagebox{cropbox}}
+  {}
+\\def\\GPT@cropbox{cropbox}
+\\@ifundefined{Gin@interpolate}
+  {\\csname newif\\endcsname\\ifGin@interpolate}
+  {}
+\\newif\\ifGread@transgroup
+\\def\\Gread@@pdftex#1{%
+  \\edef\\Gin@attr@hash{%
+    \\ifx\\Gin@pagebox\\@empty
+    \\else
+      :\\Gin@pagebox
+    \\fi
+    \\ifx\\Gin@page\\@empty
+    \\else
+      :P\\Gin@page
+    \\fi
+    \\ifx\\Gin@decode\\@empty\\else
+      :D[\\Gin@decode]%
+    \\fi
+    \\ifGin@interpolate
+      :I%
+    \\fi
+  }%
+  \\@ifundefined{#1 image\\Gin@attr@hash}%
+    {%
+      \\pdfximage
+        \\ifnum0%
+          \\ifx\\Gin@decode\\@empty\\else 1\\fi
+          \\ifGin@interpolate 1\\fi
+          \\ifGread@transgroup 1\\fi
+          >0 %
+          attr{%
+            \\ifx\\Gin@decode\\@empty\\else/Decode[\\Gin@decode]\\fi
+            \\ifGread@transgroup/Group<</S/Transparency/K false/I false>>\\fi
+            \\ifGin@interpolate/Interpolate true\\fi
+          }%
+        \\fi
+        \\ifx\\Gin@page\\@empty\\else page \\Gin@page\\fi
+        \\Gin@pagebox
+        {#1}%
+      \\setbox\\@tempboxa=\\hbox{\\pdfrefximage\\pdflastximage}%
+      \\def\\Gin@llx{0}\\let\\Gin@lly\\Gin@llx
+      \\Gin@defaultbp\\Gin@urx{\\wd\\@tempboxa}%
+      \\Gin@defaultbp\\Gin@ury{\\ht\\@tempboxa}%
+      \\expandafter\\xdef\\csname #1 image\\Gin@attr@hash\\endcsname
+        {\\pdfrefximage\\the\\pdflastximage}%
+      \\expandafter\\xdef\\csname #1 height\\Gin@attr@hash\\endcsname
+        {\\the\\ht\\@tempboxa}%
+      \\expandafter\\xdef\\csname #1 width\\Gin@attr@hash\\endcsname
+        {\\the\\wd\\@tempboxa}%
+      \\Gin@log{%
+        <#1, %
+        id=\\the\\pdflastximage, %
+        \\ifx\\Gin@page\\@empty\\else page=\\Gin@page , \\fi
+        \\ifx\\Gin@pagebox\\@empty\\else\\ifx\\Gin@pagebox\\GPT@cropbox\\else
+          pagebox=\\Gin@pagebox , \\fi\\fi
+        \\ifx\\Gin@decode\\@empty\\else decode=[\\Gin@decode], \\fi
+        \\ifGin@interpolate interpolate=true, \\fi
+        \\the\\wd\\@tempboxa\\GPT@space x \\the\\ht\\@tempboxa
+        >%
+      }%
+    }{%
+      \\def\\Gin@llx{0}\\let\\Gin@lly\\Gin@llx
+      \\Gin@defaultbp\\Gin@urx{\\csname #1 width\\Gin@attr@hash\\endcsname}%
+      \\Gin@defaultbp\\Gin@ury{\\csname #1 height\\Gin@attr@hash\\endcsname}%
+    }%
+}
+\\def\\Gread@png#1{%
+  \\let\\Gin@page\\@empty
+  \\let\\Gin@pagebox\\@empty
+  \\Gread@transgroupfalse
+  \\Gread@pdftex{#1}%
+}
+\\let\\Gread@jpg\\Gread@png
+\\expandafter\\let\\csname Gread@jbig2\\endcsname\\Gread@png
+\\def\\Gread@pdf#1{%
+  \\let\\Gin@decode\\@empty
+  \\Gin@interpolatefalse
+  \\Gread@transgrouptrue
+  \\Gread@pdftex{#1}%
+}
+\\let\\Gread@mps\\Gread@eps
+\\def\\GPT@setup@scale{%
+  \\def\\@tempa{!}%
+  \\ifx\\Gin@scaley\\@tempa
+    \\let\\Gin@scaley\\Gin@scalex
+  \\else
+    \\ifx\\Gin@scalex\\@tempa\\let\\Gin@scalex\\Gin@scaley\\fi
+  \\fi
+}
+\\def\\Ginclude@pdftex#1{%
+  \\GPT@setup@scale
+  \\Gin@log{%
+    <use #1%
+    \\ifx\\Gin@page\\@empty\\else, page \\Gin@page\\fi
+    >%
+  }%
+  \\PackageInfo{pdftex.def}{%
+    #1 \\ifx\\Gin@page\\@empty\\else, page\\Gin@page\\fi
+    \\GPT@space used\\on@line.\\MessageBreak
+    Requested size: %
+    \\the\\Gin@req@width\\GPT@space x \\the\\Gin@req@height
+    \\ifx\\documentclass\\@undefined\\else\\expandafter\\@gobble\\fi
+  }%
+  \\Ginclude@@pdftex{\\@nameuse{#1 image\\Gin@attr@hash}}%
+}
+\\def\\Ginclude@mps#1{%
+  \\GPT@setup@scale
+  \\Ginclude@@pdftex{\\convertMPtoPDF{#1}{1}{1}}%
+}
+\\def\\Ginclude@@pdftex#1{%
+  \\hbox{%
+    \\Gscale@box{\\Gin@scalex}[\\Gin@scaley]{%
+      \\@ifundefined{Gin@vllx}{%
+        \\GPT@viewportfalse
+        % without viewport/trim clipping does not make sense
+        % for pdfTeX
+        \\Gin@clipfalse
+      }{}%
+      \\ifGin@clip
+        \\if!\\Gin@vllx\\Gin@vlly\\Gin@vurx\\Gin@vury!%
+        \\else
+          \\let\\GPT@clipend\\GPT@DoClipEnd
+          \\setbox\\@tempboxa\\hbox\\bgroup
+        \\fi
+      \\fi
+      \\ifGPT@viewport
+        \\ifdim\\Gin@vlly\\p@=\\z@
+        \\else
+          \\lower\\Gin@vlly bp\\hbox\\bgroup
+        \\fi
+        \\ifdim\\Gin@vllx\\p@=\\z@
+        \\else
+          \\hskip-\\Gin@vllx bp\\relax
+        \\fi
+      \\fi
+      #1%
+      \\ifGPT@viewport
+        \\ifdim\\Gin@vlly\\p@=\\z@
+        \\else
+          \\egroup
+        \\fi
+        \\GPT@clipend
+      \\fi
+    }%
+  }%
+}
+\\newif\\ifGPT@viewport
+\\GPT@viewporttrue
+\\let\\GPT@clipend\\relax
+\\def\\GPT@DoClipEnd{%
+  \\egroup
+  \\dp\\@tempboxa\\z@
+  % \\Gin@urx and \\Gin@ury already contain the correct values,
+  % so both cases viewport and trim can be handled together:
+  \\dimen@\\Gin@urx\\p@
+  \\advance\\dimen@ -\\Gin@llx\\p@
+  \\wd\\@tempboxa\\strip@pt\\dimen@ bp\\relax
+  \\dimen@\\Gin@ury\\p@
+  \\advance\\dimen@ -\\Gin@lly\\p@
+  \\ht\\@tempboxa\\strip@pt\\dimen@ bp\\relax
+  \\pdfxform\\@tempboxa
+  \\pdfrefxform\\pdflastxform
+}
+\\let\\Ginclude@png\\Ginclude@pdftex
+\\let\\Ginclude@jpg\\Ginclude@pdftex
+\\let\\Ginclude@pdf\\Ginclude@pdftex
+\\expandafter\\let\\csname Ginclude@jbig2\\endcsname\\Ginclude@pdftex
+\\def\\GPT@MatrixIdentity{1 0 0 1}
+\\def\\GPT@Zero{0}
+\\def\\GPT@Minus{-}
+\\def\\GPT@NormalizeNumber#1{%
+  \\edef#1{#1}%
+  \\edef#1{\\expandafter\\zap@space#1 \\@empty}%
+  \\edef#1{\\expandafter\\GPT@ZapPlus#1+\\@nil}%
+  \\edef#1{\\expandafter\\GPT@ZapMinusMinus#1--\\@nil}%
+  \\expandafter\\GPT@Split#1..\\@nil
+  \\ifx\\GPT@frac\\@empty
+  \\else
+    \\edef\\GPT@frac{%
+      \\expandafter\\GPT@Reverse\\expandafter{\\expandafter}\\GPT@frac\\@nil
+    }%
+    \\edef\\GPT@frac{%
+      \\expandafter\\GPT@ZapLeadingZeros\\GPT@frac\\@empty
+    }%
+    \\ifx\\GPT@frac\\@empty
+    \\else
+      \\edef\\GPT@frac{%
+        \\expandafter\\GPT@Reverse\\expandafter{\\expandafter}\\GPT@frac\\@nil
+      }%
+    \\fi
+  \\fi
+  \\edef\\GPT@sign{\\expandafter\\@car\\GPT@int\\@empty\\@nil}%
+  \\ifx\\GPT@sign\\GPT@Minus
+    \\edef\\GPT@int{\\expandafter\\@cdr\\GPT@int\\@nil}%
+  \\else
+    \\def\\GPT@sign{}%
+  \\fi
+  \\edef\\GPT@int{%
+    \\expandafter\\GPT@ZapLeadingZeros\\GPT@int\\@empty
+  }%
+  \\edef\\GPT@temp{\\GPT@int\\GPT@frac}%
+  \\ifx\\GPT@temp\\@empty
+    \\def#1{0}%
+  \\else
+    \\edef#1{%
+      \\GPT@sign
+      \\GPT@int
+      \\ifx\\GPT@frac\\@empty
+      \\else
+        .\\GPT@frac
+      \\fi
+    }%
+  \\fi
+}
+\\def\\GPT@ZapPlus#1+#2\\@nil{%
+  #1%
+  \\ifx\\@empty#2\\@empty
+    \\expandafter\\@gobble
+  \\else
+    \\expandafter\\@firstofone
+  \\fi
+  {%
+    \\GPT@ZapPlus#2\\@nil
+  }%
+}
+\\def\\GPT@ZapMinusMinus#1--#2\\@nil{%
+  #1%
+  \\ifx\\@empty#2\\@empty
+    \\expandafter\\@gobble
+  \\else
+    \\expandafter\\@firstofone
+  \\fi
+  {%
+    \\GPT@ZapMinusMinus#2\\@nil
+  }%
+}
+\\def\\GPT@Split#1.#2.#3\\@nil{%
+  \\def\\GPT@int{#1}%
+  \\ifx\\@empty#2\\@empty
+    \\let\\GPT@frac\\@empty
+  \\else
+    \\def\\GPT@frac{#2}%
+  \\fi
+}
+\\def\\GPT@Reverse#1#2#3\\@nil{%
+  \\ifx\\@empty#3\\@empty
+    #2#1%
+    \\expandafter\\@gobble
+  \\else
+    \\expandafter\\@firstofone
+  \\fi
+  {%
+    \\GPT@Reverse{#2#1}#3\\@nil
+  }%
+}
+\\def\\GPT@ZapLeadingZeros#1{%
+  \\ifx0#1%
+    \\expandafter\\GPT@ZapLeadingZeros
+  \\else
+    #1%
+  \\fi
+}
+\\def\\Grot@start{%
+  \\GPT@NormalizeNumber\\Grot@sin
+  \\GPT@NormalizeNumber\\Grot@cos
+  \\edef\\GPT@temp{%
+    \\Grot@cos\\GPT@space\\Grot@sin\\GPT@space
+    \\if-\\Grot@sin
+    \\else
+      \\ifx\\Grot@sin\\GPT@Zero
+        \\GPT@Zero
+      \\else
+        -\\Grot@sin
+      \\fi
+    \\fi
+    \\GPT@space\\Grot@cos
+  }%
+  \\ifx\\GPT@temp\\GPT@MatrixIdentity
+    \\def\\Grot@end{}%
+  \\else
+    \\pdfsave
+    \\pdfsetmatrix{\\GPT@temp}%
+    % Slightly hacky, but set width of box 0 to 0pt otherwise
+    % the CTM gets restored in the wrong place
+    \\wd\\z@\\z@
+  \\fi
+}
+\\def\\Grot@end{\\pdfrestore}
+\\def\\Gscale@start{%
+  \\GPT@NormalizeNumber\\Gscale@x
+  \\GPT@NormalizeNumber\\Gscale@y
+  \\edef\\GPT@temp{%
+    \\Gscale@x\\GPT@space0 0 \\Gscale@y
+  }%
+  \\ifx\\GPT@temp\\GPT@MatrixIdentity
+    \\def\\Gscale@end{}%
+  \\else
+    \\pdfsave
+    \\pdfsetmatrix{\\GPT@temp}%
+  \\fi
+}
+\\def\\Gscale@end{\\pdfrestore}
+\\@ifundefined{ifGin@setpagesize}
+  {\\expandafter\\let\\csname ifGin@setpagesize\\expandafter\\endcsname
+                    \\csname iftrue\\endcsname}
+  {}
+\\@ifundefined{stockwidth}{\\newdimen\\stockwidth}{}
+\\@ifundefined{stockheight}{\\newdimen\\stockheight}{}
+\\ifGin@setpagesize
+\\ifx\\paperwidth\\@undefined\\else
+  \\AtBeginDocument{%
+% If a package has changed \\mag, assume it knows what it is doing
+% and leave page size alone
+\\ifnum\\mag=\\@m
+  \\ifdim\\stockwidth>0pt\\relax
+    \\ifdim\\stockheight>0pt\\relax
+      \\setlength{\\pdfpagewidth}{\\stockwidth}%
+      \\setlength{\\pdfpageheight}{\\stockheight}%
+    \\else
+      \\ifdim\\paperwidth>0pt\\relax
+        \\ifdim\\paperheight>0pt\\relax
+          \\setlength{\\pdfpagewidth}{\\paperwidth}%
+          \\setlength{\\pdfpageheight}{\\paperheight}%
+        \\fi
+      \\fi
+    \\fi
+  \\else
+    \\ifdim\\stockwidth=0pt\\relax
+      \\ifdim\\paperwidth>0pt\\relax
+        \\ifdim\\paperheight>0pt\\relax
+          \\setlength{\\pdfpagewidth}{\\paperwidth}%
+          \\setlength{\\pdfpageheight}{\\paperheight}%
+        \\fi
+      \\fi
+    \\fi
+  \\fi
+\\fi
+}
+\\fi
+\\fi
+\\def\\Gin@extensions{%
+  .pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,%
+  .PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2%
+}
+\\@namedef{Gin@rule@.jpg}#1{{jpg}{.jpg}{#1}}
+\\@namedef{Gin@rule@.jpeg}#1{{jpg}{.jpeg}{#1}}
+\\@namedef{Gin@rule@.JPG}#1{{jpg}{.JPG}{#1}}
+\\@namedef{Gin@rule@.JPEG}#1{{jpg}{.JPEG}{#1}}
+\\@namedef{Gin@rule@.jb2}#1{{jbig2}{.jb2}{#1}}%
+\\@namedef{Gin@rule@.jbig2}#1{{jbig2}{.jbig2}{#1}}%
+\\@namedef{Gin@rule@.png}#1{{png}{.png}{#1}}
+\\@namedef{Gin@rule@.PNG}#1{{png}{.PNG}{#1}}
+\\@namedef{Gin@rule@.mps}#1{{mps}{.mps}{#1}}
+\\@namedef{Gin@rule@.pdf}#1{{pdf}{.pdf}{#1}}
+\\@namedef{Gin@rule@.PDF}#1{{pdf}{.PDF}{#1}}
+\\@namedef{Gin@rule@.eps}#1{{eps}{.eps}{#1}}
+% MPS conversion
+\\def\\GPT@LoadSuppPdf{%
+  \\@ifundefined{convertMPtoPDF}{%
+    \\edef\\@tempa{%
+      \\catcode\`\\noexpand\\<\\the\\catcode\`\\<\\relax
+      \\catcode\`\\noexpand\\>\\the\\catcode\`\\>\\relax
+      \\catcode\`\\noexpand\\=\\the\\catcode\`\\=\\relax
+      }%
+    \\@makeother\\<\\@makeother\\>\\@makeother\\=%
+    % supp-pdf.mkii tests against \\undefined:
+    % just in case someone has defined it ...
+    \\let\\GPT@orig@undefined\\undefined
+    \\let\\undefined\\@undefined
+    \\InputIfFileExists{supp-pdf.mkii}{}{}%
+    \\let\\undefined\\GPT@orig@undefined
+    \\@tempa
+  }{%
+    % supp-pdf is probably already loaded.
+  }%
+  % If supp-pdf is not available, \\convertMPtoPDF generates
+  % an error message. \\providecommand inside the third argument
+  % of \\InputIfFileExists will not work:
+  % * \\InputIfFileExists has problems with parameters (#1).
+  % * Implementation of \\providecommand is insufficient in miniltx.tex
+  \\@ifundefined{convertMPtoPDF}{%
+% 2016/05/21 v0.01c use \\newcommand here not \\newcommand*  graphics/4472
+\\newcommand{\\convertMPtoPDF}[3]{%
+      \\PackageError{pdftex.def}{%
+        Cannot convert ##1 from MPS to PDF.
+        The support file \`supp-pdf.mkii' (supp-pdf.tex) is missing%
+      }{%
+        The graphics driver for pdfTeX needs \`supp-pdf.mkii'
+        (or \`supp-pdf.tex' and/or \`supp-mis.tex')
+        to convert MetaPost output files to PDF.
+        These files are part of ConTeXt and can also be found here:%
+        \\GPT@space\\GPT@space CTAN:macros/pdftex/graphics/.
+        You'll get more errors if you'll continue now.%
+      }%
+    }%
+  }{}%
+  \\let\\GPT@LoadSuppPdf\\relax
+}
+\\AtBeginDocument{%
+  \\GPT@LoadSuppPdf
+}
+% Load package epstopdf if
+% a) LaTeX is running (plain TeX users are on their own),
+% b) and \\DoNotLoadEpstopdf either does not exist or is not \\relax,
+% c) and neither pst-pdf nor pdftricks is loaded (by \\begin{document}).
+%
+% In other words, by default .eps files will be automatically
+% converted to .pdf files when outputting pdf.  This can be wrong!
+% If the .pdf is the source, rather than the .eps, you should put
+%  \\newcommand{\\DoNotLoadEpstopdf}{}
+% before even the \\documentclass line of your document.
+%
+% Earlier versions did not load epstopdf if shell escape was disabled.
+% Now load, for better error reporting and to allow inclusion of pre-existing
+% converted files: see gh/38
+%
+% More information about the epstopdf run will be in the .log file;
+% see http://ctan.org/pkg/epstopdf-pkg for more info about the
+% epstopdf package itself.  In turn, it calls the epstopdf script
+% (http://ctan.org/pkg/epstopdf).
+%
+% For the first discussion and background on this, see the thread on latex-l:
+% http://thread.gmane.org/gmane.comp.tex.latex.latex3/1465
+%
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname DoNotLoadEpstopdf\\endcsname\\relax
+  \\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+  \\expandafter\\ifx\\csname AtEndOfPackage\\endcsname\\relax
+  \\else
+    \\AtEndOfPackage{%
+      \\AtBeginDocument{%
+        \\ifx\\includegraphics\\@undefined\\else
+        \\@ifpackageloaded{pst-pdf}{}{%
+          \\@ifpackageloaded{pdftricks}{}{%
+            \\@ifpackageloaded{graphics}{%
+                \\edef\\Gin@extensions{\\Gin@extensions,.eps}%
+                \\RequirePackage{epstopdf-base}[2009/07/12]%
+	      }{}
+          }% pdftricks not loaded
+        }% pst-pdf not loaded
+        \\fi
+      }% AtBeginDocument block
+    }% AtEndofPackage block
+  \\fi % AtEndofPackage not defined
+\\fi % DoNotLoadEpstopdf not defined
+\\endinput
+` },
   { format: 32, filename: 'pppdftex.def', content: `
+%%
+%% This is file \`pppdftex.def',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% pdfpages.dtx  (with options: \`pppdftexdef')
+%% 
+%% This file is part of the pdfpages package.
+%% 
+%% Copyright (C) 2001-2025 Andreas MATTHIAS
+%%
+%% This work may be distributed and/or modified under the conditions
+%% of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   <http://www.latex-project.org/lppl.txt>.
+%%
+%% This work has the LPPL maintenance status \`maintained'.
+%%
+%% The Current Maintainer of this work is
+%%   Andreas Matthias <andreas.matthias@gmail.com>.
+%%
+%% Please send error reports and suggestions for improvements to
+%%   Andreas MATTHIAS <andreas.matthias@gmail.com>.
+%%
+\\def\\AM@git@tag{v0.6g}
+\\def\\AM@git@date{2025/07/23}
+\\def\\AM@git@hash{b55a30b6b0}
+\\ProvidesFile{pppdftex.def}
+   [\\AM@git@date\\space\\AM@git@tag\\space
+    Pdfpages driver for pdfTeX (AM)]
+\\ifnum\\pdftexversion<100
+  \\PackageError{pdfpages}
+         {Package pdfpages requires at least\\MessageBreak
+          pdfTeX version 1.00}
+         {Update your TeX distribution.}%
+  \\let\\AM@endinput\\relax
+  \\expandafter\\endinput
+\\fi
+  \\let\\AM@outputmode\\pdfoutput
+  \\let\\AM@saveimageresource\\pdfximage
+  \\let\\AM@lastsavedimageresourcepages\\pdflastximagepages
+  \\let\\AM@luatexpagewidth\\pdfpagewidth
+  \\let\\AM@luatexpageheight\\pdfpageheight
+  \\let\\AM@annotation\\pdfannot
+  \\let\\AM@thread\\pdfthread
+  \\let\\AM@destination\\pdfdest
+\\ifcase\\pdfoutput
+  \\input{ppnull.def}
+  \\expandafter\\endinput
+\\fi
+\\begingroup
+\\@ifundefined{ver@pdftex.def}{%
+  \\PackageError{pdfpages}
+         {The graphics package was loaded with driver\\MessageBreak
+          \`\\Gin@driver', which cannot be used with pdfTeX}
+         {Check the driver option of the graphics package.}
+  \\global\\let\\AM@endinput\\relax
+  \\aftergroup\\endinput}{}
+\\endgroup
+\\AM@ifdriverlater{pdftex}{2000/05/12}{}{%
+    \\PackageError{pdfpages}
+         {Your version of \`pdftex.def' is too old.\\MessageBreak
+          There is no multipage support\\MessageBreak
+          in \`pdftex.def' < 0.02u}
+         {Please, update your \`pdftex.def'!}}
+\\AM@ifdriverlater{pdftex}{2000/09/14}{}{%
+    \\PackageWarningNoLine{pdfpages}{%
+         Your version of \`pdftex.def' is too old.\\MessageBreak
+         There might be problems with\\MessageBreak
+         the \`trim' and \`clip' options.\\MessageBreak
+         Please, update your \`pdftex.def'}}
+\\let\\AM@Gread@@pdftex\\Gread@@pdftex
+\\renewcommand*{\\Gread@@pdftex}[1]{%
+  \\xdef\\AM@currentdocname@fix{#1}%
+  \\AM@Gread@@pdftex{#1}%
+}
+\\def\\AM@getpagecount{%
+  \\setbox\\@tempboxa=\\hbox{\\includegraphics{\\AM@currentdocname}}%
+  \\AM@saveimageresource{\\AM@currentdocname@fix}%
+  \\edef\\AM@pagecount{\\the\\AM@lastsavedimageresourcepages}%
+}
+\\def\\AM@getpagedimen{%
+  \\AM@pagewidth=\\paperwidth
+  \\AM@pageheight=\\paperheight
+}
+\\def\\AM@setpagedimen{%
+  \\AM@luatexpagewidth\\AM@pagewidth
+  \\AM@luatexpageheight\\AM@pageheight
+}
+\\let\\AM@pagesize@boogie\\relax
+\\let\\AM@fitpaper@special\\relax
+\\def\\AM@findfile#1{%
+  \\AM@findfile@i{#1}{pdf}%
+  \\AM@findfile@ii{#1}%
+}
+\\AtBeginDocument{%
+  \\let\\AM@IfFileExists\\IfFileExists
+  \\@ifpackageloaded{grffile}{%
+    \\@ifundefined{grffile@IfFileExists}{}{%
+      \\let\\AM@IfFileExists\\grffile@IfFileExists}%
+  }{}%
+}
+\\ExplSyntaxOn
+\\@ifundefined{pdfmanagement_add:nnn}{%
+  \\def\\AM@setRotate{\\PLS@Rotate{90}}%
+  \\def\\AM@resetRotate{\\PLS@Rotate{0}}%
+}{%
+  \\def\\AM@setRotate{\\pdfmanagement_add:nnn{ThisPage}{Rotate}{90}}%
+  \\def\\AM@resetRotate{}%
+}%
+\\ExplSyntaxOff
+\\def\\AM@linktodoc@special@begin{%
+    \\AM@annotation width \\wd\\@tempboxa
+                   height \\ht\\@tempboxa
+                   depth \\dp\\@tempboxa
+                   {/Subtype /Link /Border [0 0 0]
+                    /A << /S /GoToR
+                          /F (\\AM@linkfilename)
+                          /D [\\AM@linktodoc@page@m@ne \\AM@linktodocfit]
+                          \\ifAM@newwindow/NewWindow true\\fi >>}%
+}
+\\let\\AM@linktodoc@special@end\\relax
+\\def\\AM@survey@special@begin{%
+    \\AM@annotation width \\wd\\@tempboxa
+                   height \\ht\\@tempboxa
+                   depth \\dp\\@tempboxa
+                   {/Subtype /Link /Border [0 0 0]
+                    /A << /S /GoTo
+                          /D (pdfpages.\\AM@linktodoc@page@m@ne) >>}%
+}
+\\let\\AM@survey@special@end\\relax
+\\def\\AM@thread@special@begin{%
+      \\AM@thread width \\wd\\@tempboxa
+                 height \\ht\\@tempboxa
+                 depth \\dp\\@tempboxa
+                 attr {/I <<\\threadinfodict>>}%
+                 name {\\AM@threadname}%
+}
+\\let\\AM@thread@special@end\\relax
+\\def\\AM@reset@view{%
+  \\def\\AM@view{fit}%
+  \\def\\AM@view@xpos{0}%
+  \\def\\AM@view@ypos{}}
+\\def\\AM@dest@special{\\AM@destination name {\\AM@linkname.\\AM@page} \\AM@view}
+\\def\\AM@anchor@special{\\AM@destination name {pdfpages.\\the\\count1} fit}
+\\def\\AM@convert@dest#1{%
+  \\AM@convert@dest@i #1 0 0 0\\END}
+\\def\\AM@convert@dest@i#1 #2 #3 #4\\END{%
+  \\def\\tag{#1}%
+  \\def\\x{FitH}%
+  \\ifx\\x\\tag
+    \\def\\AM@view{fith}%
+    \\def\\AM@view@ypos{#2}%
+  \\else
+    \\def\\x{FitBH}%
+    \\ifx\\x\\tag
+      \\def\\AM@view{fitbh}%
+      \\def\\AM@view@ypos{#2}%
+    \\else
+      \\def\\x{FitV}%
+      \\ifx\\x\\tag
+        \\def\\AM@view{fitv}%
+        \\def\\AM@view@xpos{#2}%
+      \\else
+        \\def\\x{FitBV}%
+        \\ifx\\x\\tag
+          \\def\\AM@view{fitbv}%
+          \\def\\AM@view@xpos{#2}%
+        \\else
+          \\def\\x{FitR}%
+          \\ifx\\x\\tag
+            \\def\\AM@view{fitr}%
+            \\PackageWarningNoLine{pdfpages}{%
+              \`linkfit=FitR' is not supported,
+              I will try \`linkfit=Region'.}%
+            \\def\\tag{region}%
+          \\else
+            \\def\\x{FitB}%
+            \\ifx\\x\\tag
+              \\def\\AM@view{fitb}%
+            \\else
+              \\def\\x{XYZ}%
+              \\ifx\\x\\tag
+                \\def\\AM@view{xyz zoom \\AM@thousand{#4}}%
+                \\def\\AM@view@xpos{#2}
+                \\def\\AM@view@ypos{#3}
+              \\else
+                \\def\\x{Region}%
+                \\ifx\\x\\tag
+                  \\def\\AM@view{fitr
+                    width \\the\\wd\\@tempboxa
+                    height \\the\\ht\\@tempboxa
+                    depth \\the\\dp\\@tempboxa}%
+                \\else
+                  \\def\\AM@view{fit}%
+                \\fi
+              \\fi
+            \\fi
+          \\fi
+        \\fi
+      \\fi
+    \\fi
+  \\fi
+}
+\\let\\AM@disable@includegraphics\\relax
+\\endinput
+%%
+%% End of file \`pppdftex.def'.
+` },
+  { format: 26, filename: 'pppdftex.def', content: `
 %%
 %% This is file \`pppdftex.def',
 %% generated with the docstrip utility.
@@ -34187,7 +39185,2323 @@ E     \\else
 %%
 %% End of file \`puenc.def'.
 ` },
+  { format: 26, filename: 'puenc.def', content: `
+%%
+%% This is file \`puenc.def',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% hyperref.dtx  (with options: \`puenc')
+%% 
+%% Copyright
+%% 1995-2001 Sebastian Rahtz, with portions written by David Carlisle and Heiko Oberdiek
+%% 2001-2015 Heiko Oberdiek
+%% 2016-2019 Oberdiek Package Support Group
+%% 2019-2025 LaTeX Project
+%%      https://github.com/latex3/hyperref/issues
+%% 
+%% This file is part of the \`Hyperref Bundle'.
+%% -------------------------------------------
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%% 
+%% This work has the LPPL maintenance status \`maintained'.
+%% 
+%% The Current Maintainer of this work is the LaTeX Project.
+%% 
+%% The list of all files belonging to the \`Hyperref Bundle' is
+%% given in the file \`manifest.txt'.
+%% 
+%% File: hyperref.dtx
+\\ProvidesFile{puenc.def}
+  [2025-07-12 v7.01o %
+      Hyperref: PDF Unicode definition (HO)]
+\\DeclareFontEncoding{PU}{}{}
+\\DeclareTextCommand{\\\`}{PU}[1]{#1\\83\\000}% U+0300
+\\DeclareTextCommand{\\'}{PU}[1]{#1\\83\\001}% U+0301
+\\DeclareTextCommand{\\^}{PU}[1]{#1\\83\\002}% U+0302
+\\DeclareTextCommand{\\~}{PU}[1]{#1\\83\\003}% U+0303
+\\DeclareTextCommand{\\=}{PU}[1]{#1\\83\\004}% U+0304
+\\DeclareTextCommand{\\u}{PU}[1]{#1\\83\\006}% U+0306
+\\ifx\\CYRDZE\\@undefined \\else
+\\DeclareTextCommand{\\U}{PU}[1]{#1\\83\\006}% U+0306
+\\fi
+\\DeclareTextCommand{\\.}{PU}[1]{#1\\83\\007}% U+0307
+\\DeclareTextCommand{\\"}{PU}[1]{#1\\83\\010}% U+0308
+\\DeclareTextCommand{\\r}{PU}[1]{#1\\83\\012}% U+030A
+\\DeclareTextCommand{\\H}{PU}[1]{#1\\83\\013}% U+030B
+\\DeclareTextCommand{\\v}{PU}[1]{#1\\83\\014}% U+030C
+\\ifx\\CYRDZE\\@undefined \\else
+\\DeclareTextCommand{\\C}{PU}[1]{#1\\83\\017}% U+030F
+\\fi
+\\DeclareTextCommand{\\textinvbreve}{PU}[1]{#1\\83\\021}% U+0311
+\\DeclareTextCommand{\\newtie}{PU}[1]{#1\\83\\021}% U+0311
+\\DeclareTextCommand{\\d}{PU}[1]{#1\\83\\043}% U+0323
+\\DeclareTextCommand{\\textsubumlaut}{PU}[1]{#1\\83\\044}% U+0324
+\\DeclareTextCommand{\\textsubring}{PU}[1]{#1\\83\\045}% U+0325
+\\DeclareTextCommand{\\c}{PU}[1]{#1\\83\\047}% U+0327
+\\DeclareTextCommand{\\k}{PU}[1]{#1\\83\\050}% U+0328
+\\DeclareTextCommand{\\textsubcircum}{PU}[1]{#1\\83\\055}% U+032D
+\\DeclareTextCommand{\\textsubbreve}{PU}[1]{#1\\83\\056}% U+032E
+\\DeclareTextCommand{\\textsubtilde}{PU}[1]{#1\\83\\060}% U+0330
+\\DeclareTextCommand{\\b}{PU}[1]{#1\\83\\061}% U+0331
+\\DeclareTextCommand{\\t}{PU}[1]{#1\\83\\141}% U+0361
+\\DeclareTextCommand{\\textcircled}{PU}[1]{#1\\9040\\335}% U+20DD
+\\DeclareTextCommand{\\textacutemacron}{PU}[1]{#1\\83\\001\\83\\004}% U+0301 U+0304
+\\DeclareTextCommand{\\textgravemacron}{PU}[1]{#1\\83\\000\\83\\004}% U+0300 U+0304
+\\DeclareTextCompositeCommand{\\\`}{PU}{\\@empty}{\\textasciigrave}%
+\\DeclareTextCompositeCommand{\\'}{PU}{\\@empty}{\\textacute}%
+\\DeclareTextCompositeCommand{\\^}{PU}{\\@empty}{\\textasciicircum}%
+\\DeclareTextCompositeCommand{\\~}{PU}{\\@empty}{\\texttilde}%
+\\DeclareTextCompositeCommand{\\"}{PU}{\\@empty}{\\textasciidieresis}%
+\\DeclareTextCompositeCommand{\\r}{PU}{\\@empty}{\\textring}%
+\\DeclareTextCompositeCommand{\\v}{PU}{\\@empty}{\\textasciicaron}%
+\\DeclareTextCompositeCommand{\\.}{PU}{\\@empty}{\\textdotaccent}%
+\\DeclareTextCompositeCommand{\\c}{PU}{\\@empty}{\\textcedilla}%
+\\DeclareTextCompositeCommand{\\u}{PU}{\\@empty}{\\textasciibreve}%
+\\DeclareTextCompositeCommand{\\=}{PU}{\\@empty}{\\textasciimacron}%
+\\DeclareTextCompositeCommand{\\H}{PU}{\\@empty}{\\texthungarumlaut}%
+\\DeclareTextCompositeCommand{\\k}{PU}{\\@empty}{\\textogonek}%
+\\DeclareTextCompositeCommand{\\textinvbreve}{PU}{\\@empty}{{ \\83\\021}}% U+0311
+\\DeclareTextCompositeCommand{\\textsubumlaut}{PU}{\\@empty}{{ \\83\\044}}% U+0324
+\\DeclareTextCompositeCommand{\\textsubring}{PU}{\\@empty}{\\textringlow}%
+\\DeclareTextCompositeCommand{\\textsubcircum}{PU}{\\@empty}{\\textcircumlow}%
+\\DeclareTextCompositeCommand{\\textsubbreve}{PU}{\\@empty}{{ \\83\\056}}% U+032E
+\\DeclareTextCompositeCommand{\\textsubtilde}{PU}{\\@empty}{\\texttildelow}%
+\\DeclareTextCompositeCommand{\\b}{PU}{\\@empty}{\\textmacronbelow}%
+\\DeclareTextCompositeCommand{\\d}{PU}{\\@empty}{\\textdotbelow}%
+\\DeclareTextCompositeCommand{\\t}{PU}{\\@empty}{\\texttie}%
+\\DeclareTextCompositeCommand{\\newtie}{PU}{\\@empty}{\\textnewtie}%
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{\\@empty}{\\textbigcircle}%
+\\DeclareTextCompositeCommand{\\textacutemacron}{PU}{\\@empty}{{ \\83\\001\\83\\004}}% U+0301 U+0304
+\\DeclareTextCompositeCommand{\\textgravemacron}{PU}{\\@empty}{{ \\83\\000\\83\\004}}% U+0300 U+0304
+\\DeclareTextCompositeCommand{\\\`}{PU}{\\ }{\\textasciigrave}%
+\\DeclareTextCompositeCommand{\\'}{PU}{\\ }{\\textacute}%
+\\DeclareTextCompositeCommand{\\^}{PU}{\\ }{\\textasciicircum}%
+\\DeclareTextCompositeCommand{\\~}{PU}{\\ }{\\texttilde}%
+\\DeclareTextCompositeCommand{\\"}{PU}{\\ }{\\textasciidieresis}%
+\\DeclareTextCompositeCommand{\\r}{PU}{\\ }{\\textring}%
+\\DeclareTextCompositeCommand{\\v}{PU}{\\ }{\\textasciicaron}%
+\\DeclareTextCompositeCommand{\\.}{PU}{\\ }{\\textdotaccent}%
+\\DeclareTextCompositeCommand{\\c}{PU}{\\ }{\\textcedilla}%
+\\DeclareTextCompositeCommand{\\u}{PU}{\\ }{\\textasciibreve}%
+\\DeclareTextCompositeCommand{\\=}{PU}{\\ }{\\textasciimacron}%
+\\DeclareTextCompositeCommand{\\H}{PU}{\\ }{\\texthungarumlaut}%
+\\DeclareTextCompositeCommand{\\k}{PU}{\\ }{\\textogonek}%
+\\DeclareTextCompositeCommand{\\textinvbreve}{PU}{\\ }{{ \\83\\021}}% U+0311
+\\DeclareTextCompositeCommand{\\textsubumlaut}{PU}{\\ }{{ \\83\\044}}% U+0324
+\\DeclareTextCompositeCommand{\\textsubring}{PU}{\\ }{\\textringlow}%
+\\DeclareTextCompositeCommand{\\textsubcircum}{PU}{\\ }{\\textcircumlow}%
+\\DeclareTextCompositeCommand{\\textsubbreve}{PU}{\\ }{{ \\83\\056}}% U+032E
+\\DeclareTextCompositeCommand{\\textsubtilde}{PU}{\\ }{\\texttildelow}%
+\\DeclareTextCompositeCommand{\\b}{PU}{\\ }{\\textmacronbelow}%
+\\DeclareTextCompositeCommand{\\d}{PU}{\\ }{\\textdotbelow}%
+\\DeclareTextCompositeCommand{\\t}{PU}{\\ }{\\texttie}%
+\\DeclareTextCompositeCommand{\\newtie}{PU}{\\ }{\\textnewtie}%
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{\\ }{\\textbigcircle}%
+\\DeclareTextCompositeCommand{\\textacutemacron}{PU}{\\ }{{ \\83\\001\\83\\004}}% U+0301 U+0304
+\\DeclareTextCompositeCommand{\\textgravemacron}{PU}{\\ }{{ \\83\\000\\83\\004}}% U+0300 U+0304
+\\DeclareTextCommand{\\capitalcedilla}{PU}[1]{\\c{#1}}%
+\\DeclareTextCommand{\\capitalogonek}{PU}[1]{\\k{#1}}%
+\\DeclareTextCommand{\\capitalgrave}{PU}[1]{\\\`{#1}}%
+\\DeclareTextCommand{\\capitalacute}{PU}[1]{\\'{#1}}%
+\\DeclareTextCommand{\\capitalcircumflex}{PU}[1]{\\^{#1}}%
+\\DeclareTextCommand{\\capitaltilde}{PU}[1]{\\~{#1}}%
+\\DeclareTextCommand{\\capitaldieresis}{PU}[1]{\\"{#1}}%
+\\DeclareTextCommand{\\capitalhungarumlaut}{PU}[1]{\\H{#1}}%
+\\DeclareTextCommand{\\capitalring}{PU}[1]{\\r{#1}}%
+\\DeclareTextCommand{\\capitalcaron}{PU}[1]{\\v{#1}}%
+\\DeclareTextCommand{\\capitalbreve}{PU}[1]{\\u{#1}}%
+\\DeclareTextCommand{\\capitalmacron}{PU}[1]{\\={#1}}%
+\\DeclareTextCommand{\\capitaldotaccent}{PU}[1]{\\.{#1}}%
+\\DeclareTextCommand{\\capitaltie}{PU}[1]{\\t{#1}}%
+\\DeclareTextCommand{\\capitalnewtie}{PU}[1]{\\newtie{#1}}%
+\\DeclareTextCommand{\\textHT}{PU}{\\80\\011}% U+0009
+\\DeclareTextCommand{\\textLF}{PU}{\\80\\012}% U+000A
+\\DeclareTextCommand{\\textCR}{PU}{\\80\\015}% U+000D
+\\DeclareTextCommand{\\textquotedbl}{PU}{"}% \\80\\042 U+0022
+\\DeclareTextCommand{\\textnumbersign}{PU}{\\80\\043}% U+0023
+\\DeclareTextCommand{\\textdollar}{PU}{\\80\\044}% U+0024
+\\DeclareTextCommand{\\textpercent}{PU}{\\80\\045}% U+0025
+\\DeclareTextCommand{\\textampersand}{PU}{\\80\\046}% U+0026
+\\DeclareTextCommand{\\textquotesingle}{PU}{\\80\\047}% U+0027
+\\DeclareTextCommand{\\textparenleft}{PU}{\\80\\050}% U+0028
+\\DeclareTextCommand{\\textparenright}{PU}{\\80\\051}% U+0029
+\\DeclareTextCommand{\\textasteriskcentered}{PU}{\\80\\052}% U+002A
+\\DeclareTextCommand{\\textMVPlus}{PU}{\\80\\053}%* U+002B
+\\DeclareTextCommand{\\textMVComma}{PU}{\\80\\054}%* U+002C
+\\DeclareTextCommand{\\textMVMinus}{PU}{\\80\\055}%* U+002D
+\\DeclareTextCommand{\\textMVPeriod}{PU}{\\80\\056}%* U+002E
+\\DeclareTextCommand{\\textMVDivision}{PU}{\\80\\057}%* U+002F
+\\DeclareTextCommand{\\textMVZero}{PU}{\\80\\060}%* U+0030
+\\DeclareTextCommand{\\textMVOne}{PU}{\\80\\061}%* U+0031
+\\DeclareTextCommand{\\textMVTwo}{PU}{\\80\\062}%* U+0032
+\\DeclareTextCommand{\\textMVThree}{PU}{\\80\\063}%* U+0033
+\\DeclareTextCommand{\\textMVFour}{PU}{\\80\\064}%* U+0034
+\\DeclareTextCommand{\\textMVFive}{PU}{\\80\\065}%* U+0035
+\\DeclareTextCommand{\\textMVSix}{PU}{\\80\\066}%* U+0036
+\\DeclareTextCommand{\\textMVSeven}{PU}{\\80\\067}%* U+0037
+\\DeclareTextCommand{\\textMVEight}{PU}{\\80\\070}%* U+0038
+\\DeclareTextCommand{\\textMVNine}{PU}{\\80\\071}%* U+0039
+\\DeclareTextCommand{\\textless}{PU}{<}% \\80\\074 U+003C
+\\DeclareTextCommand{\\textgreater}{PU}{>}% \\80\\076 U+003E
+\\DeclareTextCommand{\\textMVAt}{PU}{\\80\\100}%* U+0040
+\\DeclareTextCommand{\\textbackslash}{PU}{\\80\\134}% U+005C
+\\DeclareTextCommand{\\textasciicircum}{PU}{\\80\\136}% U+005E
+\\DeclareTextCommand{\\textunderscore}{PU}{\\80\\137}% U+005F
+\\DeclareTextCommand{\\textasciigrave}{PU}{\\80\\140}% U+0060
+\\DeclareTextCompositeCommand{\\.}{PU}{\\i}{i}% \\80\\151 U+0069
+\\DeclareTextCompositeCommand{\\.}{PU}{i}{i}% \\80\\151 U+0069
+\\DeclareTextCommand{\\textbraceleft}{PU}{\\80\\173}% U+007B
+\\DeclareTextCommand{\\textbar}{PU}{|}% \\80\\174 U+007C
+\\DeclareTextCommand{\\textbraceright}{PU}{\\80\\175}% U+007D
+\\DeclareTextCommand{\\textasciitilde}{PU}{\\80\\176}% U+007E
+\\DeclareTextCommand{\\textexclamdown}{PU}{\\80\\241}% U+00A1
+\\DeclareTextCommand{\\textcent}{PU}{\\80\\242}% U+00A2
+\\DeclareTextCommand{\\textsterling}{PU}{\\80\\243}% U+00A3
+\\DeclareTextCommand{\\textcurrency}{PU}{\\80\\244}% U+00A4
+\\DeclareTextCommand{\\textyen}{PU}{\\80\\245}% U+00A5
+\\DeclareTextCommand{\\textbrokenbar}{PU}{\\80\\246}% U+00A6
+\\DeclareTextCommand{\\textsection}{PU}{\\80\\247}% U+00A7
+\\DeclareTextCommand{\\textasciidieresis}{PU}{\\80\\250}% U+00A8
+\\DeclareTextCommand{\\textcopyright}{PU}{\\80\\251}%* U+00A9
+\\DeclareTextCommand{\\textordfeminine}{PU}{\\80\\252}% U+00AA
+\\DeclareTextCommand{\\guillemotleft}{PU}{\\80\\253}% U+00AB
+\\DeclareTextCommand{\\guillemetleft}{PU}{\\80\\253}% U+00AB
+\\DeclareTextCommand{\\textlogicalnot}{PU}{\\80\\254}% U+00AC
+\\DeclareTextCommand{\\textlnot}{PU}{\\80\\254}% U+00AC
+\\DeclareTextCommand{\\textregistered}{PU}{\\80\\256}% U+00AE
+\\DeclareTextCommand{\\textasciimacron}{PU}{\\80\\257}% U+00AF
+\\DeclareTextCommand{\\textdegree}{PU}{\\80\\260}% U+00B0
+\\DeclareTextCommand{\\textplusminus}{PU}{\\80\\261}% U+00B1
+\\DeclareTextCommand{\\texttwosuperior}{PU}{\\80\\262}%* U+00B2
+\\DeclareTextCommand{\\textthreesuperior}{PU}{\\80\\263}%* U+00B3
+\\DeclareTextCommand{\\textacute}{PU}{\\80\\264}% U+00B4
+\\DeclareTextCommand{\\textasciiacute}{PU}{\\80\\264}% U+00B4
+\\DeclareTextCommand{\\textmu}{PU}{\\80\\265}% U+00B5
+\\DeclareTextCommand{\\textparagraph}{PU}{\\80\\266}% U+00B6
+\\DeclareTextCommand{\\textperiodcentered}{PU}{\\80\\267}% U+00B7
+\\DeclareTextCommand{\\textcedilla}{PU}{\\80\\270}% U+00B8
+\\DeclareTextCommand{\\textonesuperior}{PU}{\\80\\271}%* U+00B9
+\\DeclareTextCommand{\\textordmasculine}{PU}{\\80\\272}% U+00BA
+\\DeclareTextCommand{\\guillemotright}{PU}{\\80\\273}% U+00BB
+\\DeclareTextCommand{\\guillemetright}{PU}{\\80\\273}% U+00BB
+\\DeclareTextCommand{\\textonequarter}{PU}{\\80\\274}% U+00BC
+\\DeclareTextCommand{\\textonehalf}{PU}{\\80\\275}% U+00BD
+\\DeclareTextCommand{\\textthreequarters}{PU}{\\80\\276}% U+00BE
+\\DeclareTextCommand{\\textquestiondown}{PU}{\\80\\277}% U+00BF
+\\DeclareTextCompositeCommand{\\\`}{PU}{A}{\\80\\300}% U+00C0
+\\DeclareTextCompositeCommand{\\'}{PU}{A}{\\80\\301}% U+00C1
+\\DeclareTextCompositeCommand{\\^}{PU}{A}{\\80\\302}% U+00C2
+\\DeclareTextCompositeCommand{\\~}{PU}{A}{\\80\\303}% U+00C3
+\\DeclareTextCompositeCommand{\\"}{PU}{A}{\\80\\304}% U+00C4
+\\DeclareTextCompositeCommand{\\r}{PU}{A}{\\80\\305}% U+00C5
+\\DeclareTextCommand{\\AE}{PU}{\\80\\306}% U+00C6
+\\DeclareTextCompositeCommand{\\c}{PU}{C}{\\80\\307}% U+00C7
+\\DeclareTextCompositeCommand{\\\`}{PU}{E}{\\80\\310}% U+00C8
+\\DeclareTextCompositeCommand{\\'}{PU}{E}{\\80\\311}% U+00C9
+\\DeclareTextCompositeCommand{\\^}{PU}{E}{\\80\\312}% U+00CA
+\\DeclareTextCompositeCommand{\\"}{PU}{E}{\\80\\313}% U+00CB
+\\DeclareTextCompositeCommand{\\\`}{PU}{I}{\\80\\314}% U+00CC
+\\DeclareTextCompositeCommand{\\'}{PU}{I}{\\80\\315}% U+00CD
+\\DeclareTextCompositeCommand{\\^}{PU}{I}{\\80\\316}% U+00CE
+\\DeclareTextCompositeCommand{\\"}{PU}{I}{\\80\\317}% U+00CF
+\\DeclareTextCommand{\\DH}{PU}{\\80\\320}% U+00D0
+\\DeclareTextCompositeCommand{\\~}{PU}{N}{\\80\\321}% U+00D1
+\\DeclareTextCompositeCommand{\\\`}{PU}{O}{\\80\\322}% U+00D2
+\\DeclareTextCompositeCommand{\\'}{PU}{O}{\\80\\323}% U+00D3
+\\DeclareTextCompositeCommand{\\^}{PU}{O}{\\80\\324}% U+00D4
+\\DeclareTextCompositeCommand{\\~}{PU}{O}{\\80\\325}% U+00D5
+\\DeclareTextCompositeCommand{\\"}{PU}{O}{\\80\\326}% U+00D6
+\\DeclareTextCommand{\\textmultiply}{PU}{\\80\\327}% U+00D7
+\\DeclareTextCommand{\\O}{PU}{\\80\\330}% U+00D8
+\\DeclareTextCompositeCommand{\\\`}{PU}{U}{\\80\\331}% U+00D9
+\\DeclareTextCompositeCommand{\\'}{PU}{U}{\\80\\332}% U+00DA
+\\DeclareTextCompositeCommand{\\^}{PU}{U}{\\80\\333}% U+00DB
+\\DeclareTextCompositeCommand{\\"}{PU}{U}{\\80\\334}% U+00DC
+\\DeclareTextCompositeCommand{\\'}{PU}{Y}{\\80\\335}% U+00DD
+\\DeclareTextCommand{\\TH}{PU}{\\80\\336}% U+00DE
+\\DeclareTextCommand{\\textThorn}{PU}{\\80\\336}%* U+00DE
+\\DeclareTextCommand{\\ss}{PU}{\\80\\337}% U+00DF
+\\DeclareTextCompositeCommand{\\\`}{PU}{a}{\\80\\340}% U+00E0
+\\DeclareTextCompositeCommand{\\'}{PU}{a}{\\80\\341}% U+00E1
+\\DeclareTextCompositeCommand{\\^}{PU}{a}{\\80\\342}% U+00E2
+\\DeclareTextCompositeCommand{\\~}{PU}{a}{\\80\\343}% U+00E3
+\\DeclareTextCompositeCommand{\\"}{PU}{a}{\\80\\344}% U+00E4
+\\DeclareTextCompositeCommand{\\r}{PU}{a}{\\80\\345}% U+00E5
+\\DeclareTextCommand{\\ae}{PU}{\\80\\346}% U+00E6
+\\DeclareTextCompositeCommand{\\c}{PU}{c}{\\80\\347}% U+00E7
+\\DeclareTextCompositeCommand{\\\`}{PU}{e}{\\80\\350}% U+00E8
+\\DeclareTextCompositeCommand{\\'}{PU}{e}{\\80\\351}% U+00E9
+\\DeclareTextCompositeCommand{\\^}{PU}{e}{\\80\\352}% U+00EA
+\\DeclareTextCompositeCommand{\\"}{PU}{e}{\\80\\353}% U+00EB
+\\DeclareTextCompositeCommand{\\\`}{PU}{i}{\\80\\354}% U+00EC
+\\DeclareTextCompositeCommand{\\\`}{PU}{\\i}{\\80\\354}% U+00EC
+\\DeclareTextCompositeCommand{\\'}{PU}{i}{\\80\\355}% U+00ED
+\\DeclareTextCompositeCommand{\\'}{PU}{\\i}{\\80\\355}% U+00ED
+\\DeclareTextCompositeCommand{\\^}{PU}{i}{\\80\\356}% U+00EE
+\\DeclareTextCompositeCommand{\\^}{PU}{\\i}{\\80\\356}% U+00EE
+\\DeclareTextCompositeCommand{\\"}{PU}{i}{\\80\\357}% U+00EF
+\\DeclareTextCompositeCommand{\\"}{PU}{\\i}{\\80\\357}% U+00EF
+\\DeclareTextCommand{\\dh}{PU}{\\80\\360}% U+00F0
+\\DeclareTextCompositeCommand{\\~}{PU}{n}{\\80\\361}% U+00F1
+\\DeclareTextCompositeCommand{\\\`}{PU}{o}{\\80\\362}% U+00F2
+\\DeclareTextCompositeCommand{\\'}{PU}{o}{\\80\\363}% U+00F3
+\\DeclareTextCompositeCommand{\\^}{PU}{o}{\\80\\364}% U+00F4
+\\DeclareTextCompositeCommand{\\~}{PU}{o}{\\80\\365}% U+00F5
+\\DeclareTextCompositeCommand{\\"}{PU}{o}{\\80\\366}% U+00F6
+\\DeclareTextCommand{\\textdivide}{PU}{\\80\\367}% U+00F7
+\\DeclareTextCommand{\\o}{PU}{\\80\\370}% U+00F8
+\\DeclareTextCompositeCommand{\\\`}{PU}{u}{\\80\\371}% U+00F9
+\\DeclareTextCompositeCommand{\\'}{PU}{u}{\\80\\372}% U+00FA
+\\DeclareTextCompositeCommand{\\^}{PU}{u}{\\80\\373}% U+00FB
+\\DeclareTextCompositeCommand{\\"}{PU}{u}{\\80\\374}% U+00FC
+\\DeclareTextCompositeCommand{\\'}{PU}{y}{\\80\\375}% U+00FD
+\\DeclareTextCommand{\\th}{PU}{\\80\\376}% U+00FE
+\\DeclareTextCommand{\\textthorn}{PU}{\\80\\376}%* U+00FE
+\\DeclareTextCompositeCommand{\\"}{PU}{y}{\\80\\377}% U+00FF
+\\DeclareTextCompositeCommand{\\=}{PU}{A}{\\81\\000}% U+0100
+\\DeclareTextCompositeCommand{\\=}{PU}{a}{\\81\\001}% U+0101
+\\DeclareTextCompositeCommand{\\u}{PU}{A}{\\81\\002}% U+0102
+\\DeclareTextCompositeCommand{\\u}{PU}{a}{\\81\\003}% U+0103
+\\DeclareTextCompositeCommand{\\k}{PU}{A}{\\81\\004}% U+0104
+\\DeclareTextCompositeCommand{\\k}{PU}{a}{\\81\\005}% U+0105
+\\DeclareTextCompositeCommand{\\'}{PU}{C}{\\81\\006}% U+0106
+\\DeclareTextCompositeCommand{\\'}{PU}{c}{\\81\\007}% U+0107
+\\DeclareTextCompositeCommand{\\^}{PU}{C}{\\81\\010}% U+0108
+\\DeclareTextCompositeCommand{\\^}{PU}{c}{\\81\\011}% U+0109
+\\DeclareTextCompositeCommand{\\.}{PU}{C}{\\81\\012}% U+010A
+\\DeclareTextCompositeCommand{\\.}{PU}{c}{\\81\\013}% U+010B
+\\DeclareTextCompositeCommand{\\v}{PU}{C}{\\81\\014}% U+010C
+\\DeclareTextCompositeCommand{\\v}{PU}{c}{\\81\\015}% U+010D
+\\DeclareTextCompositeCommand{\\v}{PU}{D}{\\81\\016}% U+010E
+\\DeclareTextCompositeCommand{\\v}{PU}{d}{\\81\\017}% U+010F
+\\DeclareTextCommand{\\DJ}{PU}{\\81\\020}% U+0110
+\\DeclareTextCommand{\\dj}{PU}{\\81\\021}% U+0111
+\\DeclareTextCommand{\\textcrd}{PU}{\\81\\021}% U+0111
+\\DeclareTextCompositeCommand{\\=}{PU}{E}{\\81\\022}% U+0112
+\\DeclareTextCompositeCommand{\\=}{PU}{e}{\\81\\023}% U+0113
+\\DeclareTextCompositeCommand{\\u}{PU}{E}{\\81\\024}% U+0114
+\\DeclareTextCompositeCommand{\\u}{PU}{e}{\\81\\025}% U+0115
+\\DeclareTextCompositeCommand{\\.}{PU}{E}{\\81\\026}% U+0116
+\\DeclareTextCompositeCommand{\\.}{PU}{e}{\\81\\027}% U+0117
+\\DeclareTextCompositeCommand{\\k}{PU}{E}{\\81\\030}% U+0118
+\\DeclareTextCompositeCommand{\\k}{PU}{e}{\\81\\031}% U+0119
+\\DeclareTextCompositeCommand{\\v}{PU}{E}{\\81\\032}% U+011A
+\\DeclareTextCompositeCommand{\\v}{PU}{e}{\\81\\033}% U+011B
+\\DeclareTextCompositeCommand{\\^}{PU}{G}{\\81\\034}% U+011C
+\\DeclareTextCompositeCommand{\\^}{PU}{g}{\\81\\035}% U+011D
+\\DeclareTextCompositeCommand{\\u}{PU}{G}{\\81\\036}% U+011E
+\\DeclareTextCompositeCommand{\\u}{PU}{g}{\\81\\037}% U+011F
+\\DeclareTextCompositeCommand{\\.}{PU}{G}{\\81\\040}% U+0120
+\\DeclareTextCompositeCommand{\\.}{PU}{g}{\\81\\041}% U+0121
+\\DeclareTextCompositeCommand{\\c}{PU}{G}{\\81\\042}% U+0122
+\\DeclareTextCompositeCommand{\\c}{PU}{g}{\\81\\043}% U+0123
+\\DeclareTextCompositeCommand{\\^}{PU}{H}{\\81\\044}% U+0124
+\\DeclareTextCompositeCommand{\\^}{PU}{h}{\\81\\045}% U+0125
+\\DeclareTextCommand{\\textHslash}{PU}{\\81\\046}% U+0126
+\\DeclareTextCommand{\\texthbar}{PU}{\\81\\047}%* U+0127
+\\DeclareTextCompositeCommand{\\~}{PU}{I}{\\81\\050}% U+0128
+\\DeclareTextCompositeCommand{\\~}{PU}{i}{\\81\\051}% U+0129
+\\DeclareTextCompositeCommand{\\~}{PU}{\\i}{\\81\\051}% U+0129
+\\DeclareTextCompositeCommand{\\=}{PU}{I}{\\81\\052}% U+012A
+\\DeclareTextCompositeCommand{\\=}{PU}{i}{\\81\\053}% U+012B
+\\DeclareTextCompositeCommand{\\=}{PU}{\\i}{\\81\\053}% U+012B
+\\DeclareTextCompositeCommand{\\u}{PU}{I}{\\81\\054}% U+012C
+\\DeclareTextCompositeCommand{\\u}{PU}{i}{\\81\\055}% U+012D
+\\DeclareTextCompositeCommand{\\u}{PU}{\\i}{\\81\\055}% U+012D
+\\DeclareTextCompositeCommand{\\k}{PU}{I}{\\81\\056}% U+012E
+\\DeclareTextCompositeCommand{\\k}{PU}{i}{\\81\\057}% U+012F
+\\DeclareTextCompositeCommand{\\k}{PU}{\\i}{\\81\\057}% U+012F
+\\DeclareTextCompositeCommand{\\.}{PU}{I}{\\81\\060}% U+0130
+\\DeclareTextCommand{\\i}{PU}{\\81\\061}% U+0131
+\\DeclareTextCommand{\\IJ}{PU}{\\81\\062}% U+0132
+\\DeclareTextCommand{\\ij}{PU}{\\81\\063}% U+0133
+\\DeclareTextCompositeCommand{\\^}{PU}{J}{\\81\\064}% U+0134
+\\DeclareTextCompositeCommand{\\^}{PU}{j}{\\81\\065}% U+0135
+\\DeclareTextCompositeCommand{\\^}{PU}{\\j}{\\81\\065}% U+0135
+\\DeclareTextCompositeCommand{\\c}{PU}{K}{\\81\\066}% U+0136
+\\DeclareTextCompositeCommand{\\c}{PU}{k}{\\81\\067}% U+0137
+\\DeclareTextCommand{\\textkra}{PU}{\\81\\070}% U+0138
+\\DeclareTextCompositeCommand{\\'}{PU}{L}{\\81\\071}% U+0139
+\\DeclareTextCompositeCommand{\\'}{PU}{l}{\\81\\072}% U+013A
+\\DeclareTextCompositeCommand{\\c}{PU}{L}{\\81\\073}% U+013B
+\\DeclareTextCompositeCommand{\\c}{PU}{l}{\\81\\074}% U+013C
+\\DeclareTextCompositeCommand{\\v}{PU}{L}{\\81\\075}% U+013D
+\\DeclareTextCompositeCommand{\\v}{PU}{l}{\\81\\076}% U+013E
+\\DeclareTextCompositeCommand{\\.}{PU}{L}{\\81\\077}% U+013F
+\\DeclareTextCompositeCommand{\\.}{PU}{l}{\\81\\100}% U+0140
+\\DeclareTextCommand{\\L}{PU}{\\81\\101}% U+0141
+\\DeclareTextCommand{\\l}{PU}{\\81\\102}% U+0142
+\\DeclareTextCompositeCommand{\\'}{PU}{N}{\\81\\103}% U+0143
+\\DeclareTextCompositeCommand{\\'}{PU}{n}{\\81\\104}% U+0144
+\\DeclareTextCompositeCommand{\\c}{PU}{N}{\\81\\105}% U+0145
+\\DeclareTextCompositeCommand{\\c}{PU}{n}{\\81\\106}% U+0146
+\\DeclareTextCompositeCommand{\\v}{PU}{N}{\\81\\107}% U+0147
+\\DeclareTextCompositeCommand{\\v}{PU}{n}{\\81\\110}% U+0148
+\\DeclareTextCommand{\\textnapostrophe}{PU}{\\81\\111}% U+0149
+\\DeclareTextCommand{\\NG}{PU}{\\81\\112}% U+014A
+\\DeclareTextCommand{\\ng}{PU}{\\81\\113}% U+014B
+\\DeclareTextCompositeCommand{\\=}{PU}{O}{\\81\\114}% U+014C
+\\DeclareTextCompositeCommand{\\=}{PU}{o}{\\81\\115}% U+014D
+\\DeclareTextCompositeCommand{\\u}{PU}{O}{\\81\\116}% U+014E
+\\DeclareTextCompositeCommand{\\u}{PU}{o}{\\81\\117}% U+014F
+\\DeclareTextCompositeCommand{\\H}{PU}{O}{\\81\\120}% U+0150
+\\DeclareTextCompositeCommand{\\H}{PU}{o}{\\81\\121}% U+0151
+\\DeclareTextCommand{\\OE}{PU}{\\81\\122}% U+0152
+\\DeclareTextCommand{\\oe}{PU}{\\81\\123}% U+0153
+\\DeclareTextCompositeCommand{\\'}{PU}{R}{\\81\\124}% U+0154
+\\DeclareTextCompositeCommand{\\'}{PU}{r}{\\81\\125}% U+0155
+\\DeclareTextCompositeCommand{\\c}{PU}{R}{\\81\\126}% U+0156
+\\DeclareTextCompositeCommand{\\c}{PU}{r}{\\81\\127}% U+0157
+\\DeclareTextCompositeCommand{\\v}{PU}{R}{\\81\\130}% U+0158
+\\DeclareTextCompositeCommand{\\v}{PU}{r}{\\81\\131}% U+0159
+\\DeclareTextCompositeCommand{\\'}{PU}{S}{\\81\\132}% U+015A
+\\DeclareTextCompositeCommand{\\'}{PU}{s}{\\81\\133}% U+015B
+\\DeclareTextCompositeCommand{\\^}{PU}{S}{\\81\\134}% U+015C
+\\DeclareTextCompositeCommand{\\^}{PU}{s}{\\81\\135}% U+015D
+\\DeclareTextCompositeCommand{\\c}{PU}{S}{\\81\\136}% U+015E
+\\DeclareTextCompositeCommand{\\c}{PU}{s}{\\81\\137}% U+015F
+\\DeclareTextCompositeCommand{\\v}{PU}{S}{\\81\\140}% U+0160
+\\DeclareTextCompositeCommand{\\v}{PU}{s}{\\81\\141}% U+0161
+\\DeclareTextCompositeCommand{\\c}{PU}{T}{\\81\\142}% U+0162
+\\DeclareTextCompositeCommand{\\c}{PU}{t}{\\81\\143}% U+0163
+\\DeclareTextCompositeCommand{\\v}{PU}{T}{\\81\\144}% U+0164
+\\DeclareTextCompositeCommand{\\v}{PU}{t}{\\81\\145}% U+0165
+\\DeclareTextCommand{\\textTslash}{PU}{\\81\\146}% U+0166
+\\DeclareTextCommand{\\texttslash}{PU}{\\81\\147}% U+0167
+\\DeclareTextCompositeCommand{\\~}{PU}{U}{\\81\\150}% U+0168
+\\DeclareTextCompositeCommand{\\~}{PU}{u}{\\81\\151}% U+0169
+\\DeclareTextCompositeCommand{\\=}{PU}{U}{\\81\\152}% U+016A
+\\DeclareTextCompositeCommand{\\=}{PU}{u}{\\81\\153}% U+016B
+\\DeclareTextCompositeCommand{\\u}{PU}{U}{\\81\\154}% U+016C
+\\DeclareTextCompositeCommand{\\u}{PU}{u}{\\81\\155}% U+016D
+\\DeclareTextCompositeCommand{\\r}{PU}{U}{\\81\\156}% U+016E
+\\DeclareTextCompositeCommand{\\r}{PU}{u}{\\81\\157}% U+016F
+\\DeclareTextCompositeCommand{\\H}{PU}{U}{\\81\\160}% U+0170
+\\DeclareTextCompositeCommand{\\H}{PU}{u}{\\81\\161}% U+0171
+\\DeclareTextCompositeCommand{\\k}{PU}{U}{\\81\\162}% U+0172
+\\DeclareTextCompositeCommand{\\k}{PU}{u}{\\81\\163}% U+0173
+\\DeclareTextCompositeCommand{\\^}{PU}{W}{\\81\\164}% U+0174
+\\DeclareTextCompositeCommand{\\^}{PU}{w}{\\81\\165}% U+0175
+\\DeclareTextCompositeCommand{\\^}{PU}{Y}{\\81\\166}% U+0176
+\\DeclareTextCompositeCommand{\\^}{PU}{y}{\\81\\167}% U+0177
+\\DeclareTextCompositeCommand{\\"}{PU}{Y}{\\81\\170}% U+0178
+\\DeclareTextCompositeCommand{\\'}{PU}{Z}{\\81\\171}% U+0179
+\\DeclareTextCompositeCommand{\\'}{PU}{z}{\\81\\172}% U+017A
+\\DeclareTextCompositeCommand{\\.}{PU}{Z}{\\81\\173}% U+017B
+\\DeclareTextCompositeCommand{\\.}{PU}{z}{\\81\\174}% U+017C
+\\DeclareTextCompositeCommand{\\v}{PU}{Z}{\\81\\175}% U+017D
+\\DeclareTextCompositeCommand{\\v}{PU}{z}{\\81\\176}% U+017E
+\\DeclareTextCommand{\\textlongs}{PU}{\\81\\177}% U+017F
+\\DeclareTextCommand{\\textcrb}{PU}{\\81\\200}% U+0180
+\\DeclareTextCommand{\\texthausaB}{PU}{\\81\\201}%* U+0181
+\\DeclareTextCommand{\\texthtc}{PU}{\\81\\210}% U+0188
+\\DeclareTextCommand{\\texthausaD}{PU}{\\81\\212}%* U+018A
+\\DeclareTextCommand{\\textEreversed}{PU}{\\81\\216}% U+018E
+\\DeclareTextCommand{\\textrevE}{PU}{\\81\\216}% U+018E
+\\DeclareTextCommand{\\textflorin}{PU}{\\81\\222}% U+0192
+\\DeclareTextCommand{\\texthvlig}{PU}{\\81\\225}% U+0195
+\\DeclareTextCommand{\\texthausaK}{PU}{\\81\\230}%* U+0198
+\\DeclareTextCommand{\\texthtk}{PU}{\\81\\231}% U+0199
+\\DeclareTextCommand{\\textbarl}{PU}{\\81\\232}%* U+019A
+\\DeclareTextCommand{\\textcrlambda}{PU}{\\81\\233}% U+019B
+\\DeclareTextCommand{\\textPUnrleg}{PU}{\\81\\236}% U+019E
+\\DeclareTextCommand{\\texthtp}{PU}{\\81\\245}% U+01A5
+\\DeclareTextCommand{\\textlhookt}{PU}{\\81\\253}% U+01AB
+\\DeclareTextCommand{\\texthtt}{PU}{\\81\\255}% U+01AD
+\\DeclareTextCommand{\\textrevyogh}{PU}{\\81\\271}% U+01B9
+\\DeclareTextCommand{\\textcrtwo}{PU}{\\81\\273}% U+01BB
+\\DeclareTextCommand{\\textcrinvglotstop}{PU}{\\81\\276}% U+01BE
+\\DeclareTextCommand{\\textwynn}{PU}{\\81\\277}% U+01BF
+\\DeclareTextCommand{\\textpipe}{PU}{\\81\\300}% U+01C0
+\\DeclareTextCommand{\\textdoublepipe}{PU}{\\81\\301}% U+01C1
+\\DeclareTextCommand{\\textdoublebarpipe}{PU}{\\81\\302}% U+01C2
+\\DeclareTextCompositeCommand{\\v}{PU}{A}{\\81\\315}% U+01CD
+\\DeclareTextCompositeCommand{\\v}{PU}{a}{\\81\\316}% U+01CE
+\\DeclareTextCompositeCommand{\\v}{PU}{I}{\\81\\317}% U+01CF
+\\DeclareTextCompositeCommand{\\v}{PU}{\\i}{\\81\\320}% U+01D0
+\\DeclareTextCompositeCommand{\\v}{PU}{i}{\\81\\320}% U+01D0
+\\DeclareTextCompositeCommand{\\v}{PU}{O}{\\81\\321}% U+01D1
+\\DeclareTextCompositeCommand{\\v}{PU}{o}{\\81\\322}% U+01D2
+\\DeclareTextCompositeCommand{\\v}{PU}{U}{\\81\\323}% U+01D3
+\\DeclareTextCompositeCommand{\\v}{PU}{u}{\\81\\324}% U+01D4
+\\DeclareTextCommand{\\textinve}{PU}{\\81\\335}%* U+01DD
+\\DeclareTextCommand{\\textGslash}{PU}{\\81\\344}% U+01E4
+\\DeclareTextCommand{\\textgslash}{PU}{\\81\\345}% U+01E5
+\\DeclareTextCompositeCommand{\\v}{PU}{G}{\\81\\346}% U+01E6
+\\DeclareTextCompositeCommand{\\v}{PU}{g}{\\81\\347}% U+01E7
+\\DeclareTextCompositeCommand{\\v}{PU}{K}{\\81\\350}% U+01E8
+\\DeclareTextCompositeCommand{\\v}{PU}{k}{\\81\\351}% U+01E9
+\\DeclareTextCompositeCommand{\\k}{PU}{O}{\\81\\352}% U+01EA
+\\DeclareTextCompositeCommand{\\k}{PU}{o}{\\81\\353}% U+01EB
+\\DeclareTextCompositeCommand{\\v}{PU}{\\j}{\\81\\360}% U+01F0
+\\DeclareTextCompositeCommand{\\v}{PU}{j}{\\81\\360}% U+01F0
+\\DeclareTextCompositeCommand{\\'}{PU}{G}{\\81\\364}% U+01F4
+\\DeclareTextCompositeCommand{\\'}{PU}{g}{\\81\\365}% U+01F5
+\\DeclareTextCompositeCommand{\\\`}{PU}{N}{\\81\\370}% U+01F8
+\\DeclareTextCompositeCommand{\\\`}{PU}{n}{\\81\\371}% U+01F9
+\\DeclareTextCompositeCommand{\\'}{PU}{\\AE}{\\81\\374}% U+01FC
+\\DeclareTextCompositeCommand{\\'}{PU}{\\ae}{\\81\\375}% U+01FD
+\\DeclareTextCompositeCommand{\\'}{PU}{\\O}{\\81\\376}% U+01FE
+\\DeclareTextCompositeCommand{\\'}{PU}{\\o}{\\81\\377}% U+01FF
+\\DeclareTextCompositeCommand{\\textinvbreve}{PU}{E}{\\82\\006}% U+0206
+\\DeclareTextCompositeCommand{\\textinvbreve}{PU}{e}{\\82\\007}% U+0207
+\\DeclareTextCompositeCommand{\\textinvbreve}{PU}{I}{\\82\\012}% U+020A
+\\DeclareTextCompositeCommand{\\textinvbreve}{PU}{i}{\\82\\013}% U+020B
+\\DeclareTextCompositeCommand{\\textinvbreve}{PU}{\\i}{\\82\\013}% U+020B
+\\DeclareTextCompositeCommand{\\textinvbreve}{PU}{O}{\\82\\016}% U+020E
+\\DeclareTextCompositeCommand{\\textinvbreve}{PU}{o}{\\82\\017}% U+020F
+\\DeclareTextCompositeCommand{\\textinvbreve}{PU}{U}{\\82\\026}% U+0216
+\\DeclareTextCompositeCommand{\\textinvbreve}{PU}{u}{\\82\\027}% U+0217
+\\DeclareTextCompositeCommand{\\v}{PU}{H}{\\82\\036}% U+021E
+\\DeclareTextCompositeCommand{\\v}{PU}{h}{\\82\\037}% U+021F
+\\DeclareTextCommand{\\textctd}{PU}{\\82\\041}% U+0221
+\\DeclareTextCommand{\\textcommatailz}{PU}{\\82\\045}% U+0225
+\\DeclareTextCompositeCommand{\\.}{PU}{A}{\\82\\046}% U+0226
+\\DeclareTextCompositeCommand{\\.}{PU}{a}{\\82\\047}% U+0227
+\\DeclareTextCompositeCommand{\\c}{PU}{E}{\\82\\050}% U+0228
+\\DeclareTextCompositeCommand{\\c}{PU}{e}{\\82\\051}% U+0229
+\\DeclareTextCompositeCommand{\\.}{PU}{O}{\\82\\056}% U+022E
+\\DeclareTextCompositeCommand{\\.}{PU}{o}{\\82\\057}% U+022F
+\\DeclareTextCompositeCommand{\\=}{PU}{Y}{\\82\\062}% U+0232
+\\DeclareTextCompositeCommand{\\=}{PU}{y}{\\82\\063}% U+0233
+\\DeclareTextCommand{\\textctn}{PU}{\\82\\065}% U+0235
+\\DeclareTextCommand{\\textctt}{PU}{\\82\\066}% U+0236
+\\DeclareTextCommand{\\j}{PU}{\\82\\067}% U+0237
+\\DeclareTextCommand{\\textPUdblig}{PU}{\\82\\070}% U+0238
+\\DeclareTextCommand{\\textPUqplig}{PU}{\\82\\071}% U+0239
+\\DeclareTextCommand{\\textslashc}{PU}{\\82\\074}%* U+023C
+\\DeclareTextCommand{\\textturna}{PU}{\\82\\120}% U+0250
+\\DeclareTextCommand{\\textscripta}{PU}{\\82\\121}%* U+0251
+\\DeclareTextCommand{\\textturnscripta}{PU}{\\82\\122}% U+0252
+\\DeclareTextCommand{\\texthtb}{PU}{\\82\\123}% U+0253
+\\DeclareTextCommand{\\textopeno}{PU}{\\82\\124}%* U+0254
+\\DeclareTextCommand{\\textctc}{PU}{\\82\\125}% U+0255
+\\DeclareTextCommand{\\textrtaild}{PU}{\\82\\126}%* U+0256
+\\DeclareTextCommand{\\texthtd}{PU}{\\82\\127}% U+0257
+\\DeclareTextCommand{\\textreve}{PU}{\\82\\130}%* U+0258
+\\DeclareTextCommand{\\textschwa}{PU}{\\82\\131}%* U+0259
+\\DeclareTextCommand{\\textrhookschwa}{PU}{\\82\\132}% U+025A
+\\DeclareTextCommand{\\textniepsilon}{PU}{\\82\\133}%* U+025B
+\\DeclareTextCommand{\\textrevepsilon}{PU}{\\82\\134}%* U+025C
+\\DeclareTextCommand{\\textrhookrevepsilon}{PU}{\\82\\135}%* U+025D
+\\DeclareTextCommand{\\textcloserevepsilon}{PU}{\\82\\136}% U+025E
+\\DeclareTextCommand{\\textbardotlessj}{PU}{\\82\\137}% U+025F
+\\DeclareTextCommand{\\texthtg}{PU}{\\82\\140}% U+0260
+\\DeclareTextCommand{\\textscriptg}{PU}{\\82\\141}%* U+0261
+\\DeclareTextCommand{\\textscg}{PU}{\\82\\142}%* U+0262
+\\DeclareTextCommand{\\textipagamma}{PU}{\\82\\143}%* U+0263
+\\DeclareTextCommand{\\textbabygamma}{PU}{\\82\\144}%* U+0264
+\\DeclareTextCommand{\\textturnh}{PU}{\\82\\145}% U+0265
+\\DeclareTextCommand{\\texthth}{PU}{\\82\\146}% U+0266
+\\DeclareTextCommand{\\texththeng}{PU}{\\82\\147}% U+0267
+\\DeclareTextCommand{\\textbari}{PU}{\\82\\150}%* U+0268
+\\DeclareTextCommand{\\textniiota}{PU}{\\82\\151}%* U+0269
+\\DeclareTextCommand{\\textsci}{PU}{\\82\\152}%* U+026A
+\\DeclareTextCommand{\\textltilde}{PU}{\\82\\153}% U+026B
+\\DeclareTextCommand{\\textbeltl}{PU}{\\82\\154}% U+026C
+\\DeclareTextCommand{\\textrtaill}{PU}{\\82\\155}% U+026D
+\\DeclareTextCommand{\\textlyoghlig}{PU}{\\82\\156}% U+026E
+\\DeclareTextCommand{\\textturnm}{PU}{\\82\\157}% U+026F
+\\DeclareTextCommand{\\textturnmrleg}{PU}{\\82\\160}% U+0270
+\\DeclareTextCommand{\\textltailm}{PU}{\\82\\161}% U+0271
+\\DeclareTextCommand{\\textltailn}{PU}{\\82\\162}% U+0272
+\\DeclareTextCommand{\\textrtailn}{PU}{\\82\\163}% U+0273
+\\DeclareTextCommand{\\textscn}{PU}{\\82\\164}%* U+0274
+\\DeclareTextCommand{\\textbaro}{PU}{\\82\\165}% U+0275
+\\DeclareTextCommand{\\textscoelig}{PU}{\\82\\166}% U+0276
+\\DeclareTextCommand{\\textcloseomega}{PU}{\\82\\167}% U+0277
+\\DeclareTextCommand{\\textniphi}{PU}{\\82\\170}%* U+0278
+\\DeclareTextCommand{\\textturnr}{PU}{\\82\\171}% U+0279
+\\DeclareTextCommand{\\textturnlonglegr}{PU}{\\82\\172}% U+027A
+\\DeclareTextCommand{\\textturnrrtail}{PU}{\\82\\173}% U+027B
+\\DeclareTextCommand{\\textlonglegr}{PU}{\\82\\174}%* U+027C
+\\DeclareTextCommand{\\textrtailr}{PU}{\\82\\175}% U+027D
+\\DeclareTextCommand{\\textfishhookr}{PU}{\\82\\176}% U+027E
+\\DeclareTextCommand{\\textlhtlongi}{PU}{\\82\\177}% U+027F
+\\DeclareTextCommand{\\textscr}{PU}{\\82\\200}%* U+0280
+\\DeclareTextCommand{\\textinvscr}{PU}{\\82\\201}%* U+0281
+\\DeclareTextCommand{\\textrtails}{PU}{\\82\\202}% U+0282
+\\DeclareTextCommand{\\textesh}{PU}{\\82\\203}%* U+0283
+\\DeclareTextCommand{\\texthtbardotlessj}{PU}{\\82\\204}% U+0284
+\\DeclareTextCommand{\\textvibyi}{PU}{\\82\\205}% U+0285
+\\DeclareTextCommand{\\textctesh}{PU}{\\82\\206}% U+0286
+\\DeclareTextCommand{\\textturnt}{PU}{\\82\\207}% U+0287
+\\DeclareTextCommand{\\textrtailt}{PU}{\\82\\210}% U+0288
+\\DeclareTextCommand{\\textbaru}{PU}{\\82\\211}%* U+0289
+\\DeclareTextCommand{\\textniupsilon}{PU}{\\82\\212}%* U+028A
+\\DeclareTextCommand{\\textscriptv}{PU}{\\82\\213}%* U+028B
+\\DeclareTextCommand{\\textturnv}{PU}{\\82\\214}%* U+028C
+\\DeclareTextCommand{\\textturnw}{PU}{\\82\\215}%* U+028D
+\\DeclareTextCommand{\\textturny}{PU}{\\82\\216}%* U+028E
+\\DeclareTextCommand{\\textscy}{PU}{\\82\\217}%* U+028F
+\\DeclareTextCommand{\\textrtailz}{PU}{\\82\\220}% U+0290
+\\DeclareTextCommand{\\textctz}{PU}{\\82\\221}% U+0291
+\\DeclareTextCommand{\\textyogh}{PU}{\\82\\222}%* U+0292
+\\DeclareTextCommand{\\textctyogh}{PU}{\\82\\223}% U+0293
+\\DeclareTextCommand{\\textglotstop}{PU}{\\82\\224}%* U+0294
+\\DeclareTextCommand{\\textrevglotstop}{PU}{\\82\\225}%* U+0295
+\\DeclareTextCommand{\\textinvglotstop}{PU}{\\82\\226}%* U+0296
+\\DeclareTextCommand{\\textstretchc}{PU}{\\82\\227}% U+0297
+\\DeclareTextCommand{\\textbullseye}{PU}{\\82\\230}% U+0298
+\\DeclareTextCommand{\\textscb}{PU}{\\82\\231}% U+0299
+\\DeclareTextCommand{\\textcloseepsilon}{PU}{\\82\\232}% U+029A
+\\DeclareTextCommand{\\texthtscg}{PU}{\\82\\233}% U+029B
+\\DeclareTextCommand{\\textsch}{PU}{\\82\\234}% U+029C
+\\DeclareTextCommand{\\textctj}{PU}{\\82\\235}% U+029D
+\\DeclareTextCommand{\\textturnk}{PU}{\\82\\236}% U+029E
+\\DeclareTextCommand{\\textscl}{PU}{\\82\\237}% U+029F
+\\DeclareTextCommand{\\texthtq}{PU}{\\82\\240}% U+02A0
+\\DeclareTextCommand{\\textbarglotstop}{PU}{\\82\\241}% U+02A1
+\\DeclareTextCommand{\\textbarrevglotstop}{PU}{\\82\\242}% U+02A2
+\\DeclareTextCommand{\\textdzlig}{PU}{\\82\\243}% U+02A3
+\\DeclareTextCommand{\\textdyoghlig}{PU}{\\82\\244}% U+02A4
+\\DeclareTextCommand{\\textdctzlig}{PU}{\\82\\245}% U+02A5
+\\DeclareTextCommand{\\texttslig}{PU}{\\82\\246}% U+02A6
+\\DeclareTextCommand{\\textteshlig}{PU}{\\82\\247}% U+02A7
+\\DeclareTextCommand{\\texttctclig}{PU}{\\82\\250}% U+02A8
+\\DeclareTextCommand{\\textlhtlongy}{PU}{\\82\\256}% U+02AE
+\\DeclareTextCommand{\\textvibyy}{PU}{\\82\\257}% U+02AF
+\\DeclareTextCommand{\\textrevapostrophe}{PU}{\\82\\275}% U+02BD
+\\DeclareTextCommand{\\textraiseglotstop}{PU}{\\82\\300}% U+02C0
+\\DeclareTextCommand{\\textlptr}{PU}{\\82\\302}% U+02C2
+\\DeclareTextCommand{\\textrptr}{PU}{\\82\\303}% U+02C3
+\\DeclareTextCommand{\\textasciicaron}{PU}{\\82\\307}% U+02C7
+\\DeclareTextCommand{\\textprimstress}{PU}{\\82\\310}% U+02C8
+\\DeclareTextCommand{\\textsecstress}{PU}{\\82\\314}% U+02CC
+\\DeclareTextCommand{\\textlengthmark}{PU}{\\82\\320}% U+02D0
+\\DeclareTextCommand{\\texthalflength}{PU}{\\82\\321}% U+02D1
+\\DeclareTextCommand{\\textasciibreve}{PU}{\\82\\330}% U+02D8
+\\DeclareTextCommand{\\textdotaccent}{PU}{\\82\\331}% U+02D9
+\\DeclareTextCommand{\\textring}{PU}{\\82\\332}% U+02DA
+\\DeclareTextCommand{\\textogonek}{PU}{\\82\\333}% U+02DB
+\\DeclareTextCommand{\\texttilde}{PU}{\\82\\334}% U+02DC
+\\DeclareTextCommand{\\texthungarumlaut}{PU}{\\82\\335}% U+02DD
+\\DeclareTextCommand{\\textacutedbl}{PU}{\\82\\335}% U+02DD
+\\DeclareTextCommand{\\textringlow}{PU}{\\82\\363}% U+02F3
+\\DeclareTextCommand{\\textgravedbl}{PU}{\\82\\365}% U+02F5
+\\DeclareTextCommand{\\texttildelow}{PU}{\\82\\367}% U+02F7
+\\DeclareTextCommand{\\textopencorner}{PU}{\\82\\371}% U+02F9
+\\DeclareTextCommand{\\textcorner}{PU}{\\82\\372}% U+02FA
+\\DeclareTextCommand{\\textdoublegrave}{PU}{ \\83\\017}% U+030F
+\\DeclareTextCommand{\\textnewtie}{PU}{ \\83\\021}% U+0311
+\\DeclareTextCommand{\\textdotbelow}{PU}{ \\83\\043}% U+0323
+\\DeclareTextCommand{\\textmacronbelow}{PU}{ \\83\\061}% U+0331
+\\DeclareTextCommand{\\texttie}{PU}{ \\83\\141}% U+0361
+\\ifx\\textBeta\\@undefined \\else
+\\input{puenc-greek.def}
+\\fi
+\\ifx\\CYRDZE\\@undefined \\else
+\\DeclareTextCompositeCommand{\\\`}{PU}{\\CYRE}{\\84\\000}% U+0400
+\\DeclareTextCommand{\\CYRYO}{PU}{\\84\\001}% U+0401
+\\DeclareTextCompositeCommand{\\"}{PU}{\\CYRE}{\\84\\001}% U+0401
+\\DeclareTextCommand{\\CYRDJE}{PU}{\\84\\002}% U+0402
+\\DeclareTextCompositeCommand{\\'}{PU}{\\CYRG}{\\84\\003}% U+0403
+\\DeclareTextCommand{\\CYRIE}{PU}{\\84\\004}% U+0404
+\\DeclareTextCommand{\\CYRDZE}{PU}{\\84\\005}% U+0405
+\\DeclareTextCommand{\\CYRII}{PU}{\\84\\006}% U+0406
+\\DeclareTextCommand{\\CYRYI}{PU}{\\84\\007}% U+0407
+\\DeclareTextCompositeCommand{\\"}{PU}{\\CYRII}{\\84\\007}% U+0407
+\\DeclareTextCommand{\\CYRJE}{PU}{\\84\\010}% U+0408
+\\DeclareTextCommand{\\CYRLJE}{PU}{\\84\\011}% U+0409
+\\DeclareTextCommand{\\CYRNJE}{PU}{\\84\\012}% U+040A
+\\DeclareTextCommand{\\CYRTSHE}{PU}{\\84\\013}% U+040B
+\\DeclareTextCompositeCommand{\\'}{PU}{\\CYRK}{\\84\\014}% U+040C
+\\DeclareTextCompositeCommand{\\\`}{PU}{\\CYRI}{\\84\\015}% U+040D
+\\DeclareTextCommand{\\CYRUSHRT}{PU}{\\84\\016}% U+040E
+\\DeclareTextCompositeCommand{\\U}{PU}{\\CYRU}{\\84\\016}% U+040E
+\\DeclareTextCommand{\\CYRDZHE}{PU}{\\84\\017}% U+040F
+\\DeclareTextCommand{\\CYRA}{PU}{\\84\\020}% U+0410
+\\DeclareTextCommand{\\CYRB}{PU}{\\84\\021}% U+0411
+\\DeclareTextCommand{\\CYRV}{PU}{\\84\\022}% U+0412
+\\DeclareTextCommand{\\CYRG}{PU}{\\84\\023}% U+0413
+\\DeclareTextCommand{\\CYRD}{PU}{\\84\\024}% U+0414
+\\DeclareTextCommand{\\CYRE}{PU}{\\84\\025}% U+0415
+\\DeclareTextCommand{\\CYRZH}{PU}{\\84\\026}% U+0416
+\\DeclareTextCommand{\\CYRZ}{PU}{\\84\\027}% U+0417
+\\DeclareTextCommand{\\CYRI}{PU}{\\84\\030}% U+0418
+\\DeclareTextCommand{\\CYRISHRT}{PU}{\\84\\031}% U+0419
+\\DeclareTextCompositeCommand{\\U}{PU}{\\CYRI}{\\84\\031}% U+0419
+\\DeclareTextCommand{\\CYRK}{PU}{\\84\\032}% U+041A
+\\DeclareTextCommand{\\CYRL}{PU}{\\84\\033}% U+041B
+\\DeclareTextCommand{\\CYRM}{PU}{\\84\\034}% U+041C
+\\DeclareTextCommand{\\CYRN}{PU}{\\84\\035}% U+041D
+\\DeclareTextCommand{\\CYRO}{PU}{\\84\\036}% U+041E
+\\DeclareTextCommand{\\CYRP}{PU}{\\84\\037}% U+041F
+\\DeclareTextCommand{\\CYRR}{PU}{\\84\\040}% U+0420
+\\DeclareTextCommand{\\CYRS}{PU}{\\84\\041}% U+0421
+\\DeclareTextCommand{\\CYRT}{PU}{\\84\\042}% U+0422
+\\DeclareTextCommand{\\CYRU}{PU}{\\84\\043}% U+0423
+\\DeclareTextCommand{\\CYRF}{PU}{\\84\\044}% U+0424
+\\DeclareTextCommand{\\CYRH}{PU}{\\84\\045}% U+0425
+\\DeclareTextCommand{\\CYRC}{PU}{\\84\\046}% U+0426
+\\DeclareTextCommand{\\CYRCH}{PU}{\\84\\047}% U+0427
+\\DeclareTextCommand{\\CYRSH}{PU}{\\84\\050}% U+0428
+\\DeclareTextCommand{\\CYRSHCH}{PU}{\\84\\051}% U+0429
+\\DeclareTextCommand{\\CYRHRDSN}{PU}{\\84\\052}% U+042A
+\\DeclareTextCommand{\\CYRERY}{PU}{\\84\\053}% U+042B
+\\DeclareTextCommand{\\CYRSFTSN}{PU}{\\84\\054}% U+042C
+\\DeclareTextCommand{\\CYREREV}{PU}{\\84\\055}% U+042D
+\\DeclareTextCommand{\\CYRYU}{PU}{\\84\\056}% U+042E
+\\DeclareTextCommand{\\CYRYA}{PU}{\\84\\057}% U+042F
+\\DeclareTextCommand{\\cyra}{PU}{\\84\\060}% U+0430
+\\DeclareTextCommand{\\cyrb}{PU}{\\84\\061}% U+0431
+\\DeclareTextCommand{\\cyrv}{PU}{\\84\\062}% U+0432
+\\DeclareTextCommand{\\cyrg}{PU}{\\84\\063}% U+0433
+\\DeclareTextCommand{\\cyrd}{PU}{\\84\\064}% U+0434
+\\DeclareTextCommand{\\cyre}{PU}{\\84\\065}% U+0435
+\\DeclareTextCommand{\\cyrzh}{PU}{\\84\\066}% U+0436
+\\DeclareTextCommand{\\cyrz}{PU}{\\84\\067}% U+0437
+\\DeclareTextCommand{\\cyri}{PU}{\\84\\070}% U+0438
+\\DeclareTextCommand{\\cyrishrt}{PU}{\\84\\071}% U+0439
+\\DeclareTextCompositeCommand{\\U}{PU}{\\cyri}{\\84\\071}% U+0439
+\\DeclareTextCommand{\\cyrk}{PU}{\\84\\072}% U+043A
+\\DeclareTextCommand{\\cyrl}{PU}{\\84\\073}% U+043B
+\\DeclareTextCommand{\\cyrm}{PU}{\\84\\074}% U+043C
+\\DeclareTextCommand{\\cyrn}{PU}{\\84\\075}% U+043D
+\\DeclareTextCommand{\\cyro}{PU}{\\84\\076}% U+043E
+\\DeclareTextCommand{\\cyrp}{PU}{\\84\\077}% U+043F
+\\DeclareTextCommand{\\cyrr}{PU}{\\84\\100}% U+0440
+\\DeclareTextCommand{\\cyrs}{PU}{\\84\\101}% U+0441
+\\DeclareTextCommand{\\cyrt}{PU}{\\84\\102}% U+0442
+\\DeclareTextCommand{\\cyru}{PU}{\\84\\103}% U+0443
+\\DeclareTextCommand{\\cyrf}{PU}{\\84\\104}% U+0444
+\\DeclareTextCommand{\\cyrh}{PU}{\\84\\105}% U+0445
+\\DeclareTextCommand{\\cyrc}{PU}{\\84\\106}% U+0446
+\\DeclareTextCommand{\\cyrch}{PU}{\\84\\107}% U+0447
+\\DeclareTextCommand{\\cyrsh}{PU}{\\84\\110}% U+0448
+\\DeclareTextCommand{\\cyrshch}{PU}{\\84\\111}% U+0449
+\\DeclareTextCommand{\\cyrhrdsn}{PU}{\\84\\112}% U+044A
+\\DeclareTextCommand{\\cyrery}{PU}{\\84\\113}% U+044B
+\\DeclareTextCommand{\\cyrsftsn}{PU}{\\84\\114}% U+044C
+\\DeclareTextCommand{\\cyrerev}{PU}{\\84\\115}% U+044D
+\\DeclareTextCommand{\\cyryu}{PU}{\\84\\116}% U+044E
+\\DeclareTextCommand{\\cyrya}{PU}{\\84\\117}% U+044F
+\\DeclareTextCompositeCommand{\\\`}{PU}{\\cyre}{\\84\\120}% U+0450
+\\DeclareTextCommand{\\cyryo}{PU}{\\84\\121}% U+0451
+\\DeclareTextCompositeCommand{\\"}{PU}{\\cyre}{\\84\\121}% U+0451
+\\DeclareTextCommand{\\cyrdje}{PU}{\\84\\122}% U+0452
+\\DeclareTextCompositeCommand{\\'}{PU}{\\cyrg}{\\84\\123}% U+0453
+\\DeclareTextCommand{\\cyrie}{PU}{\\84\\124}% U+0454
+\\DeclareTextCommand{\\cyrdze}{PU}{\\84\\125}% U+0455
+\\DeclareTextCommand{\\cyrii}{PU}{\\84\\126}% U+0456
+\\DeclareTextCommand{\\cyryi}{PU}{\\84\\127}% U+0457
+\\DeclareTextCompositeCommand{\\"}{PU}{\\cyrii}{\\84\\127}% U+0457
+\\DeclareTextCommand{\\cyrje}{PU}{\\84\\130}% U+0458
+\\DeclareTextCommand{\\cyrlje}{PU}{\\84\\131}% U+0459
+\\DeclareTextCommand{\\cyrnje}{PU}{\\84\\132}% U+045A
+\\DeclareTextCommand{\\cyrtshe}{PU}{\\84\\133}% U+045B
+\\DeclareTextCompositeCommand{\\'}{PU}{\\cyrk}{\\84\\134}% U+045C
+\\DeclareTextCompositeCommand{\\\`}{PU}{\\cyri}{\\84\\135}% U+045D
+\\DeclareTextCommand{\\cyrushrt}{PU}{\\84\\136}% U+045E
+\\DeclareTextCompositeCommand{\\U}{PU}{\\curu}{\\84\\136}% U+045E
+\\DeclareTextCommand{\\cyrdzhe}{PU}{\\84\\137}% U+045F
+\\DeclareTextCommand{\\CYROMEGA}{PU}{\\84\\140}% U+0460
+\\DeclareTextCommand{\\cyromega}{PU}{\\84\\141}% U+0461
+\\DeclareTextCommand{\\CYRYAT}{PU}{\\84\\142}% U+0462
+\\DeclareTextCommand{\\cyryat}{PU}{\\84\\143}% U+0463
+\\DeclareTextCommand{\\CYRIOTE}{PU}{\\84\\144}% U+0464
+\\DeclareTextCommand{\\cyriote}{PU}{\\84\\145}% U+0465
+\\DeclareTextCommand{\\CYRLYUS}{PU}{\\84\\146}% U+0466
+\\DeclareTextCommand{\\cyrlyus}{PU}{\\84\\147}% U+0467
+\\DeclareTextCommand{\\CYRIOTLYUS}{PU}{\\84\\150}% U+0468
+\\DeclareTextCommand{\\cyriotlyus}{PU}{\\84\\151}% U+0469
+\\DeclareTextCommand{\\CYRBYUS}{PU}{\\84\\152}% U+046A
+\\DeclareTextCommand{\\cyrbyus}{PU}{\\84\\153}% U+046B
+\\DeclareTextCommand{\\CYRIOTBYUS}{PU}{\\84\\154}% U+046C
+\\DeclareTextCommand{\\cyriotbyus}{PU}{\\84\\155}% U+046D
+\\DeclareTextCommand{\\CYRKSI}{PU}{\\84\\156}% U+046E
+\\DeclareTextCommand{\\cyrksi}{PU}{\\84\\157}% U+046F
+\\DeclareTextCommand{\\CYRPSI}{PU}{\\84\\160}% U+0470
+\\DeclareTextCommand{\\cyrpsi}{PU}{\\84\\161}% U+0471
+\\DeclareTextCommand{\\CYRFITA}{PU}{\\84\\162}% U+0472
+\\DeclareTextCommand{\\cyrfita}{PU}{\\84\\163}% U+0473
+\\DeclareTextCommand{\\CYRIZH}{PU}{\\84\\164}% U+0474
+\\DeclareTextCommand{\\cyrizh}{PU}{\\84\\165}% U+0475
+\\DeclareTextCompositeCommand{\\C}{PU}{\\CYRIZH}{\\84\\166}% U+0476
+\\DeclareTextCompositeCommand{\\C}{PU}{\\cyrizh}{\\84\\167}% U+0477
+\\DeclareTextCommand{\\CYRUK}{PU}{\\84\\170}% U+0478
+\\DeclareTextCommand{\\cyruk}{PU}{\\84\\171}% U+0479
+\\DeclareTextCommand{\\CYROMEGARND}{PU}{\\84\\172}% U+047A
+\\DeclareTextCommand{\\cyromegarnd}{PU}{\\84\\173}% U+047B
+\\DeclareTextCommand{\\CYROMEGATITLO}{PU}{\\84\\174}% U+047C
+\\DeclareTextCommand{\\cyromegatitlo}{PU}{\\84\\175}% U+047D
+\\DeclareTextCommand{\\CYROT}{PU}{\\84\\176}% U+047E
+\\DeclareTextCommand{\\cyrot}{PU}{\\84\\177}% U+047F
+\\DeclareTextCommand{\\CYRKOPPA}{PU}{\\84\\200}% U+0480
+\\DeclareTextCommand{\\cyrkoppa}{PU}{\\84\\201}% U+0481
+\\DeclareTextCommand{\\cyrthousands}{PU}{\\84\\202}% U+0482
+\\DeclareTextCommand{\\CYRISHRTDSC}{PU}{\\84\\212}% U+048A
+\\DeclareTextCommand{\\cyrishrtdsc}{PU}{\\84\\213}% U+048B
+\\DeclareTextCommand{\\CYRSEMISFTSN}{PU}{\\84\\214}% U+048C
+\\DeclareTextCommand{\\cyrsemisftsn}{PU}{\\84\\215}% U+048D
+\\DeclareTextCommand{\\CYRRTICK}{PU}{\\84\\216}% U+048E
+\\DeclareTextCommand{\\cyrrtick}{PU}{\\84\\217}% U+048F
+\\DeclareTextCommand{\\CYRGUP}{PU}{\\84\\220}% U+0490
+\\DeclareTextCommand{\\cyrgup}{PU}{\\84\\221}% U+0491
+\\DeclareTextCommand{\\CYRGHCRS}{PU}{\\84\\222}% U+0492
+\\DeclareTextCommand{\\cyrghcrs}{PU}{\\84\\223}% U+0493
+\\DeclareTextCommand{\\CYRGHK}{PU}{\\84\\224}% U+0494
+\\DeclareTextCommand{\\cyrghk}{PU}{\\84\\225}% U+0495
+\\DeclareTextCommand{\\CYRZHDSC}{PU}{\\84\\226}% U+0496
+\\DeclareTextCommand{\\cyrzhdsc}{PU}{\\84\\227}% U+0497
+\\DeclareTextCommand{\\CYRZDSC}{PU}{\\84\\230}% U+0498
+\\DeclareTextCompositeCommand{\\c}{PU}{\\CYRZ}{\\84\\230}% U+0498
+\\DeclareTextCommand{\\cyrzdsc}{PU}{\\84\\231}% U+0499
+\\DeclareTextCompositeCommand{\\c}{PU}{\\cyrz}{\\84\\231}% U+0499
+\\DeclareTextCommand{\\CYRKDSC}{PU}{\\84\\232}% U+049A
+\\DeclareTextCommand{\\cyrkdsc}{PU}{\\84\\233}% U+049B
+\\DeclareTextCommand{\\CYRKVCRS}{PU}{\\84\\234}% U+049C
+\\DeclareTextCommand{\\cyrkvcrs}{PU}{\\84\\235}% U+049D
+\\DeclareTextCommand{\\CYRKHCRS}{PU}{\\84\\236}% U+049E
+\\DeclareTextCommand{\\cyrkhcrs}{PU}{\\84\\237}% U+049F
+\\DeclareTextCommand{\\CYRKBEAK}{PU}{\\84\\240}% U+04A0
+\\DeclareTextCommand{\\cyrkbeak}{PU}{\\84\\241}% U+04A1
+\\DeclareTextCommand{\\CYRNDSC}{PU}{\\84\\242}% U+04A2
+\\DeclareTextCommand{\\cyrndsc}{PU}{\\84\\243}% U+04A3
+\\DeclareTextCommand{\\CYRNG}{PU}{\\84\\244}% U+04A4
+\\DeclareTextCommand{\\cyrng}{PU}{\\84\\245}% U+04A5
+\\DeclareTextCommand{\\CYRPHK}{PU}{\\84\\246}% U+04A6
+\\DeclareTextCommand{\\cyrphk}{PU}{\\84\\247}% U+04A7
+\\DeclareTextCommand{\\CYRABHHA}{PU}{\\84\\250}% U+04A8
+\\DeclareTextCommand{\\cyrabhha}{PU}{\\84\\251}% U+04A9
+\\DeclareTextCommand{\\CYRSDSC}{PU}{\\84\\252}% U+04AA
+\\DeclareTextCompositeCommand{\\k}{PU}{\\CYRS}{\\84\\252}% U+04AA
+\\DeclareTextCommand{\\cyrsdsc}{PU}{\\84\\253}% U+04AB
+\\DeclareTextCompositeCommand{\\k}{PU}{\\cyrs}{\\84\\253}% U+04AB
+\\DeclareTextCommand{\\CYRTDSC}{PU}{\\84\\254}% U+04AC
+\\DeclareTextCommand{\\cyrtdsc}{PU}{\\84\\255}% U+04AD
+\\DeclareTextCommand{\\CYRY}{PU}{\\84\\256}% U+04AE
+\\DeclareTextCommand{\\cyry}{PU}{\\84\\257}% U+04AF
+\\DeclareTextCommand{\\CYRYHCRS}{PU}{\\84\\260}% U+04B0
+\\DeclareTextCommand{\\cyryhcrs}{PU}{\\84\\261}% U+04B1
+\\DeclareTextCommand{\\CYRHDSC}{PU}{\\84\\262}% U+04B2
+\\DeclareTextCommand{\\cyrhdsc}{PU}{\\84\\263}% U+04B3
+\\DeclareTextCommand{\\CYRTETSE}{PU}{\\84\\264}% U+04B4
+\\DeclareTextCommand{\\cyrtetse}{PU}{\\84\\265}% U+04B5
+\\DeclareTextCommand{\\CYRCHRDSC}{PU}{\\84\\266}% U+04B6
+\\DeclareTextCommand{\\cyrchrdsc}{PU}{\\84\\267}% U+04B7
+\\DeclareTextCommand{\\CYRCHVCRS}{PU}{\\84\\270}% U+04B8
+\\DeclareTextCommand{\\cyrchvcrs}{PU}{\\84\\271}% U+04B9
+\\DeclareTextCommand{\\CYRSHHA}{PU}{\\84\\272}% U+04BA
+\\DeclareTextCommand{\\cyrshha}{PU}{\\84\\273}% U+04BB
+\\DeclareTextCommand{\\CYRABHCH}{PU}{\\84\\274}% U+04BC
+\\DeclareTextCommand{\\cyrabhch}{PU}{\\84\\275}% U+04BD
+\\DeclareTextCommand{\\CYRABHCHDSC}{PU}{\\84\\276}% U+04BE
+\\DeclareTextCompositeCommand{\\k}{PU}{\\CYRABHCH}{\\84\\276}% U+04BE
+\\DeclareTextCommand{\\cyrabhchdsc}{PU}{\\84\\277}% U+04BF
+\\DeclareTextCompositeCommand{\\k}{PU}{\\cyrabhch}{\\84\\277}% U+04BF
+\\DeclareTextCommand{\\CYRpalochka}{PU}{\\84\\300}% U+04C0
+\\DeclareTextCompositeCommand{\\U}{PU}{\\CYRZH}{\\84\\301}% U+04C1
+\\DeclareTextCompositeCommand{\\U}{PU}{\\cyrzh}{\\84\\302}% U+04C2
+\\DeclareTextCommand{\\CYRKHK}{PU}{\\84\\303}% U+04C3
+\\DeclareTextCommand{\\cyrkhk}{PU}{\\84\\304}% U+04C4
+\\DeclareTextCommand{\\CYRLDSC}{PU}{\\84\\305}% U+04C5
+\\DeclareTextCommand{\\cyrldsc}{PU}{\\84\\306}% U+04C6
+\\DeclareTextCommand{\\CYRNHK}{PU}{\\84\\307}% U+04C7
+\\DeclareTextCommand{\\cyrnhk}{PU}{\\84\\310}% U+04C8
+\\DeclareTextCommand{\\CYRCHLDSC}{PU}{\\84\\313}% U+04CB
+\\DeclareTextCommand{\\cyrchldsc}{PU}{\\84\\314}% U+04CC
+\\DeclareTextCommand{\\CYRMDSC}{PU}{\\84\\315}% U+04CD
+\\DeclareTextCommand{\\cyrmdsc}{PU}{\\84\\316}% U+04CE
+\\DeclareTextCompositeCommand{\\U}{PU}{\\CYRA}{\\84\\320}% U+04D0
+\\DeclareTextCompositeCommand{\\U}{PU}{\\cyra}{\\84\\321}% U+04D1
+\\DeclareTextCompositeCommand{\\"}{PU}{\\CYRA}{\\84\\322}% U+04D2
+\\DeclareTextCompositeCommand{\\"}{PU}{\\cyra}{\\84\\323}% U+04D3
+\\DeclareTextCommand{\\CYRAE}{PU}{\\84\\324}% U+04D4
+\\DeclareTextCommand{\\cyrae}{PU}{\\84\\325}% U+04D5
+\\DeclareTextCompositeCommand{\\U}{PU}{\\CYRE}{\\84\\326}% U+04D6
+\\DeclareTextCompositeCommand{\\U}{PU}{\\cyre}{\\84\\327}% U+04D7
+\\DeclareTextCommand{\\CYRSCHWA}{PU}{\\84\\330}% U+04D8
+\\DeclareTextCommand{\\cyrschwa}{PU}{\\84\\331}% U+04D9
+\\DeclareTextCompositeCommand{\\"}{PU}{\\CYRSCHWA}{\\84\\332}% U+04DA
+\\DeclareTextCompositeCommand{\\"}{PU}{\\cyrschwa}{\\84\\333}% U+04DB
+\\DeclareTextCompositeCommand{\\"}{PU}{\\CYRZH}{\\84\\334}% U+04DC
+\\DeclareTextCompositeCommand{\\"}{PU}{\\cyrzh}{\\84\\335}% U+04DD
+\\DeclareTextCompositeCommand{\\"}{PU}{\\CYRZ}{\\84\\336}% U+04DE
+\\DeclareTextCompositeCommand{\\"}{PU}{\\cyrz}{\\84\\337}% U+04DF
+\\DeclareTextCommand{\\CYRABHDZE}{PU}{\\84\\340}% U+04E0
+\\DeclareTextCommand{\\cyrabhdze}{PU}{\\84\\341}% U+04E1
+\\DeclareTextCompositeCommand{\\=}{PU}{\\CYRI}{\\84\\342}% U+04E2
+\\DeclareTextCompositeCommand{\\=}{PU}{\\cyri}{\\84\\343}% U+04E3
+\\DeclareTextCompositeCommand{\\"}{PU}{\\CYRI}{\\84\\344}% U+04E4
+\\DeclareTextCompositeCommand{\\"}{PU}{\\cyri}{\\84\\345}% U+04E5
+\\DeclareTextCompositeCommand{\\"}{PU}{\\CYRO}{\\84\\346}% U+04E6
+\\DeclareTextCompositeCommand{\\"}{PU}{\\cyro}{\\84\\347}% U+04E7
+\\DeclareTextCommand{\\CYROTLD}{PU}{\\84\\350}% U+04E8
+\\DeclareTextCommand{\\cyrotld}{PU}{\\84\\351}% U+04E9
+\\DeclareTextCompositeCommand{\\"}{PU}{\\CYROTLD}{\\84\\352}% U+04EA
+\\DeclareTextCompositeCommand{\\"}{PU}{\\cyrotld}{\\84\\353}% U+04EB
+\\DeclareTextCompositeCommand{\\"}{PU}{\\CYREREV}{\\84\\354}% U+04EC
+\\DeclareTextCompositeCommand{\\"}{PU}{\\cyrerev}{\\84\\355}% U+04ED
+\\DeclareTextCompositeCommand{\\=}{PU}{\\CYRU}{\\84\\356}% U+04EE
+\\DeclareTextCompositeCommand{\\=}{PU}{\\cyru}{\\84\\357}% U+04EF
+\\DeclareTextCompositeCommand{\\"}{PU}{\\CYRU}{\\84\\360}% U+04F0
+\\DeclareTextCompositeCommand{\\"}{PU}{\\cyru}{\\84\\361}% U+04F1
+\\DeclareTextCompositeCommand{\\H}{PU}{\\CYRU}{\\84\\362}% U+04F2
+\\DeclareTextCompositeCommand{\\H}{PU}{\\cyru}{\\84\\363}% U+04F3
+\\DeclareTextCompositeCommand{\\"}{PU}{\\CYRCH}{\\84\\364}% U+04F4
+\\DeclareTextCompositeCommand{\\"}{PU}{\\cyrch}{\\84\\365}% U+04F5
+\\DeclareTextCommand{\\CYRGDSC}{PU}{\\84\\366}% U+04F6
+\\DeclareTextCommand{\\cyrgdsc}{PU}{\\84\\367}% U+04F7
+\\DeclareTextCompositeCommand{\\"}{PU}{\\CYRERY}{\\84\\370}% U+04F8
+\\DeclareTextCompositeCommand{\\"}{PU}{\\cyrery}{\\84\\371}% U+04F9
+\\DeclareTextCommand{\\CYRHHK}{PU}{\\84\\374}% U+04FC
+\\DeclareTextCommand{\\cyrhhk}{PU}{\\84\\375}% U+04FD
+\\fi
+\\ifx\\hebdalet\\@undefined\\else
+\\DeclareTextCommand{\\sofpasuq}{PU}{\\85\\303}% U+05C3
+\\DeclareTextCommand{\\hebalef}{PU}{\\85\\320}% U+05D0
+\\DeclareTextCommand{\\hebbet}{PU}{\\85\\321}% U+05D1
+\\DeclareTextCommand{\\hebgimel}{PU}{\\85\\322}% U+05D2
+\\DeclareTextCommand{\\hebdalet}{PU}{\\85\\323}% U+05D3
+\\DeclareTextCommand{\\hebhe}{PU}{\\85\\324}% U+05D4
+\\DeclareTextCommand{\\hebvav}{PU}{\\85\\325}% U+05D5
+\\DeclareTextCommand{\\hebzayin}{PU}{\\85\\326}% U+05D6
+\\DeclareTextCommand{\\hebhet}{PU}{\\85\\327}% U+05D7
+\\DeclareTextCommand{\\hebtet}{PU}{\\85\\330}% U+05D8
+\\DeclareTextCommand{\\hebyod}{PU}{\\85\\331}% U+05D9
+\\DeclareTextCommand{\\hebfinalkaf}{PU}{\\85\\332}% U+05DA
+\\DeclareTextCommand{\\hebkaf}{PU}{\\85\\333}% U+05DB
+\\DeclareTextCommand{\\heblamed}{PU}{\\85\\334}% U+05DC
+\\DeclareTextCommand{\\hebfinalmem}{PU}{\\85\\335}% U+05DD
+\\DeclareTextCommand{\\hebmem}{PU}{\\85\\336}% U+05DE
+\\DeclareTextCommand{\\hebfinalnun}{PU}{\\85\\337}% U+05DF
+\\DeclareTextCommand{\\hebnun}{PU}{\\85\\340}% U+05E0
+\\DeclareTextCommand{\\hebsamekh}{PU}{\\85\\341}% U+05E1
+\\DeclareTextCommand{\\hebayin}{PU}{\\85\\342}% U+05E2
+\\DeclareTextCommand{\\hebfinalpe}{PU}{\\85\\343}% U+05E3
+\\DeclareTextCommand{\\hebpe}{PU}{\\85\\344}% U+05E4
+\\DeclareTextCommand{\\hebfinaltsadi}{PU}{\\85\\345}% U+05E5
+\\DeclareTextCommand{\\hebtsadi}{PU}{\\85\\346}% U+05E6
+\\DeclareTextCommand{\\hebqof}{PU}{\\85\\347}% U+05E7
+\\DeclareTextCommand{\\hebresh}{PU}{\\85\\350}% U+05E8
+\\DeclareTextCommand{\\hebshin}{PU}{\\85\\351}% U+05E9
+\\DeclareTextCommand{\\hebtav}{PU}{\\85\\352}% U+05EA
+\\DeclareTextCommand{\\doublevav}{PU}{\\85\\360}% U+05F0
+\\DeclareTextCommand{\\vavyod}{PU}{\\85\\361}% U+05F1
+\\DeclareTextCommand{\\doubleyod}{PU}{\\85\\362}% U+05F2
+\\fi
+\\DeclareTextCommand{\\textbaht}{PU}{\\9016\\077}% U+0E3F
+\\DeclareTextCommand{\\textsca}{PU}{\\9035\\000}% U+1D00
+\\DeclareTextCommand{\\textscd}{PU}{\\9035\\005}%* U+1D05
+\\DeclareTextCommand{\\textsce}{PU}{\\9035\\007}% U+1D07
+\\DeclareTextCommand{\\textscj}{PU}{\\9035\\012}% U+1D0A
+\\DeclareTextCommand{\\textPUsck}{PU}{\\9035\\013}% U+1D0B
+\\DeclareTextCommand{\\textPUscm}{PU}{\\9035\\015}% U+1D0D
+\\DeclareTextCommand{\\textPUscp}{PU}{\\9035\\030}% U+1D18
+\\DeclareTextCommand{\\textPUrevscr}{PU}{\\9035\\031}% U+1D19
+\\DeclareTextCommand{\\textscu}{PU}{\\9035\\034}%* U+1D1C
+\\DeclareTextCommand{\\textiinferior}{PU}{\\9035\\142}%* U+1D62
+\\DeclareTextCommand{\\textrinferior}{PU}{\\9035\\143}%* U+1D63
+\\DeclareTextCommand{\\textuinferior}{PU}{\\9035\\144}%* U+1D64
+\\DeclareTextCommand{\\textvinferior}{PU}{\\9035\\145}%* U+1D65
+\\DeclareTextCommand{\\textbetainferior}{PU}{\\9035\\146}%* U+1D66
+\\DeclareTextCommand{\\textgammainferior}{PU}{\\9035\\147}%* U+1D67
+\\DeclareTextCommand{\\textrhoinferior}{PU}{\\9035\\150}%* U+1D68
+\\DeclareTextCommand{\\textphiinferior}{PU}{\\9035\\151}%* U+1D69
+\\DeclareTextCommand{\\textchiinferior}{PU}{\\9035\\152}%* U+1D6A
+\\DeclareTextCommand{\\textbarsci}{PU}{\\9035\\173}%* U+1D7B
+\\DeclareTextCommand{\\textbarp}{PU}{\\9035\\175}%* U+1D7D
+\\DeclareTextCommand{\\textbarscu}{PU}{\\9035\\176}%* U+1D7E
+\\DeclareTextCommand{\\textPUrhooka}{PU}{\\9035\\217}% U+1D8F
+\\DeclareTextCommand{\\texthtrtaild}{PU}{\\9035\\221}%* U+1D91
+\\DeclareTextCommand{\\textPUrhooke}{PU}{\\9035\\222}% U+1D92
+\\DeclareTextCommand{\\textPUrhookepsilon}{PU}{\\9035\\223}% U+1D93
+\\DeclareTextCommand{\\textPUrhookopeno}{PU}{\\9035\\227}% U+1D97
+\\DeclareTextCompositeCommand{\\textsubring}{PU}{A}{\\9036\\000}% U+1E00
+\\DeclareTextCompositeCommand{\\textsubring}{PU}{a}{\\9036\\001}% U+1E01
+\\DeclareTextCompositeCommand{\\.}{PU}{B}{\\9036\\002}% U+1E02
+\\DeclareTextCompositeCommand{\\.}{PU}{b}{\\9036\\003}% U+1E03
+\\DeclareTextCompositeCommand{\\d}{PU}{B}{\\9036\\004}% U+1E04
+\\DeclareTextCompositeCommand{\\d}{PU}{b}{\\9036\\005}% U+1E05
+\\DeclareTextCompositeCommand{\\b}{PU}{B}{\\9036\\006}% U+1E06
+\\DeclareTextCompositeCommand{\\b}{PU}{b}{\\9036\\007}% U+1E07
+\\DeclareTextCompositeCommand{\\.}{PU}{D}{\\9036\\012}% U+1E0A
+\\DeclareTextCompositeCommand{\\.}{PU}{d}{\\9036\\013}% U+1E0B
+\\DeclareTextCompositeCommand{\\d}{PU}{D}{\\9036\\014}% U+1E0C
+\\DeclareTextCompositeCommand{\\d}{PU}{d}{\\9036\\015}% U+1E0D
+\\DeclareTextCompositeCommand{\\b}{PU}{D}{\\9036\\016}% U+1E0E
+\\DeclareTextCompositeCommand{\\b}{PU}{d}{\\9036\\017}% U+1E0F
+\\DeclareTextCompositeCommand{\\c}{PU}{D}{\\9036\\020}% U+1E10
+\\DeclareTextCompositeCommand{\\c}{PU}{d}{\\9036\\021}% U+1E11
+\\DeclareTextCompositeCommand{\\textsubcircum}{PU}{D}{\\9036\\022}% U+1E12
+\\DeclareTextCompositeCommand{\\textsubcircum}{PU}{d}{\\9036\\023}% U+1E13
+\\DeclareTextCompositeCommand{\\textgravemacron}{PU}{E}{\\9036\\024}% U+1E14
+\\DeclareTextCompositeCommand{\\textgravemacron}{PU}{e}{\\9036\\025}% U+1E15
+\\DeclareTextCompositeCommand{\\textacutemacron}{PU}{E}{\\9036\\026}% U+1E16
+\\DeclareTextCompositeCommand{\\textacutemacron}{PU}{e}{\\9036\\027}% U+1E17
+\\DeclareTextCompositeCommand{\\textsubcircum}{PU}{E}{\\9036\\030}% U+1E18
+\\DeclareTextCompositeCommand{\\textsubcircum}{PU}{e}{\\9036\\031}% U+1E19
+\\DeclareTextCompositeCommand{\\textsubtilde}{PU}{E}{\\9036\\032}% U+1E1A
+\\DeclareTextCompositeCommand{\\textsubtilde}{PU}{e}{\\9036\\033}% U+1E1B
+\\DeclareTextCompositeCommand{\\.}{PU}{F}{\\9036\\036}% U+1E1E
+\\DeclareTextCompositeCommand{\\.}{PU}{f}{\\9036\\037}% U+1E1F
+\\DeclareTextCompositeCommand{\\=}{PU}{G}{\\9036\\040}% U+1E20
+\\DeclareTextCompositeCommand{\\=}{PU}{g}{\\9036\\041}% U+1E21
+\\DeclareTextCompositeCommand{\\.}{PU}{H}{\\9036\\042}% U+1E22
+\\DeclareTextCompositeCommand{\\.}{PU}{h}{\\9036\\043}% U+1E23
+\\DeclareTextCompositeCommand{\\d}{PU}{H}{\\9036\\044}% U+1E24
+\\DeclareTextCompositeCommand{\\d}{PU}{h}{\\9036\\045}% U+1E25
+\\DeclareTextCompositeCommand{\\"}{PU}{H}{\\9036\\046}% U+1E26
+\\DeclareTextCompositeCommand{\\"}{PU}{h}{\\9036\\047}% U+1E27
+\\DeclareTextCompositeCommand{\\c}{PU}{H}{\\9036\\050}% U+1E28
+\\DeclareTextCompositeCommand{\\c}{PU}{h}{\\9036\\051}% U+1E29
+\\DeclareTextCompositeCommand{\\textsubbreve}{PU}{H}{\\9036\\052}% U+1E2A
+\\DeclareTextCompositeCommand{\\textsubbreve}{PU}{h}{\\9036\\053}% U+1E2B
+\\DeclareTextCompositeCommand{\\textsubtilde}{PU}{I}{\\9036\\054}% U+1E2C
+\\DeclareTextCompositeCommand{\\textsubtilde}{PU}{i}{\\9036\\055}% U+1E2D
+\\DeclareTextCompositeCommand{\\'}{PU}{K}{\\9036\\060}% U+1E30
+\\DeclareTextCompositeCommand{\\'}{PU}{k}{\\9036\\061}% U+1E31
+\\DeclareTextCompositeCommand{\\d}{PU}{K}{\\9036\\062}% U+1E32
+\\DeclareTextCompositeCommand{\\d}{PU}{k}{\\9036\\063}% U+1E33
+\\DeclareTextCompositeCommand{\\b}{PU}{K}{\\9036\\064}% U+1E34
+\\DeclareTextCompositeCommand{\\b}{PU}{k}{\\9036\\065}% U+1E35
+\\DeclareTextCompositeCommand{\\d}{PU}{L}{\\9036\\066}% U+1E36
+\\DeclareTextCompositeCommand{\\d}{PU}{l}{\\9036\\067}% U+1E37
+\\DeclareTextCompositeCommand{\\b}{PU}{L}{\\9036\\072}% U+1E3A
+\\DeclareTextCompositeCommand{\\b}{PU}{l}{\\9036\\073}% U+1E3B
+\\DeclareTextCompositeCommand{\\textsubcircum}{PU}{L}{\\9036\\074}% U+1E3C
+\\DeclareTextCompositeCommand{\\textsubcircum}{PU}{l}{\\9036\\075}% U+1E3D
+\\DeclareTextCompositeCommand{\\'}{PU}{M}{\\9036\\076}% U+1E3E
+\\DeclareTextCompositeCommand{\\'}{PU}{m}{\\9036\\077}% U+1E3F
+\\DeclareTextCompositeCommand{\\.}{PU}{M}{\\9036\\100}% U+1E40
+\\DeclareTextCompositeCommand{\\.}{PU}{m}{\\9036\\101}% U+1E41
+\\DeclareTextCompositeCommand{\\d}{PU}{M}{\\9036\\102}% U+1E42
+\\DeclareTextCompositeCommand{\\d}{PU}{m}{\\9036\\103}% U+1E43
+\\DeclareTextCompositeCommand{\\.}{PU}{N}{\\9036\\104}% U+1E44
+\\DeclareTextCompositeCommand{\\.}{PU}{n}{\\9036\\105}% U+1E45
+\\DeclareTextCompositeCommand{\\d}{PU}{N}{\\9036\\106}% U+1E46
+\\DeclareTextCompositeCommand{\\d}{PU}{n}{\\9036\\107}% U+1E47
+\\DeclareTextCompositeCommand{\\b}{PU}{N}{\\9036\\110}% U+1E48
+\\DeclareTextCompositeCommand{\\b}{PU}{n}{\\9036\\111}% U+1E49
+\\DeclareTextCompositeCommand{\\textsubcircum}{PU}{N}{\\9036\\112}% U+1E4A
+\\DeclareTextCompositeCommand{\\textsubcircum}{PU}{n}{\\9036\\113}% U+1E4B
+\\DeclareTextCompositeCommand{\\textgravemacron}{PU}{O}{\\9036\\120}% U+1E50
+\\DeclareTextCompositeCommand{\\textgravemacron}{PU}{o}{\\9036\\121}% U+1E51
+\\DeclareTextCompositeCommand{\\textacutemacron}{PU}{O}{\\9036\\122}% U+1E52
+\\DeclareTextCompositeCommand{\\textacutemacron}{PU}{o}{\\9036\\123}% U+1E53
+\\DeclareTextCompositeCommand{\\'}{PU}{P}{\\9036\\124}% U+1E54
+\\DeclareTextCompositeCommand{\\'}{PU}{p}{\\9036\\125}% U+1E55
+\\DeclareTextCompositeCommand{\\.}{PU}{P}{\\9036\\126}% U+1E56
+\\DeclareTextCompositeCommand{\\.}{PU}{p}{\\9036\\127}% U+1E57
+\\DeclareTextCompositeCommand{\\.}{PU}{R}{\\9036\\130}% U+1E58
+\\DeclareTextCompositeCommand{\\.}{PU}{r}{\\9036\\131}% U+1E59
+\\DeclareTextCompositeCommand{\\d}{PU}{R}{\\9036\\132}% U+1E5A
+\\DeclareTextCompositeCommand{\\d}{PU}{r}{\\9036\\133}% U+1E5B
+\\DeclareTextCompositeCommand{\\b}{PU}{R}{\\9036\\136}% U+1E5E
+\\DeclareTextCompositeCommand{\\b}{PU}{r}{\\9036\\137}% U+1E5F
+\\DeclareTextCompositeCommand{\\.}{PU}{S}{\\9036\\140}% U+1E60
+\\DeclareTextCompositeCommand{\\.}{PU}{s}{\\9036\\141}% U+1E61
+\\DeclareTextCompositeCommand{\\d}{PU}{S}{\\9036\\142}% U+1E62
+\\DeclareTextCompositeCommand{\\d}{PU}{s}{\\9036\\143}% U+1E63
+\\DeclareTextCompositeCommand{\\.}{PU}{T}{\\9036\\152}% U+1E6A
+\\DeclareTextCompositeCommand{\\.}{PU}{t}{\\9036\\153}% U+1E6B
+\\DeclareTextCompositeCommand{\\d}{PU}{T}{\\9036\\154}% U+1E6C
+\\DeclareTextCompositeCommand{\\d}{PU}{t}{\\9036\\155}% U+1E6D
+\\DeclareTextCompositeCommand{\\b}{PU}{T}{\\9036\\156}% U+1E6E
+\\DeclareTextCompositeCommand{\\b}{PU}{t}{\\9036\\157}% U+1E6F
+\\DeclareTextCompositeCommand{\\textsubcircum}{PU}{T}{\\9036\\160}% U+1E70
+\\DeclareTextCompositeCommand{\\textsubcircum}{PU}{t}{\\9036\\161}% U+1E71
+\\DeclareTextCompositeCommand{\\textsubumlaut}{PU}{U}{\\9036\\162}% U+1E72
+\\DeclareTextCompositeCommand{\\textsubumlaut}{PU}{u}{\\9036\\163}% U+1E73
+\\DeclareTextCompositeCommand{\\textsubtilde}{PU}{U}{\\9036\\164}% U+1E74
+\\DeclareTextCompositeCommand{\\textsubtilde}{PU}{u}{\\9036\\165}% U+1E75
+\\DeclareTextCompositeCommand{\\textsubcircum}{PU}{U}{\\9036\\166}% U+1E76
+\\DeclareTextCompositeCommand{\\textsubcircum}{PU}{u}{\\9036\\167}% U+1E77
+\\DeclareTextCompositeCommand{\\~}{PU}{V}{\\9036\\174}% U+1E7C
+\\DeclareTextCompositeCommand{\\~}{PU}{v}{\\9036\\175}% U+1E7D
+\\DeclareTextCompositeCommand{\\d}{PU}{V}{\\9036\\176}% U+1E7E
+\\DeclareTextCompositeCommand{\\d}{PU}{v}{\\9036\\177}% U+1E7F
+\\DeclareTextCompositeCommand{\\\`}{PU}{W}{\\9036\\200}% U+1E80
+\\DeclareTextCompositeCommand{\\\`}{PU}{w}{\\9036\\201}% U+1E81
+\\DeclareTextCompositeCommand{\\'}{PU}{W}{\\9036\\202}% U+1E82
+\\DeclareTextCompositeCommand{\\'}{PU}{w}{\\9036\\203}% U+1E83
+\\DeclareTextCompositeCommand{\\"}{PU}{W}{\\9036\\204}% U+1E84
+\\DeclareTextCompositeCommand{\\"}{PU}{w}{\\9036\\205}% U+1E85
+\\DeclareTextCompositeCommand{\\.}{PU}{W}{\\9036\\206}% U+1E86
+\\DeclareTextCompositeCommand{\\.}{PU}{w}{\\9036\\207}% U+1E87
+\\DeclareTextCompositeCommand{\\d}{PU}{W}{\\9036\\210}% U+1E88
+\\DeclareTextCompositeCommand{\\d}{PU}{w}{\\9036\\211}% U+1E89
+\\DeclareTextCompositeCommand{\\.}{PU}{X}{\\9036\\212}% U+1E8A
+\\DeclareTextCompositeCommand{\\.}{PU}{x}{\\9036\\213}% U+1E8B
+\\DeclareTextCompositeCommand{\\"}{PU}{X}{\\9036\\214}% U+1E8C
+\\DeclareTextCompositeCommand{\\"}{PU}{x}{\\9036\\215}% U+1E8D
+\\DeclareTextCompositeCommand{\\.}{PU}{Y}{\\9036\\216}% U+1E8E
+\\DeclareTextCompositeCommand{\\.}{PU}{y}{\\9036\\217}% U+1E8F
+\\DeclareTextCompositeCommand{\\^}{PU}{Z}{\\9036\\220}% U+1E90
+\\DeclareTextCompositeCommand{\\^}{PU}{z}{\\9036\\221}% U+1E91
+\\DeclareTextCompositeCommand{\\d}{PU}{Z}{\\9036\\222}% U+1E92
+\\DeclareTextCompositeCommand{\\d}{PU}{z}{\\9036\\223}% U+1E93
+\\DeclareTextCompositeCommand{\\b}{PU}{Z}{\\9036\\224}% U+1E94
+\\DeclareTextCompositeCommand{\\b}{PU}{z}{\\9036\\225}% U+1E95
+\\DeclareTextCompositeCommand{\\b}{PU}{h}{\\9036\\226}% U+1E96
+\\DeclareTextCompositeCommand{\\"}{PU}{t}{\\9036\\227}% U+1E97
+\\DeclareTextCompositeCommand{\\r}{PU}{w}{\\9036\\230}% U+1E98
+\\DeclareTextCompositeCommand{\\r}{PU}{y}{\\9036\\231}% U+1E99
+\\DeclareTextCompositeCommand{\\.}{PU}{\\textlongs}{\\9036\\233}% U+1E9B
+\\DeclareTextCompositeCommand{\\d}{PU}{A}{\\9036\\240}% U+1EA0
+\\DeclareTextCompositeCommand{\\d}{PU}{a}{\\9036\\241}% U+1EA1
+\\DeclareTextCompositeCommand{\\d}{PU}{E}{\\9036\\270}% U+1EB8
+\\DeclareTextCompositeCommand{\\d}{PU}{e}{\\9036\\271}% U+1EB9
+\\DeclareTextCompositeCommand{\\~}{PU}{E}{\\9036\\274}% U+1EBC
+\\DeclareTextCompositeCommand{\\~}{PU}{e}{\\9036\\275}% U+1EBD
+\\DeclareTextCompositeCommand{\\d}{PU}{I}{\\9036\\312}% U+1ECA
+\\DeclareTextCompositeCommand{\\d}{PU}{i}{\\9036\\313}% U+1ECB
+\\DeclareTextCompositeCommand{\\d}{PU}{O}{\\9036\\314}% U+1ECC
+\\DeclareTextCompositeCommand{\\d}{PU}{o}{\\9036\\315}% U+1ECD
+\\DeclareTextCompositeCommand{\\d}{PU}{U}{\\9036\\344}% U+1EE4
+\\DeclareTextCompositeCommand{\\d}{PU}{u}{\\9036\\345}% U+1EE5
+\\DeclareTextCompositeCommand{\\\`}{PU}{Y}{\\9036\\362}% U+1EF2
+\\DeclareTextCompositeCommand{\\\`}{PU}{y}{\\9036\\363}% U+1EF3
+\\DeclareTextCompositeCommand{\\d}{PU}{Y}{\\9036\\364}% U+1EF4
+\\DeclareTextCompositeCommand{\\d}{PU}{y}{\\9036\\365}% U+1EF5
+\\DeclareTextCompositeCommand{\\~}{PU}{Y}{\\9036\\370}% U+1EF8
+\\DeclareTextCompositeCommand{\\~}{PU}{y}{\\9036\\371}% U+1EF9
+\\DeclareTextCommand{\\textcompwordmark}{PU}{\\9040\\014}% U+200C
+\\DeclareTextCommand{\\textendash}{PU}{\\9040\\023}% U+2013
+\\DeclareTextCommand{\\textemdash}{PU}{\\9040\\024}% U+2014
+\\DeclareTextCommand{\\textbardbl}{PU}{\\9040\\026}% U+2016
+\\DeclareTextCommand{\\textquoteleft}{PU}{\\9040\\030}% U+2018
+\\DeclareTextCommand{\\textquoteright}{PU}{\\9040\\031}% U+2019
+\\DeclareTextCommand{\\quotesinglbase}{PU}{\\9040\\032}% U+201A
+\\DeclareTextCommand{\\textquotedblleft}{PU}{\\9040\\034}% U+201C
+\\DeclareTextCommand{\\textquotedblright}{PU}{\\9040\\035}% U+201D
+\\DeclareTextCommand{\\quotedblbase}{PU}{\\9040\\036}% U+201E
+\\DeclareTextCommand{\\textdagger}{PU}{\\9040\\040}%* U+2020
+\\DeclareTextCommand{\\textdaggerdbl}{PU}{\\9040\\041}% U+2021
+\\DeclareTextCommand{\\textbullet}{PU}{\\9040\\042}%* U+2022
+\\DeclareTextCommand{\\texthdotfor}{PU}{\\9040\\045}%* U+2025
+\\DeclareTextCommand{\\textellipsis}{PU}{\\9040\\046}% U+2026
+\\DeclareTextCommand{\\textperthousand}{PU}{\\9040\\060}% U+2030
+\\DeclareTextCommand{\\textpertenthousand}{PU}{\\9040\\061}% U+2031
+\\DeclareTextCommand{\\textprime}{PU}{\\9040\\062}%* U+2032
+\\DeclareTextCommand{\\textsecond}{PU}{\\9040\\063}%* U+2033
+\\DeclareTextCommand{\\textthird}{PU}{\\9040\\064}%* U+2034
+\\DeclareTextCommand{\\textbackprime}{PU}{\\9040\\065}%* U+2035
+\\DeclareTextCommand{\\guilsinglleft}{PU}{\\9040\\071}% U+2039
+\\DeclareTextCommand{\\guilsinglright}{PU}{\\9040\\072}% U+203A
+\\DeclareTextCommand{\\textreferencemark}{PU}{\\9040\\073}% U+203B
+\\DeclareTextCommand{\\textinterrobang}{PU}{\\9040\\075}% U+203D
+\\DeclareTextCommand{\\textfractionsolidus}{PU}{\\9040\\104}% U+2044
+\\DeclareTextCommand{\\textlquill}{PU}{\\9040\\105}% U+2045
+\\DeclareTextCommand{\\textrquill}{PU}{\\9040\\106}% U+2046
+\\DeclareTextCommand{\\textdiscount}{PU}{\\9040\\122}% U+2052
+\\DeclareTextCommand{\\textlefttherefore}{PU}{\\9040\\126}%* U+2056
+\\DeclareTextCommand{\\textfourth}{PU}{\\9040\\127}%* U+2057
+\\DeclareTextCommand{\\textdiamonddots}{PU}{\\9040\\130}%* U+2058
+\\DeclareTextCommand{\\textzerosuperior}{PU}{\\9040\\160}%* U+2070
+\\DeclareTextCommand{\\textisuperior}{PU}{\\9040\\161}%* U+2071
+\\DeclareTextCommand{\\textfoursuperior}{PU}{\\9040\\164}%* U+2074
+\\DeclareTextCommand{\\textfivesuperior}{PU}{\\9040\\165}%* U+2075
+\\DeclareTextCommand{\\textsixsuperior}{PU}{\\9040\\166}%* U+2076
+\\DeclareTextCommand{\\textsevensuperior}{PU}{\\9040\\167}%* U+2077
+\\DeclareTextCommand{\\texteightsuperior}{PU}{\\9040\\170}%* U+2078
+\\DeclareTextCommand{\\textninesuperior}{PU}{\\9040\\171}%* U+2079
+\\DeclareTextCommand{\\textplussuperior}{PU}{\\9040\\172}%* U+207A
+\\DeclareTextCommand{\\textminussuperior}{PU}{\\9040\\173}%* U+207B
+\\DeclareTextCommand{\\textequalsuperior}{PU}{\\9040\\174}%* U+207C
+\\DeclareTextCommand{\\textparenleftsuperior}{PU}{\\9040\\175}%* U+207D
+\\DeclareTextCommand{\\textparenrightsuperior}{PU}{\\9040\\176}%* U+207E
+\\DeclareTextCommand{\\textnsuperior}{PU}{\\9040\\177}%* U+207F
+\\DeclareTextCommand{\\textzeroinferior}{PU}{\\9040\\200}%* U+2080
+\\DeclareTextCommand{\\textoneinferior}{PU}{\\9040\\201}%* U+2081
+\\DeclareTextCommand{\\texttwoinferior}{PU}{\\9040\\202}%* U+2082
+\\DeclareTextCommand{\\textthreeinferior}{PU}{\\9040\\203}%* U+2083
+\\DeclareTextCommand{\\textfourinferior}{PU}{\\9040\\204}%* U+2084
+\\DeclareTextCommand{\\textfiveinferior}{PU}{\\9040\\205}%* U+2085
+\\DeclareTextCommand{\\textsixinferior}{PU}{\\9040\\206}%* U+2086
+\\DeclareTextCommand{\\textseveninferior}{PU}{\\9040\\207}%* U+2087
+\\DeclareTextCommand{\\texteightinferior}{PU}{\\9040\\210}%* U+2088
+\\DeclareTextCommand{\\textnineinferior}{PU}{\\9040\\211}%* U+2089
+\\DeclareTextCommand{\\textplusinferior}{PU}{\\9040\\212}%* U+208A
+\\DeclareTextCommand{\\textminusinferior}{PU}{\\9040\\213}%* U+208B
+\\DeclareTextCommand{\\textequalsinferior}{PU}{\\9040\\214}%* U+208C
+\\DeclareTextCommand{\\textparenleftinferior}{PU}{\\9040\\215}%* U+208D
+\\DeclareTextCommand{\\textparenrightinferior}{PU}{\\9040\\216}%* U+208E
+\\DeclareTextCommand{\\textainferior}{PU}{\\9040\\220}%* U+2090
+\\DeclareTextCommand{\\texteinferior}{PU}{\\9040\\221}%* U+2091
+\\DeclareTextCommand{\\textoinferior}{PU}{\\9040\\222}%* U+2092
+\\DeclareTextCommand{\\textxinferior}{PU}{\\9040\\223}%* U+2093
+\\DeclareTextCommand{\\textschwainferior}{PU}{\\9040\\224}%* U+2094
+\\DeclareTextCommand{\\texthinferior}{PU}{\\9040\\225}%* U+2095
+\\DeclareTextCommand{\\textkinferior}{PU}{\\9040\\226}%* U+2096
+\\DeclareTextCommand{\\textlinferior}{PU}{\\9040\\227}%* U+2097
+\\DeclareTextCommand{\\textminferior}{PU}{\\9040\\230}%* U+2098
+\\DeclareTextCommand{\\textninferior}{PU}{\\9040\\231}%* U+2099
+\\DeclareTextCommand{\\textpinferior}{PU}{\\9040\\232}%* U+209A
+\\DeclareTextCommand{\\textsinferior}{PU}{\\9040\\233}%* U+209B
+\\DeclareTextCommand{\\texttinferior}{PU}{\\9040\\234}%* U+209C
+\\DeclareTextCommand{\\textcolonmonetary}{PU}{\\9040\\241}% U+20A1
+\\DeclareTextCommand{\\textlira}{PU}{\\9040\\244}% U+20A4
+\\DeclareTextCommand{\\textnaira}{PU}{\\9040\\246}% U+20A6
+\\DeclareTextCommand{\\textpeseta}{PU}{\\9040\\247}% U+20A7
+\\DeclareTextCommand{\\textwon}{PU}{\\9040\\251}% U+20A9
+\\DeclareTextCommand{\\textdong}{PU}{\\9040\\253}% U+20AB
+\\DeclareTextCommand{\\texteuro}{PU}{\\9040\\254}% U+20AC
+\\DeclareTextCommand{\\textDeleatur}{PU}{\\9040\\260}%* U+20B0
+\\DeclareTextCommand{\\textpeso}{PU}{\\9040\\261}% U+20B1
+\\DeclareTextCommand{\\textguarani}{PU}{\\9040\\262}% U+20B2
+\\DeclareTextCommand{\\textcelsius}{PU}{\\9041\\003}% U+2103
+\\DeclareTextCommand{\\texthslash}{PU}{\\9041\\017}%* U+210F
+\\DeclareTextCommand{\\textIm}{PU}{\\9041\\021}%* U+2111
+\\DeclareTextCommand{\\textell}{PU}{\\9041\\023}%* U+2113
+\\DeclareTextCommand{\\textnumero}{PU}{\\9041\\026}% U+2116
+\\DeclareTextCommand{\\textcircledP}{PU}{\\9041\\027}% U+2117
+\\DeclareTextCommand{\\textwp}{PU}{\\9041\\030}%* U+2118
+\\DeclareTextCommand{\\textRe}{PU}{\\9041\\034}%* U+211C
+\\DeclareTextCommand{\\textrecipe}{PU}{\\9041\\036}% U+211E
+\\DeclareTextCommand{\\textservicemark}{PU}{\\9041\\040}% U+2120
+\\DeclareTextCommand{\\texttrademark}{PU}{\\9041\\042}% U+2122
+\\DeclareTextCommand{\\textohm}{PU}{\\9041\\046}% U+2126
+\\DeclareTextCommand{\\textmho}{PU}{\\9041\\047}%* U+2127
+\\DeclareTextCommand{\\textriota}{PU}{\\9041\\051}%* U+2129
+\\DeclareTextCommand{\\textangstrom}{PU}{\\9041\\053}% U+212B
+\\DeclareTextCommand{\\textestimated}{PU}{\\9041\\056}% U+212E
+\\DeclareTextCommand{\\textFinv}{PU}{\\9041\\062}%* U+2132
+\\DeclareTextCommand{\\textaleph}{PU}{\\9041\\065}%* U+2135
+\\DeclareTextCommand{\\textbeth}{PU}{\\9041\\066}%* U+2136
+\\DeclareTextCommand{\\textgimel}{PU}{\\9041\\067}%* U+2137
+\\DeclareTextCommand{\\textdaleth}{PU}{\\9041\\070}%* U+2138
+\\DeclareTextCommand{\\textfax}{PU}{\\9041\\073}%* U+213B
+\\DeclareTextCommand{\\textGame}{PU}{\\9041\\101}%* U+2141
+\\DeclareTextCommand{\\textinvamp}{PU}{\\9041\\113}% U+214B
+\\DeclareTextCommand{\\textoneseventh}{PU}{\\9041\\120}% U+2150
+\\DeclareTextCommand{\\textoneninth}{PU}{\\9041\\121}% U+2151
+\\DeclareTextCommand{\\textonetenth}{PU}{\\9041\\122}% U+2152
+\\DeclareTextCommand{\\textonethird}{PU}{\\9041\\123}% U+2153
+\\DeclareTextCommand{\\texttwothirds}{PU}{\\9041\\124}% U+2154
+\\DeclareTextCommand{\\textonefifth}{PU}{\\9041\\125}% U+2155
+\\DeclareTextCommand{\\texttwofifths}{PU}{\\9041\\126}% U+2156
+\\DeclareTextCommand{\\textthreefifths}{PU}{\\9041\\127}% U+2157
+\\DeclareTextCommand{\\textfourfifths}{PU}{\\9041\\130}% U+2158
+\\DeclareTextCommand{\\textonesixth}{PU}{\\9041\\131}% U+2159
+\\DeclareTextCommand{\\textfivesixths}{PU}{\\9041\\132}% U+215A
+\\DeclareTextCommand{\\textoneeighth}{PU}{\\9041\\133}% U+215B
+\\DeclareTextCommand{\\textthreeeighths}{PU}{\\9041\\134}% U+215C
+\\DeclareTextCommand{\\textfiveeighths}{PU}{\\9041\\135}% U+215D
+\\DeclareTextCommand{\\textseveneighths}{PU}{\\9041\\136}% U+215E
+\\DeclareTextCommand{\\textrevc}{PU}{\\9041\\204}% U+2184
+\\DeclareTextCommand{\\textzerothirds}{PU}{\\9041\\211}% U+2189
+\\DeclareTextCommand{\\textleftarrow}{PU}{\\9041\\220}%* U+2190
+\\DeclareTextCommand{\\textuparrow}{PU}{\\9041\\221}%* U+2191
+\\DeclareTextCommand{\\textrightarrow}{PU}{\\9041\\222}%* U+2192
+\\DeclareTextCommand{\\textdownarrow}{PU}{\\9041\\223}%* U+2193
+\\DeclareTextCommand{\\textleftrightarrow}{PU}{\\9041\\224}%* U+2194
+\\DeclareTextCommand{\\textupdownarrow}{PU}{\\9041\\225}%* U+2195
+\\DeclareTextCommand{\\textnwarrow}{PU}{\\9041\\226}%* U+2196
+\\DeclareTextCommand{\\textnearrow}{PU}{\\9041\\227}%* U+2197
+\\DeclareTextCommand{\\textsearrow}{PU}{\\9041\\230}%* U+2198
+\\DeclareTextCommand{\\textswarrow}{PU}{\\9041\\231}%* U+2199
+\\DeclareTextCommand{\\textnleftarrow}{PU}{\\9041\\232}%* U+219A
+\\DeclareTextCommand{\\textnrightarrow}{PU}{\\9041\\233}%* U+219B
+\\DeclareTextCommand{\\texttwoheadleftarrow}{PU}{\\9041\\236}%* U+219E
+\\DeclareTextCommand{\\textntwoheadleftarrow}{PU}{\\9041\\236\\83\\070}%* U+219E U+0338
+\\DeclareTextCommand{\\texttwoheaduparrow}{PU}{\\9041\\237}%* U+219F
+\\DeclareTextCommand{\\texttwoheadrightarrow}{PU}{\\9041\\240}%* U+21A0
+\\DeclareTextCommand{\\textntwoheadrightarrow}{PU}{\\9041\\240\\83\\070}%* U+21A0 U+0338
+\\DeclareTextCommand{\\texttwoheaddownarrow}{PU}{\\9041\\241}%* U+21A1
+\\DeclareTextCommand{\\textleftarrowtail}{PU}{\\9041\\242}%* U+21A2
+\\DeclareTextCommand{\\textrightarrowtail}{PU}{\\9041\\243}%* U+21A3
+\\DeclareTextCommand{\\textmapsto}{PU}{\\9041\\246}%* U+21A6
+\\DeclareTextCommand{\\texthookleftarrow}{PU}{\\9041\\251}%* U+21A9
+\\DeclareTextCommand{\\texthookrightarrow}{PU}{\\9041\\252}%* U+21AA
+\\DeclareTextCommand{\\textlooparrowleft}{PU}{\\9041\\253}%* U+21AB
+\\DeclareTextCommand{\\textlooparrowright}{PU}{\\9041\\254}%* U+21AC
+\\DeclareTextCommand{\\textnleftrightarrow}{PU}{\\9041\\256}%* U+21AE
+\\DeclareTextCommand{\\textlightning}{PU}{\\9041\\257}%* U+21AF
+\\DeclareTextCommand{\\textdlsh}{PU}{\\9041\\265}%* U+21B5
+\\DeclareTextCommand{\\textcurvearrowleft}{PU}{\\9041\\266}%* U+21B6
+\\DeclareTextCommand{\\textcurvearrowright}{PU}{\\9041\\267}%* U+21B7
+\\DeclareTextCommand{\\textleftharpoonup}{PU}{\\9041\\274}%* U+21BC
+\\DeclareTextCommand{\\textleftharpoondown}{PU}{\\9041\\275}%* U+21BD
+\\DeclareTextCommand{\\textupharpoonright}{PU}{\\9041\\276}%* U+21BE
+\\DeclareTextCommand{\\textupharpoonleft}{PU}{\\9041\\277}%* U+21BF
+\\DeclareTextCommand{\\textrightharpoonup}{PU}{\\9041\\300}%* U+21C0
+\\DeclareTextCommand{\\textrightharpoondown}{PU}{\\9041\\301}%* U+21C1
+\\DeclareTextCommand{\\textdownharpoonright}{PU}{\\9041\\302}%* U+21C2
+\\DeclareTextCommand{\\textdownharpoonleft}{PU}{\\9041\\303}%* U+21C3
+\\DeclareTextCommand{\\textrightleftarrows}{PU}{\\9041\\304}%* U+21C4
+\\DeclareTextCommand{\\textupdownarrows}{PU}{\\9041\\305}%* U+21C5
+\\DeclareTextCommand{\\textleftrightarrows}{PU}{\\9041\\306}%* U+21C6
+\\DeclareTextCommand{\\textleftleftarrows}{PU}{\\9041\\307}%* U+21C7
+\\DeclareTextCommand{\\textupuparrows}{PU}{\\9041\\310}%* U+21C8
+\\DeclareTextCommand{\\textrightrightarrows}{PU}{\\9041\\311}%* U+21C9
+\\DeclareTextCommand{\\textdowndownarrows}{PU}{\\9041\\312}%* U+21CA
+\\DeclareTextCommand{\\textleftrightharpoons}{PU}{\\9041\\313}%* U+21CB
+\\DeclareTextCommand{\\textrightleftharpoons}{PU}{\\9041\\314}%* U+21CC
+\\DeclareTextCommand{\\textnLeftarrow}{PU}{\\9041\\315}%* U+21CD
+\\DeclareTextCommand{\\textnLeftrightarrow}{PU}{\\9041\\316}%* U+21CE
+\\DeclareTextCommand{\\textnRightarrow}{PU}{\\9041\\317}%* U+21CF
+\\DeclareTextCommand{\\textLeftarrow}{PU}{\\9041\\320}%* U+21D0
+\\DeclareTextCommand{\\textUparrow}{PU}{\\9041\\321}%* U+21D1
+\\DeclareTextCommand{\\textRightarrow}{PU}{\\9041\\322}%* U+21D2
+\\DeclareTextCommand{\\textDownarrow}{PU}{\\9041\\323}%* U+21D3
+\\DeclareTextCommand{\\textLeftrightarrow}{PU}{\\9041\\324}%* U+21D4
+\\DeclareTextCommand{\\textUpdownarrow}{PU}{\\9041\\325}%* U+21D5
+\\DeclareTextCommand{\\textNwarrow}{PU}{\\9041\\326}%* U+21D6
+\\DeclareTextCommand{\\textNearrow}{PU}{\\9041\\327}%* U+21D7
+\\DeclareTextCommand{\\textSearrow}{PU}{\\9041\\330}%* U+21D8
+\\DeclareTextCommand{\\textSwarrow}{PU}{\\9041\\331}%* U+21D9
+\\DeclareTextCommand{\\textLleftarrow}{PU}{\\9041\\332}%* U+21DA
+\\DeclareTextCommand{\\textRrightarrow}{PU}{\\9041\\333}%* U+21DB
+\\DeclareTextCommand{\\textleftsquigarrow}{PU}{\\9041\\334}%* U+21DC
+\\DeclareTextCommand{\\textrightsquigarrow}{PU}{\\9041\\335}%* U+21DD
+\\DeclareTextCommand{\\textdashleftarrow}{PU}{\\9041\\340}%* U+21E0
+\\DeclareTextCommand{\\textdasheduparrow}{PU}{\\9041\\341}%* U+21E1
+\\DeclareTextCommand{\\textdashrightarrow}{PU}{\\9041\\342}%* U+21E2
+\\DeclareTextCommand{\\textdasheddownarrow}{PU}{\\9041\\343}%* U+21E3
+\\DeclareTextCommand{\\textpointer}{PU}{\\9041\\350}%* U+21E8
+\\DeclareTextCommand{\\textdownuparrows}{PU}{\\9041\\365}%* U+21F5
+\\DeclareTextCommand{\\textleftarrowtriangle}{PU}{\\9041\\375}%* U+21FD
+\\DeclareTextCommand{\\textrightarrowtriangle}{PU}{\\9041\\376}%* U+21FE
+\\DeclareTextCommand{\\textleftrightarrowtriangle}{PU}{\\9041\\377}%* U+21FF
+\\DeclareTextCommand{\\textforall}{PU}{\\9042\\000}%* U+2200
+\\DeclareTextCommand{\\textcomplement}{PU}{\\9042\\001}%* U+2201
+\\DeclareTextCommand{\\textpartial}{PU}{\\9042\\002}%* U+2202
+\\DeclareTextCommand{\\textexists}{PU}{\\9042\\003}%* U+2203
+\\DeclareTextCommand{\\textnexists}{PU}{\\9042\\004}%* U+2204
+\\DeclareTextCommand{\\textemptyset}{PU}{\\9042\\005}%* U+2205
+\\DeclareTextCommand{\\texttriangle}{PU}{\\9042\\006}%* U+2206
+\\DeclareTextCommand{\\textnabla}{PU}{\\9042\\007}%* U+2207
+\\DeclareTextCommand{\\textinsymbol}{PU}{\\9042\\010}%* U+2208
+\\DeclareTextCommand{\\textnotin}{PU}{\\9042\\011}%* U+2209
+\\DeclareTextCommand{\\textsmallin}{PU}{\\9042\\012}%* U+220A
+\\DeclareTextCommand{\\textni}{PU}{\\9042\\013}%* U+220B
+\\DeclareTextCommand{\\textnotowner}{PU}{\\9042\\014}%* U+220C
+\\DeclareTextCommand{\\textsmallowns}{PU}{\\9042\\015}%* U+220D
+\\DeclareTextCommand{\\textprod}{PU}{\\9042\\017}%* U+220F
+\\DeclareTextCommand{\\textamalg}{PU}{\\9042\\020}%* U+2210
+\\DeclareTextCommand{\\textsum}{PU}{\\9042\\021}%* U+2211
+\\DeclareTextCommand{\\textminus}{PU}{\\9042\\022}% U+2212
+\\DeclareTextCommand{\\textmp}{PU}{\\9042\\023}%* U+2213
+\\DeclareTextCommand{\\textdotplus}{PU}{\\9042\\024}%* U+2214
+\\DeclareTextCommand{\\textDivides}{PU}{\\9042\\025}%* U+2215
+\\DeclareTextCommand{\\textDividesNot}{PU}{\\9042\\025\\9040\\322}%* U+2215 U+20D2
+\\DeclareTextCommand{\\textsetminus}{PU}{\\9042\\026}%* U+2216
+\\DeclareTextCommand{\\textast}{PU}{\\9042\\027}%* U+2217
+\\DeclareTextCommand{\\textcirc}{PU}{\\9042\\030}%* U+2218
+\\DeclareTextCommand{\\textbulletoperator}{PU}{\\9042\\031}% U+2219
+\\DeclareTextCommand{\\textsurd}{PU}{\\9042\\032}%* U+221A
+\\DeclareTextCommand{\\textpropto}{PU}{\\9042\\035}%* U+221D
+\\DeclareTextCommand{\\textinfty}{PU}{\\9042\\036}%* U+221E
+\\DeclareTextCommand{\\textangle}{PU}{\\9042\\040}%* U+2220
+\\DeclareTextCommand{\\textmeasuredangle}{PU}{\\9042\\041}%* U+2221
+\\DeclareTextCommand{\\textsphericalangle}{PU}{\\9042\\042}%* U+2222
+\\DeclareTextCommand{\\textmid}{PU}{\\9042\\043}%* U+2223
+\\DeclareTextCommand{\\textnmid}{PU}{\\9042\\044}%* U+2224
+\\DeclareTextCommand{\\textparallel}{PU}{\\9042\\045}%* U+2225
+\\DeclareTextCommand{\\textnparallel}{PU}{\\9042\\046}%* U+2226
+\\DeclareTextCommand{\\textwedge}{PU}{\\9042\\047}%* U+2227
+\\DeclareTextCommand{\\textowedge}{PU}{\\9042\\047\\9040\\335}%* U+2227 U+20DD
+\\DeclareTextCommand{\\textvee}{PU}{\\9042\\050}%* U+2228
+\\DeclareTextCommand{\\textovee}{PU}{\\9042\\050\\9040\\335}%* U+2228 U+20DD
+\\DeclareTextCommand{\\textcap}{PU}{\\9042\\051}%* U+2229
+\\DeclareTextCommand{\\textcup}{PU}{\\9042\\052}%* U+222A
+\\DeclareTextCommand{\\textint}{PU}{\\9042\\053}%* U+222B
+\\DeclareTextCommand{\\textiint}{PU}{\\9042\\054}%* U+222C
+\\DeclareTextCommand{\\textiiint}{PU}{\\9042\\055}%* U+222D
+\\DeclareTextCommand{\\textoint}{PU}{\\9042\\056}%* U+222E
+\\DeclareTextCommand{\\textoiint}{PU}{\\9042\\057}%* U+222F
+\\DeclareTextCommand{\\textointclockwise}{PU}{\\9042\\062}%* U+2232
+\\DeclareTextCommand{\\textointctrclockwise}{PU}{\\9042\\063}%* U+2233
+\\DeclareTextCommand{\\texttherefore}{PU}{\\9042\\064}%* U+2234
+\\DeclareTextCommand{\\textbecause}{PU}{\\9042\\065}%* U+2235
+\\DeclareTextCommand{\\textvdotdot}{PU}{\\9042\\066}%* U+2236
+\\DeclareTextCommand{\\textsquaredots}{PU}{\\9042\\067}%* U+2237
+\\DeclareTextCommand{\\textdotminus}{PU}{\\9042\\070}%* U+2238
+\\DeclareTextCommand{\\texteqcolon}{PU}{\\9042\\071}%* U+2239
+\\DeclareTextCommand{\\textsim}{PU}{\\9042\\074}%* U+223C
+\\DeclareTextCommand{\\textbacksim}{PU}{\\9042\\075}%* U+223D
+\\DeclareTextCommand{\\textnbacksim}{PU}{\\9042\\075\\83\\070}%* U+223D U+0338
+\\DeclareTextCommand{\\textwr}{PU}{\\9042\\100}%* U+2240
+\\DeclareTextCommand{\\textnsim}{PU}{\\9042\\101}%* U+2241
+\\DeclareTextCommand{\\texteqsim}{PU}{\\9042\\102}%* U+2242
+\\DeclareTextCommand{\\textneqsim}{PU}{\\9042\\102\\83\\070}%* U+2242 U+0338
+\\DeclareTextCommand{\\textsimeq}{PU}{\\9042\\103}%* U+2243
+\\DeclareTextCommand{\\textnsimeq}{PU}{\\9042\\104}%* U+2244
+\\DeclareTextCommand{\\textcong}{PU}{\\9042\\105}%* U+2245
+\\DeclareTextCommand{\\textncong}{PU}{\\9042\\107}%* U+2247
+\\DeclareTextCommand{\\textapprox}{PU}{\\9042\\110}%* U+2248
+\\DeclareTextCommand{\\textnapprox}{PU}{\\9042\\111}%* U+2249
+\\DeclareTextCommand{\\textapproxeq}{PU}{\\9042\\112}%* U+224A
+\\DeclareTextCommand{\\textnapproxeq}{PU}{\\9042\\112\\83\\070}%* U+224A U+0338
+\\DeclareTextCommand{\\texttriplesim}{PU}{\\9042\\113}%* U+224B
+\\DeclareTextCommand{\\textntriplesim}{PU}{\\9042\\113\\83\\070}%* U+224B U+0338
+\\DeclareTextCommand{\\textbackcong}{PU}{\\9042\\114}%* U+224C
+\\DeclareTextCommand{\\textnbackcong}{PU}{\\9042\\114\\83\\070}%* U+224C U+0338
+\\DeclareTextCommand{\\textasymp}{PU}{\\9042\\115}%* U+224D
+\\DeclareTextCommand{\\textnasymp}{PU}{\\9042\\115\\83\\070}%* U+224D U+0338
+\\DeclareTextCommand{\\textBumpeq}{PU}{\\9042\\116}%* U+224E
+\\DeclareTextCommand{\\textnBumpeq}{PU}{\\9042\\116\\83\\070}%* U+224E U+0338
+\\DeclareTextCommand{\\textbumpeq}{PU}{\\9042\\117}%* U+224F
+\\DeclareTextCommand{\\textnbumpeq}{PU}{\\9042\\117\\83\\070}%* U+224F U+0338
+\\DeclareTextCommand{\\textdoteq}{PU}{\\9042\\120}%* U+2250
+\\DeclareTextCommand{\\textndoteq}{PU}{\\9042\\120\\83\\070}%* U+2250 U+0338
+\\DeclareTextCommand{\\textdoteqdot}{PU}{\\9042\\121}%* U+2251
+\\DeclareTextCommand{\\textnDoteq}{PU}{\\9042\\121\\83\\070}%* U+2251 U+0338
+\\DeclareTextCommand{\\textfallingdoteq}{PU}{\\9042\\122}%* U+2252
+\\DeclareTextCommand{\\textnfallingdoteq}{PU}{\\9042\\122\\83\\070}%* U+2252 U+0338
+\\DeclareTextCommand{\\textrisingdoteq}{PU}{\\9042\\123}%* U+2253
+\\DeclareTextCommand{\\textnrisingdoteq}{PU}{\\9042\\123\\83\\070}%* U+2253 U+0338
+\\DeclareTextCommand{\\textcolonequals}{PU}{\\9042\\124}%* U+2254
+\\DeclareTextCommand{\\textequalscolon}{PU}{\\9042\\125}%* U+2255
+\\DeclareTextCommand{\\texteqcirc}{PU}{\\9042\\126}%* U+2256
+\\DeclareTextCommand{\\textneqcirc}{PU}{\\9042\\126\\83\\070}%* U+2256 U+0338
+\\DeclareTextCommand{\\textcirceq}{PU}{\\9042\\127}%* U+2257
+\\DeclareTextCommand{\\textncirceq}{PU}{\\9042\\127\\83\\070}%* U+2257 U+0338
+\\DeclareTextCommand{\\texthateq}{PU}{\\9042\\131}%* U+2259
+\\DeclareTextCommand{\\textnhateq}{PU}{\\9042\\131\\83\\070}%* U+2259 U+0338
+\\DeclareTextCommand{\\texttriangleeq}{PU}{\\9042\\134}%* U+225C
+\\DeclareTextCommand{\\textneq}{PU}{\\9042\\140}%* U+2260
+\\DeclareTextCommand{\\textne}{PU}{\\9042\\140}%* U+2260
+\\DeclareTextCommand{\\textequiv}{PU}{\\9042\\141}%* U+2261
+\\DeclareTextCommand{\\textnequiv}{PU}{\\9042\\142}%* U+2262
+\\DeclareTextCommand{\\textleq}{PU}{\\9042\\144}%* U+2264
+\\DeclareTextCommand{\\textle}{PU}{\\9042\\144}%* U+2264
+\\DeclareTextCommand{\\textgeq}{PU}{\\9042\\145}%* U+2265
+\\DeclareTextCommand{\\textge}{PU}{\\9042\\145}%* U+2265
+\\DeclareTextCommand{\\textleqq}{PU}{\\9042\\146}%* U+2266
+\\DeclareTextCommand{\\textnleqq}{PU}{\\9042\\146\\83\\070}%* U+2266 U+0338
+\\DeclareTextCommand{\\textgeqq}{PU}{\\9042\\147}%* U+2267
+\\DeclareTextCommand{\\textngeqq}{PU}{\\9042\\147\\83\\070}%* U+2267 U+0338
+\\DeclareTextCommand{\\textlneqq}{PU}{\\9042\\150}%* U+2268
+\\DeclareTextCommand{\\textgneqq}{PU}{\\9042\\151}%* U+2269
+\\DeclareTextCommand{\\textll}{PU}{\\9042\\152}%* U+226A
+\\DeclareTextCommand{\\textnll}{PU}{\\9042\\152\\83\\070}%* U+226A U+0338
+\\DeclareTextCommand{\\textgg}{PU}{\\9042\\153}%* U+226B
+\\DeclareTextCommand{\\textngg}{PU}{\\9042\\153\\83\\070}%* U+226B U+0338
+\\DeclareTextCommand{\\textbetween}{PU}{\\9042\\154}%* U+226C
+\\DeclareTextCommand{\\textnless}{PU}{\\9042\\156}%* U+226E
+\\DeclareTextCommand{\\textngtr}{PU}{\\9042\\157}%* U+226F
+\\DeclareTextCommand{\\textnleq}{PU}{\\9042\\160}%* U+2270
+\\DeclareTextCommand{\\textngeq}{PU}{\\9042\\161}%* U+2271
+\\DeclareTextCommand{\\textlesssim}{PU}{\\9042\\162}%* U+2272
+\\DeclareTextCommand{\\textgtrsim}{PU}{\\9042\\163}%* U+2273
+\\DeclareTextCommand{\\textnlesssim}{PU}{\\9042\\164}%* U+2274
+\\DeclareTextCommand{\\textngtrsim}{PU}{\\9042\\165}%* U+2275
+\\DeclareTextCommand{\\textlessgtr}{PU}{\\9042\\166}%* U+2276
+\\DeclareTextCommand{\\textgtrless}{PU}{\\9042\\167}%* U+2277
+\\DeclareTextCommand{\\textngtrless}{PU}{\\9042\\170}%* U+2278
+\\DeclareTextCommand{\\textnlessgtr}{PU}{\\9042\\171}%* U+2279
+\\DeclareTextCommand{\\textprec}{PU}{\\9042\\172}%* U+227A
+\\DeclareTextCommand{\\textsucc}{PU}{\\9042\\173}%* U+227B
+\\DeclareTextCommand{\\textpreccurlyeq}{PU}{\\9042\\174}%* U+227C
+\\DeclareTextCommand{\\textsucccurlyeq}{PU}{\\9042\\175}%* U+227D
+\\DeclareTextCommand{\\textprecsim}{PU}{\\9042\\176}%* U+227E
+\\DeclareTextCommand{\\textnprecsim}{PU}{\\9042\\176\\83\\070}%* U+227E U+0338
+\\DeclareTextCommand{\\textsuccsim}{PU}{\\9042\\177}%* U+227F
+\\DeclareTextCommand{\\textnsuccsim}{PU}{\\9042\\177\\83\\070}%* U+227F U+0338
+\\DeclareTextCommand{\\textnprec}{PU}{\\9042\\200}%* U+2280
+\\DeclareTextCommand{\\textnsucc}{PU}{\\9042\\201}%* U+2281
+\\DeclareTextCommand{\\textsubset}{PU}{\\9042\\202}%* U+2282
+\\DeclareTextCommand{\\textsupset}{PU}{\\9042\\203}%* U+2283
+\\DeclareTextCommand{\\textnsubset}{PU}{\\9042\\204}%* U+2284
+\\DeclareTextCommand{\\textnsupset}{PU}{\\9042\\205}%* U+2285
+\\DeclareTextCommand{\\textsubseteq}{PU}{\\9042\\206}%* U+2286
+\\DeclareTextCommand{\\textsupseteq}{PU}{\\9042\\207}%* U+2287
+\\DeclareTextCommand{\\textnsubseteq}{PU}{\\9042\\210}%* U+2288
+\\DeclareTextCommand{\\textnsupseteq}{PU}{\\9042\\211}%* U+2289
+\\DeclareTextCommand{\\textsubsetneq}{PU}{\\9042\\212}%* U+228A
+\\DeclareTextCommand{\\textsupsetneq}{PU}{\\9042\\213}%* U+228B
+\\DeclareTextCommand{\\textcupdot}{PU}{\\9042\\215}%* U+228D
+\\DeclareTextCommand{\\textcupplus}{PU}{\\9042\\216}%* U+228E
+\\DeclareTextCommand{\\textsqsubset}{PU}{\\9042\\217}%* U+228F
+\\DeclareTextCommand{\\textnsqsubset}{PU}{\\9042\\217\\83\\070}%* U+228F U+0338
+\\DeclareTextCommand{\\textsqsupset}{PU}{\\9042\\220}%* U+2290
+\\DeclareTextCommand{\\textnsqsupset}{PU}{\\9042\\220\\83\\070}%* U+2290 U+0338
+\\DeclareTextCommand{\\textsqsubseteq}{PU}{\\9042\\221}%* U+2291
+\\DeclareTextCommand{\\textnsqsubseteq}{PU}{\\9042\\221\\83\\070}%* U+2291 U+0338
+\\DeclareTextCommand{\\textsqsupseteq}{PU}{\\9042\\222}%* U+2292
+\\DeclareTextCommand{\\textnsqsupseteq}{PU}{\\9042\\222\\83\\070}%* U+2292 U+0338
+\\DeclareTextCommand{\\textsqcap}{PU}{\\9042\\223}%* U+2293
+\\DeclareTextCommand{\\textsqcup}{PU}{\\9042\\224}%* U+2294
+\\DeclareTextCommand{\\textoplus}{PU}{\\9042\\225}%* U+2295
+\\DeclareTextCommand{\\textominus}{PU}{\\9042\\226}%* U+2296
+\\DeclareTextCommand{\\textotimes}{PU}{\\9042\\227}%* U+2297
+\\DeclareTextCommand{\\textoslash}{PU}{\\9042\\230}%* U+2298
+\\DeclareTextCommand{\\textodot}{PU}{\\9042\\231}%* U+2299
+\\DeclareTextCommand{\\textcircledcirc}{PU}{\\9042\\232}%* U+229A
+\\DeclareTextCommand{\\textcircledast}{PU}{\\9042\\233}%* U+229B
+\\DeclareTextCommand{\\textcircleddash}{PU}{\\9042\\235}%* U+229D
+\\DeclareTextCommand{\\textboxplus}{PU}{\\9042\\236}%* U+229E
+\\DeclareTextCommand{\\textboxminus}{PU}{\\9042\\237}%* U+229F
+\\DeclareTextCommand{\\textboxtimes}{PU}{\\9042\\240}%* U+22A0
+\\DeclareTextCommand{\\textboxdot}{PU}{\\9042\\241}%* U+22A1
+\\DeclareTextCommand{\\textvdash}{PU}{\\9042\\242}%* U+22A2
+\\DeclareTextCommand{\\textdashv}{PU}{\\9042\\243}%* U+22A3
+\\DeclareTextCommand{\\textndashv}{PU}{\\9042\\243\\83\\070}%* U+22A3 U+0338
+\\DeclareTextCommand{\\texttop}{PU}{\\9042\\244}%* U+22A4
+\\DeclareTextCommand{\\textndownvdash}{PU}{\\9042\\244\\83\\070}%* U+22A4 U+0338
+\\DeclareTextCommand{\\textbot}{PU}{\\9042\\245}%* U+22A5
+\\DeclareTextCommand{\\textnupvdash}{PU}{\\9042\\245\\83\\070}%* U+22A5 U+0338
+\\DeclareTextCommand{\\textvDash}{PU}{\\9042\\250}%* U+22A8
+\\DeclareTextCommand{\\textVdash}{PU}{\\9042\\251}%* U+22A9
+\\DeclareTextCommand{\\textVvdash}{PU}{\\9042\\252}%* U+22AA
+\\DeclareTextCommand{\\textnVvash}{PU}{\\9042\\252\\83\\070}%* U+22AA U+0338
+\\DeclareTextCommand{\\textVDash}{PU}{\\9042\\253}%* U+22AB
+\\DeclareTextCommand{\\textnvdash}{PU}{\\9042\\254}%* U+22AC
+\\DeclareTextCommand{\\textnvDash}{PU}{\\9042\\255}%* U+22AD
+\\DeclareTextCommand{\\textnVdash}{PU}{\\9042\\256}%* U+22AE
+\\DeclareTextCommand{\\textnVDash}{PU}{\\9042\\257}%* U+22AF
+\\DeclareTextCommand{\\textlhd}{PU}{\\9042\\262}%* U+22B2
+\\DeclareTextCommand{\\textrhd}{PU}{\\9042\\263}%* U+22B3
+\\DeclareTextCommand{\\textunlhd}{PU}{\\9042\\264}%* U+22B4
+\\DeclareTextCommand{\\textunrhd}{PU}{\\9042\\265}%* U+22B5
+\\DeclareTextCommand{\\textmultimapdotbothA}{PU}{\\9042\\266}%* U+22B6
+\\DeclareTextCommand{\\textmultimapdotbothB}{PU}{\\9042\\267}%* U+22B7
+\\DeclareTextCommand{\\textmultimap}{PU}{\\9042\\270}%* U+22B8
+\\DeclareTextCommand{\\textveebar}{PU}{\\9042\\273}%* U+22BB
+\\DeclareTextCommand{\\textbarwedge}{PU}{\\9042\\274}%* U+22BC
+\\DeclareTextCommand{\\textstar}{PU}{\\9042\\306}%* U+22C6
+\\DeclareTextCommand{\\textdivideontimes}{PU}{\\9042\\307}%* U+22C7
+\\DeclareTextCommand{\\textbowtie}{PU}{\\9042\\310}%* U+22C8
+\\DeclareTextCommand{\\textltimes}{PU}{\\9042\\311}%* U+22C9
+\\DeclareTextCommand{\\textrtimes}{PU}{\\9042\\312}%* U+22CA
+\\DeclareTextCommand{\\textleftthreetimes}{PU}{\\9042\\313}%* U+22CB
+\\DeclareTextCommand{\\textrightthreetimes}{PU}{\\9042\\314}%* U+22CC
+\\DeclareTextCommand{\\textbacksimeq}{PU}{\\9042\\315}%* U+22CD
+\\DeclareTextCommand{\\textnbacksimeq}{PU}{\\9042\\315\\83\\070}%* U+22CD U+0338
+\\DeclareTextCommand{\\textcurlyvee}{PU}{\\9042\\316}%* U+22CE
+\\DeclareTextCommand{\\textcurlywedge}{PU}{\\9042\\317}%* U+22CF
+\\DeclareTextCommand{\\textSubset}{PU}{\\9042\\320}%* U+22D0
+\\DeclareTextCommand{\\textnSubset}{PU}{\\9042\\320\\83\\070}%* U+22D0 U+0338
+\\DeclareTextCommand{\\textSupset}{PU}{\\9042\\321}%* U+22D1
+\\DeclareTextCommand{\\textnSupset}{PU}{\\9042\\321\\83\\070}%* U+22D1 U+0338
+\\DeclareTextCommand{\\textCap}{PU}{\\9042\\322}%* U+22D2
+\\DeclareTextCommand{\\textCup}{PU}{\\9042\\323}%* U+22D3
+\\DeclareTextCommand{\\textpitchfork}{PU}{\\9042\\324}%* U+22D4
+\\DeclareTextCommand{\\textlessdot}{PU}{\\9042\\326}%* U+22D6
+\\DeclareTextCommand{\\textgtrdot}{PU}{\\9042\\327}%* U+22D7
+\\DeclareTextCommand{\\textlll}{PU}{\\9042\\330}%* U+22D8
+\\DeclareTextCommand{\\textggg}{PU}{\\9042\\331}%* U+22D9
+\\DeclareTextCommand{\\textlesseqgtr}{PU}{\\9042\\332}%* U+22DA
+\\DeclareTextCommand{\\textgtreqless}{PU}{\\9042\\333}%* U+22DB
+\\DeclareTextCommand{\\textcurlyeqprec}{PU}{\\9042\\336}%* U+22DE
+\\DeclareTextCommand{\\textncurlyeqprec}{PU}{\\9042\\336\\83\\070}%* U+22DE U+0338
+\\DeclareTextCommand{\\textcurlyeqsucc}{PU}{\\9042\\337}%* U+22DF
+\\DeclareTextCommand{\\textncurlyeqsucc}{PU}{\\9042\\337\\83\\070}%* U+22DF U+0338
+\\DeclareTextCommand{\\textnpreccurlyeq}{PU}{\\9042\\340}%* U+22E0
+\\DeclareTextCommand{\\textnsucccurlyeq}{PU}{\\9042\\341}%* U+22E1
+\\DeclareTextCommand{\\textnqsubseteq}{PU}{\\9042\\342}%* U+22E2
+\\DeclareTextCommand{\\textnqsupseteq}{PU}{\\9042\\343}%* U+22E3
+\\DeclareTextCommand{\\textsqsubsetneq}{PU}{\\9042\\344}%* U+22E4
+\\DeclareTextCommand{\\textsqsupsetneq}{PU}{\\9042\\345}%* U+22E5
+\\DeclareTextCommand{\\textlnsim}{PU}{\\9042\\346}%* U+22E6
+\\DeclareTextCommand{\\textgnsim}{PU}{\\9042\\347}%* U+22E7
+\\DeclareTextCommand{\\textprecnsim}{PU}{\\9042\\350}%* U+22E8
+\\DeclareTextCommand{\\textsuccnsim}{PU}{\\9042\\351}%* U+22E9
+\\DeclareTextCommand{\\textntriangleleft}{PU}{\\9042\\352}%* U+22EA
+\\DeclareTextCommand{\\textntriangleright}{PU}{\\9042\\353}%* U+22EB
+\\DeclareTextCommand{\\textntrianglelefteq}{PU}{\\9042\\354}%* U+22EC
+\\DeclareTextCommand{\\textntrianglerighteq}{PU}{\\9042\\355}%* U+22ED
+\\DeclareTextCommand{\\textvdots}{PU}{\\9042\\356}%* U+22EE
+\\DeclareTextCommand{\\textcdots}{PU}{\\9042\\357}%* U+22EF
+\\DeclareTextCommand{\\textudots}{PU}{\\9042\\360}%* U+22F0
+\\DeclareTextCommand{\\textddots}{PU}{\\9042\\361}%* U+22F1
+\\DeclareTextCommand{\\textbarin}{PU}{\\9042\\366}%* U+22F6
+\\DeclareTextCommand{\\textdiameter}{PU}{\\9043\\000}%* U+2300
+\\DeclareTextCommand{\\textbackneg}{PU}{\\9043\\020}%* U+2310
+\\DeclareTextCommand{\\textwasylozenge}{PU}{\\9043\\021}%* U+2311
+\\DeclareTextCommand{\\textinvbackneg}{PU}{\\9043\\031}%* U+2319
+\\DeclareTextCommand{\\textclock}{PU}{\\9043\\032}%* U+231A
+\\DeclareTextCommand{\\textulcorner}{PU}{\\9043\\034}%* U+231C
+\\DeclareTextCommand{\\texturcorner}{PU}{\\9043\\035}%* U+231D
+\\DeclareTextCommand{\\textllcorner}{PU}{\\9043\\036}%* U+231E
+\\DeclareTextCommand{\\textlrcorner}{PU}{\\9043\\037}%* U+231F
+\\DeclareTextCommand{\\textfrown}{PU}{\\9043\\042}%* U+2322
+\\DeclareTextCommand{\\textsmile}{PU}{\\9043\\043}%* U+2323
+\\DeclareTextCommand{\\textKeyboard}{PU}{\\9043\\050}%* U+2328
+\\DeclareTextCommand{\\textlangle}{PU}{\\9043\\051}%* U+2329
+\\DeclareTextCommand{\\textrangle}{PU}{\\9043\\052}%* U+232A
+\\DeclareTextCommand{\\textAPLinv}{PU}{\\9043\\071}%* U+2339
+\\DeclareTextCommand{\\textTumbler}{PU}{\\9043\\074}%* U+233C
+\\DeclareTextCommand{\\textstmaryrdbaro}{PU}{\\9043\\075}% U+233D
+\\DeclareTextCommand{\\textnotslash}{PU}{\\9043\\077}%* U+233F
+\\DeclareTextCommand{\\textnotbackslash}{PU}{\\9043\\100}%* U+2340
+\\DeclareTextCommand{\\textboxbackslash}{PU}{\\9043\\102}%* U+2342
+\\DeclareTextCommand{\\textAPLleftarrowbox}{PU}{\\9043\\107}%* U+2347
+\\DeclareTextCommand{\\textAPLrightarrowbox}{PU}{\\9043\\110}%* U+2348
+\\DeclareTextCommand{\\textAPLuparrowbox}{PU}{\\9043\\120}%* U+2350
+\\DeclareTextCommand{\\textAPLdownarrowbox}{PU}{\\9043\\127}%* U+2357
+\\DeclareTextCommand{\\textAPLinput}{PU}{\\9043\\136}%* U+235E
+\\DeclareTextCommand{\\textRequest}{PU}{\\9043\\160}%* U+2370
+\\DeclareTextCommand{\\textBeam}{PU}{\\9043\\223}%* U+2393
+\\DeclareTextCommand{\\texthexagon}{PU}{\\9043\\224}%* U+2394
+\\DeclareTextCommand{\\textAPLbox}{PU}{\\9043\\225}%* U+2395
+\\DeclareTextCommand{\\textForwardToIndex}{PU}{\\9043\\355}%* U+23ED
+\\DeclareTextCommand{\\textRewindToIndex}{PU}{\\9043\\356}%* U+23EE
+\\DeclareTextCommand{\\textblank}{PU}{\\9044\\042}% U+2422
+\\DeclareTextCommand{\\textvisiblespace}{PU}{\\9044\\043}% U+2423
+\\DeclareTextCommand{\\textbbslash}{PU}{\\9044\\112}%* U+244A
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{1}{\\9044\\140}% U+2460
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{2}{\\9044\\141}% U+2461
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{3}{\\9044\\142}% U+2462
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{4}{\\9044\\143}% U+2463
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{5}{\\9044\\144}% U+2464
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{6}{\\9044\\145}% U+2465
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{7}{\\9044\\146}% U+2466
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{8}{\\9044\\147}% U+2467
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{9}{\\9044\\150}% U+2468
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{10}{\\9044\\151}% U+2469
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{11}{\\9044\\152}% U+246A
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{12}{\\9044\\153}% U+246B
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{13}{\\9044\\154}% U+246C
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{14}{\\9044\\155}% U+246D
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{15}{\\9044\\156}% U+246E
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{16}{\\9044\\157}% U+246F
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{17}{\\9044\\160}% U+2470
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{18}{\\9044\\161}% U+2471
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{19}{\\9044\\162}% U+2472
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{20}{\\9044\\163}% U+2473
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{A}{\\9044\\266}% U+24B6
+\\DeclareTextCommand{\\textCircledA}{PU}{\\9044\\266}%* U+24B6
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{B}{\\9044\\267}% U+24B7
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{C}{\\9044\\270}% U+24B8
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{D}{\\9044\\271}% U+24B9
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{E}{\\9044\\272}% U+24BA
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{F}{\\9044\\273}% U+24BB
+\\DeclareTextCommand{\\textCleaningF}{PU}{\\9044\\273}%* U+24BB
+\\DeclareTextCommand{\\textCleaningFF}{PU}{\\9044\\273\\83\\062}%* U+24BB U+0332
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{G}{\\9044\\274}% U+24BC
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{H}{\\9044\\275}% U+24BD
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{I}{\\9044\\276}% U+24BE
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{J}{\\9044\\277}% U+24BF
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{K}{\\9044\\300}% U+24C0
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{L}{\\9044\\301}% U+24C1
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{M}{\\9044\\302}% U+24C2
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{N}{\\9044\\303}% U+24C3
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{O}{\\9044\\304}% U+24C4
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{P}{\\9044\\305}% U+24C5
+\\DeclareTextCommand{\\textCleaningP}{PU}{\\9044\\305}%* U+24C5
+\\DeclareTextCommand{\\textCleaningPP}{PU}{\\9044\\305\\83\\062}%* U+24C5 U+0332
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{Q}{\\9044\\306}% U+24C6
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{R}{\\9044\\307}% U+24C7
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{S}{\\9044\\310}% U+24C8
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{T}{\\9044\\311}% U+24C9
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{U}{\\9044\\312}% U+24CA
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{V}{\\9044\\313}% U+24CB
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{W}{\\9044\\314}% U+24CC
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{X}{\\9044\\315}% U+24CD
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{Y}{\\9044\\316}% U+24CE
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{Z}{\\9044\\317}% U+24CF
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{a}{\\9044\\320}% U+24D0
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{b}{\\9044\\321}% U+24D1
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{c}{\\9044\\322}% U+24D2
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{d}{\\9044\\323}% U+24D3
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{e}{\\9044\\324}% U+24D4
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{f}{\\9044\\325}% U+24D5
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{g}{\\9044\\326}% U+24D6
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{h}{\\9044\\327}% U+24D7
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{i}{\\9044\\330}% U+24D8
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{j}{\\9044\\331}% U+24D9
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{k}{\\9044\\332}% U+24DA
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{l}{\\9044\\333}% U+24DB
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{m}{\\9044\\334}% U+24DC
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{n}{\\9044\\335}% U+24DD
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{o}{\\9044\\336}% U+24DE
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{p}{\\9044\\337}% U+24DF
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{q}{\\9044\\340}% U+24E0
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{r}{\\9044\\341}% U+24E1
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{s}{\\9044\\342}% U+24E2
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{t}{\\9044\\343}% U+24E3
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{u}{\\9044\\344}% U+24E4
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{v}{\\9044\\345}% U+24E5
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{w}{\\9044\\346}% U+24E6
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{x}{\\9044\\347}% U+24E7
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{y}{\\9044\\350}% U+24E8
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{z}{\\9044\\351}% U+24E9
+\\DeclareTextCompositeCommand{\\textcircled}{PU}{0}{\\9044\\352}% U+24EA
+\\DeclareTextCommand{\\textCuttingLine}{PU}{\\9045\\004}%* U+2504
+\\DeclareTextCommand{\\textUParrow}{PU}{\\9045\\262}%* U+25B2
+\\DeclareTextCommand{\\textbigtriangleup}{PU}{\\9045\\263}%* U+25B3
+\\DeclareTextCommand{\\textForward}{PU}{\\9045\\266}%* U+25B6
+\\DeclareTextCommand{\\texttriangleright}{PU}{\\9045\\267}%* U+25B7
+\\DeclareTextCommand{\\textRHD}{PU}{\\9045\\272}%* U+25BA
+\\DeclareTextCommand{\\textDOWNarrow}{PU}{\\9045\\274}%* U+25BC
+\\DeclareTextCommand{\\textbigtriangledown}{PU}{\\9045\\275}%* U+25BD
+\\DeclareTextCommand{\\textRewind}{PU}{\\9045\\300}%* U+25C0
+\\DeclareTextCommand{\\texttriangleleft}{PU}{\\9045\\301}%* U+25C1
+\\DeclareTextCommand{\\textLHD}{PU}{\\9045\\304}%* U+25C4
+\\DeclareTextCommand{\\textdiamond}{PU}{\\9045\\307}%* U+25C7
+\\DeclareTextCommand{\\textlozenge}{PU}{\\9045\\312}%* U+25CA
+\\DeclareTextCommand{\\textLEFTCIRCLE}{PU}{\\9045\\326}%* U+25D6
+\\DeclareTextCommand{\\textRIGHTCIRCLE}{PU}{\\9045\\327}%* U+25D7
+\\DeclareTextCommand{\\textopenbullet}{PU}{\\9045\\346}%* U+25E6
+\\DeclareTextCommand{\\textboxbar}{PU}{\\9045\\353}%* U+25EB
+\\DeclareTextCommand{\\textbigcircle}{PU}{\\9045\\357}%* U+25EF
+\\DeclareTextCommand{\\textCloud}{PU}{\\9046\\001}%* U+2601
+\\DeclareTextCommand{\\textFiveStar}{PU}{\\9046\\005}%* U+2605
+\\DeclareTextCommand{\\textFiveStarOpen}{PU}{\\9046\\006}%* U+2606
+\\DeclareTextCommand{\\textPhone}{PU}{\\9046\\016}%* U+260E
+\\DeclareTextCommand{\\textboxempty}{PU}{\\9046\\020}%* U+2610
+\\DeclareTextCommand{\\textCheckedbox}{PU}{\\9046\\021}%* U+2611
+\\DeclareTextCommand{\\textCrossedbox}{PU}{\\9046\\022}%* U+2612
+\\DeclareTextCommand{\\textCoffeecup}{PU}{\\9046\\025}%* U+2615
+\\DeclareTextCommand{\\textHandCuffLeft}{PU}{\\9046\\032}%* U+261A
+\\DeclareTextCommand{\\textHandCuffRight}{PU}{\\9046\\033}%* U+261B
+\\DeclareTextCommand{\\textHandLeft}{PU}{\\9046\\034}%* U+261C
+\\DeclareTextCommand{\\textHandRight}{PU}{\\9046\\036}%* U+261E
+\\DeclareTextCommand{\\textRadioactivity}{PU}{\\9046\\042}%* U+2622
+\\DeclareTextCommand{\\textBiohazard}{PU}{\\9046\\043}%* U+2623
+\\DeclareTextCommand{\\textAnkh}{PU}{\\9046\\045}%* U+2625
+\\DeclareTextCommand{\\textYinYang}{PU}{\\9046\\057}%* U+262F
+\\DeclareTextCommand{\\textfrownie}{PU}{\\9046\\071}%* U+2639
+\\DeclareTextCommand{\\textsmiley}{PU}{\\9046\\072}%* U+263A
+\\DeclareTextCommand{\\textblacksmiley}{PU}{\\9046\\073}%* U+263B
+\\DeclareTextCommand{\\textsun}{PU}{\\9046\\074}%* U+263C
+\\DeclareTextCommand{\\textleftmoon}{PU}{\\9046\\075}%* U+263D
+\\DeclareTextCommand{\\textrightmoon}{PU}{\\9046\\076}%* U+263E
+\\DeclareTextCommand{\\textmercury}{PU}{\\9046\\077}%* U+263F
+\\DeclareTextCommand{\\textPUfemale}{PU}{\\9046\\100}% U+2640
+\\DeclareTextCommand{\\textearth}{PU}{\\9046\\101}%* U+2641
+\\DeclareTextCommand{\\textmale}{PU}{\\9046\\102}%* U+2642
+\\DeclareTextCommand{\\textjupiter}{PU}{\\9046\\103}%* U+2643
+\\DeclareTextCommand{\\textsaturn}{PU}{\\9046\\104}%* U+2644
+\\DeclareTextCommand{\\texturanus}{PU}{\\9046\\105}%* U+2645
+\\DeclareTextCommand{\\textneptune}{PU}{\\9046\\106}%* U+2646
+\\DeclareTextCommand{\\textpluto}{PU}{\\9046\\107}%* U+2647
+\\DeclareTextCommand{\\textaries}{PU}{\\9046\\110}%* U+2648
+\\DeclareTextCommand{\\texttaurus}{PU}{\\9046\\111}%* U+2649
+\\DeclareTextCommand{\\textgemini}{PU}{\\9046\\112}%* U+264A
+\\DeclareTextCommand{\\textcancer}{PU}{\\9046\\113}%* U+264B
+\\DeclareTextCommand{\\textleo}{PU}{\\9046\\114}%* U+264C
+\\DeclareTextCommand{\\textvirgo}{PU}{\\9046\\115}%* U+264D
+\\DeclareTextCommand{\\textlibra}{PU}{\\9046\\116}%* U+264E
+\\DeclareTextCommand{\\textscorpio}{PU}{\\9046\\117}%* U+264F
+\\DeclareTextCommand{\\textsagittarius}{PU}{\\9046\\120}%* U+2650
+\\DeclareTextCommand{\\textcapricornus}{PU}{\\9046\\121}%* U+2651
+\\DeclareTextCommand{\\textaquarius}{PU}{\\9046\\122}%* U+2652
+\\DeclareTextCommand{\\textpisces}{PU}{\\9046\\123}%* U+2653
+\\DeclareTextCommand{\\textspadesuitblack}{PU}{\\9046\\140}% U+2660
+\\DeclareTextCommand{\\textheartsuitwhite}{PU}{\\9046\\141}% U+2661
+\\DeclareTextCommand{\\textdiamondsuitwhite}{PU}{\\9046\\142}% U+2662
+\\DeclareTextCommand{\\textclubsuitblack}{PU}{\\9046\\143}% U+2663
+\\DeclareTextCommand{\\textspadesuitwhite}{PU}{\\9046\\144}% U+2664
+\\DeclareTextCommand{\\textheartsuitblack}{PU}{\\9046\\145}% U+2665
+\\DeclareTextCommand{\\textdiamondsuitblack}{PU}{\\9046\\146}% U+2666
+\\DeclareTextCommand{\\textclubsuitwhite}{PU}{\\9046\\147}% U+2667
+\\DeclareTextCommand{\\textquarternote}{PU}{\\9046\\151}%* U+2669
+\\DeclareTextCommand{\\textmusicalnote}{PU}{\\9046\\152}% U+266A
+\\DeclareTextCommand{\\texttwonotes}{PU}{\\9046\\153}%* U+266B
+\\DeclareTextCommand{\\textsixteenthnote}{PU}{\\9046\\154}%* U+266C
+\\DeclareTextCommand{\\textflat}{PU}{\\9046\\155}%* U+266D
+\\DeclareTextCommand{\\textnatural}{PU}{\\9046\\156}%* U+266E
+\\DeclareTextCommand{\\textsharp}{PU}{\\9046\\157}%* U+266F
+\\DeclareTextCommand{\\textrecycle}{PU}{\\9046\\162}%* U+2672
+\\DeclareTextCommand{\\textWheelchair}{PU}{\\9046\\177}%* U+267F
+\\DeclareTextCommand{\\textFlag}{PU}{\\9046\\221}%* U+2691
+\\DeclareTextCommand{\\textMineSign}{PU}{\\9046\\222}%* U+2692
+\\DeclareTextCommand{\\textdsmilitary}{PU}{\\9046\\224}%* U+2694
+\\DeclareTextCommand{\\textdsmedical}{PU}{\\9046\\225}%* U+2695
+\\DeclareTextCommand{\\textdsjuridical}{PU}{\\9046\\226}%* U+2696
+\\DeclareTextCommand{\\textdschemical}{PU}{\\9046\\227}%* U+2697
+\\DeclareTextCommand{\\textdsbiological}{PU}{\\9046\\230}%* U+2698
+\\DeclareTextCommand{\\textdscommercial}{PU}{\\9046\\232}%* U+269A
+\\DeclareTextCommand{\\textmanstar}{PU}{\\9046\\235}%* U+269D
+\\DeclareTextCommand{\\textdanger}{PU}{\\9046\\240}%* U+26A0
+\\DeclareTextCommand{\\textFemaleFemale}{PU}{\\9046\\242}%* U+26A2
+\\DeclareTextCommand{\\textMaleMale}{PU}{\\9046\\243}%* U+26A3
+\\DeclareTextCommand{\\textFemaleMale}{PU}{\\9046\\244}%* U+26A4
+\\DeclareTextCommand{\\textHermaphrodite}{PU}{\\9046\\245}%* U+26A5
+\\DeclareTextCommand{\\textNeutral}{PU}{\\9046\\252}%* U+26AA
+\\DeclareTextCommand{\\textmarried}{PU}{\\9046\\255}% U+26AD
+\\DeclareTextCommand{\\textdivorced}{PU}{\\9046\\256}% U+26AE
+\\DeclareTextCommand{\\textPUuncrfemale}{PU}{\\9046\\262}% U+26B2
+\\DeclareTextCommand{\\texthexstar}{PU}{\\9046\\271}%* U+26B9
+\\DeclareTextCommand{\\textSoccerBall}{PU}{\\9046\\275}% U+26BD
+\\DeclareTextCommand{\\textSunCload}{PU}{\\9046\\305}%* U+26C5
+\\DeclareTextCommand{\\textRain}{PU}{\\9046\\306}%* U+26C6
+\\DeclareTextCommand{\\textnoway}{PU}{\\9046\\324}%* U+26D4
+\\DeclareTextCommand{\\textMountain}{PU}{\\9046\\360}%* U+26F0
+\\DeclareTextCommand{\\textTent}{PU}{\\9046\\372}%* U+26FA
+\\DeclareTextCommand{\\textScissorRightBrokenBottom}{PU}{\\9047\\001}% U+2701
+\\DeclareTextCommand{\\textScissorRight}{PU}{\\9047\\002}%* U+2702
+\\DeclareTextCommand{\\textScissorRightBrokenTop}{PU}{\\9047\\003}%* U+2703
+\\DeclareTextCommand{\\textScissorHollowRight}{PU}{\\9047\\004}%* U+2704
+\\DeclareTextCommand{\\textPhoneHandset}{PU}{\\9047\\006}%* U+2706
+\\DeclareTextCommand{\\textTape}{PU}{\\9047\\007}%* U+2707
+\\DeclareTextCommand{\\textPlane}{PU}{\\9047\\010}%* U+2708
+\\DeclareTextCommand{\\textEnvelope}{PU}{\\9047\\011}%* U+2709
+\\DeclareTextCommand{\\textPeace}{PU}{\\9047\\014}%* U+270C
+\\DeclareTextCommand{\\textWritingHand}{PU}{\\9047\\015}%* U+270D
+\\DeclareTextCommand{\\textPencilRightDown}{PU}{\\9047\\016}%* U+270E
+\\DeclareTextCommand{\\textPencilRight}{PU}{\\9047\\017}%* U+270F
+\\DeclareTextCommand{\\textPencilRightUp}{PU}{\\9047\\020}%* U+2710
+\\DeclareTextCommand{\\textNibRight}{PU}{\\9047\\021}%* U+2711
+\\DeclareTextCommand{\\textNibSolidRight}{PU}{\\9047\\022}%* U+2712
+\\DeclareTextCommand{\\textCheckmark}{PU}{\\9047\\023}%* U+2713
+\\DeclareTextCommand{\\textCheckmarkBold}{PU}{\\9047\\024}%* U+2714
+\\DeclareTextCommand{\\textXSolid}{PU}{\\9047\\025}%* U+2715
+\\DeclareTextCommand{\\textXSolidBold}{PU}{\\9047\\026}%* U+2716
+\\DeclareTextCommand{\\textXSolidBrush}{PU}{\\9047\\027}%* U+2717
+\\DeclareTextCommand{\\textPlusOutline}{PU}{\\9047\\031}%* U+2719
+\\DeclareTextCommand{\\textPlus}{PU}{\\9047\\032}%* U+271A
+\\DeclareTextCommand{\\textPlusThinCenterOpen}{PU}{\\9047\\033}%* U+271B
+\\DeclareTextCommand{\\textPlusCenterOpen}{PU}{\\9047\\034}%* U+271C
+\\DeclareTextCommand{\\textCross}{PU}{\\9047\\035}%* U+271D
+\\DeclareTextCommand{\\textCrossOpenShadow}{PU}{\\9047\\036}%* U+271E
+\\DeclareTextCommand{\\textCrossOutline}{PU}{\\9047\\037}%* U+271F
+\\DeclareTextCommand{\\textCrossMaltese}{PU}{\\9047\\040}%* U+2720
+\\DeclareTextCommand{\\textDavidStar}{PU}{\\9047\\041}%* U+2721
+\\DeclareTextCommand{\\textFourAsterisk}{PU}{\\9047\\042}%* U+2722
+\\DeclareTextCommand{\\textJackStar}{PU}{\\9047\\043}%* U+2723
+\\DeclareTextCommand{\\textJackStarBold}{PU}{\\9047\\044}%* U+2724
+\\DeclareTextCommand{\\textClowerTips}{PU}{\\9047\\045}%* U+2725
+\\DeclareTextCommand{\\textFourStar}{PU}{\\9047\\046}%* U+2726
+\\DeclareTextCommand{\\textFourStarOpen}{PU}{\\9047\\047}%* U+2727
+\\DeclareTextCommand{\\textFiveStarOpenCircled}{PU}{\\9047\\052}%* U+272A
+\\DeclareTextCommand{\\textFiveStarCenterOpen}{PU}{\\9047\\053}%* U+272B
+\\DeclareTextCommand{\\textFiveStarOpenDotted}{PU}{\\9047\\054}%* U+272C
+\\DeclareTextCommand{\\textFiveStarOutline}{PU}{\\9047\\055}%* U+272D
+\\DeclareTextCommand{\\textFiveStarOutlineHeavy}{PU}{\\9047\\056}%* U+272E
+\\DeclareTextCommand{\\textFiveStarConvex}{PU}{\\9047\\057}%* U+272F
+\\DeclareTextCommand{\\textFiveStarShadow}{PU}{\\9047\\060}%* U+2730
+\\DeclareTextCommand{\\textAsteriskBold}{PU}{\\9047\\061}%* U+2731
+\\DeclareTextCommand{\\textAsteriskCenterOpen}{PU}{\\9047\\062}%* U+2732
+\\DeclareTextCommand{\\textEightStarTaper}{PU}{\\9047\\064}%* U+2734
+\\DeclareTextCommand{\\textEightStarConvex}{PU}{\\9047\\065}%* U+2735
+\\DeclareTextCommand{\\textSixStar}{PU}{\\9047\\066}%* U+2736
+\\DeclareTextCommand{\\textEightStar}{PU}{\\9047\\067}%* U+2737
+\\DeclareTextCommand{\\textEightStarBold}{PU}{\\9047\\070}%* U+2738
+\\DeclareTextCommand{\\textTwelveStar}{PU}{\\9047\\071}%* U+2739
+\\DeclareTextCommand{\\textSixteenStarLight}{PU}{\\9047\\072}%* U+273A
+\\DeclareTextCommand{\\textSixFlowerPetalRemoved}{PU}{\\9047\\073}%* U+273B
+\\DeclareTextCommand{\\textSixFlowerOpenCenter}{PU}{\\9047\\074}%* U+273C
+\\DeclareTextCommand{\\textAsterisk}{PU}{\\9047\\075}%* U+273D
+\\DeclareTextCommand{\\textSixFlowerAlternate}{PU}{\\9047\\076}%* U+273E
+\\DeclareTextCommand{\\textFiveFlowerPetal}{PU}{\\9047\\077}%* U+273F
+\\DeclareTextCommand{\\textFiveFlowerOpen}{PU}{\\9047\\100}%* U+2740
+\\DeclareTextCommand{\\textEightFlowerPetal}{PU}{\\9047\\101}%* U+2741
+\\DeclareTextCommand{\\textSunshineOpenCircled}{PU}{\\9047\\102}%* U+2742
+\\DeclareTextCommand{\\textSixFlowerAltPetal}{PU}{\\9047\\103}%* U+2743
+\\DeclareTextCommand{\\textSnowflakeChevron}{PU}{\\9047\\104}%* U+2744
+\\DeclareTextCommand{\\textSnowflake}{PU}{\\9047\\105}%* U+2745
+\\DeclareTextCommand{\\textSnowflakeChevronBold}{PU}{\\9047\\106}%* U+2746
+\\DeclareTextCommand{\\textSparkle}{PU}{\\9047\\107}%* U+2747
+\\DeclareTextCommand{\\textSparkleBold}{PU}{\\9047\\110}%* U+2748
+\\DeclareTextCommand{\\textAsteriskRoundedEnds}{PU}{\\9047\\111}%* U+2749
+\\DeclareTextCommand{\\textEightFlowerPetalRemoved}{PU}{\\9047\\112}%* U+274A
+\\DeclareTextCommand{\\textEightAsterisk}{PU}{\\9047\\113}%* U+274B
+\\DeclareTextCommand{\\textCircleShadow}{PU}{\\9047\\115}%* U+274D
+\\DeclareTextCommand{\\textSquareShadowBottomRight}{PU}{\\9047\\117}%* U+274F
+\\DeclareTextCommand{\\textSquareTopRight}{PU}{\\9047\\120}%* U+2750
+\\DeclareTextCommand{\\textSquareCastShadowBottomRight}{PU}{\\9047\\121}%* U+2751
+\\DeclareTextCommand{\\textSquareCastShadowTopRight}{PU}{\\9047\\122}%* U+2752
+\\DeclareTextCommand{\\textDiamondSolid}{PU}{\\9047\\126}%* U+2756
+\\DeclareTextCommand{\\textRectangleThin}{PU}{\\9047\\130}%* U+2758
+\\DeclareTextCommand{\\textRectangle}{PU}{\\9047\\131}%* U+2759
+\\DeclareTextCommand{\\textRectangleBold}{PU}{\\9047\\132}%* U+275A
+\\DeclareTextCommand{\\textperp}{PU}{\\9047\\302}%* U+27C2
+\\DeclareTextCommand{\\textnotperp}{PU}{\\9047\\302\\83\\070}%* U+27C2 U+0338
+\\DeclareTextCommand{\\textveedot}{PU}{\\9047\\307}%* U+27C7
+\\DeclareTextCommand{\\textwedgedot}{PU}{\\9047\\321}%* U+27D1
+\\DeclareTextCommand{\\textleftspoon}{PU}{\\9047\\334}%* U+27DC
+\\DeclareTextCommand{\\textlbrackdbl}{PU}{\\9047\\346}%* U+27E6
+\\DeclareTextCommand{\\textrbrackdbl}{PU}{\\9047\\347}%* U+27E7
+\\DeclareTextCommand{\\textcirclearrowleft}{PU}{\\9047\\362}%* U+27F2
+\\DeclareTextCommand{\\textcirclearrowright}{PU}{\\9047\\363}%* U+27F3
+\\DeclareTextCommand{\\textlongleftarrow}{PU}{\\9047\\365}%* U+27F5
+\\DeclareTextCommand{\\textlongrightarrow}{PU}{\\9047\\366}%* U+27F6
+\\DeclareTextCommand{\\textlongleftrightarrow}{PU}{\\9047\\367}%* U+27F7
+\\DeclareTextCommand{\\textLongleftarrow}{PU}{\\9047\\370}%* U+27F8
+\\DeclareTextCommand{\\textLongrightarrow}{PU}{\\9047\\371}%* U+27F9
+\\DeclareTextCommand{\\textLongleftrightarrow}{PU}{\\9047\\372}%* U+27FA
+\\DeclareTextCommand{\\textlongmapsto}{PU}{\\9047\\374}%* U+27FC
+\\DeclareTextCommand{\\textLongmapsfrom}{PU}{\\9047\\375}%* U+27FD
+\\DeclareTextCommand{\\textLongmapsto}{PU}{\\9047\\376}%* U+27FE
+\\DeclareTextCommand{\\textnwsearrow}{PU}{\\9051\\041}%* U+2921
+\\DeclareTextCommand{\\textneswarrow}{PU}{\\9051\\042}%* U+2922
+\\DeclareTextCommand{\\textlhooknwarrow}{PU}{\\9051\\043}%* U+2923
+\\DeclareTextCommand{\\textrhooknearrow}{PU}{\\9051\\044}%* U+2924
+\\DeclareTextCommand{\\textlhooksearrow}{PU}{\\9051\\045}%* U+2925
+\\DeclareTextCommand{\\textrhookswarrow}{PU}{\\9051\\046}%* U+2926
+\\DeclareTextCommand{\\textleadsto}{PU}{\\9051\\063}%* U+2933
+\\DeclareTextCommand{\\textrcurvearrowne}{PU}{\\9051\\064}%* U+2934
+\\DeclareTextCommand{\\textlcurvearrowse}{PU}{\\9051\\065}%* U+2935
+\\DeclareTextCommand{\\textlcurvearrowsw}{PU}{\\9051\\066}%* U+2936
+\\DeclareTextCommand{\\textrcurvearrowse}{PU}{\\9051\\067}%* U+2937
+\\DeclareTextCommand{\\textlcurvearrowdown}{PU}{\\9051\\070}%* U+2938
+\\DeclareTextCommand{\\textrcurvearrowdown}{PU}{\\9051\\071}%* U+2939
+\\DeclareTextCommand{\\textrcurvearrowleft}{PU}{\\9051\\072}%* U+293A
+\\DeclareTextCommand{\\textrcurvearrowright}{PU}{\\9051\\073}%* U+293B
+\\DeclareTextCommand{\\textleftrightharpoon}{PU}{\\9051\\112}%* U+294A
+\\DeclareTextCommand{\\textrightleftharpoon}{PU}{\\9051\\113}%* U+294B
+\\DeclareTextCommand{\\textupdownharpoonrightleft}{PU}{\\9051\\114}%* U+294C
+\\DeclareTextCommand{\\textupdownharpoonleftright}{PU}{\\9051\\115}%* U+294D
+\\DeclareTextCommand{\\textleftleftharpoons}{PU}{\\9051\\142}%* U+2962
+\\DeclareTextCommand{\\textupupharpoons}{PU}{\\9051\\143}%* U+2963
+\\DeclareTextCommand{\\textrightrightharpoons}{PU}{\\9051\\144}%* U+2964
+\\DeclareTextCommand{\\textdowndownharpoons}{PU}{\\9051\\145}%* U+2965
+\\DeclareTextCommand{\\textleftbarharpoon}{PU}{\\9051\\152}%* U+296A
+\\DeclareTextCommand{\\textbarleftharpoon}{PU}{\\9051\\153}%* U+296B
+\\DeclareTextCommand{\\textrightbarharpoon}{PU}{\\9051\\154}%* U+296C
+\\DeclareTextCommand{\\textbarrightharpoon}{PU}{\\9051\\155}%* U+296D
+\\DeclareTextCommand{\\textupdownharpoons}{PU}{\\9051\\156}%* U+296E
+\\DeclareTextCommand{\\textdownupharpoons}{PU}{\\9051\\157}%* U+296F
+\\DeclareTextCommand{\\textmoo}{PU}{\\9051\\177\\83\\066}%* U+297F U+0336
+\\DeclareTextCommand{\\textllparenthesis}{PU}{\\9051\\207}%* U+2987
+\\DeclareTextCommand{\\textrrparenthesis}{PU}{\\9051\\210}%* U+2988
+\\DeclareTextCommand{\\textinvdiameter}{PU}{\\9051\\260}%* U+29B0
+\\DeclareTextCommand{\\textobar}{PU}{\\9051\\266}%* U+29B6
+\\DeclareTextCommand{\\textobslash}{PU}{\\9051\\270}%* U+29B8
+\\DeclareTextCommand{\\textobot}{PU}{\\9051\\272}%* U+29BA
+\\DeclareTextCommand{\\textNoChemicalCleaning}{PU}{\\9051\\273}%* U+29BB
+\\DeclareTextCommand{\\textolessthan}{PU}{\\9051\\300}%* U+29C0
+\\DeclareTextCommand{\\textogreaterthan}{PU}{\\9051\\301}%* U+29C1
+\\DeclareTextCommand{\\textboxslash}{PU}{\\9051\\304}%* U+29C4
+\\DeclareTextCommand{\\textboxbslash}{PU}{\\9051\\305}%* U+29C5
+\\DeclareTextCommand{\\textboxast}{PU}{\\9051\\306}%* U+29C6
+\\DeclareTextCommand{\\textboxcircle}{PU}{\\9051\\307}%* U+29C7
+\\DeclareTextCommand{\\textboxbox}{PU}{\\9051\\310}%* U+29C8
+\\DeclareTextCommand{\\textValve}{PU}{\\9051\\323}%* U+29D3
+\\DeclareTextCommand{\\textmultimapboth}{PU}{\\9051\\337}%* U+29DF
+\\DeclareTextCommand{\\textshuffle}{PU}{\\9051\\342}%* U+29E2
+\\DeclareTextCommand{\\textuplus}{PU}{\\9052\\004}%* U+2A04
+\\DeclareTextCommand{\\textbigdoublewedge}{PU}{\\9052\\007}%* U+2A07
+\\DeclareTextCommand{\\textbigdoublevee}{PU}{\\9052\\010}%* U+2A08
+\\DeclareTextCommand{\\textJoin}{PU}{\\9052\\035}%* U+2A1D
+\\DeclareTextCommand{\\textfatsemi}{PU}{\\9052\\037}%* U+2A1F
+\\DeclareTextCommand{\\textcircplus}{PU}{\\9052\\042}%* U+2A22
+\\DeclareTextCommand{\\textminusdot}{PU}{\\9052\\052}%* U+2A2A
+\\DeclareTextCommand{\\textdottimes}{PU}{\\9052\\060}%* U+2A30
+\\DeclareTextCommand{\\textdtimes}{PU}{\\9052\\062}%* U+2A32
+\\DeclareTextCommand{\\textodiv}{PU}{\\9052\\070}%* U+2A38
+\\DeclareTextCommand{\\textinvneg}{PU}{\\9052\\074}%* U+2A3C
+\\DeclareTextCommand{\\textsqdoublecap}{PU}{\\9052\\116}%* U+2A4E
+\\DeclareTextCommand{\\textcapdot}{PU}{\\9052\\100}%* U+2A40
+\\DeclareTextCommand{\\textsqdoublecup}{PU}{\\9052\\117}%* U+2A4F
+\\DeclareTextCommand{\\textdoublewedge}{PU}{\\9052\\125}%* U+2A55
+\\DeclareTextCommand{\\textdoublevee}{PU}{\\9052\\126}%* U+2A56
+\\DeclareTextCommand{\\textdoublebarwedge}{PU}{\\9052\\136}%* U+2A5E
+\\DeclareTextCommand{\\textveedoublebar}{PU}{\\9052\\143}%* U+2A63
+\\DeclareTextCommand{\\texteqdot}{PU}{\\9052\\146}%* U+2A66
+\\DeclareTextCommand{\\textneqdot}{PU}{\\9052\\146\\83\\070}%* U+2A66 U+0338
+\\DeclareTextCommand{\\textcoloncolonequals}{PU}{\\9052\\164}%* U+2A74
+\\DeclareTextCommand{\\textleqslant}{PU}{\\9052\\175}%* U+2A7D
+\\DeclareTextCommand{\\textnleqslant}{PU}{\\9052\\175\\83\\070}%* U+2A7D U+0338
+\\DeclareTextCommand{\\textgeqslant}{PU}{\\9052\\176}%* U+2A7E
+\\DeclareTextCommand{\\textngeqslant}{PU}{\\9052\\176\\83\\070}%* U+2A7E U+0338
+\\DeclareTextCommand{\\textlessapprox}{PU}{\\9052\\205}%* U+2A85
+\\DeclareTextCommand{\\textnlessapprox}{PU}{\\9052\\205\\83\\070}%* U+2A85 U+0338
+\\DeclareTextCommand{\\textgtrapprox}{PU}{\\9052\\206}%* U+2A86
+\\DeclareTextCommand{\\textngtrapprox}{PU}{\\9052\\206\\83\\070}%* U+2A86 U+0338
+\\DeclareTextCommand{\\textlneq}{PU}{\\9052\\207}%* U+2A87
+\\DeclareTextCommand{\\textgneq}{PU}{\\9052\\210}%* U+2A88
+\\DeclareTextCommand{\\textlnapprox}{PU}{\\9052\\211}%* U+2A89
+\\DeclareTextCommand{\\textgnapprox}{PU}{\\9052\\212}%* U+2A8A
+\\DeclareTextCommand{\\textlesseqqgtr}{PU}{\\9052\\213}%* U+2A8B
+\\DeclareTextCommand{\\textgtreqqless}{PU}{\\9052\\214}%* U+2A8C
+\\DeclareTextCommand{\\texteqslantless}{PU}{\\9052\\225}%* U+2A95
+\\DeclareTextCommand{\\texteqslantgtr}{PU}{\\9052\\226}%* U+2A96
+\\DeclareTextCommand{\\textleftslice}{PU}{\\9052\\246}%* U+2AA6
+\\DeclareTextCommand{\\textrightslice}{PU}{\\9052\\247}%* U+2AA7
+\\DeclareTextCommand{\\textpreceq}{PU}{\\9052\\257}%* U+2AAF
+\\DeclareTextCommand{\\textnpreceq}{PU}{\\9052\\257\\83\\070}%* U+2AAF U+0338
+\\DeclareTextCommand{\\textsucceq}{PU}{\\9052\\260}%* U+2AB0
+\\DeclareTextCommand{\\textnsucceq}{PU}{\\9052\\260\\83\\070}%* U+2AB0 U+0338
+\\DeclareTextCommand{\\textprecneq}{PU}{\\9052\\261}%* U+2AB1
+\\DeclareTextCommand{\\textsuccneq}{PU}{\\9052\\262}%* U+2AB2
+\\DeclareTextCommand{\\textpreceqq}{PU}{\\9052\\263}%* U+2AB3
+\\DeclareTextCommand{\\textnpreceqq}{PU}{\\9052\\263\\83\\070}%* U+2AB3 U+0338
+\\DeclareTextCommand{\\textsucceqq}{PU}{\\9052\\264}%* U+2AB4
+\\DeclareTextCommand{\\textnsucceqq}{PU}{\\9052\\264\\83\\070}%* U+2AB4 U+0338
+\\DeclareTextCommand{\\textprecneqq}{PU}{\\9052\\265}%* U+2AB5
+\\DeclareTextCommand{\\textsuccneqq}{PU}{\\9052\\266}%* U+2AB6
+\\DeclareTextCommand{\\textprecapprox}{PU}{\\9052\\267}%* U+2AB7
+\\DeclareTextCommand{\\textnprecapprox}{PU}{\\9052\\267\\83\\070}%* U+2AB7 U+0338
+\\DeclareTextCommand{\\textsuccapprox}{PU}{\\9052\\270}%* U+2AB8
+\\DeclareTextCommand{\\textnsuccapprox}{PU}{\\9052\\270\\83\\070}%* U+2AB8 U+0338
+\\DeclareTextCommand{\\textprecnapprox}{PU}{\\9052\\271}%* U+2AB9
+\\DeclareTextCommand{\\textsuccnapprox}{PU}{\\9052\\272}%* U+2ABA
+\\DeclareTextCommand{\\textsubseteqq}{PU}{\\9052\\305}%* U+2AC5
+\\DeclareTextCommand{\\textnsubseteqq}{PU}{\\9052\\305\\83\\070}%* U+2AC5 U+0338
+\\DeclareTextCommand{\\textsupseteqq}{PU}{\\9052\\306}%* U+2AC6
+\\DeclareTextCommand{\\textnsupseteqq}{PU}{\\9052\\306\\83\\070}%* U+2AC6 U+0338
+\\DeclareTextCommand{\\textdashV}{PU}{\\9052\\343}%* U+2AE3
+\\DeclareTextCommand{\\textndashV}{PU}{\\9052\\343\\83\\070}%* U+2AE3 U+0338
+\\DeclareTextCommand{\\textDashv}{PU}{\\9052\\344}%* U+2AE4
+\\DeclareTextCommand{\\textnDashv}{PU}{\\9052\\344\\83\\070}%* U+2AE4 U+0338
+\\DeclareTextCommand{\\textDashV}{PU}{\\9052\\345}%* U+2AE5
+\\DeclareTextCommand{\\textnDashV}{PU}{\\9052\\345\\83\\070}%* U+2AE5 U+0338
+\\DeclareTextCommand{\\textdownmodels}{PU}{\\9052\\352}%* U+2AEA
+\\DeclareTextCommand{\\textndownmodels}{PU}{\\9052\\352\\83\\070}%* U+2AEA U+0338
+\\DeclareTextCommand{\\textupmodels}{PU}{\\9052\\353}%* U+2AEB
+\\DeclareTextCommand{\\textnupmodels}{PU}{\\9052\\353\\83\\070}%* U+2AEB U+0338
+\\DeclareTextCommand{\\textupspoon}{PU}{\\9052\\357}%* U+2AEF
+\\DeclareTextCommand{\\textinterleave}{PU}{\\9052\\364}%* U+2AF4
+\\DeclareTextCommand{\\textsslash}{PU}{\\9052\\375}%* U+2AFD
+\\DeclareTextCommand{\\textpentagon}{PU}{\\9053\\040}%* U+2B20
+\\DeclareTextCommand{\\textvarhexagon}{PU}{\\9053\\041}%* U+2B21
+\\DeclareTextCommand{\\textjinferior}{PU}{\\9054\\174}%* U+2C7C
+\\DeclareTextCommand{\\textslashdiv}{PU}{\\9056\\023}%* U+2E13
+\\DeclareTextCommand{\\textinterrobangdown}{PU}{\\9056\\030}% U+2E18
+\\DeclareTextCommand{\\textfivedots}{PU}{\\9056\\055}%* U+2E2D
+\\DeclareTextCommand{\\textupstep}{PU}{\\9247\\033}% U+A71B
+\\DeclareTextCommand{\\textdownstep}{PU}{\\9247\\034}% U+A71C
+\\DeclareTextCommand{\\textPUheng}{PU}{\\9247\\047}% U+A727
+\\DeclareTextCommand{\\textPUlhookfour}{PU}{\\9247\\054}% U+A72C
+\\DeclareTextCommand{\\textPUscf}{PU}{\\9247\\060}% U+A730
+\\DeclareTextCommand{\\textPUaolig}{PU}{\\9247\\065}% U+A735
+\\DeclareTextCommand{\\textoo}{PU}{\\9247\\117}%* U+A74F
+\\DeclareTextCommand{\\textcircumlow}{PU}{\\9247\\210}% U+A788
+\\DeclareTextCommand{\\textfi}{PU}{\\9373\\001}% U+FB01
+\\DeclareTextCommand{\\textfl}{PU}{\\9373\\002}% U+FB02
+\\DeclareTextCommand{\\textGaPa}{PU}{\\9330\\064\\9335\\073}%* U+1D13B
+\\DeclareTextCommand{\\textHaPa}{PU}{\\9330\\064\\9335\\074}%* U+1D13C
+\\DeclareTextCommand{\\textViPa}{PU}{\\9330\\064\\9335\\075}%* U+1D13D
+\\DeclareTextCommand{\\textAcPa}{PU}{\\9330\\064\\9335\\076}%* U+1D13E
+\\DeclareTextCommand{\\textSePa}{PU}{\\9330\\064\\9335\\077}%* U+1D13F
+\\DeclareTextCommand{\\textZwPa}{PU}{\\9330\\064\\9335\\100}%* U+1D140
+\\DeclareTextCommand{\\textfullnote}{PU}{\\9330\\064\\9335\\135}%* U+1D15D
+\\DeclareTextCommand{\\texthalfnote}{PU}{\\9330\\064\\9335\\136}%* U+1D15E
+\\DeclareTextCommand{\\textVier}{PU}{\\9330\\064\\9335\\137}%* U+1D15F
+\\DeclareTextCommand{\\textAcht}{PU}{\\9330\\064\\9335\\140}%* U+1D160
+\\DeclareTextCommand{\\textSech}{PU}{\\9330\\064\\9335\\141}%* U+1D161
+\\DeclareTextCommand{\\textZwdr}{PU}{\\9330\\064\\9335\\142}%* U+1D162
+\\DeclareTextCommand{\\textMundus}{PU}{\\9330\\074\\9337\\015}%* U+1F30D
+\\DeclareTextCommand{\\textMoon}{PU}{\\9330\\074\\9337\\031}%* U+1F319
+\\DeclareTextCommand{\\textManFace}{PU}{\\9330\\075\\9334\\150}%* U+1F468
+\\DeclareTextCommand{\\textWomanFace}{PU}{\\9330\\075\\9334\\151}%* U+1F469
+\\DeclareTextCommand{\\textFax}{PU}{\\9330\\075\\9334\\340}%* U+1F4E0
+\\DeclareTextCommand{\\textFire}{PU}{\\9330\\075\\9335\\045}%* U+1F525
+\\DeclareTextCommand{\\textBicycle}{PU}{\\9330\\075\\9336\\262}%* U+1F6B2
+\\DeclareTextCommand{\\textGentsroom}{PU}{\\9330\\075\\9336\\271}%* U+1F6B9
+\\DeclareTextCommand{\\textLadiesroom}{PU}{\\9330\\075\\9336\\272}%* U+1F6BA
+\\DeclareTextCommand{\\SS}{PU}{SS}%
+\\DeclareTextCommand{\\textcopyleft}{PU}{\\9041\\204\\9040\\335}% U+2184 U+20DD
+\\DeclareTextCommand{\\textccnc}{PU}{\\80\\044\\9040\\340}%* U+0024 U+20E0
+\\DeclareTextCommand{\\textccnd}{PU}{=\\9040\\335}%* U+003D U+20DD
+\\DeclareTextCommand{\\textccsa}{PU}{\\9047\\362\\9040\\335}%* U+27F2 U+20DD
+\\DeclareTextCommand{\\textInfo}{PU}{\\9330\\065\\9334\\042\\9040\\336}%* U+1D422 U+20DE
+\\DeclareTextCommand{\\textCESign}{PU}{\\80\\103\\80\\105}%* U+0043 U+0045
+\\DeclareTextCommand{\\textglqq}{PU}{\\quotedblbase}%
+\\DeclareTextCommand{\\textgrqq}{PU}{\\textquotedblleft}%
+\\DeclareTextCommand{\\textglq}{PU}{\\quotesinglbase}%
+\\DeclareTextCommand{\\textgrq}{PU}{\\textquoteleft}%
+\\DeclareTextCommand{\\textflqq}{PU}{\\guillemetleft}%
+\\DeclareTextCommand{\\textfrqq}{PU}{\\guillemetright}%
+\\DeclareTextCommand{\\textflq}{PU}{\\guilsinglleft}%
+\\DeclareTextCommand{\\textfrq}{PU}{\\guilsinglright}%
+\\DeclareTextCommand{\\textneg}{PU}{\\textlogicalnot}%*
+\\DeclareTextCommand{\\texttimes}{PU}{\\textmultiply}%*
+\\DeclareTextCommand{\\textdiv}{PU}{\\textdivide}%*
+\\DeclareTextCommand{\\textpm}{PU}{\\textplusminus}%*
+\\DeclareTextCommand{\\textcdot}{PU}{\\textperiodcentered}%*
+\\endinput
+%%
+%% End of file \`puenc.def'.
+` },
   { format: 32, filename: 't1enc.def', content: `
+%%
+%% This is file \`t1enc.def',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% ltoutenc.dtx  (with options: \`T1')
+%% 
+%% This is a generated file.
+%% 
+%% The source is maintained by the LaTeX Project team and bug
+%% reports for it can be opened at https://latex-project.org/bugs.html
+%% (but please observe conditions on bug reports sent to that address!)
+%% 
+%% 
+%% Copyright (C) 1993-2025
+%% The LaTeX Project and any individual authors listed elsewhere
+%% in this file.
+%% 
+%% This file was generated from file(s) of the LaTeX base system.
+%% --------------------------------------------------------------
+%% 
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    https://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2008 or later.
+%% 
+%% This file has the LPPL maintenance status "maintained".
+%% 
+%% This file may only be distributed together with a copy of the LaTeX
+%% base system. You may however distribute the LaTeX base system without
+%% such generated files.
+%% 
+%% The list of all files belonging to the LaTeX base distribution is
+%% given in the file \`manifest.txt'. See also \`legal.txt' for additional
+%% information.
+%% 
+%% The list of derived (unpacked) files belonging to the distribution
+%% and covered by LPPL is defined by the unpacking scripts (with
+%% extension .ins) which are part of the distribution.
+%%% From File: ltoutenc.dtx
+\\ProvidesFile{t1enc.def}
+ [2025/07/18 v2.1d
+      Standard LaTeX file]
+\\DeclareFontEncoding{T1}{}{}
+\\DeclareFontSubstitution{T1}{cmr}{m}{n}
+\\DeclareTextAccent{\\\`}{T1}{0}
+\\DeclareTextAccent{\\'}{T1}{1}
+\\DeclareTextAccent{\\^}{T1}{2}
+\\DeclareTextAccent{\\~}{T1}{3}
+\\DeclareTextAccent{\\"}{T1}{4}
+\\DeclareTextAccent{\\H}{T1}{5}
+\\DeclareTextAccent{\\r}{T1}{6}
+\\DeclareTextAccent{\\v}{T1}{7}
+\\DeclareTextAccent{\\u}{T1}{8}
+\\DeclareTextAccent{\\=}{T1}{9}
+\\DeclareTextAccent{\\.}{T1}{10}
+\\DeclareTextCommand{\\b}{T1}[1]
+   {\\hmode@bgroup\\o@lign{\\relax#1\\crcr\\hidewidth\\ltx@sh@ft{-3ex}%
+     \\vbox to.2ex{\\hbox{\\char9}\\vss}\\hidewidth}\\egroup}
+\\DeclareTextCommand{\\c}{T1}[1]
+   {\\leavevmode\\setbox\\z@\\hbox{#1}\\ifdim\\ht\\z@=1ex\\accent11 #1%
+     \\else{\\ooalign{\\unhbox\\z@\\crcr
+        \\hidewidth\\char11\\hidewidth}}\\fi}
+\\DeclareTextCommand{\\d}{T1}[1]
+   {\\hmode@bgroup
+    \\o@lign{\\relax#1\\crcr\\hidewidth\\ltx@sh@ft{-1ex}.\\hidewidth}\\egroup}
+\\DeclareTextCommand{\\k}{T1}[1]
+   {\\hmode@bgroup\\ooalign{\\null#1\\crcr\\hidewidth\\char12}\\egroup}
+\\DeclareTextCommand{\\textogonekcentered}{T1}[1]
+   {\\hmode@bgroup\\ooalign{%
+                \\null#1\\crcr\\hidewidth\\char12\\hidewidth}\\egroup}
+\\DeclareTextCommand{\\textperthousand}{T1}
+   {\\%\\char 24 }          % space or \`relax as delimiter?
+\\DeclareTextCommand{\\textpertenthousand}{T1}
+   {\\%\\char 24\\char 24 }  % space or \`relax as delimiter?
+\\DeclareTextCommand{\\Hwithstroke}{T1}
+   {%
+    \\hmode@bgroup
+    \\vphantom{H}%
+    \\sbox\\z@{H}%
+    \\ooalign{%
+      H\\cr
+      \\hidewidth
+      \\vrule
+        height \\dimexpr 0.7\\ht\\z@+0.1ex\\relax
+        depth  -0.7\\ht\\z@
+        width  0.8\\wd\\z@
+      \\hidewidth\\cr
+    }%
+    \\egroup
+   }
+\\DeclareTextCommand{\\hwithstroke}{T1}
+   {%
+    \\hmode@bgroup
+    \\vphantom{h}%
+    \\sbox\\z@{h}%
+    \\ooalign{%
+      h\\cr
+      \\kern0.075\\wd\\z@
+      \\vrule
+        height \\dimexpr 0.7\\ht\\z@+0.1ex\\relax
+        depth  -0.7\\ht\\z@
+        width  0.4\\wd\\z@
+      \\hidewidth\\cr
+    }%
+    \\egroup
+   }
+\\DeclareTextSymbol{\\AE}{T1}{198}
+\\DeclareTextSymbol{\\DH}{T1}{208}
+\\DeclareTextSymbol{\\DJ}{T1}{208}
+\\DeclareTextSymbol{\\L}{T1}{138}
+\\DeclareTextSymbol{\\NG}{T1}{141}
+\\DeclareTextSymbol{\\OE}{T1}{215}
+\\DeclareTextSymbol{\\O}{T1}{216}
+\\DeclareTextSymbol{\\SS}{T1}{223}
+\\DeclareTextSymbol{\\TH}{T1}{222}
+\\DeclareTextSymbol{\\ae}{T1}{230}
+\\DeclareTextSymbol{\\dh}{T1}{240}
+\\DeclareTextSymbol{\\dj}{T1}{158}
+\\DeclareTextSymbol{\\guillemetleft}{T1}{19}
+\\DeclareTextSymbol{\\guillemetright}{T1}{20}
+\\DeclareTextSymbol{\\guillemotleft}{T1}{19}
+\\DeclareTextSymbol{\\guillemotright}{T1}{20}
+\\DeclareTextSymbol{\\guilsinglleft}{T1}{14}
+\\DeclareTextSymbol{\\guilsinglright}{T1}{15}
+\\DeclareTextSymbol{\\i}{T1}{25}
+\\DeclareTextSymbol{\\j}{T1}{26}
+\\DeclareTextSymbol{\\ij}{T1}{188}
+\\DeclareTextSymbol{\\IJ}{T1}{156}
+\\DeclareTextSymbol{\\l}{T1}{170}
+\\DeclareTextSymbol{\\ng}{T1}{173}
+\\DeclareTextSymbol{\\oe}{T1}{247}
+\\DeclareTextSymbol{\\o}{T1}{248}
+\\DeclareTextSymbol{\\quotedblbase}{T1}{18}
+\\DeclareTextSymbol{\\quotesinglbase}{T1}{13}
+\\DeclareTextSymbol{\\ss}{T1}{255}
+\\DeclareTextSymbol{\\textasciicircum}{T1}{\`\\^}
+\\DeclareTextSymbol{\\textasciitilde}{T1}{\`\\~}
+\\DeclareTextSymbol{\\textbackslash}{T1}{\`\\\\}
+\\DeclareTextSymbol{\\textbar}{T1}{\`\\|}
+\\DeclareTextSymbol{\\textbraceleft}{T1}{\`\\{}
+\\DeclareTextSymbol{\\textbraceright}{T1}{\`\\}}
+\\DeclareTextSymbol{\\textcompwordmark}{T1}{23}
+\\DeclareTextSymbol{\\textdollar}{T1}{\`\\\$}
+\\DeclareTextSymbol{\\textemdash}{T1}{22}
+\\DeclareTextSymbol{\\textendash}{T1}{21}
+\\DeclareTextCommand{\\textnonbreakinghyphen}{T1}{\\mbox{-}\\nobreak\\hskip\\z@}
+\\DeclareTextCommand{\\textfiguredash}       {T1}{\\textendash}
+\\DeclareTextCommand{\\texthorizontalbar}    {T1}{\\textemdash}
+\\DeclareTextSymbol{\\textexclamdown}{T1}{189}
+\\DeclareTextSymbol{\\textgreater}{T1}{\`\\>}
+\\DeclareTextSymbol{\\textless}{T1}{\`\\<}
+\\DeclareTextSymbol{\\textquestiondown}{T1}{190}
+\\DeclareTextSymbol{\\textquotedblleft}{T1}{16}
+\\DeclareTextSymbol{\\textquotedblright}{T1}{17}
+\\DeclareTextSymbol{\\textquotedbl}{T1}{\`\\"}
+\\DeclareTextSymbol{\\textquoteleft}{T1}{\`\\\`}
+\\DeclareTextSymbol{\\textquoteright}{T1}{\`\\'}
+\\DeclareTextSymbol{\\textsection}{T1}{159}
+\\DeclareTextSymbol{\\textsterling}{T1}{191}
+\\DeclareTextSymbol{\\textunderscore}{T1}{95}
+\\DeclareTextSymbol{\\textvisiblespace}{T1}{32}
+\\DeclareTextSymbol{\\th}{T1}{254}
+\\DeclareTextComposite{\\.}{T1}{i}{\`\\i}
+\\DeclareTextComposite{\\.}{T1}{\\i}{\`\\i}
+\\DeclareTextComposite{\\u}{T1}{A}{128}
+\\DeclareTextComposite{\\k}{T1}{A}{129}
+\\DeclareTextComposite{\\'}{T1}{C}{130}
+\\DeclareTextComposite{\\v}{T1}{C}{131}
+\\DeclareTextComposite{\\v}{T1}{D}{132}
+\\DeclareTextComposite{\\v}{T1}{E}{133}
+\\DeclareTextComposite{\\k}{T1}{E}{134}
+\\DeclareTextComposite{\\u}{T1}{G}{135}
+\\DeclareTextComposite{\\'}{T1}{L}{136}
+\\DeclareTextComposite{\\v}{T1}{L}{137}
+\\DeclareTextComposite{\\'}{T1}{N}{139}
+\\DeclareTextComposite{\\v}{T1}{N}{140}
+\\DeclareTextComposite{\\H}{T1}{O}{142}
+\\DeclareTextComposite{\\'}{T1}{R}{143}
+\\DeclareTextComposite{\\v}{T1}{R}{144}
+\\DeclareTextComposite{\\'}{T1}{S}{145}
+\\DeclareTextComposite{\\v}{T1}{S}{146}
+\\DeclareTextComposite{\\c}{T1}{S}{147}
+\\DeclareTextComposite{\\v}{T1}{T}{148}
+\\DeclareTextComposite{\\c}{T1}{T}{149}
+\\DeclareTextComposite{\\H}{T1}{U}{150}
+\\DeclareTextComposite{\\r}{T1}{U}{151}
+\\DeclareTextComposite{\\"}{T1}{Y}{152}
+\\DeclareTextComposite{\\'}{T1}{Z}{153}
+\\DeclareTextComposite{\\v}{T1}{Z}{154}
+\\DeclareTextComposite{\\.}{T1}{Z}{155}
+\\DeclareTextComposite{\\.}{T1}{I}{157}
+\\DeclareTextComposite{\\u}{T1}{a}{160}
+\\DeclareTextComposite{\\k}{T1}{a}{161}
+\\DeclareTextComposite{\\'}{T1}{c}{162}
+\\DeclareTextComposite{\\v}{T1}{c}{163}
+\\DeclareTextComposite{\\v}{T1}{d}{164}
+\\DeclareTextComposite{\\v}{T1}{e}{165}
+\\DeclareTextComposite{\\k}{T1}{e}{166}
+\\DeclareTextComposite{\\u}{T1}{g}{167}
+\\DeclareTextComposite{\\'}{T1}{l}{168}
+\\DeclareTextComposite{\\v}{T1}{l}{169}
+\\DeclareTextComposite{\\'}{T1}{n}{171}
+\\DeclareTextComposite{\\v}{T1}{n}{172}
+\\DeclareTextComposite{\\H}{T1}{o}{174}
+\\DeclareTextComposite{\\'}{T1}{r}{175}
+\\DeclareTextComposite{\\v}{T1}{r}{176}
+\\DeclareTextComposite{\\'}{T1}{s}{177}
+\\DeclareTextComposite{\\v}{T1}{s}{178}
+\\DeclareTextComposite{\\c}{T1}{s}{179}
+\\DeclareTextComposite{\\v}{T1}{t}{180}
+\\DeclareTextComposite{\\c}{T1}{t}{181}
+\\DeclareTextComposite{\\H}{T1}{u}{182}
+\\DeclareTextComposite{\\r}{T1}{u}{183}
+\\DeclareTextComposite{\\"}{T1}{y}{184}
+\\DeclareTextComposite{\\'}{T1}{z}{185}
+\\DeclareTextComposite{\\v}{T1}{z}{186}
+\\DeclareTextComposite{\\.}{T1}{z}{187}
+\\DeclareTextComposite{\\\`}{T1}{A}{192}
+\\DeclareTextComposite{\\'}{T1}{A}{193}
+\\DeclareTextComposite{\\^}{T1}{A}{194}
+\\DeclareTextComposite{\\~}{T1}{A}{195}
+\\DeclareTextComposite{\\"}{T1}{A}{196}
+\\DeclareTextComposite{\\r}{T1}{A}{197}
+\\DeclareTextComposite{\\c}{T1}{C}{199}
+\\DeclareTextComposite{\\\`}{T1}{E}{200}
+\\DeclareTextComposite{\\'}{T1}{E}{201}
+\\DeclareTextComposite{\\^}{T1}{E}{202}
+\\DeclareTextComposite{\\"}{T1}{E}{203}
+\\DeclareTextComposite{\\\`}{T1}{I}{204}
+\\DeclareTextComposite{\\'}{T1}{I}{205}
+\\DeclareTextComposite{\\^}{T1}{I}{206}
+\\DeclareTextComposite{\\"}{T1}{I}{207}
+\\DeclareTextComposite{\\~}{T1}{N}{209}
+\\DeclareTextComposite{\\\`}{T1}{O}{210}
+\\DeclareTextComposite{\\'}{T1}{O}{211}
+\\DeclareTextComposite{\\^}{T1}{O}{212}
+\\DeclareTextComposite{\\~}{T1}{O}{213}
+\\DeclareTextComposite{\\"}{T1}{O}{214}
+\\DeclareTextComposite{\\\`}{T1}{U}{217}
+\\DeclareTextComposite{\\'}{T1}{U}{218}
+\\DeclareTextComposite{\\^}{T1}{U}{219}
+\\DeclareTextComposite{\\"}{T1}{U}{220}
+\\DeclareTextComposite{\\'}{T1}{Y}{221}
+\\DeclareTextComposite{\\\`}{T1}{a}{224}
+\\DeclareTextComposite{\\'}{T1}{a}{225}
+\\DeclareTextComposite{\\^}{T1}{a}{226}
+\\DeclareTextComposite{\\~}{T1}{a}{227}
+\\DeclareTextComposite{\\"}{T1}{a}{228}
+\\DeclareTextComposite{\\r}{T1}{a}{229}
+\\DeclareTextComposite{\\c}{T1}{c}{231}
+\\DeclareTextComposite{\\\`}{T1}{e}{232}
+\\DeclareTextComposite{\\'}{T1}{e}{233}
+\\DeclareTextComposite{\\^}{T1}{e}{234}
+\\DeclareTextComposite{\\"}{T1}{e}{235}
+\\DeclareTextComposite{\\\`}{T1}{i}{236}
+\\DeclareTextComposite{\\\`}{T1}{\\i}{236}
+\\DeclareTextComposite{\\'}{T1}{i}{237}
+\\DeclareTextComposite{\\'}{T1}{\\i}{237}
+\\DeclareTextComposite{\\^}{T1}{i}{238}
+\\DeclareTextComposite{\\^}{T1}{\\i}{238}
+\\DeclareTextComposite{\\"}{T1}{i}{239}
+\\DeclareTextComposite{\\"}{T1}{\\i}{239}
+\\DeclareTextComposite{\\~}{T1}{n}{241}
+\\DeclareTextComposite{\\\`}{T1}{o}{242}
+\\DeclareTextComposite{\\'}{T1}{o}{243}
+\\DeclareTextComposite{\\^}{T1}{o}{244}
+\\DeclareTextComposite{\\~}{T1}{o}{245}
+\\DeclareTextComposite{\\"}{T1}{o}{246}
+\\DeclareTextComposite{\\\`}{T1}{u}{249}
+\\DeclareTextComposite{\\'}{T1}{u}{250}
+\\DeclareTextComposite{\\^}{T1}{u}{251}
+\\DeclareTextComposite{\\"}{T1}{u}{252}
+\\DeclareTextComposite{\\'}{T1}{y}{253}
+\\DeclareTextCompositeCommand{\\k}{T1}{o}{\\textogonekcentered{o}}
+\\DeclareTextCompositeCommand{\\k}{T1}{O}{\\textogonekcentered{O}}
+\\ifx\\textcommaabove\\@undefined\\else
+\\DeclareTextCompositeCommand{\\c}{T1}{g}{\\textcommaabove{g}}
+\\fi
+\\ifx\\textcommabelow\\@undefined\\else
+\\DeclareTextCompositeCommand{\\c}{T1}{G}{\\textcommabelow{G}}
+\\DeclareTextCompositeCommand{\\c}{T1}{K}{\\textcommabelow{K}}
+\\DeclareTextCompositeCommand{\\c}{T1}{k}{\\textcommabelow{k}}
+\\DeclareTextCompositeCommand{\\c}{T1}{L}{\\textcommabelow{L}}
+\\DeclareTextCompositeCommand{\\c}{T1}{l}{\\textcommabelow{l}}
+\\DeclareTextCompositeCommand{\\c}{T1}{N}{\\textcommabelow{N}}
+\\DeclareTextCompositeCommand{\\c}{T1}{n}{\\textcommabelow{n}}
+\\DeclareTextCompositeCommand{\\c}{T1}{R}{\\textcommabelow{R}}
+\\DeclareTextCompositeCommand{\\c}{T1}{r}{\\textcommabelow{r}}
+\\fi
+\\DeclareTextCompositeCommand{\\=}{T1}{i}{\\=\\i}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\endinput
+%%
+%% End of file \`t1enc.def'.
+` },
+  { format: 26, filename: 't1enc.def', content: `
 %%
 %% This is file \`t1enc.def',
 %% generated with the docstrip utility.

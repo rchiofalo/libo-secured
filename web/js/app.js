@@ -72,6 +72,10 @@ async function initLatexEngine() {
             console.log(`Preloaded ${fontCount} font metrics`);
         }
 
+        // Wait for worker to process all preload messages
+        // postMessage is async, so we need to give the worker time to process
+        await new Promise(resolve => setTimeout(resolve, 100));
+
         engineReady = true;
         engineLoading = false;
         console.log('SwiftLaTeX engine ready with bundled packages');
