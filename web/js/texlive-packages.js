@@ -1,7 +1,7 @@
 /**
  * TeX Live Packages for SwiftLaTeX Browser Compilation
  * Auto-generated - DO NOT EDIT
- * Generated: Tue Dec 30 01:59:00 PST 2025
+ * Generated: Tue Dec 30 12:53:44 PST 2025
  * Format codes: 3=tfm, 10=cfg/fmt, 26=cls/clo, 27=sty, 28=fd, 32=def
  */
 
@@ -1399,7 +1399,396 @@ const TEXLIVE_PACKAGES = [
 		and try again.
 		<p><a href="https://tug.org">Return to the main site.</a>
 		` },
+  { format: 26, filename: 'amsmath.sty', content: `
+
+		<!DOCTYPE html>
+		<html lang="en">
+		<meta charset="UTF-8">
+		<title>Too Many Requests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+		<meta name="color-scheme" content="light dark">
+		<h1>Too Many Requests</h1>
+		<p>You can only make 10 requests per minute. Please wait a little bit
+		and try again.
+		<p><a href="https://tug.org">Return to the main site.</a>
+		` },
   { format: 27, filename: 'array.sty', content: `
+%%
+%% This is file \`array.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% array.dtx  (with options: \`package,ncols')
+%% 
+%% This is a generated file.
+%% 
+%% The source is maintained by the LaTeX Project team and bug
+%% reports for it can be opened at https://latex-project.org/bugs/
+%% (but please observe conditions on bug reports sent to that address!)
+%% 
+%% 
+%% Copyright (C) 1993-2020
+%% The LaTeX3 Project and any individual authors listed elsewhere
+%% in this file.
+%% 
+%% This file was generated from file(s) of the Standard LaTeX \`Tools Bundle'.
+%% --------------------------------------------------------------------------
+%% 
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    https://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%% 
+%% This file may only be distributed together with a copy of the LaTeX
+%% \`Tools Bundle'. You may however distribute the LaTeX \`Tools Bundle'
+%% without such generated files.
+%% 
+%% The list of all files belonging to the LaTeX \`Tools Bundle' is
+%% given in the file \`manifest.txt'.
+%% 
+%% Package \`array' to use with LaTeX 2e
+%% Copyright (C) 1989-1998 Frank Mittelbach, all rights reserved.
+\\NeedsTeXFormat{LaTeX2e}[1995/06/01]
+\\providecommand\\DeclareRelease[3]{}
+\\providecommand\\DeclareCurrentRelease[2]{}
+
+\\DeclareRelease{}{2016-10-06}{array-2016-10-06.sty}
+\\DeclareCurrentRelease{}{2019-10-01}
+
+\\ProvidesPackage{array}
+         [2019/08/31 v2.4l Tabular extension package (FMi)]
+%%
+
+\\def\\@addtopreamble#1{\\xdef\\@preamble{\\@preamble #1}}
+\\def\\@testpach{\\@chclass
+ \\ifnum \\@lastchclass=6 \\@ne \\@chnum \\@ne \\else
+  \\ifnum \\@lastchclass=7 5 \\else
+   \\ifnum \\@lastchclass=8 \\tw@ \\else
+    \\ifnum \\@lastchclass=9 \\thr@@
+   \\else \\z@
+   \\ifnum \\@lastchclass = 10 \\else
+   \\edef\\@nextchar{\\expandafter\\string\\@nextchar}%
+   \\@chnum
+   \\if \\@nextchar c\\z@ \\else
+    \\if \\@nextchar l\\@ne \\else
+     \\if \\@nextchar r\\tw@ \\else
+   \\z@ \\@chclass
+   \\if\\@nextchar |\\@ne \\else
+    \\if \\@nextchar !6 \\else
+     \\if \\@nextchar @7 \\else
+      \\if \\@nextchar <8 \\else
+       \\if \\@nextchar >9 \\else
+  10
+  \\@chnum
+  \\if \\@nextchar m\\thr@@\\else
+   \\if \\@nextchar p4 \\else
+    \\if \\@nextchar b5 \\else
+   \\z@ \\@chclass \\z@ \\@preamerr \\z@ \\fi \\fi \\fi \\fi
+   \\fi \\fi  \\fi  \\fi  \\fi  \\fi  \\fi \\fi \\fi \\fi \\fi \\fi}
+\\def\\@xexpast#1*#2#3#4\\@@{%
+   \\@tempcnta #2
+   \\toks@={#1}\\@temptokena={#3}%
+   \\let\\the@toksz\\relax \\let\\the@toks\\relax
+   \\def\\@tempa{\\the@toksz}%
+   \\ifnum\\@tempcnta >0 \\@whilenum\\@tempcnta >0\\do
+     {\\edef\\@tempa{\\@tempa\\the@toks}\\advance \\@tempcnta \\m@ne}%
+       \\let \\@tempb \\@xexpast \\else
+       \\let \\@tempb \\@xexnoop \\fi
+   \\def\\the@toksz{\\the\\toks@}\\def\\the@toks{\\the\\@temptokena}%
+   \\edef\\@tempa{\\@tempa}%
+   \\expandafter \\@tempb \\@tempa #4\\@@}
+\\def\\prepnext@tok{\\advance \\count@ \\@ne
+   \\toks\\count@{}}
+\\def\\save@decl{\\toks\\count@ \\expandafter{\\@nextchar}}
+\\def\\insert@column{%
+   \\the@toks \\the \\@tempcnta
+   \\ignorespaces \\@sharp \\unskip
+   \\the@toks \\the \\count@ \\relax}
+\\newdimen\\col@sep
+\\def\\@acol{\\@addtopreamble{\\hskip\\col@sep}}
+\\def\\@classx{%
+  \\ifcase \\@lastchclass
+  \\@acolampacol \\or
+  \\@addamp \\@acol \\or
+  \\@acolampacol \\or
+  \\or
+  \\@acol \\@firstampfalse \\or
+  \\@addamp
+  \\fi}
+\\def\\@classz{\\@classx
+   \\@tempcnta \\count@
+   \\prepnext@tok
+   \\@addtopreamble{\\ifcase \\@chnum
+      \\hfil
+      \\hskip1sp%
+      \\d@llarbegin
+      \\insert@column
+      \\d@llarend \\do@row@strut \\hfil \\or
+      \\hskip1sp\\d@llarbegin \\insert@column \\d@llarend \\do@row@strut \\hfil \\or
+      \\hfil\\hskip1sp\\d@llarbegin \\insert@column \\d@llarend \\do@row@strut \\or
+    \\setbox\\ar@mcellbox\\vbox
+    \\@startpbox{\\@nextchar}\\insert@column \\@endpbox
+    \\ar@align@mcell
+    \\do@row@strut \\or
+   \\vtop \\@startpbox{\\@nextchar}\\insert@column \\@endpbox\\do@row@strut \\or
+   \\vbox \\@startpbox{\\@nextchar}\\insert@column \\@endpbox\\do@row@strut
+  \\fi}\\prepnext@tok}
+
+\\newbox\\ar@mcellbox
+\\def\\ar@align@mcell{%
+  \\ifdim \\ht\\ar@mcellbox > \\ht\\@arstrutbox
+    \\begingroup
+     \\dimen@\\ht\\ar@mcellbox
+     \\advance\\dimen@-\\ht\\@arstrutbox
+     \\advance\\dimen@\\baselineskip
+     \\lower.5\\dimen@\\box\\ar@mcellbox
+    \\endgroup
+  \\else % assume one line and align at baseline
+    \\box\\ar@mcellbox
+  \\fi}
+
+\\def\\@arrayrule{\\@addtopreamble \\vline}
+\\def\\@classvii{\\ifnum \\@lastchclass = \\thr@@
+   \\@preamerr \\thr@@ \\fi}
+\\def\\@classvi{\\ifcase \\@lastchclass
+      \\@acol \\or
+      \\@addtopreamble{\\hskip \\doublerulesep}\\or
+      \\@acol \\or
+      \\@classvii
+      \\fi}
+\\def\\@classii{\\advance \\count@ \\m@ne
+   \\save@decl\\prepnext@tok}
+\\def\\@classi{\\@classvi
+   \\ifcase \\@chnum \\@arrayrule \\or
+      \\@classv \\fi}
+\\def\\@startpbox#1{\\bgroup
+  \\color@begingroup
+  \\setlength\\hsize{#1}\\@arrayparboxrestore
+   \\everypar{%
+      \\vrule \\@height \\ht\\@arstrutbox \\@width \\z@
+      \\everypar{}}%
+   }
+\\def\\@endpbox{\\@finalstrut\\@arstrutbox \\color@endgroup \\egroup\\hfil}
+\\def\\@array[#1]#2{%
+  \\@tempdima \\ht \\strutbox
+  \\advance \\@tempdima by\\extrarowheight
+  \\setbox \\@arstrutbox \\hbox{\\vrule
+             \\@height \\arraystretch \\@tempdima
+             \\@depth \\arraystretch \\dp \\strutbox
+             \\@width \\z@}%
+  \\begingroup
+  \\@mkpream{#2}%
+  \\xdef\\@preamble{\\noexpand \\ialign \\@halignto
+                  \\bgroup \\@arstrut \\@preamble
+                          \\tabskip \\z@ \\cr}%
+  \\endgroup
+  \\@arrayleft
+  \\if #1t\\vtop \\else \\if#1b\\vbox \\else \\vcenter \\fi \\fi
+  \\bgroup
+  \\let \\@sharp ##\\let \\protect \\relax
+  \\lineskip \\z@
+  \\baselineskip \\z@
+  \\m@th
+  \\let\\\\\\@arraycr \\let\\tabularnewline\\\\\\let\\par\\@empty \\@preamble}
+\\def\\arraybackslash{\\let\\\\\\tabularnewline}
+\\newdimen \\extrarowheight
+\\extrarowheight=0pt
+\\def\\@arstrut{\\unhcopy\\@arstrutbox}
+\\def\\@arraycr{\\relax\\iffalse{\\fi\\ifnum 0=\`}\\fi
+  \\@ifstar \\@xarraycr \\@xarraycr}
+\\def\\@xarraycr{\\@ifnextchar [%
+  \\@argarraycr {\\ifnum 0=\`{}\\fi\\cr}}
+\\def\\@argarraycr[#1]{\\ifnum0=\`{}\\fi\\ifdim #1>\\z@
+  \\expandafter\\@xargarraycr\\else
+  \\expandafter\\@yargarraycr\\fi{#1}}
+\\def\\@xargarraycr#1{\\unskip\\gdef\\do@row@strut
+ {\\@tempdima #1\\advance\\@tempdima \\dp\\@arstrutbox
+   \\vrule \\@depth\\@tempdima \\@width\\z@\\global\\let\\do@row@strut\\relax}%
+ %    \\begin{macrocode}
+   \\ifnum\\@multicnt >\\z@ \\do@row@strut \\fi
+   \\cr}
+\\let\\do@row@strut\\relax
+\\def\\@yargarraycr#1{\\cr\\noalign{\\vskip #1}}
+\\long\\def\\multicolumn#1#2#3{%
+   \\multispan{#1}\\begingroup
+   \\def\\@addamp{\\if@firstamp \\@firstampfalse \\else
+                \\@preamerr 5\\fi}%
+   \\@mkpream{#2}\\@addtopreamble\\@empty
+   \\endgroup
+   \\def\\@sharp{#3}%
+   \\@arstrut \\@preamble
+   \\null
+   \\ignorespaces}
+\\let\\d@llarbegin\\begingroup
+\\let\\d@llarend\\endgroup
+\\def\\array{\\col@sep\\arraycolsep
+  \\def\\d@llarbegin{\$}\\let\\d@llarend\\d@llarbegin\\def\\@halignto{}%
+  \\@tabarray}
+\\def\\tabular{\\def\\@halignto{}\\@tabular}
+\\expandafter\\def\\csname tabular*\\endcsname#1{%
+       \\setlength\\dimen@{#1}%
+       \\edef\\@halignto{to\\the\\dimen@}\\@tabular}
+\\def\\@tabular{%
+  \\leavevmode
+  \\hbox \\bgroup \$\\col@sep\\tabcolsep \\let\\d@llarbegin\\begingroup
+                                    \\let\\d@llarend\\endgroup
+  \\@tabarray}
+\\def\\endtabular{\\endarray \$\\egroup}
+\\expandafter\\let\\csname endtabular*\\endcsname=\\endtabular
+\\let\\@ampacol=\\relax        \\let\\@expast=\\relax
+\\let\\@arrayclassiv=\\relax   \\let\\@arrayclassz=\\relax
+\\let\\@tabclassiv=\\relax     \\let\\@tabclassz=\\relax
+\\let\\@arrayacol=\\relax      \\let\\@tabacol=\\relax
+\\let\\@tabularcr=\\relax      \\let\\@@endpbox=\\relax
+\\let\\@argtabularcr=\\relax   \\let\\@xtabularcr=\\relax
+\\def\\@preamerr#1{\\def\\@tempd{{..} at wrong position: }%
+   \\PackageError{array}{%
+   \\ifcase #1 Illegal pream-token (\\@nextchar): \`c' used\\or %0
+    Missing arg: token ignored\\or                           %1
+    Empty preamble: \`l' used\\or                             %2
+    >\\@tempd token ignored\\or                               %3
+    <\\@tempd changed to !{..}\\or                            %4
+    Only one column-spec. allowed.\\fi}\\@ehc}                %5
+\\def\\newcolumntype#1{%
+  \\edef\\NC@char{\\string#1}%
+  \\@ifundefined{NC@find@\\NC@char}%
+    {\\@tfor\\next:=<>clrmbp@!|\\do
+      {%
+        \\if\\expandafter\\noexpand\\next\\NC@char
+        \\PackageWarning{array}%
+                       {Redefining primitive column \\NC@char}\\fi}%
+     \\NC@list\\expandafter{\\the\\NC@list\\NC@do#1}}%
+    {\\PackageWarning{array}{Column \\NC@char\\space is already defined}}%
+  \\@namedef{NC@find@\\NC@char}##1#1{\\NC@{##1}}%
+  \\@ifnextchar[{\\newcol@{\\NC@char}}{\\newcol@{\\NC@char}[0]}}
+\\def\\newcol@#1[#2]#3{\\expandafter\\@reargdef
+     \\csname NC@rewrite@#1\\endcsname[#2]{\\NC@find#3}}
+\\def\\NC@#1{%
+  \\@temptokena\\expandafter{\\the\\@temptokena#1}\\futurelet\\next\\NC@ifend}
+\\def\\NC@ifend{%
+  \\ifx\\next\\relax
+    \\else\\@tempswatrue\\expandafter\\NC@rewrite\\fi}
+\\def\\NC@do#1{%
+  \\expandafter\\let\\expandafter\\NC@rewrite
+    \\csname NC@rewrite@\\string#1\\endcsname
+  \\expandafter\\let\\expandafter\\NC@find
+    \\csname NC@find@\\string#1\\endcsname
+  \\expandafter\\@temptokena\\expandafter{\\expandafter}%
+        \\expandafter\\NC@find\\the\\@temptokena#1\\relax}
+\\def\\showcols{{\\def\\NC@do##1{\\let\\NC@do\\NC@show}\\the\\NC@list}}
+\\def\\NC@show#1{%
+  \\typeout{Column #1\\expandafter\\expandafter\\expandafter\\NC@strip
+  \\expandafter\\meaning\\csname NC@rewrite@#1\\endcsname\\@@}}
+\\def\\NC@strip#1:#2->#3 #4\\@@{#2 -> #4}
+\\newtoks\\NC@list
+\\newcolumntype{*}[2]{}
+\\long\\@namedef{NC@rewrite@*}#1#2{%
+  \\count@#1\\relax
+  \\loop
+  \\ifnum\\count@>\\z@
+  \\advance\\count@\\m@ne
+  \\@temptokena\\expandafter{\\the\\@temptokena#2}%
+  \\repeat
+  \\NC@find}
+\\let\\@xexpast\\relax
+\\let\\@xexnoop\\relax
+\\def\\save@decl{\\toks \\count@ = \\expandafter\\expandafter\\expandafter
+                  {\\expandafter\\@nextchar\\the\\toks\\count@}}
+\\def\\@mkpream#1{\\gdef\\@preamble{}\\@lastchclass 4 \\@firstamptrue
+   \\let\\@sharp\\relax
+   \\def\\@startpbox##1{\\unexpanded\\expandafter{\\expandafter
+                      \\@startpbox\\expandafter{##1}}}\\let\\@endpbox\\relax
+   \\let\\do@row@strut\\relax
+   \\let\\ar@align@mcell\\relax
+   \\@temptokena{#1}\\@tempswatrue
+   \\@whilesw\\if@tempswa\\fi{\\@tempswafalse\\the\\NC@list}%
+   \\count@\\m@ne
+   \\let\\the@toks\\relax
+   \\prepnext@tok
+   \\expandafter \\@tfor \\expandafter \\@nextchar
+    \\expandafter :\\expandafter =\\the\\@temptokena \\do
+   {\\@testpach
+   \\ifcase \\@chclass \\@classz \\or \\@classi \\or \\@classii
+     \\or \\save@decl \\or \\or \\@classv \\or \\@classvi
+     \\or \\@classvii \\or \\@classviii
+     \\or \\@classx
+     \\or \\@classx \\fi
+   \\@lastchclass\\@chclass}%
+   \\ifcase\\@lastchclass
+   \\@acol \\or
+   \\or
+   \\@acol \\or
+   \\@preamerr \\thr@@ \\or
+   \\@preamerr \\tw@ \\@addtopreamble\\@sharp \\or
+   \\or
+   \\else  \\@preamerr \\@ne \\fi
+   \\def\\the@toks{\\the\\toks}}
+\\let\\@classix\\relax
+\\def\\@classviii{\\ifnum \\@lastchclass >\\z@\\ifnum\\@lastchclass=\\tw@\\else
+      \\@preamerr 4\\@chclass 6 \\@classvi \\fi\\fi}
+\\def\\@classv{\\save@decl
+   \\expandafter\\NC@ecs\\@nextchar\\extracolsep{}\\extracolsep\\@@@
+   \\@addtopreamble{\\d@llarbegin\\the@toks\\the\\count@\\relax\\d@llarend}%
+   \\prepnext@tok}
+\\def\\NC@ecs#1\\extracolsep#2#3\\extracolsep#4\\@@@{\\def\\@tempa{#2}%
+  \\ifx\\@tempa\\@empty\\else\\toks\\count@={#1\\tabskip#2\\relax#3}\\fi}
+\\def\\@tabarray{\\@ifnextchar[{\\@@array}{\\@@array[c]}}
+\\let\\@@array\\@array
+\\def\\endarray{\\crcr \\egroup \\egroup \\@arrayright \\gdef\\@preamble{}}
+\\let\\@arrayleft\\@empty
+\\let\\@arrayright\\@empty
+\\newlength{\\extratabsurround}
+\\setlength{\\extratabsurround}{2pt}
+\\newlength{\\backup@length}
+\\newcommand{\\firsthline}{%
+  \\multicolumn1c{%
+    \\global\\backup@length\\ht\\@arstrutbox
+    \\global\\advance\\backup@length\\dp\\@arstrutbox
+    \\global\\advance\\backup@length\\arrayrulewidth
+     \\raise\\extratabsurround\\copy\\@arstrutbox
+    }\\\\[-\\backup@length]\\hline
+}
+\\newcommand{\\lasthline}{\\hline\\multicolumn1c{%
+    \\global\\backup@length2\\ht\\@arstrutbox
+    \\global\\advance\\backup@length2\\dp\\@arstrutbox
+    \\global\\advance\\backup@length\\arrayrulewidth
+    }\\\\[-\\backup@length]%
+    \\multicolumn1c{%
+       \\lower\\extratabsurround\\copy\\@arstrutbox
+       }%
+}
+\\CheckCommand*\\@xhline{\\ifx\\reserved@a\\hline
+               \\vskip\\doublerulesep
+               \\vskip-\\arrayrulewidth
+             \\fi
+      \\ifnum0=\`{\\fi}}
+\\renewcommand*\\@xhline{\\ifx\\reserved@a\\hline
+               \\vskip\\doublerulesep
+             \\fi
+      \\ifnum0=\`{\\fi}}
+
+\\newsavebox\\ar@cellbox
+\\newcolumntype{w}[2]{%
+  >{\\begin{lrbox}\\ar@cellbox}%
+  c%
+  <{\\end{lrbox}%
+    \\makebox[#2][#1]{\\usebox\\ar@cellbox}}}
+
+\\newcolumntype{W}[2]
+  {>{\\begin{lrbox}\\ar@cellbox}%
+   c%
+   <{\\end{lrbox}%
+   \\let\\hss\\hfil
+   \\makebox[#2][#1]{\\unhbox\\ar@cellbox}}}
+\\endinput
+%%
+%% End of file \`array.sty'.
+` },
+  { format: 26, filename: 'array.sty', content: `
 %%
 %% This is file \`array.sty',
 %% generated with the docstrip utility.
@@ -1788,7 +2177,60 @@ const TEXLIVE_PACKAGES = [
 		and try again.
 		<p><a href="https://tug.org">Return to the main site.</a>
 		` },
+  { format: 26, filename: 'atbegshi-ltx.sty', content: `
+
+		<!DOCTYPE html>
+		<html lang="en">
+		<meta charset="UTF-8">
+		<title>Too Many Requests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+		<meta name="color-scheme" content="light dark">
+		<h1>Too Many Requests</h1>
+		<p>You can only make 10 requests per minute. Please wait a little bit
+		and try again.
+		<p><a href="https://tug.org">Return to the main site.</a>
+		` },
   { format: 27, filename: 'atbegshi.sty', content: `
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- ViewVC :: http://www.viewvc.org/ -->
+<head>
+<title>ViewVC Error</title>
+</head>
+<body>
+<h3>An Error Has Occurred</h3>
+
+ <p>Unknown location: /trunk/Master/texmf-dist/tex/latex/atbegshi/atbegshi.sty</p>
+
+
+ <h4>HTTP Response Status</h4>
+ <p><pre>404 Not Found</pre></p>
+ <hr />
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</body>
+</html>
+` },
+  { format: 26, filename: 'atbegshi.sty', content: `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -1841,7 +2283,166 @@ const TEXLIVE_PACKAGES = [
 		and try again.
 		<p><a href="https://tug.org">Return to the main site.</a>
 		` },
+  { format: 26, filename: 'atveryend.sty', content: `
+
+		<!DOCTYPE html>
+		<html lang="en">
+		<meta charset="UTF-8">
+		<title>Too Many Requests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+		<meta name="color-scheme" content="light dark">
+		<h1>Too Many Requests</h1>
+		<p>You can only make 10 requests per minute. Please wait a little bit
+		and try again.
+		<p><a href="https://tug.org">Return to the main site.</a>
+		` },
   { format: 27, filename: 'auxhook.sty', content: `
+%%
+%% This is file \`auxhook.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% auxhook.dtx  (with options: \`package')
+%% 
+%% This is a generated file.
+%% 
+%% Project: auxhook
+%% Version: 2019-12-17 v1.6
+%% 
+%% Copyright (C)
+%%    2006, 2007, 2009, 2011 Heiko Oberdiek
+%%    2016-2019 Oberdiek Package Support Group
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either
+%% version 1.3c of this license or (at your option) any later
+%% version. This version of this license is in
+%%    https://www.latex-project.org/lppl/lppl-1-3c.txt
+%% and the latest version of this license is in
+%%    https://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of
+%% LaTeX version 2005/12/01 or later.
+%% 
+%% This work has the LPPL maintenance status "maintained".
+%% 
+%% The Current Maintainers of this work are
+%% Heiko Oberdiek and the Oberdiek Package Support Group
+%% https://github.com/ho-tex/auxhook/issues
+%% 
+%% 
+%% This work consists of the main source file auxhook.dtx
+%% and the derived files
+%%    auxhook.sty, auxhook.pdf, auxhook.ins, auxhook.drv.
+%% 
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{auxhook}%
+  [2019-12-17 v1.6 Hooks for auxiliary files (HO)]%
+\\providecommand*{\\@beginmainauxhook}{}
+\\providecommand*{\\@beginpartauxhook}{}
+\\ifx\\AtBeginDocument\\@firstofone
+  \\global\\let\\@beginmainauxhook\\relax
+\\else
+  \\g@addto@macro{\\@beginmainauxhook}{%
+    \\global\\let\\@beginmainauxhook\\relax
+  }%
+\\fi
+\\newcommand{\\AddLineBeginMainAux}[1]{%
+  \\ifx\\@beginmainauxhook\\relax
+    \\if@filesw
+      \\PackageInfo{auxhook}{%
+        \\@backslashchar AddLineBeginMainAux comes a little late,%
+        \\MessageBreak
+        because the main .aux file is already opened%
+      }%
+      \\immediate\\write\\@mainaux{#1}%
+    \\fi
+  \\else
+    \\g@addto@macro\\@beginmainauxhook{%
+      \\immediate\\write\\@mainaux{#1}%
+    }%
+  \\fi
+}
+\\newcommand{\\AddLineBeginPartAux}[1]{%
+  \\g@addto@macro\\@beginpartauxhook{%
+    \\immediate\\write\\@partaux{#1}%
+  }%
+}
+\\newcommand{\\AddLineBeginAux}[1]{%
+  \\AddLineBeginMainAux{#1}%
+  \\AddLineBeginPartAux{#1}%
+}
+\\begingroup
+  \\@ifundefined{beamer@origdocument}{%
+    \\def\\auxhook@document{\\document}%
+  }{%
+    \\def\\auxhook@document{\\beamer@origdocument}%
+  }%
+  \\long\\def\\y#1\\immediate\\write\\@mainaux#2#3\\auxhook@nil{%
+    \\toks@{%
+      #1\\immediate\\write\\@mainaux{#2}%
+      \\@beginmainauxhook
+      #3%
+    }%
+    \\expandafter\\xdef\\auxhook@document{\\the\\toks@}%
+    \\endgroup
+  }%
+  \\long\\def\\x#1\\immediate\\write\\@mainaux#2#3\\auxhook@nil{%
+    \\toks@{#3}%
+    \\edef\\x{\\the\\toks@}%
+    \\ifx\\x\\@empty
+      \\PackageWarningNoLine{auxhook}{%
+        Cannot patch \\expandafter\\string\\auxhook@document,%
+        \\MessageBreak
+        using \\string\\AtBeginDocument\\space instead%
+      }%
+      \\endgroup
+      \\AtBeginDocument{%
+        \\if@filesw
+          \\@beginmainauxhook
+        \\fi
+      }%
+    \\else
+      \\expandafter\\expandafter\\expandafter\\y\\auxhook@document
+          \\auxhook@nil
+    \\fi
+  }%
+\\expandafter\\expandafter\\expandafter\\x\\auxhook@document
+    \\immediate\\write\\@mainaux{}\\auxhook@nil
+\\begingroup
+  \\long\\def\\y#1\\immediate\\write\\@partaux#2#3\\auxhook@nil#4{%
+    \\endgroup
+    \\def#4##1 {%
+      #1\\immediate\\write\\@partaux{#2}%
+      \\@beginpartauxhook
+      #3%
+    }%
+  }%
+  \\long\\def\\x#1\\immediate\\write\\@partaux#2#3\\auxhook@nil#4{%
+    \\toks@{#3}%
+    \\edef\\x{\\the\\toks@}%
+    \\ifx\\x\\@empty
+      \\PackageWarningNoLine{auxhook}{%
+        Cannot patch \\string#4,\\MessageBreak
+        patch dropped%
+      }%
+      \\endgroup
+    \\else
+      \\expandafter\\y#4{##1} \\auxhook@nil#4%
+    \\fi
+  }%
+\\@ifundefined{ReFiCh@org@include}{%
+  \\expandafter\\x\\@include{#1} %
+  \\immediate\\write\\@partaux{}\\auxhook@nil\\@include
+}{%
+  \\expandafter\\x\\ReFiCh@org@include{#1} %
+  \\immediate\\write\\@partaux{}\\auxhook@nil\\ReFiCh@org@include
+}%
+\\endinput
+%%
+%% End of file \`auxhook.sty'.
+` },
+  { format: 26, filename: 'auxhook.sty', content: `
 %%
 %% This is file \`auxhook.sty',
 %% generated with the docstrip utility.
@@ -2027,7 +2628,87 @@ const TEXLIVE_PACKAGES = [
 </body>
 </html>
 ` },
+  { format: 26, filename: 'bigintcalc.sty', content: `
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- ViewVC :: http://www.viewvc.org/ -->
+<head>
+<title>ViewVC Error</title>
+</head>
+<body>
+<h3>An Error Has Occurred</h3>
+
+ <p>Unknown location: /trunk/Master/texmf-dist/tex/latex/bigintcalc/bigintcalc.sty</p>
+
+
+ <h4>HTTP Response Status</h4>
+ <p><pre>404 Not Found</pre></p>
+ <hr />
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</body>
+</html>
+` },
   { format: 27, filename: 'bitset.sty', content: `
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- ViewVC :: http://www.viewvc.org/ -->
+<head>
+<title>ViewVC Error</title>
+</head>
+<body>
+<h3>An Error Has Occurred</h3>
+
+ <p>Unknown location: /trunk/Master/texmf-dist/tex/latex/bitset/bitset.sty</p>
+
+
+ <h4>HTTP Response Status</h4>
+ <p><pre>404 Not Found</pre></p>
+ <hr />
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</body>
+</html>
+` },
+  { format: 26, filename: 'bitset.sty', content: `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -2080,7 +2761,311 @@ const TEXLIVE_PACKAGES = [
 		and try again.
 		<p><a href="https://tug.org">Return to the main site.</a>
 		` },
+  { format: 26, filename: 'bookmark.sty', content: `
+
+		<!DOCTYPE html>
+		<html lang="en">
+		<meta charset="UTF-8">
+		<title>Too Many Requests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+		<meta name="color-scheme" content="light dark">
+		<h1>Too Many Requests</h1>
+		<p>You can only make 10 requests per minute. Please wait a little bit
+		and try again.
+		<p><a href="https://tug.org">Return to the main site.</a>
+		` },
   { format: 27, filename: 'calc.sty', content: `
+%%
+%% This is file \`calc.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% calc.dtx  (with options: \`package')
+%% 
+%% This is a generated file.
+%% 
+%% The source is maintained by the LaTeX Project team and bug
+%% reports for it can be opened at https://latex-project.org/bugs/
+%% (but please observe conditions on bug reports sent to that address!)
+%% 
+%% 
+%% Copyright (C) 1993-2020
+%% The LaTeX3 Project and any individual authors listed elsewhere
+%% in this file.
+%% 
+%% This file was generated from file(s) of the Standard LaTeX \`Tools Bundle'.
+%% --------------------------------------------------------------------------
+%% 
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    https://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%% 
+%% This file may only be distributed together with a copy of the LaTeX
+%% \`Tools Bundle'. You may however distribute the LaTeX \`Tools Bundle'
+%% without such generated files.
+%% 
+%% The list of all files belonging to the LaTeX \`Tools Bundle' is
+%% given in the file \`manifest.txt'.
+%% 
+%% File \`calc.dtx'.
+%% Copyright (C) 1992--1995
+%%          Kresten Krab Thorup and Frank Jensen.
+%% Copyright (C) 1997--2007
+%%          Kresten Krab Thorup, Frank Jensen and the LaTeX3 Project.
+%%
+%% The original authors (fj@hugin.dk and  krab@daimi.aau.dk) have
+%% contributed this package to the LaTeX distribution.
+%% Problems with this package should now be sent using latexbug.tex to
+%% the normal LaTeX bug report address.
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{calc}
+          [2017/05/25 v4.3 Infix arithmetic (KKT,FJ)]
+\\def\\calc@assign@generic#1#2#3#4{\\let\\calc@A#1\\let\\calc@B#2%
+    \\calc@open(#4!%
+    \\global\\calc@A\\calc@B\\endgroup#3\\calc@B}
+\\def\\calc@assign@count{\\calc@assign@generic\\calc@Acount\\calc@Bcount}
+\\def\\calc@assign@dimen{\\calc@assign@generic\\calc@Adimen\\calc@Bdimen}
+\\def\\calc@assign@skip{\\calc@assign@generic\\calc@Askip\\calc@Bskip}
+\\newcount\\calc@Acount   \\newcount\\calc@Bcount
+\\newdimen\\calc@Adimen   \\newdimen\\calc@Bdimen
+\\newskip\\calc@Askip     \\newskip\\calc@Bskip
+\\def\\setcounter#1#2{\\@ifundefined{c@#1}{\\@nocounterr{#1}}%
+   {\\calc@assign@count{\\global\\csname c@#1\\endcsname}{#2}}}
+  \\def\\addtocounter#1#2{\\@ifundefined{c@#1}{\\@nocounterr{#1}}%
+    {\\calc@assign@count{\\global\\advance\\csname c@#1\\endcsname}{#2}}}%
+  \\def\\stepcounter#1{\\@ifundefined {c@#1}%
+    {\\@nocounterr {#1}}%
+    {\\global\\advance\\csname c@#1\\endcsname \\@ne
+    \\begingroup
+      \\let\\@elt\\@stpelt \\csname cl@#1\\endcsname
+    \\endgroup}}%
+\\@ifpackageloaded{amstext}{%
+ \\expandafter\\def\\expandafter\\stepcounter
+    \\expandafter#\\expandafter1\\expandafter{%
+    \\expandafter\\iffirstchoice@\\stepcounter{#1}\\fi
+ }
+ \\expandafter\\def\\expandafter\\addtocounter
+    \\expandafter#\\expandafter1\\expandafter#\\expandafter2\\expandafter{%
+    \\expandafter\\iffirstchoice@\\addtocounter{#1}{#2}\\fi
+ }
+}{}
+\\DeclareRobustCommand\\setlength{\\calc@assign@skip}
+\\DeclareRobustCommand\\addtolength[1]{\\calc@assign@skip{\\advance#1}}
+\\def\\calc@pre@scan#1{%
+  \\expandafter\\@calc@pre@scan\\romannumeral-\`\\a#1}
+\\def\\@calc@pre@scan#1{%
+  \\ifx(#1%
+    \\expandafter\\calc@open
+  \\else
+    \\ifx\\widthof#1%
+      \\expandafter\\expandafter\\expandafter\\calc@textsize
+    \\else
+      \\ifx\\maxof#1%
+        \\expandafter\\expandafter\\expandafter\\expandafter
+        \\expandafter\\expandafter\\expandafter\\calc@maxmin@addsub
+      \\else
+        \\calc@numeric% no \\expandafter needed for this one.
+      \\fi
+    \\fi
+  \\fi
+  #1}
+\\def\\calc@open({\\begingroup\\aftergroup\\calc@initB
+   \\begingroup\\aftergroup\\calc@initB
+   \\calc@pre@scan}
+\\def\\calc@initB{\\calc@B\\calc@A}
+\\def\\calc@numeric{\\afterassignment\\calc@post@scan \\global\\calc@A}
+\\@for\\reserved@a:=widthof,heightof,depthof,totalheightof,maxof,minof\\do
+{\\@ifundefined{\\reserved@a}{}{%
+  \\PackageError{calc}{%
+  The\\space calc\\space package\\space reserves\\space the\\space
+  command\\space name\\space \`\\@backslashchar\\reserved@a'\\MessageBreak
+  but\\space it\\space has\\space already\\space been\\space defined\\space
+  with\\space the\\space meaning\\MessageBreak
+  \`\\expandafter\\meaning\\csname\\reserved@a\\endcsname'.\\MessageBreak
+  This\\space original\\space definition\\space will\\space be\\space lost}%
+  {If\\space you\\space need\\space a\\space command\\space with\\space
+  this\\space definition,\\space you\\space must\\space use\\space a\\space
+  different\\space name.}}%
+}
+\\let\\widthof\\ignorespaces
+\\let\\heightof\\ignorespaces
+\\let\\depthof\\ignorespaces
+\\let\\totalheightof\\ignorespaces
+\\def\\calc@textsize #1#2{%
+  \\begingroup
+    \\let\\widthof\\wd
+    \\let\\heightof\\ht
+    \\let\\depthof\\dp
+    \\def\\totalheightof{\\ht\\dp}%
+    \\expandafter\\@settodim\\expandafter{#1}%
+      {\\global\\calc@A}%
+      {%
+       \\let\\widthof\\ignorespaces
+       \\let\\heightof\\ignorespaces
+       \\let\\depthof\\ignorespaces
+       \\let\\totalheightof\\ignorespaces
+       #2}%
+  \\endgroup
+  \\calc@post@scan}
+\\def\\calc@post@scan#1{%
+ \\expandafter\\@calc@post@scan\\romannumeral-\`\\a#1}
+\\def\\@calc@post@scan#1{%
+  \\ifx#1!\\let\\calc@next\\endgroup \\else
+    \\ifx#1+\\let\\calc@next\\calc@add \\else
+      \\ifx#1-\\let\\calc@next\\calc@subtract \\else
+        \\ifx#1*\\let\\calc@next\\calc@multiplyx \\else
+          \\ifx#1/\\let\\calc@next\\calc@dividex \\else
+            \\ifx#1)\\let\\calc@next\\calc@close \\else
+              \\ifx#1\\relax\\let\\calc@next\\calc@post@scan \\else
+                \\def\\calc@next{\\calc@error#1}%
+              \\fi
+            \\fi
+          \\fi
+        \\fi
+      \\fi
+    \\fi
+  \\fi
+  \\calc@next}
+\\def\\calc@add{\\calc@generic@add\\calc@addAtoB}
+\\def\\calc@subtract{\\calc@generic@add\\calc@subtractAfromB}
+\\def\\calc@generic@add#1{\\endgroup\\global\\calc@A\\calc@B\\endgroup
+   \\begingroup\\aftergroup#1\\begingroup\\aftergroup\\calc@initB
+   \\calc@pre@scan}
+\\def\\calc@addAtoB{\\advance\\calc@B\\calc@A}
+\\def\\calc@subtractAfromB{\\advance\\calc@B-\\calc@A}
+\\ifx\\real\\@undefined\\let\\real\\relax\\fi
+\\ifx\\ratio\\@undefined\\let\\ratio\\relax\\fi
+\\def\\calc@ratio@x{\\ratio}
+\\def\\calc@real@x{\\real}
+\\def\\calc@multiplyx#1{\\def\\calc@tmp{#1}%
+  \\ifx\\calc@tmp\\calc@ratio@x \\let\\calc@next\\calc@ratio@multiply \\else
+    \\ifx\\calc@tmp\\calc@real@x \\let\\calc@next\\calc@real@multiply \\else
+      \\ifx\\maxof#1\\let\\calc@next\\calc@maxmin@multiply \\else
+        \\let\\calc@next\\calc@multiply
+      \\fi
+    \\fi
+  \\fi
+  \\calc@next#1}
+\\def\\calc@dividex#1{\\def\\calc@tmp{#1}%
+  \\ifx\\calc@tmp\\calc@ratio@x \\let\\calc@next\\calc@ratio@divide \\else
+    \\ifx\\calc@tmp\\calc@real@x \\let\\calc@next\\calc@real@divide \\else
+      \\ifx\\maxof#1\\let\\calc@next\\calc@maxmin@divide \\else
+        \\let\\calc@next\\calc@divide
+      \\fi
+    \\fi
+  \\fi
+  \\calc@next#1}
+\\def\\calc@multiply{\\calc@generic@multiply\\calc@multiplyBbyA}
+\\def\\calc@divide{\\calc@generic@multiply\\calc@divideBbyA}
+\\def\\calc@generic@multiply#1{\\endgroup\\begingroup
+   \\let\\calc@A\\calc@Acount \\let\\calc@B\\calc@Bcount
+   \\aftergroup#1\\calc@pre@scan}
+\\def\\calc@multiplyBbyA{\\multiply\\calc@B\\calc@Acount}
+\\def\\calc@divideBbyA{\\divide\\calc@B\\calc@Acount}
+\\def\\calc@close
+   {\\endgroup\\global\\calc@A\\calc@B
+    \\endgroup\\global\\calc@A\\calc@B
+    \\calc@post@scan}
+\\def\\calc@ratio@multiply\\ratio{\\calc@ratio@evaluate}
+\\def\\calc@ratio@divide\\ratio#1#2{\\calc@ratio@evaluate{#2}{#1}}
+\\newcount\\calc@Ccount
+\\let\\calc@numerator=\\calc@Bcount
+\\let\\calc@denominator=\\calc@Ccount
+\\def\\calc@ratio@evaluate#1#2{%
+   \\endgroup\\begingroup
+      \\calc@assign@dimen\\calc@numerator{#1}%
+      \\calc@assign@dimen\\calc@denominator{#2}%
+      \\gdef\\calc@the@ratio{}%
+      \\ifnum\\calc@numerator<0 \\calc@numerator-\\calc@numerator
+         \\gdef\\calc@the@ratio{-}%
+      \\fi
+      \\ifnum\\calc@denominator<0 \\calc@denominator-\\calc@denominator
+         \\xdef\\calc@the@ratio{\\calc@the@ratio-}%
+      \\fi
+      \\calc@Acount\\calc@numerator
+      \\divide\\calc@Acount\\calc@denominator
+      \\xdef\\calc@the@ratio{\\calc@the@ratio\\number\\calc@Acount.}%
+      \\calc@next@digit \\calc@next@digit \\calc@next@digit
+      \\calc@next@digit \\calc@next@digit \\calc@next@digit
+   \\endgroup
+   \\calc@multiply@by@real\\calc@the@ratio
+   \\begingroup
+   \\calc@post@scan}
+\\def\\calc@next@digit{%
+      \\multiply\\calc@Acount\\calc@denominator
+      \\advance\\calc@numerator -\\calc@Acount
+      \\multiply\\calc@numerator 10
+      \\calc@Acount\\calc@numerator
+      \\divide\\calc@Acount\\calc@denominator
+      \\xdef\\calc@the@ratio{\\calc@the@ratio\\number\\calc@Acount}}
+\\def\\calc@multiply@by@real#1{\\calc@Bdimen #1\\calc@B \\calc@B\\calc@Bdimen}
+\\def\\calc@real@multiply\\real#1{\\endgroup
+   \\calc@multiply@by@real{#1}\\begingroup
+   \\calc@post@scan}
+\\def\\calc@real@divide\\real#1{\\calc@ratio@evaluate{1pt}{#1pt}}
+\\let\\maxof\\@@italiccorr
+\\let\\minof\\@@italiccorr
+\\newskip\\calc@Cskip
+\\newif\\ifcalc@count@
+\\def\\calc@maxmin@addsub#1#2#3{\\begingroup
+  \\ifx\\calc@A\\calc@Acount%
+    \\calc@count@true
+  \\else
+    \\calc@count@false
+  \\fi
+  \\calc@maxmin@generic#1{#2}{#3}%
+  \\endgroup
+  \\calc@post@scan
+}
+\\def\\calc@maxmin@generic#1#2#3{%
+  \\begingroup
+    \\ifcalc@count@
+      \\calc@assign@count\\calc@Ccount{#2}%
+      \\calc@assign@count\\calc@Bcount{#3}%
+      \\def\\minof{<}\\def\\maxof{>}%
+      \\global\\calc@A\\ifnum\\calc@Ccount#1\\calc@Bcount
+        \\calc@Ccount\\else\\calc@Bcount\\fi
+    \\else
+      \\calc@assign@skip\\calc@Cskip{#2}%
+      \\calc@assign@skip\\calc@Bskip{#3}%
+      \\def\\minof{<}\\def\\maxof{>}%
+      \\global\\calc@A\\ifdim\\calc@Cskip#1\\calc@Bskip
+        \\calc@Cskip\\else\\calc@Bskip\\fi
+    \\fi
+  \\endgroup
+}
+\\def\\calc@maxmin@divmul#1#2#3#4{%
+  \\endgroup\\begingroup
+  \\calc@count@true
+  \\aftergroup#1%
+  \\calc@maxmin@generic#2{#3}{#4}%
+  \\endgroup\\begingroup
+  \\calc@post@scan
+}
+\\def\\calc@maxmin@multiply{\\calc@maxmin@divmul\\calc@multiplyBbyA}
+\\def\\calc@maxmin@divide  {\\calc@maxmin@divmul\\calc@divideBbyA}
+\\def\\calc@error#1{%
+   \\PackageError{calc}%
+     {\`#1' invalid at this point}%
+     {I expected to see one of: + - * / )}}
+\\def\\@settodim#1#2#3{%
+  \\setbox\\@tempboxa\\hbox{{#3}}%
+  \\dimen@ii=\\z@
+  \\@tf@r\\reserved@a #1\\do{%
+  \\advance\\dimen@ii\\reserved@a\\@tempboxa}%
+  #2=\\dimen@ii
+  \\setbox\\@tempboxa\\box\\voidb@x}
+\\def\\settototalheight{\\@settodim{\\ht\\dp}}
+\\endinput
+%%
+%% End of file \`calc.sty'.
+` },
+  { format: 26, filename: 'calc.sty', content: `
 %%
 %% This is file \`calc.sty',
 %% generated with the docstrip utility.
@@ -2403,7 +3388,1970 @@ const TEXLIVE_PACKAGES = [
 %%
 %% End of file \`courier.sty'.
 ` },
+  { format: 26, filename: 'courier.sty', content: `
+%%
+%% This is file \`courier.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% psfonts.dtx  (with options: \`courier')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from courier.sty.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file psfonts.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+\\ProvidesPackage{courier}%
+[2020/03/25 PSNFSS-v9.3
+(WaS)
+]
+\\renewcommand{\\ttdefault}{pcr}
+\\endinput
+%%
+%% End of file \`courier.sty'.
+` },
   { format: 27, filename: 'enumitem.sty', content: `
+%
+% Copyright (C) 2003-2025 Javier Bezos http://www.texnia.com
+%
+% This file may be distributed and/or modified under the conditions of
+% the MIT License. A version can be found at the end of this file.
+%
+% Repository: https://github.com/jbezos/enumitem
+%
+% Release
+% ~~~~~~~
+
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{enumitem}[2025/02/06 v3.11 Customized lists]
+
+% Notes
+% ~~~~~
+%
+% The tag enit@ is used through the style
+%
+% To do:
+% ~~~~~~
+% - ref*, for adding stuff in the same fashion as label*
+% - labelled descriptions (ie, label, title, body)
+% - A true nextline (far from trivial and perhaps solved with
+%   labelled descriptions).
+% - Improved \\AddEnumerateCounter
+% - Compatibility with interfaces and zref-enumitem
+% - "Pausing" somehow inline boxed text.
+% - \\@enumctr <-> \\@listctr?
+% - Define keys with values
+% - Revise @nobreak
+% - bottomsep
+% - \\SetEnumerateCounter - must define syntax
+% - option verbose
+% - collect sizes in \\SetEnumitemSizes?
+% - series=explicit / resume
+% - package option inlinenew, to define "new" inline lists
+%
+% +=============================+
+% |      EMULATING KEYVAL       |
+% +=============================+
+%
+% "Thanks" to xkeyval, which uses the same macro names as keyval :-(,
+% the latter has to be replicated in full here to ensure it works as
+% intended. The original work is by David Carlisle, under license LPPL.
+% Once the code is here, it could be optimized by adapting it to the
+% specific needs of enumitem (to do).
+
+\\def\\enitkv@setkeys#1#2{%
+  \\def\\enitkv@prefix{enitkv@#1@}%
+  \\let\\@tempc\\relax
+  \\enitkv@do#2,\\relax,}
+
+\\def\\enitkv@do#1,{%
+  \\ifx\\relax#1\\empty\\else
+    \\enitkv@split#1==\\relax
+    \\expandafter\\enitkv@do\\fi}
+
+\\def\\enitkv@split#1=#2=#3\\relax{%
+  \\enitkv@@sp@def\\@tempa{#1}%
+  \\ifx\\@tempa\\@empty\\else
+    \\expandafter\\let\\expandafter\\@tempc
+      \\csname\\enitkv@prefix\\@tempa\\endcsname
+    \\ifx\\@tempc\\relax
+      \\enitkv@errx{\\@tempa\\space undefined}%
+    \\else
+      \\ifx\\@empty#3\\@empty
+        \\enitkv@default
+      \\else
+        \\enitkv@@sp@def\\@tempb{#2}%
+        \\expandafter\\@tempc\\expandafter{\\@tempb}\\relax
+      \\fi
+    \\fi
+  \\fi}
+
+\\def\\enitkv@default{%
+  \\expandafter\\let\\expandafter\\@tempb
+    \\csname\\enitkv@prefix\\@tempa @default\\endcsname
+  \\ifx\\@tempb\\relax
+      \\enitkv@err{No value specified for \\@tempa}%
+  \\else
+    \\@tempb\\relax
+  \\fi}
+
+\\def\\enitkv@errx#1{\\enit@error{#1}\\@ehc}
+
+\\let\\enitkv@err\\enitkv@errx
+
+\\def\\@tempa#1{%
+  \\def\\enitkv@@sp@def##1##2{%
+    \\futurelet\\enitkv@tempa\\enitkv@@sp@d##2\\@nil\\@nil#1\\@nil\\relax##1}%
+  \\def\\enitkv@@sp@d{%
+    \\ifx\\enitkv@tempa\\@sptoken
+      \\expandafter\\enitkv@@sp@b
+    \\else
+      \\expandafter\\enitkv@@sp@b\\expandafter#1%
+    \\fi}%
+  \\def\\enitkv@@sp@b#1##1 \\@nil{\\enitkv@@sp@c##1}}
+
+\\@tempa{ }
+
+\\def\\enitkv@@sp@c#1\\@nil#2\\relax#3{\\enitkv@toks@{#1}\\edef#3{\\the\\enitkv@toks@}}
+
+\\@ifundefined{KV@toks@}
+   {\\newtoks\\enitkv@toks@}
+   {\\let\\enitkv@toks@\\KV@toks@}
+
+\\def\\enitkv@key#1#2{%
+  \\@ifnextchar[%
+    {\\enitkv@def{enumitem#1}{#2}}%
+    {\\@namedef{enitkv@enumitem#1@#2}####1}}
+
+\\def\\enitkv@def#1#2[#3]{%
+  \\@namedef{enitkv@#1@#2@default\\expandafter}\\expandafter
+    {\\csname enitkv@#1@#2\\endcsname{#3}}%
+  \\@namedef{enitkv@#1@#2}##1}
+
+% This ends the code copied from keyval (under LPPL).
+
+% +=============================+
+% |        DEFINITIONS          |
+% +=============================+
+%
+% (1) The package uses a token register very often. To be on the
+%     safe side, instead of \\toks@, etc., a new one is declared.
+% (2) \\enit@inbox is the box storing the items in boxed inline
+%     lists.
+% (3) \\enit@outerparindent is used to save the outer parindent
+%     so that it can be used in the key parindent
+% (4) \\enit@type has three values: 0 = enum, 1 = item, 2 = desc.
+% (5) \\enit@calc stores which dimen is to be computed:
+%     0=labelindent, 1=labelwidth, 2=labelsep, 3=leftmargin,
+%     4=itemindent
+% (6) \\enit@resuming has four values: 0 = none, 1 = series,
+%     2 = resume* series (computed in group enumitem-resume),
+%     3 = resume* list (ie, with no value).
+
+\\chardef  \\enit@iv=4
+\\newlength\\labelindent
+\\newdimen \\enit@outerparindent
+\\newtoks  \\enit@toks
+\\newbox   \\enit@inbox
+
+\\newif\\ifenit@boxmode
+\\newif\\ifenit@sepfrommargin
+\\newif\\ifenit@lblfrommargin
+\\newif\\ifenit@calcwidest
+\\newif\\ifenit@nextline
+\\newif\\ifenit@boxdesc
+
+% An alias (calc-savvy):
+
+\\let\\c@enit@cnt\\@tempcnta
+
+\\def\\enit@meaning{\\expandafter\\strip@prefix\\meaning}
+\\def\\enit@noexcs#1{\\expandafter\\noexpand\\csname#1\\endcsname}
+
+\\long\\def\\enit@afterelse#1\\else#2\\fi{\\fi#1}
+\\long\\def\\enit@afterfi#1\\fi{\\fi#1}
+\\def\\enit@ifunset#1{%
+  \\expandafter\\ifx\\csname#1\\endcsname\\relax
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+  \\fi}
+\\enit@ifunset{ifcsname}%
+  {}%
+  {\\def\\enit@ifunset#1{%
+     \\ifcsname#1\\endcsname
+       \\expandafter\\ifx\\csname#1\\endcsname\\relax
+         \\enit@afterelse\\expandafter\\@firstoftwo
+       \\else
+         \\enit@afterfi\\expandafter\\@secondoftwo
+       \\fi
+     \\else
+       \\expandafter\\@firstoftwo
+     \\fi}}
+
+% Miscellaneous errors
+% ===================
+
+\\def\\enit@error{\\PackageError{enumitem}}
+
+\\def\\enit@checkerror#1#2{%
+  \\enit@error{Unknown value '#2' for key '#1'}%
+      {See the manual for valid values}}
+
+\\def\\enit@itemerror{%
+  \\enit@error{Misplaced \\string\\item}%
+      {Either there is some text before the first\\MessageBreak
+       item or the last item has no text}}
+
+\\def\\enit@noserieserror#1{%
+  \\enit@error{Series '#1' not started}%
+      {You are trying to continue a series\\MessageBreak
+       which has not been started with 'series'}}
+
+\\def\\enit@checkseries#1{%
+  \\ifcase\\enit@resuming
+    \\enit@error{Misplaced key '#1'}%
+      {'series' and 'resume*' must be used\\MessageBreak
+       in the optional argument of lists}%
+  \\fi}
+
+\\def\\enit@checkseries@m{%
+  \\ifcase\\enit@resuming\\else
+    \\enit@error{Incompatible series settings}%
+      {'series' and 'resume*' must not be used\\MessageBreak
+       at the same time}%
+  \\fi}
+
+\\let\\enit@toodeep\\@toodeep
+
+\\def\\@toodeep{%
+  \\ifnum\\@listdepth>\\enit@listdepth\\relax
+    \\enit@toodeep
+  \\else
+    \\count@\\@listdepth
+    \\global\\advance\\@listdepth\\@ne
+    \\enit@ifunset{@list\\romannumeral\\the\\@listdepth}%
+      {\\expandafter\\let
+         \\csname @list\\romannumeral\\the\\@listdepth\\expandafter\\endcsname
+         \\csname @list\\romannumeral\\the\\count@\\endcsname}{}%
+  \\fi}
+  
+% +=============================+
+% |            KEYS             |
+% +=============================+
+%
+% Including code executed by keys.
+%
+% There are 2 keyval groups: enumitem, and enumitem-delayed.
+% The latter is used to make sure a prioritary key is the latest one;
+% eg, ref, so that the ref format set by label is overridden. So, when
+% this key is found in enumitem, nothing is done, except the key/value
+% is moved to enumitem-delayed.
+%
+% A further group (enumitem-resume) catches resume* and series in
+% optional arguments in lists.
+%
+% Vertical spacing
+% ================
+
+\\enitkv@key{}{topsep}{%
+  \\enit@setlength\\topsep{#1}}
+
+\\enitkv@key{}{itemsep}{%
+  \\enit@setlength\\itemsep{#1}}
+
+\\enitkv@key{}{parsep}{%
+  \\enit@setlength\\parsep{#1}}
+
+\\enitkv@key{}{partopsep}{%
+  \\enit@setlength\\partopsep{#1}}
+
+% Horizontal spacing
+% ==================
+%
+% There are 3 cases: *, ! and a value. The latter also
+% cancels widest with the sequence key=* ... key=value
+% \\string is used, just in case some package changes the
+% catcodes.
+
+\\def\\enit@calcset#1#2#3{%
+  \\if\\string*\\string#3%
+    \\enit@calcwidesttrue
+    \\let\\enit@calc#2%
+  \\else\\if\\string!\\string#3%
+    \\enit@calcwidestfalse
+    \\let\\enit@calc#2%
+  \\else
+    \\ifnum\\enit@calc=#2%
+      \\enit@calcwidestfalse
+      \\let\\enit@calc\\z@
+    \\fi
+    \\enit@setlength#1{#3}%
+  \\fi\\fi}
+
+\\def\\enitkv@enumitem@widest#1{%
+  \\ifcase\\enit@type  % enumerate
+    \\expandafter\\let\\csname enit@cw@\\@enumctr\\endcsname\\relax
+    \\@namedef{enit@widest@\\@enumctr}##1{\\enit@format{#1}}%
+  \\else              % itemize / description
+    \\def\\enit@widest@{\\enit@format{#1}}%
+  \\fi}
+
+\\def\\enitkv@enumitem@widest@default{%
+  \\expandafter\\let\\csname enit@cw@\\@enumctr\\endcsname\\relax
+  \\expandafter\\let\\csname enit@widest@\\@enumctr\\endcsname\\relax}
+
+\\enitkv@key{}{widest*}{%
+  \\setcounter{enit@cnt}{#1}%
+  \\expandafter\\edef\\csname enit@cw@\\@enumctr\\endcsname
+    {\\the\\c@enit@cnt}%
+  \\expandafter\\edef\\csname enit@widest@\\@enumctr\\endcsname##1%
+    {##1{\\the\\c@enit@cnt}}}
+
+\\enitkv@key{}{labelindent*}{%
+  \\enit@lblfrommargintrue
+  \\ifnum\\enit@calc=\\z@
+    \\enit@calcwidestfalse
+  \\fi
+  \\enit@setlength\\labelindent{#1}%
+  \\advance\\labelindent\\leftmargin}
+
+\\enitkv@key{}{labelindent}{%
+  \\enit@lblfrommarginfalse
+  \\enit@calcset\\labelindent\\z@{#1}}
+
+\\enitkv@key{}{labelwidth}{%
+  \\enit@calcset\\labelwidth\\@ne{#1}}
+
+\\enitkv@key{}{leftmargin}{%
+  \\edef\\enit@c{\\the\\leftmargin}%
+  \\enit@calcset\\leftmargin\\thr@@{#1}%
+  \\ifenit@lblfrommargin
+    \\advance\\labelindent-\\enit@c\\relax
+    \\advance\\labelindent\\leftmargin
+  \\fi}
+
+\\enitkv@key{}{itemindent}{%
+  \\edef\\enit@c{\\the\\itemindent}%
+  \\enit@calcset\\itemindent\\enit@iv{#1}%
+  \\ifenit@sepfrommargin
+    \\advance\\labelsep-\\enit@c\\relax
+    \\advance\\labelsep\\itemindent
+  \\fi}
+
+\\enitkv@key{}{listparindent}{%
+  \\enit@setlength\\listparindent{#1}}
+
+\\enitkv@key{}{rightmargin}{%
+  \\enit@setlength\\rightmargin{#1}}
+
+% labelsep, from itemindent; labelsep*, from leftmargin
+
+\\enitkv@key{}{labelsep*}{%
+  \\enit@sepfrommargintrue
+  \\ifnum\\enit@calc=\\tw@
+    \\enit@calcwidestfalse
+    \\let\\enit@calc\\z@
+  \\fi
+  \\enit@setlength\\labelsep{#1}%
+  \\advance\\labelsep\\itemindent}
+
+\\enitkv@key{}{labelsep}{%
+  \\enit@sepfrommarginfalse
+  \\enit@calcset\\labelsep\\tw@{#1}}
+
+\\enitkv@key{}{left}{%
+  \\enit@setleft#1..\\@empty..\\@@}
+
+\\def\\enit@setleft#1..#2..#3\\@@{%
+  \\enit@setlength\\labelindent{#1}%
+  \\edef\\enit@a{#3}%
+  \\ifx\\enit@a\\@empty
+    \\enit@calcset\\leftmargin\\thr@@*%
+  \\else
+    \\enit@setlength\\leftmargin{#2}%
+    \\enit@calcset\\labelsep\\tw@*%
+  \\fi}
+
+% Series, resume and start
+% ========================
+
+\\enitkv@key{-resume}{series}{%
+  \\enit@checkseries@m
+  \\let\\enit@resuming\\@ne  %%% TODO - default check also \\Set..Key
+  \\ifcase\\enit@seriesopt
+    \\enit@ifunset{enitkv@enumitem@#1}{}%
+      {\\enit@error
+        {Invalid series name '#1'}%
+        {Do not name a series with an existing key}}%
+  \\else  % series=override
+    \\global\\@namedef{enitkv@enumitem@#1}%    with value
+      {\\enit@error
+        {Key '#1' has been overridden by a series}%
+        {Change the series name and/or deactivate series=override}}%
+    \\global\\@namedef{enitkv@enumitem@#1@default}{}%
+  \\fi
+  \\def\\enit@series{#1}}
+
+\\enitkv@key{}{series}{%
+  \\enit@checkseries{series}}
+
+\\def\\enitkv@enumitem@resume#1{%
+  \\edef\\enit@series{#1}%
+  \\@nameuse{enit@resume@series@#1}\\relax}
+
+\\def\\enitkv@enumitem@resume@default{%
+  \\@nameuse{enit@resume@\\@currenvir}\\relax}
+
+\\@namedef{enitkv@enumitem-resume@resume*}#1{%
+  \\enit@checkseries@m
+  \\let\\enit@resuming\\tw@
+  \\edef\\enit@series{#1}%
+  \\enit@ifunset{enit@resumekeys@series@#1}%
+    {\\enit@noserieserror{#1}}%
+    {\\expandafter\\let\\expandafter\\enit@resumekeys
+         \\csname enit@resumekeys@series@#1\\endcsname}}
+
+\\@namedef{enitkv@enumitem-resume@resume*@default}{%
+  \\let\\enit@resuming\\thr@@
+  \\expandafter\\let\\expandafter\\enit@resumekeys
+    \\csname enit@resumekeys@\\@currenvir\\endcsname
+  \\@nameuse{enit@resume@\\@currenvir}\\relax}
+  
+\\@namedef{enitkv@enumitem-resume@resume*@default}{%
+  \\let\\enit@resuming\\thr@@
+  \\enit@ifunset{enit@resumekeys@\\@currenvir}%
+    {\\PackageWarning{enumitem}{Nothing to resume,}%
+     \\let\\enit@resumekeys\\@empty}
+    {\\let\\enit@resuming\\thr@@
+     \\expandafter\\let\\expandafter\\enit@resumekeys
+       \\csname enit@resumekeys@\\@currenvir\\endcsname
+     \\@nameuse{enit@resume@\\@currenvir}\\relax}}
+
+\\enitkv@key{}{resume*}[]{%
+  \\enit@checkseries{resume*}}
+
+\\newcommand\\restartlist[1]{%
+  \\enit@ifunset{end#1}%
+    {\\enit@error{Undefined list '#1'}%
+      {No list has been defined with that name.}}%
+    {\\expandafter\\let
+     \\csname enit@resume@#1\\endcsname\\@empty}}
+
+\\enitkv@key{}{start}[\\@ne]{%
+  \\setcounter{\\@listctr}{#1}%
+  \\advance\\@nameuse{c@\\@listctr}\\m@ne}
+
+% Penalties
+% =========
+
+\\enitkv@key{}{beginpenalty}{%
+  \\@beginparpenalty#1\\relax}
+
+\\enitkv@key{}{midpenalty}{%
+  \\@itempenalty#1\\relax}
+
+\\enitkv@key{}{endpenalty}{%
+  \\@endparpenalty#1\\relax}
+
+% Font/Format
+% ===========
+
+\\enitkv@key{}{format}{%
+  \\def\\enit@format{#1}}
+
+\\enitkv@key{}{font}{%
+  \\def\\enit@format{#1}}
+
+% Description styles
+% ==================
+
+\\enitkv@key{}{style}[normal]{%
+  \\enit@ifunset{enit@style@#1}%
+    {\\enit@checkerror{style}{#1}}%
+    {\\enit@nextlinefalse
+     \\enit@boxdescfalse
+     \\@nameuse{enit@style@#1}%
+     \\edef\\enit@descstyle{\\enit@noexcs{enit@#1style}}}}
+
+\\def\\enit@style@standard{%
+  \\enit@boxdesctrue
+  \\enit@calcset\\itemindent\\enit@iv!}
+
+\\let\\enit@style@normal\\enit@style@standard
+
+\\def\\enit@style@unboxed{%
+  \\enit@calcset\\itemindent\\enit@iv!}
+
+\\def\\enit@style@sameline{%
+  \\enit@calcset\\labelwidth\\@ne!}
+
+\\def\\enit@style@multiline{%
+  \\enit@align@parleft
+  \\enit@calcset\\labelwidth\\@ne!}
+
+\\def\\enit@style@nextline{%
+  \\enit@nextlinetrue
+  \\enit@calcset\\labelwidth\\@ne!}
+
+% Labels and refs
+% ===============
+
+% Alignment
+% --------
+
+\\enitkv@key{}{align}{%
+  \\enit@ifunset{enit@align@#1}%
+    {\\enit@checkerror{align}{#1}}%
+    {\\csname enit@align@#1\\endcsname}}
+
+% \\nobreak for unboxed label with color. See below.
+
+\\newcommand\\SetLabelAlign[2]{%
+  \\enit@toks{#2}%
+  \\expandafter\\edef\\csname enit@align@#1\\endcsname
+    {\\def\\noexpand\\enit@align####1{\\nobreak\\the\\enit@toks}}}
+
+\\def\\enit@align@right{%
+  \\def\\enit@align##1{\\nobreak\\hss\\llap{##1}}}
+
+\\def\\enit@align@left{%
+  \\def\\enit@align##1{\\nobreak##1\\hfil}}
+
+\\def\\enit@align@parleft{%
+  \\def\\enit@align##1{%
+    \\nobreak
+    \\strut\\smash{\\parbox[t]\\labelwidth{\\raggedright##1}}}}
+
+% \\enit@ref has three possible definitions:
+% (1) \\relax, if there is neither label nor ref (ie, use
+%   LaTeX settings).
+% (2) set ref to @itemlabel, if there is label but not ref
+% (3) set ref to ref, if there is ref (with or without label)
+
+\\enitkv@key{}{label}{%
+  \\expandafter\\def\\@itemlabel{#1}%
+  \\def\\enit@ref{\\expandafter\\enit@reflabel\\@itemlabel\\z@}}
+
+\\enitkv@key{}{label*}{%
+  \\ifnum\\enit@depth=\\@ne
+    \\expandafter\\def\\@itemlabel{#1}%
+  \\else % no level 0
+    \\advance\\enit@depth\\m@ne
+    \\enit@toks{#1}%
+    \\expandafter\\edef\\@itemlabel{%
+      \\enit@noexcs{label\\enit@prevlabel}%
+      \\the\\enit@toks}%
+    \\advance\\enit@depth\\@ne
+  \\fi
+  \\def\\enit@ref{\\expandafter\\enit@reflabel\\@itemlabel\\z@}}
+
+% ref is set by label, except if there is an explicit ref in the same
+% hierarchy level. Explicit refs above the current hierarchy level are
+% overridden by label (besides ref), too. Since an explicit ref has
+% preference, it's delayed.
+
+\\enitkv@key{}{ref}{%
+  \\g@addto@macro\\enit@delayedkeys{,ref=#1}}
+
+\\enitkv@key{-delayed}{ref}{%
+  \\def\\enit@ref{\\enit@reflabel{#1}\\@ne}}
+
+% #2=0 don't "normalize" (ie, already normalized)
+%   =1 "normalize" (in key ref)
+% Used thru \\enit@ref
+
+\\def\\enit@reflabel#1#2{%
+  \\ifnum\\enit@depth=\\@ne\\else % no level 0
+    \\advance\\enit@depth\\@ne
+    \\@namedef{p@\\@enumctr}{}% Don't accumulate labels
+    \\advance\\enit@depth\\m@ne
+  \\fi
+  \\ifcase#2%
+    \\@namedef{the\\@enumctr}{{#1}}%
+  \\else
+    \\enit@normlabel{\\csname the\\@enumctr\\endcsname}{#1}%
+  \\fi}
+
+% \\xxx* in counters (refstar) and widest (calcdef)
+% ------------------------------------------------
+% \\enit@labellist contains a list of
+% \\enit@elt{widest}\\count\\@count\\enit@sc@@count
+% \\enit@elt is either \\enit@getwidth or \\enit@refstar, defined
+% below
+% The current implementation is sub-optimal -- labels are stored in
+% labellist, counters defined again when processing labels, and
+% modifying it is almost impossible.
+
+\\let\\enit@labellist\\@empty
+
+\\newcommand\\AddEnumerateCounter{%
+  \\@ifstar\\enit@addcounter@s\\enit@addcounter}
+
+\\def\\enit@addcounter#1#2#3{%
+  \\enit@toks\\expandafter{%
+    \\enit@labellist
+    \\enit@elt{#3}}%
+  \\edef\\enit@labellist{%
+    \\the\\enit@toks
+    \\enit@noexcs{\\expandafter\\@gobble\\string#1}%
+    \\enit@noexcs{\\expandafter\\@gobble\\string#2}%
+    \\enit@noexcs{enit@sc@\\expandafter\\@gobble\\string#2}}}
+
+\\def\\enit@addcounter@s#1#2#3{%
+  \\enit@addcounter{#1}{#2}%
+    {\\@nameuse{enit@sc@\\expandafter\\@gobble\\string#2}{#3}}}
+
+% The 5 basic counters:
+
+\\AddEnumerateCounter\\arabic\\@arabic{0}
+\\AddEnumerateCounter\\alph\\@alph{m}
+\\AddEnumerateCounter\\Alph\\@Alph{M}
+\\AddEnumerateCounter\\roman\\@roman{viii}
+\\AddEnumerateCounter\\Roman\\@Roman{VIII}
+
+% Inline lists
+% ============
+%
+% Labels
+% ------
+
+\\enitkv@key{}{itemjoin}{%
+  \\def\\enit@itemjoin{#1}}
+
+\\enitkv@key{}{itemjoin*}{%
+  \\def\\enit@itemjoin@s{#1}}
+
+\\enitkv@key{}{afterlabel}{%
+  \\def\\enit@afterlabel{#1}}
+
+% Mode
+% ----
+
+\\enitkv@key{}{mode}{%
+  \\enit@ifunset{enit@mode#1}%
+    {\\enit@checkerror{mode}{#1}}%
+    {\\csname enit@mode#1\\endcsname}}
+
+\\let\\enit@modeboxed\\enit@boxmodetrue
+\\let\\enit@modeunboxed\\enit@boxmodefalse
+
+% Short Labels
+% ============
+
+\\let\\enit@marklist\\@empty
+
+% shorthand, expansion:
+
+\\newcommand\\SetEnumerateShortLabel[2]{%
+  \\let\\enit@a\\@empty
+  \\def\\enit@elt##1##2{%
+    \\def\\enit@b{#1}\\def\\enit@c{##1}%
+    \\ifx\\enit@b\\enit@c\\else
+      \\expandafter\\def\\expandafter\\enit@a\\expandafter{%
+        \\enit@a
+        \\enit@elt{##1}{##2}}%
+    \\fi}%
+  \\enit@marklist
+  \\expandafter\\def\\expandafter\\enit@a\\expandafter{%
+    \\enit@a
+    \\enit@elt{#1}{#2}}%
+  \\let\\enit@marklist\\enit@a}
+
+\\SetEnumerateShortLabel{a}{\\alph*}
+\\SetEnumerateShortLabel{A}{\\Alph*}
+\\SetEnumerateShortLabel{i}{\\roman*}
+\\SetEnumerateShortLabel{I}{\\Roman*}
+\\SetEnumerateShortLabel{1}{\\arabic*}
+
+% This is called \\enit@first one,two,three,\\@nil\\@@nil. If there
+% are just one element #2 is \\@nil, otherwise we have to remove
+% the trailing ,\\@nil with enit@first@x
+% Called with the keys in \\enit@c
+% Returns enit@toks
+
+\\def\\enit@first#1,#2\\@@nil{%
+  \\in@{=}{#1}% Quick test, if contains =, it's key=value
+  \\ifin@\\else
+    \\enitkv@@sp@def\\enit@a{#1}%
+    \\enit@ifunset{enitkv@enumitem@\\enit@meaning\\enit@a}%
+      {\\ifnum\\enit@type=\\z@
+         \\def\\enit@elt{\\enit@replace\\enit@a}%
+         \\enit@marklist % Returns \\enit@toks
+       \\else
+         \\enit@toks{#1}%
+       \\fi
+       \\ifx\\@nil#2%
+         \\ifx,#1,\\else
+           \\edef\\enit@c{label=\\the\\enit@toks}%
+         \\fi
+       \\else
+         \\@temptokena\\expandafter{\\enit@first@x#2}%
+         \\edef\\enit@c{label=\\the\\enit@toks,\\the\\@temptokena}%
+       \\fi}%
+     {}%
+  \\fi
+  \\enit@toks\\expandafter{\\enit@c}}
+
+\\def\\enit@first@x#1,\\@nil{#1}
+
+\\def\\enit@replace#1#2#3{%
+  \\enit@toks{}%
+  \\def\\enit@b##1#2##2\\@@nil{%
+    \\ifx\\@nil##2%
+      \\addto@hook\\enit@toks{##1}%
+    \\else
+      \\edef\\enit@a{\\the\\enit@toks}%
+      \\ifx\\enit@a\\@empty\\else
+        \\enit@error{Extra short label ignored}%
+           {There are more than one short label}%
+      \\fi
+      \\addto@hook\\enit@toks{##1#3}%
+      \\enit@b##2\\@@nil
+    \\fi}%
+  \\expandafter\\enit@b#1#2\\@nil\\@@nil
+  \\edef#1{\\the\\enit@toks}}
+
+% Pre and post code
+% =================
+
+\\enitkv@key{}{before}{%
+  \\def\\enit@before{#1}}
+
+\\enitkv@key{}{before*}{%
+  \\expandafter\\def\\expandafter\\enit@before\\expandafter
+    {\\enit@before#1}}
+
+\\enitkv@key{}{after}{%
+  \\def\\enit@after{#1}}
+
+\\enitkv@key{}{after*}{%
+  \\expandafter\\def\\expandafter\\enit@after\\expandafter
+    {\\enit@after#1}}
+
+\\enitkv@key{}{first}{%
+  \\def\\enit@keyfirst{#1}}
+
+\\enitkv@key{}{first*}{%
+  \\expandafter\\def\\expandafter\\enit@keyfirst\\expandafter
+    {\\enit@keyfirst#1}}
+
+% Miscellaneous keys
+% ================
+
+\\enitkv@key{}{nolistsep}[true]{%
+  \\partopsep=\\z@skip
+  \\topsep=\\z@ plus .1pt
+  \\itemsep=\\z@skip
+  \\parsep=\\z@skip}
+
+\\enitkv@key{}{nosep}[true]{%
+  \\partopsep=\\z@skip
+  \\topsep=\\z@skip
+  \\itemsep=\\z@skip
+  \\parsep=\\z@skip}
+
+\\enitkv@key{}{noitemsep}[true]{%
+  \\itemsep=\\z@skip
+  \\parsep=\\z@skip}
+
+\\enitkv@key{}{wide}[\\parindent]{%
+  \\enit@align@left
+  \\leftmargin\\z@
+  \\labelwidth\\z@
+  \\enit@setlength\\labelindent{#1}%
+  \\listparindent\\labelindent
+  \\enit@calcset\\itemindent\\enit@iv!}
+
+% The following is deprecated in favour of wide:
+
+\\enitkv@key{}{fullwidth}[true]{%
+  \\leftmargin\\z@
+  \\labelwidth\\z@
+  \\def\\enit@align##1{\\hskip\\labelsep##1}}
+
+% "Abstract" layer
+% ================
+%
+% Named values
+% ------------
+
+\\newcommand\\SetEnumitemValue[2]{% Implicit #3
+  \\enit@ifunset{enit@enitkv@#1}%
+    {\\enit@ifunset{enitkv@enumitem@#1}%
+       {\\enit@error{Wrong key '#1' in \\string\\SetEnumitemValue}%
+          {Perhaps you have misspelled it}}{}%
+     \\expandafter\\let\\csname enit@enitkv@#1\\expandafter\\endcsname
+       \\csname enitkv@enumitem@#1\\endcsname}{}%
+  \\@namedef{enitkv@enumitem@#1}##1{%
+    \\def\\enit@a{##1}%
+    \\enit@ifunset{enit@enitkv@#1@\\enit@meaning\\enit@a}%
+      {\\@nameuse{enit@enitkv@#1}{##1}}%
+      {\\@nameuse{enit@enitkv@#1\\expandafter\\expandafter\\expandafter}%
+         \\expandafter\\expandafter\\expandafter
+         {\\csname enit@enitkv@#1@##1\\endcsname}}{}}%
+  \\@namedef{enit@enitkv@#1@#2}}
+
+% Defining keys
+% -------------
+
+\\newcommand\\SetEnumitemKey[2]{%
+  \\enit@ifunset{enitkv@enumitem@#1}%
+    {\\enitkv@key{}{#1}[]{\\enitkv@setkeys{enumitem}{#2}}}%
+    {\\enit@error{Duplicated key '#1' in \\string\\SetEnumitemKey}%
+       {There already exists a key with that name}}}
+
+% +=============================+
+% |       PROCESSING KEYS       |
+% +=============================+
+%
+% Set keys
+% ========
+%
+% Default definition. Modified below with package option 'sizes'.
+
+\\def\\enit@setkeys#1{%
+  \\enit@ifunset{enit@@#1}{}%
+    {\\expandafter\\expandafter\\expandafter
+     \\enit@setkeys@i\\csname enit@@#1\\endcsname\\@@}}
+
+% The following is used directly in resumeset:
+
+\\def\\enit@setkeys@i#1\\@@{%
+  \\let\\enit@delayedkeys\\@empty
+  \\enit@shl{#1}% is either \\enit@toks or returns it
+  \\expandafter\\enit@setkeys@ii\\the\\enit@toks\\@@}
+
+\\def\\enit@setkeys@ii#1\\@@{%
+  \\enitkv@setkeys{enumitem}{#1}%
+  \\enit@toks\\expandafter{\\enit@delayedkeys}%
+  \\edef\\enit@a{%
+    \\noexpand\\enitkv@setkeys{enumitem-delayed}{\\the\\enit@toks}}%
+  \\enit@a}
+
+% Handling * and ! values
+% =======================
+%
+% \\@gobbletwo removes \\c from \\c@counter.
+
+\\def\\enit@getwidth#1#2#3#4{%
+  \\let#4#3%
+  \\def#3##1{%
+    \\enit@ifunset{enit@widest\\expandafter\\@gobbletwo\\string##1}% if no widest=key
+      {#1}%
+      {\\csname enit@widest\\expandafter\\@gobbletwo\\string##1\\endcsname{#4}}}}
+
+\\def\\enit@valueerror#1{\\z@ % if after an assignment, but doesn't catch \\ifnum
+   \\enit@error{No default \\string\\value\\space for '#1'}%
+     {You can provide one with widest*}}%
+
+\\let\\enit@values\\@empty
+
+\\def\\enit@calcwidth{%
+  \\ifenit@calcwidest
+    \\ifcase\\enit@type   % ie, enum
+      \\enit@ifunset{enit@cw@\\@enumctr}%
+        {\\@namedef{enit@cv@\\@enumctr}{\\enit@valueerror\\@enumctr}}%
+        {\\edef\\enit@values{%
+           \\enit@values
+           \\@nameuse{c@\\@enumctr}\\@nameuse{enit@cw@\\@enumctr}\\relax}%
+         \\expandafter
+         \\edef\\csname enit@cv@\\@enumctr\\endcsname
+           {\\@nameuse{c@\\@enumctr}}}%
+      \\begingroup
+        \\enit@values
+        \\def\\value##1{\\csname enit@cv@##1\\endcsname}%
+        \\let\\enit@elt\\enit@getwidth
+        \\enit@labellist
+        \\settowidth\\labelwidth{\\@itemlabel}%
+        \\xdef\\enit@a{\\labelwidth\\the\\labelwidth\\relax}%
+      \\endgroup
+      \\enit@a
+    \\or                 % ie, item
+      \\ifx\\enit@widest@\\relax
+        \\settowidth\\labelwidth{\\@itemlabel}%
+      \\else
+        \\settowidth\\labelwidth{\\enit@widest@}%
+      \\fi
+    \\else               % ie, desc
+      \\ifx\\enit@widest@\\relax
+        \\settowidth\\labelwidth{\\@itemlabel}%
+      \\else
+        \\settowidth\\labelwidth{\\makelabel{\\enit@widest@}}%
+      \\fi
+      \\advance\\labelwidth-\\labelsep
+    \\fi
+  \\fi
+  \\advance\\dimen@-\\labelwidth}
+
+\\def\\enit@calcleft{%
+  \\dimen@\\leftmargin
+  \\advance\\dimen@\\itemindent
+  \\advance\\dimen@-\\labelsep
+  \\advance\\dimen@-\\labelindent
+  \\ifcase\\enit@calc % = 0 = labelindent
+    \\enit@calcwidth
+    \\advance\\labelindent\\dimen@
+  \\or % = 1 = labelwidth, so no \\enit@calcwidth
+    \\labelwidth\\dimen@
+  \\or % = 2 = labelsep
+    \\enit@calcwidth
+    \\advance\\labelsep\\dimen@
+  \\or % = 3 = leftmargin
+    \\enit@calcwidth
+    \\advance\\leftmargin-\\dimen@
+  \\or % = 4 =itemindent
+    \\enit@calcwidth
+    \\advance\\itemindent-\\dimen@
+  \\fi}
+  
+\\def\\enit@negwidth{%
+  \\ifdim\\labelwidth<\\z@
+    \\PackageWarning{enumitem}%
+       {Negative labelwidth. This does not make much\\MessageBreak
+        sense,}%
+  \\fi}
+
+% "Normalizing" labels
+% ====================
+%
+% Replaces \\counter* by \\counter{level} (those in \\enit@labellist).
+%
+% #1 is either \\csname...\\endcsmame or the container \\@itemlabel --
+% hence \\expandafter
+
+\\def\\enit@refstar@i#1#2{%
+  \\if*#2\\@empty
+    \\noexpand#1{\\@enumctr}%
+  \\else
+    \\noexpand#1{#2}%
+  \\fi}%
+  
+% Suggested by @muzimuzhi, amended. See Gh36.
+
+\\def\\enit@refstar@ii#1#2{%
+  \\if*#2\\@empty
+    \\noexpand\\the\\noexpand#1{\\@enumctr}%
+  \\else
+    \\noexpand\\the\\noexpand#1{#2}%
+  \\fi}
+
+\\def\\enit@refstar#1#2#3#4{%
+  \\def#2{\\enit@refstar@i#2}%
+  \\def#3{\\enit@refstar@i#3}}
+
+\\def\\enit@normlabel#1#2{%
+  \\begingroup
+    \\def\\value{\\enit@refstar@ii\\value}%
+    \\let\\enit@elt\\enit@refstar
+    \\enit@labellist
+    % Added braces as \\ref is in the global scope:
+    \\protected@xdef\\enit@a{{#2}}%
+  \\endgroup
+  \\expandafter\\let#1\\enit@a}
+
+% Preliminary settings and default values
+% =======================================
+
+\\def\\enit@prelist#1#2#3{%
+  \\let\\enit@type#1%
+  \\def\\enit@depth{#2}%
+  \\edef\\enit@prevlabel{#3\\romannumeral#2}%
+  \\advance#2\\@ne}
+
+\\newcount\\enit@count@id
+
+\\def\\enit@tagid{%
+  \\global\\advance\\enit@count@id\\@ne
+  \\edef\\EnumitemId{\\number\\enit@count@id}}
+
+\\def\\enit@preset#1#2#3{%
+   \\enit@tagid
+   \\enit@sepfrommarginfalse
+   \\enit@calcwidestfalse
+   \\let\\enit@widest@\\relax
+   \\let\\enit@resuming\\z@
+   \\let\\enit@series\\relax
+   \\enit@boxmodetrue
+   \\def\\enit@itemjoin{ }%
+   \\let\\enit@itemjoin@s\\relax
+   \\let\\enit@afterlabel\\nobreakspace
+   \\let\\enit@before\\@empty
+   \\let\\enit@after\\@empty
+   \\let\\enit@keyfirst\\@empty
+   \\let\\enit@format\\@firstofone % and NOT empty
+   \\let\\enit@ref\\relax
+   \\labelindent\\z@skip
+   \\ifnum\\@listdepth=\\@ne
+     \\enit@outerparindent\\parindent
+   \\else
+     \\parindent\\enit@outerparindent
+   \\fi
+   \\enit@setkeys{list}%
+   \\enit@setkeys{list\\romannumeral\\@listdepth}%
+   \\enit@setkeys{#1}%
+   \\enit@setkeys{#1\\romannumeral#2}%
+   \\enit@setresume{#3}}
+
+% keyval "error" in enumitem-resume: all undefined keys (ie, all
+% except resume*) are ignored, but <series> is treated like
+% resume*=<series>
+
+\\def\\enitkv@err@a#1{%
+   \\enit@ifunset{enit@resumekeys@series@\\@tempa}{}%
+     {\\@nameuse{enitkv@enumitem-resume@resume*\\expandafter}%
+        \\expandafter{\\@tempa}}}
+
+% keyval "error" in the optional argument: all undefined keys are
+% passed to the keyval error, but <series> is ignored (already
+% processed in enumitem-resume)
+
+\\def\\enitkv@err@b#1{%
+   \\enit@ifunset{enit@resumekeys@series@\\@tempa}%
+     {\\enit@savekverr{#1}}%
+     {}}
+
+% Process keys in optional argument:
+
+\\def\\enit@setresume#1{%
+  \\enit@shl{#1}% Returns enit@toks
+  \\edef\\enit@savekeys{\\the\\enit@toks}%
+  \\let\\enit@savekverr\\enitkv@errx
+  \\let\\enitkv@errx\\enitkv@err@a
+  \\edef\\enit@b{%
+    \\noexpand\\enitkv@setkeys{enumitem-resume}{\\the\\enit@toks}}%
+  \\enit@b
+  \\let\\enitkv@errx\\enitkv@err@b
+  \\ifcase\\enit@resuming\\or\\or % = 2, resume* series
+    \\expandafter
+    \\enit@setkeys@i\\enit@resumekeys,resume=\\enit@series\\@@
+  \\or % = 3
+    \\expandafter
+    \\enit@setkeys@i\\enit@resumekeys,resume\\@@
+  \\fi
+  \\expandafter\\enit@setkeys@i\\enit@savekeys\\@@
+  \\let\\enitkv@errx\\enit@savekverr}
+
+% Handling <> syntax for font sizes
+% ================================
+% The following code is based on LaTeX (\\DeclareFontShape). Only the
+% code for <> is preserved (no functions), and a default value can be
+% set before the first <>. In addition, here single values take
+% precedende over ranges. The original work is by the LaTeX Team,
+% under license LPPL.
+
+\\def\\enit@ifnot@nil#1{%
+  \\def\\enit@a{#1}%
+  \\ifx\\enit@a\\@nnil
+    \\expandafter\\@gobble
+  \\else
+    \\expandafter\\@firstofone
+  \\fi}
+
+\\def\\enit@remove@to@nnil#1\\@nnil{}
+\\def\\enit@remove@angles#1>{\\enit@simple@size}
+
+\\def\\enit@simple@size#1<{%
+  \\if<#1<%
+    \\expandafter\\enit@remove@angles
+  \\else
+    \\def\\enit@c{#1}%
+    \\expandafter\\enit@remove@to@nnil
+  \\fi}
+
+\\def\\enit@extractrange#1<#2>{%
+  \\ifx\\enit@c\\relax
+    \\def\\enit@c{#1}%
+  \\fi
+  \\enit@isrange#2->\\@nil#2>}
+
+\\def\\enit@isrange#1-#2\\@nil{%
+   \\if>#2%
+     \\expandafter\\enit@check@single
+   \\else
+     \\expandafter\\enit@check@range
+   \\fi}
+
+\\def\\enit@check@range#1-#2>#3<#4\\@nnil{%
+  \\enit@ifnot@nil{#3}{%
+    \\def\\enit@b{\\enit@extractrange<#4\\@nnil}%
+    \\upper@bound=%
+      \\enit@ifunset{enit@sizefor@#2}{0#2\\p@}{\\@nameuse{enit@sizefor@#2}\\p@}%
+          %%% usar count@
+    \\ifdim\\upper@bound=\\z@ \\upper@bound\\maxdimen \\fi
+    \\ifdim\\f@size\\p@<\\upper@bound
+      \\lower@bound=%
+      \\enit@ifunset{enit@sizefor@#1}{0#1\\p@}{\\@nameuse{enit@sizefor@#1}\\p@}%
+      \\ifdim\\f@size\\p@<\\lower@bound
+      \\else
+         \\enit@simple@size#3<#4\\@nnil
+      \\fi
+    \\fi
+    \\enit@b}}
+
+\\def\\enit@check@single#1>#2<#3\\@nnil{%
+  \\def\\enit@b{\\enit@extractrange<#3\\@nnil}%
+  \\ifdim\\f@size\\p@=
+     \\enit@ifunset{enit@sizefor@#1}{0#1\\p@}{\\@nameuse{enit@sizefor@#1}\\p@}%
+     \\enit@simple@size#2<#3\\@nnil
+     \\let\\enit@d\\enit@c
+  \\fi
+  \\enit@b}
+
+\\def\\enit@try@size@range#1{%
+  \\def\\enit@a{#1}%
+  \\let\\enit@c\\relax  % last in range
+  \\let\\enit@d\\relax  % single
+  \\expandafter\\enit@extractrange\\enit@a <-*>\\@nil<\\@nnil
+  \\ifx\\enit@d\\relax\\else\\let\\enit@c\\enit@d\\fi}
+
+% \\enit@setlength is defined in the options section
+
+% This ends the code adapted from latex (under LPPL).
+
+\\def\\SetEnumitemSize#1#2{%
+  {\\let\\selectfont\\relax
+   #2%
+   \\expandafter\\xdef\\csname enit@sizefor@#1\\endcsname{\\f@size}}}
+
+\\SetEnumitemSize{script}\\scriptsize
+\\SetEnumitemSize{tiny}\\tiny
+\\SetEnumitemSize{footnote}\\footnotesize
+\\SetEnumitemSize{small}\\small
+\\SetEnumitemSize{normal}\\normalsize
+\\SetEnumitemSize{large}\\large
+\\SetEnumitemSize{Large}\\Large
+\\SetEnumitemSize{LARGE}\\LARGE
+\\SetEnumitemSize{huge}\\huge
+\\SetEnumitemSize{Huge}\\Huge
+
+% +=============================+
+% |         LIST TYPES          |
+% +=============================+
+%
+% Displayed lists
+% ===============
+% #1 #2 implicit
+
+\\def\\enit@dylist{%
+  \\enit@align@right
+  \\list}
+
+\\def\\enit@endlist{%
+  \\enit@after
+  \\endlist
+  \\ifx\\enit@series\\relax\\else % discards resume*, too
+    \\ifnum\\enit@resuming=\\@ne % ie, series=
+      \\enit@setresumekeys{series@\\enit@series}\\global\\global
+    \\else % ie, resume=, resume*= (save count, but not keys)
+      \\enit@setresumekeys{series@\\enit@series}\\@gobblefour\\global
+    \\fi
+    \\enit@afterlist
+  \\fi
+  \\ifnum\\enit@resuming=\\thr@@ % ie, resume* list (save count only)
+    \\enit@setresumekeys\\@currenvir\\@gobblefour\\@empty
+  \\else
+    \\enit@setresumekeys\\@currenvir\\@empty\\@empty
+  \\fi
+  \\aftergroup\\enit@afterlist}
+
+% #1 = either \\@currenvir or series@<series>
+% #2(keys) #3(counter) are \\global, \\@gobblefour or \\@empty
+
+\\def\\enit@setresumekeys#1#2#3{%
+  \\enit@toks\\expandafter{\\enit@savekeys}%
+  \\xdef\\enit@afterlist{%
+    #2\\def\\enit@noexcs{enit@resumekeys@#1}{\\the\\enit@toks}%
+    \\ifnum\\enit@type=\\z@ % ie, enum
+      #3\\def\\enit@noexcs{enit@resume@#1}{%
+        \\csname c@\\@listctr\\endcsname
+        \\the\\csname c@\\@listctr\\endcsname}%
+    \\fi}}
+
+% Inline lists
+% ============
+
+% Definition of \\@trivlist inside inline lists.  So, when
+% \\@trivlist is found in any displayed list (including quote,
+% center, verbatim...) the default \\@item is restored.
+
+\\def\\enit@intrivlist{%
+  \\enit@changed@itemfalse
+  \\let\\@item\\enit@outer@item
+  \\let\\par\\@@par
+  \\let\\@trivlist\\enit@outer@triv
+  \\@trivlist}
+
+% Keep track of \\@item and \\item changes
+
+\\newif\\ifenit@changed@item
+\\enit@changed@itemfalse
+
+\\newif\\ifenit@changeditem
+\\enit@changeditemfalse
+
+% List
+% ----
+
+% Arguments, as before:
+% \\enitdp@<name>, <name>, <max-depth>, <format>
+% About @newlist, see @initem.
+
+\\def\\enit@inlist#1#2{%
+  \\ifnum\\@listdepth>\\enit@listdepth\\relax
+    \\@toodeep
+  \\else
+    \\global\\advance\\@listdepth\\@ne
+  \\fi
+  \\let\\enit@align\\@firstofone
+  \\def\\@itemlabel{#1}%
+  \\@nmbrlistfalse
+  \\ifenit@changed@item\\else
+    \\enit@changed@itemtrue
+    \\let\\enit@outer@triv\\@trivlist
+    \\let\\@trivlist\\enit@intrivlist
+    \\@setpar\\@empty
+    \\let\\enit@outer@item\\@item
+  \\fi
+  #2\\relax
+  \\global\\@newlisttrue
+  \\ifenit@boxmode
+    \\ifenit@changeditem\\else
+      \\enit@changeditemtrue
+      \\let\\enit@outeritem\\item
+    \\fi
+    \\let\\@item\\enit@boxitem
+  \\else
+    \\let\\@item\\enit@noboxitem
+    \\ifx\\enit@itemjoin@s\\relax\\else
+      \\PackageWarning{enumitem}%
+         {itemjoin* discarded in mode unboxed\\MessageBreak}%
+    \\fi
+  \\fi
+  \\let\\enit@calcleft\\relax
+  \\let\\enit@afteritem\\relax
+  \\ifenit@boxmode
+    \\global\\setbox\\enit@inbox\\hbox\\bgroup\\color@begingroup
+      \\let\\item\\enit@endinbox
+  \\fi
+  \\ignorespaces}
+
+\\def\\enit@endinlist{%
+  \\ifenit@boxmode
+      \\unskip
+      \\xdef\\enit@afteritem{%
+        \\ifhmode\\spacefactor\\the\\spacefactor\\relax\\fi}%
+      \\color@endgroup
+    \\egroup
+    \\ifdim\\wd\\enit@inbox=\\z@
+      \\enit@itemerror
+    \\else
+      \\ifenit@noinitem\\else
+        \\ifhmode\\unskip\\fi
+        \\enit@ifunset{enit@itemjoin@s}%
+          {\\enit@itemjoin}%
+          {\\enit@itemjoin@s}%
+      \\fi
+      \\unhbox\\@labels
+      \\enit@afterlabel
+      \\unhbox\\enit@inbox
+      \\enit@afteritem
+    \\fi
+  \\else
+    \\unskip
+    \\if@newlist
+      \\enit@itemerror
+    \\fi
+  \\fi
+  \\enit@after
+  \\global\\advance\\@listdepth\\m@ne
+  \\global\\@inlabelfalse
+  \\if@newlist
+    \\global\\@newlistfalse
+    \\@noitemerr
+  \\fi
+  \\ifx\\enit@series\\relax\\else % discards resume* list, too
+    \\ifnum\\enit@resuming=\\@ne % ie, series
+      \\enit@setresumekeys{series@\\enit@series}\\global\\global
+    \\else % ie, resume, resume* (save count, but not keys)
+      \\enit@setresumekeys{series@\\enit@series}\\@gobblefour\\global
+    \\fi
+    \\enit@afterlist
+  \\fi
+  \\ifnum\\enit@resuming=\\thr@@ % ie, resume* list (save count only)
+    \\enit@setresumekeys\\@currenvir\\@gobblefour\\@empty
+  \\else
+    \\enit@setresumekeys\\@currenvir\\@empty\\@empty
+  \\fi
+  \\aftergroup\\enit@afterlist}
+
+% \\@item: unboxed
+% ---------------
+
+\\def\\enit@noboxitem[#1]{%
+  \\if@newlist
+    \\leavevmode % ships pending labels out
+    \\global\\@newlistfalse
+  \\else
+    \\ifhmode
+      \\unskip
+      \\enit@itemjoin
+    \\else
+      \\noindent
+    \\fi
+  \\fi
+  \\if@noitemarg
+    \\@noitemargfalse
+    \\if@nmbrlist
+      \\refstepcounter{\\@listctr}% after \\unskip (hyperref)
+    \\fi
+  \\fi
+  \\mbox{\\makelabel{#1}}%
+  \\enit@afterlabel
+  \\ignorespaces}
+
+% \\@item: boxed
+% ------------
+%
+% We don't want \\item to be executed locally, because it sets a flag
+% (and hyperref adds another flag, too).  So, we redefine it inside
+% the box to \\enit@endinbox which ends the box and then use the actual
+% (outer) \\item.  labels are stored in another box, to detect empty
+% boxes, ie, misplaced \\item's.  Note the 2nd \\item ends collecting
+% the 1st item and ships it out, while the 3rd \\item ends collecting
+% the 2nd item, puts the itemjoin and then ships the 2nd item out.
+% The flag enit@noinitem keeps track of that.
+
+\\newif\\ifenit@noinitem
+
+\\def\\enit@endinbox{%
+    \\unskip
+    \\xdef\\enit@afteritem{%
+      \\ifhmode\\spacefactor\\the\\spacefactor\\relax\\fi}%
+    \\color@endgroup
+  \\egroup
+  \\enit@outeritem}
+
+\\def\\enit@boxitem[#1]{%
+  \\if@newlist
+    \\global\\@newlistfalse
+    \\ifdim\\wd\\enit@inbox>\\z@
+       \\enit@itemerror
+    \\fi
+    \\enit@noinitemtrue
+    \\leavevmode % ships pending labels out
+  \\else
+    \\ifdim\\wd\\enit@inbox=\\z@
+      \\enit@itemerror
+    \\else
+      \\ifenit@noinitem
+        \\enit@noinitemfalse
+      \\else
+        \\ifhmode\\unskip\\fi
+        \\enit@itemjoin
+      \\fi
+      \\unhbox\\@labels
+      \\enit@afterlabel
+      \\unhbox\\enit@inbox
+      \\enit@afteritem
+    \\fi
+  \\fi
+  \\if@noitemarg
+    \\@noitemargfalse
+    \\if@nmbrlist
+      \\refstepcounter{\\@listctr}%
+    \\fi
+  \\fi
+  \\sbox\\@labels{\\makelabel{#1}}%
+  \\let\\enit@afteritem\\relax
+  \\setbox\\enit@inbox\\hbox\\bgroup\\color@begingroup
+    \\let\\item\\enit@endinbox
+    \\hskip1sp % in case the first thing is \\label
+    \\ignorespaces}
+
+% Pause item
+% ----------
+%
+% To do.
+%
+% The three types
+% ===============
+%
+% enumerate and enumerate*
+% ------------------------
+%
+% The following has 4 arguments, which in enumerate are:
+% \\@enumdepth, enum, \\thr@@, <format>.
+% In user defined environments they are:
+% \\enitdp@<name>, <name>, <max-depth>, <format>
+
+\\def\\enit@enumerate{%
+  \\let\\enit@list\\enit@dylist
+  \\enit@enumerate@i}
+
+\\@namedef{enit@enumerate*}{%
+  \\let\\enit@list\\enit@inlist
+  \\enit@enumerate@i}
+
+\\def\\enit@enumerate@i#1#2#3#4{%
+  \\ifnum#1>#3\\relax
+    \\enit@toodeep
+  \\else
+    \\enit@prelist\\z@{#1}{#2}%
+    \\edef\\@enumctr{#2\\romannumeral#1}%
+    \\expandafter
+    \\enit@list
+      \\csname label\\@enumctr\\endcsname
+      {\\usecounter\\@enumctr
+       \\let\\enit@calc\\z@
+       \\def\\makelabel##1{\\enit@align{\\enit@format{##1}}}%
+       \\enit@preset{#2}{#1}{#4}%
+       \\enit@normlabel\\@itemlabel\\@itemlabel
+       \\enit@ref
+       \\enit@calcleft
+       \\enit@before
+       \\enit@negwidth}%
+    \\enit@keyfirst
+  \\fi}
+
+\\let\\enit@endenumerate\\enit@endlist
+\\@namedef{enit@endenumerate*}{\\enit@endinlist}
+
+% itemize and itemize*
+% --------------------
+%
+% The following has 4 arguments, which in itemize are:
+% \\@itemdepth, item, \\thr@@, <format>.
+% In user defined environments they are:
+% \\enitdp@<name>, <name>, <max-depth>, <format>
+
+\\def\\enit@itemize{%
+  \\let\\enit@list\\enit@dylist
+  \\enit@itemize@i}
+
+\\@namedef{enit@itemize*}{%
+  \\let\\enit@list\\enit@inlist
+  \\enit@itemize@i}
+
+\\def\\enit@itemize@i#1#2#3#4{%
+  \\ifnum#1>#3\\relax
+    \\enit@toodeep
+  \\else
+    \\enit@prelist\\@ne{#1}{#2}%
+    \\edef\\@itemitem{label#2\\romannumeral#1}%
+    \\expandafter
+    \\enit@list
+      \\csname\\@itemitem\\endcsname
+       {\\let\\enit@calc\\z@
+        \\def\\makelabel##1{\\enit@align{\\enit@format{##1}}}%
+        \\enit@preset{#2}{#1}{#4}%
+        \\enit@calcleft
+        \\enit@before
+        \\enit@negwidth}%
+    \\enit@keyfirst
+  \\fi}
+
+\\let\\enit@enditemize\\enit@endlist
+\\@namedef{enit@enditemize*}{\\enit@endinlist}
+
+% description and description*
+% ----------------------------
+%
+% Make sure \\descriptionlabel exists:
+
+\\providecommand*\\descriptionlabel[1]{%
+  \\hspace\\labelsep
+  \\normalfont\\bfseries#1}
+
+\\@namedef{enit@description*}{%
+  \\let\\enit@list\\enit@inlist
+  \\enit@description@i}
+
+\\def\\enit@description{%
+  \\let\\enit@list\\enit@dylist
+  \\enit@description@i}
+
+\\def\\enit@description@i#1#2#3#4{%
+  \\ifnum#1>#3\\relax
+    \\enit@toodeep
+  \\else
+    \\enit@list{}%
+      {\\let\\enit@type\\tw@
+       \\advance#1\\@ne
+       \\labelwidth\\z@
+       \\enit@align@left
+       \\let\\makelabel\\descriptionlabel
+       \\enit@style@standard
+       \\enit@preset{#2}{#1}{#4}%
+       \\enit@calcleft
+       \\let\\enit@svlabel\\makelabel
+       \\def\\makelabel##1{%
+         \\labelsep\\z@
+         \\ifenit@boxdesc
+           \\enit@svlabel{\\enit@align{\\enit@format{##1}}}%
+         \\else
+           \\nobreak
+           \\enit@svlabel{\\enit@format{##1}}%
+           \\aftergroup\\enit@postlabel
+         \\fi}%
+       \\enit@before
+       \\enit@negwidth}%
+     \\enit@keyfirst
+  \\fi}
+
+\\let\\enit@enddescription\\enit@endlist
+\\@namedef{enit@enddescription*}{\\enit@endinlist}
+
+% trivlist
+% ========
+
+\\def\\enit@trivlist{%
+  \\let\\enit@type\\tw@
+  \\parsep\\parskip
+  \\csname @list\\romannumeral\\the\\@listdepth\\endcsname
+  \\@nmbrlistfalse
+  \\enit@tagid
+  \\enit@setglobalkeys % ie, list and list<num>
+  \\enit@setkeys{trivlist}%
+  \\enit@setkeys{trivlist\\romannumeral\\@listdepth}%
+  \\@trivlist
+  \\labelwidth\\z@
+  \\leftmargin\\z@
+  \\itemindent\\z@
+  \\let\\@itemlabel\\@empty
+  \\def\\makelabel##1{##1}}
+
+% Description styles
+% ==================
+%
+% the next definition is somewhat tricky because labels are boxed.
+% That's fine when the label is just placed at the beginning of a line
+% of text, but when the box is placed without horizontal material,
+% leading is killed.  So, we need change somehow \\box to \\unhbox, but
+% I don't want to modify \\@item.  The code below presumes \\@item has
+% not been changed and arguments gobble the part setting \\@labels,
+% which is replaced by a new one.
+%
+% The default value in description is itemindent=!, but some styles
+% (those whose item text begin at a fixed place, ie, nextline,
+% multiline and sameline) change it to labelwidth=!.
+%
+% We must be careful with the group and the whatsit added by color to
+% boxes.  Alignment is applied here and some adjustments in skips are
+% necessary to get proper line breaks (including a \\nobreak at the
+% beginning of \\enit@align, ie, after the first whatsit, see above).
+% To "pass" the inner group added by color to the box, \\enit@postlabel
+% checks if the following is }.  ie, \\egroup -- if not, the box has
+% not reached yet its end.
+
+\\def\\enit@postlabel{%
+  \\@ifnextchar\\egroup
+    {\\aftergroup\\enit@postlabel}%
+    {\\enit@postlabel@i}}
+
+\\def\\enit@postlabel@i#1#2#3#4#5{%
+  \\def\\enit@lblpenalty{\\penalty\\z@\\hskip\\skip@}%
+  \\ifenit@nextline
+    \\ifdim\\wd\\@tempboxa>\\labelwidth
+      \\def\\enit@lblpenalty{\\newline\\@nobreaktrue}%
+    \\fi
+  \\fi
+  \\everypar{%
+    \\@minipagefalse
+    \\global\\@newlistfalse
+    \\if@inlabel
+      \\global\\@inlabelfalse
+      {\\setbox\\z@\\lastbox
+       \\ifvoid\\z@
+         \\kern-\\itemindent
+       \\fi}%
+      \\unhbox\\@labels
+      \\skip@\\lastskip % Save last \\labelsep
+      \\unskip % Remove it
+      \\enit@lblpenalty % Restore it, after penalty
+    \\fi
+    \\if@nobreak
+      \\@nobreakfalse
+      \\clubpenalty\\@M
+    \\else
+      \\clubpenalty\\@clubpenalty
+      \\everypar{}%
+    \\fi}%
+  \\def\\enit@a{#1#2#3#4}%
+  \\def\\enit@b{\\global\\setbox\\@labels\\hbox}%
+  \\ifx\\enit@a\\enit@b\\else
+    \\enit@error{Non standard \\string\\item}%
+      {A class or a package has redefined \\string\\item\\MessageBreak
+       and I do not know how to continue}%
+  \\fi
+  \\global\\setbox\\@labels\\hbox{%
+    \\unhbox\\@labels
+    \\hskip\\itemindent
+    \\hskip-\\labelwidth
+    \\hskip-\\labelsep
+    \\ifdim\\wd\\@tempboxa>\\labelwidth
+      \\enit@align{\\unhbox\\@tempboxa}\\unskip % Removes (typically) \\hfil
+    \\else
+      \\leavevmode\\hbox to\\labelwidth{\\enit@align{\\unhbox\\@tempboxa}}%
+    \\fi
+    \\hskip\\labelsep}}
+
+% +=============================+
+% |     (RE)DEFINING LISTS      |
+% +=============================+
+%
+% Set keys/values
+% ===============
+% Remember \\romannumeral0 expands to nothing.
+% #1 = list name, #2 = level, #3 = flag if star, #4 = keys/values
+
+\\let\\enit@keys@sizes\\relax
+
+\\def\\enit@saveset#1#2#3#4{%
+  \\setcounter{enit@cnt}{#2}%
+  \\ifx\\enit@forsize\\@empty
+    \\ifcase#3%
+      \\expandafter
+      \\def\\csname enit@@#1\\romannumeral\\c@enit@cnt\\endcsname{#4}%
+    \\or
+      \\expandafter\\let\\expandafter\\enit@b
+        \\csname enit@@#1\\romannumeral\\c@enit@cnt\\endcsname
+      \\ifx\\enit@b\\relax
+        \\let\\enit@b\\@empty
+      \\fi
+      \\expandafter\\def
+        \\csname enit@@#1\\romannumeral\\c@enit@cnt\\expandafter\\endcsname
+        \\expandafter{\\enit@b,#4}%
+    \\fi
+  \\else
+    \\ifcase#3%
+      \\enit@ifunset{enit@@#1\\romannumeral\\c@enit@cnt}%
+        {\\expandafter\\let
+         \\csname enit@@#1\\romannumeral\\c@enit@cnt\\endcsname\\@empty}%
+        {}%
+      \\expandafter\\let\\expandafter\\enit@b
+        \\csname enit@@#1\\romannumeral\\c@enit@cnt @@sizes\\endcsname
+      \\ifx\\enit@b\\relax
+        \\let\\enit@b\\@empty
+      \\fi
+      \\toks@\\expandafter{\\enit@b}%
+      \\edef\\enit@b{\\the\\toks@\\enit@forsize\\enit@keys@sizes}%
+      \\expandafter\\def
+        \\csname enit@@#1\\romannumeral\\c@enit@cnt @@sizes\\expandafter\\endcsname
+        \\expandafter{\\enit@b{#4}}%
+    \\else
+      \\enit@error{* and \\string<\\string> are not compatible}%
+        {Use either * or angles, but not both.}%
+    \\fi
+  \\fi}
+
+% TODO: more robust tests (catch wrong key names, but not easy)
+
+% Internally, LaTeX uses a short name for enumerate (enum)
+% and itemize (item). To be consistent with this convention,
+% a couple of macros provide a "translation". I'm not very
+% happy with the current implementation.
+
+\\def\\enit@shortenumerate{enum}
+\\def\\enit@shortitemize{item}
+
+\\newcommand\\setlist{%
+  \\@ifstar{\\enit@setlist\\@ne}{\\enit@setlist\\z@}}
+
+\\def\\enit@setlist#1{%
+  \\@ifnextchar<%
+    {\\enit@setlist@q#1}%
+    {\\let\\enit@forsize\\@empty\\enit@setlist@n#1}}
+
+% Default definitions. Modified below with option 'sizes':
+
+\\def\\enit@setlist@q#1<#2>{%
+  \\enit@error
+    {Activate this feature with options 'sizes'}%
+    {Size dependent setting with \\string<\\string> must be\\MessageBreak
+     explicitly activated with the package option 'sizes'}}
+
+\\def\\enit@setlist@n#1{%
+  \\@ifnextchar[{\\enit@setlist@x#1}{\\enit@setlist@i#1\\@empty}}
+
+% Let's accept \\setlist[]*{}, too, because an error in <=3.5.1
+
+\\def\\enit@setlist@x#1[#2]{%
+  \\@ifstar{\\enit@setlist@i\\@ne{#2}}{\\enit@setlist@i#1{#2}}}
+
+% #1 list names/levels, #2 keys/values
+
+% #1 star flag, #2 list names/levels, #3 keys/values
+
+\\def\\enit@setlist@i#1#2#3{%
+  \\let\\enit@eltnames\\relax
+  \\let\\enit@b\\@empty
+  \\let\\enit@eltlevels\\relax
+  \\let\\enit@c\\@empty
+  \\protected@edef\\enit@a{#2}%
+  \\@for\\enit@a:=\\enit@a\\do{% the 2nd enit@a is first expanded
+    \\enit@ifunset{enitdp@\\enit@meaning\\enit@a}%
+      {\\edef\\enit@c{\\enit@c\\enit@eltlevels{\\enit@a}}}%
+      {\\enit@ifunset{enit@short\\enit@meaning\\enit@a}%
+         \\@empty
+         {\\edef\\enit@a{\\@nameuse{enit@short\\enit@a}}}%
+       \\edef\\enit@b{\\enit@b\\enit@eltnames{\\enit@a}}}}%
+  \\ifx\\enit@b\\@empty
+     \\def\\enit@b{\\enit@eltnames{list}}%
+  \\fi
+  \\ifx\\enit@c\\@empty
+     \\def\\enit@c{\\enit@eltlevels{0}}%
+  \\fi
+  \\def\\enit@eltnames##1{%
+    \\def\\enit@a{##1}%
+    \\enit@c}%
+  \\def\\enit@eltlevels##1{%
+    \\enit@saveset\\enit@a{##1}#1{#3}}%
+  \\enit@b}%
+
+% Deprecated:
+
+\\newcommand\\setdisplayed[1][0]{\\setlist[trivlist,#1]}
+\\let\\enitdp@trivlist\\@empty % dummy, let know it exists
+\\newcommand\\setenumerate[1][0]{\\setlist[enumerate,#1]}
+\\newcommand\\setitemize[1][0]{\\setlist[itemize,#1]}
+\\newcommand\\setdescription[1][0]{\\setlist[description,#1]}
+
+% New lists
+% =========
+
+% When defining a list, \\label... and counters must be defined
+% for each level, too:
+
+\\def\\enit@xset@itemize{%
+  \\@namedef{label\\enit@c\\romannumeral\\count@}{%
+    \\enit@error{Undefined label}%
+      {You have defined a list, but labels have
+       not been setup.\\MessageBreak
+       You can set the label field with \\string\\setlist.}}}
+\\@namedef{enit@xset@itemize*}{\\enit@xset@itemize}
+
+\\def\\enit@xset@enumerate{%
+  \\enit@xset@itemize
+  \\enit@ifunset{c@\\enit@c\\romannumeral\\count@}%
+    {\\@definecounter{\\enit@c\\romannumeral\\count@}}{}}
+\\@namedef{enit@xset@enumerate*}{\\enit@xset@enumerate}
+
+\\let\\enit@xset@description\\@empty
+\\@namedef{enit@xset@description*}{\\enit@xset@description}
+
+\\newcommand\\newlist{\\enit@newlist\\newenvironment}
+\\newcommand\\renewlist{\\enit@newlist\\renewenvironment}
+
+% <new/renew>, <name>, <type>, <max-depth>
+
+\\def\\enit@newlist#1#2#3#4{%
+  \\enit@ifunset{enit@xset@#3}%
+    {\\enit@error{Unknown list type '#3')}%
+          {Valid types are:
+           enumerate, itemize, description,\\MessageBreak
+           enumerate*, itemize*, description*}}%
+    {}%
+  \\setcounter{enit@cnt}{#4}%
+  \\count@\\@ne
+  \\enit@ifunset{enit@short#2}%
+    {\\def\\enit@c{#2}}%
+    {\\edef\\enit@c{\\csname enit@short#2\\endcsname}}%
+  \\loop
+    \\@nameuse{enit@xset@#3}% Uses \\enit@c
+    \\ifnum\\count@<\\c@enit@cnt
+    \\advance\\count@\\@ne
+  \\repeat
+  \\enit@ifunset{enitdp@#2}%
+    {\\expandafter\\newcount\\csname enitdp@#2\\endcsname}{}%
+  \\csname enitdp@#2\\endcsname\\z@
+  \\advance\\c@enit@cnt\\m@ne
+  \\edef\\enit@a{%
+    \\noexpand#1{#2}[1][]%
+      {\\enit@noexcs{enit@#3}%
+       \\enit@noexcs{enitdp@#2}%
+       {\\enit@c}%
+       {\\the\\c@enit@cnt}%
+       {####1}}%
+      {\\enit@noexcs{enit@end#3}}}%
+  \\enit@a}
+
+% Changing the default nesting limit
+% ----------------------------------
+
+\\newcommand\\setlistdepth{\\def\\enit@listdepth}
+\\setlistdepth{5}
+
+% +=============================+
+% |       PACKAGE OPTIONS       |
+% +=============================+
+
+\\newif\\ifenit@loadonly
+
+\\DeclareOption{ignoredisplayed}{\\let\\enit@trivlist\\trivlist}
+\\DeclareOption{includedisplayed}{%
+  \\def\\enit@setglobalkeys{%
+    \\enit@setkeys{list}%
+    \\enit@setkeys{list\\romannumeral\\@listdepth}}}
+\\let\\enit@setglobalkeys\\relax
+
+\\DeclareOption{loadonly}{\\enit@loadonlytrue}
+
+\\DeclareOption{shortlabels}
+  {\\def\\enit@shl#1{%
+     \\ifnum\\enit@type=\\tw@
+       \\enit@toks{#1}%
+     \\else
+       \\def\\enit@c{#1}%
+       \\enit@first#1,\\@nil\\@@nil % Returns enit@toks
+    \\fi}}
+
+\\DeclareOption{inline}
+  {\\newenvironment{enumerate*}[1][]%
+     {\\@nameuse{enit@enumerate*}\\enitdp@enumerate{enum}\\thr@@{#1}}
+     {\\@nameuse{enit@endenumerate*}}
+   \\newenvironment{itemize*}[1][]%
+     {\\@nameuse{enit@itemize*}\\enitdp@itemize{item}\\thr@@{#1}}
+     {\\@nameuse{enit@enditemize*}}
+   \\newenvironment{description*}[1][]%
+     {\\@nameuse{enit@description*}\\enitdp@description{description}\\@M{#1}}
+     {\\@nameuse{enit@enddescription*}}}
+
+\\def\\enit@setlength{\\setlength}
+\\DeclareOption{sizes}
+  {\\def\\enit@setlength#1#2{%
+     \\enit@try@size@range{#2}%  Returns \\enit@c
+     \\setlength#1{\\enit@c}}%
+   \\def\\enit@setkeys#1{%
+     \\enit@ifunset{enit@@#1}{}%
+       {\\let\\enit@c\\@empty
+        \\enit@ifunset{enit@@#1@@sizes}{}%
+          {\\expandafter\\let\\expandafter\\enit@a\\csname enit@@#1@@sizes\\endcsname
+           \\expandafter\\enit@try@size@range\\expandafter{\\enit@a}%
+           \\def\\enit@keys@sizes{\\def\\enit@c}%
+           \\enit@c
+           \\let\\enit@keys@sizes\\relax}%
+        \\expandafter\\expandafter\\expandafter
+          \\enit@setkeys@i
+          \\csname enit@@#1\\expandafter\\endcsname
+          \\expandafter,\\enit@c\\@@}}%
+   \\def\\enit@setlist@q#1<#2>{%
+     \\def\\enit@forsize{<#2>}%
+     \\enit@setlist@n#1}}
+
+\\chardef\\enit@seriesopt\\z@
+\\DeclareOption{series=override}{\\chardef\\enit@seriesopt\\tw@}
+
+\\let\\enit@shl\\enit@toks
+
+\\ProcessOptions
+
+\\let\\trivlist\\enit@trivlist
+
+% If there is no loadonly, redefine the basic lists:
+
+\\ifenit@loadonly\\else
+
+\\let\\enitdp@enumerate\\@enumdepth
+\\renewenvironment{enumerate}[1][]
+  {\\enit@enumerate\\enitdp@enumerate{enum}\\thr@@{#1}}
+  {\\enit@endenumerate}
+
+\\let\\enitdp@itemize\\@itemdepth
+\\renewenvironment{itemize}[1][]
+  {\\enit@itemize\\enitdp@itemize{item}\\thr@@{#1}}
+  {\\enit@enditemize}
+
+\\newcount\\enitdp@description
+\\renewenvironment{description}[1][]
+  {\\enit@description\\enitdp@description{description}\\@M{#1}}
+  {\\enit@enddescription}
+
+\\fi
+
+% +=============================+
+% |            TOOLS            |
+% +=============================+
+
+\\def\\enit@drawrule#1#2#3#4{%
+  \\rlap{%
+    \\ifdim#1>0pt\\relax
+      \\vrule width #1 height #2 depth -#3\\relax
+    \\else\\ifdim#1=0pt\\relax
+      %
+    \\else
+      \\hskip#1%
+      \\vrule width -#1 height #2 depth -#4\\relax
+    \\fi\\fi}}
+  
+\\def\\DrawEnumitemLabel{%
+  \\begingroup
+    \\item[]%
+    \\hskip-\\labelsep
+    \\enit@drawrule\\labelsep{4pt}{3pt}{2.3pt}%
+    \\hskip-\\labelwidth
+    \\enit@drawrule\\labelwidth{6pt}{5pt}{4.3pt}%
+    \\hskip\\labelwidth
+    \\hskip\\labelsep
+    %
+    \\hskip-\\itemindent
+    \\enit@drawrule\\itemindent{2pt}{1pt}{.3pt}%
+    \\rlap{\\vrule height 9pt depth .5pt}%
+    \\hskip-\\leftmargin
+    \\rlap{\\vrule height 9pt depth .5pt}%
+    \\enit@drawrule\\labelindent{8pt}{7pt}{6.5pt}%
+    % \\message{\\the\\labelindent/\\the\\labelwidth/\\the\\labelsep/\\the\\itemindent}%
+  \\endgroup} 
+
+% TODO -  option 'verbose'
+
+% +=============================+
+% |        TWO-PASS TOOLS       |
+% +=============================+
+
+% TODO - Not for the moment, because both tools would require to take
+% into account series and resume, which is not simple. Also, are they
+% applied to all lists, by type, by level, by name, etc.? Document how
+% to do it in at least the simplest cases.
+%
+% - reverse counting
+% - automatic widest, based on existing labels.
+
+\\endinput
+
+MIT License
+-----------
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+` },
+  { format: 26, filename: 'enumitem.sty', content: `
 %
 % Copyright (C) 2003-2025 Javier Bezos http://www.texnia.com
 %
@@ -4710,7 +7658,2284 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 %%
 %% End of file \`eso-pic.sty'.
 ` },
+  { format: 26, filename: 'eso-pic.sty', content: `
+%%
+%% This is file \`eso-pic.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% eso-pic.dtx  (with options: \`package')
+%% 
+%% Copyright (C) 1998-2015
+%% Rolf Niepraschk <Rolf.Niepraschk@gmx.de>
+%% 
+%% This file may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in:
+%% 
+%%    http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%% 
+%% This work has the LPPL maintenance status "author-maintained".
+%% 
+\\NeedsTeXFormat{LaTeX2e}[2020/10/01]
+\\ProvidesPackage{eso-pic}
+   [2025/12/10 v3.0d eso-pic (RN)]
+\\providecommand*\\LenToUnit[1]{#1}
+\\newdimen\\ESO@tempdima
+\\newdimen\\ESO@tempdimb
+\\newcommand\\ESO@isMEMOIR[2]{#2}
+\\@ifclassloaded{memoir}{\\renewcommand\\ESO@isMEMOIR[2]{#1}}{}
+\\newcommand\\AtPageUpperLeft[1]{%
+  \\put(0,-\\ESO@yoffsetI){#1}%
+}
+\\newcommand\\AtPageLowerLeft[1]{\\AtPageUpperLeft{%
+  \\put(0,-\\paperheight){#1}}}
+\\newcommand\\AtPageCenter[1]{\\AtPageUpperLeft{%
+  \\put(.5\\paperwidth,-.5\\paperheight){#1}}%
+}
+\\newcommand\\AtStockLowerLeft{}
+\\ESO@isMEMOIR{%
+  \\renewcommand\\AtStockLowerLeft[1]{%
+    \\begingroup
+      \\ESO@tempdima=-\\stockwidth
+      \\advance\\ESO@tempdima\\trimedge
+      \\advance\\ESO@tempdima\\paperwidth
+      \\if@twoside\\ifodd\\c@page\\else
+        \\ESO@tempdima=-\\trimedge
+      \\fi\\fi
+      \\ESO@tempdimb=-\\stockheight
+      \\advance\\ESO@tempdimb\\paperheight
+      \\advance\\ESO@tempdimb\\trimtop
+      \\AtPageLowerLeft{%
+        \\put(\\ESO@tempdima,\\ESO@tempdimb){#1}%
+      }%
+    \\endgroup
+  }
+}{%
+  \\let\\AtStockLowerLeft=\\AtPageLowerLeft
+}
+\\newcommand\\AtStockUpperLeft{}
+\\ESO@isMEMOIR{%
+  \\renewcommand\\AtStockUpperLeft[1]{%
+    \\AtStockLowerLeft{%
+      \\put(0,\\stockheight){#1}%
+    }%
+  }%
+}{%
+  \\let\\AtStockUpperLeft=\\AtPageUpperLeft
+}
+\\newcommand\\AtStockCenter{}
+\\ESO@isMEMOIR{%
+  \\renewcommand\\AtStockCenter[1]{%
+    \\AtStockLowerLeft{%
+      \\put(.5\\stockwidth,.5\\stockheight){#1}%
+    }%
+  }%
+}{%
+  \\let\\AtStockCenter=\\AtPageCenter
+}
+\\ESO@isMEMOIR{%
+  \\newcommand\\AtTextUpperLeft[1]{%
+    \\begingroup
+      \\if@twoside
+        \\ifodd\\c@page
+          \\ESO@tempdima=\\spinemargin
+        \\else
+          \\ESO@tempdima=\\paperwidth
+          \\advance\\ESO@tempdima-\\textwidth
+          \\advance\\ESO@tempdima-\\spinemargin
+        \\fi
+      \\else
+        \\ESO@tempdima=\\spinemargin
+      \\fi
+      \\ESO@tempdimb=-\\uppermargin
+      \\AtPageUpperLeft{%
+        \\put(\\ESO@tempdima,\\ESO@tempdimb){#1}%
+      }%
+    \\endgroup
+  }%
+}{%
+  \\newcommand\\AtTextUpperLeft[1]{%
+    \\begingroup
+      \\ESO@tempdima=1in\\relax
+      \\if@twoside
+        \\ifodd\\c@page
+          \\advance\\ESO@tempdima\\oddsidemargin
+        \\else
+          \\advance\\ESO@tempdima\\evensidemargin
+        \\fi
+      \\else
+        \\advance\\ESO@tempdima\\oddsidemargin
+      \\fi
+      \\ESO@tempdimb=-1in\\relax
+      \\advance\\ESO@tempdimb-\\topmargin
+      \\advance\\ESO@tempdimb-\\headheight
+      \\advance\\ESO@tempdimb-\\headsep
+      \\AtPageUpperLeft{%
+        \\put(\\ESO@tempdima,\\ESO@tempdimb){#1}%
+      }%
+    \\endgroup
+  }
+}
+\\newcommand\\AtTextLowerLeft[1]{\\AtTextUpperLeft{%
+  \\put(0,-\\textheight){#1}}}
+\\newcommand\\AtTextCenter[1]{\\AtTextUpperLeft{%
+  \\put(.5\\textwidth,-.5\\textheight){#1}}}
+\\newcommand{\\ESO@HookIBG}{}
+\\newcommand{\\ESO@HookIIBG}{}
+\\newcommand{\\ESO@HookIIIBG}{}
+\\newcommand{\\ESO@HookIFG}{}
+\\newcommand{\\ESO@HookIIFG}{}
+\\newcommand{\\ESO@HookIIIFG}{}
+\\newcommand{\\ESO@HookI}{}
+\\newcommand{\\ESO@HookII}{}
+\\newcommand{\\ESO@HookIII}{}
+\\let\\ESO@HookI=\\ESO@HookIBG
+\\let\\ESO@HookII=\\ESO@HookIIBG
+\\let\\ESO@HookIII=\\ESO@HookIIIBG
+\\newcommand{\\AddToShipoutPictureBG}{%
+  \\@ifstar{\\g@addto@macro\\ESO@HookIIBG}{\\g@addto@macro\\ESO@HookIBG}}
+\\newcommand{\\AddToShipoutPicture}{}
+\\let\\AddToShipoutPicture=\\AddToShipoutPictureBG
+\\newcommand{\\AddToShipoutPictureFG}{%
+  \\@ifstar{\\g@addto@macro\\ESO@HookIIFG}{\\g@addto@macro\\ESO@HookIFG}}
+\\newcommand{\\ClearShipoutPictureBG}{\\global\\let\\ESO@HookIBG\\@empty}
+\\newcommand{\\ClearShipoutPicture}{}
+\\let\\ClearShipoutPicture=\\ClearShipoutPictureBG
+\\newcommand{\\ClearShipoutPictureFG}{\\global\\let\\ESO@HookIFG\\@empty}
+\\ESO@isMEMOIR{%
+  \\newcommand*\\ESO@MEMOIR@corr{%
+    \\ESO@tempdima=-\\trimedge
+    \\advance\\ESO@tempdima-\\paperwidth
+    \\advance\\ESO@tempdima\\stockwidth
+    \\if@twoside\\ifodd\\c@page\\else
+      \\advance\\ESO@tempdima2\\trimedge
+      \\advance\\ESO@tempdima\\paperwidth
+      \\advance\\ESO@tempdima-\\stockwidth
+    \\fi\\fi
+    \\ESO@tempdimb=\\ESO@yoffsetI
+    \\advance\\ESO@tempdimb-\\trimtop
+  }
+  \\AddToHook{shipout/background}{%
+    \\ESO@MEMOIR@corr
+    \\put(\\ESO@tempdima,\\ESO@tempdimb){%
+      \\ESO@HookIIIBG\\ESO@HookIBG\\ESO@HookIIBG
+      \\global\\let\\ESO@HookIIBG\\@empty
+    }%
+  }%
+  \\AddToHook{shipout/foreground}{%
+    \\ESO@MEMOIR@corr
+    \\put(\\ESO@tempdima,\\ESO@tempdimb){%
+      \\ESO@HookIFG\\ESO@HookIIFG\\ESO@HookIIIFG
+      \\global\\let\\ESO@HookIIFG\\@empty
+    }%
+  }%
+}{%
+  \\AddToHook{shipout/background}{%
+    \\put(0,\\ESO@yoffsetI){%
+      \\ESO@HookIIIBG\\ESO@HookIBG\\ESO@HookIIBG
+      \\global\\let\\ESO@HookIIBG\\@empty
+    }%
+  }%
+  \\AddToHook{shipout/foreground}{%
+    \\put(0,\\ESO@yoffsetI){%
+      \\ESO@HookIFG\\ESO@HookIIFG\\ESO@HookIIIFG
+      \\global\\let\\ESO@HookIIFG\\@empty
+    }%
+  }%
+}
+\\RequirePackage{keyval}
+\\newif\\ifESO@dvips\\ESO@dvipsfalse \\newif\\ifESO@grid\\ESO@gridfalse
+\\newif\\ifESO@texcoord\\ESO@texcoordfalse \\newif\\ifESO@gridBG\\ESO@gridBGfalse
+\\newcommand*\\ESO@gridunitname{}
+\\newcommand*\\ESO@gridunit{}
+\\newcommand*\\ESO@labelfactor{}
+\\newcommand*\\ESO@griddelta{}\\newcommand*\\ESO@griddeltaY{}
+\\newcommand*\\ESO@gridDelta{}\\newcommand*\\ESO@gridDeltaY{}
+\\newcommand*\\ESO@gridcolor{}
+\\newcommand*\\ESO@subgridcolor{}
+\\newcommand*\\ESO@subgridstyle{dotted}% ???
+\\newcommand*\\ESO@gap{}
+\\newcommand*\\ESO@yoffsetI{}\\newcommand*\\ESO@yoffsetII{}
+\\newcommand*\\ESO@gridlines{\\thinlines}
+\\newcommand*\\ESO@subgridlines{\\thinlines}
+\\newcommand*\\ESO@hline[1]{\\ESO@subgridlines\\line(1,0){#1}}
+\\newcommand*\\ESO@vline[1]{\\ESO@subgridlines\\line(0,1){#1}}
+\\newcommand*\\ESO@Hline[1]{\\ESO@gridlines\\line(1,0){#1}}
+\\newcommand*\\ESO@Vline[1]{\\ESO@gridlines\\line(0,1){#1}}
+\\newcommand\\ESO@fcolorbox[3]{\\fbox{#3}}
+\\newcommand\\ESO@color[1]{}
+\\newcommand\\ESO@colorbox[2]{%
+  \\begingroup
+    \\fboxrule=\\z@\\fbox{#2}%
+  \\endgroup
+}
+\\newcommand\\gridSetup[6][]{%
+  \\edef\\ESO@gridunitname{#1}\\edef\\ESO@gridunit{#2}
+  \\edef\\ESO@labelfactor{#3}\\edef\\ESO@griddelta{#4}
+  \\edef\\ESO@gridDelta{#5}\\edef\\ESO@gap{#6}}
+\\define@key{ESO}{texcoord}[true]{\\csname ESO@texcoord#1\\endcsname}
+\\define@key{ESO}{pscoord}[true]{\\csname @tempswa#1\\endcsname
+  \\if@tempswa\\ESO@texcoordfalse\\else\\ESO@texcoordtrue\\fi}
+\\define@key{ESO}{dvips}[true]{\\csname ESO@dvips#1\\endcsname}
+\\define@key{ESO}{grid}[true]{\\csname ESO@grid#1\\endcsname
+  \\setkeys{ESO}{gridcolor=black,subgridcolor=black}}
+\\define@key{ESO}{gridBG}[true]{\\csname ESO@gridBG#1\\endcsname}
+\\define@key{ESO}{colorgrid}[true]{\\csname ESO@grid#1\\endcsname
+  \\setkeys{ESO}{gridcolor=red,subgridcolor=green}}
+\\define@key{ESO}{gridcolor}{\\def\\ESO@gridcolor{#1}}
+\\define@key{ESO}{subgridcolor}{\\def\\ESO@subgridcolor{#1}}
+\\define@key{ESO}{subgridstyle}{\\def\\ESO@subgridstyle{#1}}%
+\\define@key{ESO}{gridunit}{%
+  \\def\\@tempa{#1}
+  \\def\\@tempb{bp}
+  \\ifx\\@tempa\\@tempb
+    \\gridSetup[\\@tempa]{1bp}{1}{10}{50}{2}
+  \\else
+    \\def\\@tempb{pt}
+    \\ifx\\@tempa\\@tempb
+      \\gridSetup[\\@tempa]{\\p@}{1}{10}{50}{2}
+    \\else
+      \\def\\@tempb{in}
+      \\ifx\\@tempa\\@tempb
+        \\gridSetup[\\@tempa]{.1in}{.1}{2}{10}{.5}
+      \\else
+        \\gridSetup[mm]{1mm}{1}{5}{20}{1}
+      \\fi
+    \\fi
+  \\fi
+}
+\\setkeys{ESO}{subgridstyle=solid,pscoord=true,gridunit=mm}
+\\providecommand*\\@classoptionslist{}
+\\def\\ProcessOptionsWithKV#1{%
+  \\let\\@tempc\\@empty
+  \\@for\\CurrentOption:=\\@classoptionslist\\do{%
+    \\@ifundefined{KV@#1@\\CurrentOption}%
+    {}{\\edef\\@tempc{\\@tempc,\\CurrentOption,}}}%
+  \\edef\\@tempc{%
+    \\noexpand\\setkeys{#1}{\\@tempc\\@ptionlist{\\@currname.\\@currext}}}%
+  \\@tempc
+  \\AtEndOfPackage{\\let\\@unprocessedoptions\\relax}}%
+\\ProcessOptionsWithKV{ESO}%
+\\newcommand\\ESO@div[2]{%
+  \\ESO@tempdima=#1\\relax\\ESO@tempdimb=\\ESO@gridunit\\relax
+  \\ESO@tempdimb=#2\\ESO@tempdimb\\divide\\ESO@tempdima by \\ESO@tempdimb
+  \\@tempcnta\\ESO@tempdima\\advance\\@tempcnta\\@ne}
+\\@ifundefined{colorbox}{%
+  \\IfFileExists{xcolor.sty}{\\RequirePackage{xcolor}}%
+    {\\RequirePackage{color}}%
+}{}%
+\\let\\ESO@color=\\color
+\\renewcommand\\ESO@colorbox[2]{%
+  \\begingroup
+    \\fboxsep=.4ex %
+    \\colorbox{#1}{#2}%
+  \\endgroup
+}
+\\renewcommand\\ESO@fcolorbox[3]{%
+  \\begingroup
+    \\fboxsep=.5ex %
+    \\fcolorbox{#1}{#2}{#3}%
+  \\endgroup
+}
+\\AtBeginDocument{%
+  \\ESO@dvipsfalse
+  \\@ifundefined{Gin@driver}{}%
+  {%
+    \\ifx\\Gin@driver\\@empty\\else%
+      \\filename@parse{\\Gin@driver}\\def\\reserved@a{dvips}%
+      \\ifx\\filename@base\\reserved@a\\ESO@dvipstrue\\fi
+    \\fi
+  }%
+  \\ifESO@dvips\\def\\@tempb{eepic}\\else\\def\\@tempb{epic}\\fi
+  \\def\\@tempa{dotted}%\\def\\ESO@gap{6\\@wholewidth}%
+  \\ifx\\@tempa\\ESO@subgridstyle
+    \\IfFileExists{\\@tempb.sty}%
+    {%
+      \\RequirePackage{\\@tempb}
+      \\renewcommand*\\ESO@hline[1]{\\ESO@subgridlines\\dottedline{\\ESO@gap}%
+        (0,0)(##1,0)}
+      \\renewcommand*\\ESO@vline[1]{\\ESO@subgridlines\\dottedline{\\ESO@gap}%
+        (0,0)(0,##1)}
+    }{}
+  \\else
+    \\ifx\\ESO@gridcolor\\ESO@subgridcolor
+      \\renewcommand*\\ESO@gridlines{\\thicklines}
+    \\fi
+  \\fi
+  \\ifESO@texcoord
+    \\def\\ESO@yoffsetI{\\z@}\\def\\ESO@yoffsetII{-\\paperheight}
+    \\edef\\ESO@griddeltaY{-\\ESO@griddelta}\\edef\\ESO@gridDeltaY{-\\ESO@gridDelta}
+  \\else
+    \\def\\ESO@yoffsetI{-\\paperheight}\\def\\ESO@yoffsetII{\\z@}
+    \\edef\\ESO@griddeltaY{\\ESO@griddelta}\\edef\\ESO@gridDeltaY{\\ESO@gridDelta}
+  \\fi
+}
+\\newcommand\\ESO@gridpicture{%
+  \\begingroup
+    \\setlength\\unitlength{\\ESO@gridunit}%
+    \\ESO@color{\\ESO@subgridcolor}%
+    \\ESO@div{\\paperheight}{\\ESO@griddelta}%
+    \\multiput(0,0)(0,\\ESO@griddeltaY){\\@tempcnta}%
+      {\\ESO@hline{\\paperwidth}}%
+    \\ESO@div{\\paperwidth}{\\ESO@griddelta}%
+    \\multiput(0,\\ESO@yoffsetII)(\\ESO@griddelta,0){\\@tempcnta}%
+      {\\ESO@vline{\\paperheight}}%
+    \\ESO@color{\\ESO@gridcolor}%
+    \\ESO@div{\\paperheight}{\\ESO@gridDelta}%
+    \\multiput(0,0)(0,\\ESO@gridDeltaY){\\@tempcnta}%
+      {\\ESO@Hline{\\paperwidth}}%
+    \\ESO@div{\\paperwidth}{\\ESO@gridDelta}%
+    \\multiput(0,\\ESO@yoffsetII)(\\ESO@gridDelta,0){\\@tempcnta}%
+      {\\ESO@Vline{\\paperheight}}%
+    \\fontsize{10}{12}\\normalfont%
+    \\ESO@div{\\paperwidth}{\\ESO@gridDelta}%
+    \\multiput(0,\\ESO@gridDeltaY)(\\ESO@gridDelta,0){\\@tempcnta}{%
+      \\@tempcntb=\\@tempcnta\\advance\\@tempcntb-\\@multicnt
+      \\ifnum\\@tempcntb>1\\relax
+        \\multiply\\@tempcntb by \\ESO@gridDelta\\relax
+        \\ESO@tempdima=\\@tempcntb sp\\ESO@tempdima=\\ESO@labelfactor\\ESO@tempdima
+        \\@tempcntb=\\ESO@tempdima%
+        \\makebox(0,0)[c]{\\ESO@colorbox{white}{\\the\\@tempcntb}}%
+      \\fi}%
+    \\ifx\\ESO@gridunitname\\@empty\\def\\@tempa{0}\\else\\def\\@tempa{1}\\fi
+    \\ESO@div{\\paperheight}{\\ESO@gridDelta}%
+    \\multiput(\\ESO@gridDelta,0)(0,\\ESO@gridDeltaY){\\@tempcnta}{%
+      \\@tempcntb=\\@tempcnta\\advance\\@tempcntb-\\@multicnt%
+      \\ifnum\\@tempcntb>\\@tempa\\relax
+        \\multiply\\@tempcntb by \\ESO@gridDelta\\relax%
+        \\ESO@tempdima=\\@tempcntb sp\\ESO@tempdima=\\ESO@labelfactor\\ESO@tempdima
+        \\@tempcntb=\\ESO@tempdima
+        \\makebox(0,0)[c]{\\ESO@colorbox{white}{\\the\\@tempcntb}}%
+      \\fi
+    }%
+    \\ifx\\ESO@gridunitname\\@empty\\else
+      \\thicklines\\fboxrule=\\@wholewidth
+      \\put(\\ESO@gridDelta,\\ESO@gridDeltaY){\\makebox(0,0)[c]{%
+        \\ESO@fcolorbox{\\ESO@gridcolor}{white}{%
+          \\textbf{\\ESO@gridunitname}}}}%
+    \\fi
+    \\normalcolor%
+  \\endgroup
+}
+\\ifESO@grid
+  \\ifESO@gridBG
+    \\g@addto@macro\\ESO@HookIIIBG{\\ESO@gridpicture}%
+  \\else
+    \\g@addto@macro\\ESO@HookIIIFG{\\ESO@gridpicture}%
+  \\fi
+\\fi
+\\endinput
+%%
+%% End of file \`eso-pic.sty'.
+` },
   { format: 27, filename: 'etoolbox.sty', content: `
+% Copyright (c) 2007-2011 Philipp Lehman.
+%           (c) 2015-2020 Joseph Wright
+%
+% Permission is granted to copy, distribute and/or modify this
+% software under the terms of the LaTeX Project Public License
+% (LPPL), version 1.3c or any later version.
+%
+% This software is provided 'as is', without warranty of any kind,
+% either expressed or implied, including, but not limited to, the
+% implied warranties of merchantability and fitness for a
+% particular purpose.
+
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{etoolbox}
+  [2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)]
+
+\\begingroup
+\\@ifundefined{eTeXversion}
+  {\\PackageError{etoolbox}
+     {Not running under e-TeX}
+     {This package requires e-TeX. Try compiling the document
+      with\\MessageBreak 'elatex' instead of 'latex'. When using
+      pdfTeX, try 'pdfelatex'\\MessageBreak instead of 'pdflatex'.
+      This is a fatal error. I'm aborting now.}%
+   \\aftergroup\\endinput}
+  {}
+\\endgroup
+
+\\ifdefined\\extrafloats
+  \\expandafter\\@gobble
+\\else
+  \\expandafter\\@firstofone
+\\fi
+  {\\RequirePackage{etex}}
+
+\\def\\etb@catcodes{\\do\\&\\do\\|\\do\\:\\do\\-\\do\\=\\do\\<\\do\\>}
+\\def\\do#1{\\catcode\\number\`#1=\\the\\catcode\`#1\\relax}
+\\edef\\etb@catcodes{\\etb@catcodes}
+\\let\\do\\noexpand
+\\AtEndOfPackage{\\etb@catcodes\\undef\\etb@catcodes}
+
+\\catcode\`\\&=3
+\\catcode\`\\|=3
+\\@makeother\\:
+\\@makeother\\-
+\\@makeother\\=
+\\@makeother\\<
+\\@makeother\\>
+
+\\protected\\def\\etb@error{\\PackageError{etoolbox}}
+\\protected\\def\\etb@warning{\\PackageWarning{etoolbox}}
+\\protected\\def\\etb@info{\\PackageInfo{etoolbox}}
+\\newcount\\etb@tempcnta
+
+% {<cstoken>}[<arguments>][<optarg default>]{<definition>}
+
+\\newcommand*{\\newrobustcmd}{}
+\\protected\\def\\newrobustcmd{\\@star@or@long\\etb@new@command}
+
+\\def\\etb@new@command#1{\\@testopt{\\etb@newcommand#1}0}
+
+\\def\\etb@newcommand#1[#2]{%
+  \\@ifnextchar[%]
+    {\\etb@xargdef#1[#2]}
+    {\\let\\pr@tectedrel@x\\protected
+     \\ifx\\l@ngrel@x\\relax
+       \\let\\l@ngrel@x\\protected
+     \\else
+       \\protected\\def\\l@ngrel@x{\\protected\\long}%
+     \\fi
+     \\@argdef#1[#2]}}
+
+\\long\\def\\etb@xargdef#1[#2][#3]#4{%
+  \\@ifdefinable#1{%
+    \\expandafter\\protected
+    \\expandafter\\def
+    \\expandafter#1%
+    \\expandafter{%
+      \\expandafter\\@testopt
+      \\csname\\string#1\\endcsname{#3}}%
+    \\expandafter\\@yargdef\\csname\\string#1\\endcsname\\tw@{#2}{#4}}}
+
+% {<cstoken>}[<arguments>][<optarg default>]{<definition>}
+
+\\newrobustcmd*{\\renewrobustcmd}{\\@star@or@long\\etb@renew@command}
+
+\\def\\etb@renew@command#1{%
+  \\ifundef{#1}
+     {\\etb@error{\\string#1 undefined}\\@ehc}
+     {}%
+  \\let\\@ifdefinable\\@rc@ifdefinable
+  \\etb@new@command#1}
+
+% {<cstoken>}[<arguments>][<optarg default>]{<definition>}
+
+\\newrobustcmd*{\\providerobustcmd}{\\@star@or@long\\etb@provide@command}
+
+\\def\\etb@provide@command#1{%
+  \\ifundef{#1}
+    {\\def\\reserved@a{\\etb@new@command#1}}
+    {\\def\\reserved@a{\\etb@renew@command\\reserved@a}}%
+  \\reserved@a}
+
+% {<csname>}
+
+\\newrobustcmd*{\\csshow}[1]{%
+  \\begingroup\\expandafter\\endgroup
+  \\expandafter\\show\\csname#1\\endcsname}
+
+% {<csname>}
+
+\\newcommand*{\\csmeaning}[1]{%
+  \\ifcsname #1\\endcsname
+    \\expandafter\\meaning\\csname #1\\endcsname
+  \\else
+    \\detokenize{undefined}%
+  \\fi}
+
+% {<cstoken>}{<true>}{<false>}
+
+\\newcommand{\\ifdef}[1]{%
+  \\ifdefined#1%
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+  \\fi}
+
+% {<cstoken>}{<true>}{<false>}
+
+\\newcommand{\\ifundef}[1]{%
+  \\ifdefined#1%
+    \\ifx#1\\relax
+      \\expandafter\\expandafter
+      \\expandafter\\@firstoftwo
+    \\else
+      \\expandafter\\expandafter
+      \\expandafter\\@secondoftwo
+    \\fi
+  \\else
+    \\expandafter\\@firstoftwo
+  \\fi}
+
+% {<csname>}{<true>}{<false>}
+
+\\newcommand*{\\ifcsdef}[1]{%
+  \\ifcsname#1\\endcsname
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+  \\fi}
+
+% {<csname>}{<true>}{<false>}
+
+\\newcommand*{\\ifcsundef}[1]{%
+  \\ifcsname#1\\endcsname
+    \\expandafter\\ifx\\csname#1\\endcsname\\relax
+      \\expandafter\\expandafter
+      \\expandafter\\@firstoftwo
+    \\else
+      \\expandafter\\expandafter
+      \\expandafter\\@secondoftwo
+    \\fi
+  \\else
+    \\expandafter\\@firstoftwo
+  \\fi}
+
+% {<cstoken>}{<true}{<false>}
+
+\\newcommand{\\ifdefmacro}{}
+\\long\\edef\\ifdefmacro#1{%
+  \\noexpand\\expandafter\\noexpand\\etb@ifdefmacro
+  \\noexpand\\meaning#1\\detokenize{macro}:&}
+\\edef\\etb@ifdefmacro{%
+  \\def\\noexpand\\etb@ifdefmacro##1\\detokenize{macro}:##2&}
+\\etb@ifdefmacro{\\notblank{#2}}
+
+% {<csname>}{<true>}{<false>}
+
+\\newcommand*{\\ifcsmacro}[1]{%
+  \\ifcsdef{#1}
+    {\\expandafter\\ifdefmacro\\csname#1\\endcsname}
+    {\\@secondoftwo}}
+
+% {<cstoken>}{<true}{<false>}
+
+\\newcommand{\\ifdefprefix}[1]{%
+  \\ifdefmacro{#1}
+    {\\etb@ifdefprefix{#1}}
+    {\\@secondoftwo}}
+\\long\\edef\\etb@ifdefprefix#1{%
+  \\noexpand\\expandafter\\noexpand\\etb@ifdefprefix@i
+  \\noexpand\\meaning#1\\detokenize{macro}:&}
+\\edef\\etb@ifdefprefix@i{%
+  \\def\\noexpand\\etb@ifdefprefix@i##1\\detokenize{macro}:##2&}
+\\etb@ifdefprefix@i{\\notblank{#1}}
+
+% {<csname>}{<true>}{<false>}
+
+\\newcommand*{\\ifcsprefix}[1]{%
+  \\ifcsdef{#1}
+    {\\expandafter\\ifdefprefix\\csname#1\\endcsname}
+    {\\@secondoftwo}}
+
+% {<cstoken>}{<true}{<false>}
+
+\\newcommand{\\ifdefparam}{}
+\\long\\edef\\ifdefparam#1{%
+  \\noexpand\\expandafter\\noexpand\\etb@ifdefparam
+  \\noexpand\\meaning#1\\detokenize{macro}:->&}
+\\edef\\etb@ifdefparam{%
+  \\def\\noexpand\\etb@ifdefparam##1\\detokenize{macro}:##2->##3&}
+\\etb@ifdefparam{\\notblank{#2}}
+
+% {<csname>}{<true>}{<false>}
+
+\\newcommand*{\\ifcsparam}[1]{%
+  \\ifcsdef{#1}
+    {\\expandafter\\ifdefparam\\csname#1\\endcsname}
+    {\\@secondoftwo}}
+
+% {<cstoken>}{<true}{<false>}
+
+\\newcommand{\\ifdefprotected}{}
+\\long\\edef\\ifdefprotected#1{%
+  \\noexpand\\expandafter\\noexpand\\etb@ifdefprotected
+  \\noexpand\\meaning#1\\string\\protected&}
+\\edef\\etb@ifdefprotected{%
+  \\def\\noexpand\\etb@ifdefprotected##1\\string\\protected##2&}
+\\etb@ifdefprotected{\\notblank{#2}}
+
+% {<csname>}{<true>}{<false>}
+
+\\newcommand*{\\ifcsprotected}[1]{%
+  \\ifcsdef{#1}
+    {\\expandafter\\ifdefprotected\\csname#1\\endcsname}
+    {\\@secondoftwo}}
+
+% {<cstoken>}{<true}{<false>}
+
+\\newrobustcmd{\\ifdefltxprotect}[1]{%
+  \\begingroup
+  \\edef\\etb@resrvda{\\string#1}%
+  \\def\\etb@resrvdb{#1}%
+  \\edef\\etb@resrvdb{\\expandafter\\strip@prefix\\meaning\\etb@resrvdb}%
+  \\edef\\etb@resrvda{%
+    \\ifx\\etb@resrvda\\etb@resrvdb
+      \\noexpand\\x@protect
+      \\noexpand#1%
+    \\fi
+    \\noexpand\\protect\\expandafter\\noexpand
+    \\csname\\expandafter\\@gobble\\string#1 \\endcsname}%
+  \\expandafter\\endgroup\\ifx#1\\etb@resrvda
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+  \\fi}
+
+% {<csname>}{<true>}{<false>}
+
+\\newrobustcmd*{\\ifcsltxprotect}[1]{%
+  \\ifcsdef{#1}
+    {\\expandafter\\ifdefltxprotect\\csname#1\\endcsname}
+    {\\@secondoftwo}}
+
+% {<cstoken>}{<true>}{<false>}
+
+\\newcommand{\\ifdefempty}[1]{%
+  \\ifundef{#1}
+    {\\@secondoftwo}
+    {\\ifdefmacro{#1}
+       {\\ifdefparam{#1}
+          {\\@secondoftwo}
+          {\\etb@ifdefempty{#1}}}
+       {\\@secondoftwo}}}
+
+\\def\\etb@ifdefempty#1{%
+  \\expandafter\\expandafter
+  \\expandafter\\ifstrempty
+  \\expandafter\\expandafter
+  \\expandafter{%
+  \\expandafter\\strip@prefix\\meaning#1}}
+
+% {<csname>}{<true>}{<false>}
+
+\\newcommand*{\\ifcsempty}[1]{%
+  \\ifcsundef{#1}
+    {\\@secondoftwo}
+    {\\expandafter\\ifdefparam\\csname#1\\endcsname
+       {\\@secondoftwo}
+       {\\expandafter\\etb@ifdefempty\\csname#1\\endcsname}}}
+
+% {<cstoken>}{<true>}{<false>}
+
+\\newcommand{\\ifdefvoid}[1]{%
+  \\ifundef{#1}
+    {\\@firstoftwo}
+    {\\ifdefmacro{#1}
+       {\\ifdefparam{#1}
+          {\\@secondoftwo}
+          {\\etb@ifdefempty{#1}}}
+       {\\@secondoftwo}}}
+
+% {<csname>}{<true>}{<false>}
+
+\\newcommand*{\\ifcsvoid}[1]{%
+  \\ifcsundef{#1}
+    {\\@firstoftwo}
+    {\\expandafter\\ifdefparam\\csname#1\\endcsname
+       {\\@secondoftwo}
+       {\\expandafter\\etb@ifdefempty\\csname#1\\endcsname}}}
+
+% {<cstoken1>}{<cstoken2>}{<true>}{<false>}
+
+\\newcommand{\\ifdefequal}[2]{%
+  \\ifundef{#1}
+    {\\@secondoftwo}
+    {\\ifundef{#2}
+       {\\@secondoftwo}
+       {\\ifx#1#2%
+          \\expandafter\\@firstoftwo
+        \\else
+          \\expandafter\\@secondoftwo
+        \\fi}}}
+
+% {<csname1>}{<csname2>}{<true>}{<false>}
+
+\\newcommand*{\\ifcsequal}[2]{%
+  \\ifcsundef{#1}
+    {\\@secondoftwo}
+    {\\ifcsundef{#2}
+       {\\@secondoftwo}
+       {\\expandafter\\ifx
+        \\csname#1\\expandafter\\endcsname
+        \\csname#2\\endcsname
+          \\expandafter\\@firstoftwo
+        \\else
+          \\expandafter\\@secondoftwo
+        \\fi}}}
+
+% {<cstoken1>}{<cstoken2>}{<true>}{<false>}
+
+\\newrobustcmd{\\ifdefstrequal}[2]{%
+  \\ifdefmacro{#1}
+    {\\ifdefmacro{#2}
+       {\\begingroup
+        \\edef\\etb@tempa{\\expandafter\\strip@prefix\\meaning#1}%
+        \\edef\\etb@tempb{\\expandafter\\strip@prefix\\meaning#2}%
+        \\ifx\\etb@tempa\\etb@tempb
+          \\aftergroup\\@firstoftwo
+        \\else
+          \\aftergroup\\@secondoftwo
+        \\fi
+        \\endgroup}
+       {\\@secondoftwo}}
+    {\\@secondoftwo}}
+
+% {<csname1>}{<csname2>}{<true>}{<false>}
+
+\\newcommand*{\\ifcsstrequal}[2]{%
+  \\ifcsundef{#1}
+    {\\@secondoftwo}
+    {\\ifcsundef{#2}
+       {\\@secondoftwo}
+       {\\expandafter\\ifdefstrequal
+        \\csname#1\\expandafter\\endcsname
+        \\csname#2\\endcsname}}}
+
+% {<cstoken>}{<string>}{<true>}{<false>}
+
+\\newrobustcmd{\\ifdefstring}[2]{%
+  \\ifdefmacro{#1}
+    {\\begingroup
+     \\edef\\etb@tempa{\\expandafter\\strip@prefix\\meaning#1}%
+     \\edef\\etb@tempb{\\detokenize{#2}}%
+     \\ifx\\etb@tempa\\etb@tempb
+       \\aftergroup\\@firstoftwo
+     \\else
+       \\aftergroup\\@secondoftwo
+     \\fi
+     \\endgroup}
+    {\\@secondoftwo}}
+
+% {<csname>}{<string>}{<true>}{<false>}
+
+\\newrobustcmd{\\ifcsstring}[2]{%
+  \\ifcsundef{#1}
+    {\\@secondoftwo}
+    {\\expandafter\\ifdefstring\\csname#1\\endcsname{#2}}}
+
+% {<cstoken>}{<true}{<false>}
+
+\\newcommand{\\ifdefcounter}[1]{\\etb@ifcounter#1&}
+\\long\\def\\etb@ifcounter#1#2&{%
+  \\ifx\\count#1%
+    \\expandafter\\@secondoftwo
+  \\else
+    \\expandafter\\etb@ifcounter@i\\meaning#1:%
+  \\fi}
+\\edef\\etb@ifcounter@i#1:#2\\fi{\\noexpand\\fi
+  \\noexpand\\etb@ifcounter@ii#1\\string\\count&}
+\\edef\\etb@ifcounter@ii{%
+  \\def\\noexpand\\etb@ifcounter@ii##1\\string\\count##2&}
+\\etb@ifcounter@ii{\\ifblank{#1}}
+
+% {<csname>}{<true>}{<false>}
+
+\\newcommand*{\\ifcscounter}[1]{%
+  \\ifcsdef{#1}
+    {\\expandafter\\ifdefcounter\\csname#1\\endcsname}
+    {\\@secondoftwo}}
+
+% {<name>}{<true>}{<false>}
+
+\\newcommand*{\\ifltxcounter}[1]{%
+  \\ifcsdef{c@#1}
+    {\\expandafter\\ifdefcounter\\csname c@#1\\endcsname}
+    {\\@secondoftwo}}
+
+% {<cstoken>}{<true}{<false>}
+
+\\newcommand{\\ifdeflength}[1]{\\etb@iflength#1&}
+\\long\\def\\etb@iflength#1#2&{%
+  \\ifx\\skip#1%
+    \\expandafter\\@secondoftwo
+  \\else
+    \\expandafter\\etb@iflength@i\\meaning#1:%
+  \\fi}
+\\edef\\etb@iflength@i#1:#2\\fi{\\noexpand\\fi
+  \\noexpand\\etb@iflength@ii#1\\string\\skip&}
+\\edef\\etb@iflength@ii{%
+  \\def\\noexpand\\etb@iflength@ii##1\\string\\skip##2&}
+\\etb@iflength@ii{\\ifblank{#1}}
+
+% {<csname>}{<true>}{<false>}
+
+\\newcommand*{\\ifcslength}[1]{%
+  \\ifcsdef{#1}
+    {\\expandafter\\ifdeflength\\csname#1\\endcsname}
+    {\\@secondoftwo}}
+
+% {<cstoken>}{<true}{<false>}
+
+\\newcommand{\\ifdefdimen}[1]{\\etb@ifdimen#1&}
+\\long\\def\\etb@ifdimen#1#2&{%
+  \\ifx\\dimen#1%
+    \\expandafter\\@secondoftwo
+  \\else
+    \\expandafter\\etb@ifdimen@i\\meaning#1:%
+  \\fi}
+\\edef\\etb@ifdimen@i#1:#2\\fi{\\noexpand\\fi
+  \\noexpand\\etb@ifdimen@ii#1\\string\\dimen&}
+\\edef\\etb@ifdimen@ii{%
+  \\def\\noexpand\\etb@ifdimen@ii##1\\string\\dimen##2&}
+\\etb@ifdimen@ii{\\ifblank{#1}}
+
+% {<csname>}{<true>}{<false>}
+
+\\newcommand*{\\ifcsdimen}[1]{%
+  \\ifcsdef{#1}
+    {\\expandafter\\ifdefdimen\\csname#1\\endcsname}
+    {\\@secondoftwo}}
+
+% {<string1>}{<string2>}{<true>}{<false>}
+
+\\newrobustcmd{\\ifstrequal}[2]{%
+  \\begingroup
+  \\edef\\etb@tempa{\\detokenize{#1}}%
+  \\edef\\etb@tempb{\\detokenize{#2}}%
+  \\ifx\\etb@tempa\\etb@tempb
+    \\aftergroup\\@firstoftwo
+  \\else
+    \\aftergroup\\@secondoftwo
+  \\fi
+  \\endgroup}
+
+% {<string>}{<true>}{<false>}
+
+\\newcommand{\\ifstrempty}[1]{%
+  \\expandafter\\ifx\\expandafter&\\detokenize{#1}&%
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+  \\fi}
+
+% {<string>}{<true>}{<false>}
+
+\\newcommand{\\ifblank}[1]{% from expl3
+  \\expandafter\\ifx\\expandafter\\relax\\detokenize\\expandafter{\\@gobble#1?}\\relax
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+  \\fi}
+
+\\newcommand{\\notblank}[1]{%
+  \\expandafter\\ifx\\expandafter\\relax\\detokenize\\expandafter{\\@gobble#1?}\\relax
+    \\expandafter\\@secondoftwo
+  \\else
+    \\expandafter\\@firstoftwo
+  \\fi}
+
+% {<numexpr>}{<comp>}{<numexpr>}{<true>}{<false>}
+
+\\newcommand*{\\ifnumcomp}[3]{%
+  \\ifnum\\numexpr#1\\relax#2\\numexpr#3\\relax
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+  \\fi}
+
+% {<numexpr>}{<numexpr>}{<true>}{<false>}
+
+\\newcommand*{\\ifnumequal}[1]{%
+  \\ifnumcomp{#1}=}
+
+\\newcommand*{\\ifnumgreater}[1]{%
+  \\ifnumcomp{#1}>}
+
+\\newcommand*{\\ifnumless}[1]{%
+  \\ifnumcomp{#1}<}
+
+% {<numexpr>}{<true>}{<false>}
+
+\\newcommand*{\\ifnumodd}[1]{%
+  \\ifodd\\numexpr#1\\relax
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+  \\fi}
+
+% {<dimexpr>}{<comp>}{<dimexpr>}{<true>}{<false>}
+
+\\newcommand*{\\ifdimcomp}[3]{%
+  \\ifdim\\dimexpr#1\\relax#2\\dimexpr#3\\relax
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+  \\fi}
+
+% {<dimexpr>}{<dimexpr>}{<true>}{<false>}
+
+\\newcommand*{\\ifdimequal}[1]{%
+  \\ifdimcomp{#1}=}
+
+\\newcommand*{\\ifdimgreater}[1]{%
+  \\ifdimcomp{#1}>}
+
+\\newcommand*{\\ifdimless}[1]{%
+  \\ifdimcomp{#1}<}
+
+% {<expr>}{<true>}{<false>}
+
+\\newcommand{\\ifboolexpe}[1]{%
+  \\etb@be@beg\\etb@be@bgroup#1(&\\etb@be@end}
+
+\\let\\etb@be@true\\@empty
+\\def\\etb@be@false{-\\@ne}
+
+\\def\\etb@be@beg{%
+  \\ifnum\\numexpr\\z@\\ifnum\\numexpr\\z@}
+
+\\def\\etb@be@end{%
+  <\\z@
+    \\expandafter\\etb@be@false
+  \\fi
+  <\\z@
+    \\expandafter\\@secondoftwo
+  \\else
+    \\expandafter\\@firstoftwo
+  \\fi}
+
+\\long\\def\\etb@be@bgroup#1(#2&{%
+  \\etb@be@egroup#1)&%
+  \\ifblank{#2}
+    {}
+    {\\etb@be@beg
+     \\etb@be@bgroup#2&}}
+
+\\long\\def\\etb@be@egroup#1)#2&{%
+  \\etb@be@and#1and&%
+  \\ifblank{#2}
+    {}
+    {\\etb@be@end\\etb@be@true\\etb@be@false
+     \\etb@be@egroup#2&}}
+
+\\long\\def\\etb@be@and#1and#2&{%
+  \\etb@be@or#1or&%
+  \\ifblank{#2}
+    {}
+    {<\\z@
+       \\expandafter\\@firstofone
+     \\else
+       \\expandafter\\@gobble
+     \\fi
+     {=\\z@\\fi\\ifnum\\numexpr\\m@ne}%
+     \\ifnum\\numexpr\\z@
+     \\etb@be@and#2&}}
+
+\\long\\def\\etb@be@or#1or#2&{%
+  \\etb@be@not#1not&%
+  \\ifblank{#2}
+    {}
+    {<\\z@
+       \\expandafter\\@secondoftwo
+     \\else
+       \\expandafter\\@firstoftwo
+     \\fi
+     {=\\z@\\fi\\ifnum\\numexpr\\z@
+      \\ifnum\\numexpr\\@ne}
+     {=\\z@\\fi\\ifnum\\numexpr\\z@
+      \\ifnum\\numexpr\\z@}%
+     \\etb@be@or#2&}}
+
+\\long\\def\\etb@be@not#1not#2&{%
+  \\etb@be@togl#1togl&%
+  \\ifblank{#2}
+    {}
+    {>\\z@
+       \\expandafter\\@firstoftwo
+     \\else
+       \\expandafter\\@secondoftwo
+     \\fi
+     {\\unless\\ifnum\\numexpr\\m@ne}
+     {\\unless\\ifnum\\numexpr\\z@}%
+     \\etb@be@not#2&}}
+
+\\long\\def\\etb@be@togl#1togl#2&{%
+  \\etb@be@bool#1bool&%
+  \\ifblank{#2}
+    {}
+    {\\etb@be@togl@i#2&}}
+
+\\long\\def\\etb@be@togl@i#1#2&{%
+  \\ifcsdef{etb@tgl@#1}
+    {\\csname etb@tgl@#1\\endcsname\\etb@be@true\\etb@be@false}
+    {\\etb@be@err{Toggle '#1' undefined}{}}%
+  \\etb@be@togl#2&}
+
+\\long\\def\\etb@be@bool#1bool#2&{%
+  \\etb@be@test#1test&%
+  \\ifblank{#2}
+    {}
+    {\\etb@be@bool@i#2&}}
+
+\\long\\def\\etb@be@bool@i#1#2&{%
+  \\ifcsundef{if#1}
+    {\\etb@be@err{Boolean '#1' undefined}{}}
+    {\\csname if#1\\endcsname
+     \\else
+       \\etb@be@false
+     \\fi}%
+  \\etb@be@bool#2&}
+
+\\long\\def\\etb@be@test#1test#2&{%
+  \\ifblank{#1}
+    {}
+    {\\etb@be@err{The invalid part is: '\\detokenize{#1}'}{}}%
+  \\ifblank{#2}
+    {}
+    {\\etb@be@test@i#2&}}
+
+\\long\\def\\etb@be@test@i#1#2&{%
+  #1\\etb@be@true\\etb@be@false
+  \\etb@be@test#2&}
+
+\\long\\def\\etb@be@err#1#2{%
+  \\expandafter\\ifnum\\the\\numexpr
+    \\expandafter\\ifnum\\the\\currentiftype=-3
+      \\expandafter\\thr@@
+    \\else
+      \\expandafter\\currentiftype
+    \\fi
+  =\\thr@@
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+  \\fi
+  {=\\z@\\fi
+   \\etb@be@err{#1}{#2\\ifnum\\numexpr\\m@ne}}
+  {\\etb@err@expr{#1}#2}}
+
+% {<expr>}{<true>}{<false>}
+
+\\newrobustcmd{\\ifboolexpr}[1]{\\etb@boolexpr{#1}}
+
+\\long\\def\\etb@boolexpr#1{%
+  \\begingroup
+  \\let\\etb@br@neg\\@firstoftwo
+  \\etb@tempcnta\\z@
+  \\etb@br@beg
+  \\etb@br@bgroup#1(&%
+  \\etb@br@end
+  \\etb@br@eval}
+
+\\def\\etb@br@beg{%
+  \\begingroup
+  \\let\\etb@br@neg\\@firstoftwo
+  \\etb@tempcnta\\z@}
+
+\\def\\etb@br@end{%
+  \\etb@br@eval\\etb@br@true\\etb@br@false}
+
+\\def\\etb@br@eval{%
+  \\ifnum\\etb@tempcnta<\\z@
+    \\aftergroup\\@secondoftwo
+  \\else
+    \\aftergroup\\@firstoftwo
+  \\fi
+  \\endgroup}
+
+\\def\\etb@br@true{%
+  \\advance\\etb@tempcnta\\etb@br@neg\\z@\\m@ne
+  \\let\\etb@br@neg\\@firstoftwo}
+
+\\def\\etb@br@false{%
+  \\advance\\etb@tempcnta\\etb@br@neg\\m@ne\\z@
+  \\let\\etb@br@neg\\@firstoftwo}
+
+\\long\\def\\etb@br@bgroup#1(#2&{%
+  \\etb@br@egroup#1)&%
+  \\ifblank{#2}
+    {}
+    {\\etb@br@beg
+     \\etb@br@bgroup#2&}}
+
+\\long\\def\\etb@br@egroup#1)#2&{%
+  \\etb@br@and#1and&%
+  \\ifblank{#2}
+    {}
+    {\\etb@br@end
+     \\etb@br@egroup#2&}}
+
+\\long\\def\\etb@br@and#1and#2&{%
+  \\etb@br@or#1or&%
+  \\ifblank{#2}
+    {}
+    {\\ifnum\\etb@tempcnta<\\z@
+       \\etb@tempcnta\\m@ne
+     \\else
+       \\etb@tempcnta\\z@
+     \\fi
+     \\etb@br@and#2&}}
+
+\\long\\def\\etb@br@or#1or#2&{%
+  \\etb@br@not#1not&%
+  \\ifblank{#2}
+    {}
+    {\\ifnum\\etb@tempcnta<\\z@
+       \\etb@tempcnta\\z@
+     \\else
+       \\etb@tempcnta\\@ne
+     \\fi
+     \\etb@br@or#2&}}
+
+\\long\\def\\etb@br@not#1not#2&{%
+  \\etb@br@togl#1togl&%
+  \\ifblank{#2}
+    {}
+    {\\let\\etb@br@neg\\@secondoftwo
+     \\etb@br@not#2&}}
+
+\\long\\def\\etb@br@togl#1togl#2&{%
+  \\etb@br@bool#1bool&%
+  \\ifblank{#2}
+    {}
+    {\\etb@br@togl@i#2&}}
+
+\\long\\def\\etb@br@togl@i#1#2&{%
+  \\ifcsdef{etb@tgl@#1}
+    {\\csname etb@tgl@#1\\endcsname\\etb@br@true\\etb@br@false}
+    {\\etb@err@expr{Toggle '#1' undefined}\\etb@br@false}%
+  \\etb@br@togl#2&}
+
+\\long\\def\\etb@br@bool#1bool#2&{%
+  \\etb@br@test#1test&%
+  \\ifblank{#2}
+    {}
+    {\\etb@br@bool@i#2&}}
+
+\\long\\def\\etb@br@bool@i#1#2&{%
+  \\ifcsundef{if#1}
+    {\\etb@err@expr{Boolean '#1' undefined}\\etb@br@false}
+    {\\csname if#1\\endcsname
+       \\etb@br@true
+     \\else
+       \\etb@br@false
+     \\fi}%
+  \\etb@br@bool#2&}
+
+\\long\\def\\etb@br@test#1test#2&{%
+  \\ifblank{#1}
+    {}
+    {\\etb@err@expr{The invalid part is: '\\detokenize{#1}'}}%
+  \\ifblank{#2}
+    {}
+    {\\etb@br@test@i#2&}}
+
+\\long\\def\\etb@br@test@i#1#2&{%
+  \\ignorespaces#1\\etb@br@true\\etb@br@false
+  \\etb@br@test#2&}
+
+\\long\\def\\etb@err@expr#1{%
+  \\etb@error
+    {Invalid boolean expression}
+    {#1.}}
+
+% {<expr>}{<code>}
+
+\\newrobustcmd{\\whileboolexpr}[2]{%
+  \\etb@boolexpr{#1}{#2\\whileboolexpr{#1}{#2}}{}}
+
+% {<expr>}{<code>}
+
+\\newrobustcmd{\\unlessboolexpr}[2]{%
+  \\etb@boolexpr{#1}{}{#2\\unlessboolexpr{#1}{#2}}}
+
+% {<cstoken>}
+
+\\newcommand{\\expandonce}[1]{%
+  \\unexpanded\\expandafter{#1}}
+
+% {<csname>}
+
+\\newcommand*{\\csexpandonce}[1]{%
+  \\expandafter\\expandonce\\csname#1\\endcsname}
+
+% {<code>}
+
+\\newcommand*{\\protecting}{}
+\\def\\protecting#{%
+  \\ifx\\protect\\@typeset@protect
+    \\etb@protecting\\@firstofone
+  \\fi
+  \\ifx\\protect\\@unexpandable@protect
+    \\etb@protecting\\etb@unexpandable
+  \\fi
+  \\ifx\\protect\\noexpand
+    \\etb@protecting\\unexpanded
+  \\fi
+  \\ifx\\protect\\string
+    \\etb@protecting\\detokenize
+  \\fi
+  \\relax\\@firstofone}
+
+\\def\\etb@protecting#1#2\\relax\\@firstofone{\\fi#1}
+\\long\\def\\etb@unexpandable#1{\\unexpanded{\\protecting{#1}}}
+
+% {<csname>}
+
+\\newrobustcmd*{\\csdef}[1]{\\expandafter\\def\\csname#1\\endcsname}
+\\newrobustcmd*{\\csedef}[1]{\\expandafter\\edef\\csname#1\\endcsname}
+\\newrobustcmd*{\\csgdef}[1]{\\expandafter\\gdef\\csname#1\\endcsname}
+\\newrobustcmd*{\\csxdef}[1]{\\expandafter\\xdef\\csname#1\\endcsname}
+\\newrobustcmd*{\\protected@csedef}{\\etb@protected\\csedef}
+\\newrobustcmd*{\\protected@csxdef}{\\etb@protected\\csxdef}
+
+\\def\\etb@protected{%
+  \\let\\@@protect\\protect
+  \\let\\protect\\@unexpandable@protect
+  \\afterassignment\\restore@protect}
+
+% {<csname>}{<cstoken>}
+
+\\newrobustcmd{\\cslet}[2]{%
+  \\expandafter\\let\\csname#1\\endcsname#2}
+
+% {<cstoken>}{<csname>}
+
+\\newrobustcmd{\\letcs}[2]{%
+  \\ifcsdef{#2}
+    {\\expandafter\\let\\expandafter#1\\csname#2\\endcsname}
+    {\\undef#1}}
+
+% {<csname>}{<csname>}
+
+\\newrobustcmd*{\\csletcs}[2]{%
+  \\ifcsdef{#2}
+    {\\expandafter\\let
+     \\csname#1\\expandafter\\endcsname
+     \\csname#2\\endcsname}
+    {\\csundef{#1}}}
+
+\\ifdef\\NewCommandCopy
+  {%
+    \\long\\def\\etb@carsquare#1#2#3\\@nil{#1#2}
+    %
+    % {<cstoken>}{<true>}{<false>}
+    %
+    \\newrobustcmd*{\\etb@if@robustcmd}[1]{%
+      \\begingroup
+        \\escapechar=\`\\\\
+        \\edef\\etb@tempa{%
+      \\endgroup
+      \\def\\noexpand\\etb@tempa{\\noexpand\\@testopt
+        \\expandafter\\noexpand\\csname\\string#1\\endcsname}%
+      \\def\\noexpand\\etb@tempb{\\unexpanded\\expandafter\\expandafter\\expandafter
+        {\\expandafter\\etb@carsquare#1{}{}\\@nil}}%
+      }\\etb@tempa
+      \\ifx\\etb@tempa\\etb@tempb
+        \\expandafter\\@firstoftwo
+      \\else
+        \\expandafter\\@secondoftwo
+      \\fi}
+    %
+    % {<cstoken>}{<cstoken>}
+    %
+    \\newrobustcmd*{\\etb@copy@robustcmd}[2]{%
+      \\begingroup
+        \\escapechar=\`\\\\
+        \\edef\\etb@tempa{%
+      \\endgroup
+      \\protected\\def\\noexpand#1{\\noexpand\\@testopt
+        \\expandafter\\noexpand\\csname\\string#1\\endcsname
+        \\unexpanded\\expandafter\\expandafter\\expandafter
+          {\\expandafter\\@gobbletwo#2}}%
+      \\let\\expandafter\\noexpand\\csname\\string#1\\endcsname
+          \\expandafter\\noexpand\\csname\\string#2\\endcsname
+      }\\etb@tempa}
+    \\g@addto@macro\\@declarecommandcopylisthook
+      {{\\etb@if@robustcmd\\etb@copy@robustcmd}}
+  }{}
+% {<csname>}
+
+\\newcommand*{\\csuse}[1]{%
+  \\ifcsname#1\\endcsname
+    \\csname#1\\expandafter\\endcsname
+  \\fi}
+
+% {<cstoken>}
+
+\\newrobustcmd{\\undef}[1]{\\let#1\\etb@undefined}
+\\newrobustcmd{\\gundef}[1]{\\global\\let#1\\etb@undefined}
+
+% {<csname>}
+
+\\newrobustcmd*{\\csundef}[1]{\\cslet{#1}\\etb@undefined}
+\\newrobustcmd*{\\csgundef}[1]{\\global\\cslet{#1}\\etb@undefined}
+
+% {<cstoken>}{<code>}
+
+\\newrobustcmd{\\appto}[2]{%
+  \\ifundef{#1}
+    {\\edef#1{\\unexpanded{#2}}}
+    {\\edef#1{\\expandonce#1\\unexpanded{#2}}}}
+\\newrobustcmd{\\eappto}[2]{%
+  \\ifundef{#1}
+    {\\edef#1{#2}}
+    {\\edef#1{\\expandonce#1#2}}}
+\\newrobustcmd{\\gappto}[2]{%
+  \\ifundef{#1}
+    {\\xdef#1{\\unexpanded{#2}}}
+    {\\xdef#1{\\expandonce#1\\unexpanded{#2}}}}
+\\newrobustcmd{\\xappto}[2]{%
+  \\ifundef{#1}
+    {\\xdef#1{#2}}
+    {\\xdef#1{\\expandonce#1#2}}}
+
+\\newrobustcmd*{\\protected@eappto}{\\etb@protected\\eappto}
+\\newrobustcmd*{\\protected@xappto}{\\etb@protected\\xappto}
+
+% {<cstoken>}{<code>}
+
+\\newrobustcmd{\\preto}[2]{%
+  \\ifundef{#1}
+    {\\edef#1{\\unexpanded{#2}}}
+    {\\edef#1{\\unexpanded{#2}\\expandonce#1}}}
+\\newrobustcmd{\\epreto}[2]{%
+  \\ifundef{#1}
+    {\\edef#1{#2}}
+    {\\edef#1{#2\\expandonce#1}}}
+\\newrobustcmd{\\gpreto}[2]{%
+  \\ifundef{#1}
+    {\\xdef#1{\\unexpanded{#2}}}
+    {\\xdef#1{\\unexpanded{#2}\\expandonce#1}}}
+\\newrobustcmd{\\xpreto}[2]{%
+  \\ifundef{#1}
+    {\\xdef#1{#2}}
+    {\\xdef#1{#2\\expandonce#1}}}
+
+\\newrobustcmd*{\\protected@epreto}{\\etb@protected\\epreto}
+\\newrobustcmd*{\\protected@xpreto}{\\etb@protected\\xpreto}
+
+% {<csname>}{<code>}
+
+\\newrobustcmd*{\\csappto}[1]{\\expandafter\\appto\\csname#1\\endcsname}
+\\newrobustcmd*{\\cseappto}[1]{\\expandafter\\eappto\\csname#1\\endcsname}
+\\newrobustcmd*{\\csgappto}[1]{\\expandafter\\gappto\\csname#1\\endcsname}
+\\newrobustcmd*{\\csxappto}[1]{\\expandafter\\xappto\\csname#1\\endcsname}
+\\newrobustcmd*{\\protected@cseappto}{\\etb@protected\\cseappto}
+\\newrobustcmd*{\\protected@csxappto}{\\etb@protected\\csxappto}
+
+% {<csname>}{<code>}
+
+\\newrobustcmd*{\\cspreto}[1]{\\expandafter\\preto\\csname#1\\endcsname}
+\\newrobustcmd*{\\csepreto}[1]{\\expandafter\\epreto\\csname#1\\endcsname}
+\\newrobustcmd*{\\csgpreto}[1]{\\expandafter\\gpreto\\csname#1\\endcsname}
+\\newrobustcmd*{\\csxpreto}[1]{\\expandafter\\xpreto\\csname#1\\endcsname}
+\\newrobustcmd*{\\protected@csepreto}{\\etb@protected\\csepreto}
+\\newrobustcmd*{\\protected@csxpreto}{\\etb@protected\\csxpreto}
+
+% {<cstoken>}{<numexpr>}
+
+\\newrobustcmd*{\\numdef}[2]{%
+  \\ifundef#1{\\let#1\\z@}{}%
+  \\edef#1{\\the\\numexpr#2}}
+\\newrobustcmd*{\\numgdef}[2]{%
+  \\ifundef#1{\\let#1\\z@}{}%
+  \\xdef#1{\\the\\numexpr#2}}
+
+% {<csname>}{<numexpr>}
+
+\\newrobustcmd*{\\csnumdef}[1]{%
+  \\expandafter\\numdef\\csname#1\\endcsname}
+\\newrobustcmd*{\\csnumgdef}[1]{%
+  \\expandafter\\numgdef\\csname#1\\endcsname}
+
+% {<cstoken>}{<dimexpr>}
+
+\\newrobustcmd*{\\dimdef}[2]{%
+  \\ifundef#1{\\let#1\\z@}{}%
+  \\edef#1{\\the\\dimexpr#2}}
+\\newrobustcmd*{\\dimgdef}[2]{%
+  \\ifundef#1{\\let#1\\z@}{}%
+  \\xdef#1{\\the\\dimexpr#2}}
+
+% {<csname>}{<dimexpr>}
+
+\\newrobustcmd*{\\csdimdef}[1]{%
+  \\expandafter\\dimdef\\csname#1\\endcsname}
+\\newrobustcmd*{\\csdimgdef}[1]{%
+  \\expandafter\\dimgdef\\csname#1\\endcsname}
+
+% {<cstoken>}{<glueexpr>}
+
+\\newrobustcmd*{\\gluedef}[2]{%
+  \\ifundef#1{\\let#1\\z@skip}{}%
+  \\edef#1{\\the\\glueexpr#2}}
+\\newrobustcmd*{\\gluegdef}[2]{%
+  \\ifundef#1{\\let#1\\z@skip}{}%
+  \\xdef#1{\\the\\glueexpr#2}}
+
+% {<csname>}{<glueexpr>}
+
+\\newrobustcmd*{\\csgluedef}[1]{%
+  \\expandafter\\gluedef\\csname#1\\endcsname}
+\\newrobustcmd*{\\csgluegdef}[1]{%
+  \\expandafter\\gluegdef\\csname#1\\endcsname}
+
+% {<cstoken>}{<muexpr>}
+
+\\newrobustcmd*{\\mudef}[2]{%
+  \\ifundef#1{\\def#1{0mu}}{}%
+  \\edef#1{\\the\\muexpr#2}}
+\\newrobustcmd*{\\mugdef}[2]{%
+  \\ifundef#1{\\let#1\\z@}{}%
+  \\xdef#1{\\the\\muexpr#2}}
+
+% {<csname>}{<muexpr>}
+
+\\newrobustcmd*{\\csmudef}[1]{%
+  \\expandafter\\mudef\\csname#1\\endcsname}
+\\newrobustcmd*{\\csmugdef}[1]{%
+  \\expandafter\\mugdef\\csname#1\\endcsname}
+
+% {<counter>}{<numexpr>}
+
+\\newrobustcmd*{\\defcounter}[2]{%
+  \\ifcsundef{c@#1}
+    {\\etb@noglobal\\@nocounterr{#1}}%
+    {\\csname c@#1\\endcsname\\numexpr#2\\relax}}
+
+% {<length>}{<glueexpr>}
+
+\\newrobustcmd*{\\deflength}[2]{%
+  \\ifundef{#1}
+    {\\etb@noglobal\\etb@err@nolen{#1}}%
+    {#1\\glueexpr#2\\relax}}
+
+\\protected\\def\\etb@err@nolen#1{%
+  \\etb@error{Length '\\string#1' undefined}\\@eha}
+
+% {<name>}
+
+\\newrobustcmd*{\\newbool}[1]{%
+  \\expandafter\\@ifdefinable\\csname if#1\\endcsname{%
+    \\expandafter\\newif\\csname if#1\\endcsname}}
+
+% {<name>}
+
+\\newrobustcmd*{\\providebool}[1]{%
+  \\ifcsundef{if#1}
+    {\\expandafter\\newif\\csname if#1\\endcsname}
+    {\\begingroup
+     \\edef\\@tempa{\\expandafter\\meaning\\csname if#1\\endcsname}%
+     \\ifx\\@tempa\\etb@isfalse
+     \\else
+       \\ifx\\@tempa\\etb@istrue
+       \\else
+         \\etb@error{\\@backslashchar if#1 not a boolean}\\@eha
+       \\fi
+     \\fi
+     \\endgroup}}
+
+% {<name>}{<true>|<false>}
+
+\\newrobustcmd*{\\setbool}[2]{%
+  \\ifcsundef{if#1}
+    {\\etb@noglobal\\etb@err@nobool{#1}}
+    {\\ifcsundef{#1#2}
+       {\\etb@noglobal\\etb@err@boolval{#2}}
+       {\\csname#1#2\\endcsname}}}
+
+% {<name>}
+
+\\newrobustcmd*{\\booltrue}[1]{%
+  \\ifcsundef{if#1}
+    {\\etb@noglobal\\etb@err@nobool{#1}}
+    {\\csname#1true\\endcsname}}
+
+% {<name>}
+
+\\newrobustcmd*{\\boolfalse}[1]{%
+  \\ifcsundef{if#1}
+    {\\etb@noglobal\\etb@err@nobool{#1}}
+    {\\csname#1false\\endcsname}}
+
+\\edef\\etb@istrue{\\meaning\\iftrue}
+\\edef\\etb@isfalse{\\meaning\\iffalse}
+\\protected\\def\\etb@noglobal{\\let\\relax\\relax}
+
+% {<name>}{<true}{<false>}
+
+\\newcommand*{\\ifbool}[1]{%
+  \\ifcsundef{if#1}
+    {\\etb@err@nobool{#1}\\@gobbletwo}
+    {\\csname if#1\\endcsname
+       \\expandafter\\@firstoftwo
+     \\else
+       \\expandafter\\@secondoftwo
+     \\fi}}
+
+% {<name>}{<not true}{<not false>}
+
+\\newcommand*{\\notbool}[1]{%
+  \\ifcsundef{if#1}
+    {\\etb@err@nobool{#1}\\@gobbletwo}
+    {\\csname if#1\\endcsname
+       \\expandafter\\@secondoftwo
+     \\else
+       \\expandafter\\@firstoftwo
+     \\fi}}
+
+\\protected\\def\\etb@err@nobool#1{%
+  \\etb@error{Boolean '\\@backslashchar if#1' undefined}\\@eha}
+
+\\def\\etb@err@boolval#1{%
+  \\etb@error
+    {Invalid boolean value '#1'}
+    {Valid boolean values are 'true' and 'false'.}}
+
+% {<name>}
+
+\\newrobustcmd*{\\newtoggle}[1]{%
+  \\ifcsdef{etb@tgl@#1}
+    {\\etb@error{Toggle '#1' already defined}\\@eha}
+    {\\cslet{etb@tgl@#1}\\@secondoftwo}}
+
+% {<name>}
+
+\\newrobustcmd*{\\providetoggle}[1]{%
+  \\ifcsdef{etb@tgl@#1}
+    {}
+    {\\cslet{etb@tgl@#1}\\@secondoftwo}}
+
+% {<name>}{<true>|<false>}
+
+\\newrobustcmd*{\\settoggle}[2]{%
+  \\ifcsdef{etb@tgl@#1}
+    {\\ifcsdef{etb@toggle#2}
+       {\\csletcs{etb@tgl@#1}{etb@toggle#2}}
+       {\\etb@noglobal\\etb@err@boolval{#2}}}
+    {\\etb@noglobal\\etb@err@notoggle{#1}}}
+
+% {<name>}
+
+\\newrobustcmd*{\\toggletrue}[1]{%
+  \\ifcsdef{etb@tgl@#1}
+    {\\cslet{etb@tgl@#1}\\etb@toggletrue}
+    {\\etb@noglobal\\etb@err@notoggle{#1}}}
+
+% {<name>}
+
+\\newrobustcmd*{\\togglefalse}[1]{%
+  \\ifcsdef{etb@tgl@#1}
+    {\\cslet{etb@tgl@#1}\\etb@togglefalse}
+    {\\etb@noglobal\\etb@err@notoggle{#1}}}
+
+\\let\\etb@toggletrue\\@firstoftwo
+\\let\\etb@togglefalse\\@secondoftwo
+
+% {<name>}{<true}{<false>}
+
+\\newcommand*{\\iftoggle}[1]{%
+  \\ifcsdef{etb@tgl@#1}
+    {\\csname etb@tgl@#1\\endcsname}
+    {\\etb@err@notoggle{#1}\\@gobbletwo}}
+
+% {<name>}{<not true}{<not false>}
+
+\\newcommand*{\\nottoggle}[1]{%
+  \\ifcsdef{etb@tgl@#1}
+    {\\csname etb@tgl@#1\\endcsname\\@secondoftwo\\@firstoftwo}
+    {\\etb@err@notoggle{#1}\\@gobbletwo}}
+
+\\protected\\def\\etb@err@notoggle#1{%
+  \\etb@error{Toggle '#1' undefined}\\@eha}
+
+% {<cstoken>}{<true}{<false>}
+
+\\protected\\def\\etb@ifscanable#1{%
+  \\begingroup
+  \\edef\\etb@resrvda{%
+    \\def\\noexpand\\etb@resrvda####1\\detokenize{macro}:####2->####3&{%
+      ####1\\def\\string\\etb@resrvda####2{####3}}%
+    \\edef\\noexpand\\etb@resrvda{\\noexpand\\etb@resrvda\\meaning#1&}}%
+  \\etb@resrvda
+  \\makeatletter
+  \\endlinechar\\m@ne
+  \\newlinechar\\m@ne
+  \\scantokens\\expandafter{\\etb@resrvda}%
+  \\expandafter\\endgroup\\ifx#1\\etb@resrvda
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+  \\fi}
+
+% {<cstoken>}{<search>}{<true}{<false>}
+
+\\protected\\long\\def\\etb@ifpattern#1#2{%
+  \\begingroup
+  \\edef\\etb@resrvda{%
+    \\def\\noexpand\\etb@resrvda####1\\detokenize{#2}####2&{%
+      \\endgroup\\noexpand\\noexpand\\noexpand\\ifblank{####2}}%
+    \\edef\\noexpand\\etb@resrvda{\\noexpand\\etb@resrvda
+      \\expandafter\\strip@prefix\\meaning#1\\detokenize{#2}&}%
+    \\noexpand\\etb@resrvda}%
+  \\etb@resrvda\\@secondoftwo\\@firstoftwo}
+
+% {<string>}{<true}{<false>}
+
+\\protected\\long\\def\\etb@ifhashcheck#1{%
+  \\begingroup
+  \\edef\\etb@resrvda{\\detokenize{#1}}%
+  \\expandafter\\endgroup
+  \\expandafter\\etb@ifhashcheck@i\\meaning\\etb@resrvda&}
+
+\\edef\\etb@ifhashcheck@i#1&{%
+  \\noexpand\\expandafter
+  \\noexpand\\etb@ifhashcheck@ii
+  \\noexpand\\strip@prefix#1\\string#\\string#&}
+
+\\edef\\etb@ifhashcheck@ii{%
+  \\def\\noexpand\\etb@ifhashcheck@ii##1\\string#\\string###2&}
+\\etb@ifhashcheck@ii{\\ifblank{#2}}
+
+% {<cstoken>}
+
+\\newrobustcmd*{\\robustify}[1]{%
+  \\ifundef{#1}
+    {\\etb@error{\\string#1 undefined}\\@eha}
+    {\\ifdefmacro{#1}
+       {\\ifdefltxprotect{#1}
+          {\\letcs\\etb@resrvda{\\expandafter\\@gobble\\string#1 }%
+           \\@tempswatrue}
+          {\\let\\etb@resrvda#1%
+           \\@tempswafalse}%
+        \\ifdefparam\\etb@resrvda
+          {\\etb@ifscanable\\etb@resrvda
+             {\\etb@robustify\\etb@resrvda
+              \\let#1\\etb@resrvda}
+             {\\etb@error{Failed to robustify \\string#1}
+                {The command is special and cannot be
+                 handled by \\string\\robustify.}%
+              \\@tempswafalse}}
+          {\\protected\\edef#1{\\expandonce\\etb@resrvda}}%
+        \\if@tempswa
+          \\csundef{\\expandafter\\@gobble\\string#1 }%
+        \\fi
+        \\undef\\etb@resrvda}
+       {\\etb@error{\\string#1 not a macro}\\@eha}}}
+
+\\def\\etb@robustify#1{%
+  \\begingroup
+  \\edef\\etb@resrvdb{%
+    \\def\\noexpand\\etb@resrvdb####1\\detokenize{macro}:####2->####3&{%
+      \\protected####1\\def\\string#1\\space####2{####3}}%
+    \\edef\\noexpand\\etb@resrvdb{%
+      \\noexpand\\etb@resrvdb\\meaning#1&}}%
+  \\etb@resrvdb
+  \\etb@patchcmd@scantoks\\etb@resrvdb}
+
+%  {<cstoken>}{<search>}{<true}{<false>}
+% *{<cstoken>}{<true}{<false>}
+
+\\newrobustcmd{\\ifpatchable}{%
+  \\etb@dbg@trce\\ifpatchable
+  \\begingroup
+  \\@makeother\\#%
+  \\@ifstar\\etb@ifpatchable@i\\etb@ifpatchable}
+
+\\long\\def\\etb@ifpatchable#1#2{%
+  \\endgroup
+  \\etb@dbg@init#1%
+  \\ifundef{#1}
+    {\\etb@dbg@fail{def}\\@secondoftwo}
+    {\\etb@dbg@info{def}%
+     \\ifdefmacro{#1}
+       {\\etb@dbg@info{mac}%
+        \\etb@ifscanable{#1}
+          {\\etb@ifhashcheck{#2}
+             {\\etb@dbg@info{tok}%
+              \\etb@ifpattern#1{#2}
+                 {\\etb@dbg@info{pat}%
+                  \\etb@dbg@info{pos}\\@firstoftwo}
+                 {\\etb@dbg@fail{pat}\\@secondoftwo}}
+             {\\etb@dbg@fail{hsh}\\@secondoftwo}}
+          {\\etb@dbg@fail{tok}\\@secondoftwo}}
+       {\\etb@dbg@fail{mac}\\@secondoftwo}}}
+
+\\long\\def\\etb@ifpatchable@i#1{%
+  \\endgroup
+  \\etb@dbg@init#1%
+  \\ifundef{#1}
+    {\\etb@dbg@fail{def}\\@secondoftwo}
+    {\\etb@dbg@info{def}%
+     \\ifdefmacro{#1}
+       {\\etb@dbg@info{mac}%
+        \\ifdefparam{#1}
+          {\\etb@dbg@info{prm}%
+           \\etb@ifscanable{#1}
+             {\\etb@dbg@info{tok}%
+              \\etb@dbg@info{pos}\\@firstoftwo}
+             {\\etb@dbg@fail{tok}\\@secondoftwo}}
+          {\\etb@dbg@info{prl}%
+           \\ifdefprotected{#1}
+             {\\etb@dbg@info{pro}}
+             {}%
+           \\etb@dbg@info{pos}\\@firstoftwo}}
+       {\\etb@dbg@fail{mac}\\@secondoftwo}}}
+
+% [<prefix>]{<cstoken>}{<search>}{<replace>}{<success>}{<failure>}
+
+\\newrobustcmd*{\\patchcmd}{%
+  \\etb@dbg@trce\\patchcmd
+  \\begingroup
+  \\@makeother\\#%
+  \\etb@patchcmd}
+
+\\newcommand{\\etb@patchcmd}[4][########1]{%
+  \\etb@ifpatchable#2{#3}
+    {\\etb@dbg@succ{ret}%
+     \\begingroup
+     \\edef\\etb@resrvda{%
+       \\def\\noexpand\\etb@resrvda####1\\detokenize{macro:}####2->####3&{%
+         #1\\def\\string\\etb@resrvda\\space####2{\\noexpand\\etb@resrvdb####3&}}%
+       \\def\\noexpand\\etb@resrvdb####1\\detokenize{#3}####2&{%
+         ####1\\detokenize{#4}####2}%
+       \\edef\\noexpand\\etb@resrvda{%
+         \\noexpand\\etb@resrvda\\meaning#2&}}%
+     \\etb@resrvda
+     \\etb@patchcmd@scantoks\\etb@resrvda
+     \\let#2\\etb@resrvda
+     \\undef\\etb@resrvda
+     \\@firstoftwo}%
+    {\\@secondoftwo}}
+
+\\def\\etb@patchcmd@scantoks#1{%
+  \\edef\\etb@resrvda{\\endgroup
+    \\endlinechar\\m@ne
+    \\unexpanded{\\makeatletter\\scantokens}{#1}%
+    \\endlinechar\\the\\endlinechar\\relax
+    \\catcode\\number\`\\@=\\the\\catcode\`\\@\\relax}%
+  \\etb@resrvda}
+
+% {<cstoken>}{<code>}{<success>}{<failure>}
+
+\\newrobustcmd*{\\apptocmd}{%
+  \\etb@dbg@trce\\apptocmd
+  \\begingroup
+  \\@makeother\\#%
+  \\etb@hooktocmd\\etb@append}
+
+\\newrobustcmd*{\\pretocmd}{%
+  \\etb@dbg@trce\\pretocmd
+  \\begingroup
+  \\@makeother\\#%
+  \\etb@hooktocmd\\etb@prepend}
+
+\\long\\def\\etb@hooktocmd#1#2#3{%
+  \\endgroup
+  \\etb@dbg@init#2%
+  \\ifundef{#2}
+    {\\etb@dbg@fail{def}\\@secondoftwo}
+    {\\etb@dbg@info{def}%
+     \\ifdefmacro{#2}
+       {\\etb@dbg@info{mac}%
+        \\ifdefparam{#2}
+          {\\etb@dbg@info{prm}%
+           \\etb@ifscanable{#2}
+             {\\etb@ifhashcheck{#3}
+                {\\etb@dbg@info{tok}%
+                 \\etb@dbg@succ{ret}%
+                 \\etb@hooktocmd@i#1#2{#3}%
+                 \\@firstoftwo}
+                {\\etb@dbg@fail{hsh}\\@secondoftwo}}
+             {\\etb@dbg@fail{tok}\\@secondoftwo}}
+          {\\etb@dbg@info{prl}%
+           \\ifdefprotected{#2}
+             {\\etb@dbg@info{pro}%
+              \\etb@dbg@succ{red}%
+              \\protected}
+             {\\etb@dbg@succ{red}}%
+           \\edef#2{#1{\\expandonce#2}{\\unexpanded{#3}}}%
+           \\@firstoftwo}}
+       {\\etb@dbg@fail{mac}\\@secondoftwo}}}
+
+\\long\\def\\etb@hooktocmd@i#1#2#3{%
+  \\begingroup
+  \\edef\\etb@resrvda{%
+    \\def\\noexpand\\etb@resrvda####1\\detokenize{macro}:####2->####3&{%
+      ####1\\def\\string\\etb@resrvda\\space####2{#1{####3}{\\detokenize{#3}}}}%
+    \\edef\\noexpand\\etb@resrvda{%
+      \\noexpand\\etb@resrvda\\meaning#2&}}%
+  \\etb@resrvda
+  \\etb@patchcmd@scantoks\\etb@resrvda
+  \\let#2\\etb@resrvda
+  \\undef\\etb@resrvda}
+
+\\long\\def\\etb@append#1#2{#1#2}
+\\long\\def\\etb@prepend#1#2{#2#1}
+
+\\newrobustcmd*{\\tracingpatches}{%
+  \\etb@info{Enabling tracing}%
+  \\input{etoolbox.def}%
+  \\global\\let\\tracingpatches\\relax}
+\\@onlypreamble\\tracingpatches
+
+\\let\\etb@dbg@trce\\@gobble
+\\let\\etb@dbg@init\\@gobble
+\\let\\etb@dbg@info\\@gobble
+\\let\\etb@dbg@succ\\@gobble
+\\let\\etb@dbg@fail\\@gobble
+
+% {<numeral>}
+
+\\newcommand{\\rmntonum}[1]{%
+  \\ifblank{#1}
+    {}
+    {\\expandafter\\etb@rti@end\\number\\numexpr
+     \\expandafter\\etb@rti@prs\\detokenize{#1}&\\relax}}
+
+\\def\\etb@rti@prs#1#2{%
+  \\ifx&#1%
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+  \\fi
+  {#1#2}
+  {\\ifx&#2%
+     \\expandafter\\@firstoftwo
+   \\else
+     \\expandafter\\@secondoftwo
+   \\fi
+   {\\etb@rti@chk#1+\\etb@rti@num#1#2}
+   {\\etb@rti@chk#1\\etb@rti@chk#2%
+    \\ifnum\\etb@rti@num#1<\\etb@rti@num#2 %
+      \\expandafter\\@firstoftwo
+    \\else
+      \\expandafter\\@secondoftwo
+    \\fi
+    {+\\etb@rti@num#2-\\etb@rti@num#1\\etb@rti@prs}
+    {+\\etb@rti@num#1\\etb@rti@prs#2}}}}
+
+\\def\\etb@rti@chk#1{%
+  \\ifcsname etb@rmn@#1\\endcsname
+  \\else
+    \\expandafter\\etb@rti@brk
+  \\fi}
+
+\\def\\etb@rti@brk#1&{+\\z@&-1}
+\\def\\etb@rti@end#1&#2\\relax{\\ifblank{#2}{#1}{#2}}
+\\def\\etb@rti@num#1{\\csname etb@rmn@#1\\endcsname}
+
+\\chardef\\etb@rmn@i=1
+\\chardef\\etb@rmn@I=1
+\\chardef\\etb@rmn@v=5
+\\chardef\\etb@rmn@V=5
+\\chardef\\etb@rmn@x=10
+\\chardef\\etb@rmn@X=10
+\\chardef\\etb@rmn@l=50
+\\chardef\\etb@rmn@L=50
+\\chardef\\etb@rmn@c=100
+\\chardef\\etb@rmn@C=100
+\\mathchardef\\etb@rmn@d=500
+\\mathchardef\\etb@rmn@D=500
+\\mathchardef\\etb@rmn@m=1000
+\\mathchardef\\etb@rmn@M=1000
+
+% {<numeral>}{<true>}{<false>}
+
+\\newcommand{\\ifrmnum}[1]{%
+  \\ifblank{#1}
+    {\\@secondoftwo}
+    {\\expandafter\\etb@ifr@prs\\detokenize{#1}\\relax}}
+
+\\def\\etb@ifr@prs#1{%
+  \\ifx\\relax#1%
+    \\expandafter\\@firstoftwo
+  \\else
+    \\ifcsname etb@rmn@#1\\endcsname
+      \\expandafter\\expandafter
+      \\expandafter\\etb@ifr@prs
+    \\else
+      \\expandafter\\expandafter
+      \\expandafter\\etb@ifr@brk
+    \\fi
+  \\fi}
+
+\\def\\etb@ifr@brk#1\\relax{\\@secondoftwo}
+
+% <*>{<command>}{<separator>}
+
+\\newrobustcmd*{\\DeclareListParser}{%
+  \\@ifstar
+    {\\etb@defparser\\etb@defparser@arg}
+    {\\etb@defparser\\etb@defparser@do}}
+
+\\def\\etb@defparser#1#2#3{%
+  \\@ifdefinable#2{#1{#2}{#3}}}
+
+\\def\\etb@defparser@do#1#2{%
+  \\ifblank{#2}{\\long\\def#1##1{%
+    \\etb@lst@@notoken@do##1\\etb@lst@q@end&}}
+    {\\etb@defparser@do@aux{#1}{#2}}}
+
+\\def\\etb@defparser@do@aux#1#2{%
+  \\begingroup
+  \\edef\\@tempa{\\endgroup
+    \\long\\def\\noexpand#1####1{%
+      \\expandafter\\noexpand
+      \\csname etb@lst@\\expandafter\\@gobble\\string#1\\endcsname
+      \\noexpand\\@nil####1\\noexpand#2\\noexpand\\etb@lst@q@end\\noexpand#2&}%
+    \\long\\csdef{etb@lst@\\expandafter\\@gobble\\string#1}%
+      ####1\\noexpand#2{%
+      \\noexpand\\expandafter\\noexpand\\ifx\\noexpand\\expandafter
+      \\noexpand\\etb@lst@q@end\\noexpand\\@gobble####1\\noexpand\\@empty
+        \\noexpand\\expandafter\\noexpand\\@firstoftwo
+      \\noexpand\\else
+        \\noexpand\\expandafter\\noexpand\\@secondoftwo
+      \\noexpand\\fi
+        {\\noexpand\\listbreak}
+        {\\noexpand\\etb@listitem\\noexpand\\do{####1}%
+         \\expandafter\\noexpand
+         \\csname etb@lst@\\expandafter\\@gobble\\string#1\\endcsname
+         \\noexpand\\@nil}}}%
+  \\@tempa}
+
+\\long\\def\\etb@lst@@notoken@do#1{%
+  \\ifx\\etb@lst@q@end#1\\@empty
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+  \\fi
+    {\\listbreak}
+    {\\do{#1}%
+    \\etb@lst@@notoken@do}}
+
+\\def\\etb@lst@q@end{\\etb@lst@q@end}
+
+\\def\\etb@defparser@arg#1#2{%
+  \\ifblank{#2}{\\long\\def#1##1##2{%
+    \\etb@lst@@notoken@arg{##1}##2\\etb@lst@q@end&}}
+    {\\etb@defparser@arg@aux{#1}{#2}}}
+
+\\def\\etb@defparser@arg@aux#1#2{%
+  \\begingroup
+  \\edef\\@tempa{\\endgroup
+    \\long\\def\\noexpand#1####1####2{%
+      \\expandafter\\noexpand
+      \\csname etb@lst@\\expandafter\\@gobble\\string#1\\endcsname
+      {####1}\\noexpand\\@nil####2\\noexpand#2\\noexpand\\etb@lst@q@end\\noexpand#2&}%
+    \\long\\csdef{etb@lst@\\expandafter\\@gobble\\string#1}####1####2\\noexpand#2{%
+      \\noexpand\\expandafter\\noexpand\\ifx\\noexpand\\expandafter
+      \\noexpand\\etb@lst@q@end\\noexpand\\@gobble####2\\noexpand\\@empty
+        \\noexpand\\expandafter\\noexpand\\@firstoftwo
+      \\noexpand\\else
+        \\noexpand\\expandafter\\noexpand\\@secondoftwo
+      \\noexpand\\fi
+        {\\noexpand\\listbreak}
+        {\\noexpand\\etb@listitem{####1}{####2}%
+         \\expandafter\\noexpand
+         \\csname etb@lst@\\expandafter\\@gobble\\string#1\\endcsname
+                {####1}\\noexpand\\@nil}}}%
+  \\@tempa}
+
+\\long\\def\\etb@lst@@notoken@arg#1#2{%
+  \\ifx\\etb@lst@q@end#2\\@empty
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+  \\fi
+    {\\listbreak}
+    {#1{#2}%
+    \\etb@lst@@notoken@arg{#1}}}
+
+\\long\\def\\etb@listitem#1#2{%
+  \\expandafter\\ifblank\\expandafter{\\@gobble#2}
+    {}
+    {\\expandafter\\etb@listitem@i
+     \\expandafter{\\@secondoftwo#2}{#1}}}
+\\long\\def\\etb@listitem@i#1#2{#2{#1}}
+
+\\newcommand*{\\listbreak}{}
+\\long\\def\\listbreak#1&{}
+
+% {<item1>,<item2>,...} => \\do{<item1>}\\do{<item2>}...
+
+\\DeclareListParser{\\docsvlist}{,}
+
+% {<handler>}{<item1>,<item2>,...} => <handler>{<item1>}<handler>{<item2>}...
+
+\\DeclareListParser*{\\forcsvlist}{,}
+
+% {<listmacro>}{<string>}
+
+\\newrobustcmd{\\listadd}[2]{%
+  \\ifblank{#2}{}{\\appto#1{#2|}}}
+\\newrobustcmd{\\listeadd}[2]{%
+  \\begingroup
+  \\edef\\etb@tempa{\\endgroup\\noexpand\\ifblank{#2}}%
+  \\etb@tempa{}{\\eappto#1{#2|}}}
+\\newrobustcmd{\\listgadd}[2]{%
+  \\ifblank{#2}{}{\\gappto#1{#2|}}}
+\\newrobustcmd{\\listxadd}[2]{%
+  \\begingroup
+  \\edef\\etb@tempa{\\endgroup\\noexpand\\ifblank{#2}}%
+  \\etb@tempa{}{\\xappto#1{#2|}}}
+
+% {<listcsname>}{<string>}
+
+\\newrobustcmd{\\listcsadd}[1]{%
+  \\expandafter\\listadd\\csname#1\\endcsname}
+\\newrobustcmd{\\listcseadd}[1]{%
+  \\expandafter\\listeadd\\csname#1\\endcsname}
+\\newrobustcmd{\\listcsgadd}[1]{%
+  \\expandafter\\listgadd\\csname#1\\endcsname}
+\\newrobustcmd{\\listcsxadd}[1]{%
+  \\expandafter\\listxadd\\csname#1\\endcsname}
+
+% {<listmacro>}{<string>}
+
+\\newrobustcmd{\\listremove}[2]{%
+  \\etb@listremove{#1}{#2}\\def}
+\\newrobustcmd{\\listgremove}[2]{%
+  \\etb@listremove{#1}{#2}\\gdef}
+
+\\protected\\long\\def\\etb@listremove#1#2#3{%
+  \\ifblank{#2}
+    {}
+    {\\ifinlist{#2}{#1}{%
+     \\begingroup
+     \\def\\etb@tempa##1|#2|##2&{\\endgroup
+       \\expandafter#3\\expandafter#1\\expandafter{\\@gobble##1|##2}}%
+    \\expandafter\\etb@tempa\\expandafter|#1&}{}}%
+}
+
+% {<listcsname>}{<string>}
+
+\\newrobustcmd{\\listcsremove}[1]{%
+  \\expandafter\\listremove\\csname#1\\endcsname}
+\\newrobustcmd{\\listcsgremove}[1]{%
+  \\expandafter\\listgremove\\csname#1\\endcsname}
+
+% {<string>}{<listmacro>}{<true>}{<false>}
+
+\\newrobustcmd{\\ifinlist}[2]{%
+  \\begingroup
+  \\def\\etb@tempa##1|#1|##2&{\\endgroup
+    \\ifblank{##2}\\@secondoftwo\\@firstoftwo}%
+  \\expandafter\\etb@tempa\\expandafter|#2|#1|&}
+
+\\newrobustcmd{\\xifinlist}[1]{%
+  \\begingroup
+  \\edef\\etb@tempa{\\endgroup\\ifinlist{#1}}%
+  \\etb@tempa}
+
+% {<string>}{<listcsname>}{<true>}{<false>}
+
+\\newrobustcmd{\\ifinlistcs}[2]{%
+  \\expandafter\\etb@ifinlistcs@i\\csname #2\\endcsname{#1}}
+\\long\\def\\etb@ifinlistcs@i#1#2{\\ifinlist{#2}{#1}}
+
+\\newrobustcmd{\\xifinlistcs}[1]{%
+  \\begingroup
+  \\edef\\etb@tempa{\\endgroup\\ifinlistcs{#1}}%
+  \\etb@tempa}
+
+% {<handler>}{<listmacro>} => <handler>{<item1>}<handler>{<item2>}...
+
+\\newcommand*{\\forlistloop}[2]{%
+  \\expandafter\\etb@forlistloop\\expandafter{#2}{#1}}
+
+\\long\\def\\etb@forlistloop#1#2{\\etb@forlistloop@i{#2}#1|\\etb@lst@q@end|&}
+
+\\long\\def\\etb@forlistloop@i#1#2|{%
+  \\ifx\\etb@lst@q@end#2\\@empty
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+  \\fi
+    {\\listbreak}
+    {\\ifblank{#2}
+      {}
+      {#1{#2}}%
+      \\etb@forlistloop@i{#1}}}
+
+% {<handler>}{<listcsname>} => <handler>{<item1>}<handler>{<item2>}...
+
+\\newcommand*{\\forlistcsloop}[2]{%
+  \\expandafter\\expandafter\\expandafter\\etb@forlistloop
+  \\expandafter\\expandafter\\expandafter{\\csname#2\\endcsname}{#1}}
+
+% {<listmacro>} => \\do{<item1>}\\do{<item2>}...
+
+\\newcommand*{\\dolistloop}{\\forlistloop\\do}
+
+% {<listcsname>} => \\do{<item1>}\\do{<item2>}...
+
+\\newcommand*{\\dolistcsloop}{\\forlistcsloop\\do}
+
+\\providecommand\\IfFormatAtLeastTF{\\@ifl@t@r\\fmtversion}
+\\IfFormatAtLeastTF{2020-10-01}
+  {%
+    \\newrobustcmd*{\\AtEndPreamble}{\\AddToHook{begindocument/before}}%
+    \\let\\AfterPreamble\\AtBeginDocument
+    \\newrobustcmd*{\\AfterEndPreamble}{\\AddToHook{begindocument/end}}%
+    \\newrobustcmd*{\\AfterEndDocument}{\\AddToHook{enddocument/end}}%
+    \\endinput
+  }
+  {}
+
+% {<code>}
+
+\\newrobustcmd*{\\AtEndPreamble}{\\gappto\\@endpreamblehook}
+\\newcommand*{\\@endpreamblehook}{}
+
+\\preto\\document{%
+  \\endgroup
+  \\let\\AtEndPreamble\\@firstofone
+  \\@endpreamblehook
+  \\protected\\def\\AtEndPreamble{\\@notprerr\\@gobble}%
+  \\undef\\@endpreamblehook
+  \\begingroup}
+
+% {<code>}
+
+\\newrobustcmd*{\\AfterPreamble}{\\AtBeginDocument}
+\\AtEndPreamble{\\let\\AfterPreamble\\@firstofone}
+
+% {<code>}
+
+\\newrobustcmd*{\\AfterEndPreamble}{\\gappto\\@afterendpreamblehook}
+\\newcommand*{\\@afterendpreamblehook}{}
+
+\\appto\\document{%
+  \\let\\AfterEndPreamble\\@firstofone
+  \\@afterendpreamblehook
+  \\protected\\def\\AfterEndPreamble{\\@notprerr\\@gobble}%
+  \\undef\\@afterendpreamblehook
+  \\ignorespaces}
+
+\\AtEndDocument{\\let\\AfterEndPreamble\\@gobble}
+
+% {<code>}
+
+\\newrobustcmd*{\\AfterEndDocument}{\\gappto\\@afterenddocumenthook}
+\\newcommand*{\\@afterenddocumenthook}{}
+
+\\patchcmd\\enddocument
+  {\\deadcycles}
+  {\\let\\AfterEndDocument\\@firstofone
+   \\@afterenddocumenthook
+   \\deadcycles}
+  {}
+  {\\AtEndDocument{%
+     \\let\\etb@@end\\@@end
+     \\def\\@@end{%
+       \\let\\AfterEndDocument\\@firstofone
+       \\@afterenddocumenthook
+       \\etb@@end}}}
+
+% {<environment>}{<code>}
+
+\\newrobustcmd{\\AtBeginEnvironment}[1]{%
+  \\csgappto{@begin@#1@hook}}
+
+\\ifcsname begin \\endcsname
+  \\expandafter\\patchcmd\\csname begin \\endcsname
+    {\\csname #1\\endcsname}
+    {\\csuse{@begin@#1@hook}%
+     \\csname #1\\endcsname}
+    {}
+    {\\etb@warning{%
+       Patching '\\string\\begin' failed!\\MessageBreak
+       '\\string\\AtBeginEnvironment' will not work\\@gobble}}
+\\else
+  \\patchcmd\\begin
+    {\\csname #1\\endcsname}
+    {\\csuse{@begin@#1@hook}%
+     \\csname #1\\endcsname}
+    {}
+    {\\etb@warning{%
+       Patching '\\string\\begin' failed!\\MessageBreak
+       '\\string\\AtBeginEnvironment' will not work\\@gobble}}
+\\fi
+
+% {<environment>}{<code>}
+
+\\newrobustcmd{\\AtEndEnvironment}[1]{%
+  \\csgappto{@end@#1@hook}}
+
+\\ifcsname end \\endcsname
+\\expandafter\\patchcmd\\csname end \\endcsname
+  {\\csname end#1\\endcsname}
+  {\\csuse{@end@#1@hook}%
+   \\csname end#1\\endcsname}
+  {}
+  {\\etb@warning{%
+     Patching '\\string\\end' failed!\\MessageBreak
+     '\\string\\AtEndEnvironment' will not work\\@gobble}}
+\\else
+\\patchcmd\\end
+  {\\csname end#1\\endcsname}
+  {\\csuse{@end@#1@hook}%
+   \\csname end#1\\endcsname}
+  {}
+  {\\etb@warning{%
+     Patching '\\string\\end' failed!\\MessageBreak
+     '\\string\\AtEndEnvironment' will not work\\@gobble}}
+\\fi
+
+% {<environment>}{<code>}
+
+\\newrobustcmd{\\BeforeBeginEnvironment}[1]{%
+  \\csgappto{@beforebegin@#1@hook}}
+
+\\ifcsname begin \\endcsname
+  \\expandafter\\pretocmd\\csname begin \\endcsname
+    {\\csuse{@beforebegin@#1@hook}}
+    {}
+    {\\etb@warning{%
+       Patching '\\string\\begin' failed!\\MessageBreak
+       '\\string\\BeforeBeginEnvironment' will not work\\@gobble}}
+\\else
+  \\pretocmd\\begin
+    {\\csuse{@beforebegin@#1@hook}}
+    {}
+    {\\etb@warning{%
+       Patching '\\string\\begin' failed!\\MessageBreak
+       '\\string\\BeforeBeginEnvironment' will not work\\@gobble}}
+\\fi
+
+% {<environment>}{<code>}
+
+\\newrobustcmd{\\AfterEndEnvironment}[1]{%
+  \\csgappto{@afterend@#1@hook}}
+
+\\let\\if@ignore\\relax
+\\ifcsname end \\endcsname
+  \\expandafter\\patchcmd\\csname end \\endcsname
+    {\\if@ignore}
+    {\\csuse{@afterend@#1@hook}%
+     \\if@ignore}
+    {}
+    {\\etb@warning{%
+       Patching '\\string\\end' failed!\\MessageBreak
+       '\\string\\AfterEndEnvironment' will not work\\@gobble}}
+\\else
+  \\patchcmd\\end
+    {\\if@ignore}
+    {\\csuse{@afterend@#1@hook}%
+     \\if@ignore}
+    {}
+    {\\etb@warning{%
+       Patching '\\string\\end' failed!\\MessageBreak
+       '\\string\\AfterEndEnvironment' will not work\\@gobble}}
+\\fi
+\\let\\if@ignore\\iffalse
+
+\\endinput
+` },
+  { format: 26, filename: 'etoolbox.sty', content: `
 % Copyright (c) 2007-2011 Philipp Lehman.
 %           (c) 2015-2020 Joseph Wright
 %
@@ -6667,7 +11892,292 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 %%
 %% End of file \`everyshi.sty'.
 ` },
+  { format: 26, filename: 'everyshi.sty', content: `
+%%
+%% This is file \`everyshi.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% everyshi.dtx  (with options: \`package')
+%% Copyright (C) 1994–2001 Martin Schröder, 2020 Marei Peischl (peiTeX)  <marei@peitex.de>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%% http://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%% 
+%% This work has the LPPL maintenance status \`maintained'.
+%% 
+%% The Current Maintainer of this work is
+%% Marei Peischl <marei@peitex.de>.
+%% 
+%% This work consists of the files everyshi.dtx and everyshi.ins
+%% and the derived files everyshi.sty and everyshi-2001-05-15.sty.
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{everyshi}
+         [2020/11/18 v4.00 EveryShipout Package]
+%% \\CharacterTable
+%% {Upper-case    \\A\\B\\C\\D\\E\\F\\G\\H\\I\\J\\K\\L\\M\\N\\O\\P\\Q\\R\\S\\T\\U\\V\\W\\X\\Y\\Z
+%%  Lower-case    \\a\\b\\c\\d\\e\\f\\g\\h\\i\\j\\k\\l\\m\\n\\o\\p\\q\\r\\s\\t\\u\\v\\w\\x\\y\\z
+%%  Digits        \\0\\1\\2\\3\\4\\5\\6\\7\\8\\9
+%%  Exclamation   \\!     Double quote  \\"     Hash (number) \\#
+%%  Dollar        \\\$     Percent       \\%     Ampersand     \\&
+%%  Acute accent  \\'     Left paren    \\(     Right paren   \\)
+%%  Asterisk      \\*     Plus          \\+     Comma         \\,
+%%  Minus         \\-     Point         \\.     Solidus       \\/
+%%  Colon         \\:     Semicolon     \\;     Less than     \\<
+%%  Equals        \\=     Greater than  \\>     Question mark \\?
+%%  Commercial at \\@     Left bracket  \\[     Backslash     \\\\
+%%  Right bracket \\]     Circumflex    \\^     Underscore    \\_
+%%  Grave accent  \\\`     Left brace    \\{     Vertical bar  \\|
+%%  Right brace   \\}     Tilde         \\~}
+%%
+\\providecommand\\IfFormatAtLeastTF{\\@ifl@t@r\\fmtversion}
+\\IfFormatAtLeastTF{2020/10/01}{}{\\input{everyshi-2001-05-15.sty}}
+\\IfFormatAtLeastTF{2020/10/01}{}{\\endinput}
+\\protected \\def \\EveryShipout  {\\AddToHook{shipout/before}}
+\\protected \\def \\AtNextShipout {\\AddToHookNext{shipout/before}}
+\\endinput
+%%
+%% End of file \`everyshi.sty'.
+` },
   { format: 27, filename: 'expl3.sty', content: `
+%%
+%% This is file \`expl3.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% expl3.dtx  (with options: \`package')
+%% 
+%% Copyright (C) 1990-2025 The LaTeX Project
+%% 
+%% It may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License (LPPL), either version 1.3c of
+%% this license or (at your option) any later version.  The latest
+%% version of this license is in the file:
+%% 
+%%    https://www.latex-project.org/lppl.txt
+%% 
+%% This file is part of the "l3kernel bundle" (The Work in LPPL)
+%% and all files in that bundle must be distributed together.
+%% 
+%% File: expl3.dtx
+\\def\\ExplFileDate{2025-12-24}%
+\\let\\ExplLoaderFileDate\\ExplFileDate
+\\ProvidesPackage{expl3}
+  [%
+    \\ExplFileDate\\space
+    L3 programming layer (loader)
+  ]%
+\\protected\\def\\ProvidesExplPackage
+  {\\@expl@provides@file@@Nnnnnn\\ProvidesPackage{Package}}
+\\protected\\def\\ProvidesExplClass
+  {\\@expl@provides@file@@Nnnnnn\\ProvidesClass{Document Class}}
+\\protected\\def\\ProvidesExplFile
+  {\\@expl@provides@file@@Nnnnnn\\ProvidesFile{File}}
+\\protected\\long\\def\\@expl@provides@file@@Nnnnnn#1#2#3#4#5#6%
+  {%
+    \\ifnum0%
+        \\ifdefined#11\\fi
+        \\ifx\\relax#1\\else1\\fi
+        =11
+      \\expandafter#1%
+    \\else
+      \\@expl@provides@generic@@wnnw{#2}%
+    \\fi
+      {#3}[{#4 \\ifx\\relax#5\\relax\\else\\@expl@provides@file@@N#5\\space\\fi #6}]%
+    \\ExplSyntaxOn
+  }
+\\long\\def\\@expl@provides@file@@N#1{v\\if#1v\\else#1\\fi}
+\\protected\\long\\def\\@expl@provides@generic@@wnnw#1\\fi#2[#3]%
+  {%
+    \\immediate\\write-1{#1: #2 #3}%
+  }
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname tex\\string _let:D\\endcsname\\relax
+  \\expandafter\\@firstofone
+\\else
+  \\expandafter\\@gobble
+\\fi
+  {\\input expl3-code.tex }%
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname tex\\string _let:D\\endcsname\\relax
+  \\expandafter\\endinput
+\\fi
+\\ifcsname\\detokenize{c__kernel_expl_date_tl}\\endcsname
+  \\expandafter\\@firstofone
+\\else
+  \\ifodd\\csname\\detokenize{l__kernel_expl_bool}\\endcsname
+    \\global\\expandafter\\let\\csname\\detokenize
+      {c__kernel_expl_date_tl}\\endcsname\\ExplLoaderFileDate
+    \\expandafter\\expandafter
+    \\expandafter\\@gobble
+  \\else
+    \\expandafter\\expandafter
+    \\expandafter\\@firstofone
+  \\fi
+\\fi
+  {\\csname\\detokenize{__kernel_dependency_version_check:Nn}\\endcsname
+     \\ExplLoaderFileDate{expl3.sty}}%
+\\ifcsname\\detokenize{g__expl_reload_bool}\\endcsname
+  \\ExplSyntaxOn
+  \\bool_gset_true:N \\g__expl_reload_bool
+\\else
+  \\bool_new:N \\g__expl_reload_bool
+\\fi
+\\tl_if_exist:NF \\c__expl_def_ext_tl
+  { \\tl_const:Nn \\c__expl_def_ext_tl { def } }
+\\cs_gset_protected:Npn \\__kernel_sys_configuration_load:n #1
+  {
+    \\ExplSyntaxOff
+    \\cs_undefine:c { ver@ #1 .def }
+    \\@onefilewithoptions {#1} [ ] [ ]
+      \\c__expl_def_ext_tl
+    \\ExplSyntaxOn
+  }
+\\cs_gset_protected:Npn \\__kernel_sys_configuration_load_std:n #1
+  {
+    \\cs_undefine:c { ver@ #1 .def }
+    \\@onefilewithoptions {#1} [ ] [ ]
+      \\c__expl_def_ext_tl
+  }
+\\clist_if_exist:NF \\l__expl_options_clist
+  { \\clist_new:N \\l__expl_options_clist }
+\\DeclareOption*
+  { \\clist_put_right:NV \\l__expl_options_clist \\CurrentOption }
+\\ProcessOptions \\relax
+\\keys_define:nn { sys }
+  {
+    backend .choices:nn =
+      { dvipdfmx , dvips , dvisvgm , luatex , pdftex , pdfmode , xdvipdfmx , xetex }
+      { \\sys_load_backend:n {#1} } ,
+    check-declarations .choice: ,
+    check-declarations / true .code:n =
+      { \\debug_on:n { check-declarations } } ,
+    check-declarations / false .code:n =
+      {
+        \\__kernel_if_debug:TF
+          { \\debug_off:n { check-declarations } }
+          { }
+      } ,
+    check-declarations .default:n = true ,
+    driver .meta:n = { backend = #1 } ,
+    enable-debug .code:n = {} , % A stub
+    log-functions .choice: ,
+    log-functions / true .code:n =
+      { \\debug_on:n { log-functions } } ,
+    log-functions / false .code:n =
+      {
+        \\__kernel_if_debug:TF
+          { \\debug_off:n { log-functions } }
+          { }
+      } ,
+    log-functions .default:n = true ,
+    suppress-backend-headers .bool_gset_inverse:N
+      = \\g__kernel_backend_header_bool ,
+    suppress-backend-headers .initial:n = false ,
+    undo-recent-deprecations .code:n = {} % A stub
+  }
+\\cs_if_exist:NF \\@expl@sys@load@backend@@
+  {
+    \\tl_put_left:Nn \\document
+      {
+        \\endgroup
+        \\@expl@sys@load@backend@@
+        \\begingroup
+      }
+  }
+\\cs_gset_protected:Npn \\@expl@sys@load@backend@@
+  {
+    \\str_if_exist:NF \\c_sys_backend_str
+      { \\sys_load_backend:n { } }
+  }
+\\keys_set:nV { sys } \\l__expl_options_clist
+\\str_if_exist:NF \\c_sys_backend_str
+  { \\sys_load_backend:n { } }
+\\bool_if:NT \\g__expl_reload_bool
+  {
+    \\cs_gset_eq:NN \\__kernel_sys_configuration_load:n
+      \\__kernel_sys_configuration_load_std:n
+    \\ExplSyntaxOff
+    \\file_input_stop:
+  }
+\\cs_if_free:cTF { ver@expl3.sty }
+  {
+    \\tex_everyjob:D \\exp_after:wN
+      {
+        \\tex_the:D \\tex_everyjob:D
+        \\__kernel_sys_everyjob:
+      }
+  }
+  { \\__kernel_sys_everyjob: }
+\\reverse_if:N \\if_cs_exist:N \\s__expl_stop
+  \\scan_new:N \\s__expl_stop
+\\fi:
+\\cs_if_exist:NF \\@expl@push@filename@@
+  {
+    \\tl_put_left:Nn  \\@pushfilename { \\@expl@push@filename@@ }
+    \\tl_put_right:Nn \\@pushfilename { \\@expl@push@filename@aux@@ }
+  }
+\\cs_gset_protected:Npn \\@expl@push@filename@@
+  {
+    \\exp_args:Ne \\__kernel_file_input_push:n
+      {
+        \\tl_to_str:N \\@currname .
+        \\tl_to_str:N \\@currext
+      }
+    \\tl_put_left:Ne \\l__expl_status_stack_tl
+      {
+        \\bool_if:NTF \\l__kernel_expl_bool
+          { 1 }
+          { 0 }
+      }
+    \\ExplSyntaxOff
+  }
+\\cs_gset_protected:Npn \\@expl@push@filename@aux@@ #1#2#3
+  {
+    \\str_gset:Nn \\g_file_curr_name_str {#3}
+    #1 #2 {#3}
+  }
+\\cs_if_exist:NF \\@expl@pop@filename@@
+  {
+    \\tl_put_right:Nn \\@popfilename
+      { \\@expl@pop@filename@@ }
+  }
+\\cs_gset_protected:Npn \\@expl@pop@filename@@
+  {
+    \\__kernel_file_input_pop:
+    \\tl_if_empty:NTF \\l__expl_status_stack_tl
+      { \\ExplSyntaxOff }
+      { \\exp_after:wN \\__expl_status_pop:w \\l__expl_status_stack_tl \\s__expl_stop }
+  }
+\\cs_gset_protected:Npn \\__expl_status_pop:w #1#2 \\s__expl_stop
+  {
+    \\tl_set:Nn \\l__expl_status_stack_tl {#2}
+    \\int_if_odd:nTF {#1}
+      { \\ExplSyntaxOn }
+      { \\ExplSyntaxOff }
+  }
+\\tl_if_exist:NF \\l__expl_status_stack_tl
+  {
+    \\tl_new:N \\l__expl_status_stack_tl
+    \\tl_set:Nn \\l__expl_status_stack_tl { 0 }
+  }
+\\cs_gset_eq:NN \\__kernel_sys_configuration_load:n
+  \\__kernel_sys_configuration_load_std:n
+%% 
+%%
+%% End of file \`expl3.sty'.
+` },
+  { format: 26, filename: 'expl3.sty', content: `
 %%
 %% This is file \`expl3.sty',
 %% generated with the docstrip utility.
@@ -7173,7 +12683,409 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 %%
 %% End of file \`fancyhdr.sty'.
 ` },
+  { format: 26, filename: 'fancyhdr.sty', content: `
+%%
+%% This is file \`fancyhdr.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% fancyhdr.dtx  (with options: \`fancyhdr')
+%% 
+%% This is a generated file.
+%% 
+%% This file may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License, either version 1.3 of this license
+%% or (at your option) any later version.  The latest version of this
+%% license is in:
+%% 
+%%    http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.3 or later is part of all distributions of LaTeX version
+%% 2005/12/01 or later.
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{fancyhdr}%
+           [2019/01/31 v3.10
+                  Extensive control of page headers and footers]%
+% Copyright (C) 1994-2019 by Piet van Oostrum <piet@vanoostrum.org>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\def\\if@nch@mpty#1{\\def\\temp@a{#1}\\ifx\\temp@a\\@empty}
+\\def\\f@nch@def#1#2{\\if@nch@mpty{#2}\\f@nch@gbl\\def#1{\\leavevmode}\\else
+                                   \\f@nch@gbl\\def#1{#2\\strut}\\fi}
+\\let\\f@nch@gbl\\global
+\\newcommand{\\f@nch@ifundefined}[1]{%
+  \\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+  \\expandafter\\ifx\\csname #1\\endcsname\\relax
+    \\expandafter\\@firstoftwo
+  \\else
+    \\expandafter\\@secondoftwo
+    \\fi}
+\\newcommand\\f@nch@errmsg[1]{%
+  \\f@nch@ifundefined{PackageError}{\\errmessage{#1}}{\\PackageError{Fancyhdr}{#1}{}}}
+\\newcommand\\f@nch@warning[1]{%
+  \\f@nch@ifundefined{PackageWarning}{\\errmessage{#1}}{\\PackageWarning{Fancyhdr}{#1}{}}}
+\\newcommand{\\f@nch@forc}[3]{\\expandafter\\f@rc\\expandafter#1\\expandafter{#2}{#3}}
+\\newcommand{\\f@rc}[3]{\\def\\temp@ty{#2}\\ifx\\@empty\\temp@ty\\else
+                                    \\f@nch@rc#1#2\\f@nch@rc{#3}\\fi}
+\\def\\f@nch@rc#1#2#3\\f@nch@rc#4{\\def#1{#2}#4\\f@rc#1{#3}{#4}}
+\\newcommand{\\f@nch@for}[3]{\\edef\\@fortmp{#2}%
+  \\expandafter\\@forloop#2,\\@nil,\\@nil\\@@#1{#3}}
+\\newcommand\\f@nch@default[3]{%
+  \\edef\\temp@a{\\lowercase{\\edef\\noexpand\\temp@a{#3}}}\\temp@a \\def#1{}%
+  \\f@nch@forc\\tmpf@ra{#2}%
+  {\\expandafter\\f@nch@ifin\\tmpf@ra\\temp@a{\\edef#1{#1\\tmpf@ra}}{}}%
+  \\ifx\\@empty#1\\def#1{#2}\\fi}
+\\newcommand{\\f@nch@ifin}[4]{%
+  \\edef\\temp@a{#2}\\def\\temp@b##1#1##2\\temp@b{\\def\\temp@b{##1}}%
+  \\expandafter\\temp@b#2#1\\temp@b\\ifx\\temp@a\\temp@b #4\\else #3\\fi}
+\\newcommand{\\fancyhead}[2][]{\\f@nch@fancyhf\\fancyhead h[#1]{#2}}%
+\\newcommand{\\fancyfoot}[2][]{\\f@nch@fancyhf\\fancyfoot f[#1]{#2}}%
+\\newcommand{\\fancyhf}[2][]{\\f@nch@fancyhf\\fancyhf {}[#1]{#2}}%
+\\newcommand{\\fancyheadoffset}[2][]{\\f@nch@fancyhfoffs\\fancyheadoffset h[#1]{#2}}%
+\\newcommand{\\fancyfootoffset}[2][]{\\f@nch@fancyhfoffs\\fancyfootoffset f[#1]{#2}}%
+\\newcommand{\\fancyhfoffset}[2][]{\\f@nch@fancyhfoffs\\fancyhfoffset {}[#1]{#2}}%
+\\def\\f@nch@fancyhf#1#2[#3]#4{%
+  \\def\\temp@c{}%
+  \\f@nch@forc\\tmpf@ra{#3}%
+  {\\expandafter\\f@nch@ifin\\tmpf@ra{eolcrhf,EOLCRHF}%
+    {}{\\edef\\temp@c{\\temp@c\\tmpf@ra}}}%
+  \\ifx\\@empty\\temp@c\\else \\f@nch@errmsg{Illegal char \`\\temp@c' in
+    \\string#1 argument: [#3]}%
+  \\fi \\f@nch@for\\temp@c{#3}%
+  {\\f@nch@default\\f@nch@@eo{eo}\\temp@c \\if@twoside\\else \\if\\f@nch@@eo
+    e\\f@nch@warning {\\string#1's \`E' option without twoside option is
+      useless}\\fi\\fi \\f@nch@default\\f@nch@@lcr{lcr}\\temp@c
+    \\f@nch@default\\f@nch@@hf{hf}{#2\\temp@c}%
+    \\f@nch@forc\\f@nch@eo\\f@nch@@eo
+        {\\f@nch@forc\\f@nch@lcr\\f@nch@@lcr
+          {\\f@nch@forc\\f@nch@hf\\f@nch@@hf
+            {\\expandafter\\f@nch@def\\csname
+              f@nch@\\f@nch@eo\\f@nch@lcr\\f@nch@hf\\endcsname {#4}}}}}}
+\\def\\f@nch@fancyhfoffs#1#2[#3]#4{%
+  \\def\\temp@c{}%
+  \\f@nch@forc\\tmpf@ra{#3}%
+  {\\expandafter\\f@nch@ifin\\tmpf@ra{eolrhf,EOLRHF}%
+    {}{\\edef\\temp@c{\\temp@c\\tmpf@ra}}}%
+  \\ifx\\@empty\\temp@c\\else \\f@nch@errmsg{Illegal char \`\\temp@c' in
+    \\string#1 argument: [#3]}%
+  \\fi \\f@nch@for\\temp@c{#3}%
+  {\\f@nch@default\\f@nch@@eo{eo}\\temp@c \\if@twoside\\else \\if\\f@nch@@eo
+    e\\f@nch@warning {\\string#1's \`E' option without twoside option is
+      useless}\\fi\\fi \\f@nch@default\\f@nch@@lcr{lr}\\temp@c
+    \\f@nch@default\\f@nch@@hf{hf}{#2\\temp@c}%
+    \\f@nch@forc\\f@nch@eo\\f@nch@@eo
+        {\\f@nch@forc\\f@nch@lcr\\f@nch@@lcr
+          {\\f@nch@forc\\f@nch@hf\\f@nch@@hf
+            {\\expandafter\\setlength\\csname
+              f@nch@O@\\f@nch@eo\\f@nch@lcr\\f@nch@hf\\endcsname {#4}}}}}%
+  \\f@nch@setoffs}
+\\newcommand{\\lhead}[2][\\f@nch@olh]%
+                     {\\f@nch@def\\f@nch@olh{#2}\\f@nch@def\\f@nch@elh{#1}}
+\\newcommand{\\chead}[2][\\f@nch@och]%
+                     {\\f@nch@def\\f@nch@och{#2}\\f@nch@def\\f@nch@ech{#1}}
+\\newcommand{\\rhead}[2][\\f@nch@orh]%
+                     {\\f@nch@def\\f@nch@orh{#2}\\f@nch@def\\f@nch@erh{#1}}
+\\newcommand{\\lfoot}[2][\\f@nch@olf]%
+                     {\\f@nch@def\\f@nch@olf{#2}\\f@nch@def\\f@nch@elf{#1}}
+\\newcommand{\\cfoot}[2][\\f@nch@ocf]%
+                     {\\f@nch@def\\f@nch@ocf{#2}\\f@nch@def\\f@nch@ecf{#1}}
+\\newcommand{\\rfoot}[2][\\f@nch@orf]%
+                     {\\f@nch@def\\f@nch@orf{#2}\\f@nch@def\\f@nch@erf{#1}}
+\\newlength{\\f@nch@headwidth} \\let\\headwidth\\f@nch@headwidth
+\\newlength{\\f@nch@O@elh}
+\\newlength{\\f@nch@O@erh}
+\\newlength{\\f@nch@O@olh}
+\\newlength{\\f@nch@O@orh}
+\\newlength{\\f@nch@O@elf}
+\\newlength{\\f@nch@O@erf}
+\\newlength{\\f@nch@O@olf}
+\\newlength{\\f@nch@O@orf}
+\\newcommand{\\headrulewidth}{0.4pt}
+\\newcommand{\\footrulewidth}{0pt}
+\\f@nch@ifundefined{footruleskip}%
+      {\\newcommand{\\footruleskip}{.3\\normalbaselineskip}}{}
+\\newcommand{\\plainheadrulewidth}{0pt}
+\\newcommand{\\plainfootrulewidth}{0pt}
+\\newif\\if@fancyplain \\@fancyplainfalse
+\\def\\fancyplain#1#2{\\if@fancyplain#1\\else#2\\fi}
+\\headwidth=-123456789sp
+\\let\\f@nch@raggedleft\\raggedleft
+\\let\\f@nch@raggedright\\raggedright
+\\let\\f@nch@centering\\centering
+\\let\\f@nch@everypar\\everypar
+\\def\\f@nch@reset{\\f@nch@everypar{}\\restorecr\\endlinechar=13
+  \\let\\\\\\@normalcr \\let\\raggedleft\\f@nch@raggedleft
+  \\let\\raggedright\\f@nch@raggedright \\let\\centering\\f@nch@centering
+  \\def\\baselinestretch{1}%
+  \\hsize=\\headwidth
+  \\def\\nouppercase##1{{\\let\\uppercase\\relax\\let\\MakeUppercase\\relax
+      \\expandafter\\let\\csname MakeUppercase \\endcsname\\relax##1}}%
+  \\f@nch@ifundefined{@newbaseline} % NFSS not present; 2.09 or 2e
+  {\\f@nch@ifundefined{@normalsize} {\\normalsize} % for ucthesis.cls
+   {\\@normalsize}}%
+  {\\@newbaseline}% NFSS (2.09) present
+  }
+\\fancyhf{}
+\\if@twoside
+  \\fancyhead[el,or]{\\fancyplain{}{\\slshape\\rightmark}}
+  \\fancyhead[er,ol]{\\fancyplain{}{\\slshape\\leftmark}}
+\\else
+  \\fancyhead[l]{\\fancyplain{}{\\slshape\\rightmark}}
+  \\fancyhead[r]{\\fancyplain{}{\\slshape\\leftmark}}
+\\fi
+\\fancyfoot[c]{\\rmfamily\\thepage} % page number
+\\newcommand\\f@nch@vbox[2]{%
+  \\setbox0\\vbox{#2}%
+  \\ifdim\\ht0>#1\\relax
+    \\f@nch@warning{%
+      \\string#1 is too small (\\the#1): ^^J%
+      Make it at least \\the\\ht0.^^J%
+      We now make it that large for the rest of the document.^^J%
+      This may cause the page layout to be inconsistent, however\\@gobble
+    }%
+    \\dimen0=#1\\relax
+    \\global#1=\\ht0\\relax
+    \\ht0=\\dimen0 %
+  \\fi
+  \\box0}
+\\newcommand\\f@nch@head[5]{%
+  #1%
+  \\hbox to\\headwidth{%
+    \\f@nch@reset
+    \\f@nch@vbox\\headheight{%
+      \\hbox{%
+        \\rlap{\\parbox[b]{\\headwidth}{\\raggedright#2}}%
+        \\hfill
+        \\parbox[b]{\\headwidth}{\\centering#3}%
+        \\hfill
+        \\llap{\\parbox[b]{\\headwidth}{\\raggedleft#4}}%
+      }%
+      \\headrule
+    }%
+  }%
+  #5%
+}
+\\newcommand\\f@nch@foot[5]{%
+  #1%
+  \\hbox to\\headwidth{%
+    \\f@nch@reset
+    \\f@nch@vbox\\footskip{%
+      \\setbox0=\\vbox{\\footrule}\\unvbox0
+      \\vskip\\footruleskip
+      \\hbox{%
+        \\rlap{\\parbox[t]{\\headwidth}{\\raggedright#2}}%
+        \\hfill
+        \\parbox[t]{\\headwidth}{\\centering#3}%
+        \\hfill
+        \\llap{\\parbox[t]{\\headwidth}{\\raggedleft#4}}%
+      }%
+    }%
+  }%
+  #5%
+}
+\\def\\headrule{{\\if@fancyplain\\let\\headrulewidth\\plainheadrulewidth\\fi
+    \\hrule\\@height\\headrulewidth\\@width\\headwidth
+    \\vskip-\\headrulewidth}}
+\\def\\footrule{{\\if@fancyplain\\let\\footrulewidth\\plainfootrulewidth\\fi
+    \\hrule\\@width\\headwidth\\@height\\footrulewidth}}
+\\def\\ps@fancy{%
+  \\f@nch@ifundefined{@chapapp}{\\let\\@chapapp\\chaptername}{}% for amsbook
+\\f@nch@ifundefined{MakeUppercase}{\\def\\MakeUppercase{\\uppercase}}{}%
+\\f@nch@ifundefined{chapter}%
+ {\\def\\sectionmark##1{\\markboth{\\MakeUppercase{\\ifnum \\c@secnumdepth>\\z@
+        \\thesection\\hskip 1em\\relax
+      \\fi ##1}}{}}%
+  \\def\\subsectionmark##1{\\markright {\\ifnum \\c@secnumdepth >\\@ne
+    \\thesubsection\\hskip 1em\\relax \\fi ##1}}}%
+ {\\def\\chaptermark##1{\\markboth {\\MakeUppercase{\\ifnum
+      \\c@secnumdepth>\\m@ne \\@chapapp\\ \\thechapter. \\ \\fi ##1}}{}}%
+\\def\\sectionmark##1{\\markright{\\MakeUppercase{\\ifnum \\c@secnumdepth >\\z@
+      \\thesection. \\ \\fi ##1}}}%
+}
+\\ps@@fancy
+\\gdef\\ps@fancy{\\@fancyplainfalse\\ps@@fancy}%
+\\ifdim\\headwidth<0sp
+    \\global\\advance\\headwidth123456789sp\\global\\advance\\headwidth\\textwidth
+\\fi}
+\\def\\ps@fancyplain{\\ps@fancy \\let\\ps@plain\\ps@plain@fancy}
+\\def\\ps@plain@fancy{\\@fancyplaintrue\\ps@@fancy}
+\\let\\ps@@empty\\ps@empty
+\\def\\ps@@fancy{%
+  \\ps@@empty
+  \\def\\@mkboth{\\protect\\markboth}%
+  \\def\\@oddhead{\\f@nch@head\\f@nch@Oolh\\f@nch@olh\\f@nch@och\\f@nch@orh\\f@nch@Oorh}%
+  \\def\\@oddfoot{\\f@nch@foot\\f@nch@Oolf\\f@nch@olf\\f@nch@ocf\\f@nch@orf\\f@nch@Oorf}%
+  \\def\\@evenhead{\\f@nch@head\\f@nch@Oelh\\f@nch@elh\\f@nch@ech\\f@nch@erh\\f@nch@Oerh}%
+  \\def\\@evenfoot{\\f@nch@foot\\f@nch@Oelf\\f@nch@elf\\f@nch@ecf\\f@nch@erf\\f@nch@Oerf}%
+}
+\\def\\f@nch@Oolh{\\if@reversemargin\\hss\\else\\relax\\fi}
+\\def\\f@nch@Oorh{\\if@reversemargin\\relax\\else\\hss\\fi}
+\\let\\f@nch@Oelh\\f@nch@Oorh
+\\let\\f@nch@Oerh\\f@nch@Oolh
+\\let\\f@nch@Oolf\\f@nch@Oolh
+\\let\\f@nch@Oorf\\f@nch@Oorh
+\\let\\f@nch@Oelf\\f@nch@Oelh
+\\let\\f@nch@Oerf\\f@nch@Oerh
+\\def\\f@nch@offsolh{\\headwidth=\\textwidth\\advance\\headwidth\\f@nch@O@olh
+                   \\advance\\headwidth\\f@nch@O@orh\\hskip-\\f@nch@O@olh}
+\\def\\f@nch@offselh{\\headwidth=\\textwidth\\advance\\headwidth\\f@nch@O@elh
+                   \\advance\\headwidth\\f@nch@O@erh\\hskip-\\f@nch@O@elh}
+\\def\\f@nch@offsolf{\\headwidth=\\textwidth\\advance\\headwidth\\f@nch@O@olf
+                   \\advance\\headwidth\\f@nch@O@orf\\hskip-\\f@nch@O@olf}
+\\def\\f@nch@offself{\\headwidth=\\textwidth\\advance\\headwidth\\f@nch@O@elf
+                   \\advance\\headwidth\\f@nch@O@erf\\hskip-\\f@nch@O@elf}
+\\def\\f@nch@setoffs{%
+  \\f@nch@gbl\\let\\headwidth\\f@nch@headwidth
+  \\f@nch@gbl\\let\\f@nch@Oolh\\f@nch@offsolh
+  \\f@nch@gbl\\let\\f@nch@Oelh\\f@nch@offselh \\f@nch@gbl\\let\\f@nch@Oorh\\hss
+  \\f@nch@gbl\\let\\f@nch@Oerh\\hss \\f@nch@gbl\\let\\f@nch@Oolf\\f@nch@offsolf
+  \\f@nch@gbl\\let\\f@nch@Oelf\\f@nch@offself \\f@nch@gbl\\let\\f@nch@Oorf\\hss
+  \\f@nch@gbl\\let\\f@nch@Oerf\\hss
+}
+\\newif\\iff@nch@footnote
+\\AtBeginDocument{%
+  \\let\\latex@makecol\\@makecol
+  \\def\\@makecol{\\ifvoid\\footins\\f@nch@footnotefalse\\else\\f@nch@footnotetrue\\fi
+    \\let\\topfloat\\@toplist\\let\\botfloat\\@botlist\\latex@makecol}%
+}
+\\newcommand\\iftopfloat[2]{\\ifx\\topfloat\\empty #2\\else #1\\fi}%
+\\newcommand\\ifbotfloat[2]{\\ifx\\botfloat\\empty #2\\else #1\\fi}%
+\\newcommand\\iffloatpage[2]{\\if@fcolmade #1\\else #2\\fi}%
+\\newcommand\\iffootnote[2]{\\iff@nch@footnote #1\\else #2\\fi}%
+\\newcommand{\\fancypagestyle}[2]{%
+  \\@namedef{ps@#1}{\\let\\f@nch@gbl\\relax#2\\relax\\ps@fancy}}
+\\endinput
+%%
+%% End of file \`fancyhdr.sty'.
+` },
   { format: 27, filename: 'fontenc.sty', content: `
+%%
+%% This is file \`fontenc.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% ltoutenc.dtx  (with options: \`package')
+%% 
+%% This is a generated file.
+%% 
+%% The source is maintained by the LaTeX Project team and bug
+%% reports for it can be opened at https://latex-project.org/bugs.html
+%% (but please observe conditions on bug reports sent to that address!)
+%% 
+%% 
+%% Copyright (C) 1993-2020
+%% The LaTeX3 Project and any individual authors listed elsewhere
+%% in this file.
+%% 
+%% This file was generated from file(s) of the LaTeX base system.
+%% --------------------------------------------------------------
+%% 
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    https://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2008 or later.
+%% 
+%% This file has the LPPL maintenance status "maintained".
+%% 
+%% This file may only be distributed together with a copy of the LaTeX
+%% base system. You may however distribute the LaTeX base system without
+%% such generated files.
+%% 
+%% The list of all files belonging to the LaTeX base distribution is
+%% given in the file \`manifest.txt'. See also \`legal.txt' for additional
+%% information.
+%% 
+%% The list of derived (unpacked) files belonging to the distribution
+%% and covered by LPPL is defined by the unpacking scripts (with
+%% extension .ins) which are part of the distribution.
+%%% From File: ltoutenc.dtx
+\\ProvidesPackage{fontenc}
+ [2020/02/11 v2.0o
+                        Standard LaTeX package]
+\\def\\update@uclc@with@cyrillic{%
+ \\expandafter\\def\\expandafter\\@uclclist\\expandafter
+  {\\@uclclist
+  \\cyra\\CYRA\\cyrabhch\\CYRABHCH\\cyrabhchdsc\\CYRABHCHDSC\\cyrabhdze
+  \\CYRABHDZE\\cyrabhha\\CYRABHHA\\cyrae\\CYRAE\\cyrb\\CYRB\\cyrbyus
+  \\CYRBYUS\\cyrc\\CYRC\\cyrch\\CYRCH\\cyrchldsc\\CYRCHLDSC\\cyrchrdsc
+  \\CYRCHRDSC\\cyrchvcrs\\CYRCHVCRS\\cyrd\\CYRD\\cyrdelta\\CYRDELTA
+  \\cyrdje\\CYRDJE\\cyrdze\\CYRDZE\\cyrdzhe\\CYRDZHE\\cyre\\CYRE\\cyreps
+  \\CYREPS\\cyrerev\\CYREREV\\cyrery\\CYRERY\\cyrf\\CYRF\\cyrfita
+  \\CYRFITA\\cyrg\\CYRG\\cyrgdsc\\CYRGDSC\\cyrgdschcrs\\CYRGDSCHCRS
+  \\cyrghcrs\\CYRGHCRS\\cyrghk\\CYRGHK\\cyrgup\\CYRGUP\\cyrh\\CYRH
+  \\cyrhdsc\\CYRHDSC\\cyrhhcrs\\CYRHHCRS\\cyrhhk\\CYRHHK\\cyrhrdsn
+  \\CYRHRDSN\\cyri\\CYRI\\cyrie\\CYRIE\\cyrii\\CYRII\\cyrishrt\\CYRISHRT
+  \\cyrishrtdsc\\CYRISHRTDSC\\cyrizh\\CYRIZH\\cyrje\\CYRJE\\cyrk\\CYRK
+  \\cyrkbeak\\CYRKBEAK\\cyrkdsc\\CYRKDSC\\cyrkhcrs\\CYRKHCRS\\cyrkhk
+  \\CYRKHK\\cyrkvcrs\\CYRKVCRS\\cyrl\\CYRL\\cyrldsc\\CYRLDSC\\cyrlhk
+  \\CYRLHK\\cyrlje\\CYRLJE\\cyrm\\CYRM\\cyrmdsc\\CYRMDSC\\cyrmhk\\CYRMHK
+  \\cyrn\\CYRN\\cyrndsc\\CYRNDSC\\cyrng\\CYRNG\\cyrnhk\\CYRNHK\\cyrnje
+  \\CYRNJE\\cyrnlhk\\CYRNLHK\\cyro\\CYRO\\cyrotld\\CYROTLD\\cyrp\\CYRP
+  \\cyrphk\\CYRPHK\\cyrq\\CYRQ\\cyrr\\CYRR\\cyrrdsc\\CYRRDSC\\cyrrhk
+  \\CYRRHK\\cyrrtick\\CYRRTICK\\cyrs\\CYRS\\cyrsacrs\\CYRSACRS
+  \\cyrschwa\\CYRSCHWA\\cyrsdsc\\CYRSDSC\\cyrsemisftsn\\CYRSEMISFTSN
+  \\cyrsftsn\\CYRSFTSN\\cyrsh\\CYRSH\\cyrshch\\CYRSHCH\\cyrshha\\CYRSHHA
+  \\cyrt\\CYRT\\cyrtdsc\\CYRTDSC\\cyrtetse\\CYRTETSE\\cyrtshe\\CYRTSHE
+  \\cyru\\CYRU\\cyrushrt\\CYRUSHRT\\cyrv\\CYRV\\cyrw\\CYRW\\cyry\\CYRY
+  \\cyrya\\CYRYA\\cyryat\\CYRYAT\\cyryhcrs\\CYRYHCRS\\cyryi\\CYRYI\\cyryo
+  \\CYRYO\\cyryu\\CYRYU\\cyrz\\CYRZ\\cyrzdsc\\CYRZDSC\\cyrzh\\CYRZH
+  \\cyrzhdsc\\CYRZHDSC}%
+ \\let\\update@uclc@with@cyrillic\\relax
+}
+\\DeclareOption*{%
+   \\let\\encodingdefault\\CurrentOption
+   \\@tempswafalse
+   \\@ifl@t@r\\fmtversion{2020/02/02}%
+       {\\expandafter\\ifx\\csname T@\\CurrentOption\\endcsname\\relax
+         \\@tempswatrue\\fi}%
+       {\\@tempswatrue}%
+   \\if@tempswa
+     \\edef\\reserved@f{%
+       \\lowercase{\\def\\noexpand\\reserved@f{\\CurrentOption enc.def}}}%
+     \\reserved@f
+     \\InputIfFileExists\\reserved@f
+          {}{\\PackageError{fontenc}%
+           {Encoding file \`\\reserved@f' not found.%
+            \\MessageBreak
+             You might have misspelt the name of the encoding}%
+           {Necessary code for this encoding was not
+            loaded.\\MessageBreak
+            Thus calling the encoding later on will
+            produce further error messages.}}%
+    \\let\\reserved@f\\relax
+    \\expandafter\\in@\\expandafter{\\CurrentOption}%
+                                {T2A,T2B,T2C,X2,LCY,OT2}%
+    \\ifin@
+       \\expandafter\\in@\\expandafter\\cyra\\expandafter
+                                {\\@uclclist}%
+       \\ifin@
+       \\else
+         \\update@uclc@with@cyrillic
+       \\fi
+    \\fi
+  \\fi
+}
+\\ProcessOptions*
+\\usefont\\encodingdefault\\familydefault\\seriesdefault\\shapedefault
+\\let\\update@uclc@with@cyrillic\\relax
+\\let\\@elt\\relax
+\\xdef\\@fontenc@load@list{\\@fontenc@load@list
+  \\@elt{\\csname opt@fontenc.sty\\endcsname}}
+\\global\\expandafter\\let\\csname ver@fontenc.sty\\endcsname\\relax
+\\global\\expandafter\\let\\csname opt@fontenc.sty\\endcsname\\relax
+\\global\\let\\@ifl@ter@@\\@ifl@ter
+\\def\\@ifl@ter#1#2#3#4#5{\\global\\let\\@ifl@ter\\@ifl@ter@@}
+\\endinput
+%%
+%% End of file \`fontenc.sty'.
+` },
+  { format: 26, filename: 'fontenc.sty', content: `
 %%
 %% This is file \`fontenc.sty',
 %% generated with the docstrip utility.
@@ -8458,6 +14370,1166 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 %%
 %% End of file \`geometry.sty'.
 ` },
+  { format: 26, filename: 'geometry.sty', content: `
+%%
+%% This is file \`geometry.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% geometry.dtx  (with options: \`package')
+%% 
+%% Copyright (C) 1996-2010
+%% by Hideo Umeki <latexgeometry@gmail.com>
+%% Copyright (C) 2018-2020
+%% by Hideo Umeki and David Carlisle https://github.com/davidcarlisle/geometry
+%% 
+%% This work may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License, either version 1.3c of this license
+%% or (at your option) any later version. The latest version of this
+%% license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%% 
+%% This work is "maintained" (as per the LPPL maintenance status)
+%% by David Carlisle.
+%% 
+%% This work consists of the files geometry.dtx and
+%% the derived files: geometry.{sty,ins,drv}, geometry-samples.tex.
+%% 
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{geometry}
+  [2020/01/02 v5.9 Page Geometry]
+\\RequirePackage{keyval}%
+\\RequirePackage{ifvtex}%
+\\newif\\ifGm@verbose
+\\newif\\ifGm@landscape
+\\newif\\ifGm@swap@papersize
+\\newif\\ifGm@includehead
+\\newif\\ifGm@includefoot
+\\newif\\ifGm@includemp
+\\newif\\ifGm@hbody
+\\newif\\ifGm@vbody
+\\newif\\ifGm@heightrounded
+\\newif\\ifGm@showframe
+\\newif\\ifGm@showcrop
+\\newif\\ifGm@pass
+\\newif\\ifGm@resetpaper
+\\newif\\ifGm@layout
+\\newif\\ifGm@newgm
+\\newcount\\Gm@cnth
+\\newcount\\Gm@cntv
+\\newcount\\c@Gm@tempcnt
+\\newdimen\\Gm@bindingoffset
+\\newdimen\\Gm@wd@mp
+\\newdimen\\Gm@odd@mp
+\\newdimen\\Gm@even@mp
+\\newdimen\\Gm@layoutwidth
+\\newdimen\\Gm@layoutheight
+\\newdimen\\Gm@layouthoffset
+\\newdimen\\Gm@layoutvoffset
+\\newtoks\\Gm@dimlist
+\\def\\Gm@warning#1{\\PackageWarningNoLine{geometry}{#1}}%
+\\def\\ifGm@preamble#1{%
+  \\ifGm@newgm
+   \\Gm@warning{\`#1': not available in \`\\string\\newgeometry'; skipped}%
+  \\else
+    \\expandafter\\@firstofone
+  \\fi}%
+\\def\\Gm@Dhratio{1:1}% = left:right default for oneside
+\\def\\Gm@Dhratiotwo{2:3}% = inner:outer default for twoside.
+\\def\\Gm@Dvratio{2:3}% = top:bottom default
+\\def\\Gm@Dhscale{0.7}%
+\\def\\Gm@Dvscale{0.7}%
+\\def\\Gm@dvips{dvips}%
+\\def\\Gm@dvipdfm{dvipdfm}%
+\\def\\Gm@pdftex{pdftex}%
+\\def\\Gm@luatex{luatex}%
+\\def\\Gm@xetex{xetex}%
+\\def\\Gm@vtex{vtex}%
+\\def\\Gm@true{true}%
+\\def\\Gm@false{false}%
+\\edef\\Gm@orgpw{\\the\\paperwidth}%
+\\edef\\Gm@orgph{\\the\\paperheight}%
+\\def\\Gm@savelength#1{%
+  \\g@addto@macro\\Gm@restore{\\expandafter\\noexpand\\expandafter\\csname
+  #1\\endcsname\\expandafter=\\expandafter\\the\\csname #1\\endcsname\\relax}}%
+\\def\\Gm@saveboolean#1{%
+  \\csname if#1\\endcsname
+    \\g@addto@macro\\Gm@restore{\\expandafter\\noexpand\\csname #1true\\endcsname}%
+  \\else
+    \\g@addto@macro\\Gm@restore{\\expandafter\\noexpand\\csname #1false\\endcsname}%
+  \\fi}%
+\\def\\Gm@restore{}%
+\\def\\Gm@save{%
+  \\Gm@savelength{paperwidth}%
+  \\Gm@savelength{paperheight}%
+  \\Gm@savelength{textwidth}%
+  \\Gm@savelength{textheight}%
+  \\Gm@savelength{evensidemargin}%
+  \\Gm@savelength{oddsidemargin}%
+  \\Gm@savelength{topmargin}%
+  \\Gm@savelength{headheight}%
+  \\Gm@savelength{headsep}%
+  \\Gm@savelength{topskip}%
+  \\Gm@savelength{footskip}%
+  \\Gm@savelength{baselineskip}%
+  \\Gm@savelength{marginparwidth}%
+  \\Gm@savelength{marginparsep}%
+  \\Gm@savelength{columnsep}%
+  \\Gm@savelength{hoffset}%
+  \\Gm@savelength{voffset}
+  \\Gm@savelength{Gm@layoutwidth}%
+  \\Gm@savelength{Gm@layoutheight}%
+  \\Gm@savelength{Gm@layouthoffset}%
+  \\Gm@savelength{Gm@layoutvoffset}%
+  \\Gm@saveboolean{@twocolumn}%
+  \\Gm@saveboolean{@twoside}%
+  \\Gm@saveboolean{@mparswitch}%
+  \\Gm@saveboolean{@reversemargin}}%
+\\def\\Gm@initnewgm{%
+  \\Gm@passfalse
+  \\Gm@swap@papersizefalse
+  \\Gm@dimlist={}
+  \\Gm@hbodyfalse
+  \\Gm@vbodyfalse
+  \\Gm@heightroundedfalse
+  \\Gm@includeheadfalse
+  \\Gm@includefootfalse
+  \\Gm@includempfalse
+  \\let\\Gm@width\\@undefined
+  \\let\\Gm@height\\@undefined
+  \\let\\Gm@textwidth\\@undefined
+  \\let\\Gm@textheight\\@undefined
+  \\let\\Gm@lines\\@undefined
+  \\let\\Gm@hscale\\@undefined
+  \\let\\Gm@vscale\\@undefined
+  \\let\\Gm@hmarginratio\\@undefined
+  \\let\\Gm@vmarginratio\\@undefined
+  \\let\\Gm@lmargin\\@undefined
+  \\let\\Gm@rmargin\\@undefined
+  \\let\\Gm@tmargin\\@undefined
+  \\let\\Gm@bmargin\\@undefined
+  \\Gm@layoutfalse
+  \\Gm@layouthoffset\\z@
+  \\Gm@layoutvoffset\\z@
+  \\Gm@bindingoffset\\z@}%
+\\def\\Gm@initall{%
+  \\let\\Gm@driver\\@empty
+  \\let\\Gm@truedimen\\@empty
+  \\let\\Gm@paper\\@undefined
+  \\Gm@resetpaperfalse
+  \\Gm@landscapefalse
+  \\Gm@verbosefalse
+  \\Gm@showframefalse
+  \\Gm@showcropfalse
+  \\Gm@newgmfalse
+  \\Gm@initnewgm}%
+\\def\\Gm@setdriver#1{%
+  \\expandafter\\let\\expandafter\\Gm@driver\\csname Gm@#1\\endcsname}%
+\\def\\Gm@unsetdriver#1{%
+  \\expandafter\\ifx\\csname Gm@#1\\endcsname\\Gm@driver\\let\\Gm@driver\\@empty\\fi}%
+\\def\\Gm@setbool{\\@dblarg\\Gm@@setbool}%
+\\def\\Gm@setboolrev{\\@dblarg\\Gm@@setboolrev}%
+\\def\\Gm@@setbool[#1]#2#3{\\Gm@doif{#1}{#3}{\\csname Gm@#2\\Gm@bool\\endcsname}}%
+\\def\\Gm@@setboolrev[#1]#2#3{\\Gm@doifelse{#1}{#3}%
+  {\\csname Gm@#2\\Gm@false\\endcsname}{\\csname Gm@#2\\Gm@true\\endcsname}}%
+\\def\\Gm@doif#1#2#3{%
+  \\lowercase{\\def\\Gm@bool{#2}}%
+  \\ifx\\Gm@bool\\@empty
+    \\let\\Gm@bool\\Gm@true
+  \\fi
+  \\ifx\\Gm@bool\\Gm@true
+  \\else
+    \\ifx\\Gm@bool\\Gm@false
+    \\else
+      \\let\\Gm@bool\\relax
+    \\fi
+  \\fi
+  \\ifx\\Gm@bool\\relax
+    \\Gm@warning{\`#1' should be set to \`true' or \`false'}%
+  \\else
+    #3
+  \\fi}%
+\\def\\Gm@doifelse#1#2#3#4{%
+  \\Gm@doif{#1}{#2}{\\ifx\\Gm@bool\\Gm@true #3\\else #4\\fi}}%
+\\def\\Gm@reverse#1{%
+  \\csname ifGm@#1\\endcsname
+  \\csname Gm@#1false\\endcsname\\else\\csname Gm@#1true\\endcsname\\fi}%
+\\def\\Gm@defbylen#1#2{%
+  \\begingroup\\setlength\\@tempdima{#2}%
+  \\expandafter\\xdef\\csname Gm@#1\\endcsname{\\the\\@tempdima}\\endgroup}%
+\\def\\Gm@defbycnt#1#2{%
+  \\begingroup\\setcounter{Gm@tempcnt}{#2}%
+  \\expandafter\\xdef\\csname Gm@#1\\endcsname{\\the\\value{Gm@tempcnt}}\\endgroup}%
+\\def\\Gm@sep@ratio#1:#2{\\@tempcnta=#1\\@tempcntb=#2}%
+\\def\\Gm@setbyratio[#1]#2#3#4{% determine #4 by ratio
+  \\expandafter\\Gm@sep@ratio\\Gm@mratio\\relax
+  \\if#1b
+    \\edef\\@@tempa{\\the\\@tempcnta}%
+    \\@tempcnta=\\@tempcntb
+    \\@tempcntb=\\@@tempa\\relax
+  \\fi
+  \\expandafter\\setlength\\expandafter\\@tempdimb\\expandafter
+    {\\csname Gm@#3\\endcsname}%
+  \\ifnum\\@tempcntb>\\z@
+    \\multiply\\@tempdimb\\@tempcnta
+    \\divide\\@tempdimb\\@tempcntb
+  \\fi
+  \\expandafter\\edef\\csname Gm@#4\\endcsname{\\the\\@tempdimb}}%
+\\def\\Gm@detiv#1#2#3#4{% determine #4.
+  \\expandafter\\setlength\\expandafter\\@tempdima\\expandafter
+    {\\csname Gm@layout#1\\endcsname}%
+  \\expandafter\\setlength\\expandafter\\@tempdimb\\expandafter
+    {\\csname Gm@#2\\endcsname}%
+  \\addtolength\\@tempdima{-\\@tempdimb}%
+  \\expandafter\\setlength\\expandafter\\@tempdimb\\expandafter
+    {\\csname Gm@#3\\endcsname}%
+  \\addtolength\\@tempdima{-\\@tempdimb}%
+  \\ifdim\\@tempdima<\\z@
+    \\Gm@warning{\`#4' results in NEGATIVE (\\the\\@tempdima).%
+    ^^J\\@spaces \`#2' or \`#3' should be shortened in length}%
+  \\fi
+  \\expandafter\\edef\\csname Gm@#4\\endcsname{\\the\\@tempdima}}%
+\\def\\Gm@detiiandiii#1#2#3{% determine #2 and #3.
+  \\expandafter\\setlength\\expandafter\\@tempdima\\expandafter
+    {\\csname Gm@layout#1\\endcsname}%
+  \\expandafter\\setlength\\expandafter\\@tempdimb\\expandafter
+    {\\csname Gm@#1\\endcsname}%
+  \\addtolength\\@tempdima{-\\@tempdimb}%
+  \\ifdim\\@tempdima<\\z@
+    \\Gm@warning{\`#2' and \`#3' result in NEGATIVE (\\the\\@tempdima).%
+                  ^^J\\@spaces \`#1' should be shortened in length}%
+  \\fi
+  \\ifx\\Gm@mratio\\@undefined
+    \\expandafter\\Gm@sep@ratio\\Gm@Dmratio\\relax
+  \\else
+    \\expandafter\\Gm@sep@ratio\\Gm@mratio\\relax
+    \\ifnum\\@tempcntb>\\z@\\else
+      \\Gm@warning{margin ratio a:b should be non-zero; default used}%
+      \\expandafter\\Gm@sep@ratio\\Gm@Dmratio\\relax
+    \\fi
+  \\fi
+  \\@tempdimb=\\@tempdima
+  \\advance\\@tempcntb\\@tempcnta
+  \\divide\\@tempdima\\@tempcntb
+  \\multiply\\@tempdima\\@tempcnta
+  \\advance\\@tempdimb-\\@tempdima
+  \\expandafter\\edef\\csname Gm@#2\\endcsname{\\the\\@tempdima}%
+  \\expandafter\\edef\\csname Gm@#3\\endcsname{\\the\\@tempdimb}}%
+\\def\\Gm@detall#1#2#3#4{%
+  \\@tempcnta\\z@
+  \\if#1h
+    \\let\\Gm@mratio\\Gm@hmarginratio
+    \\edef\\Gm@Dmratio{\\if@twoside\\Gm@Dhratiotwo\\else\\Gm@Dhratio\\fi}%
+  \\else
+    \\let\\Gm@mratio\\Gm@vmarginratio
+    \\edef\\Gm@Dmratio{\\Gm@Dvratio}%
+  \\fi
+  \\if#1h
+    \\ifx\\Gm@lmargin\\@undefined\\else\\advance\\@tempcnta4\\relax\\fi
+    \\ifGm@hbody\\advance\\@tempcnta2\\relax\\fi
+    \\ifx\\Gm@rmargin\\@undefined\\else\\advance\\@tempcnta1\\relax\\fi
+    \\Gm@cnth\\@tempcnta
+  \\else
+    \\ifx\\Gm@tmargin\\@undefined\\else\\advance\\@tempcnta4\\relax\\fi
+    \\ifGm@vbody\\advance\\@tempcnta2\\relax\\fi
+    \\ifx\\Gm@bmargin\\@undefined\\else\\advance\\@tempcnta1\\relax\\fi
+    \\Gm@cntv\\@tempcnta
+  \\fi
+  \\ifcase\\@tempcnta
+    \\if#1h
+      \\Gm@defbylen{width}{\\Gm@Dhscale\\Gm@layoutwidth}%
+    \\else
+      \\Gm@defbylen{height}{\\Gm@Dvscale\\Gm@layoutheight}%
+    \\fi
+    \\Gm@detiiandiii{#2}{#3}{#4}%
+  \\or
+    \\ifx\\Gm@mratio\\@undefined
+      \\if#1h
+        \\Gm@defbylen{width}{\\Gm@Dhscale\\Gm@layoutwidth}%
+      \\else
+        \\Gm@defbylen{height}{\\Gm@Dvscale\\Gm@layoutheight}%
+      \\fi
+      \\setlength\\@tempdimc{\\@nameuse{Gm@#4}}%
+      \\Gm@detiiandiii{#2}{#3}{#4}%
+      \\expandafter\\let\\csname Gm@#2\\endcsname\\@undefined
+      \\Gm@defbylen{#4}{\\@tempdimc}%
+    \\else
+      \\Gm@setbyratio[f]{#1}{#4}{#3}%
+    \\fi
+    \\Gm@detiv{#2}{#3}{#4}{#2}%
+  \\or\\Gm@detiiandiii{#2}{#3}{#4}%
+  \\or\\Gm@detiv{#2}{#2}{#4}{#3}%
+  \\or
+    \\ifx\\Gm@mratio\\@undefined
+      \\if#1h
+        \\Gm@defbylen{width}{\\Gm@Dhscale\\Gm@layoutwidth}%
+      \\else
+        \\Gm@defbylen{height}{\\Gm@Dvscale\\Gm@layoutheight}%
+      \\fi
+      \\setlength\\@tempdimc{\\@nameuse{Gm@#3}}%
+      \\Gm@detiiandiii{#2}{#4}{#3}%
+      \\expandafter\\let\\csname Gm@#2\\endcsname\\@undefined
+      \\Gm@defbylen{#3}{\\@tempdimc}%
+    \\else
+      \\Gm@setbyratio[b]{#1}{#3}{#4}%
+    \\fi
+    \\Gm@detiv{#2}{#3}{#4}{#2}%
+  \\or\\Gm@detiv{#2}{#3}{#4}{#2}%
+  \\or\\Gm@detiv{#2}{#2}{#3}{#4}%
+  \\or\\Gm@warning{Over-specification in \`#1'-direction.%
+                  ^^J\\@spaces \`#2' (\\@nameuse{Gm@#2}) is ignored}%
+    \\Gm@detiv{#2}{#3}{#4}{#2}%
+  \\else\\fi}%
+\\def\\Gm@clean{%
+  \\ifnum\\Gm@cnth<4\\let\\Gm@lmargin\\@undefined\\fi
+  \\ifodd\\Gm@cnth\\else\\let\\Gm@rmargin\\@undefined\\fi
+  \\ifnum\\Gm@cntv<4\\let\\Gm@tmargin\\@undefined\\fi
+  \\ifodd\\Gm@cntv\\else\\let\\Gm@bmargin\\@undefined\\fi
+  \\ifGm@hbody\\else
+    \\let\\Gm@hscale\\@undefined
+    \\let\\Gm@width\\@undefined
+    \\let\\Gm@textwidth\\@undefined
+  \\fi
+  \\ifGm@vbody\\else
+    \\let\\Gm@vscale\\@undefined
+    \\let\\Gm@height\\@undefined
+    \\let\\Gm@textheight\\@undefined
+  \\fi
+  }%
+\\def\\Gm@parse@divide#1#2#3#4{%
+  \\def\\Gm@star{*}%
+  \\@tempcnta\\z@
+  \\@for\\Gm@tmp:=#1\\do{%
+    \\expandafter\\KV@@sp@def\\expandafter\\Gm@frag\\expandafter{\\Gm@tmp}%
+    \\edef\\Gm@value{\\Gm@frag}%
+    \\ifcase\\@tempcnta\\relax\\edef\\Gm@key{#2}%
+      \\or\\edef\\Gm@key{#3}%
+      \\else\\edef\\Gm@key{#4}%
+    \\fi
+    \\@nameuse{Gm@set\\Gm@key false}%
+    \\ifx\\empty\\Gm@value\\else
+    \\ifx\\Gm@star\\Gm@value\\else
+      \\setkeys{Gm}{\\Gm@key=\\Gm@value}%
+    \\fi\\fi
+    \\advance\\@tempcnta\\@ne}%
+  \\let\\Gm@star\\relax}%
+\\def\\Gm@branch#1#2#3{%
+  \\@tempcnta\\z@
+  \\@for\\Gm@tmp:=#1\\do{%
+    \\KV@@sp@def\\Gm@frag{\\Gm@tmp}%
+    \\edef\\Gm@value{\\Gm@frag}%
+    \\ifcase\\@tempcnta\\relax% cnta == 0
+      \\setkeys{Gm}{#2=\\Gm@value}%
+    \\or% cnta == 1
+      \\setkeys{Gm}{#3=\\Gm@value}%
+    \\else\\fi
+    \\advance\\@tempcnta\\@ne}%
+  \\ifnum\\@tempcnta=\\@ne
+    \\setkeys{Gm}{#3=\\Gm@value}%
+  \\fi}%
+\\def\\Gm@magtooffset{%
+  \\@tempdima=\\mag\\Gm@truedimen sp%
+  \\@tempdimb=1\\Gm@truedimen in%
+  \\divide\\@tempdimb\\@tempdima
+  \\multiply\\@tempdimb\\@m
+  \\addtolength{\\hoffset}{1\\Gm@truedimen in}%
+  \\addtolength{\\voffset}{1\\Gm@truedimen in}%
+  \\addtolength{\\hoffset}{-\\the\\@tempdimb}%
+  \\addtolength{\\voffset}{-\\the\\@tempdimb}}%
+\\def\\Gm@setlength#1#2{%
+  \\let\\Gm@len=\\relax\\let\\Gm@td=\\relax
+  \\edef\\addtolist{\\noexpand\\Gm@dimlist=%
+  {\\the\\Gm@dimlist \\Gm@len{#1}{#2}}}\\addtolist}%
+\\def\\Gm@expandlengths{%
+  \\def\\Gm@td{\\Gm@truedimen}%
+  \\def\\Gm@len##1##2{\\setlength{##1}{##2}}%
+  \\the\\Gm@dimlist}%
+\\def\\Gm@setsize#1(#2,#3)#4{%
+  \\let\\Gm@td\\relax
+  \\expandafter\\Gm@setlength\\csname #1width\\endcsname{#2\\Gm@td #4}%
+  \\expandafter\\Gm@setlength\\csname #1height\\endcsname{#3\\Gm@td #4}%
+  \\ifGm@landscape\\Gm@swap@papersizetrue\\else\\Gm@swap@papersizefalse\\fi}%
+\\def\\Gm@setpaper@ifpre#1{%
+  \\ifGm@preamble{#1}{\\def\\Gm@paper{#1}\\@nameuse{Gm@#1}{paper}}}%
+\\@namedef{Gm@a0paper}#1{\\Gm@setsize{#1}(841,1189){mm}}% ISO A0
+\\@namedef{Gm@a1paper}#1{\\Gm@setsize{#1}(594,841){mm}}% ISO A1
+\\@namedef{Gm@a2paper}#1{\\Gm@setsize{#1}(420,594){mm}}% ISO A2
+\\@namedef{Gm@a3paper}#1{\\Gm@setsize{#1}(297,420){mm}}% ISO A3
+\\@namedef{Gm@a4paper}#1{\\Gm@setsize{#1}(210,297){mm}}% ISO A4
+\\@namedef{Gm@a5paper}#1{\\Gm@setsize{#1}(148,210){mm}}% ISO A5
+\\@namedef{Gm@a6paper}#1{\\Gm@setsize{#1}(105,148){mm}}% ISO A6
+\\@namedef{Gm@b0paper}#1{\\Gm@setsize{#1}(1000,1414){mm}}% ISO B0
+\\@namedef{Gm@b1paper}#1{\\Gm@setsize{#1}(707,1000){mm}}% ISO B1
+\\@namedef{Gm@b2paper}#1{\\Gm@setsize{#1}(500,707){mm}}% ISO B2
+\\@namedef{Gm@b3paper}#1{\\Gm@setsize{#1}(353,500){mm}}% ISO B3
+\\@namedef{Gm@b4paper}#1{\\Gm@setsize{#1}(250,353){mm}}% ISO B4
+\\@namedef{Gm@b5paper}#1{\\Gm@setsize{#1}(176,250){mm}}% ISO B5
+\\@namedef{Gm@b6paper}#1{\\Gm@setsize{#1}(125,176){mm}}% ISO B6
+\\@namedef{Gm@c0paper}#1{\\Gm@setsize{#1}(917,1297){mm}}% ISO C0
+\\@namedef{Gm@c1paper}#1{\\Gm@setsize{#1}(648,917){mm}}% ISO C1
+\\@namedef{Gm@c2paper}#1{\\Gm@setsize{#1}(458,648){mm}}% ISO C2
+\\@namedef{Gm@c3paper}#1{\\Gm@setsize{#1}(324,458){mm}}% ISO C3
+\\@namedef{Gm@c4paper}#1{\\Gm@setsize{#1}(229,324){mm}}% ISO C4
+\\@namedef{Gm@c5paper}#1{\\Gm@setsize{#1}(162,229){mm}}% ISO C5
+\\@namedef{Gm@c6paper}#1{\\Gm@setsize{#1}(114,162){mm}}% ISO C6
+\\@namedef{Gm@b0j}#1{\\Gm@setsize{#1}(1030,1456){mm}}% JIS B0
+\\@namedef{Gm@b1j}#1{\\Gm@setsize{#1}(728,1030){mm}}% JIS B1
+\\@namedef{Gm@b2j}#1{\\Gm@setsize{#1}(515,728){mm}}% JIS B2
+\\@namedef{Gm@b3j}#1{\\Gm@setsize{#1}(364,515){mm}}% JIS B3
+\\@namedef{Gm@b4j}#1{\\Gm@setsize{#1}(257,364){mm}}% JIS B4
+\\@namedef{Gm@b5j}#1{\\Gm@setsize{#1}(182,257){mm}}% JIS B5
+\\@namedef{Gm@b6j}#1{\\Gm@setsize{#1}(128,182){mm}}% JIS B6
+\\@namedef{Gm@ansiapaper}#1{\\Gm@setsize{#1}(8.5,11){in}}%
+\\@namedef{Gm@ansibpaper}#1{\\Gm@setsize{#1}(11,17){in}}%
+\\@namedef{Gm@ansicpaper}#1{\\Gm@setsize{#1}(17,22){in}}%
+\\@namedef{Gm@ansidpaper}#1{\\Gm@setsize{#1}(22,34){in}}%
+\\@namedef{Gm@ansiepaper}#1{\\Gm@setsize{#1}(34,44){in}}%
+\\@namedef{Gm@letterpaper}#1{\\Gm@setsize{#1}(8.5,11){in}}%
+\\@namedef{Gm@legalpaper}#1{\\Gm@setsize{#1}(8.5,14){in}}%
+\\@namedef{Gm@executivepaper}#1{\\Gm@setsize{#1}(7.25,10.5){in}}%
+\\@namedef{Gm@screen}#1{\\Gm@setsize{#1}(225,180){mm}}%
+\\define@key{Gm}{paper}{\\setkeys{Gm}{#1}}%
+\\let\\KV@Gm@papername\\KV@Gm@paper
+\\define@key{Gm}{a0paper}[true]{\\Gm@setpaper@ifpre{a0paper}}%
+\\define@key{Gm}{a1paper}[true]{\\Gm@setpaper@ifpre{a1paper}}%
+\\define@key{Gm}{a2paper}[true]{\\Gm@setpaper@ifpre{a2paper}}%
+\\define@key{Gm}{a3paper}[true]{\\Gm@setpaper@ifpre{a3paper}}%
+\\define@key{Gm}{a4paper}[true]{\\Gm@setpaper@ifpre{a4paper}}%
+\\define@key{Gm}{a5paper}[true]{\\Gm@setpaper@ifpre{a5paper}}%
+\\define@key{Gm}{a6paper}[true]{\\Gm@setpaper@ifpre{a6paper}}%
+\\define@key{Gm}{b0paper}[true]{\\Gm@setpaper@ifpre{b0paper}}%
+\\define@key{Gm}{b1paper}[true]{\\Gm@setpaper@ifpre{b1paper}}%
+\\define@key{Gm}{b2paper}[true]{\\Gm@setpaper@ifpre{b2paper}}%
+\\define@key{Gm}{b3paper}[true]{\\Gm@setpaper@ifpre{b3paper}}%
+\\define@key{Gm}{b4paper}[true]{\\Gm@setpaper@ifpre{b4paper}}%
+\\define@key{Gm}{b5paper}[true]{\\Gm@setpaper@ifpre{b5paper}}%
+\\define@key{Gm}{b6paper}[true]{\\Gm@setpaper@ifpre{b6paper}}%
+\\define@key{Gm}{c0paper}[true]{\\Gm@setpaper@ifpre{c0paper}}%
+\\define@key{Gm}{c1paper}[true]{\\Gm@setpaper@ifpre{c1paper}}%
+\\define@key{Gm}{c2paper}[true]{\\Gm@setpaper@ifpre{c2paper}}%
+\\define@key{Gm}{c3paper}[true]{\\Gm@setpaper@ifpre{c3paper}}%
+\\define@key{Gm}{c4paper}[true]{\\Gm@setpaper@ifpre{c4paper}}%
+\\define@key{Gm}{c5paper}[true]{\\Gm@setpaper@ifpre{c5paper}}%
+\\define@key{Gm}{c6paper}[true]{\\Gm@setpaper@ifpre{c6paper}}%
+\\define@key{Gm}{b0j}[true]{\\Gm@setpaper@ifpre{b0j}}%
+\\define@key{Gm}{b1j}[true]{\\Gm@setpaper@ifpre{b1j}}%
+\\define@key{Gm}{b2j}[true]{\\Gm@setpaper@ifpre{b2j}}%
+\\define@key{Gm}{b3j}[true]{\\Gm@setpaper@ifpre{b3j}}%
+\\define@key{Gm}{b4j}[true]{\\Gm@setpaper@ifpre{b4j}}%
+\\define@key{Gm}{b5j}[true]{\\Gm@setpaper@ifpre{b5j}}%
+\\define@key{Gm}{b6j}[true]{\\Gm@setpaper@ifpre{b6j}}%
+\\define@key{Gm}{ansiapaper}[true]{\\Gm@setpaper@ifpre{ansiapaper}}%
+\\define@key{Gm}{ansibpaper}[true]{\\Gm@setpaper@ifpre{ansibpaper}}%
+\\define@key{Gm}{ansicpaper}[true]{\\Gm@setpaper@ifpre{ansicpaper}}%
+\\define@key{Gm}{ansidpaper}[true]{\\Gm@setpaper@ifpre{ansidpaper}}%
+\\define@key{Gm}{ansiepaper}[true]{\\Gm@setpaper@ifpre{ansiepaper}}%
+\\define@key{Gm}{letterpaper}[true]{\\Gm@setpaper@ifpre{letterpaper}}%
+\\define@key{Gm}{legalpaper}[true]{\\Gm@setpaper@ifpre{legalpaper}}%
+\\define@key{Gm}{executivepaper}[true]{\\Gm@setpaper@ifpre{executivepaper}}%
+\\define@key{Gm}{screen}[true]{\\Gm@setpaper@ifpre{screen}}%
+\\define@key{Gm}{paperwidth}{\\ifGm@preamble{paperwidth}{%
+  \\def\\Gm@paper{custom}\\Gm@setlength\\paperwidth{#1}}}%
+\\define@key{Gm}{paperheight}{\\ifGm@preamble{paperheight}{%
+  \\def\\Gm@paper{custom}\\Gm@setlength\\paperheight{#1}}}%
+\\define@key{Gm}{papersize}{\\ifGm@preamble{papersize}{%
+  \\def\\Gm@paper{custom}\\Gm@branch{#1}{paperwidth}{paperheight}}}%
+\\define@key{Gm}{layout}{\\Gm@layouttrue\\@nameuse{Gm@#1}{Gm@layout}}%
+\\let\\KV@Gm@layoutname\\KV@Gm@layout
+\\define@key{Gm}{layoutwidth}{\\Gm@layouttrue\\Gm@setlength\\Gm@layoutwidth{#1}}%
+\\define@key{Gm}{layoutheight}{\\Gm@layouttrue\\Gm@setlength\\Gm@layoutheight{#1}}%
+\\define@key{Gm}{layoutsize}{\\Gm@branch{#1}{layoutwidth}{layoutheight}}%
+\\define@key{Gm}{landscape}[true]{\\ifGm@preamble{landscape}{%
+  \\Gm@doifelse{landscape}{#1}%
+  {\\ifGm@landscape\\else\\Gm@landscapetrue\\Gm@reverse{swap@papersize}\\fi}%
+  {\\ifGm@landscape\\Gm@landscapefalse\\Gm@reverse{swap@papersize}\\fi}}}%
+\\define@key{Gm}{portrait}[true]{\\ifGm@preamble{portrait}{%
+  \\Gm@doifelse{portrait}{#1}%
+  {\\ifGm@landscape\\Gm@landscapefalse\\Gm@reverse{swap@papersize}\\fi}%
+  {\\ifGm@landscape\\else\\Gm@landscapetrue\\Gm@reverse{swap@papersize}\\fi}}}%
+\\define@key{Gm}{hscale}{\\Gm@hbodytrue\\edef\\Gm@hscale{#1}}%
+\\define@key{Gm}{vscale}{\\Gm@vbodytrue\\edef\\Gm@vscale{#1}}%
+\\define@key{Gm}{scale}{\\Gm@branch{#1}{hscale}{vscale}}%
+\\define@key{Gm}{width}{\\Gm@hbodytrue\\Gm@defbylen{width}{#1}}%
+\\define@key{Gm}{height}{\\Gm@vbodytrue\\Gm@defbylen{height}{#1}}%
+\\define@key{Gm}{total}{\\Gm@branch{#1}{width}{height}}%
+\\let\\KV@Gm@totalwidth\\KV@Gm@width
+\\let\\KV@Gm@totalheight\\KV@Gm@height
+\\define@key{Gm}{textwidth}{\\Gm@hbodytrue\\Gm@defbylen{textwidth}{#1}}%
+\\define@key{Gm}{textheight}{\\Gm@vbodytrue\\Gm@defbylen{textheight}{#1}}%
+\\define@key{Gm}{text}{\\Gm@branch{#1}{textwidth}{textheight}}%
+\\let\\KV@Gm@body\\KV@Gm@text
+\\define@key{Gm}{lines}{\\Gm@vbodytrue\\Gm@defbycnt{lines}{#1}}%
+\\define@key{Gm}{includehead}[true]{\\Gm@setbool{includehead}{#1}}%
+\\define@key{Gm}{includefoot}[true]{\\Gm@setbool{includefoot}{#1}}%
+\\define@key{Gm}{includeheadfoot}[true]{\\Gm@doifelse{includeheadfoot}{#1}%
+  {\\Gm@includeheadtrue\\Gm@includefoottrue}%
+  {\\Gm@includeheadfalse\\Gm@includefootfalse}}%
+\\define@key{Gm}{includemp}[true]{\\Gm@setbool{includemp}{#1}}%
+\\define@key{Gm}{includeall}[true]{\\Gm@doifelse{includeall}{#1}%
+  {\\Gm@includeheadtrue\\Gm@includefoottrue\\Gm@includemptrue}%
+  {\\Gm@includeheadfalse\\Gm@includefootfalse\\Gm@includempfalse}}%
+\\define@key{Gm}{ignorehead}[true]{%
+  \\Gm@setboolrev[ignorehead]{includehead}{#1}}%
+\\define@key{Gm}{ignorefoot}[true]{%
+  \\Gm@setboolrev[ignorefoot]{includefoot}{#1}}%
+\\define@key{Gm}{ignoreheadfoot}[true]{\\Gm@doifelse{ignoreheadfoot}{#1}%
+  {\\Gm@includeheadfalse\\Gm@includefootfalse}%
+  {\\Gm@includeheadtrue\\Gm@includefoottrue}}%
+\\define@key{Gm}{ignoremp}[true]{%
+  \\Gm@setboolrev[ignoremp]{includemp}{#1}}%
+\\define@key{Gm}{ignoreall}[true]{\\Gm@doifelse{ignoreall}{#1}%
+  {\\Gm@includeheadfalse\\Gm@includefootfalse\\Gm@includempfalse}%
+  {\\Gm@includeheadtrue\\Gm@includefoottrue\\Gm@includemptrue}}%
+\\define@key{Gm}{heightrounded}[true]{\\Gm@setbool{heightrounded}{#1}}%
+\\define@key{Gm}{hdivide}{\\Gm@parse@divide{#1}{lmargin}{width}{rmargin}}%
+\\define@key{Gm}{vdivide}{\\Gm@parse@divide{#1}{tmargin}{height}{bmargin}}%
+\\define@key{Gm}{divide}{\\Gm@parse@divide{#1}{lmargin}{width}{rmargin}%
+  \\Gm@parse@divide{#1}{tmargin}{height}{bmargin}}%
+\\define@key{Gm}{lmargin}{\\Gm@defbylen{lmargin}{#1}}%
+\\define@key{Gm}{rmargin}{\\Gm@defbylen{rmargin}{#1}}%
+\\let\\KV@Gm@left\\KV@Gm@lmargin
+\\let\\KV@Gm@inner\\KV@Gm@lmargin
+\\let\\KV@Gm@innermargin\\KV@Gm@lmargin
+\\let\\KV@Gm@right\\KV@Gm@rmargin
+\\let\\KV@Gm@outer\\KV@Gm@rmargin
+\\let\\KV@Gm@outermargin\\KV@Gm@rmargin
+\\define@key{Gm}{tmargin}{\\Gm@defbylen{tmargin}{#1}}%
+\\define@key{Gm}{bmargin}{\\Gm@defbylen{bmargin}{#1}}%
+\\let\\KV@Gm@top\\KV@Gm@tmargin
+\\let\\KV@Gm@bottom\\KV@Gm@bmargin
+\\define@key{Gm}{hmargin}{\\Gm@branch{#1}{lmargin}{rmargin}}%
+\\define@key{Gm}{vmargin}{\\Gm@branch{#1}{tmargin}{bmargin}}%
+\\define@key{Gm}{margin}{\\Gm@branch{#1}{lmargin}{tmargin}%
+  \\Gm@branch{#1}{rmargin}{bmargin}}%
+\\define@key{Gm}{hmarginratio}{\\edef\\Gm@hmarginratio{#1}}%
+\\define@key{Gm}{vmarginratio}{\\edef\\Gm@vmarginratio{#1}}%
+\\define@key{Gm}{marginratio}{\\Gm@branch{#1}{hmarginratio}{vmarginratio}}%
+\\let\\KV@Gm@hratio\\KV@Gm@hmarginratio
+\\let\\KV@Gm@vratio\\KV@Gm@vmarginratio
+\\let\\KV@Gm@ratio\\KV@Gm@marginratio
+\\define@key{Gm}{hcentering}[true]{\\Gm@doifelse{hcentering}{#1}%
+  {\\def\\Gm@hmarginratio{1:1}}{}}%
+\\define@key{Gm}{vcentering}[true]{\\Gm@doifelse{vcentering}{#1}%
+  {\\def\\Gm@vmarginratio{1:1}}{}}%
+\\define@key{Gm}{centering}[true]{\\Gm@doifelse{centering}{#1}%
+  {\\def\\Gm@hmarginratio{1:1}\\def\\Gm@vmarginratio{1:1}}{}}%
+\\define@key{Gm}{twoside}[true]{\\Gm@doifelse{twoside}{#1}%
+  {\\@twosidetrue\\@mparswitchtrue}{\\@twosidefalse\\@mparswitchfalse}}%
+\\define@key{Gm}{asymmetric}[true]{\\Gm@doifelse{asymmetric}{#1}%
+  {\\@twosidetrue\\@mparswitchfalse}{}}%
+\\define@key{Gm}{bindingoffset}{\\Gm@setlength\\Gm@bindingoffset{#1}}%
+\\define@key{Gm}{headheight}{\\Gm@setlength\\headheight{#1}}%
+\\define@key{Gm}{headsep}{\\Gm@setlength\\headsep{#1}}%
+\\define@key{Gm}{footskip}{\\Gm@setlength\\footskip{#1}}%
+\\let\\KV@Gm@head\\KV@Gm@headheight
+\\let\\KV@Gm@foot\\KV@Gm@footskip
+\\define@key{Gm}{nohead}[true]{\\Gm@doifelse{nohead}{#1}%
+  {\\Gm@setlength\\headheight\\z@\\Gm@setlength\\headsep\\z@}{}}%
+\\define@key{Gm}{nofoot}[true]{\\Gm@doifelse{nofoot}{#1}%
+  {\\Gm@setlength\\footskip\\z@}{}}%
+\\define@key{Gm}{noheadfoot}[true]{\\Gm@doifelse{noheadfoot}{#1}%
+  {\\Gm@setlength\\headheight\\z@\\Gm@setlength\\headsep
+  \\z@\\Gm@setlength\\footskip\\z@}{}}%
+\\define@key{Gm}{footnotesep}{\\Gm@setlength{\\skip\\footins}{#1}}%
+\\define@key{Gm}{marginparwidth}{\\Gm@setlength\\marginparwidth{#1}}%
+\\let\\KV@Gm@marginpar\\KV@Gm@marginparwidth
+\\define@key{Gm}{marginparsep}{\\Gm@setlength\\marginparsep{#1}}%
+\\define@key{Gm}{nomarginpar}[true]{\\Gm@doifelse{nomarginpar}{#1}%
+  {\\Gm@setlength\\marginparwidth\\z@\\Gm@setlength\\marginparsep\\z@}{}}%
+\\define@key{Gm}{columnsep}{\\Gm@setlength\\columnsep{#1}}%
+\\define@key{Gm}{hoffset}{\\Gm@setlength\\hoffset{#1}}%
+\\define@key{Gm}{voffset}{\\Gm@setlength\\voffset{#1}}%
+\\define@key{Gm}{offset}{\\Gm@branch{#1}{hoffset}{voffset}}%
+\\define@key{Gm}{layouthoffset}{\\Gm@setlength\\Gm@layouthoffset{#1}}%
+\\define@key{Gm}{layoutvoffset}{\\Gm@setlength\\Gm@layoutvoffset{#1}}%
+\\define@key{Gm}{layoutoffset}{\\Gm@branch{#1}{layouthoffset}{layoutvoffset}}%
+\\define@key{Gm}{twocolumn}[true]{%
+  \\Gm@doif{twocolumn}{#1}{\\csname @twocolumn\\Gm@bool\\endcsname}}%
+\\define@key{Gm}{onecolumn}[true]{%
+  \\Gm@doifelse{onecolumn}{#1}{\\@twocolumnfalse}{\\@twocolumntrue}}%
+\\define@key{Gm}{reversemp}[true]{%
+  \\Gm@doif{reversemp}{#1}{\\csname @reversemargin\\Gm@bool\\endcsname}}%
+\\define@key{Gm}{reversemarginpar}[true]{%
+  \\Gm@doif{reversemarginpar}{#1}{\\csname @reversemargin\\Gm@bool\\endcsname}}%
+\\define@key{Gm}{driver}{\\ifGm@preamble{driver}{%
+  \\edef\\@@tempa{#1}\\edef\\@@auto{auto}\\edef\\@@none{none}%
+  \\ifx\\@@tempa\\@empty\\let\\Gm@driver\\relax\\else
+  \\ifx\\@@tempa\\@@none\\let\\Gm@driver\\relax\\else
+  \\ifx\\@@tempa\\@@auto\\let\\Gm@driver\\@empty\\else
+  \\setkeys{Gm}{#1}\\fi\\fi\\fi\\let\\@@auto\\relax\\let\\@@none\\relax}}%
+\\define@key{Gm}{dvips}[true]{\\ifGm@preamble{dvips}{%
+  \\Gm@doifelse{dvips}{#1}{\\Gm@setdriver{dvips}}{\\Gm@unsetdriver{dvips}}}}%
+\\define@key{Gm}{dvipdfm}[true]{\\ifGm@preamble{dvipdfm}{%
+  \\Gm@doifelse{dvipdfm}{#1}{\\Gm@setdriver{dvipdfm}}{\\Gm@unsetdriver{dvipdfm}}}}%
+\\define@key{Gm}{dvipdfmx}[true]{\\ifGm@preamble{dvipdfm}{%
+  \\Gm@doifelse{dvipdfm}{#1}{\\Gm@setdriver{dvipdfm}}{\\Gm@unsetdriver{dvipdfm}}}}%
+\\define@key{Gm}{xdvipdfmx}[true]{\\ifGm@preamble{dvipdfm}{%
+  \\Gm@doifelse{dvipdfm}{#1}{\\Gm@setdriver{dvipdfm}}{\\Gm@unsetdriver{dvipdfm}}}}%
+\\define@key{Gm}{pdftex}[true]{\\ifGm@preamble{pdftex}{%
+  \\Gm@doifelse{pdftex}{#1}{\\Gm@setdriver{pdftex}}{\\Gm@unsetdriver{pdftex}}}}%
+\\define@key{Gm}{luatex}[true]{\\ifGm@preamble{luatex}{%
+  \\Gm@doifelse{luatex}{#1}{\\Gm@setdriver{luatex}}{\\Gm@unsetdriver{luatex}}}}%
+\\define@key{Gm}{xetex}[true]{\\ifGm@preamble{xetex}{%
+  \\Gm@doifelse{xetex}{#1}{\\Gm@setdriver{xetex}}{\\Gm@unsetdriver{xetex}}}}%
+\\define@key{Gm}{vtex}[true]{\\ifGm@preamble{vtex}{%
+  \\Gm@doifelse{vtex}{#1}{\\Gm@setdriver{vtex}}{\\Gm@unsetdriver{vtex}}}}%
+\\define@key{Gm}{verbose}[true]{\\ifGm@preamble{verbose}{\\Gm@setbool{verbose}{#1}}}%
+\\define@key{Gm}{reset}[true]{\\ifGm@preamble{reset}{%
+  \\Gm@doifelse{reset}{#1}{\\Gm@restore@org\\Gm@initall
+  \\ProcessOptionsKV[c]{Gm}\\Gm@setdefaultpaper}{}}}%
+\\define@key{Gm}{resetpaper}[true]{\\ifGm@preamble{resetpaper}{%
+  \\Gm@setbool{resetpaper}{#1}}}%
+\\define@key{Gm}{mag}{\\ifGm@preamble{mag}{\\mag=#1}}%
+\\define@key{Gm}{truedimen}[true]{\\ifGm@preamble{truedimen}{%
+  \\Gm@doifelse{truedimen}{#1}{\\let\\Gm@truedimen\\Gm@true}%
+  {\\let\\Gm@truedimen\\@empty}}}%
+\\define@key{Gm}{pass}[true]{\\ifGm@preamble{pass}{\\Gm@setbool{pass}{#1}}}%
+\\define@key{Gm}{showframe}[true]{\\Gm@setbool{showframe}{#1}}%
+\\define@key{Gm}{showcrop}[true]{\\Gm@setbool{showcrop}{#1}}%
+\\def\\Gm@setdefaultpaper{%
+  \\ifx\\Gm@paper\\@undefined
+    \\Gm@setsize{paper}(\\strip@pt\\paperwidth,\\strip@pt\\paperheight){pt}%
+    \\Gm@setsize{Gm@layout}(\\strip@pt\\paperwidth,\\strip@pt\\paperheight){pt}%
+    \\Gm@swap@papersizefalse
+  \\fi}%
+\\def\\Gm@adjustpaper{%
+  \\ifdim\\paperwidth>\\p@\\else
+    \\PackageError{geometry}{%
+    \\string\\paperwidth\\space(\\the\\paperwidth) too short}{%
+    Set a paper type (e.g., \`a4paper').}%
+  \\fi
+  \\ifdim\\paperheight>\\p@\\else
+    \\PackageError{geometry}{%
+    \\string\\paperheight\\space(\\the\\paperheight) too short}{%
+    Set a paper type (e.g., \`a4paper').}%
+  \\fi
+  \\ifGm@swap@papersize
+    \\setlength\\@tempdima{\\paperwidth}%
+    \\setlength\\paperwidth{\\paperheight}%
+    \\setlength\\paperheight{\\@tempdima}%
+  \\fi
+  \\ifGm@layout\\else
+    \\setlength\\Gm@layoutwidth{\\paperwidth}%
+    \\setlength\\Gm@layoutheight{\\paperheight}%
+  \\fi}%
+\\def\\Gm@checkmp{%
+  \\ifGm@includemp\\else
+    \\@tempcnta\\z@\\@tempcntb\\@ne
+    \\if@twocolumn
+      \\@tempcnta\\@ne
+    \\else
+      \\if@reversemargin
+        \\@tempcnta\\@ne\\@tempcntb\\z@
+      \\fi
+    \\fi
+    \\@tempdima\\marginparwidth
+    \\advance\\@tempdima\\marginparsep
+    \\ifnum\\@tempcnta=\\@ne
+      \\@tempdimc\\@tempdima
+      \\setlength\\@tempdimb{\\Gm@lmargin}%
+      \\advance\\@tempdimc-\\@tempdimb
+      \\ifdim\\@tempdimc>\\z@
+        \\Gm@warning{The marginal notes overrun the paper edge.^^J
+        \\@spaces Add \\the\\@tempdimc\\space and more to the left margin}%
+      \\fi
+    \\fi
+    \\ifnum\\@tempcntb=\\@ne
+      \\@tempdimc\\@tempdima
+      \\setlength\\@tempdimb{\\Gm@rmargin}%
+      \\advance\\@tempdimc-\\@tempdimb
+      \\ifdim\\@tempdimc>\\z@
+        \\Gm@warning{The marginal notes overrun the paper.^^J
+        \\@spaces Add \\the\\@tempdimc\\space and more to the right margin}%
+      \\fi
+    \\fi
+  \\fi}%
+\\def\\Gm@adjustmp{%
+  \\ifGm@includemp
+    \\@tempdimb\\marginparwidth
+    \\advance\\@tempdimb\\marginparsep
+    \\Gm@wd@mp\\@tempdimb
+    \\Gm@odd@mp\\z@
+    \\Gm@even@mp\\z@
+    \\if@twocolumn
+      \\Gm@wd@mp2\\@tempdimb
+      \\Gm@odd@mp\\@tempdimb
+      \\Gm@even@mp\\@tempdimb
+    \\else
+      \\if@reversemargin
+        \\Gm@odd@mp\\@tempdimb
+        \\if@mparswitch\\else
+          \\Gm@even@mp\\@tempdimb
+        \\fi
+      \\else
+        \\if@mparswitch
+          \\Gm@even@mp\\@tempdimb
+        \\fi
+      \\fi
+    \\fi
+  \\fi}%
+\\def\\Gm@adjustbody{
+  \\ifGm@hbody
+    \\ifx\\Gm@width\\@undefined
+      \\ifx\\Gm@hscale\\@undefined
+        \\Gm@defbylen{width}{\\Gm@Dhscale\\Gm@layoutwidth}%
+      \\else
+        \\Gm@defbylen{width}{\\Gm@hscale\\Gm@layoutwidth}%
+      \\fi
+    \\fi
+    \\ifx\\Gm@textwidth\\@undefined\\else
+      \\setlength\\@tempdima{\\Gm@textwidth}%
+      \\ifGm@includemp
+        \\advance\\@tempdima\\Gm@wd@mp
+      \\fi
+      \\edef\\Gm@width{\\the\\@tempdima}%
+    \\fi
+  \\fi
+  \\ifGm@vbody
+    \\ifx\\Gm@height\\@undefined
+      \\ifx\\Gm@vscale\\@undefined
+        \\Gm@defbylen{height}{\\Gm@Dvscale\\Gm@layoutheight}%
+      \\else
+        \\Gm@defbylen{height}{\\Gm@vscale\\Gm@layoutheight}%
+      \\fi
+    \\fi
+    \\ifx\\Gm@lines\\@undefined\\else
+      \\ifdim\\topskip<\\ht\\strutbox
+        \\setlength\\@tempdima{\\topskip}%
+        \\setlength\\topskip{\\ht\\strutbox}%
+        \\Gm@warning{\\noexpand\\topskip was changed from \\the\\@tempdima\\space
+        to \\the\\topskip}%
+      \\fi
+      \\setlength\\@tempdima{\\baselineskip}%
+      \\multiply\\@tempdima\\Gm@lines
+      \\addtolength\\@tempdima{\\topskip}%
+      \\addtolength\\@tempdima{-\\baselineskip}%
+      \\edef\\Gm@textheight{\\the\\@tempdima}%
+    \\fi
+    \\ifx\\Gm@textheight\\@undefined\\else
+      \\setlength\\@tempdima{\\Gm@textheight}%
+      \\ifGm@includehead
+        \\addtolength\\@tempdima{\\headheight}%
+        \\addtolength\\@tempdima{\\headsep}%
+      \\fi
+      \\ifGm@includefoot
+        \\addtolength\\@tempdima{\\footskip}%
+      \\fi
+      \\edef\\Gm@height{\\the\\@tempdima}%
+    \\fi
+  \\fi}%
+\\def\\Gm@process{%
+  \\ifGm@pass
+    \\Gm@restore@org
+  \\else
+    \\Gm@@process
+  \\fi}%
+\\def\\Gm@@process{%
+  \\Gm@expandlengths
+  \\Gm@adjustpaper
+  \\addtolength\\Gm@layoutwidth{-\\Gm@bindingoffset}%
+  \\Gm@adjustmp
+  \\Gm@adjustbody
+  \\Gm@detall{h}{width}{lmargin}{rmargin}%
+  \\Gm@detall{v}{height}{tmargin}{bmargin}%
+  \\setlength\\textwidth{\\Gm@width}%
+  \\setlength\\textheight{\\Gm@height}%
+  \\setlength\\topmargin{\\Gm@tmargin}%
+  \\setlength\\oddsidemargin{\\Gm@lmargin}%
+  \\addtolength\\oddsidemargin{-1\\Gm@truedimen in}%
+  \\ifGm@includemp
+    \\advance\\textwidth-\\Gm@wd@mp
+    \\advance\\oddsidemargin\\Gm@odd@mp
+  \\fi
+  \\if@mparswitch
+    \\setlength\\evensidemargin{\\Gm@rmargin}%
+    \\addtolength\\evensidemargin{-1\\Gm@truedimen in}%
+    \\ifGm@includemp
+      \\advance\\evensidemargin\\Gm@even@mp
+    \\fi
+  \\else
+    \\evensidemargin\\oddsidemargin
+  \\fi
+  \\advance\\oddsidemargin\\Gm@bindingoffset
+  \\addtolength\\topmargin{-1\\Gm@truedimen in}%
+  \\ifGm@includehead
+    \\addtolength\\textheight{-\\headheight}%
+    \\addtolength\\textheight{-\\headsep}%
+  \\else
+    \\addtolength\\topmargin{-\\headheight}%
+    \\addtolength\\topmargin{-\\headsep}%
+  \\fi
+  \\ifGm@includefoot
+    \\addtolength\\textheight{-\\footskip}%
+  \\fi
+  \\ifGm@heightrounded
+    \\setlength\\@tempdima{\\textheight}%
+    \\addtolength\\@tempdima{-\\topskip}%
+    \\@tempcnta\\@tempdima
+    \\@tempcntb\\baselineskip
+    \\divide\\@tempcnta\\@tempcntb
+    \\setlength\\@tempdimb{\\baselineskip}%
+    \\multiply\\@tempdimb\\@tempcnta
+    \\advance\\@tempdima-\\@tempdimb
+    \\multiply\\@tempdima\\tw@
+    \\ifdim\\@tempdima>\\baselineskip
+      \\addtolength\\@tempdimb{\\baselineskip}%
+    \\fi
+    \\addtolength\\@tempdimb{\\topskip}%
+    \\textheight\\@tempdimb
+  \\fi
+  \\advance\\oddsidemargin\\Gm@layouthoffset%
+  \\advance\\evensidemargin\\Gm@layouthoffset%
+  \\advance\\topmargin\\Gm@layoutvoffset%
+  \\addtolength\\Gm@layoutwidth{\\Gm@bindingoffset}%
+  }% end of \\Gm@@process
+\\def\\Gm@detectdriver{%
+  \\ifx\\Gm@driver\\@empty
+    \\typeout{*geometry* driver: auto-detecting}%
+    \\ifpdf
+      \\ifx\\pdfextension\\@undefined
+        \\Gm@setdriver{pdftex}%
+      \\else
+        \\Gm@setdriver{luatex}%
+      \\fi
+    \\else
+      \\Gm@setdriver{dvips}%
+    \\fi
+    \\ifvtex
+      \\Gm@setdriver{vtex}%
+    \\fi
+    \\ifxetex
+      \\Gm@setdriver{xetex}
+    \\fi
+  \\else
+    \\ifx\\Gm@driver\\Gm@xetex %%
+      \\ifxetex\\else
+        \\Gm@warning{Wrong driver setting: \`xetex'; trying \`pdftex' driver}%
+        \\Gm@setdriver{pdftex}
+      \\fi
+    \\fi
+    \\ifx\\Gm@driver\\Gm@vtex
+      \\ifvtex\\else
+        \\Gm@warning{Wrong driver setting: \`vtex'; trying \`dvips' driver}%
+        \\Gm@setdriver{dvips}%
+      \\fi
+    \\fi
+  \\fi
+  \\ifx\\Gm@driver\\relax
+    \\typeout{*geometry* detected driver: <none>}%
+  \\else
+    \\typeout{*geometry* detected driver: \\Gm@driver}%
+  \\fi}%
+\\def\\Gm@showparams#1{%
+  \\ifGm@verbose\\expandafter\\typeout\\else\\expandafter\\wlog\\fi
+  {\\Gm@logcontent{#1}}}%
+\\def\\Gm@showdim#1{* \\string#1=\\the#1^^J}%
+\\def\\Gm@showbool#1{\\@nameuse{ifGm@#1}#1\\space\\fi}%
+\\def\\Gm@logcontent#1{%
+  *geometry* verbose mode - [ #1 ] result:^^J%
+  \\ifGm@pass * pass: disregarded the geometry package!^^J%
+  \\else
+  * driver: \\if\\Gm@driver<none>\\else\\Gm@driver\\fi^^J%
+  * paper: \\ifx\\Gm@paper\\@undefined<default>\\else\\Gm@paper\\fi^^J%
+  * layout: \\ifGm@layout<custom>\\else<same size as paper>\\fi^^J%
+  \\ifGm@layout
+  * layout(width,height): (\\the\\Gm@layoutwidth,\\the\\Gm@layoutheight)^^J%
+  \\fi
+  * layoutoffset:(h,v)=(\\the\\Gm@layouthoffset,\\the\\Gm@layoutvoffset)^^J%
+  \\@ifundefined{Gm@lines}{}{* lines: \\Gm@lines^^J}%
+  \\@ifundefined{Gm@hmarginratio}{}{* hratio: \\Gm@hmarginratio^^J}%
+  \\@ifundefined{Gm@vmarginratio}{}{* vratio: \\Gm@vmarginratio^^J}%
+  \\ifdim\\Gm@bindingoffset=\\z@\\else
+  * bindingoffset: \\the\\Gm@bindingoffset^^J\\fi
+  * modes: %
+   \\Gm@showbool{landscape}%
+   \\Gm@showbool{includehead}%
+   \\Gm@showbool{includefoot}%
+   \\Gm@showbool{includemp}%
+   \\if@twoside twoside\\space\\fi%
+   \\if@mparswitch\\else\\if@twoside asymmetric\\space\\fi\\fi%
+   \\Gm@showbool{heightrounded}%
+   \\ifx\\Gm@truedimen\\@empty\\else truedimen\\space\\fi%
+   \\Gm@showbool{showframe}%
+   \\Gm@showbool{showcrop}%
+  ^^J%
+  * h-part:(L,W,R)=(\\Gm@lmargin, \\Gm@width, \\Gm@rmargin)^^J%
+  * v-part:(T,H,B)=(\\Gm@tmargin, \\Gm@height, \\Gm@bmargin)^^J%
+  \\fi
+  \\Gm@showdim{\\paperwidth}%
+  \\Gm@showdim{\\paperheight}%
+  \\Gm@showdim{\\textwidth}%
+  \\Gm@showdim{\\textheight}%
+  \\Gm@showdim{\\oddsidemargin}%
+  \\Gm@showdim{\\evensidemargin}%
+  \\Gm@showdim{\\topmargin}%
+  \\Gm@showdim{\\headheight}%
+  \\Gm@showdim{\\headsep}%
+  \\Gm@showdim{\\topskip}%
+  \\Gm@showdim{\\footskip}%
+  \\Gm@showdim{\\marginparwidth}%
+  \\Gm@showdim{\\marginparsep}%
+  \\Gm@showdim{\\columnsep}%
+  * \\string\\skip\\string\\footins=\\the\\skip\\footins^^J%
+  \\Gm@showdim{\\hoffset}%
+  \\Gm@showdim{\\voffset}%
+  \\Gm@showdim{\\mag}%
+  * \\string\\@twocolumn\\if@twocolumn true\\else false\\fi^^J%
+  * \\string\\@twoside\\if@twoside true\\else false\\fi^^J%
+  * \\string\\@mparswitch\\if@mparswitch true\\else false\\fi^^J%
+  * \\string\\@reversemargin\\if@reversemargin true\\else false\\fi^^J%
+  * (1in=72.27pt=25.4mm, 1cm=28.453pt)^^J}%
+\\def\\Gm@cropmark(#1,#2,#3,#4){%
+  \\begin{picture}(0,0)
+    \\setlength\\unitlength{1truemm}%
+    \\linethickness{0.25pt}%
+    \\put(#3,0){\\line(#1,0){17}}%
+    \\put(0,#4){\\line(0,#2){17}}%
+  \\end{picture}}%
+\\providecommand*\\vb@xt@{\\vbox to}%
+\\def\\Gm@vrule{\\vrule width 0.2pt height\\textheight depth\\z@}%
+\\def\\Gm@hrule{\\hrule height 0.2pt depth\\z@ width\\textwidth}%
+\\def\\Gm@hruled{\\hrule height\\z@ depth0.2pt width\\textwidth}%
+\\newcommand*{\\Gm@vrules@mpi}{%
+  \\hb@xt@\\@tempdima{\\llap{\\Gm@vrule}\\ignorespaces
+  \\hskip \\textwidth\\Gm@vrule\\hskip \\marginparsep
+  \\llap{\\Gm@vrule}\\hfil\\Gm@vrule}}%
+\\newcommand*{\\Gm@vrules@mpii}{%
+  \\hb@xt@\\@tempdima{\\hskip-\\marginparwidth\\hskip-\\marginparsep
+  \\llap{\\Gm@vrule}\\ignorespaces
+  \\hskip \\marginparwidth\\rlap{\\Gm@vrule}\\hskip \\marginparsep
+  \\llap{\\Gm@vrule}\\hskip\\textwidth\\rlap{\\Gm@vrule}\\hss}}%
+\\newcommand*{\\Gm@pageframes}{%
+  \\vb@xt@\\z@{%
+   \\ifGm@showcrop
+    \\vb@xt@\\z@{\\vskip-1\\Gm@truedimen in\\vskip\\Gm@layoutvoffset%
+     \\hb@xt@\\z@{\\hskip-1\\Gm@truedimen in\\hskip\\Gm@layouthoffset%
+      \\vb@xt@\\Gm@layoutheight{%
+       \\let\\protect\\relax
+       \\hb@xt@\\Gm@layoutwidth{\\Gm@cropmark(-1,1,-3,3)\\hfil\\Gm@cropmark(1,1,3,3)}%
+       \\vfil
+       \\hb@xt@\\Gm@layoutwidth{\\Gm@cropmark(-1,-1,-3,-3)\\hfil\\Gm@cropmark(1,-1,3,-3)}}%
+     \\hss}%
+    \\vss}%
+   \\fi%
+   \\ifGm@showframe
+    \\if@twoside
+     \\ifodd\\count\\z@
+       \\let\\@themargin\\oddsidemargin
+     \\else
+       \\let\\@themargin\\evensidemargin
+     \\fi
+    \\fi
+    \\moveright\\@themargin%
+    \\vb@xt@\\z@{%
+     \\vskip\\topmargin\\vb@xt@\\z@{\\vss\\Gm@hrule}%
+     \\vskip\\headheight\\vb@xt@\\z@{\\vss\\Gm@hruled}%
+     \\vskip\\headsep\\vb@xt@\\z@{\\vss\\Gm@hrule}%
+     \\@tempdima\\textwidth
+     \\advance\\@tempdima by \\marginparsep
+     \\advance\\@tempdima by \\marginparwidth
+     \\if@mparswitch
+      \\ifodd\\count\\z@
+       \\Gm@vrules@mpi
+      \\else
+       \\Gm@vrules@mpii
+      \\fi
+     \\else
+      \\Gm@vrules@mpi
+     \\fi
+     \\vb@xt@\\z@{\\vss\\Gm@hrule}%
+     \\vskip\\footskip\\vb@xt@\\z@{\\vss\\Gm@hruled}%
+     \\vss}%
+    \\fi%
+  }}%
+\\def\\ProcessOptionsKV{\\@ifnextchar[%]
+  {\\@ProcessOptionsKV}{\\@ProcessOptionsKV[]}}%
+\\def\\@ProcessOptionsKV[#1]#2{%
+  \\let\\@tempa\\@empty
+  \\@tempcnta\\z@
+  \\if#1p\\@tempcnta\\@ne\\else\\if#1c\\@tempcnta\\tw@\\fi\\fi
+  \\ifodd\\@tempcnta
+   \\edef\\@tempa{\\@ptionlist{\\@currname.\\@currext}}%
+  \\else
+    \\@for\\CurrentOption:=\\@classoptionslist\\do{%
+      \\@ifundefined{KV@#2@\\CurrentOption}%
+      {}{\\edef\\@tempa{\\@tempa,\\CurrentOption,}}}%
+    \\ifnum\\@tempcnta=\\z@
+      \\edef\\@tempa{\\@tempa,\\@ptionlist{\\@currname.\\@currext}}%
+    \\fi
+  \\fi
+  \\edef\\@tempa{\\noexpand\\setkeys{#2}{\\@tempa}}%
+  \\@tempa
+  \\AtEndOfPackage{\\let\\@unprocessedoptions\\relax}}%
+\\def\\Gm@setkeys{\\setkeys{Gm}}%
+\\def\\Gm@processconfig{%
+  \\let\\Gm@origExecuteOptions\\ExecuteOptions
+  \\let\\ExecuteOptions\\Gm@setkeys
+  \\InputIfFileExists{geometry.cfg}{}{}
+  \\let\\ExecuteOptions\\Gm@origExecuteOptions}%
+\\Gm@save
+\\edef\\Gm@restore@org{\\Gm@restore}%
+\\Gm@initall
+\\Gm@processconfig
+\\ProcessOptionsKV[c]{Gm}%
+\\Gm@setdefaultpaper
+\\ProcessOptionsKV[p]{Gm}%
+\\Gm@process
+\\AtBeginDocument{%
+  \\Gm@savelength{paperwidth}%
+  \\Gm@savelength{paperheight}%
+  \\edef\\Gm@restore@org{\\Gm@restore}%
+  \\ifGm@resetpaper
+    \\edef\\Gm@pw{\\Gm@orgpw}%
+    \\edef\\Gm@ph{\\Gm@orgph}%
+  \\else
+    \\edef\\Gm@pw{\\the\\paperwidth}%
+    \\edef\\Gm@ph{\\the\\paperheight}%
+  \\fi
+  \\ifGm@pass\\else
+    \\ifnum\\mag=\\@m\\else
+      \\Gm@magtooffset
+      \\divide\\paperwidth\\@m
+      \\multiply\\paperwidth\\the\\mag
+      \\divide\\paperheight\\@m
+      \\multiply\\paperheight\\the\\mag
+    \\fi
+  \\fi
+  \\Gm@detectdriver
+  \\ifx\\Gm@driver\\Gm@xetex
+    \\@ifundefined{pdfpagewidth}{}{%
+      \\setlength\\pdfpagewidth{\\Gm@pw}%
+      \\setlength\\pdfpageheight{\\Gm@ph}}%
+    \\ifnum\\mag=\\@m\\else
+      \\ifx\\Gm@truedimen\\Gm@true
+        \\setlength\\paperwidth{\\Gm@pw}%
+        \\setlength\\paperheight{\\Gm@ph}%
+      \\fi
+    \\fi
+  \\fi
+  \\ifx\\Gm@driver\\Gm@pdftex
+    \\@ifundefined{pdfpagewidth}{}{%
+      \\setlength\\pdfpagewidth{\\Gm@pw}%
+      \\setlength\\pdfpageheight{\\Gm@ph}}%
+    \\ifnum\\mag=\\@m\\else
+      \\@tempdima=\\mag sp%
+      \\@ifundefined{pdfhorigin}{}{%
+        \\divide\\pdfhorigin\\@tempdima
+        \\multiply\\pdfhorigin\\@m
+        \\divide\\pdfvorigin\\@tempdima
+        \\multiply\\pdfvorigin\\@m}%
+      \\ifx\\Gm@truedimen\\Gm@true
+        \\setlength\\paperwidth{\\Gm@pw}%
+        \\setlength\\paperheight{\\Gm@ph}%
+      \\fi
+    \\fi
+  \\fi
+  \\ifx\\Gm@driver\\Gm@luatex
+    \\setlength\\pagewidth{\\Gm@pw}%
+    \\setlength\\pageheight{\\Gm@ph}%
+    \\ifnum\\mag=\\@m\\else
+      \\@tempdima=\\mag sp
+        \\edef\\Gm@horigin{\\pdfvariable horigin}%
+        \\edef\\Gm@vorigin{\\pdfvariable vorigin}%
+        \\divide\\Gm@horigin\\@tempdima
+        \\multiply\\Gm@horigin\\@m
+        \\divide\\Gm@vorigin\\@tempdima
+        \\multiply\\Gm@vorigin\\@m
+      \\ifx\\Gm@truedimen\\Gm@true
+        \\setlength\\paperwidth{\\Gm@pw}%
+        \\setlength\\paperheight{\\Gm@ph}%
+      \\fi
+    \\fi
+  \\fi
+  \\ifx\\Gm@driver\\Gm@vtex
+    \\@ifundefined{mediawidth}{}{%
+      \\mediawidth=\\paperwidth
+      \\mediaheight=\\paperheight}%
+    \\ifvtexdvi
+      \\AtBeginDvi{\\special{papersize=\\the\\paperwidth,\\the\\paperheight}}%
+    \\fi
+  \\fi
+  \\ifx\\Gm@driver\\Gm@dvips
+    \\AtBeginDvi{\\special{papersize=\\the\\paperwidth,\\the\\paperheight}}%
+    \\ifx\\Gm@driver\\Gm@dvips\\ifGm@landscape
+      \\AtBeginDvi{\\special{! /landplus90 true store}}%
+    \\fi\\fi
+  \\else\\ifx\\Gm@driver\\Gm@dvipdfm
+    \\ifcase\\ifx\\AtBeginShipoutFirst\\relax\\@ne\\else
+        \\ifx\\AtBeginShipoutFirst\\@undefined\\@ne\\else\\z@\\fi\\fi
+      \\AtBeginShipoutFirst{\\special{papersize=\\the\\paperwidth,\\the\\paperheight}}%
+    \\or
+      \\AtBeginDvi{\\special{papersize=\\the\\paperwidth,\\the\\paperheight}}%
+    \\fi
+  \\fi\\fi
+  \\@tempswafalse
+  \\ifGm@showframe
+    \\@tempswatrue
+  \\else\\ifGm@showcrop
+    \\@tempswatrue
+  \\fi\\fi
+  \\if@tempswa
+    \\RequirePackage{atbegshi}%
+      \\AtBeginShipout{\\setbox\\AtBeginShipoutBox=\\vbox{%
+        \\baselineskip\\z@skip\\lineskip\\z@skip\\lineskiplimit\\z@
+        \\Gm@pageframes\\box\\AtBeginShipoutBox}}%
+  \\fi
+  \\Gm@save
+  \\edef\\Gm@restore@pkg{\\Gm@restore}%
+  \\ifGm@verbose\\ifGm@pass\\else\\Gm@checkmp\\fi\\fi
+  \\Gm@showparams{preamble}%
+  \\let\\Gm@pw\\relax
+  \\let\\Gm@ph\\relax
+  }% end of \\AtBeginDocument
+\\newcommand{\\geometry}[1]{%
+  \\Gm@clean
+  \\setkeys{Gm}{#1}%
+  \\Gm@process}%
+\\@onlypreamble\\geometry
+\\DeclareRobustCommand\\Gm@changelayout{%
+  \\setlength{\\@colht}{\\textheight}
+  \\setlength{\\@colroom}{\\textheight}%
+  \\setlength{\\vsize}{\\textheight}
+  \\setlength{\\columnwidth}{\\textwidth}%
+  \\if@twocolumn%
+    \\advance\\columnwidth-\\columnsep
+    \\divide\\columnwidth\\tw@%
+    \\@firstcolumntrue%
+  \\fi%
+  \\setlength{\\hsize}{\\columnwidth}%
+  \\setlength{\\linewidth}{\\hsize}}%
+\\newcommand{\\newgeometry}[1]{%
+  \\clearpage
+  \\Gm@restore@org
+  \\Gm@initnewgm
+  \\Gm@newgmtrue
+  \\setkeys{Gm}{#1}%
+  \\Gm@newgmfalse
+  \\Gm@process
+  \\ifnum\\mag=\\@m\\else\\Gm@magtooffset\\fi
+  \\Gm@changelayout
+  \\Gm@showparams{newgeometry}}%
+\\newcommand{\\restoregeometry}{%
+  \\clearpage
+  \\Gm@restore@pkg
+  \\Gm@changelayout}%
+\\newcommand*{\\savegeometry}[1]{%
+  \\Gm@save
+  \\expandafter\\edef\\csname Gm@restore@@#1\\endcsname{\\Gm@restore}}%
+\\newcommand*{\\loadgeometry}[1]{%
+  \\clearpage
+  \\@ifundefined{Gm@restore@@#1}{%
+    \\PackageError{geometry}{%
+    \\string\\loadgeometry : name \`#1' undefined}{%
+    The name \`#1' should be predefined with \\string\\savegeometry}%
+  }{\\@nameuse{Gm@restore@@#1}%
+  \\Gm@changelayout}}%
+\\endinput
+%%
+%% End of file \`geometry.sty'.
+` },
   { format: 27, filename: 'gettitlestring.sty', content: `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -8498,7 +15570,625 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </body>
 </html>
 ` },
+  { format: 26, filename: 'gettitlestring.sty', content: `
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- ViewVC :: http://www.viewvc.org/ -->
+<head>
+<title>ViewVC Error</title>
+</head>
+<body>
+<h3>An Error Has Occurred</h3>
+
+ <p>Unknown location: /trunk/Master/texmf-dist/tex/latex/gettitlestring/gettitlestring.sty</p>
+
+
+ <h4>HTTP Response Status</h4>
+ <p><pre>404 Not Found</pre></p>
+ <hr />
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</body>
+</html>
+` },
   { format: 27, filename: 'graphics.sty', content: `
+%%
+%% This is file \`graphics.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% graphics.dtx  (with options: \`package')
+%% 
+%% The source is maintained by the LaTeX Project team and bug
+%% reports for it can be opened at https://latex-project.org/bugs/
+%% (but please observe conditions on bug reports sent to that address!)
+%% 
+%% 
+%% graphics.dtx Copyright (C) 1994      David Carlisle Sebastian Rahtz
+%%              Copyright (C) 1995-2020 David Carlisle, LaTeX3 Project
+%%
+%% This file is part of the Standard LaTeX \`Graphics Bundle'.
+%% It may be distributed under the terms of the LaTeX Project Public
+%% License, as described in lppl.txt in the base LaTeX distribution.
+%% Either version 1.3c or, at your option, any later version.
+%%
+%% This file has the LPPL maintenance status "maintained".
+%%
+\\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\\providecommand\\DeclareRelease[3]{}
+\\providecommand\\DeclareCurrentRelease[2]{}
+
+\\DeclareRelease{}{2017-06-25}{graphics-2017-06-25.sty}
+\\DeclareCurrentRelease{}{2019-10-01}
+
+\\ProvidesPackage{graphics}
+          [2019/11/30 v1.4a  Standard LaTeX Graphics (DPC,SPQR)]
+\\edef\\Gin@codes{%
+ \\catcode\`\\noexpand\\^^A\\the\\catcode\`\\^^A\\relax
+ \\catcode\`\\noexpand\\"\\the\\catcode\`\\"\\relax
+ \\catcode\`\\noexpand\\*\\the\\catcode\`\\*\\relax
+ \\catcode\`\\noexpand\\!\\the\\catcode\`\\!\\relax
+ \\catcode\`\\noexpand\\:\\the\\catcode\`\\:\\relax}
+\\catcode\`\\^^A=\\catcode\`\\%
+\\@makeother\\"%
+\\catcode\`\\*=11
+\\@makeother\\!%
+\\@makeother\\:%
+\\RequirePackage{trig}
+\\providecommand\\Grot@start{\\@latex@error{Rotation not supported}\\@ehc
+            \\global\\let\\Grot@start\\relax}
+\\providecommand\\Grot@end{}
+\\providecommand\\Gscale@start{\\@latex@error{Scaling not supported}\\@ehc
+            \\global\\let\\Gscale@start\\relax}
+\\providecommand\\Gscale@end{}
+\\edef\\Gread@BBox{\\@percentchar\\@percentchar BoundingBox}
+\\DeclareOption{draft}{\\Gin@drafttrue}
+\\DeclareOption{final}{\\Gin@draftfalse}
+\\newif\\ifGin@draft
+\\DeclareOption{hiresbb}{%
+  \\edef\\Gread@BBox{\\@percentchar\\@percentchar HiResBoundingBox}}
+\\DeclareOption{demo}{%
+  \\AtBeginDocument{%
+    \\def\\Ginclude@graphics#1{%
+      \\rule{\\@ifundefined{Gin@@ewidth}{150pt}{\\Gin@@ewidth}}%
+      {\\@ifundefined{Gin@@eheight}{100pt}{\\Gin@@eheight}}}}}
+\\newif\\ifGin@setpagesize\\Gin@setpagesizetrue
+\\DeclareOption{setpagesize}{\\Gin@setpagesizetrue}
+\\DeclareOption{nosetpagesize}{\\Gin@setpagesizefalse}
+\\providecommand\\Gin@driver{}
+\\DeclareOption{dvips}{\\def\\Gin@driver{dvips.def}}
+\\DeclareOption{xdvi}{\\ExecuteOptions{dvips}}
+\\DeclareOption{dvipdf}{\\def\\Gin@driver{dvipdf.def}}
+\\DeclareOption{dvipdfm}{\\def\\Gin@driver{dvipdfmx.def}}
+\\DeclareOption{dvipdfmx}{\\def\\Gin@driver{dvipdfmx.def}}
+\\DeclareOption{xetex}{\\def\\Gin@driver{xetex.def}}
+\\DeclareOption{pdftex}{\\def\\Gin@driver{pdftex.def}}
+\\DeclareOption{luatex}{\\def\\Gin@driver{luatex.def}}
+\\DeclareOption{dvisvgm}{\\def\\Gin@driver{dvisvgm.def}}
+\\DeclareOption{dvipsone}{\\def\\Gin@driver{dvipsone.def}}
+\\DeclareOption{dviwindo}{\\ExecuteOptions{dvipsone}}
+\\DeclareOption{emtex}{\\def\\Gin@driver{emtex.def}}
+\\DeclareOption{dviwin}{\\def\\Gin@driver{dviwin.def}}
+\\DeclareOption{oztex}{\\ExecuteOptions{dvips}}
+\\DeclareOption{textures}{\\def\\Gin@driver{textures.def}}
+\\DeclareOption{pctexps}{\\def\\Gin@driver{pctexps.def}}
+\\DeclareOption{pctexwin}{\\def\\Gin@driver{pctexwin.def}}
+\\DeclareOption{pctexhp}{\\def\\Gin@driver{pctexhp.def}}
+\\DeclareOption{pctex32}{\\def\\Gin@driver{pctex32.def}}
+\\DeclareOption{truetex}{\\def\\Gin@driver{truetex.def}}
+\\DeclareOption{tcidvi}{\\def\\Gin@driver{tcidvi.def}}
+\\DeclareOption{vtex}{\\def\\Gin@driver{vtex.def}}
+\\DeclareOption{debugshow}{\\catcode\`\\^^A=9 \\let\\GDebug\\typeout}
+\\InputIfFileExists{graphics.cfg}{}{}
+\\DeclareOption{hiderotate}{%
+  \\def\\Grot@start{\\begingroup\\setbox\\z@\\hbox\\bgroup}
+  \\def\\Grot@end{\\egroup\\endgroup}}
+\\DeclareOption{hidescale}{%
+  \\def\\Gscale@start{\\begingroup\\setbox\\z@\\hbox\\bgroup}
+  \\def\\Gscale@end{\\egroup\\endgroup}}
+\\ProcessOptions
+\\if!\\Gin@driver!
+  \\PackageError{graphics}
+    {No driver specified}
+    {You should make a default driver option in a file \\MessageBreak
+     graphics.cfg\\MessageBreak
+     eg: \\protect\\ExecuteOptions{textures}%
+     }
+\\else
+  \\PackageInfo{graphics}{Driver file: \\Gin@driver}
+  \\@ifundefined{ver@\\Gin@driver}{\\input{\\Gin@driver}}{}
+\\fi
+\\def\\Gin@llx{0}
+\\let\\Gin@lly\\Gin@llx
+\\let\\Gin@urx\\Gin@llx
+\\let\\Gin@ury\\Gin@llx
+\\let\\Gin@nat@width\\leftmarginv
+\\let\\Gin@nat@height\\leftmarginvi
+\\newif\\ifGin@clip
+\\newcommand\\DeclareGraphicsExtensions[1]{%
+  \\edef\\Gin@extensions{\\zap@space#1 \\@empty}}
+\\providecommand\\Gin@extensions{}
+\\protected\\def\\includegraphics{%
+  \\leavevmode
+  \\@ifstar
+    {\\Gin@cliptrue\\Gin@i}%
+    {\\Gin@clipfalse\\Gin@i}}
+\\def\\Gin@i{%
+  \\@ifnextchar[%]
+    \\Gin@ii
+    {\\Gin@bboxfalse\\Ginclude@graphics}}
+\\def\\Gin@ii[#1]{%
+  \\@ifnextchar[%]
+    {\\Gin@iii[#1]}
+    {\\Gin@iii[0,0][#1]}}
+\\def\\Gin@iii[#1,#2][#3,#4]#5{%
+  \\begingroup
+  \\Gin@bboxtrue
+  \\Gin@defaultbp\\Gin@llx{#1}%
+  \\Gin@defaultbp\\Gin@lly{#2}%
+  \\Gin@defaultbp\\Gin@urx{#3}%
+  \\Gin@defaultbp\\Gin@ury{#4}%
+  \\Ginclude@graphics{#5}%
+  \\endgroup}
+\\def\\Gin@defaultbp#1#2{%
+  \\afterassignment\\Gin@def@bp\\dimen@#2bp\\relax{#1}{#2}}
+\\def\\Gin@def@bp#1\\relax#2#3{%
+   \\if!#1!%
+     \\def#2{#3}%
+    \\else
+      \\dimen@.99626\\dimen@
+      \\edef#2{\\strip@pt\\dimen@}%
+    \\fi}
+\\def\\DeclareGraphicsRule#1#2#3#4{%
+  \\edef\\@tempa{\\string *}\\def\\@tempb{#3}%
+  \\expandafter\\edef\\csname Gin@rule@#1\\endcsname##1%
+       {{#2}%
+        {\\ifx\\@tempa\\@tempb\\noexpand\\Gin@ext\\else#3\\fi}%
+        {\\ifx\\indent#4\\indent##1\\else#4\\fi}}}
+\\def\\graphicspath#1{\\def\\Ginput@path{#1}}
+\\ifx\\Ginput@path\\@undefined
+  \\let\\Ginput@path\\input@path
+\\fi
+\\def\\Gin@getbase#1{%
+  \\edef\\Gin@tempa{%
+    \\def\\noexpand\\@tempa####1#1\\space{%
+      \\def\\noexpand\\Gin@base{####1}}}%
+  \\IfFileExists{\\filename@area\\filename@base#1}%
+    {\\Gin@tempa
+     \\edef\\uq@filef@und{\\expandafter\\unquote@name
+                        \\expandafter{\\@filef@und}}%
+     \\expandafter\\@tempa\\uq@filef@und
+     \\edef\\Gin@ext{#1}}{}}%
+\\let\\Gin@ext\\relax
+\\def\\Gin@sepdefault{.}
+\\edef\\Gin@gzext{\\detokenize{gz}}
+\\def\\Gin@temp#1{%
+  \\begingroup
+    \\escapechar\\m@ne
+    \\xdef\\@curr@file{\\expandafter\\string\\csname #1\\endcsname}%
+  \\endgroup
+}
+\\ifx\\set@curr@file\\@Gin@temp
+  \\let\\set@curr@file\\@undefined
+\\fi
+\\ifx\\set@curr@file\\@undefined
+\\def\\set@curr@file#1{%
+  \\begingroup
+    \\escapechar\\m@ne
+    \\xdef\\@curr@file{\\expandafter\\string\\csname\\@firstofone#1\\@empty\\endcsname}%
+  \\endgroup
+}
+\\def\\quote@name#1{"\\quote@@name#1\\@gobble""}
+\\def\\quote@@name#1"{#1\\quote@@name}
+\\def\\unquote@name#1{\\quote@@name#1\\@gobble"}
+\\fi
+\\def\\Ginclude@graphics#1{%
+  \\ifx\\detokenize\\@undefined\\else
+    \\edef\\Gin@extensions{\\detokenize\\expandafter{\\Gin@extensions}}%
+  \\fi
+  \\begingroup
+  \\let\\input@path\\Ginput@path
+  \\set@curr@file{#1}%
+  \\expandafter\\filename@parse\\expandafter{\\@curr@file}%
+  \\ifx\\filename@ext\\Gin@gzext
+    \\expandafter\\filename@parse\\expandafter{\\filename@base}%
+    \\ifx\\filename@ext\\relax
+      \\let\\filename@ext\\Gin@gzext
+    \\else
+      \\edef\\Gin@ext{\\Gin@ext\\Gin@sepdefault\\Gin@gzext}%
+    \\fi
+  \\fi
+  \\ifx\\filename@ext\\relax
+    \\@for\\Gin@temp:=\\Gin@extensions\\do{%
+      \\ifx\\Gin@ext\\relax
+        \\Gin@getbase\\Gin@temp
+      \\fi}%
+  \\else
+    \\Gin@getbase{\\Gin@sepdefault\\filename@ext}%
+\\ifx\\Gin@ext\\relax
+\\let\\Gin@savedbase\\filename@base
+\\let\\Gin@savedext\\filename@ext
+  \\edef\\filename@base{\\filename@base\\Gin@sepdefault\\filename@ext}%
+  \\let\\filename@ext\\relax
+   \\@for\\Gin@temp:=\\Gin@extensions\\do{%
+      \\ifx\\Gin@ext\\relax
+        \\Gin@getbase\\Gin@temp
+      \\fi}%
+  \\ifx\\Gin@ext\\relax
+    \\let\\filename@base\\Gin@savedbase
+    \\let\\filename@ext\\Gin@savedext
+  \\fi
+\\fi
+    \\ifx\\Gin@ext\\relax
+       \\@warning{File \`#1' not found}%
+       \\def\\Gin@base{\\filename@area\\filename@base}%
+       \\edef\\Gin@ext{\\Gin@sepdefault\\filename@ext}%
+    \\fi
+  \\fi
+    \\ifx\\Gin@ext\\relax
+         \\@latex@error{File \`#1' not found}%
+         {I could not locate the file with any of these extensions:^^J%
+          \\Gin@extensions^^J\\@ehc}%
+    \\else
+       \\@ifundefined{Gin@rule@\\Gin@ext}%
+         {\\ifx\\Gin@rule@*\\@undefined
+            \\@latex@error{Unknown graphics extension: \\Gin@ext}\\@ehc
+          \\else
+            \\expandafter\\Gin@setfile\\Gin@rule@*{\\Gin@base\\Gin@ext}%
+           \\fi}%
+         {\\expandafter\\expandafter\\expandafter\\Gin@setfile
+             \\csname Gin@rule@\\Gin@ext\\endcsname{\\Gin@base\\Gin@ext}}%
+    \\fi
+  \\endgroup}
+\\newif\\ifGread@\\Gread@true
+\\def\\Gin@setfile#1#2#3{%
+  \\ifx\\\\#2\\\\\\Gread@false\\fi
+  \\ifGin@bbox\\else
+    \\ifGread@
+      \\csname Gread@%
+         \\expandafter\\ifx\\csname Gread@#1\\endcsname\\relax
+           eps%
+         \\else
+           #1%
+         \\fi
+      \\endcsname{\\Gin@base#2}%
+    \\else
+      \\Gin@nosize{#3}%
+    \\fi
+  \\fi
+  \\Gin@viewport@code
+  \\Gin@nat@height\\Gin@ury bp%
+  \\advance\\Gin@nat@height-\\Gin@lly bp%
+  \\Gin@nat@width\\Gin@urx bp%
+  \\advance\\Gin@nat@width-\\Gin@llx bp%
+  \\Gin@req@sizes
+  \\expandafter\\ifx\\csname Ginclude@#1\\endcsname\\relax
+    \\Gin@drafttrue
+    \\expandafter\\ifx\\csname Gread@#1\\endcsname\\relax
+      \\@latex@error{Can not include graphics of type: #1}\\@ehc
+      \\global\\expandafter\\let\\csname Gread@#1\\endcsname\\@empty
+    \\fi
+  \\fi
+  \\leavevmode
+  \\ifGin@draft
+      \\hb@xt@\\Gin@req@width{%
+        \\vrule\\hss
+        \\vbox to \\Gin@req@height{%
+           \\hrule \\@width \\Gin@req@width
+           \\vss
+           \\edef\\@tempa{#3}%
+           \\rlap{ \\ttfamily\\expandafter\\strip@prefix\\meaning\\@tempa}%
+           \\vss
+           \\hrule}%
+        \\hss\\vrule}%
+  \\else
+    \\@addtofilelist{#3}%
+    \\ProvidesFile{#3}[Graphic file (type #1)]%
+    \\setbox\\z@\\hbox{\\csname Ginclude@#1\\endcsname{#3}}%
+    \\dp\\z@\\z@
+    \\ht\\z@\\Gin@req@height
+    \\wd\\z@\\Gin@req@width
+  \\box\\z@
+  \\fi}
+\\let\\Gin@decode\\@empty
+\\def\\Gin@exclamation{!}
+\\let\\Gin@page\\@empty
+\\def\\Gin@pagebox{cropbox}
+\\newif\\ifGin@interpolate
+\\let\\Gin@log\\wlog
+\\let\\Gin@req@sizes\\relax
+\\def\\Gin@scalex{1}%
+\\let\\Gin@scaley\\Gin@exclamation
+\\let\\Gin@req@height\\Gin@nat@height
+\\let\\Gin@req@width\\Gin@nat@width
+\\let\\Gin@viewport@code\\relax
+\\def\\Gin@nosize#1{%
+  \\@latex@error
+      {Cannot determine size of graphic in #1 (no size specified)}%
+      \\@ehc}
+\\newif\\ifGin@bbox
+\\def\\Gread@generic#1#2{%
+  \\edef\\Gread@attr@hash{%
+    \\ifx\\Gin@pagebox\\@empty\\else
+      :\\Gin@pagebox
+    \\fi
+    \\ifx\\Gin@page\\@empty\\else
+      :P\\Gin@page
+    \\fi
+  }%
+  \\@ifundefined{#1 bbox\\Gread@attr@hash}%
+    {\\Gread@generic@aux{#1}{#2}}
+    {%
+      \\expandafter\\global\\expandafter\\let\\expandafter\\@gtempa
+        \\csname #1 bbox\\Gread@attr@hash\\endcsname
+    }%
+  \\expandafter\\Gread@parse@bb\\@gtempa\\\\%
+}
+\\def\\Gread@generic@aux#1#2{%
+  \\begingroup
+  \\@tempcnta\\z@
+  \\loop\\ifnum\\@tempcnta<\\@xxxii
+     \\catcode\\@tempcnta14 %
+     \\advance\\@tempcnta\\@ne
+  \\repeat
+  \\catcode\`\\^^?14 %
+  \\let\\do\\@makeother
+  \\dospecials
+  \\catcode\`\\ 10 %
+  \\catcode\`\\^^I10 %
+  \\catcode\\endlinechar5 %
+  \\@makeother\\:%
+  \\@makeother\\-%
+  \\immediate\\openin\\@inputcheck\\quote@name{#1} %
+  #2{#1}%
+  \\ifGin@bbox
+    \\expandafter\\xdef\\csname #1 bbox\\Gread@attr@hash\\endcsname{\\@gtempa}%
+  \\else
+    \\@latex@error
+      {Cannot determine size of graphic in #1 (no BoundingBox)}%
+      \\@ehc
+    \\gdef\\@gtempa{0 0 72 72 }%
+  \\fi
+  \\endgroup
+}
+\\def\\Gread@eps#1{%
+  \\Gread@generic{#1}\\Gread@eps@aux
+}
+\\def\\Gread@eps@aux#1{%
+  \\ifeof\\@inputcheck
+    \\@latex@error{File \`#1' not found}\\@ehc
+  \\else
+     \\Gread@true
+     \\let\\@tempb\\Gread@false
+     \\loop
+       \\read\\@inputcheck to\\@tempa
+       \\ifeof\\@inputcheck
+         \\Gread@false
+       \\else
+         \\expandafter\\Gread@find@bb\\@tempa:.\\\\%
+       \\fi
+     \\ifGread@
+     \\repeat
+    \\immediate\\closein\\@inputcheck
+  \\fi
+}
+\\long\\def\\Gread@find@bb#1:#2#3\\\\{%
+  \\def\\@tempa{#1}%
+  \\ifx\\@tempa\\Gread@BBox
+    \\Gread@test@atend#2#3()\\\\%
+  \\fi}
+\\def\\Gread@test@atend#1(#2)#3\\\\{%
+  \\def\\@tempa{#2}%
+  \\ifx\\@tempa\\Gread@atend
+    \\Gread@true
+    \\let\\@tempb\\relax
+  \\else
+    \\gdef\\@gtempa{#1}%
+    \\@tempb
+    \\Gin@bboxtrue
+  \\fi}
+\\def\\Gread@parse@bb#1 #2 #3 #4 #5\\\\{%
+  \\Gin@defaultbp\\Gin@llx{#1}%
+  \\Gin@defaultbp\\Gin@lly{#2}%
+  \\Gin@defaultbp\\Gin@urx{#3}%
+  \\Gin@defaultbp\\Gin@ury{#4}}%
+\\def\\Gread@atend{atend}
+\\let\\Grot@height\\@ovxx
+\\let\\Grot@left\\@ovyy
+\\let\\Grot@right\\@ovdx
+\\let\\Grot@depth\\@ovdy
+\\let\\Grot@l\\@ovro
+\\let\\Grot@r\\@ovri
+\\let\\Grot@h\\@xdim
+\\let\\Grot@d\\@ydim
+\\let\\Grot@x\\@linelen
+\\let\\Grot@y\\@dashdim
+\\protected\\long\\def\\rotatebox#1#2{%
+  \\leavevmode
+  \\Grot@setangle{#1}%
+  \\setbox\\z@\\hbox{{#2}}%
+  \\Grot@x\\z@
+  \\Grot@y\\z@
+  \\Grot@box}
+\\def\\Grot@setangle#1{\\edef\\Grot@angle{#1}}
+\\def\\Grot@Px#1#2#3{%
+        #1\\Grot@cos#2%
+        \\advance#1-\\Grot@sin#3}
+\\def\\Grot@Py#1#2#3{%
+        #1\\Grot@sin#2%
+        \\advance#1\\Grot@cos#3}
+\\def\\Grot@box{%
+  \\begingroup
+  \\CalculateSin\\Grot@angle
+  \\CalculateCos\\Grot@angle
+  \\edef\\Grot@sin{\\UseSin\\Grot@angle}%
+  \\edef\\Grot@cos{\\UseCos\\Grot@angle}%
+^^A   \\GDebug{Rotate: angle \\Grot@angle, sine is \\Grot@sin,
+^^A             cosine is \\Grot@cos}%
+  \\Grot@r\\wd\\z@  \\advance\\Grot@r-\\Grot@x
+  \\Grot@l\\z@     \\advance\\Grot@l-\\Grot@x
+  \\Grot@h\\ht\\z@  \\advance\\Grot@h-\\Grot@y
+  \\Grot@d-\\dp\\z@ \\advance\\Grot@d-\\Grot@y
+  \\ifdim\\Grot@sin\\p@>\\z@
+    \\ifdim\\Grot@cos\\p@>\\z@
+      \\Grot@Py\\Grot@height \\Grot@r\\Grot@h%B
+      \\Grot@Px\\Grot@right  \\Grot@r\\Grot@d%E
+      \\Grot@Px\\Grot@left   \\Grot@l\\Grot@h%C
+      \\Grot@Py\\Grot@depth  \\Grot@l\\Grot@d%D
+    \\else
+      \\Grot@Py\\Grot@height \\Grot@r\\Grot@d%E
+      \\Grot@Px\\Grot@right  \\Grot@l\\Grot@d%D
+      \\Grot@Px\\Grot@left   \\Grot@r\\Grot@h%B
+      \\Grot@Py\\Grot@depth  \\Grot@l\\Grot@h%C
+    \\fi
+  \\else
+    \\ifdim\\Grot@cos\\p@<\\z@
+      \\Grot@Py\\Grot@height \\Grot@l\\Grot@d%D
+      \\Grot@Px\\Grot@right  \\Grot@l\\Grot@h%C
+      \\Grot@Px\\Grot@left   \\Grot@r\\Grot@d%E
+      \\Grot@Py\\Grot@depth  \\Grot@r\\Grot@h%B
+    \\else
+      \\Grot@Py\\Grot@height \\Grot@l\\Grot@h%C
+      \\Grot@Px\\Grot@right  \\Grot@r\\Grot@h%B
+      \\Grot@Px\\Grot@left   \\Grot@l\\Grot@d%D
+      \\Grot@Py\\Grot@depth  \\Grot@r\\Grot@d%E
+    \\fi
+  \\fi
+  \\advance\\Grot@height\\Grot@y
+  \\advance\\Grot@depth\\Grot@y
+  \\Grot@Px\\dimen@  \\Grot@x\\Grot@y
+  \\Grot@Py\\dimen@ii \\Grot@x\\Grot@y
+  \\dimen@-\\dimen@     \\advance\\dimen@-\\Grot@left
+  \\dimen@ii-\\dimen@ii \\advance\\dimen@ii\\Grot@y
+^^A   \\GDebug{Rotate: (l,r,h,d)^^J%
+^^A Original \\the\\Grot@l,\\the\\Grot@r,\\the\\Grot@h,\\the\\Grot@d,^^J%
+^^A New..... \\the\\Grot@left,\\the\\Grot@right,%
+^^A          \\the\\Grot@height,\\the\\Grot@depth}%
+  \\setbox\\z@\\hbox{%
+    \\kern\\dimen@
+    \\raise\\dimen@ii\\hbox{\\Grot@start\\box\\z@\\Grot@end}}%
+  \\ht\\z@\\Grot@height
+  \\dp\\z@-\\Grot@depth
+  \\advance\\Grot@right-\\Grot@left\\wd\\z@\\Grot@right
+  \\leavevmode\\box\\z@
+  \\endgroup}
+\\protected\\def\\scalebox#1{%
+  \\@ifnextchar[{\\Gscale@box{#1}}{\\Gscale@box{#1}[#1]}}
+\\long\\def\\Gscale@box#1[#2]#3{%
+  \\leavevmode
+  \\def\\Gscale@x{#1}\\def\\Gscale@y{#2}%
+  \\setbox\\z@\\hbox{{#3}}%
+  \\setbox\\tw@\\hbox{\\Gscale@start\\rlap{\\copy\\z@}\\Gscale@end}%
+  \\ifdim#2\\p@<\\z@
+    \\ht\\tw@-#2\\dp\\z@
+    \\dp\\tw@-#2\\ht\\z@
+  \\else
+    \\ht\\tw@#2\\ht\\z@
+    \\dp\\tw@#2\\dp\\z@
+  \\fi
+  \\ifdim#1\\p@<\\z@
+    \\hb@xt@-#1\\wd\\z@{\\kern-#1\\wd\\z@\\box\\tw@\\hss}%
+  \\else
+    \\hb@xt@#1\\wd\\z@{\\box\\tw@\\kern#1\\wd\\z@\\hss}%
+  \\fi}
+\\protected\\def\\reflectbox{\\Gscale@box-1[1]}
+\\protected\\def\\resizebox{%
+  \\leavevmode
+  \\@ifstar{\\Gscale@@box\\totalheight}{\\Gscale@@box\\height}}
+\\def\\Gscale@@box#1#2#3{%
+  \\let\\@tempa\\Gin@exclamation
+  \\expandafter\\def\\expandafter\\@tempb\\expandafter{\\string#2}%
+  \\expandafter\\def\\expandafter\\@tempc\\expandafter{\\string#3}%
+  \\ifx\\@tempb\\@tempa
+    \\ifx\\@tempc\\@tempa
+      \\toks@{\\mbox}%
+    \\else
+      \\toks@{\\Gscale@box@dd{#3}#1}%
+    \\fi
+  \\else
+    \\ifx\\@tempc\\@tempa
+      \\toks@{\\Gscale@box@dd{#2}\\width}%
+    \\else
+      \\toks@{\\Gscale@box@dddd{#2}\\width{#3}#1}%
+    \\fi
+  \\fi
+  \\the\\toks@}
+\\long\\def\\Gscale@box@dd#1#2#3{%
+  \\@begin@tempboxa\\hbox{#3}%
+    \\setlength\\@tempdima{#1}%
+    \\setlength\\@tempdimb{#2}%
+    \\Gscale@div\\@tempa\\@tempdima\\@tempdimb
+    \\Gscale@box\\@tempa[\\@tempa]{\\box\\@tempboxa}%
+  \\@end@tempboxa}
+\\long\\def\\Gscale@box@dddd#1#2#3#4#5{%
+  \\@begin@tempboxa\\hbox{#5}%
+    \\setlength\\@tempdima{#1}%
+    \\setlength\\@tempdimb{#2}%
+    \\Gscale@div\\@tempa\\@tempdima\\@tempdimb
+    \\setlength\\@tempdima{#3}%
+    \\setlength\\@tempdimb{#4}%
+    \\Gscale@div\\@tempb\\@tempdima\\@tempdimb
+    \\ifGin@iso
+      \\ifdim\\@tempa\\p@>\\@tempb\\p@
+        \\let\\@tempa\\@tempb
+      \\else
+        \\let\\@tempb\\@tempa
+      \\fi
+    \\fi
+    \\Gscale@box\\@tempa[\\@tempb]{\\box\\@tempboxa}%
+  \\@end@tempboxa}
+\\newif\\ifGin@iso
+\\def\\Gscale@div#1#2#3{%
+  \\setlength\\dimen@{#3}%
+  \\ifdim\\dimen@=\\z@
+    \\PackageError{graphics}{Division by 0}\\@eha
+    \\dimen@#2%
+  \\fi
+  \\edef\\@tempd{\\the\\dimen@}%
+  \\setlength\\dimen@{#2}%
+  \\count@65536\\relax
+  \\ifdim\\dimen@<\\z@
+    \\dimen@-\\dimen@
+    \\count@-\\count@
+  \\fi
+  \\ifdim\\dimen@>\\z@
+    \\loop
+      \\ifdim\\ifnum\\count@<\\tw@\\maxdimen\\else\\dimen@\\fi<8192\\p@
+        \\dimen@\\tw@\\dimen@
+        \\divide\\count@\\tw@
+    \\repeat
+    \\dimen@ii\\@tempd\\relax
+    \\divide\\dimen@ii\\count@
+    \\divide\\dimen@\\dimen@ii
+  \\fi
+  \\edef#1{\\strip@pt\\dimen@}}
+\\Gin@codes
+\\let\\Gin@codes\\relax
+\\endinput
+%%
+%% End of file \`graphics.sty'.
+` },
+  { format: 26, filename: 'graphics.sty', content: `
 %%
 %% This is file \`graphics.sty',
 %% generated with the docstrip utility.
@@ -9354,6 +17044,284 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 %%
 %% End of file \`graphicx.sty'.
 ` },
+  { format: 26, filename: 'graphicx.sty', content: `
+%%
+%% This is file \`graphicx.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% graphicx.dtx  (with options: \`package')
+%% 
+%% The source is maintained by the LaTeX Project team and bug
+%% reports for it can be opened at https://latex-project.org/bugs/
+%% (but please observe conditions on bug reports sent to that address!)
+%% 
+%% 
+%% graphicx.dtx Copyright (C) 1994      David Carlisle Sebastian Rahtz
+%%              Copyright (C) 1995-2020 David Carlisle, LaTeX3 Project
+%%
+%% This file is part of the Standard LaTeX \`Graphics Bundle'.
+%% It may be distributed under the terms of the LaTeX Project Public
+%% License, as described in lppl.txt in the base LaTeX distribution.
+%% Either version 1.3c or, at your option, any later version.
+%%
+\\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\\ProvidesPackage{graphicx}
+          [2019/11/30 v1.2a  Enhanced LaTeX Graphics (DPC,SPQR)]
+\\DeclareOption{unknownkeysallowed}
+  {\\PassOptionsToPackage\\CurrentOption{keyval}}
+\\DeclareOption*{\\PassOptionsToPackage\\CurrentOption{graphics}}
+\\ProcessOptions
+\\RequirePackage{keyval,graphics}
+\\define@key{Gin}{bb}
+           {\\Gin@bboxtrue\\Gread@parse@bb#1 \\\\}
+\\define@key{Gin}{bbllx}
+           {\\Gin@bboxtrue\\Gin@defaultbp\\Gin@llx{#1}}
+\\define@key{Gin}{bblly}
+           {\\Gin@bboxtrue\\Gin@defaultbp\\Gin@lly{#1}}
+\\define@key{Gin}{bburx}
+           {\\Gin@bboxtrue\\Gin@defaultbp\\Gin@urx{#1}}
+\\define@key{Gin}{bbury}
+           {\\Gin@bboxtrue\\Gin@defaultbp\\Gin@ury{#1}}
+\\define@key{Gin}{hiresbb}[true]{%
+  \\edef\\Gread@BBox{%
+    \\@percentchar\\@percentchar
+    \\csname if#1\\endcsname HiRes\\fi
+    BoundingBox}}
+\\let\\KV@Gin@natwidth\\KV@Gin@bburx
+\\let\\KV@Gin@natheight\\KV@Gin@bbury
+\\define@key{Gin}{viewport}
+           {\\let\\Gin@viewport@code\\Gin@viewport\\Gread@parse@vp#1 \\\\}
+\\define@key{Gin}{trim}
+           {\\let\\Gin@viewport@code\\Gin@trim\\Gread@parse@vp#1 \\\\}
+\\def\\Gread@parse@vp#1 #2 #3 #4 #5\\\\{%
+  \\Gin@defaultbp\\Gin@vllx{#1}%
+  \\Gin@defaultbp\\Gin@vlly{#2}%
+  \\Gin@defaultbp\\Gin@vurx{#3}%
+  \\Gin@defaultbp\\Gin@vury{#4}}%
+\\def\\Gin@viewport{%
+  \\let\\Gin@ollx\\Gin@llx
+  \\let\\Gin@olly\\Gin@lly
+  \\let\\Gin@ourx\\Gin@urx
+  \\let\\Gin@oury\\Gin@ury
+  \\dimen@\\Gin@llx\\p@\\advance\\dimen@ \\Gin@vurx\\p@
+                      \\edef\\Gin@urx{\\strip@pt\\dimen@}%
+  \\dimen@\\Gin@lly\\p@\\advance\\dimen@ \\Gin@vury\\p@
+                      \\edef\\Gin@ury{\\strip@pt\\dimen@}%
+  \\dimen@\\Gin@llx\\p@\\advance\\dimen@ \\Gin@vllx\\p@
+                      \\edef\\Gin@llx{\\strip@pt\\dimen@}%
+  \\dimen@\\Gin@lly\\p@\\advance\\dimen@ \\Gin@vlly\\p@
+                      \\edef\\Gin@lly{\\strip@pt\\dimen@}}
+\\def\\Gin@trim{%
+  \\let\\Gin@ollx\\Gin@llx
+  \\let\\Gin@olly\\Gin@lly
+  \\let\\Gin@ourx\\Gin@urx
+  \\let\\Gin@oury\\Gin@ury
+  \\dimen@\\Gin@llx\\p@\\advance\\dimen@ \\Gin@vllx\\p@
+                      \\edef\\Gin@llx{\\strip@pt\\dimen@}%
+  \\dimen@\\Gin@lly\\p@\\advance\\dimen@ \\Gin@vlly\\p@
+                      \\edef\\Gin@lly{\\strip@pt\\dimen@}%
+  \\dimen@\\Gin@urx\\p@\\advance\\dimen@ -\\Gin@vurx\\p@
+                      \\edef\\Gin@urx{\\strip@pt\\dimen@}%
+  \\dimen@\\Gin@ury\\p@\\advance\\dimen@ -\\Gin@vury\\p@
+                      \\edef\\Gin@ury{\\strip@pt\\dimen@}}
+\\let\\Gin@vllx\\Gin@llx\\let\\Gin@vlly\\Gin@llx
+\\let\\Gin@vurx\\Gin@llx\\let\\Gin@vury\\Gin@llx
+\\define@key{Gin}{angle}
+           {\\Gin@esetsize
+            \\@tempswatrue
+            \\edef\\@tempa{\\toks@{\\noexpand\\Gin@erotate{#1}{\\the\\toks@}}}%
+            \\@tempa}
+\\define@key{Gin}{origin}[c]{%
+  \\def\\Gin@erotate{\\Grot@box@kv[origin=#1]}}
+\\define@key{Gin}{width}{\\def\\Gin@ewidth{#1}}
+\\define@key{Gin}{height}{\\def\\Gin@eheight{#1}}
+\\define@key{Gin}{totalheight}{%
+  \\def\\Gin@eresize{\\totalheight}\\def\\Gin@eheight{#1}}
+\\define@key{Gin}{keepaspectratio}[true]{%
+  \\lowercase{\\Gin@boolkey{#1}}{iso}}
+\\define@key{Gin}{scale}{%
+  \\if@tempswa
+    \\edef\\@tempa{\\toks@{\\noexpand\\Gscale@box{#1}[#1]{\\the\\toks@}}}%
+    \\@tempa
+  \\else
+    \\def\\Gin@req@sizes{%
+      \\def\\Gin@scalex{#1}\\let\\Gin@scaley\\Gin@exclamation
+      \\Gin@req@height\\Gin@scalex\\Gin@nat@height
+      \\Gin@req@width\\Gin@scalex\\Gin@nat@width}%
+  \\fi
+  \\@tempswatrue}
+\\define@key{Gin}{draft}[true]{%
+  \\lowercase{\\Gin@boolkey{#1}}{draft}}
+\\define@key{Gin}{clip}[true]{%
+  \\lowercase{\\Gin@boolkey{#1}}{clip}}
+\\define@key{Gin}{type}{%
+  \\def\\Ginclude@graphics##1{%
+    \\begingroup
+    \\def\\Gin@base{##1}%
+    \\edef\\@tempa{{#1}{\\Gin@eread}{\\Gin@ecom{##1\\Gin@eext}}}%
+    \\expandafter\\Gin@setfile\\@tempa
+    \\endgroup}}
+\\define@key{Gin}{ext}{\\def\\Gin@eext{#1}}
+\\let\\Gin@eext\\@empty
+\\define@key{Gin}{read}{%
+ \\def\\Gin@eread{#1}%
+ \\def\\@tempa{*}\\ifx\\@tempa\\Gin@eread\\def\\Gin@eread{\\Gin@eext}\\fi}
+\\let\\Gin@eread\\@empty
+\\define@key{Gin}{command}{\\def\\Gin@ecom##1{#1}}
+\\let\\Gin@ecom\\@firstofone
+\\define@key{Gin}{decodearray}{%
+  \\def\\Gin@decode{#1}%
+}
+\\define@key{Gin}{quiet}{%
+  \\let\\Gin@log\\@gobble
+}
+\\define@key{Gin}{page}{%
+  \\def\\Gin@page{#1}%
+  \\ifx\\Gin@page\\@empty
+  \\else
+    \\edef\\Gin@page{\\number\\Gin@page}%
+  \\fi
+}
+\\define@key{Gin}{interpolate}[true]{%
+  \\lowercase{\\Gin@boolkey{#1}}{interpolate}}
+\\define@key{Gin}{pagebox}{%
+        \\expandafter\\let\\expandafter\\Gin@pagebox
+            \\csname Gin@pagebox@#1\\endcsname
+        \\ifx\\Gin@pagebox\\relax
+          \\let\\Gin@pagebox\\Gin@pagebox@cropbox
+          \\@warning{%
+            Unknown value \`#1' for \`pagebox'.\\MessageBreak
+            Supported values:\\MessageBreak
+            mediabox, cropbox, bleedbox, trimbox, artbox%
+          }%
+        \\fi
+      }
+      \\def\\Gin@pagebox@mediabox{mediabox}%
+      \\def\\Gin@pagebox@cropbox{cropbox}%
+      \\def\\Gin@pagebox@bleedbox{bleedbox}%
+      \\def\\Gin@pagebox@trimbox{trimbox}%
+      \\def\\Gin@pagebox@artbox{artbox}%
+\\def\\Gin@boolkey#1#2{%
+  \\csname Gin@#2\\ifx\\relax#1\\relax true\\else#1\\fi\\endcsname}
+\\def\\Gin@eresize{\\height}
+\\def\\Gin@esetsize{%
+  \\let\\@tempa\\Gin@exclamation
+  \\if@tempswa
+    \\edef\\@tempa{\\toks@{\\noexpand
+             \\Gscale@@box\\noexpand\\Gin@eresize
+              {\\Gin@ewidth}{\\Gin@eheight}{\\the\\toks@}}}%
+    \\@tempa
+  \\else
+    \\ifx\\Gin@ewidth\\@tempa
+      \\ifx\\Gin@eheight\\@tempa
+      \\else
+         \\let\\Gin@@eheight\\Gin@eheight
+         \\def\\Gin@req@sizes{%
+           \\Gscale@div\\Gin@scaley\\Gin@@eheight\\Gin@nat@height
+           \\let\\Gin@scalex\\Gin@exclamation
+           \\setlength\\Gin@req@height\\Gin@@eheight
+           \\Gin@req@width\\Gin@scaley\\Gin@nat@width}%
+      \\fi
+    \\else
+      \\ifx\\Gin@eheight\\@tempa
+         \\let\\Gin@@ewidth\\Gin@ewidth
+         \\def\\Gin@req@sizes{%
+           \\Gscale@div\\Gin@scalex\\Gin@@ewidth\\Gin@nat@width
+           \\let\\Gin@scaley\\Gin@exclamation
+           \\setlength\\Gin@req@width\\Gin@@ewidth
+           \\Gin@req@height\\Gin@scalex\\Gin@nat@height}%
+      \\else
+         \\let\\Gin@@ewidth\\Gin@ewidth
+         \\let\\Gin@@eheight\\Gin@eheight
+         \\def\\Gin@nosize##1{%
+           \\KV@Gin@natwidth\\Gin@@ewidth
+           \\KV@Gin@natheight\\Gin@@eheight}%
+         \\def\\Gin@req@sizes{%
+           \\Gscale@div\\Gin@scalex\\Gin@@ewidth\\Gin@nat@width
+           \\Gscale@div\\Gin@scaley\\Gin@@eheight\\Gin@nat@height
+           \\ifGin@iso
+             \\ifdim\\Gin@scaley\\p@>\\Gin@scalex\\p@
+               \\let\\Gin@scaley\\Gin@scalex
+             \\else
+               \\let\\Gin@scalex\\Gin@scaley
+             \\fi
+           \\fi
+           \\Gin@req@width\\Gin@scalex\\Gin@nat@width
+           \\Gin@req@height\\Gin@scaley\\Gin@nat@height}%
+       \\fi
+     \\fi
+  \\fi
+  \\let\\Gin@ewidth\\Gin@exclamation
+  \\let\\Gin@eheight\\Gin@ewidth}
+\\newdimen\\Gin@req@height
+\\newdimen\\Gin@req@width
+\\let\\Gin@outer@scalex\\relax
+\\let\\Gin@outer@scaley\\relax
+\\let\\Gin@angle\\relax
+\\let\\Gin@ewidth\\Gin@exclamation
+\\let\\Gin@eheight\\Gin@ewidth
+\\def\\Gin@scalex{1}
+\\let\\Gin@scaley\\Gin@exclamation
+\\def\\Gin@i{%
+ \\def\\Gin@req@sizes{%
+   \\Gin@req@height\\Gin@nat@height
+   \\Gin@req@width\\Gin@nat@width}%
+ \\@ifnextchar[\\Gin@ii{\\Gin@ii[]}}
+\\def\\Gin@ii[#1]#2{%
+    \\def\\@tempa{[}\\def\\@tempb{#2}%
+    \\ifx\\@tempa\\@tempb
+      \\def\\@tempa{\\Gin@iii[#1][}%
+      \\expandafter\\@tempa
+    \\else
+     \\begingroup
+       \\@tempswafalse
+       \\toks@{\\Ginclude@graphics{#2}}%
+       \\setkeys{Gin}{#1}%
+       \\Gin@esetsize
+       \\the\\toks@
+     \\endgroup
+     \\fi}
+\\protected\\def\\rotatebox{%
+  \\leavevmode
+  \\@ifnextchar[\\Grot@box@kv\\Grot@box@std}
+\\long\\def\\Grot@box@std#1#2{%
+  \\Grot@setangle{#1}%
+  \\setbox\\z@\\hbox{{#2}}%
+  \\Grot@x\\z@
+  \\Grot@y\\z@
+  \\Grot@box}
+\\long\\def\\Grot@box@kv[#1]#2#3{%
+  \\@begin@tempboxa\\hbox{#3}%
+    \\Grot@x\\width \\divide\\Grot@x\\tw@
+    \\Grot@y\\height \\advance\\Grot@y-\\depth \\divide\\Grot@y\\tw@
+    \\setkeys{Grot}{#1}%
+    \\setbox\\z@\\box\\@tempboxa
+    \\Grot@setangle{#2}%
+    \\Grot@box
+  \\@end@tempboxa}
+\\define@key{Grot}{origin}[c]{%
+ \\@tfor\\@tempa:=#1\\do{%
+    \\if l\\@tempa \\Grot@x\\z@\\else
+    \\if r\\@tempa \\Grot@x\\width\\else
+    \\if t\\@tempa \\Grot@y\\height\\else
+    \\if b\\@tempa \\Grot@y-\\depth\\else
+    \\if B\\@tempa \\Grot@y\\z@\\fi\\fi\\fi\\fi\\fi}}
+\\define@key{Grot}{x}{\\setlength\\Grot@x{#1}}
+\\define@key{Grot}{y}{\\setlength\\Grot@y{#1}}
+\\define@key{Grot}{units}{%
+  \\def\\Grot@setangle##1{%
+  \\dimen@##1\\p@
+  \\dimen@ii#1\\p@
+  \\divide\\dimen@ii360\\relax
+  \\divide\\dimen@\\dimen@ii
+  \\edef\\Grot@angle{\\number\\dimen@}}}
+\\let\\Gin@erotate\\Grot@box@std
+\\endinput
+%%
+%% End of file \`graphicx.sty'.
+` },
   { format: 27, filename: 'hycolor.sty', content: `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -9394,7 +17362,9038 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </body>
 </html>
 ` },
+  { format: 26, filename: 'hycolor.sty', content: `
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- ViewVC :: http://www.viewvc.org/ -->
+<head>
+<title>ViewVC Error</title>
+</head>
+<body>
+<h3>An Error Has Occurred</h3>
+
+ <p>Unknown location: /trunk/Master/texmf-dist/tex/latex/hyperref/hycolor.sty</p>
+
+
+ <h4>HTTP Response Status</h4>
+ <p><pre>404 Not Found</pre></p>
+ <hr />
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</body>
+</html>
+` },
   { format: 27, filename: 'hyperref.sty', content: `
+%%
+%% This is file \`hyperref.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% hyperref.dtx  (with options: \`package')
+%% 
+%% File: hyperref.dtx
+%% Copyright
+%% 1995-2001 Sebastian Rahtz, with portions written by David Carlisle and Heiko Oberdiek,
+%% 2001-2015 Heiko Oberdiek.
+%% 2016-2019 Oberdiek Package Support Group
+%% 2019-2020 LaTeX3 Project
+%%      https://github.com/latex3/hyperref/issues
+%%
+%% This file is part of the \`Hyperref Bundle'.
+%% -------------------------------------------
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status \`maintained'.
+%%
+%% The Current Maintainer of this work is the LaTeX3 Project.
+%%
+%% The list of all files belonging to the \`Hyperref Bundle' is
+%% given in the file \`manifest.txt'.
+%%
+\\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\\ProvidesPackage{hyperref}
+  [2020/01/14 v7.00d %
+  Hypertext links for LaTeX]
+\\begingroup
+  \\@makeother\\\`%
+  \\@makeother\\=%
+  \\edef\\x{%
+    \\edef\\noexpand\\x{%
+      \\endgroup
+      \\noexpand\\toks@{%
+        \\catcode 96=\\noexpand\\the\\catcode\`\\noexpand\\\`\\relax
+        \\catcode 61=\\noexpand\\the\\catcode\`\\noexpand\\=\\relax
+      }%
+    }%
+    \\noexpand\\x
+  }%
+\\x
+\\@makeother\\\`
+\\@makeother\\=
+\\def\\Hy@SetCatcodes{%
+  \\@makeother\\\`%
+  \\@makeother\\=%
+  \\catcode\`\\\$=3 %
+  \\catcode\`\\&=4 %
+  \\catcode\`\\^=7 %
+  \\catcode\`\\_=8 %
+  \\@makeother\\|%
+  \\@makeother\\:%
+  \\@makeother\\(%
+  \\@makeother\\)%
+  \\@makeother\\[%
+  \\@makeother\\]%
+  \\@makeother\\/%
+  \\@makeother\\!%
+  \\@makeother\\<%
+  \\@makeother\\>%
+  \\@makeother\\.%
+  \\@makeother\\;%
+  \\@makeother\\+%
+  \\@makeother\\-%
+  \\@makeother\\"%
+  \\@makeother\\'%
+}
+\\begingroup
+  \\def\\x#1{\\catcode\`\\noexpand#1=\\the\\catcode\`#1\\relax}%
+  \\xdef\\Hy@RestoreCatcodes{%
+    \\the\\toks@
+    \\x\\\$%
+    \\x\\&%
+    \\x\\^%
+    \\x\\_%
+    \\x\\|%
+    \\x\\:%
+    \\x\\(%
+    \\x\\)%
+    \\x\\[%
+    \\x\\]%
+    \\x\\/%
+    \\x\\!%
+    \\x\\<%
+    \\x\\>%
+    \\x\\.%
+    \\x\\;%
+    \\x\\+%
+    \\x\\-%
+    \\x\\"%
+    \\x\\'%
+  }%
+\\endgroup
+\\Hy@SetCatcodes
+\\RequirePackage{ltxcmds}[2010/11/12]
+\\RequirePackage{iftex}[2019/10/24]
+\\RequirePackage{pdftexcmds}[2009/04/10]
+\\@ifpackagelater{pdftexcmds}{2010/11/04}{}{%
+  \\ltx@IfUndefined{pdfdraftmode}{%
+    \\let\\pdf@ifdraftmode\\ltx@secondoftwo
+  }{%
+    \\ifpdf
+      \\def\\pdf@ifdraftmode{%
+        \\ifnum\\pdfdraftmode=\\ltx@one
+          \\expandafter\\ltx@firstoftwo
+        \\else
+          \\expandafter\\ltx@secondoftwo
+        \\fi
+      }%
+    \\else
+      \\let\\pdf@ifdraftmode\\ltx@secondoftwo
+    \\fi
+  }%
+}
+\\RequirePackage{infwarerr}[2010/04/08]
+\\RequirePackage{keyval}[1997/11/10]
+\\RequirePackage{kvsetkeys}[2007/09/29]
+\\RequirePackage{kvdefinekeys}[2011/04/07]
+\\RequirePackage{pdfescape}[2007/11/11]
+\\RequirePackage{hycolor}
+\\RequirePackage{letltxmacro}[2008/06/13]
+\\RequirePackage{auxhook}[2009/12/14]
+\\def\\Hy@Error{\\@PackageError{hyperref}}
+\\def\\Hy@Warning{\\@PackageWarning{hyperref}}
+\\def\\Hy@WarningNoLine{\\@PackageWarningNoLine{hyperref}}
+\\def\\Hy@Info{\\@PackageInfo{hyperref}}
+\\def\\Hy@InfoNoLine{\\@PackageInfoNoLine{hyperref}}
+\\def\\Hy@Message#1{%
+  \\GenericWarning{%
+    (hyperref)\\@spaces\\@spaces\\@spaces\\@spaces
+  }{%
+    Package hyperref Message: #1\\ltx@gobble
+  }%
+}
+\\chardef\\Hy@VersionChecked=0 %
+\\def\\Hy@VersionCheck#1{%
+  \\begingroup
+    \\ltx@IfUndefined{ver@hyperref.sty}{%
+      \\Hy@Error{%
+        This should not happen!\\MessageBreak
+        Missing hyperref version%
+      }\\@ehd
+    }{%
+      \\ltx@IfUndefined{ver@#1}{%
+        \\Hy@Error{%
+          This should not happen!\\MessageBreak
+          Missing version of \`#1'%
+        }\\@ehd
+      }{%
+        \\def\\x##1##2##3{%
+          \\expandafter\\expandafter\\expandafter\\Hy@@VersionCheck
+          \\expandafter\\expandafter\\expandafter##2%
+          \\csname ver@##3\\endcsname##1##1\\@nil
+        }%
+        \\x{ }\\y{hyperref.sty}%
+        \\x{ }\\z{#1}%
+        \\ifx\\y\\z
+        \\else
+          \\edef\\a{#1}%
+          \\edef\\b{\\HyOpt@CustomDriver.def}%
+          \\ifx\\a\\b
+            \\Hy@WarningNoLine{%
+              Version mismatch (custom driver)!\\MessageBreak
+              * \\y: hyperref.sty\\MessageBreak
+              * \\z: \\a
+            }%
+          \\else
+            \\Hy@Error{%
+              Version mismatch!\\MessageBreak
+              * \\y: hyperref.sty\\MessageBreak
+              * \\z: \\a
+            }\\@ehd
+          \\fi
+        \\fi
+      }%
+    }%
+  \\endgroup
+  \\chardef\\Hy@VersionChecked=1 %
+}
+\\def\\Hy@@VersionCheck #1#2 #3 #4\\@nil{%
+  \\def#1{#2 #3}%
+}
+\\ltx@IfUndefined{pdfmatch}{%
+  \\def\\Hy@Match#1#2#3#4#5{}%
+}{%
+  \\def\\Hy@Match#1#2#3{%
+    \\begingroup
+    \\edef\\^{\\ltx@backslashchar\\string^}%
+    \\edef\\.{\\ltx@backslashchar.}%
+    \\edef\\[{\\ltx@backslashchar[}% ]]
+    \\edef\\\${\\ltx@backslashchar\$}%
+    \\edef\\({\\ltx@backslashchar(}%
+    \\edef\\){\\ltx@backslashchar)}%
+    \\edef\\|{\\ltx@backslashchar|}%
+    \\edef\\*{\\ltx@backslashchar*}%
+    \\edef\\+{\\ltx@backslashchar+}%
+    \\edef\\?{\\ltx@backslashchar?}%
+    \\edef\\{{\\ltx@backslashchar\\ltx@leftbracechar}%
+    \\edef\\}{\\ltx@rightbracechar}%
+    \\edef\\\\{\\ltx@backslashchar\\ltx@backslashchar}%
+    \\let\\ \\ltx@space
+    \\ifcase\\pdfmatch#2{#3}{#1} %
+      \\endgroup
+      \\expandafter\\ltx@secondoftwo
+    \\or
+      \\endgroup
+      \\expandafter\\ltx@firstoftwo
+    \\else
+      \\Hy@Warning{%
+        Internal error: Wrong pattern!\\MessageBreak
+        --> #3 <--\\MessageBreak
+        Pattern check ignored%
+      }%
+      \\endgroup
+      \\expandafter\\ltx@firstoftwo
+    \\fi
+  }%
+  \\ltx@ifpackagelater{ltxcmds}{2010/09/11}{}{%
+    \\begingroup
+      \\lccode\`0=\`\\{\\relax
+    \\lowercase{\\endgroup
+      \\def\\ltx@leftbracechar{0}%
+    }%
+    \\begingroup
+      \\lccode\`0=\`\\}\\relax
+    \\lowercase{\\endgroup
+      \\def\\ltx@rightbracechar{0}%
+    }%
+  }%
+}
+\\@ifundefined{AfterBeginDocument}{%
+  \\def\\AfterBeginDocument{\\AtBeginDocument}%
+}{}%
+\\def\\Hy@AtBeginDocument{%
+  \\ltx@LocalAppendToMacro\\Hy@AtBeginDocumentHook
+}
+\\def\\Hy@AtEndOfPackage{%
+  \\ltx@LocalAppendToMacro\\Hy@AtEndOfPackageHook
+}
+\\let\\Hy@AtBeginDocumentHook\\ltx@empty
+\\let\\Hy@AtEndOfPackageHook\\ltx@empty
+\\AtEndOfPackage{%
+  \\Hy@AtEndOfPackageHook
+  \\let\\Hy@AtEndOfPackageHook\\@undefined
+  \\AfterBeginDocument{%
+    \\Hy@AtBeginDocumentHook{}%
+    \\let\\Hy@AtBeginDocumentHook\\@undefined
+  }%
+}
+\\RequirePackage{kvoptions}[2009/07/21]
+\\newif\\ifHy@stoppedearly
+\\newif\\ifHy@typexml
+\\newif\\ifHy@activeanchor
+\\newif\\ifHy@backref
+\\newif\\ifHy@bookmarks
+\\newif\\ifHy@bookmarksnumbered
+\\newif\\ifHy@bookmarksopen
+\\newif\\ifHy@breaklinks
+\\newif\\ifHy@pdfcenterwindow
+\\newif\\ifHy@CJKbookmarks
+\\newif\\ifHy@colorlinks
+\\newif\\ifHy@destlabel
+\\newif\\ifHy@draft
+\\let\\Hy@finaltrue\\Hy@draftfalse
+\\let\\Hy@finalfalse\\Hy@drafttrue
+\\newif\\ifHy@pdfescapeform
+\\newif\\ifHy@hyperfigures
+\\newif\\ifHy@pdffitwindow
+\\newif\\ifHy@frenchlinks
+\\newif\\ifHy@hyperfootnotes
+\\newif\\ifHy@hyperindex
+\\newif\\ifHy@hypertexnames
+\\newif\\ifHy@implicit
+\\newif\\ifHy@linktocpage
+\\newif\\ifHy@localanchorname
+\\newif\\ifHy@pdfmenubar
+\\newif\\ifHy@naturalnames
+\\newif\\ifHy@nesting
+\\newif\\ifHy@pdfnewwindowset
+\\newif\\ifHy@pdfnewwindow
+\\newif\\ifHy@ocgcolorlinks
+\\newif\\ifHy@pageanchor
+\\newif\\ifHy@pdfpagelabels
+\\newif\\ifHy@pdfpagehidden
+\\newif\\ifHy@pdfstring
+\\newif\\ifHy@plainpages
+\\newif\\ifHy@psize
+\\newif\\ifHy@raiselinks
+\\newif\\ifHy@seminarslides
+\\newif\\ifHy@setpagesize
+\\newif\\ifHy@texht
+\\newif\\ifHy@psdextra
+\\newif\\ifHy@pdftoolbar
+\\newif\\ifHy@unicode
+\\newif\\ifHy@pdfusetitle
+\\newif\\ifHy@verbose
+\\let\\Hy@debugtrue\\Hy@verbosetrue
+\\let\\Hy@debugfalse\\Hy@verbosefalse
+\\newif\\ifHy@pdfwindowui
+\\newif\\ifHy@pdfdisplaydoctitle
+\\newif\\ifHy@pdfa
+\\Hy@backreffalse
+\\Hy@bookmarksnumberedfalse
+\\Hy@bookmarksopenfalse
+\\Hy@bookmarkstrue
+\\Hy@breaklinksfalse
+\\Hy@pdfcenterwindowfalse
+\\Hy@CJKbookmarksfalse
+\\Hy@destlabelfalse
+\\Hy@pdfescapeformfalse
+\\Hy@hyperfiguresfalse
+\\Hy@pdffitwindowfalse
+\\Hy@hyperfootnotestrue
+\\Hy@hyperindextrue
+\\Hy@hypertexnamestrue
+\\Hy@implicittrue
+\\Hy@linktocpagefalse
+\\Hy@localanchornamefalse
+\\Hy@pdfmenubartrue
+\\Hy@naturalnamesfalse
+\\Hy@nestingfalse
+\\Hy@pdfnewwindowsetfalse
+\\Hy@pdfnewwindowfalse
+\\Hy@pageanchortrue
+\\Hy@pdfpagelabelstrue
+\\Hy@pdfpagehiddenfalse
+\\Hy@pdfstringfalse
+\\Hy@plainpagesfalse
+\\Hy@raiselinksfalse
+\\Hy@setpagesizetrue
+\\Hy@texhtfalse
+\\Hy@psdextrafalse
+\\Hy@pdftoolbartrue
+\\Hy@typexmlfalse
+\\Hy@unicodefalse
+\\Hy@pdfusetitlefalse
+\\Hy@verbosefalse
+\\Hy@pdfwindowuitrue
+\\Hy@pdfdisplaydoctitlefalse
+\\Hy@pdfafalse
+\\def\\Hy@StepCount#1{\\advance#1 by 1 }%
+\\def\\Hy@GlobalStepCount#1{\\global\\advance#1 by 1 }%
+\\newdimen\\@linkdim
+\\let\\Hy@driver\\ltx@empty
+\\let\\MaybeStopEarly\\relax
+\\newcount\\Hy@linkcounter
+\\newcount\\Hy@pagecounter
+\\Hy@linkcounter0
+\\Hy@pagecounter0
+\\let\\Hy@ReturnEnd\\@empty
+\\long\\def\\Hy@ReturnAfterFiFiEnd#1\\fi#2\\Hy@ReturnEnd{\\fi\\fi#1}
+\\long\\def\\Hy@ReturnAfterElseFiFiEnd#1\\else#2\\Hy@ReturnEnd{\\fi\\fi#1}
+\\def\\Hy@safe@activestrue{\\csname @safe@activestrue\\endcsname}
+\\def\\Hy@safe@activesfalse{\\csname @safe@activesfalse\\endcsname}
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname dimexpr\\endcsname\\relax
+  \\def\\hypercalcbpdef#1#2{%
+    \\begingroup
+      \\toks@{}%
+      \\HyCal@scan#2\\hypercalcbp\\@nil
+    \\expandafter\\endgroup
+    \\expandafter\\def\\expandafter#1\\expandafter{\\the\\toks@}%
+  }%
+  \\def\\HyCal@scan#1\\hypercalcbp#2\\@nil{%
+    \\toks@\\expandafter{\\the\\toks@ #1}%
+    \\ifx\\\\#2\\\\%
+    \\else
+      \\ltx@ReturnAfterFi{%
+        \\HyCal@do#2\\@nil
+      }%
+    \\fi
+  }%
+  \\def\\HyCal@do#1#2\\@nil{%
+    \\@ifpackageloaded{calc}{}{%
+      \\Hy@Warning{%
+        For calculations \\string\\hypercalcbp\\space needs\\MessageBreak
+        package calc or e-TeX%
+      }%
+    }%
+    \\setlength{\\dimen@}{#1}%
+    \\setlength{\\dimen@}{0.99626401\\dimen@}%
+    \\edef\\x{%
+      \\toks@{%
+        \\the\\toks@
+        \\strip@pt\\dimen@
+      }%
+    }\\x
+    \\HyCal@scan#2\\@nil
+  }%
+\\else
+  \\def\\hypercalcbp#1{%
+    \\strip@pt\\dimexpr 0.99626401\\dimexpr(#1)\\relax\\relax
+  }%
+  \\def\\hypercalcbpdef{\\def}%
+\\fi
+\\def\\pdfstringdef#1#2{%
+  \\begingroup
+    \\escapechar\`\\\\%
+    \\edef\\0{\\string\\0}%
+    \\edef\\1{\\string\\1}%
+    \\edef\\2{\\string\\2}%
+    \\edef\\3{\\string\\3}%
+    \\ifHy@unicode
+      \\edef\\8{\\string\\8}%
+      \\edef\\9{\\string\\9}%
+      \\fontencoding{PU}%
+      \\HyPsd@UTFviii
+      \\def\\ifpdfstringunicode##1##2{##1}%
+    \\else
+      \\fontencoding{PD1}%
+      \\def\\ifpdfstringunicode##1##2{##2}%
+    \\fi
+    \\let\\utf@viii@undeferr\\HyPsd@utf@viii@undeferr
+    \\enc@update
+    \\@inmathwarn\\pdfstringdef
+    \\let\\@inmathwarn\\HyPsd@inmathwarn
+    \\let\\add@accent\\HyPsd@add@accent
+    \\let\\{\\textbraceleft
+    \\let\\}\\textbraceright
+    \\let\\\\\\textbackslash
+    \\let\\#\\textnumbersign
+    \\let\\\$\\textdollar
+    \\let\\%\\textpercent
+    \\let\\&\\textampersand
+    \\let\\_\\textunderscore
+    \\let\\P\\textparagraph
+    \\let\\ldots\\textellipsis
+    \\let\\dots\\textellipsis
+    \\ltx@IfUndefined{textEncodingNoboundary}%
+      {}{\\let\\noboundary\\textEncodingNoboundary}%
+    \\def\\\\{\\pdfstringdefWarn\\\\}%
+    \\def\\newline{\\pdfstringdefWarn\\newline}%
+    \\def\\TeX{TeX}%
+    \\def\\LaTeX{La\\TeX}%
+    \\def\\LaTeXe{%
+      \\LaTeX2%
+      \\ifHy@unicode\\textepsilon\\else e\\fi
+    }%
+    \\def\\eTeX{%
+      \\ifHy@unicode\\textepsilon\\else e\\fi
+      -\\TeX%
+    }%
+    \\def\\SliTeX{Sli\\TeX}%
+    \\def\\MF{Metafont}%
+    \\def\\MP{Metapost}%
+    \\let\\fontencoding\\@gobble
+    \\let\\fontfamily\\@gobble
+    \\let\\fontseries\\@gobble
+    \\let\\fontshape\\@gobble
+    \\let\\fontsize\\@gobbletwo
+    \\let\\selectfont\\@empty
+    \\let\\usefont\\@gobblefour
+    \\let\\emph\\@firstofone
+    \\let\\textnormal\\@firstofone
+    \\let\\textrm\\@firstofone
+    \\let\\textsf\\@firstofone
+    \\let\\texttt\\@firstofone
+    \\let\\textbf\\@firstofone
+    \\let\\textmd\\@firstofone
+    \\let\\textit\\@firstofone
+    \\let\\textsc\\@firstofone
+    \\let\\textsl\\@firstofone
+    \\let\\textup\\@firstofone
+    \\let\\normalfont\\@empty
+    \\let\\rmfamily\\@empty
+    \\let\\sffamily\\@empty
+    \\let\\ttfamily\\@empty
+    \\let\\bfseries\\@empty
+    \\let\\mdseries\\@empty
+    \\let\\itshape\\@empty
+    \\let\\scshape\\@empty
+    \\let\\slshape\\@empty
+    \\let\\upshape\\@empty
+    \\let\\em\\@empty
+    \\let\\rm\\@empty
+    \\let\\Huge\\@empty
+    \\let\\LARGE\\@empty
+    \\let\\Large\\@empty
+    \\let\\footnotesize\\@empty
+    \\let\\huge\\@empty
+    \\let\\large\\@empty
+    \\let\\normalsize\\@empty
+    \\let\\scriptsize\\@empty
+    \\let\\small\\@empty
+    \\let\\tiny\\@empty
+    \\let\\mathversion\\@gobble
+    \\let\\phantom\\@gobble
+    \\let\\vphantom\\@gobble
+    \\let\\hphantom\\@gobble
+    \\let\\ding\\HyPsd@ding
+    \\let\\Cube\\HyPsd@DieFace
+    \\def\\begin#1{\\csname#1\\endcsname}%
+    \\def\\end#1{\\csname end#1\\endcsname}%
+    \\def\\textcolor##1##{\\@secondoftwo}%
+    \\def\\MakeUppercase{\\MakeUppercaseUnsupportedInPdfStrings}%
+    \\def\\MakeLowercase{\\MakeLowercaseUnsupportedInPdfStrings}%
+    \\ifHy@psdextra
+      \\ifHy@unicode
+        \\csname psdmapshortnames\\endcsname
+        \\csname psdaliasnames\\endcsname
+      \\fi
+    \\fi
+    \\let\\foreignlanguage\\@secondoftwo
+    \\let\\textlatin\\@firstofone
+    \\ltx@IfUndefined{language@group}{}{%
+      \\let\\bbl@info\\@gobble
+      \\csname HyPsd@babel@\\language@group\\endcsname
+    }%
+    \\HyPsd@GreekPatch
+    \\HyPsd@SpanishPatch
+    \\HyPsd@RussianPatch
+    \\HyPsd@BabelPatch
+    \\let\\@safe@activestrue\\relax
+    \\let\\@safe@activesfalse\\relax
+    \\let\\cyr\\relax
+    \\let\\es@roman\\@Roman
+    \\let\\glqq\\textglqq
+    \\let\\grqq\\textgrqq
+    \\let\\glq\\textglq
+    \\let\\grq\\textgrq
+    \\let\\flqq\\textflqq
+    \\let\\frqq\\textfrqq
+    \\let\\flq\\textflq
+    \\let\\frq\\textfrq
+    \\let\\if@mid@expandable\\@firstoftwo
+    \\HyPsd@AMSclassfix
+    \\let\\hspace\\HyPsd@hspace
+    \\let\\label\\@gobble
+    \\let\\index\\@gobble
+    \\let\\glossary\\@gobble
+    \\let\\href\\HyPsd@href
+    \\let\\@mkboth\\@gobbletwo
+    \\let\\ref\\HyPsd@ref
+    \\let\\pageref\\HyPsd@pageref
+    \\let\\nameref\\HyPsd@nameref
+    \\let\\autoref\\HyPsd@autoref
+    \\let\\leavevmode\\@empty
+    \\let\\mbox\\@empty
+    \\def\\halign{\\pdfstringdefWarn\\halign\\@gobble}%
+    \\let\\ignorespaces\\HyPsd@ignorespaces
+    \\let\\Hy@SectionAnchorHref\\@gobble
+    \\let\\ensuremath\\@firstofone
+    \\HyPsd@CJKhook
+    \\Hy@pdfstringtrue
+    \\pdfstringdefPreHook
+    \\HyPsd@LetUnexpandableSpace\\space
+    \\HyPsd@LetUnexpandableSpace\\ %
+    \\HyPsd@LetUnexpandableSpace~%
+    \\HyPsd@LetUnexpandableSpace\\nobreakspace
+    \\ltx@IfUndefined{@xspace}{%
+      \\let\\xspace\\HyPsd@ITALCORR
+    }{%
+      \\let\\xspace\\HyPsd@XSPACE
+    }%
+    \\let\\/\\HyPsd@ITALCORR
+    \\let\\bgroup\\/%
+    \\let\\egroup\\/%
+    \\let\\discretionary\\@gobbletwo
+    \\def\\@ifnextchar{\\HyPsd@ifnextchar\\@ifnextchar}%
+    \\def\\kernel@ifnextchar{\\HyPsd@ifnextchar\\kernel@ifnextchar}%
+    \\def\\new@ifnextchar{\\HyPsd@ifnextchar\\new@ifnextchar}%
+    \\let\\@protected@testopt\\HyPsd@protected@testopt
+    \\let\\@protected@testopt@xargs\\HyPsd@protected@testopt
+    \\begingroup
+      \\let\\GenericError\\@gobblefour
+      \\let\\GenericWarning\\@gobbletwo
+      \\let\\GenericInfo\\@gobbletwo
+      \\ifx\\nofrenchguillemets\\@undefined
+      \\else
+        \\nofrenchguillemets
+      \\fi
+      \\let\\Hy@temp\\xdef
+      \\let\\def\\HyPsd@DefCommand
+      \\let\\gdef\\HyPsd@DefCommand
+      \\let\\edef\\HyPsd@DefCommand
+      \\let\\xdef\\HyPsd@DefCommand
+      \\let\\futurelet\\HyPsd@LetCommand
+      \\let\\let\\HyPsd@LetCommand
+      \\Hy@temp#1{#2}%
+    \\endgroup
+    \\ifx#1\\@empty
+    \\else
+      \\HyPsd@ProtectSpaces#1%
+      \\let\\HyPsd@String\\@empty
+      \\expandafter\\HyPsd@RemoveBraces\\expandafter{#1|}%
+      \\global\\let#1\\HyPsd@String
+      \\let\\HyPsd@SPACEOPTI\\relax
+      {%
+         \\let\\HyPsd@String\\@empty
+         \\expandafter\\HyPsd@CheckCatcodes#1\\HyPsd@End
+         \\global\\let#1\\HyPsd@String
+      }%
+      \\expandafter\\HyPsd@RemoveMask\\expandafter
+        |\\expandafter\\@empty#1\\HyPsd@End#1%
+      \\expandafter
+      \\HyPsd@Subst\\expandafter{\\HyPsd@GLYPHERR}{\\relax}#1%
+      \\let\\HyPsd@String\\@empty
+      \\expandafter\\HyPsd@GlyphProcess#1\\relax\\@empty
+      \\global\\let#1\\HyPsd@String
+      \\HyPsd@StringSubst{\\\\}{\\textbackslash}#1%
+      \\ifHy@unicode
+        \\expandafter\\HyPsd@StringSubst\\csname 80\\040\\endcsname
+          \\HyPsd@SPACEOPTI#1%
+        \\edef\\Hy@temp@A{\\HyPsd@SPACEOPTI\\HyPsd@SPACEOPTI\\80\\273}%
+        \\expandafter\\HyPsd@Subst\\expandafter{\\Hy@temp@A}%
+          {\\HyPsd@SPACEOPTI\\80\\273}#1%
+      \\else
+        \\HyPsd@StringSubst{\\040}\\HyPsd@SPACEOPTI#1%
+        \\expandafter\\HyPsd@Subst\\expandafter{%
+          \\expandafter\\HyPsd@SPACEOPTI\\expandafter\\HyPsd@SPACEOPTI
+          \\string\\273}{\\HyPsd@SPACEOPTI\\273}#1%
+      \\fi
+      \\ifHy@unicode
+        \\HyPsd@StringSubst{\\)}{\\80\\051}#1%
+        \\HyPsd@Subst){\\80\\051}#1%
+        \\let\\HyPsd@empty\\relax
+        \\expandafter\\HyPsd@StringSubst\\csname 80\\051\\endcsname
+          {\\HyPsd@empty\\80\\051}#1%
+      \\else
+        \\HyPsd@StringSubst{\\)}{\\051}#1%
+        \\HyPsd@Subst){\\051}#1%
+        \\let\\HyPsd@empty\\relax
+        \\HyPsd@StringSubst{\\051}{\\HyPsd@empty\\string\\)}#1%
+      \\fi
+      \\expandafter\\HyPsd@Subst\\expandafter{\\/}\\HyPsd@empty#1%
+      \\ltx@IfUndefined{@xspace}{%
+      }{%
+        \\let\\HyPsd@xspace\\relax
+        \\expandafter\\HyPsd@Subst\\expandafter
+          {\\HyPsd@XSPACE}\\HyPsd@xspace#1%
+        \\let\\HyPsd@xspace\\HyPsd@doxspace
+      }%
+      \\xdef#1{#1\\HyPsd@empty}%
+      \\HyPsd@Subst{---}\\textemdash#1%
+      \\HyPsd@Subst{--}\\textendash#1%
+      \\HyPsd@Subst{!\`}\\textexclamdown#1%
+      \\HyPsd@Subst{?\`}\\textquestiondown#1%
+      \\let\\HyPsd@empty\\@empty
+      \\ifHy@unicode
+        \\HyPsd@StringSubst\\(\\textparenleft#1%
+        \\HyPsd@Subst(\\textparenleft#1%
+      \\else
+        \\HyPsd@StringSubst\\({\\050}#1%
+        \\HyPsd@Subst({\\050}#1%
+        \\HyPsd@StringSubst{\\050}{\\string\\(}#1%
+      \\fi
+      \\ifHy@unicode
+        \\edef\\HyPsd@SPACEOPTI{\\80\\040}%
+      \\else
+        \\let\\HyPsd@SPACEOPTI\\HyPsd@spaceopti
+      \\fi
+      \\xdef#1{#1\\@empty}%
+    \\fi
+  \\endgroup
+  \\begingroup
+    \\ifHy@unicode
+      \\HyPsd@ConvertToUnicode#1%
+      \\ifx\\HyPsd@pdfencoding\\HyPsd@pdfencoding@auto
+        \\ltx@IfUndefined{StringEncodingConvertTest}{%
+        }{%
+          \\EdefUnescapeString\\HyPsd@temp#1%
+          \\ifxetex
+            \\let\\HyPsd@UnescapedString\\HyPsd@temp
+            \\StringEncodingConvertTest\\HyPsd@temp\\HyPsd@temp
+                                      {utf16be}{ascii-print}{%
+              \\EdefEscapeString\\HyPsd@temp\\HyPsd@temp
+              \\global\\let#1\\HyPsd@temp
+              \\HyPsd@EscapeTeX#1%
+              \\Hy@unicodefalse
+            }{%
+              \\HyPsd@ToBigChars#1%
+              \\HyPsd@EscapeTeX#1%
+            }%
+          \\else
+            \\StringEncodingConvertTest\\HyPsd@temp\\HyPsd@temp
+                                      {utf16be}{pdfdoc}{%
+              \\EdefEscapeString\\HyPsd@temp\\HyPsd@temp
+              \\global\\let#1\\HyPsd@temp
+              \\HyPsd@EscapeTeX#1%
+              \\Hy@unicodefalse
+            }{}%
+          \\fi
+        }%
+      \\fi
+    \\fi
+    \\HyPsd@XeTeXBigCharsfalse
+    \\pdfstringdefPostHook#1%
+  \\endgroup
+}
+\\def\\Hy@pdfstringdef#1#2{%
+  \\pdfstringdef\\Hy@gtemp{#2}%
+  \\let#1\\Hy@gtemp
+}
+\\edef\\Hy@temp{\\catcode0=\\the\\catcode0\\relax}
+\\catcode\\z@=12 %
+\\ifxetex
+  \\expandafter\\@firstofone
+\\else
+  \\let\\HyPsd@XeTeXBigCharstrue\\@empty
+  \\let\\HyPsd@XeTeXBigCharsfalse\\@empty
+  \\expandafter\\@gobble
+\\fi
+{%
+  \\newif\\ifHyPsd@XeTeXBigChars
+  \\def\\HyPsd@XeTeXBigCharsfalse{%
+    \\global\\let\\ifHyPsd@XeTeXBigChars\\iffalse
+  }%
+  \\def\\HyPsd@XeTeXBigCharstrue{%
+    \\global\\let\\ifHyPsd@XeTeXBigChars\\iftrue
+  }%
+  \\def\\HyPsd@ToBigChars#1{%
+    \\ifHyPsd@XeTeXBigChars
+      \\EdefEscapeHex\\HyPsd@UnescapedString{%
+        \\expandafter\\@gobbletwo\\HyPsd@UnescapedString
+      }%
+      \\begingroup
+        \\toks@{}%
+        \\escapechar=92\\relax
+        \\let\\x\\HyPsd@ToBigChar
+        \\expandafter\\HyPsd@ToBigChar\\HyPsd@UnescapedString
+        \\relax\\relax\\relax\\relax\\relax\\relax\\relax
+      \\edef\\x{%
+        \\endgroup
+        \\gdef\\noexpand#1{\\the\\toks@}%
+      }%
+      \\x
+    \\fi
+  }%
+  \\def\\HyPsd@ToBigChar#1#2#3#4{%
+    \\ifx\\relax#1\\relax
+      \\let\\x\\relax
+    \\else
+      \\count@="#1#2#3#4\\relax
+      \\let\\y\\@empty
+      \\lccode\\z@=\\count@
+      \\ifnum\\count@=40 % (
+        \\let\\y\\@backslashchar
+      \\else
+        \\ifnum\\count@=41 % )
+          \\let\\y\\@backslashchar
+        \\else
+          \\ifnum\\count@=92 % backslash
+            \\let\\y\\@backslashchar
+          \\else
+            \\ifnum\\count@=10 % newline
+              \\edef\\y##1{\\string\\n}%
+            \\else
+              \\ifnum\\count@=13 % carriage return
+                \\edef\\y##1{\\string\\r}%
+              \\fi
+            \\fi
+          \\fi
+        \\fi
+      \\fi
+      \\lowercase{%
+        \\toks@\\expandafter{%
+          \\the\\expandafter\\toks@
+          \\y
+          ^^@%
+        }%
+      }%
+    \\fi
+    \\x
+  }%
+}
+\\Hy@temp
+\\@ifpackageloaded{linguex}{%
+  \\let\\HyLinguex@OrgB\\b
+  \\let\\HyLinguex@OrgC\\c
+  \\let\\HyLinguex@OrgD\\d
+  \\def\\HyLinguex@Restore{%
+    \\let\\b\\HyLinguex@OrgB
+    \\let\\c\\HyLinguex@OrgC
+    \\let\\d\\HyLinguex@OrgD
+  }%
+  \\Hy@AtEndOfPackage{%
+    \\pdfstringdefDisableCommands{%
+      \\ltx@IfUndefined{oldb}{}{\\let\\b\\oldb}%
+      \\ltx@IfUndefined{oldc}{}{\\let\\c\\oldc}%
+      \\ltx@IfUndefined{oldd}{}{\\let\\d\\oldd}%
+    }%
+  }%
+}{%
+  \\let\\HyLinguex@Restore\\relax
+}%
+\\def\\Hy@SaveCatcodeSettings#1{%
+  \\expandafter\\edef\\csname Hy@cat@#1\\endcsname{%
+    \\endlinechar=\\the\\endlinechar\\relax
+    \\catcode32 \\the\\catcode32\\relax % (space)
+    \\catcode34 \\the\\catcode34\\relax % "
+    \\catcode35 \\the\\catcode35\\relax % #
+    \\catcode37 \\the\\catcode37\\relax % (percent)
+    \\catcode40 \\the\\catcode40\\relax % (
+    \\catcode41 \\the\\catcode41\\relax % )
+    \\catcode42 \\the\\catcode42\\relax % *
+    \\catcode46 \\the\\catcode46\\relax % .
+    \\catcode58 \\the\\catcode58\\relax % :
+    \\catcode60 \\the\\catcode60\\relax % <
+    \\catcode61 \\the\\catcode61\\relax % =
+    \\catcode62 \\the\\catcode62\\relax % >
+    \\catcode64 \\the\\catcode64\\relax % @
+    \\catcode91 \\the\\catcode91\\relax % [
+    \\catcode92 \\the\\catcode92\\relax % \\
+    \\catcode93 \\the\\catcode93\\relax % ]
+    \\catcode123 \\the\\catcode123\\relax % {
+    \\catcode124 \\the\\catcode124\\relax % |
+    \\catcode125 \\the\\catcode125\\relax % }
+  }%
+  \\endlinechar=-1 %
+  \\catcode32 10 % (space)
+  \\catcode34 12 % "
+  \\catcode35 6 % #
+  \\catcode37 14 % (percent)
+  \\catcode40 12 % (
+  \\catcode41 12 % )
+  \\catcode42 12 % *
+  \\catcode46 12 % .
+  \\catcode58 12 % :
+  \\catcode60 12 % <
+  \\catcode61 12 % =
+  \\catcode62 12 % >
+  \\catcode91 12 % [
+  \\catcode92 0 % \\
+  \\catcode93 12 % ]
+  \\catcode123 1 % {
+  \\catcode124 12 % |
+  \\catcode125 2 % }
+  \\makeatletter
+}
+\\def\\Hy@RestoreCatcodeSettings#1{%
+  \\csname Hy@cat@#1\\endcsname
+  \\expandafter\\let\\csname Hy@cat@#1\\endcsname\\relax
+}
+\\@ifundefined{T@PD1}{%
+  \\Hy@SaveCatcodeSettings{pd1}%
+  \\input{pd1enc.def}%
+  \\Hy@RestoreCatcodeSettings{pd1}%
+  \\HyLinguex@Restore
+}{}
+\\DeclareFontFamily{PD1}{pdf}{}
+\\DeclareFontShape{PD1}{pdf}{m}{n}{ <-> cmr10 }{}
+\\DeclareFontSubstitution{PD1}{pdf}{m}{n}
+\\def\\HyPsd@LoadUnicode{%
+  \\@ifundefined{T@PU}{%
+    \\Hy@SaveCatcodeSettings{pu}%
+    \\input{puenc.def}%
+    \\Hy@RestoreCatcodeSettings{pu}%
+    \\HyLinguex@Restore
+  }{}%
+  \\DeclareFontFamily{PU}{pdf}{}%
+  \\DeclareFontShape{PU}{pdf}{m}{n}{ <-> cmr10 }{}%
+  \\DeclareFontSubstitution{PU}{pdf}{m}{n}%
+  \\HyPsd@LoadExtra
+  \\let\\HyPsd@LoadUnicode\\relax
+}
+\\def\\HyPsd@LoadExtra{%
+  \\ifHy@psdextra
+    \\ltx@iffileloaded{puenc.def}{%
+      \\Hy@SaveCatcodeSettings{psdextra}%
+      \\input{psdextra.def}%
+      \\Hy@RestoreCatcodeSettings{psdextra}%
+      \\let\\HyPsd@LoadExtra\\relax
+    }{}%
+  \\fi
+}
+\\def\\texorpdfstring{%
+   \\ifHy@pdfstring
+     \\expandafter\\@secondoftwo
+   \\else
+     \\expandafter\\@firstoftwo
+   \\fi
+}
+\\@ifundefined{pdfstringdefPreHook}{%
+  \\let\\pdfstringdefPreHook\\@empty
+}{}
+\\@ifundefined{pdfstringdefPostHook}{%
+  \\let\\pdfstringdefPostHook\\@gobble
+}{}
+\\def\\pdfstringdefDisableCommands{%
+  \\begingroup
+    \\makeatletter
+    \\HyPsd@DisableCommands
+}
+\\long\\def\\HyPsd@DisableCommands#1{%
+    \\ltx@GlobalAppendToMacro\\pdfstringdefPreHook{#1}%
+  \\endgroup
+}
+\\let\\HyPsd@pdfstringdefDisableCommands\\pdfstringdefDisableCommands
+\\AtBeginDocument{%
+  \\@ifundefined{pdfstringdefDisableCommands}{%
+    \\let\\pdfstringdefDisableCommands\\HyPsd@pdfstringdefDisableCommands
+  }{}%
+}
+\\def\\pdfstringdefWarn#1{%
+   \\expandafter\\noexpand\\csname<>-\\string#1\\endcsname
+}
+\\begingroup
+  \\catcode0=12 %
+  \\def\\x{\\endgroup
+    \\def\\HyPsd@ignorespaces{%
+      \\romannumeral\\expandafter\`\\expandafter^^@%
+      \\romannumeral\`^^@%
+    }%
+  }%
+\\x
+\\def\\HyPsd@BabelPatch{%
+  \\let\\HyOrg@languageshorthands\\languageshorthands
+  \\let\\languageshorthands\\HyPsd@LanguageShorthands
+}
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname pdf@strcmp\\endcsname\\relax
+  \\let\\HyPsd@langshort@system\\@empty
+  \\def\\HyPsd@LanguageShorthands#1{%
+    \\expandafter\\ifx\\csname HyPsd@langshort@#1\\endcsname
+                    \\HyPsd@langshort@system
+      \\expandafter\\@gobble
+    \\else
+      \\expandafter\\@firstofone
+    \\fi
+    {%
+      \\HyOrg@languageshorthands{#1}%
+    }%
+  }%
+\\else
+  \\def\\HyPsd@LanguageShorthands#1{%
+    \\ifnum\\pdf@strcmp{#1}{system}=\\z@
+      \\expandafter\\@gobble
+    \\else
+      \\expandafter\\@firstofone
+    \\fi
+    {%
+      \\HyOrg@languageshorthands{#1}%
+    }%
+  }%
+\\fi
+\\def\\Hy@temp{%
+  \\@ifpackageloaded{babel}{%
+    \\@ifpackagelater{babel}{2008/03/16}{%
+      \\let\\Hy@temp\\@empty
+    }{%
+      \\def\\HyPsd@BabelPatch{%
+        \\let\\HyOrg@languageshorthands\\languageshorthands
+      }%
+    }%
+  }{}%
+}
+\\Hy@temp
+\\expandafter\\Hy@AtBeginDocument\\expandafter{\\Hy@temp}
+\\newif\\ifHy@next
+\\ltx@IfUndefined{danish@sh@"@sel}{}{%
+  \\def\\HyPsd@babel@danish{%
+    \\declare@shorthand{danish}{"|}{}%
+    \\declare@shorthand{danish}{"~}{-}%
+  }%
+}
+\\ltx@IfUndefined{dutch@sh@"@sel}{}{%
+  \\def\\HyPsd@babel@dutch{%
+    \\declare@shorthand{dutch}{"|}{}%
+    \\declare@shorthand{dutch}{"~}{-}%
+  }%
+}
+\\ltx@IfUndefined{finnish@sh@"@sel}{}{%
+  \\def\\HyPsd@babel@finnish{%
+    \\declare@shorthand{finnish}{"|}{}%
+  }%
+}
+\\ltx@IfUndefined{french@sh@:@sel}{}{%
+  \\def\\HyPsd@babel@frenchb{%
+    \\def\\guill@spacing{ }%
+  }%
+}
+\\ltx@IfUndefined{german@sh@"@sel}{}{%
+  \\def\\HyPsd@babel@german{%
+    \\declare@shorthand{german}{"f}{f}%
+    \\declare@shorthand{german}{"|}{}%
+    \\declare@shorthand{german}{"~}{-}%
+  }%
+}
+\\ltx@IfUndefined{macedonian@sh@"@sel}{}{%
+  \\def\\HyPsd@babel@macedonian{%
+    \\declare@shorthand{macedonian}{"|}{}%
+    \\declare@shorthand{macedonian}{"~}{-}%
+  }%
+}{}
+\\ltx@IfUndefined{ngerman@sh@"@sel}{}{%
+  \\def\\HyPsd@babel@ngerman{%
+    \\declare@shorthand{ngerman}{"|}{}%
+    \\declare@shorthand{ngerman}{"~}{-}%
+  }%
+}
+\\ltx@IfUndefined{portuges@sh@"@sel}{}{%
+  \\def\\HyPsd@babel@portuges{%
+    \\declare@shorthand{portuges}{"|}{}%
+  }%
+}
+\\ltx@IfUndefined{russian@sh@"@sel}{}{%
+  \\def\\HyPsd@babel@russian{%
+    \\declare@shorthand{russian}{"|}{}%
+    \\declare@shorthand{russian}{"~}{-}%
+  }%
+}
+\\ltx@IfUndefined{slovene@sh@"@sel}{}{%
+  \\def\\HyPsd@babel@slovene{%
+    \\declare@shorthand{slovene}{"|}{}%
+  }%
+}
+\\ltx@IfUndefined{spanish@sh@>@sel}{}{%
+  \\def\\HyPsd@babel@spanish{%
+    \\declare@shorthand{spanish}{<<}{\\guillemotleft}%
+    \\declare@shorthand{spanish}{>>}{\\guillemotright}%
+    \\declare@shorthand{spanish}{"=}{-}%
+    \\declare@shorthand{spanish}{"~}{-}%
+    \\declare@shorthand{spanish}{"!}{\\textexclamdown}%
+    \\declare@shorthand{spanish}{"?}{\\textquestiondown}%
+  }%
+}
+\\ltx@IfUndefined{swedish@sh@"@sel}{}{%
+  \\def\\HyPsd@babel@swedish{%
+    \\declare@shorthand{swedish}{"|}{}%
+    \\declare@shorthand{swedish}{"~}{-}%
+  }%
+}
+\\ltx@IfUndefined{ukrainian@sh@"@sel}{}{%
+  \\def\\HyPsd@babel@ukrainian{%
+    \\declare@shorthand{ukrainian}{"|}{}%
+    \\declare@shorthand{ukrainian}{"~}{-}%
+  }%
+}
+\\ltx@IfUndefined{usorbian@sh@"@sel}{}{%
+  \\def\\HyPsd@babel@usorbian{%
+    \\declare@shorthand{usorbian}{"f}{f}%
+    \\declare@shorthand{usorbian}{"|}{}%
+  }%
+}
+\\ltx@IfUndefined{greek@sh@\\string~@sel}{%
+  \\let\\HyPsd@GreekPatch\\@empty
+}{%
+  \\def\\HyPsd@GreekPatch{%
+    \\let\\greeknumeral\\HyPsd@greeknumeral
+    \\let\\Greeknumeral\\HyPsd@Greeknumeral
+  }%
+}
+\\def\\HyPsd@greeknumeral#1{%
+  \\HyPsd@GreekNum\\@firstoftwo{#1}%
+}
+\\def\\HyPsd@Greeknumeral#1{%
+  \\HyPsd@GreekNum\\@secondoftwo{#1}%
+}
+\\def\\HyPsd@GreekNum#1#2{%
+  \\ifHy@unicode
+    \\ifnum#2<\\@ne
+      \\@arabic{#2}%
+    \\else
+      \\ifnum#2<1000000 %
+        \\HyPsd@@GreekNum#1{#2}%
+      \\else
+        \\@arabic{#2}%
+      \\fi
+    \\fi
+  \\else
+    \\@arabic{#2}%
+  \\fi
+}
+\\def\\HyPsd@@GreekNum#1#2{%
+  \\ifnum#2<\\@m
+    \\ifnum#2<10 %
+      \\expandafter\\HyPsd@GreekNumI
+          \\expandafter\\@gobble\\expandafter#1\\number#2%
+    \\else
+      \\ifnum#2<100 %
+        \\expandafter\\HyPsd@GreekNumII
+            \\expandafter\\@gobble\\expandafter#1\\number#2%
+      \\else
+        \\expandafter\\HyPsd@GreekNumIII
+            \\expandafter\\@gobble\\expandafter#1\\number#2%
+      \\fi
+    \\fi
+    \\ifnum#2>\\z@
+      \\textnumeralsigngreek
+    \\fi
+  \\else
+    \\ifnum#2<\\@M
+      \\expandafter\\HyPsd@GreekNumIV\\expandafter#1\\number#2%
+    \\else
+      \\ifnum#2<100000 %
+        \\expandafter\\HyPsd@GreekNumV\\expandafter#1\\number#2%
+      \\else
+        \\expandafter\\HyPsd@GreekNumVI\\expandafter#1\\number#2%
+      \\fi
+    \\fi
+  \\fi
+}
+\\def\\HyPsd@GreekNumI#1#2#3{%
+  #1{%
+    \\ifnum#3>\\z@
+      \\textnumeralsignlowergreek
+    \\fi
+  }%
+  \\expandafter#2%
+  \\ifcase#3 %
+    {}{}%
+  \\or\\textalpha\\textAlpha
+  \\or\\textbeta\\textBeta
+  \\or\\textgamma\\textGamma
+  \\or\\textdelta\\textDelta
+  \\or\\textepsilon\\textEpsilon
+  \\or\\textstigmagreek\\textStigmagreek
+  \\or\\textzeta\\textZeta
+  \\or\\texteta\\textEta
+  \\or\\texttheta\\textTheta
+  \\else
+    {}{}%
+  \\fi
+}
+\\def\\HyPsd@GreekNumII#1#2#3#4{%
+  #1{%
+    \\ifnum#3>\\z@
+      \\textnumeralsignlowergreek
+    \\fi
+  }%
+  \\expandafter#2%
+  \\ifcase#3 %
+    {}{}%
+  \\or\\textiota\\textIota
+  \\or\\textkappa\\textKappa
+  \\or\\textlambda\\textLambda
+  \\or\\textmu\\textMu
+  \\or\\textnu\\textNu
+  \\or\\textxi\\textXi
+  \\or\\textomicron\\textOmicron
+  \\or\\textpi\\textPi
+  \\or\\textkoppagreek\\textKoppagreek
+  \\else
+    {}{}%
+  \\fi
+  \\HyPsd@GreekNumI#1#2#4%
+}
+\\def\\HyPsd@GreekNumIII#1#2#3#4#5{%
+  #1{%
+    \\ifnum#3>\\z@
+      \\textnumeralsignlowergreek
+    \\fi
+  }%
+  \\expandafter#2%
+  \\ifcase#3 %
+    {}{}%
+  \\or\\textrho\\textRho
+  \\or\\textsigma\\textSigma
+  \\or\\texttau\\textTau
+  \\or\\textupsilon\\textUpsilon
+  \\or\\textphi\\textPhi
+  \\or\\textchi\\textChi
+  \\or\\textpsi\\textPsi
+  \\or\\textomega\\textOmega
+  \\or\\textsampigreek\\textSampigreek
+  \\else
+    {}{}%
+  \\fi
+  \\HyPsd@GreekNumII#1#2#4#5%
+}
+\\def\\HyPsd@GreekNumIV#1#2#3#4#5{%
+  \\HyPsd@GreekNumI\\@firstofone#1#2%
+  \\HyPsd@@GreekNum#1{#3#4#5}%
+}
+\\def\\HyPsd@GreekNumV#1#2#3#4#5#6{%
+  \\HyPsd@GreekNumII\\@firstofone#1#2#3%
+  \\HyPsd@@GreekNum#1{#4#5#6}%
+}
+\\def\\HyPsd@GreekNumVI#1#2#3#4#5#6#7{%
+  \\HyPsd@GreekNumIII\\@firstofone#1#2#3#4%
+  \\HyPsd@@GreekNum#1{#5#6#7}%
+}
+\\def\\HyPsd@SpanishPatch{%
+  \\ltx@IfUndefined{es@save@dot}{%
+  }{%
+    \\let\\.\\es@save@dot
+  }%
+}
+\\def\\HyPsd@RussianPatch{%
+  \\ltx@IfUndefined{russian@sh@"@-@}{%
+  }{%
+    \\@namedef{russian@sh@"@-@}{-}%
+  }%
+}
+\\RequirePackage{intcalc}[2007/09/27]
+\\def\\HyPsd@CJKhook{%
+  \\ltx@ifpackageloaded{CJK}{%
+    \\let\\CJK@kern\\relax
+    \\let\\CJKkern\\relax
+    \\let\\CJK@CJK\\relax
+    \\ifHy@CJKbookmarks
+      \\HyPsd@CJKhook@bookmarks
+    \\fi
+    \\HyPsd@CJKhook@unicode
+  }{}%
+}
+\\begingroup
+  \\catcode"7F=\\active
+  \\toks@{%
+    \\let\\CJK@ignorespaces\\empty
+    \\def\\CJK@char#1{\\@gobbletwo}%
+    \\let\\CJK@charx\\@gobblefour
+    \\let\\CJK@punctchar\\@gobblefour
+    \\def\\CJK@punctcharx#1{\\@gobblefour}%
+    \\catcode"7F=\\active
+    \\def^^7f#1^^7f#2^^7f{%
+      \\string #1\\HyPsd@DecimalToOctal{#2}%
+    }%
+    % ... ?
+    \\ifHy@unicode
+      \\def\\Hy@cjkpu{\\80}%
+    \\else
+      \\let\\Hy@cjkpu\\@empty
+    \\fi
+    \\HyPsd@CJKActiveChars
+  }%
+  \\count@=127 %
+  \\@whilenum\\count@<255 \\do{%
+    \\advance\\count@ by 1 %
+    \\lccode\`\\~=\\count@
+    \\lowercase{%
+      \\toks@\\expandafter{\\the\\toks@ ~}%
+    }%
+  }%
+  \\toks@\\expandafter{\\the\\toks@ !}%
+  \\xdef\\HyPsd@CJKhook@bookmarks{%
+    \\the\\toks@
+  }%
+\\endgroup
+\\def\\HyPsd@CJKActiveChars#1{%
+  \\ifx#1!%
+    \\let\\HyPsd@CJKActiveChars\\relax
+  \\else
+    \\edef#1{\\noexpand\\Hy@cjkpu\\string#1}%
+  \\fi
+  \\HyPsd@CJKActiveChars
+}
+\\def\\HyPsd@DecimalToOctal#1{%
+  \\ifcase #1 %
+        \\000\\or \\001\\or \\002\\or \\003\\or \\004\\or \\005\\or \\006\\or \\007%
+    \\or \\010\\or \\011\\or \\012\\or \\013\\or \\014\\or \\015\\or \\016\\or \\017%
+    \\or \\020\\or \\021\\or \\022\\or \\023\\or \\024\\or \\025\\or \\026\\or \\027%
+    \\or \\030\\or \\031\\or \\032\\or \\033\\or \\034\\or \\035\\or \\036\\or \\037%
+    \\or \\040\\or \\041\\or \\042\\or \\043\\or \\044\\or \\045\\or \\046\\or \\047%
+    \\or \\050\\or \\051\\or \\052\\or \\053\\or \\054\\or \\055\\or \\056\\or \\057%
+    \\or    0\\or    1\\or    2\\or    3\\or    4\\or    5\\or    6\\or    7%
+    \\or    8\\or    9\\or \\072\\or \\073\\or \\074\\or \\075\\or \\076\\or \\077%
+    \\or    @\\or    A\\or    B\\or    C\\or    D\\or    E\\or    F\\or    G%
+    \\or    H\\or    I\\or    J\\or    K\\or    L\\or    M\\or    N\\or    O%
+    \\or    P\\or    Q\\or    R\\or    S\\or    T\\or    U\\or    V\\or    W%
+    \\or    X\\or    Y\\or    Z\\or \\133\\or \\134\\or \\135\\or \\136\\or \\137%
+    \\or \\140\\or    a\\or    b\\or    c\\or    d\\or    e\\or    f\\or    g%
+    \\or    h\\or    i\\or    j\\or    k\\or    l\\or    m\\or    n\\or    o%
+    \\or    p\\or    q\\or    r\\or    s\\or    t\\or    u\\or    v\\or    w%
+    \\or    x\\or    y\\or    z\\or \\173\\or \\174\\or \\175\\or \\176\\or \\177%
+    \\or \\200\\or \\201\\or \\202\\or \\203\\or \\204\\or \\205\\or \\206\\or \\207%
+    \\or \\210\\or \\211\\or \\212\\or \\213\\or \\214\\or \\215\\or \\216\\or \\217%
+    \\or \\220\\or \\221\\or \\222\\or \\223\\or \\224\\or \\225\\or \\226\\or \\227%
+    \\or \\230\\or \\231\\or \\232\\or \\233\\or \\234\\or \\235\\or \\236\\or \\237%
+    \\or \\240\\or \\241\\or \\242\\or \\243\\or \\244\\or \\245\\or \\246\\or \\247%
+    \\or \\250\\or \\251\\or \\252\\or \\253\\or \\254\\or \\255\\or \\256\\or \\257%
+    \\or \\260\\or \\261\\or \\262\\or \\263\\or \\264\\or \\265\\or \\266\\or \\267%
+    \\or \\270\\or \\271\\or \\272\\or \\273\\or \\274\\or \\275\\or \\276\\or \\277%
+    \\or \\300\\or \\301\\or \\302\\or \\303\\or \\304\\or \\305\\or \\306\\or \\307%
+    \\or \\310\\or \\311\\or \\312\\or \\313\\or \\314\\or \\315\\or \\316\\or \\317%
+    \\or \\320\\or \\321\\or \\322\\or \\323\\or \\324\\or \\325\\or \\326\\or \\327%
+    \\or \\330\\or \\331\\or \\332\\or \\333\\or \\334\\or \\335\\or \\336\\or \\337%
+    \\or \\340\\or \\341\\or \\342\\or \\343\\or \\344\\or \\345\\or \\346\\or \\347%
+    \\or \\350\\or \\351\\or \\352\\or \\353\\or \\354\\or \\355\\or \\356\\or \\357%
+    \\or \\360\\or \\361\\or \\362\\or \\363\\or \\364\\or \\365\\or \\366\\or \\367%
+    \\or \\370\\or \\371\\or \\372\\or \\373\\or \\374\\or \\375\\or \\376\\or \\377%
+  \\fi
+}
+\\def\\HyPsd@CJKhook@unicode{%
+  \\let\\Unicode\\HyPsd@CJK@Unicode
+  \\let\\CJKnumber\\HyPsd@CJKnumber
+  \\let\\CJKdigits\\HyPsd@CJKdigits
+}
+\\def\\HyPsd@CJK@Unicode#1#2{%
+  \\ifnum#1<256 %
+    \\HyPsd@DecimalToOctalFirst{#1}%
+    \\HyPsd@DecimalToOctalSecond{#2}%
+  \\else
+    \\933%
+    \\expandafter\\expandafter\\expandafter\\HyPsd@HighA
+    \\intcalcDiv{#1}{4}!%
+    \\933%
+    \\ifcase\\intcalcMod{#1}{4} %
+      4\\or 5\\or 6\\or 7%
+    \\fi
+    \\HyPsd@DecimalToOctalSecond{#2}%
+  \\fi
+}
+\\def\\HyPsd@HighA#1!{%
+  \\expandafter\\expandafter\\expandafter\\HyPsd@HighB
+  \\IntCalcDiv#1!64!!%
+  \\expandafter\\expandafter\\expandafter\\HyPsd@HighD
+  \\IntCalcMod#1!64!!%
+}
+\\def\\HyPsd@HighB#1!{%
+  \\expandafter\\expandafter\\expandafter\\HyPsd@HighC
+  \\IntCalcDec#1!!%
+}
+\\def\\HyPsd@HighC#1!{%
+  \\IntCalcDiv#1!4!%
+  \\@backslashchar
+  \\IntCalcMod#1!4!%
+}
+\\def\\HyPsd@HighD#1!{%
+  \\ifcase\\IntCalcDiv#1!8! %
+    0\\or 1\\or 2\\or 3\\or 4\\or 5\\or 6\\or 7%
+  \\fi
+  \\ifcase\\IntCalcMod#1!8! %
+    0\\or 1\\or 2\\or 3\\or 4\\or 5\\or 6\\or 7%
+  \\fi
+}
+\\def\\HyPsd@DecimalToOctalFirst#1{%
+  \\9%
+  \\ifcase#1 %
+        000\\or 001\\or 002\\or 003\\or 004\\or 005\\or 006\\or 007%
+    \\or 010\\or 011\\or 012\\or 013\\or 014\\or 015\\or 016\\or 017%
+    \\or 020\\or 021\\or 022\\or 023\\or 024\\or 025\\or 026\\or 027%
+    \\or 030\\or 031\\or 032\\or 033\\or 034\\or 035\\or 036\\or 037%
+    \\or 040\\or 041\\or 042\\or 043\\or 044\\or 045\\or 046\\or 047%
+    \\or 050\\or 051\\or 052\\or 053\\or 054\\or 055\\or 056\\or 057%
+    \\or 060\\or 061\\or 062\\or 063\\or 064\\or 065\\or 066\\or 067%
+    \\or 070\\or 071\\or 072\\or 073\\or 074\\or 075\\or 076\\or 077%
+    \\or 100\\or 101\\or 102\\or 103\\or 104\\or 105\\or 106\\or 107%
+    \\or 120\\or 111\\or 112\\or 113\\or 114\\or 115\\or 116\\or 117%
+    \\or 120\\or 121\\or 122\\or 123\\or 124\\or 125\\or 126\\or 127%
+    \\or 130\\or 131\\or 132\\or 133\\or 134\\or 135\\or 136\\or 137%
+    \\or 140\\or 141\\or 142\\or 143\\or 144\\or 145\\or 146\\or 147%
+    \\or 150\\or 151\\or 152\\or 153\\or 154\\or 155\\or 156\\or 157%
+    \\or 160\\or 161\\or 162\\or 163\\or 164\\or 165\\or 166\\or 167%
+    \\or 170\\or 171\\or 172\\or 173\\or 174\\or 175\\or 176\\or 177%
+    \\or 200\\or 201\\or 202\\or 203\\or 204\\or 205\\or 206\\or 207%
+    \\or 210\\or 211\\or 212\\or 213\\or 214\\or 215\\or 216\\or 217%
+    \\or 220\\or 221\\or 222\\or 223\\or 224\\or 225\\or 226\\or 227%
+    \\or 230\\or 231\\or 232\\or 233\\or 234\\or 235\\or 236\\or 237%
+    \\or 240\\or 241\\or 242\\or 243\\or 244\\or 245\\or 246\\or 247%
+    \\or 250\\or 251\\or 252\\or 253\\or 254\\or 255\\or 256\\or 257%
+    \\or 260\\or 261\\or 262\\or 263\\or 264\\or 265\\or 266\\or 267%
+    \\or 270\\or 271\\or 272\\or 273\\or 274\\or 275\\or 276\\or 277%
+    \\or 300\\or 301\\or 302\\or 303\\or 304\\or 305\\or 306\\or 307%
+    \\or 310\\or 311\\or 312\\or 313\\or 314\\or 315\\or 316\\or 317%
+    \\or 320\\or 321\\or 322\\or 323\\or 324\\or 325\\or 326\\or 327%
+    \\or 330\\or 331\\or 332\\or 333\\or 334\\or 335\\or 336\\or 337%
+    \\or 340\\or 341\\or 342\\or 343\\or 344\\or 345\\or 346\\or 347%
+    \\or 350\\or 351\\or 352\\or 353\\or 354\\or 355\\or 356\\or 357%
+    \\or 360\\or 361\\or 362\\or 363\\or 364\\or 365\\or 366\\or 367%
+    \\or 370\\or 371\\or 372\\or 373\\or 374\\or 375\\or 376\\or 377%
+  \\fi
+}
+\\def\\HyPsd@DecimalToOctalSecond#1{%
+  \\ifcase #1 %
+        \\000\\or \\001\\or \\002\\or \\003\\or \\004\\or \\005\\or \\006\\or \\007%
+    \\or \\010\\or \\011\\or \\012\\or \\013\\or \\014\\or \\015\\or \\016\\or \\017%
+    \\or \\020\\or \\021\\or \\022\\or \\023\\or \\024\\or \\025\\or \\026\\or \\027%
+    \\or \\030\\or \\031\\or \\032\\or \\033\\or \\034\\or \\035\\or \\036\\or \\037%
+    \\or \\040\\or \\041\\or \\042\\or \\043\\or \\044\\or \\045\\or \\046\\or \\047%
+    \\or \\050\\or \\051\\or \\052\\or \\053\\or \\054\\or \\055\\or \\056\\or \\057%
+    \\or \\060\\or \\061\\or \\062\\or \\063\\or \\064\\or \\065\\or \\066\\or \\067%
+    \\or \\070\\or \\071\\or \\072\\or \\073\\or \\074\\or \\075\\or \\076\\or \\077%
+    \\or \\100\\or \\101\\or \\102\\or \\103\\or \\104\\or \\105\\or \\106\\or \\107%
+    \\or \\110\\or \\111\\or \\112\\or \\113\\or \\114\\or \\115\\or \\116\\or \\117%
+    \\or \\120\\or \\121\\or \\122\\or \\123\\or \\124\\or \\125\\or \\126\\or \\127%
+    \\or \\130\\or \\131\\or \\132\\or \\133\\or \\134\\or \\135\\or \\136\\or \\137%
+    \\or \\140\\or \\141\\or \\142\\or \\143\\or \\144\\or \\145\\or \\146\\or \\147%
+    \\or \\150\\or \\151\\or \\152\\or \\153\\or \\154\\or \\155\\or \\156\\or \\157%
+    \\or \\160\\or \\161\\or \\162\\or \\163\\or \\164\\or \\165\\or \\166\\or \\167%
+    \\or \\170\\or \\171\\or \\172\\or \\173\\or \\174\\or \\175\\or \\176\\or \\177%
+    \\or \\200\\or \\201\\or \\202\\or \\203\\or \\204\\or \\205\\or \\206\\or \\207%
+    \\or \\210\\or \\211\\or \\212\\or \\213\\or \\214\\or \\215\\or \\216\\or \\217%
+    \\or \\220\\or \\221\\or \\222\\or \\223\\or \\224\\or \\225\\or \\226\\or \\227%
+    \\or \\230\\or \\231\\or \\232\\or \\233\\or \\234\\or \\235\\or \\236\\or \\237%
+    \\or \\240\\or \\241\\or \\242\\or \\243\\or \\244\\or \\245\\or \\246\\or \\247%
+    \\or \\250\\or \\251\\or \\252\\or \\253\\or \\254\\or \\255\\or \\256\\or \\257%
+    \\or \\260\\or \\261\\or \\262\\or \\263\\or \\264\\or \\265\\or \\266\\or \\267%
+    \\or \\270\\or \\271\\or \\272\\or \\273\\or \\274\\or \\275\\or \\276\\or \\277%
+    \\or \\300\\or \\301\\or \\302\\or \\303\\or \\304\\or \\305\\or \\306\\or \\307%
+    \\or \\310\\or \\311\\or \\312\\or \\313\\or \\314\\or \\315\\or \\316\\or \\317%
+    \\or \\320\\or \\321\\or \\322\\or \\323\\or \\324\\or \\325\\or \\326\\or \\327%
+    \\or \\330\\or \\331\\or \\332\\or \\333\\or \\334\\or \\335\\or \\336\\or \\337%
+    \\or \\340\\or \\341\\or \\342\\or \\343\\or \\344\\or \\345\\or \\346\\or \\347%
+    \\or \\350\\or \\351\\or \\352\\or \\353\\or \\354\\or \\355\\or \\356\\or \\357%
+    \\or \\360\\or \\361\\or \\362\\or \\363\\or \\364\\or \\365\\or \\366\\or \\367%
+    \\or \\370\\or \\371\\or \\372\\or \\373\\or \\374\\or \\375\\or \\376\\or \\377%
+  \\fi
+}
+\\def\\HyPsd@CJKnumber#1{%
+  \\ifnum#1<\\z@
+    \\CJK@minus
+    \\expandafter\\HyPsd@@CJKnumber\\expandafter{\\number-\\number#1}%
+  \\else
+    \\expandafter\\HyPsd@@CJKnumber\\expandafter{\\number#1}%
+  \\fi
+}
+\\def\\HyPsd@@CJKnumber#1{%
+  \\ifcase#1 %
+    \\CJK@zero\\or\\CJK@one\\or\\CJK@two\\or\\CJK@three\\or\\CJK@four\\or
+    \\CJK@five\\or\\CJK@six\\or\\CJK@seven\\or\\CJK@eight\\or\\CJK@nine\\or
+    \\CJK@ten\\or\\CJK@ten\\CJK@one\\or\\CJK@ten\\CJK@two\\or
+    \\CJK@ten\\CJK@three\\or\\CJK@ten\\CJK@four\\or\\CJK@ten\\CJK@five\\or
+    \\CJK@ten\\CJK@six\\or\\CJK@ten\\CJK@seven\\or\\CJK@ten\\CJK@eight\\or
+    \\CJK@ten\\CJK@nine
+  \\else
+    \\ifnum#1<10000 %
+      \\HyPsd@CJKnumberFour#1!\\@empty{20}%
+      \\@empty
+    \\else
+      \\ifnum#1<100000000 %
+        \\expandafter\\expandafter\\expandafter\\HyPsd@CJKnumberFour
+          \\IntCalcDiv#1!10000!%
+        !{}{20}%
+        \\CJK@tenthousand
+        \\expandafter\\expandafter\\expandafter\\HyPsd@CJKnumberFour
+          \\IntCalcMod#1!10000!%
+        !\\CJK@zero{10}%
+        \\@empty
+      \\else
+        \\expandafter\\HyPsd@CJKnumberLarge
+        \\number\\IntCalcDiv#1!100000000!\\expandafter!%
+        \\number\\IntCalcMod#1!100000000!!%
+      \\fi
+    \\fi
+  \\fi
+}
+\\def\\HyPsd@CJKnumberLarge#1!#2!{%
+  \\HyPsd@CJKnumberFour#1!{}{20}%
+  \\CJK@hundredmillion
+  \\ifnum#2=\\z@
+  \\else
+    \\expandafter\\expandafter\\expandafter\\HyPsd@CJKnumberFour
+      \\IntCalcDiv#2!10000!%
+    !\\CJK@zero{10}%
+    \\CJK@tenthousand
+    \\expandafter\\expandafter\\expandafter\\HyPsd@CJKnumberFour
+      \\IntCalcMod#2!10000!%
+    !\\CJK@zero{10}%
+    \\@empty
+  \\fi
+}
+\\def\\HyPsd@CJKnumberFour#1!#2#3{%
+  \\ifnum#1=\\z@
+    \\expandafter\\@gobble
+  \\else
+    \\ifnum#1<1000 %
+      #2%
+      \\HyPsd@CJKnumberThree#1!{}{#3}%
+    \\else
+      \\HyPsd@@CJKnumber{\\IntCalcDiv#1!1000!}%
+      \\CJK@thousand
+      \\expandafter\\expandafter\\expandafter\\HyPsd@CJKnumberThree
+        \\IntCalcMod#1!1000!%
+      !\\CJK@zero{10}%
+    \\fi
+  \\fi
+}
+\\def\\HyPsd@CJKnumberThree#1!#2#3{%
+  \\ifnum#1=\\z@
+  \\else
+    \\ifnum#1<100 %
+      #2%
+      \\HyPsd@CJKnumberTwo#1!{}{#3}%
+    \\else
+      \\HyPsd@@CJKnumber{\\IntCalcDiv#1!100!}%
+      \\CJK@hundred
+      \\expandafter\\expandafter\\expandafter\\HyPsd@CJKnumberTwo
+        \\IntCalcMod#1!100!%
+      !\\CJK@zero{10}%
+    \\fi
+  \\fi
+}
+\\def\\HyPsd@CJKnumberTwo#1!#2#3{%
+  \\ifnum#1=\\z@
+  \\else
+    \\ifnum#1<#3 %
+      #2%
+      \\HyPsd@@CJKnumber{#1}%
+    \\else
+      \\HyPsd@@CJKnumber{\\IntCalcDiv#1!10!}%
+      \\CJK@ten
+      \\ifnum\\IntCalcMod#1!10!=\\z@
+      \\else
+        \\HyPsd@@CJKnumber{\\IntCalcMod#1!10!}%
+      \\fi
+    \\fi
+  \\fi
+}
+\\def\\HyPsd@CJKdigits#1{%
+  \\ifx*#1\\relax
+    \\expandafter\\HyPsd@@CJKdigits\\expandafter\\CJK@zero
+  \\else
+    \\HyPsd@@CJKdigits\\CJK@null{#1}%
+  \\fi
+}
+\\def\\HyPsd@@CJKdigits#1#2{%
+  \\ifx\\\\#2\\\\%
+  \\else
+    \\HyPsd@@@CJKdigits#1#2\\@nil
+  \\fi
+}%
+\\def\\HyPsd@@@CJKdigits#1#2#3\\@nil{%
+  \\HyPsd@CJKdigit#1{#2}%
+  \\ifx\\\\#3\\\\%
+    \\expandafter\\@gobble
+  \\else
+    \\expandafter\\@firstofone
+  \\fi
+  {%
+    \\HyPsd@@@CJKdigits#1#3\\@nil
+  }%
+}
+\\def\\HyPsd@CJKdigit#1#2{%
+  \\ifcase#2 %
+    #1\\or
+    \\CJK@one\\or\\CJK@two\\or\\CJK@three\\or\\CJK@four\\or
+    \\CJK@five\\or\\CJK@six\\or\\CJK@seven\\or\\CJK@eight\\or\\CJK@nine
+  \\fi
+}
+\\def\\HyPsd@inmathwarn#1#2{%
+  \\ifx#2\\expandafter
+    \\expandafter\\ifx\\csname\\cf@encoding\\string#1\\endcsname\\relax
+      \\HyPsd@GLYPHERR
+      \\expandafter\\@gobble\\string#1%
+      >%
+      \\expandafter\\expandafter\\expandafter\\HyPsd@EndWithElse
+    \\else
+      \\expandafter\\expandafter\\expandafter\\HyPsd@GobbleFiFi
+    \\fi
+  \\else
+    \\expandafter#2%
+  \\fi
+}
+\\def\\HyPsd@GobbleFiFi#1\\fi#2\\fi{}
+\\def\\HyPsd@EndWithElse#1\\else{\\else}
+\\def\\HyPsd@add@accent#1#2{%
+  \\HyPsd@GLYPHERR\\expandafter\\@gobble\\string#1+\\string#2>%
+  #2%
+}%
+\\def\\HyPsd@LetUnexpandableSpace#1{%
+  \\expandafter\\futurelet\\expandafter#1\\expandafter\\@gobble\\space\\relax
+}
+\\HyPsd@LetUnexpandableSpace\\HyPsd@UnexpandableSpace
+\\edef\\HyPsd@XSPACE{\\string#\\string X}
+\\edef\\HyPsd@ITALCORR{\\string#\\string I}
+\\edef\\HyPsd@GLYPHERR{\\string#\\string G}
+\\def\\HyPsd@hspace#1{\\HyPsd@@hspace#1*\\END}
+\\def\\HyPsd@@hspace#1*#2\\END{%
+  \\ifx\\\\#2\\\\%
+    \\HyPsd@hspacetest{#1}%
+  \\else
+    \\expandafter\\HyPsd@hspacetest
+  \\fi
+}
+\\def\\HyPsd@hspacetest#1{\\ifdim#1>\\z@\\space\\fi}
+\\ltx@IfUndefined{tocsection}{%
+  \\let\\HyPsd@AMSclassfix\\relax
+}{%
+  \\def\\HyPsd@AMSclassfix{%
+    \\let\\tocpart\\HyPsd@tocsection
+    \\let\\tocchapter\\HyPsd@tocsection
+    \\let\\tocappendix\\HyPsd@tocsection
+    \\let\\tocsection\\HyPsd@tocsection
+    \\let\\tocsubsection\\HyPsd@tocsection
+    \\let\\tocsubsubsection\\HyPsd@tocsection
+    \\let\\tocparagraph\\HyPsd@tocsection
+  }%
+  \\def\\HyPsd@tocsection#1#2#3{%
+    \\if @#2@\\else\\if @#1@\\else#1 \\fi#2. \\fi
+    #3%
+  }%
+}
+\\def\\HyPsd@href#1#{\\@secondoftwo}
+\\def\\HyPsd@ref#1{\\HyPsd@@ref#1*\\END}%
+\\def\\HyPsd@@ref#1*#2\\END{%
+  \\ifx\\\\#2\\\\%
+    \\HyPsd@@@ref{#1}%
+  \\else
+    \\expandafter\\HyPsd@@@ref
+  \\fi
+}%
+\\def\\HyPsd@@@ref#1{%
+  \\expandafter\\ifx\\csname r@#1\\endcsname\\relax
+    ??%
+  \\else
+    \\expandafter\\expandafter\\expandafter
+    \\@car\\csname r@#1\\endcsname\\@nil
+  \\fi
+}
+\\def\\HyPsd@pageref#1{\\HyPsd@@pageref#1*\\END}
+\\def\\HyPsd@@pageref#1*#2\\END{%
+  \\ifx\\\\#2\\\\%
+    \\HyPsd@@@pageref{#1}%
+  \\else
+    \\expandafter\\HyPsd@@@pageref
+  \\fi
+}
+\\def\\HyPsd@@@pageref#1{%
+  \\expandafter\\ifx\\csname r@#1\\endcsname\\relax
+    ??%
+  \\else
+    \\expandafter\\expandafter\\expandafter\\expandafter
+    \\expandafter\\expandafter\\expandafter\\@car
+    \\expandafter\\expandafter\\expandafter\\@gobble
+    \\csname r@#1\\endcsname{}\\@nil
+  \\fi
+}
+\\def\\HyPsd@nameref#1{\\HyPsd@@nameref#1*\\END}
+\\def\\HyPsd@@nameref#1*#2\\END{%
+  \\ifx\\\\#2\\\\%
+    \\HyPsd@@@nameref{#1}%
+  \\else
+    \\expandafter\\HyPsd@@@nameref
+  \\fi
+}
+\\def\\HyPsd@@@nameref#1{%
+  \\expandafter\\ifx\\csname r@#1\\endcsname\\relax
+    ??%
+  \\else
+    \\expandafter\\expandafter\\expandafter\\expandafter
+    \\expandafter\\expandafter\\expandafter\\@car
+    \\expandafter\\expandafter\\expandafter\\@gobbletwo
+    \\csname r@#1\\endcsname{}{}\\@nil
+  \\fi
+}
+\\def\\HyPsd@autoref#1{\\HyPsd@@autoref#1*\\END}
+\\def\\HyPsd@@autoref#1*#2\\END{%
+  \\ifx\\\\#2\\\\%
+    \\HyPsd@@@autoref{#1}%
+  \\else
+    \\expandafter\\HyPsd@@@autoref
+  \\fi
+}
+\\def\\HyPsd@@@autoref#1{%
+  \\expandafter\\ifx\\csname r@#1\\endcsname\\relax
+    ??%
+  \\else
+    \\expandafter\\expandafter\\expandafter\\HyPsd@autorefname
+        \\csname r@#1\\endcsname{}{}{}{}\\@nil
+    \\expandafter\\expandafter\\expandafter
+    \\@car\\csname r@#1\\endcsname\\@nil
+  \\fi
+}
+\\def\\HyPsd@autorefname#1#2#3#4#5\\@nil{%
+  \\ifx\\\\#4\\\\%
+  \\else
+    \\HyPsd@@autorefname#4.\\@nil
+  \\fi
+}
+\\def\\HyPsd@@autorefname#1.#2\\@nil{%
+  \\ltx@IfUndefined{#1autorefname}{%
+    \\ltx@IfUndefined{#1name}{%
+    }{%
+      \\csname#1name\\endcsname\\space
+    }%
+  }{%
+    \\csname#1autorefname\\endcsname\\space
+  }%
+}
+\\begingroup
+  \\def\\x#1#2{%
+    \\endgroup
+    \\let#1\\def
+    \\def\\HyPsd@DefCommand##1##2##{%
+      #1%
+      \\expandafter\\noexpand
+        \\csname\\expandafter\\@gobble\\string##1\\@empty\\endcsname
+      \\@gobble
+    }%
+    \\let#2\\let
+    \\def\\HyPsd@@LetCommand##1{%
+      \\expandafter\\ifx\\csname##1\\expandafter\\endcsname
+                      \\csname iftrue\\endcsname
+        \\pdfstringdefWarn\\let
+        \\expandafter\\@gobble
+      \\else
+        \\expandafter\\ifx\\csname##1\\expandafter\\endcsname
+                        \\csname iffalse\\endcsname
+          \\pdfstringdefWarn\\let
+          \\expandafter\\expandafter\\expandafter\\@gobble
+        \\else
+          #2%
+          \\expandafter\\noexpand
+            \\csname##1\\expandafter\\expandafter\\expandafter\\endcsname
+        \\fi
+      \\fi
+    }%
+  }%
+\\expandafter\\x\\csname <def>-command\\expandafter\\endcsname
+              \\csname <let>-command\\endcsname
+\\def\\HyPsd@LetCommand#1{%
+  \\expandafter\\expandafter\\expandafter\\HyPsd@@LetCommand
+    \\expandafter\\expandafter\\expandafter{%
+    \\expandafter\\@gobble\\string#1\\@empty
+  }%
+}
+\\def\\HyPsd@ifnextchar#1{%
+  \\pdfstringdefWarn#1%
+  \\expandafter\\@gobbletwo\\@gobble
+}
+\\def\\HyPsd@protected@testopt#1{%
+  \\pdfstringdefWarn#1%
+  \\@gobbletwo
+}
+\\def\\HyPsd@Warning#1{%
+  \\begingroup
+    \\let\\space\\ltx@space
+    \\Hy@Warning{#1}%
+  \\endgroup
+}
+\\RequirePackage{etexcmds}[2007/09/09]
+\\ifetex@unexpanded
+  \\expandafter\\@secondoftwo
+\\else
+  \\expandafter\\@firstoftwo
+\\fi
+{%
+  \\def\\HyPsd@ProtectSpaces#1{%
+    \\iftrue
+      \\expandafter\\HyPsd@@ProtectSpacesFi
+        \\expandafter|\\expandafter\\@empty#1| \\HyPsd@End#1%
+    \\fi
+  }%
+  \\def\\HyPsd@@ProtectSpacesFi#1 #2\\HyPsd@End#3\\fi{%
+    \\fi
+    \\ifx\\scrollmode#2\\scrollmode
+      \\HyPsd@RemoveMask#1\\HyPsd@End#3%
+    \\else
+      \\gdef#3{#1\\HyPsd@UnexpandableSpace#2}%
+      \\expandafter\\HyPsd@@ProtectSpacesFi#3\\HyPsd@End#3%
+    \\fi
+  }%
+  \\def\\HyPsd@RemoveMask|#1|\\HyPsd@End#2{%
+    \\toks@\\expandafter{#1}%
+    \\xdef#2{\\the\\toks@}%
+  }%
+}{%
+  \\let\\HyPsd@fi\\fi
+  \\def\\HyPsd@ProtectSpaces#1{%
+    \\xdef#1{%
+      \\iftrue
+        \\expandafter\\HyPsd@@ProtectSpacesFi
+          \\expandafter|\\expandafter\\@empty#1| %
+      \\HyPsd@fi
+    }%
+    \\expandafter\\HyPsd@RemoveMask#1\\HyPsd@End#1%
+  }%
+  \\def\\HyPsd@@ProtectSpacesFi#1 #2\\HyPsd@fi{%
+    \\fi
+    \\etex@unexpanded{#1}%
+    \\ifx\\scrollmode#2\\scrollmode
+    \\else
+      \\HyPsd@@ProtectSpacesFi\\HyPsd@UnexpandableSpace#2%
+    \\HyPsd@fi
+  }%
+  \\def\\HyPsd@RemoveMask|#1|\\HyPsd@End#2{%
+    \\xdef#2{\\etex@unexpanded\\expandafter{#1}}%
+  }%
+}
+\\def\\HyPsd@RemoveBraces#1{%
+  \\ifx\\scrollmode#1\\scrollmode
+  \\else
+    \\HyPsd@@RemoveBracesFi#1\\HyPsd@End{#1}%
+  \\fi
+}
+\\def\\HyPsd@@RemoveBracesFi#1#2\\HyPsd@End#3\\fi{%
+  \\fi
+  \\def\\Hy@temp@A{#1#2}%
+  \\def\\Hy@temp@B{#3}%
+  \\ifx\\Hy@temp@A\\Hy@temp@B
+    \\expandafter\\def\\expandafter\\HyPsd@String\\expandafter{%
+      \\HyPsd@String#1%
+    }%
+    \\ifx\\scrollmode#2\\scrollmode
+    \\else
+      \\Hy@ReturnAfterFiFiEnd{%
+        \\HyPsd@RemoveBraces{#2}%
+      }%
+    \\fi
+  \\else
+    \\def\\Hy@temp@A{#1}%
+    \\HyPsd@AppendItalcorr\\HyPsd@String
+    \\ifx\\Hy@temp@A\\@empty
+      \\Hy@ReturnAfterElseFiFiEnd{%
+        \\HyPsd@RemoveBraces{#2}%
+      }%
+    \\else
+      \\HyPsd@ProtectSpaces\\Hy@temp@A
+      \\HyPsd@AppendItalcorr\\Hy@temp@A
+      \\Hy@ReturnAfterFiFiEnd{%
+        \\expandafter\\HyPsd@RemoveBraces\\expandafter
+          {\\Hy@temp@A#2}%
+      }%
+    \\fi
+  \\fi
+  \\Hy@ReturnEnd
+}
+\\def\\HyPsd@AppendItalcorr#1{%
+  \\expandafter\\HyPsd@@AppendItalcorr\\expandafter{\\/}#1%
+}
+\\def\\HyPsd@@AppendItalcorr#1#2{%
+  \\expandafter\\def\\expandafter#2\\expandafter{#2#1}%
+}
+\\ltx@IfUndefined{directlua}{%
+}{%
+  \\expandafter\\ifx\\csname\\endcsname\\relax\\fi
+}
+\\begingroup
+  \\catcode\`\\Q=\\active
+  \\let Q\\ltx@empty
+  \\gdef\\HyPsd@CheckCatcodes#1#2\\HyPsd@End{%
+    \\global\\let\\HyPsd@Rest\\relax
+    \\ifcat\\relax\\noexpand#1\\relax
+      \\ifx#1\\protect
+      \\else
+        \\ifx#1\\penalty
+          \\setbox\\z@=\\hbox{%
+            \\afterassignment\\HyPsd@AfterCountRemove
+            \\count@=#2\\HyPsd@End
+          }%
+        \\else
+          \\ifx#1\\kern
+            \\setbox\\z@=\\hbox{%
+              \\afterassignment\\HyPsd@AfterDimenRemove
+              \\dimen@=#2\\HyPsd@End
+            }%
+          \\else
+            \\ifx#1\\hskip
+              \\setbox\\z@=\\hbox{%
+                \\afterassignment\\HyPsd@AfterSkipRemove
+                \\skip@=#2\\HyPsd@End
+              }%
+            \\else
+              \\HyPsd@CatcodeWarning{#1}%
+            \\fi
+          \\fi
+        \\fi
+      \\fi
+    \\else
+      \\ifcat\\noexpand#1\\noexpandQ% active character
+        \\expandafter\\expandafter\\expandafter\\def
+        \\expandafter\\expandafter\\expandafter\\HyPsd@String
+        \\expandafter\\expandafter\\expandafter{%
+          \\expandafter\\HyPsd@String\\string#1%
+        }%
+      \\else
+        \\ifcat#1A% letter
+          \\expandafter\\def\\expandafter\\HyPsd@String\\expandafter{%
+            \\HyPsd@String#1%
+          }%
+        \\else
+          \\ifcat#1 % SPACE
+            \\expandafter\\def\\expandafter\\HyPsd@String\\expandafter{%
+              \\HyPsd@String\\HyPsd@SPACEOPTI
+            }%
+          \\else
+            \\ifcat\$#1%
+              \\HyPsd@CatcodeWarning{math shift}%
+            \\else
+              \\ifcat&#1%
+                \\HyPsd@CatcodeWarning{alignment tab}%
+              \\else
+                \\ifcat^#1%
+                  \\HyPsd@CatcodeWarning{superscript}%
+                \\else
+                  \\ifcat_#1%
+                    \\HyPsd@CatcodeWarning{subscript}%
+                  \\else
+                    \\expandafter\\def\\expandafter\\HyPsd@String\\expandafter{%
+                      \\HyPsd@String#1%
+                    }%
+                  \\fi
+                \\fi
+              \\fi
+            \\fi
+          \\fi
+        \\fi
+      \\fi
+    \\fi
+    \\ifx\\HyPsd@Rest\\relax
+      \\ifx\\scrollmode#2\\scrollmode
+      \\else
+        \\Hy@ReturnAfterFiFiEnd{%
+          \\HyPsd@CheckCatcodes#2\\HyPsd@End
+        }%
+      \\fi
+    \\else
+      \\ifx\\HyPsd@Rest\\@empty
+      \\else
+        \\Hy@ReturnAfterFiFiEnd{%
+          \\expandafter\\HyPsd@CheckCatcodes\\HyPsd@Rest\\HyPsd@End
+        }%
+      \\fi
+    \\fi
+    \\Hy@ReturnEnd
+  }%
+\\endgroup
+\\def\\HyPsd@AfterCountRemove#1\\HyPsd@End{%
+  \\gdef\\HyPsd@Rest{#1}%
+}
+\\def\\HyPsd@AfterDimenRemove#1\\HyPsd@End{%
+  \\ifdim\\ifx\\HyPsd@String\\@empty\\z@\\else\\dimen@\\fi>1ex %
+    \\HyPsd@ReplaceSpaceWarning{\\string\\kern\\space\\the\\dimen@}%
+    \\gdef\\HyPsd@Rest{\\HyPsd@UnexpandableSpace #1}%
+  \\else
+    \\ifdim\\dimen@=\\z@
+    \\else
+      \\HyPsd@RemoveSpaceWarning{\\string\\kern\\space\\the\\dimen@}%
+    \\fi
+    \\gdef\\HyPsd@Rest{#1}%
+  \\fi
+}
+\\def\\HyPsd@AfterSkipRemove#1\\HyPsd@End{%
+  \\ifdim\\ifx\\HyPsd@String\\@empty\\z@\\else\\skip@\\fi>1ex %
+    \\HyPsd@ReplaceSpaceWarning{\\string\\hskip\\space\\the\\skip@}%
+    \\gdef\\HyPsd@Rest{\\HyPsd@UnexpandableSpace #1}%
+  \\else
+    \\ifdim\\skip@=\\z@
+    \\else
+      \\HyPsd@RemoveSpaceWarning{\\string\\kern\\space\\the\\skip@}%
+    \\fi
+    \\gdef\\HyPsd@Rest{#1}%
+  \\fi
+}
+\\def\\HyPsd@CatcodeWarning#1{%
+  \\HyPsd@Warning{%
+    Token not allowed in a PDF string (%
+    \\ifHy@unicode
+      Unicode%
+    \\else
+      PDFDocEncoding%
+    \\fi
+    ):%
+    \\MessageBreak removing \`\\HyPsd@RemoveCmdPrefix#1'%
+  }%
+}
+\\begingroup
+  \\catcode\`\\|=0 %
+  \\catcode\`\\\\=12 %
+  |gdef|HyPsd@RemoveCmdPrefix#1{%
+    |expandafter|HyPsd@@RemoveCmdPrefix
+      |string#1|@empty\\<>-|@empty|@empty
+  }%
+  |gdef|HyPsd@@RemoveCmdPrefix#1\\<>-#2|@empty#3|@empty{#1#2}%
+|endgroup
+\\def\\HyPsd@RemoveSpaceWarning#1{%
+  \\HyPsd@Warning{%
+    Token not allowed in a PDF string (%
+    \\ifHy@unicode
+      Unicode%
+    \\else
+      PDFDocEncoding%
+    \\fi
+    ):%
+    \\MessageBreak #1\\MessageBreak
+    removed%
+  }%
+}
+\\def\\HyPsd@ReplaceSpaceWarning#1{%
+  \\HyPsd@Warning{%
+    Token not allowed in a PDF string (%
+    \\ifHy@unicode
+      Unicode%
+    \\else
+      PDFDocEncoding%
+    \\fi
+    ):%
+    \\MessageBreak #1\\MessageBreak
+    replaced by space%
+  }%
+}
+\\def\\HyPsd@GlyphProcess#1\\relax#2\\@empty{%
+  \\expandafter\\def\\expandafter\\HyPsd@String\\expandafter{%
+    \\HyPsd@String#1%
+  }%
+  \\ifx\\\\#2\\\\%
+  \\else
+    \\ltx@ReturnAfterFi{%
+      \\HyPsd@GlyphProcessWarning#2\\@empty
+    }%
+  \\fi
+}
+\\def\\HyPsd@GlyphProcessWarning#1>#2\\@empty{%
+  \\HyPsd@@GlyphProcessWarning#1++>%
+  \\HyPsd@GlyphProcess#2\\@empty
+}
+\\def\\HyPsd@@GlyphProcessWarning#1+#2+#3>{%
+  \\ifx\\\\#2\\\\%
+    \\HyPsd@Warning{%
+      Glyph not defined in %
+      P\\ifHy@unicode U\\else D1\\fi\\space encoding,\\MessageBreak
+      removing \`\\@backslashchar#1'%
+    }%
+  \\else
+    \\HyPsd@Warning{%
+      Composite letter \`\\@backslashchar#1+#2'\\MessageBreak
+      not defined in P\\ifHy@unicode U\\else D1\\fi\\space encoding,%
+      \\MessageBreak
+      removing \`\\@backslashchar#1'%
+    }%
+  \\fi
+}
+\\def\\HyPsd@spaceopti#1{ % first space
+  \\ifx\\HyPsd@spaceopti#1%
+    \\040%
+  \\else
+    #1%
+  \\fi
+}%
+\\def\\HyPsd@Subst#1#2#3{%
+  \\def\\HyPsd@@ReplaceFi##1#1##2\\END\\fi{%
+    \\fi
+    ##1%
+    \\ifx\\scrollmode##2\\scrollmode
+    \\else
+      #2%
+      \\HyPsd@@ReplaceFi##2\\END
+    \\fi
+  }%
+  \\xdef#3{%
+    \\iftrue
+      \\expandafter\\HyPsd@@ReplaceFi#3#1\\END
+    \\fi
+  }%
+}
+\\def\\HyPsd@StringSubst#1{%
+  \\expandafter\\HyPsd@Subst\\expandafter{\\string#1}%
+}
+\\begingroup
+  \\lccode\`\\!=\`\\%%
+  \\lccode\`\\|=\`\\\\%
+  \\lccode\`\\(=\`\\{%
+  \\lccode\`\\)=\`\\}%
+  \\lccode\`0=\\ltx@zero
+  \\lccode\`1=\\ltx@zero
+  \\lccode\`3=\\ltx@zero
+  \\lccode\`4=\\ltx@zero
+  \\lccode\`5=\\ltx@zero
+  \\lccode\`7=\\ltx@zero
+\\lowercase{\\endgroup
+  \\def\\HyPsd@EscapeTeX#1{%
+    \\HyPsd@Subst!{|045}#1%
+    \\HyPsd@Subst({|173}#1%
+    \\HyPsd@Subst){|175}#1%
+  }%
+}
+\\def\\HyPsd@doxspace#1{%
+  \\ifx#1\\relax\\else
+   \\ifx#1.\\else
+    \\ifx#1:\\else
+     \\ifx#1,\\else
+      \\ifx#1;\\else
+       \\ifx#1!\\else
+        \\ifx#1?\\else
+         \\ifx#1/\\else
+          \\ifx#1-\\else
+           \\ifx#1'\\else
+             \\HyPsd@SPACEOPTI
+           \\fi
+          \\fi
+         \\fi
+        \\fi
+       \\fi
+      \\fi
+     \\fi
+    \\fi
+   \\fi
+  \\fi
+  #1%
+}%
+\\begingroup
+  \\catcode\`\\|=0 %
+  \\catcode\`\\\\=12 %
+  |gdef|HyPsd@ConvertToUnicode#1{%
+    |xdef#1{%
+      |expandafter|HyPsd@DoConvert#1|@empty|@empty|@empty
+    }%
+    |ifx#1|@empty
+    |else
+      |xdef#1{%
+        \\376\\377%
+        #1%
+      }%
+    |fi
+  }%
+  |gdef|HyPsd@DoConvert#1{%
+    |ifx#1|@empty
+    |else
+      |ltx@ReturnAfterFi{%
+        |ifx#1\\%%
+          \\%%
+          |expandafter|HyPsd@DoEscape
+        |else
+          |HyPsd@Char{#1}%
+          |expandafter|HyPsd@DoConvert
+        |fi
+      }%
+    |fi
+  }%
+  |gdef|HyPsd@DoEscape#1{%
+    |ifx#19%
+      |expandafter|HyPsd@GetTwoBytes
+    |else
+      |ltx@ReturnAfterFi{%
+        |ifx#18%
+          00%
+          |expandafter|HyPsd@GetTwoBytes
+        |else
+          #1%
+          |expandafter|HyPsd@GetOneByte
+        |fi
+      }%
+    |fi
+  }%
+  |gdef|HyPsd@GetTwoBytes#1\\#2#3#4{%
+    #1\\#2#3#4%
+    |HyPsd@DoConvert
+  }%
+  |gdef|HyPsd@GetOneByte#1#2{%
+    #1#2%
+    |HyPsd@DoConvert
+  }%
+|endgroup
+\\def\\HyPsd@GetNextTwoTokens#1#2#3\\END#4{%
+  \\xdef#4{#4#1#2}%
+  \\HyPsd@@ConvertToUnicode#3\\END#4%
+}
+\\begingroup
+  \\catcode0=9 %
+  \\catcode\`\\^=7 %
+  \\catcode\`\\^^^=12 %
+  \\def\\x{^^^^0000}%
+\\expandafter\\endgroup
+\\ifx\\x\\@empty
+  \\def\\HyPsd@Char#1{%
+    \\ifnum\`#1<128 %
+      \\@backslashchar 000#1%
+    \\else
+      \\ifnum\`#1<65536 %
+        \\expandafter\\HyPsd@CharTwoByte\\number\`#1!%
+      \\else
+        \\expandafter\\expandafter\\expandafter\\HyPsd@CharSurrogate
+        \\intcalcSub{\`#1}{65536}!%
+      \\fi
+    \\fi
+  }%
+  \\def\\HyPsd@CharTwoByte#1!{%
+    \\expandafter\\expandafter\\expandafter\\HyPsd@CharOctByte
+    \\IntCalcDiv#1!256!!%
+    \\expandafter\\expandafter\\expandafter\\HyPsd@CharOctByte
+    \\IntCalcMod#1!256!!%
+  }%
+  \\def\\HyPsd@CharOctByte#1!{%
+    \\@backslashchar
+    \\IntCalcDiv#1!64!%
+    \\intcalcDiv{\\IntCalcMod#1!64!}{8}%
+    \\IntCalcMod#1!8!%
+  }%
+  \\def\\HyPsd@CharSurrogate#1!{%
+    \\@backslashchar 33%
+    \\IntCalcDiv#1!262144!%
+    \\expandafter\\expandafter\\expandafter\\HyPsd@CharOctByte
+    \\intcalcDiv{\\IntCalcMod#1!262144!}{1024}!%
+    \\@backslashchar 33%
+    \\expandafter\\expandafter\\expandafter\\IntCalcAdd
+    \\intcalcDiv{\\IntCalcMod#1!1024!}{256}!4!%
+    \\expandafter\\expandafter\\expandafter\\HyPsd@CharOctByte
+    \\IntCalcMod#1!256!!%
+  }%
+\\else
+  \\def\\HyPsd@Char#1{%
+    \\@backslashchar 000#1%
+  }%
+\\fi
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname numexpr\\endcsname\\relax
+  \\let\\HyPsd@UTFviii\\relax
+\\else
+  \\begingroup
+    \\lccode\`\\~=\`^^f4\\relax
+  \\lowercase{\\endgroup
+    \\def\\HyPsd@UTFviii{%
+      \\let\\UTFviii@two@octets\\HyPsd@UTFviii@two
+      \\let\\UTFviii@three@octets\\HyPsd@UTFviii@three
+      \\let\\UTFviii@four@octets\\HyPsd@UTFviii@four
+      \\ifx~\\HyPsd@UTFviii@ccxliv@undef
+        \\let~\\HyPsd@UTFviii@ccxliv@def
+      \\fi
+      \\let\\unichar\\HyPsd@unichar
+    }%
+  }%
+  \\def\\HyPsd@UTFviii@ccxliv@undef{\\@inpenc@undefined@{utf8}}%
+  \\edef\\HyPsd@UTFviii@ccxliv@def{%
+    \\noexpand\\UTFviii@four@octets\\string ^^f4%
+  }%
+  \\def\\HyPsd@UTFviii@two#1#2{%
+    \\expandafter\\HyPsd@UTFviii@@two
+      \\number\\dimexpr.25\\dimexpr\`#1sp\\expandafter\\relax\\expandafter|%
+      \\number\`#1\\expandafter|%
+      \\number\\dimexpr.125\\dimexpr\`#2sp\\expandafter\\relax\\expandafter|%
+      \\number\`#2 \\@nil
+  }%
+  \\def\\HyPsd@UTFviii@@two#1|#2|#3|#4\\@nil{%
+    \\expandafter\\8%
+    \\number\\numexpr #1-48\\expandafter\\relax
+    \\csname\\number\\numexpr #2-4*#1\\relax\\expandafter\\endcsname
+    \\number\\numexpr #3-8*%
+        \\number\\dimexpr.125\\dimexpr#3sp\\relax\\relax\\expandafter\\relax
+    \\number\\numexpr #4-8*#3\\relax
+  }%
+  \\def\\HyPsd@UTFviii@three#1#2#3{%
+    \\expandafter\\HyPsd@UTFviii@@three
+      \\number\\dimexpr.25\\dimexpr\`#1sp\\expandafter\\relax\\expandafter|%
+      \\number\`#1\\expandafter|%
+      \\number\\ifnum\\numexpr\`#2-128\\relax <32 0\\else 1\\fi\\expandafter|%
+      \\number\\dimexpr.25\\dimexpr\`#2sp\\expandafter\\relax\\expandafter|%
+      \\number\`#2\\expandafter|%
+      \\number\\dimexpr.125\\dimexpr\`#3sp\\expandafter\\relax\\expandafter|%
+      \\number\`#3 \\@nil
+  }%
+  \\def\\HyPsd@UTFviii@@three#1|#2|#3|#4|#5|#6|#7\\@nil{%
+    \\expandafter\\9%
+    \\number\\numexpr #1-56\\expandafter\\relax
+    \\number\\numexpr 2*(#2-4*#1)+#3\\expandafter\\relax
+    \\number\\numexpr #4 - 32 -\\ifcase#3 0\\else 8\\fi\\expandafter\\relax
+    \\csname\\number\\numexpr #5-4*#4\\relax\\expandafter\\endcsname
+    \\number\\numexpr #6-16\\expandafter\\relax
+    \\number\\numexpr #7-8*#6\\relax
+  }%
+  \\def\\HyPsd@UTFviii@four#1#2{%
+    \\expandafter\\HyPsd@@UTFviii@four\\number
+    \\numexpr-1+(\`#1-240)*4+\\dimexpr.0625\\dimexpr\`#2sp-128sp%
+    \\expandafter|\\number
+    \\numexpr\`#2-16*\\dimexpr.0625\\dimexpr\`#2sp|%
+  }%
+  \\def\\HyPsd@@UTFviii@four#1|#2|#3{%
+    \\933\\number\\dimexpr.25\\dimexpr#1sp\\relax\\relax
+    \\csname\\number\\numexpr#1-4*\\dimexpr.25\\dimexpr#1sp\\endcsname
+    \\ifodd#2 %
+      \\number\\numexpr(#2-1)/2\\relax
+    \\else
+      \\number\\numexpr#2/2\\relax
+    \\fi
+    \\number\\numexpr\\ifodd#2 4+\\fi
+        \\dimexpr.0625\\dimexpr\`#3sp-128sp\\relax\\relax\\relax
+    \\933%
+    \\expandafter\\HyPsd@@@UTFviii@four\\number
+    \\numexpr\`#3-16*\\dimexpr.0625\\dimexpr\`#3sp|%
+  }%
+  \\def\\HyPsd@@@UTFviii@four#1|#2{%
+    \\number\\numexpr4+\\dimexpr.25\\dimexpr#1sp\\relax\\relax\\relax
+    \\csname\\number\\numexpr#1-4*\\dimexpr.25\\dimexpr#1sp\\endcsname
+    \\number\\dimexpr.125\\dimexpr\`#2sp-128sp\\relax\\relax
+    \\number\\numexpr\`#2-8*\\dimexpr.125\\dimexpr\`#2sp\\relax\\relax\\relax
+  }%
+  \\def\\HyPsd@unichar#1{%
+    \\ifHy@unicode
+      \\ifnum#1>"10FFFF %
+        \\HyPsd@UnicodeReplacementCharacter % illegal
+      \\else
+        \\ifnum#1>"FFFF %
+          \\expandafter\\HyPsd@unichar\\expandafter{%
+            \\number\\numexpr 55296+%
+                \\dimexpr.0009765625\\dimexpr\\number#1sp-\\p@
+                \\relax\\relax\\relax
+          }%
+          \\expandafter\\HyPsd@unichar\\expandafter{%
+            \\number\\numexpr#1-9216%
+                -1024*\\dimexpr.0009765625\\dimexpr\\number#1sp-\\p@
+                \\relax\\relax\\relax
+        }%
+        \\else
+          \\ifnum#1>"7FF %
+            \\9%
+            \\expandafter\\HyPsd@unichar@first@byte\\expandafter{%
+              \\number
+              \\dimexpr.00390625\\dimexpr\\number#1sp\\relax\\relax
+            }%
+          \\else
+            \\8%
+            \\number\\dimexpr.00390625\\dimexpr\\number#1sp\\relax\\relax
+          \\fi
+          \\expandafter\\HyPsd@unichar@second@byte\\expandafter{%
+            \\number
+            \\numexpr#1-256*\\number
+                \\dimexpr.00390625\\dimexpr\\number#1sp\\relax\\relax\\relax
+          }%
+        \\fi
+      \\fi
+    \\else
+      .% unsupported (Unicode -> PDF Doc Encoding)
+    \\fi
+  }%
+  \\def\\HyPsd@UnicodeReplacementCharacter{\\9377\\375}%
+  \\def\\HyPsd@unichar@first@byte#1{%
+    \\number\\dimexpr.015625\\dimexpr#1sp\\relax\\relax
+    \\expandafter\\HyPsd@unichar@octtwo\\expandafter{%
+      \\number
+      \\numexpr#1-64*\\number\\dimexpr.015625\\dimexpr#1sp%
+      \\relax\\relax\\relax
+    }%
+  }%
+  \\def\\HyPsd@unichar@second@byte#1{%
+    \\csname\\number\\dimexpr.015625\\dimexpr#1sp\\relax\\relax\\endcsname
+    \\expandafter\\HyPsd@unichar@octtwo\\expandafter{%
+      \\number
+      \\numexpr#1-64*\\number\\dimexpr.015625\\dimexpr#1sp%
+      \\relax\\relax\\relax
+    }%
+  }%
+  \\def\\HyPsd@unichar@octtwo#1{%
+    \\number\\dimexpr.125\\dimexpr#1sp\\relax\\relax
+    \\number\\numexpr#1-8*\\number\\dimexpr.125\\dimexpr#1sp%
+    \\relax\\relax\\relax
+  }%
+\\fi
+\\def\\HyPsd@utf@viii@undeferr#1#2#3#4#5#6{%
+  \\ifx\\@gobble#1%
+  \\else
+    [Please insert \\textbackslash PrerenderUnicode%
+    \\textbraceleft#1\\textbraceright\\space
+    into preamble]%
+  \\fi
+}%
+\\def\\HyPsd@DieFace#1{%
+  \\ifHy@unicode
+    \\ifnum#1<1 %
+      \\HyPsd@UnicodeReplacementCharacter
+    \\else
+      \\ifnum#1>6 %
+        \\9046\\205%
+        \\expandafter\\expandafter\\expandafter
+        \\HyPsd@DieFaceLarge\\intcalcSub{#1}{6}!%
+      \\else
+        \\9046\\20\\intcalcDec{#1}%
+      \\fi
+    \\fi
+  \\else
+    .% Die faces are not part of PDFDocEncoding
+  \\fi
+}
+\\def\\HyPsd@DieFaceLarge#1!{%
+  \\ifnum#1>6 %
+    \\expandafter\\ltx@firstoftwo
+  \\else
+    \\expandafter\\ltx@secondoftwo
+  \\fi
+  {%
+    \\9046\\205%
+    \\expandafter\\expandafter\\expandafter
+    \\HyPsd@DieFaceLarge\\IntCalcSub#1!6!!%
+  }{%
+    \\9046\\20\\IntCalcDec#1!%
+  }%
+}
+\\def\\HyPsd@MoonPha#1{%
+  \\ifcase\\intcalcNum{#1} %
+    \\HyPsd@UnicodeReplacementCharacter
+  \\or % 1
+    \\9330\\074\\9337\\032%
+  \\or % 2
+    \\HyPsd@UnicodeReplacementCharacter
+  \\or % 3
+    \\9330\\074\\9337\\035%
+  \\or % 4
+    \\9330\\074\\9337\\034%
+  \\else
+    \\HyPsd@UnicodeReplacementCharacter
+  \\fi
+}
+\\def\\HyPsd@ding#1{%
+  \\ifHy@unicode
+    \\ifnum#1<32 %
+      \\HyPsd@UnicodeReplacementCharacter
+    \\else
+      \\ifnum#1>254 %
+        \\HyPsd@UnicodeReplacementCharacter
+      \\else
+        \\ifnum#1<127 %
+          \\expandafter\\expandafter\\expandafter
+          \\HyPsd@@ding\\intcalcNum{#1}!%
+        \\else
+          \\ifnum#1>160 %
+            \\expandafter\\expandafter\\expandafter
+            \\HyPsd@@ding\\intcalcNum{#1}!%
+          \\else
+            \\HyPsd@UnicodeReplacementCharacter
+          \\fi
+        \\fi
+      \\fi
+    \\fi
+  \\else
+    .% Dingbats are not part of PDFDocEncoding
+  \\fi
+}
+\\def\\HyPsd@@ding#1!{%
+  \\ltx@ifundefined{HyPsd@ding@#1}{%
+    \\ifnum#1<127 %
+      \\9047%
+      \\HyPsd@DecimalToOctalSecond{\\IntCalcSub#1!32!}%
+    \\else
+      \\ifnum#1<168 %
+        \\9047\\14\\IntCalcSub#1!160!%
+      \\else
+        \\ifnum#1>181 %
+          \\9047\\HyPsd@DecimalToOctalSecond{\\IntCalcSub#1!64!}%
+        \\else
+          % 172..181 -> U+2460..U+2469
+          \\9044\\HyPsd@DecimalToOctalSecond{\\IntCalcSub#1!76!}%
+        \\fi
+      \\fi
+    \\fi
+  }{%
+    \\csname HyPsd@ding@#1\\endcsname
+  }%
+}
+\\@namedef{HyPsd@ding@32}{\\space}
+\\@namedef{HyPsd@ding@37}{\\9046\\016}% U+260E
+\\@namedef{HyPsd@ding@42}{\\9046\\033}% U+261B
+\\@namedef{HyPsd@ding@43}{\\9046\\036}% U+261E
+\\@namedef{HyPsd@ding@72}{\\9046\\005}% U+2605
+\\@namedef{HyPsd@ding@108}{\\9045\\317}% U+25CF
+\\@namedef{HyPsd@ding@110}{\\9045\\240}% U+25A0
+\\@namedef{HyPsd@ding@115}{\\9045\\262}% U+25B2
+\\@namedef{HyPsd@ding@116}{\\9045\\274}% U+25BC
+\\@namedef{HyPsd@ding@117}{\\9045\\306}% U+25C6
+\\@namedef{HyPsd@ding@119}{\\9045\\327}% U+25D7
+\\@namedef{HyPsd@ding@168}{\\textclubsuitblack}%
+\\@namedef{HyPsd@ding@169}{\\textdiamondsuitblack}%
+\\@namedef{HyPsd@ding@170}{\\textheartsuitblack}%
+\\@namedef{HyPsd@ding@171}{\\textspadesuitblack}%
+\\@namedef{HyPsd@ding@213}{\\textrightarrow}%
+\\@namedef{HyPsd@ding@214}{\\textleftrightarrow}%
+\\@namedef{HyPsd@ding@215}{\\textupdownarrow}%
+\\@namedef{HyPsd@ding@240}{\\HyPsd@UnicodeReplacementCharacter}
+\\@ifclassloaded{memoir}{%
+  \\Hy@AtEndOfPackage{\\RequirePackage{memhfixc}}%
+}{}
+\\@ifpackageloaded{subfigure}{%
+  \\ltx@IfUndefined{sub@label}{%
+    \\Hy@hypertexnamesfalse
+  }{%
+    \\renewcommand*{\\sub@label}[1]{%
+      \\@bsphack
+      \\subfig@oldlabel{#1}%
+      \\if@filesw
+        \\begingroup
+          \\edef\\@currentlabstr{%
+            \\expandafter\\strip@prefix\\meaning\\@currentlabelname
+          }%
+          \\protected@write\\@auxout{}{%
+            \\string\\newlabel{sub@#1}{%
+              {\\@nameuse{@@thesub\\@captype}}%
+              {\\thepage}%
+              {%
+                \\expandafter\\strip@period\\@currentlabstr
+                \\relax.\\relax\\@@@%
+              }%
+              {\\@currentHref}%
+              {}%
+            }%
+          }%
+        \\endgroup
+      \\fi
+      \\@esphack
+    }%
+    \\@ifpackagelater{subfigure}{2002/03/26}{}{%
+      \\providecommand*{\\toclevel@subfigure}{1}%
+      \\providecommand*{\\toclevel@subtable}{1}%
+    }%
+  }%
+}{}
+\\ltx@IfUndefined{XR@addURL}{%
+}{%
+  \\def\\XR@addURL#1{\\XR@@dURL#1{}{}{}{}\\\\}%
+  \\def\\XR@@dURL#1#2#3#4#5\\\\{%
+    {#1}{#2}%
+    \\if!#4!%
+    \\else
+      {#3}{#4}{\\XR@URL}%
+    \\fi
+  }%
+}
+\\def\\Hy@true{true}
+\\def\\Hy@false{false}
+\\let\\literalps@out\\@gobble
+\\newcommand\\pdfbookmark[3][]{}
+\\def\\Acrobatmenu#1#2{\\leavevmode#2}
+\\def\\Hy@writebookmark#1#2#3#4#5{}%
+\\let\\HyperRaiseLinkHook\\@empty
+\\def\\HyperRaiseLinkDefault{\\baselineskip}
+\\newcount\\Hy@SavedSpaceFactor
+\\def\\Hy@SaveSpaceFactor{%
+  \\global\\Hy@SavedSpaceFactor=\\ifhmode\\spacefactor\\else\\z@\\fi
+}
+\\def\\Hy@RestoreSpaceFactor{%
+  \\relax
+  \\ifhmode
+    \\ifnum\\Hy@SavedSpaceFactor>\\z@
+      \\spacefactor=\\Hy@SavedSpaceFactor
+    \\fi
+  \\fi
+}
+\\def\\Hy@SaveSavedSpaceFactor{%
+  \\edef\\Hy@RestoreSavedSpaceFactor{%
+    \\global\\Hy@SavedSpaceFactor=\\the\\Hy@SavedSpaceFactor\\relax
+  }%
+}
+\\def\\Hy@raisedlink#1{%
+  \\ifvmode
+    #1%
+  \\else
+    \\Hy@SaveSpaceFactor
+    \\penalty\\@M
+    \\smash{%
+      \\begingroup
+        \\let\\HyperRaiseLinkLength\\@tempdima
+        \\setlength\\HyperRaiseLinkLength\\HyperRaiseLinkDefault
+        \\HyperRaiseLinkHook
+      \\expandafter\\endgroup
+      \\expandafter\\raise\\the\\HyperRaiseLinkLength\\hbox{%
+        \\Hy@RestoreSpaceFactor
+        #1%
+        \\Hy@SaveSpaceFactor
+      }%
+    }%
+    \\Hy@RestoreSpaceFactor
+  \\fi
+}
+\\def\\Hy@SaveLastskip{%
+  \\let\\Hy@RestoreLastskip\\relax
+  \\ifvmode
+    \\ifdim\\lastskip=\\z@
+      \\let\\Hy@RestoreLastskip\\nobreak
+    \\else
+      \\begingroup
+        \\skip@=-\\lastskip
+        \\edef\\x{%
+          \\endgroup
+          \\def\\noexpand\\Hy@RestoreLastskip{%
+            \\noexpand\\ifvmode
+              \\noexpand\\nobreak
+              \\vskip\\the\\skip@
+              \\vskip\\the\\lastskip\\relax
+            \\noexpand\\fi
+          }%
+        }%
+      \\x
+    \\fi
+  \\else
+    \\ifhmode
+      \\ifdim\\lastskip=\\z@
+        \\let\\Hy@RestoreLastskip\\nobreak
+      \\else
+        \\begingroup
+          \\skip@=-\\lastskip
+          \\edef\\x{%
+            \\endgroup
+            \\def\\noexpand\\Hy@RestoreLastskip{%
+              \\noexpand\\ifhmode
+                \\noexpand\\nobreak
+                \\hskip\\the\\skip@
+                \\hskip\\the\\lastskip\\relax
+              \\noexpand\\fi
+            }%
+          }%
+        \\x
+      \\fi
+    \\fi
+  \\fi
+}%
+\\SetupKeyvalOptions{%
+  family=Hyp,%
+  prefix=HyOpt%
+}
+\\def\\IfHyperBooleanExists#1{%
+  \\ltx@ifundefined{Hy@#1false}\\ltx@secondoftwo{%
+    \\ltx@ifundefined{KV@Hyp@#1@default}\\ltx@secondoftwo\\ltx@firstoftwo
+  }%
+}
+\\@namedef{KV@Hyp@stoppedearly@default}{}
+\\def\\IfHyperBoolean#1{%
+  \\IfHyperBooleanExists{#1}{%
+    \\csname ifHy@#1\\endcsname
+      \\expandafter\\ltx@firstoftwo
+    \\else
+      \\expandafter\\ltx@secondoftwo
+    \\fi
+  }\\ltx@secondoftwo
+}
+\\def\\Hy@boolkey#1#2{%
+  \\edef\\Hy@tempa{#2}%
+  \\lowercase\\expandafter{%
+    \\expandafter\\def\\expandafter\\Hy@tempa\\expandafter{\\Hy@tempa}%
+  }%
+  \\ifx\\Hy@tempa\\@empty
+    \\let\\Hy@tempa\\Hy@true
+  \\fi
+  \\ifx\\Hy@tempa\\Hy@true
+  \\else
+    \\ifx\\Hy@tempa\\Hy@false
+    \\else
+      \\let\\Hy@tempa\\relax
+    \\fi
+  \\fi
+  \\ifx\\Hy@tempa\\relax
+    \\Hy@WarnOptionValue{#2}{#1}{\`true' or 'false'}%
+  \\else
+    \\Hy@Info{Option \`#1' set \`\\Hy@tempa'}%
+    \\csname Hy@#1\\Hy@tempa\\endcsname
+  \\fi
+}
+\\def\\Hy@WarnOptionValue#1#2#3{%
+  \\Hy@Warning{%
+    Unexpected value \`#1'\\MessageBreak
+    of option \`#2' instead of\\MessageBreak
+    #3%
+  }%
+}
+\\def\\Hy@DisableOption#1{%
+  \\ltx@ifundefined{KV@Hyp@#1@default}{%
+    \\define@key{Hyp}{#1}%
+  }{%
+    \\define@key{Hyp}{#1}[]%
+  }%
+  {\\Hy@WarnOptionDisabled{#1}}%
+}
+
+\\def\\Hy@WarnOptionDisabled#1{%
+  \\Hy@Warning{%
+    Option \`#1' has already been used,\\MessageBreak
+    setting the option has no effect%
+  }%
+}
+\\def\\Hy@CheckOptionValue#1#2#3{%
+  \\begingroup
+    \\edef\\x{#1}%
+    \\@onelevel@sanitize\\x
+    \\let\\y=y%
+    \\def\\do##1##2{%
+      \\def\\z{##1}%
+      \\@onelevel@sanitize\\z
+      \\ifx\\x\\z
+        \\let\\y=n%
+        \\let\\do\\@gobbletwo
+      \\fi
+    }%
+    #3%
+    \\ifx\\y y%
+      \\def\\do##1##2{%
+        * \`##1'%
+        \\ifx\\\\##2\\\\\\else\\space(##2)\\fi
+        \\MessageBreak
+      }%
+      \\Hy@Warning{%
+        Values of option \`#2':\\MessageBreak
+        #3%
+        * An empty value disables the option.\\MessageBreak
+        Unknown value \`\\x'%
+      }%
+    \\fi
+  \\endgroup
+}
+\\def\\Hy@DefNameKey#1{%
+  \\expandafter\\Hy@@DefNameKey\\csname @#1\\endcsname{#1}%
+}
+\\def\\Hy@@DefNameKey#1#2#3{%
+  \\define@key{Hyp}{#2}{%
+    \\edef#1{##1}%
+    \\ifx#1\\@empty
+    \\else
+      \\Hy@CheckOptionValue{##1}{#2}{#3}%
+    \\fi
+  }%
+  \\let#1\\@empty
+}
+\\def\\Hy@UseNameKey#1#2{%
+  \\ifx#2\\@empty
+  \\else
+    /#1/#2%
+  \\fi
+}
+\\define@key{Hyp}{implicit}[true]{%
+  \\Hy@boolkey{implicit}{#1}%
+}
+\\define@key{Hyp}{draft}[true]{%
+  \\Hy@boolkey{draft}{#1}%
+}
+\\define@key{Hyp}{final}[true]{%
+  \\Hy@boolkey{final}{#1}%
+}
+\\let\\KV@Hyp@nolinks\\KV@Hyp@draft
+\\def\\Hy@ObsoletePaperOption#1{%
+  \\Hy@WarningNoLine{%
+    Option \`#1' is no longer used%
+  }%
+  \\define@key{Hyp}{#1}[true]{}%
+}
+\\def\\Hy@temp#1{%
+  \\define@key{Hyp}{#1}[true]{%
+    \\Hy@ObsoletePaperOption{#1}%
+  }%
+}
+\\Hy@temp{a4paper}
+\\Hy@temp{a5paper}
+\\Hy@temp{b5paper}
+\\Hy@temp{letterpaper}
+\\Hy@temp{legalpaper}
+\\Hy@temp{executivepaper}
+\\define@key{Hyp}{setpagesize}[true]{%
+  \\Hy@boolkey{setpagesize}{#1}%
+}
+\\define@key{Hyp}{debug}[true]{%
+  \\Hy@boolkey{debug}{#1}%
+}
+\\define@key{Hyp}{linktocpage}[true]{%
+  \\Hy@boolkey{linktocpage}{#1}%
+  \\ifHy@linktocpage
+    \\let\\Hy@linktoc\\Hy@linktoc@page
+  \\else
+    \\let\\Hy@linktoc\\Hy@linktoc@section
+  \\fi
+}
+\\chardef\\Hy@linktoc@none=0 %
+\\chardef\\Hy@linktoc@section=1 %
+\\chardef\\Hy@linktoc@page=2 %
+\\chardef\\Hy@linktoc@all=3 %
+\\ifHy@linktocpage
+  \\let\\Hy@linktoc\\Hy@linktoc@page
+\\else
+  \\let\\Hy@linktoc\\Hy@linktoc@section
+\\fi
+\\define@key{Hyp}{linktoc}{%
+  \\@ifundefined{Hy@linktoc@#1}{%
+    \\Hy@Warning{%
+      Unexpected value \`#1' of\\MessageBreak
+      option \`linktoc' instead of \`none',\\MessageBreak
+      \`section', \`page' or \`all'%
+    }%
+  }{%
+    \\expandafter\\let\\expandafter\\Hy@linktoc
+    \\csname Hy@linktoc@#1\\endcsname
+  }%
+}
+\\define@key{Hyp}{extension}{\\def\\XR@ext{#1}}
+\\let\\XR@ext\\relax
+\\define@key{Hyp}{verbose}[true]{%
+  \\Hy@boolkey{verbose}{#1}%
+}
+\\define@key{Hyp}{typexml}[true]{%
+  \\Hy@boolkey{typexml}{#1}%
+}
+\\define@key{Hyp}{raiselinks}[true]{%
+  \\Hy@boolkey{raiselinks}{#1}%
+}
+\\def\\Hy@setbreaklinks#1{%
+  \\csname breaklinks#1\\endcsname
+}
+\\def\\Hy@breaklinks@unsupported{%
+  \\ifx\\Hy@setbreaklinks\\@gobble
+    \\ifHy@breaklinks
+      \\Hy@WarningNoLine{%
+        You have enabled option \`breaklinks'.\\MessageBreak
+        But driver \`\\Hy@driver.def' does not suppport this.\\MessageBreak
+        Expect trouble with the link areas of broken links%
+      }%
+    \\fi
+  \\fi
+}
+\\define@key{Hyp}{breaklinks}[true]{%
+  \\Hy@boolkey{breaklinks}{#1}%
+  \\let\\Hy@setbreaklinks\\@gobble
+}
+\\define@key{Hyp}{localanchorname}[true]{%
+  \\Hy@boolkey{localanchorname}{#1}%
+}
+\\define@key{Hyp}{pageanchor}[true]{%
+  \\Hy@boolkey{pageanchor}{#1}%
+}
+\\define@key{Hyp}{plainpages}[true]{%
+  \\Hy@boolkey{plainpages}{#1}%
+}
+\\define@key{Hyp}{naturalnames}[true]{%
+  \\Hy@boolkey{naturalnames}{#1}%
+}
+\\define@key{Hyp}{hypertexnames}[true]{%
+  \\Hy@boolkey{hypertexnames}{#1}%
+}
+\\define@key{Hyp}{nesting}[true]{%
+  \\Hy@boolkey{nesting}{#1}%
+}
+\\define@key{Hyp}{destlabel}[true]{%
+  \\Hy@boolkey{destlabel}{#1}%
+}
+\\define@key{Hyp}{unicode}[true]{%
+  \\Hy@boolkey{unicode}{#1}%
+  \\ifHy@unicode
+    \\def\\HyPsd@pdfencoding{unicode}%
+    \\HyPsd@LoadUnicode
+  \\else
+    \\def\\HyPsd@pdfencoding{pdfdoc}%
+  \\fi
+}
+\\Hy@AtBeginDocument{%
+  \\ifx\\HyPsd@LoadUnicode\\relax
+  \\else
+    \\def\\HyPsd@LoadUnicode{%
+      \\Hy@Error{%
+        Unicode support for bookmarks is not available.\\MessageBreak
+        Activate unicode support by using one of the options\\MessageBreak
+        \`unicode', \`pdfencoding=unicode', \`pdfencoding=auto'\\MessageBreak
+        in the preamble%
+      }\\@ehc
+      \\global\\let\\HyPsd@LoadUnicode\\relax
+      \\global\\Hy@unicodefalse
+      \\global\\let\\Hy@unicodetrue\\Hy@unicodefalse
+    }%
+  \\fi
+}
+\\define@key{Hyp}{pdfencoding}{%
+  \\edef\\HyPsd@temp{#1}%
+  \\ifx\\HyPsd@temp\\HyPsd@pdfencoding@pdfdoc
+    \\let\\HyPsd@pdfencoding\\HyPsd@temp
+    \\Hy@unicodefalse
+  \\else
+    \\ifcase\\ifx\\HyPsd@temp\\HyPsd@pdfencoding@unicode
+             \\z@
+           \\else
+             \\ifx\\HyPsd@temp\\HyPsd@pdfencoding@auto
+               \\z@
+             \\else
+               \\@ne
+             \\fi
+           \\fi
+      \\let\\HyPsd@pdfencoding\\HyPsd@temp
+      \\hypersetup{unicode}%
+      \\ifHy@unicode
+        \\def\\HyPsd@pdfencoding{#1}%
+        \\ifx\\HyPsd@pdfencoding\\HyPsd@pdfencoding@auto
+          \\HyPsd@LoadStringEnc
+        \\fi
+      \\else
+        \\Hy@Warning{Cannot switch to unicode bookmarks}%
+        \\let\\HyPsd@pdfencoding\\HyPsd@pdfencoding@pdfdoc
+      \\fi
+    \\else
+      \\@onelevel@sanitize\\HyPsd@temp
+      \\Hy@Warning{%
+        Values of option \`pdfencoding':\\MessageBreak
+        \`pdfdoc', \`unicode', \`auto'.\\MessageBreak
+        Ignoring unknown value \`\\HyPsd@temp'%
+      }%
+    \\fi
+  \\fi
+}
+\\def\\HyPsd@pdfencoding@auto{auto}
+\\def\\HyPsd@pdfencoding@pdfdoc{pdfdoc}
+\\def\\HyPsd@pdfencoding@unicode{unicode}
+\\let\\HyPsd@pdfencoding\\Hy@pdfencoding@pdfdoc
+\\def\\HyPsd@LoadStringEnc{%
+  \\RequirePackage{stringenc}[2009/12/15]%
+  \\let\\HyPsd@LoadStringEnc\\relax
+}
+\\Hy@AtBeginDocument{%
+  \\@ifpackageloaded{stringenc}{%
+    \\let\\HyPsd@LoadStringEnc\\relax
+  }{%
+    \\def\\HyPsd@LoadStringEnc{%
+      \\Hy@WarningNoLine{%
+        Missing package \`stringenc'. Use \`pdfencoding=auto'\\MessageBreak
+        in the preamble or load the package there%
+      }%
+    }%
+  }%
+}
+\\define@key{Hyp}{psdextra}[true]{%
+  \\Hy@boolkey{psdextra}{#1}%
+  \\HyPsd@LoadExtra
+}
+\\def\\hypersetup{\\kvsetkeys{Hyp}}
+\\newif\\ifHy@setpdfversion
+\\define@key{Hyp}{pdfversion}{%
+  \\@ifundefined{Hy@pdfversion@#1}{%
+    \\PackageWarning{hyperref}{%
+      Unsupported PDF version \`#1'.\\MessageBreak
+      Valid values: 1.2-1.7, 2.0%
+    }%
+  }{%
+    \\Hy@setpdfversiontrue
+    \\@nameuse{Hy@pdfversion@#1}%
+  }%
+}
+\\@namedef{Hy@pdfversion@1.2}{\\def\\Hy@pdf@majorversion{1}\\def\\Hy@pdf@minorversion{2}}%
+\\@namedef{Hy@pdfversion@1.3}{\\def\\Hy@pdf@majorversion{1}\\def\\Hy@pdf@minorversion{3}}%
+\\@namedef{Hy@pdfversion@1.4}{\\def\\Hy@pdf@majorversion{1}\\def\\Hy@pdf@minorversion{4}}%
+\\@namedef{Hy@pdfversion@1.5}{\\def\\Hy@pdf@majorversion{1}\\def\\Hy@pdf@minorversion{5}}%
+\\@namedef{Hy@pdfversion@1.6}{\\def\\Hy@pdf@majorversion{1}\\def\\Hy@pdf@minorversion{6}}%
+\\@namedef{Hy@pdfversion@1.7}{\\def\\Hy@pdf@majorversion{1}\\def\\Hy@pdf@minorversion{7}}%
+\\@namedef{Hy@pdfversion@2.0}{\\def\\Hy@pdf@majorversion{2}\\def\\Hy@pdf@minorversion{0}}%
+\\def\\Hy@pdf@majorversion{1}\\def\\Hy@pdf@minorversion{5}
+\\let\\Hy@pdfversion\\Hy@pdf@minorversion
+\\def\\Hy@pdf@majorminor@version{\\numexpr100*\\Hy@pdf@majorversion+\\Hy@pdf@minorversion\\relax}
+\\def\\Hy@pdfmajorminor@version{\\numexpr100*\\Hy@pdfmajorversion+\\Hy@pdfminorversion\\relax}
+\\@ifundefined{pdfminorversion}{}{%
+\\@ifundefined{pdfmajorversion}{%
+\\newcount\\pdfmajorversion
+\\pdfmajorversion=1
+}{}%
+}
+\\ifx\\pdfmajorversion\\@undefined\\else
+\\def\\Hy@pdfmajorversion{\\pdfmajorversion}
+\\fi
+\\newif\\ifHy@DviMode
+\\let\\Hy@DviErrMsg\\ltx@empty
+\\ifpdf
+  \\def\\Hy@DviErrMsg{pdfTeX or LuaTeX is running in PDF mode}%
+\\else
+  \\ifxetex
+    \\def\\Hy@DviErrMsg{XeTeX is running}%
+  \\else
+    \\ifvtex
+      \\ifnum\\OpMode=\\z@
+        \\Hy@DviModetrue
+      \\else
+        \\def\\Hy@DviErrMsg{VTeX is running, but not in DVI mode}%
+      \\fi
+    \\else
+      \\Hy@DviModetrue
+    \\fi
+  \\fi
+\\fi
+\\def\\HyOpt@CheckDvi#1{%
+  \\ifHy@DviMode
+    \\expandafter\\ltx@firstofone
+  \\else
+    \\Hy@Error{%
+      Wrong DVI mode driver option \`#1',\\MessageBreak
+      because \\Hy@DviErrMsg
+    }\\@ehc
+    \\expandafter\\ltx@gobble
+  \\fi
+}
+\\DeclareVoidOption{tex4ht}{%
+  \\Hy@texhttrue
+  \\kvsetkeys{Hyp}{colorlinks=true}%
+  \\def\\BeforeTeXIVht{\\RequirePackage{color}}%
+  \\def\\Hy@driver{htex4ht}%
+  \\def\\MaybeStopEarly{%
+    \\Hy@Message{Stopped early}%
+    \\Hy@AtBeginDocument{%
+      \\PDF@FinishDoc
+      \\gdef\\PDF@FinishDoc{}%
+    }%
+    \\endinput
+  }%
+}
+\\DeclareVoidOption{pdftex}{%
+  \\ifpdf
+    \\def\\Hy@driver{hpdftex}%
+    \\PassOptionsToPackage{pdftex}{color}%
+  \\else
+    \\Hy@Error{%
+      Wrong driver option \`pdftex',\\MessageBreak
+      because pdfTeX in PDF mode is not detected%
+    }\\@ehc
+  \\fi
+}
+\\DeclareVoidOption{luatex}{%
+  \\ifpdf
+    \\ifx\\pdfextension\\@undefined
+      \\def\\Hy@driver{hpdftex}%
+      \\PassOptionsToPackage{pdftex}{color}%
+    \\else
+      \\def\\Hy@driver{hluatex}%
+      \\PassOptionsToPackage{luatex}{color}%
+    \\fi
+  \\else
+    \\Hy@Error{%
+      Wrong driver option \`luatex',\\MessageBreak
+      because luaTeX in PDF mode is not detected%
+    }\\@ehc
+  \\fi
+}
+\\DeclareVoidOption{nativepdf}{%
+  \\HyOpt@CheckDvi{nativepdf}{%
+    \\def\\Hy@driver{hdvips}%
+    \\PassOptionsToPackage{dvips}{color}%
+  }%
+}
+\\DeclareVoidOption{dvipdfm}{%
+  \\HyOpt@CheckDvi{dvipdfm}{%
+    \\def\\Hy@driver{hdvipdfm}%
+  }%
+}
+\\DeclareVoidOption{dvipdfmx}{%
+  \\HyOpt@CheckDvi{dvipdfmx}{%
+    \\def\\Hy@driver{hdvipdfm}%
+    \\PassOptionsToPackage{dvipdfmx}{color}%
+  }%
+}
+\\define@key{Hyp}{dvipdfmx-outline-open}[true]{%
+  \\expandafter\\ifx\\csname if#1\\expandafter\\endcsname
+                  \\csname iftrue\\endcsname
+    \\chardef\\SpecialDvipdfmxOutlineOpen\\@ne
+  \\else
+    \\chardef\\SpecialDvipdfmxOutlineOpen\\z@
+  \\fi
+}
+\\DeclareVoidOption{xetex}{%
+  \\ifxetex
+    \\def\\Hy@driver{hxetex}%
+  \\else
+    \\Hy@Error{%
+      Wrong driver option \`xetex',\\MessageBreak
+      because XeTeX is not detected%
+    }\\@ehc
+  \\fi
+}
+\\DeclareVoidOption{pdfmark}{%
+  \\HyOpt@CheckDvi{pdfmark}{%
+    \\def\\Hy@driver{hdvips}%
+  }%
+}
+\\DeclareVoidOption{dvips}{%
+  \\HyOpt@CheckDvi{dvips}{%
+    \\def\\Hy@driver{hdvips}%
+    \\PassOptionsToPackage{dvips}{color}%
+  }%
+}
+\\DeclareVoidOption{hypertex}{%
+  \\HyOpt@CheckDvi{hypertex}{%
+    \\def\\Hy@driver{hypertex}%
+  }%
+}
+\\let\\Hy@MaybeStopNow\\relax
+\\DeclareVoidOption{vtex}{%
+  \\ifvtex
+    \\ifnum 0\\ifnum\\OpMode<1 1\\fi \\ifnum\\OpMode>3 1\\fi =0 %
+      \\def\\Hy@driver{hvtex}%
+    \\else
+      \\ifnum\\OpMode=10\\relax
+        \\def\\Hy@driver{hvtexhtm}%
+        \\def\\MaybeStopEarly{%
+           \\Hy@Message{Stopped early}%
+           \\Hy@AtBeginDocument{%
+             \\PDF@FinishDoc
+             \\gdef\\PDF@FinishDoc{}%
+           }%
+           \\endinput
+        }%
+      \\else
+        \\Hy@Error{%
+          Wrong driver option \`vtex',\\MessageBreak
+          because of wrong OpMode (\\the\\OpMode)%
+        }\\@ehc
+      \\fi
+    \\fi
+  \\else
+    \\Hy@Error{%
+      Wrong driver option \`vtex',\\MessageBreak
+      because VTeX is not running%
+    }\\@ehc
+  \\fi
+}
+\\DeclareVoidOption{vtexpdfmark}{%
+  \\ifvtex
+    \\ifnum 0\\ifnum\\OpMode<1 1\\fi \\ifnum\\OpMode>3 1\\fi =0 %
+      \\def\\Hy@driver{hvtexmrk}%
+    \\else
+      \\Hy@Error{%
+        Wrong driver option \`vtexpdfmark',\\MessageBreak
+        because of wrong OpMode (\\the\\OpMode)%
+      }\\@ehc
+    \\fi
+  \\else
+    \\Hy@Error{%
+      Wrong driver option \`vtexpdfmark,\\MessageBreak
+      because VTeX is not running%
+    }\\@ehc
+  \\fi
+}
+\\DeclareVoidOption{dviwindo}{%
+  \\HyOpt@CheckDvi{dviwindo}{%
+    \\def\\Hy@driver{hdviwind}%
+    \\kvsetkeys{Hyp}{colorlinks}%
+    \\PassOptionsToPackage{dviwindo}{color}%
+  }%
+}
+\\DeclareVoidOption{dvipsone}{%
+  \\HyOpt@CheckDvi{dvipsone}{%
+    \\def\\Hy@driver{hdvipson}%
+    \\PassOptionsToPackage{dvipsone}{color}%
+  }%
+}
+\\DeclareVoidOption{textures}{%
+  \\HyOpt@CheckDvi{textures}{%
+    \\def\\Hy@driver{htexture}%
+  }%
+}
+\\DeclareVoidOption{latex2html}{%
+  \\HyOpt@CheckDvi{latex2html}{%
+    \\Hy@AtBeginDocument{\\@@latextohtmlX}%
+  }%
+}
+\\DeclareVoidOption{ps2pdf}{%
+  \\HyOpt@CheckDvi{ps2pdf}{%
+    \\def\\Hy@driver{hdvips}%
+    \\PassOptionsToPackage{dvips}{color}%
+  }%
+}
+\\let\\HyOpt@DriverFallback\\ltx@empty
+\\define@key{Hyp}{driverfallback}{%
+  \\ifHy@DviMode
+    \\def\\HyOpt@DriverFallback{#1}%
+    \\Hy@Match\\HyOpt@DriverFallback{}{%
+      ^(|dvipdfm|dvipdfmx|dvips|dvipsone|dviwindo|hypertex|ps2pdf|%
+       latex2html|tex4ht)\$%
+    }{}{%
+      \\Hy@Warning{%
+        Invalid driver \`#1' for option\\MessageBreak
+        \`driverfallback'%
+      }%
+      \\let\\HyOpt@DriverFallback\\ltx@empty
+    }%
+  \\fi
+}
+\\let\\HyOpt@CustomDriver\\ltx@empty
+\\define@key{Hyp}{customdriver}{%
+  \\IfFileExists{#1.def}{%
+    \\def\\HyOpt@CustomDriver{#1}%
+  }{%
+    \\Hy@Warning{%
+      Missing driver file \`#1.def',\\MessageBreak
+      ignoring custom driver%
+    }%
+  }%
+}
+\\define@key{Hyp}{hyperfigures}[true]{%
+  \\Hy@boolkey{hyperfigures}{#1}%
+}
+\\define@key{Hyp}{hyperfootnotes}[true]{%
+  \\Hy@boolkey{hyperfootnotes}{#1}%
+}
+\\def\\back@none{none}
+\\def\\back@section{section}
+\\def\\back@page{page}
+\\def\\back@slide{slide}
+\\define@key{Hyp}{backref}[section]{%
+  \\lowercase{\\def\\Hy@tempa{#1}}%
+  \\ifx\\Hy@tempa\\@empty
+    \\let\\Hy@tempa\\back@section
+  \\fi
+  \\ifx\\Hy@tempa\\Hy@false
+    \\let\\Hy@tempa\\back@none
+  \\fi
+  \\ifx\\Hy@tempa\\back@slide
+    \\let\\Hy@tempa\\back@section
+  \\fi
+  \\ifx\\Hy@tempa\\back@page
+    \\PassOptionsToPackage{hyperpageref}{backref}%
+    \\Hy@backreftrue
+  \\else
+    \\ifx\\Hy@tempa\\back@section
+      \\PassOptionsToPackage{hyperref}{backref}%
+      \\Hy@backreftrue
+    \\else
+      \\ifx\\Hy@tempa\\back@none
+        \\Hy@backreffalse
+      \\else
+        \\Hy@WarnOptionValue{#1}{backref}{%
+          \`section', \`slide', \`page', \`none',\\MessageBreak
+          or \`false'}%
+      \\fi
+    \\fi
+  \\fi
+}
+\\define@key{Hyp}{pagebackref}[true]{%
+  \\edef\\Hy@tempa{#1}%
+  \\lowercase\\expandafter{%
+    \\expandafter\\def\\expandafter\\Hy@tempa\\expandafter{\\Hy@tempa}%
+  }%
+  \\ifx\\Hy@tempa\\@empty
+    \\let\\Hy@tempa\\Hy@true
+  \\fi
+  \\ifx\\Hy@tempa\\Hy@true
+    \\PassOptionsToPackage{hyperpageref}{backref}%
+    \\Hy@backreftrue
+  \\else
+    \\ifx\\Hy@tempa\\Hy@false
+      \\Hy@backreffalse
+    \\else
+      \\Hy@WarnOptionValue{#1}{pagebackref}{\`true' or \`false'}%
+    \\fi
+  \\fi
+}
+\\define@key{Hyp}{hyperindex}[true]{%
+  \\Hy@boolkey{hyperindex}{#1}%
+}
+\\define@key{Hyp}{encap}[\\|]{%
+  \\def\\HyInd@EncapChar{#1}%
+}
+\\def\\HyLang@afrikaans{%
+  \\def\\equationautorefname{Vergelyking}%
+  \\def\\footnoteautorefname{Voetnota}%
+  \\def\\itemautorefname{Item}%
+  \\def\\figureautorefname{Figuur}%
+  \\def\\tableautorefname{Tabel}%
+  \\def\\partautorefname{Deel}%
+  \\def\\appendixautorefname{Bylae}%
+  \\def\\chapterautorefname{Hoofstuk}%
+  \\def\\sectionautorefname{Afdeling}%
+  \\def\\subsectionautorefname{Subafdeling}%
+  \\def\\subsubsectionautorefname{Subsubafdeling}%
+  \\def\\paragraphautorefname{Paragraaf}%
+  \\def\\subparagraphautorefname{Subparagraaf}%
+  \\def\\FancyVerbLineautorefname{Lyn}%
+  \\def\\theoremautorefname{Teorema}%
+  \\def\\pageautorefname{Bladsy}%
+}
+\\def\\HyLang@english{%
+  \\def\\equationautorefname{Equation}%
+  \\def\\footnoteautorefname{footnote}%
+  \\def\\itemautorefname{item}%
+  \\def\\figureautorefname{Figure}%
+  \\def\\tableautorefname{Table}%
+  \\def\\partautorefname{Part}%
+  \\def\\appendixautorefname{Appendix}%
+  \\def\\chapterautorefname{chapter}%
+  \\def\\sectionautorefname{section}%
+  \\def\\subsectionautorefname{subsection}%
+  \\def\\subsubsectionautorefname{subsubsection}%
+  \\def\\paragraphautorefname{paragraph}%
+  \\def\\subparagraphautorefname{subparagraph}%
+  \\def\\FancyVerbLineautorefname{line}%
+  \\def\\theoremautorefname{Theorem}%
+  \\def\\pageautorefname{page}%
+}
+\\def\\HyLang@french{%
+  \\def\\equationautorefname{\\'Equation}%
+  \\def\\footnoteautorefname{note}%
+  \\def\\itemautorefname{item}%
+  \\def\\figureautorefname{Figure}%
+  \\def\\tableautorefname{Tableau}%
+  \\def\\partautorefname{Partie}%
+  \\def\\appendixautorefname{Appendice}%
+  \\def\\chapterautorefname{chapitre}%
+  \\def\\sectionautorefname{section}%
+  \\def\\subsectionautorefname{sous-section}%
+  \\def\\subsubsectionautorefname{sous-sous-section}%
+  \\def\\paragraphautorefname{paragraphe}%
+  \\def\\subparagraphautorefname{sous-paragraphe}%
+  \\def\\FancyVerbLineautorefname{ligne}%
+  \\def\\theoremautorefname{Th\\'eor\\\`eme}%
+  \\def\\pageautorefname{page}%
+}
+\\def\\HyLang@german{%
+  \\def\\equationautorefname{Gleichung}%
+  \\def\\footnoteautorefname{Fu\\ss note}%
+  \\def\\itemautorefname{Punkt}%
+  \\def\\figureautorefname{Abbildung}%
+  \\def\\tableautorefname{Tabelle}%
+  \\def\\partautorefname{Teil}%
+  \\def\\appendixautorefname{Anhang}%
+  \\def\\chapterautorefname{Kapitel}%
+  \\def\\sectionautorefname{Abschnitt}%
+  \\def\\subsectionautorefname{Unterabschnitt}%
+  \\def\\subsubsectionautorefname{Unterunterabschnitt}%
+  \\def\\paragraphautorefname{Absatz}%
+  \\def\\subparagraphautorefname{Unterabsatz}%
+  \\def\\FancyVerbLineautorefname{Zeile}%
+  \\def\\theoremautorefname{Theorem}%
+  \\def\\pageautorefname{Seite}%
+}
+\\def\\HyLang@italian{%
+  \\def\\equationautorefname{Equazione}%
+  \\def\\footnoteautorefname{nota}%
+  \\def\\itemautorefname{punto}%
+  \\def\\figureautorefname{Figura}%
+  \\def\\tableautorefname{Tabella}%
+  \\def\\partautorefname{Parte}%
+  \\def\\appendixautorefname{Appendice}%
+  \\def\\chapterautorefname{Capitolo}%
+  \\def\\sectionautorefname{sezione}%
+  \\def\\subsectionautorefname{sottosezione}%
+  \\def\\subsubsectionautorefname{sottosottosezione}%
+  \\def\\paragraphautorefname{paragrafo}%
+  \\def\\subparagraphautorefname{sottoparagrafo}%
+  \\def\\FancyVerbLineautorefname{linea}%
+  \\def\\theoremautorefname{Teorema}%
+  \\def\\pageautorefname{Pag.\\@}%
+}
+\\def\\HyLang@magyar{%
+  \\def\\equationautorefname{Egyenlet}%
+  \\def\\footnoteautorefname{l\\'abjegyzet}%
+  \\def\\itemautorefname{Elem}%
+  \\def\\figureautorefname{\\'Abra}%
+  \\def\\tableautorefname{T\\'abl\\'azat}%
+  \\def\\partautorefname{R\\'esz}%
+  \\def\\appendixautorefname{F\\"uggel\\'ek}%
+  \\def\\chapterautorefname{fejezet}%
+  \\def\\sectionautorefname{szakasz}%
+  \\def\\subsectionautorefname{alszakasz}%
+  \\def\\subsubsectionautorefname{alalszakasz}%
+  \\def\\paragraphautorefname{bekezd\\'es}%
+  \\def\\subparagraphautorefname{albekezd\\'es}%
+  \\def\\FancyVerbLineautorefname{sor}%
+  \\def\\theoremautorefname{T\\'etel}%
+  \\def\\pageautorefname{oldal}%
+}
+\\def\\HyLang@portuges{%
+  \\def\\equationautorefname{Equa\\c c\\~ao}%
+  \\def\\footnoteautorefname{Nota de rodap\\'e}%
+  \\def\\itemautorefname{Item}%
+  \\def\\figureautorefname{Figura}%
+  \\def\\tableautorefname{Tabela}%
+  \\def\\partautorefname{Parte}%
+  \\def\\appendixautorefname{Ap\\^endice}%
+  \\def\\chapterautorefname{Cap\\'itulo}%
+  \\def\\sectionautorefname{Se\\c c\\~ao}%
+  \\def\\subsectionautorefname{Subse\\c c\\~ao}%
+  \\def\\subsubsectionautorefname{Subsubse\\c c\\~ao}%
+  \\def\\paragraphautorefname{par\\'agrafo}%
+  \\def\\subparagraphautorefname{subpar\\'agrafo}%
+  \\def\\FancyVerbLineautorefname{linha}%
+  \\def\\theoremautorefname{Teorema}%
+  \\def\\pageautorefname{P\\'agina}%
+}
+\\def\\HyLang@russian{%
+  \\def\\equationautorefname{\\cyr\\cyrv\\cyrery\\cyrr.}%
+  \\def\\footnoteautorefname{%
+    \\cyr\\cyrp\\cyro\\cyrd\\cyrs\\cyrt\\cyrr.\\ \\cyrp\\cyrr\\cyri\\cyrm.%
+  }%
+  \\def\\itemautorefname{\\cyr\\cyrp.}%
+  \\def\\figureautorefname{\\cyr\\cyrr\\cyri\\cyrs.}%
+  \\def\\tableautorefname{\\cyr\\cyrt\\cyra\\cyrb\\cyrl.}%
+  \\def\\partautorefname{\\cyr\\cyrch.}%
+  \\def\\chapterautorefname{\\cyr\\cyrg\\cyrl.}%
+  \\def\\sectionautorefname{\\cyr\\cyrr\\cyra\\cyrz\\cyrd.}%
+  \\def\\appendixautorefname{\\cyr\\cyrp\\cyrr\\cyri\\cyrl.}%
+  \\def\\subsectionautorefname{\\cyr\\cyrr\\cyra\\cyrz\\cyrd.}%
+  \\def\\subsubsectionautorefname{\\cyr\\cyrr\\cyra\\cyrz\\cyrd.}%
+  \\def\\paragraphautorefname{\\cyr\\cyrp.}%
+  \\def\\subparagraphautorefname{\\cyr\\cyrp.}%
+  \\def\\FancyVerbLineautorefname{\\cyr\\cyrs\\cyrt\\cyrr.}%
+  \\def\\theoremautorefname{\\cyr\\cyrt\\cyre\\cyro\\cyrr.}%
+  \\def\\pageautorefname{\\cyr\\cyrs.}%
+}
+\\def\\HyLang@spanish{%
+  \\def\\equationautorefname{Ecuaci\\'on}%
+  \\def\\footnoteautorefname{Nota a pie de p\\'agina}%
+  \\def\\itemautorefname{Elemento}%
+  \\def\\figureautorefname{Figura}%
+  \\def\\tableautorefname{Tabla}%
+  \\def\\partautorefname{Parte}%
+  \\def\\appendixautorefname{Ap\\'endice}%
+  \\def\\chapterautorefname{Cap\\'itulo}%
+  \\def\\sectionautorefname{Secci\\'on}%
+  \\def\\subsectionautorefname{Subsecci\\'on}%
+  \\def\\subsubsectionautorefname{Subsubsecci\\'on}%
+  \\def\\paragraphautorefname{P\\'arrafo}%
+  \\def\\subparagraphautorefname{Subp\\'arrafo}%
+  \\def\\FancyVerbLineautorefname{L\\'inea}%
+  \\def\\theoremautorefname{Teorema}%
+  \\def\\pageautorefname{P\\'agina}%
+}
+\\def\\HyLang@catalan{%
+\\def\\equationautorefname{Equaci\\'o}%
+\\def\\footnoteautorefname{Nota al peu de p\\\`agina}%
+\\def\\itemautorefname{Element}%
+\\def\\figureautorefname{Figura}%
+\\def\\tableautorefname{Taula}%
+\\def\\partautorefname{Part}%
+\\def\\appendixautorefname{Ap\\\`endix}%
+\\def\\chapterautorefname{Cap\\'itol}%
+\\def\\sectionautorefname{Secci\\'o}%
+\\def\\subsectionautorefname{Subsecci\\'o}%
+\\def\\subsubsectionautorefname{Subsubsecci\\'o}%
+\\def\\paragraphautorefname{Par\\\`agraf}%
+\\def\\subparagraphautorefname{Subpar\\\`agraf}%
+\\def\\FancyVerbLineautorefname{L\\'inia}%
+\\def\\theoremautorefname{Teorema}%
+\\def\\pageautorefname{P\\\`agina}%
+}
+\\def\\HyLang@vietnamese{%
+  \\def\\equationautorefname{Ph\\uhorn{}\\ohorn{}ng tr\\\`inh}%
+  \\def\\footnoteautorefname{Ch\\'u th\\'ich}%
+  \\def\\itemautorefname{m\\d{u}c}%
+  \\def\\figureautorefname{H\\\`inh}%
+  \\def\\tableautorefname{B\\h{a}ng}%
+  \\def\\partautorefname{Ph\\\`\\acircumflex{}n}%
+  \\def\\appendixautorefname{Ph\\d{u} l\\d{u}c}%
+  \\def\\chapterautorefname{ch\\uhorn{}\\ohorn{}ng}%
+  \\def\\sectionautorefname{m\\d{u}c}%
+  \\def\\subsectionautorefname{m\\d{u}c}%
+  \\def\\subsubsectionautorefname{m\\d{u}c}%
+  \\def\\paragraphautorefname{\\dj{}o\\d{a}n}%
+  \\def\\subparagraphautorefname{\\dj{}o\\d{a}n}%
+  \\def\\FancyVerbLineautorefname{d\\\`ong}%
+  \\def\\theoremautorefname{\\DJ{}\\d{i}nh l\\'y}%
+  \\def\\pageautorefname{Trang}%
+}
+\\def\\HyLang@greek{%
+    \\def\\equationautorefname{\\textEpsilon\\textxi\\acctonos\\textiota\\textsigma\\textomega\\textsigma\\texteta}%
+    \\def\\footnoteautorefname{\\textupsilon\\textpi\\textomicron\\textsigma\\texteta\\textmu\\textepsilon\\acctonos\\textiota\\textomega\\textsigma\\texteta}%
+    \\def\\itemautorefname{\\textalpha\\textnu\\texttau\\textiota\\textkappa\\textepsilon\\acctonos\\textiota\\textmu\\textepsilon\\textnu\\textomicron}%
+    \\def\\figureautorefname{\\textSigma\\textchi\\acctonos\\texteta\\textmu\\textalpha}%
+    \\def\\tableautorefname{\\textPi\\acctonos\\textiota\\textnu\\textalpha\\textkappa\\textalpha}%
+    \\def\\partautorefname{\\textMu\\acctonos\\textepsilon\\textrho\\textomicron\\textvarsigma}%
+    \\def\\appendixautorefname{\\textPi\\textalpha\\textrho\\acctonos\\textalpha\\textrho\\texttau\\texteta\\textmu\\textalpha}%
+    \\def\\chapterautorefname{\\textkappa\\textepsilon\\textphi\\acctonos\\textalpha\\textlambda\\textalpha\\textiota\\textomicron}%
+    \\def\\sectionautorefname{\\textepsilon\\textnu\\acctonos\\textomicron\\texttau\\texteta\\texttau\\textalpha}%
+    \\def\\subsectionautorefname{\\textupsilon\\textpi\\textomicron\\textepsilon\\textnu\\acctonos\\textomicron\\texttau\\texteta\\texttau\\textalpha}%
+    \\def\\subsubsectionautorefname{\\textupsilon\\textpi\\textomicron-\\textupsilon\\textpi\\textomicron\\textepsilon\\textnu\\acctonos\\textomicron\\texttau\\texteta\\texttau\\textalpha}%
+    \\def\\paragraphautorefname{\\textpi\\textalpha\\textrho\\acctonos\\textalpha\\textgamma\\textrho\\textalpha\\textphi\\textomicron\\textvarsigma}%
+    \\def\\subparagraphautorefname{\\textupsilon\\textpi\\textomicron\\textpi\\textalpha\\textrho\\acctonos\\textalpha\\textgamma\\textrho\\textalpha\\textphi\\textomicron\\textvarsigma}%
+    \\def\\FancyVerbLineautorefname{\\textgamma\\textrho\\textalpha\\textmu\\textmu\\acctonos\\texteta}%
+    \\def\\theoremautorefname{\\textTheta\\textepsilon\\acctonos\\textomega\\textrho\\texteta\\textmu\\textalpha}%
+    \\def\\pageautorefname{\\textsigma\\textepsilon\\textlambda\\acctonos\\textiota\\textdelta\\textalpha}%
+}
+\\def\\HyLang@dutch{%
+    \\def\\equationautorefname{Vergelijking}%
+    \\def\\footnoteautorefname{voetnoot}%
+    \\def\\itemautorefname{punt}%
+    \\def\\figureautorefname{Figuur}%
+    \\def\\tableautorefname{Tabel}%
+    \\def\\partautorefname{Deel}%
+    \\def\\appendixautorefname{Bijlage}%
+    \\def\\chapterautorefname{hoofdstuk}%
+    \\def\\sectionautorefname{paragraaf}%
+    \\def\\subsectionautorefname{deelparagraaf}%
+    \\def\\subsubsectionautorefname{deel-deelparagraaf}%
+    \\def\\paragraphautorefname{alinea}%
+    \\def\\subparagraphautorefname{deelalinea}%
+    \\def\\FancyVerbLineautorefname{regel}%
+    \\def\\theoremautorefname{Stelling}%
+    \\def\\pageautorefname{pagina}%
+}
+\\def\\HyLang@addto#1#2{%
+  #2%
+  \\@temptokena{#2}%
+  \\ifx#1\\relax
+    \\let#1\\@empty
+  \\fi
+  \\ifx#1\\@undefined
+    \\edef#1{\\the\\@temptokena}%
+  \\else
+    \\toks@\\expandafter{#1}%
+    \\edef#1{\\the\\toks@\\the\\@temptokena}%
+  \\fi
+  \\@temptokena{}\\toks@\\@temptokena
+}
+\\def\\HyLang@DeclareLang#1#2#3{%
+  \\@ifpackagewith{babel}{#1}{%
+    \\expandafter\\HyLang@addto
+        \\csname extras#1\\expandafter\\endcsname
+        \\csname HyLang@#2\\endcsname
+    \\begingroup
+      \\edef\\x{\\endgroup
+        #3%
+      }%
+    \\x
+    \\@namedef{HyLang@#1@done}{}%
+  }{}%
+  \\begingroup
+    \\edef\\x##1##2{%
+      \\noexpand\\ifx##2\\relax
+        \\errmessage{No definitions for language #2' found!}%
+      \\noexpand\\fi
+      \\endgroup
+      \\noexpand\\define@key{Hyp}{#1}[]{%
+        \\noexpand\\@ifundefined{HyLang@#1@done}{%
+          \\noexpand\\HyLang@addto{\\noexpand##1}{\\noexpand##2}%
+          #3%
+          \\noexpand\\@namedef{HyLang@#1@done}{}%
+        }{}%
+      }%
+    }%
+  \\expandafter\\x\\csname extras#1\\expandafter\\endcsname
+                \\csname HyLang@#2\\endcsname
+}
+\\HyLang@DeclareLang{english}{english}{}
+\\HyLang@DeclareLang{UKenglish}{english}{}
+\\HyLang@DeclareLang{british}{english}{}
+\\HyLang@DeclareLang{USenglish}{english}{}
+\\HyLang@DeclareLang{american}{english}{}
+\\HyLang@DeclareLang{german}{german}{}
+\\HyLang@DeclareLang{austrian}{german}{}
+\\HyLang@DeclareLang{ngerman}{german}{}
+\\HyLang@DeclareLang{naustrian}{german}{}
+\\HyLang@DeclareLang{russian}{russian}{\\noexpand\\hypersetup{unicode}}
+\\HyLang@DeclareLang{brazil}{portuges}{}
+\\HyLang@DeclareLang{brazilian}{portuges}{}
+\\HyLang@DeclareLang{portuguese}{portuges}{}
+\\HyLang@DeclareLang{spanish}{spanish}{}
+\\HyLang@DeclareLang{catalan}{catalan}{}
+\\HyLang@DeclareLang{afrikaans}{afrikaans}{}
+\\HyLang@DeclareLang{french}{french}{}
+\\HyLang@DeclareLang{frenchb}{french}{}
+\\HyLang@DeclareLang{francais}{french}{}
+\\HyLang@DeclareLang{acadian}{french}{}
+\\HyLang@DeclareLang{canadien}{french}{}
+\\HyLang@DeclareLang{italian}{italian}{}
+\\HyLang@DeclareLang{magyar}{magyar}{}
+\\HyLang@DeclareLang{hungarian}{magyar}{}
+\\HyLang@DeclareLang{greek}{greek}{}
+\\HyLang@DeclareLang{dutch}{dutch}{}
+\\DeclareVoidOption{vietnamese}{%
+  \\HyLang@addto\\extrasvietnamese\\HyLang@vietnamese
+  \\Hy@AtEndOfPackage{%
+    \\@ifundefined{T@PU}{}{%
+      \\input{puvnenc.def}%
+    }%
+  }%
+}
+\\DeclareVoidOption{vietnam}{%
+  \\HyLang@addto\\extrasvietnam\\HyLang@vietnamese
+  \\Hy@AtEndOfPackage{%
+    \\@ifundefined{T@PU}{}{%
+      \\input{puvnenc.def}%
+    }%
+  }%
+}
+\\DeclareVoidOption{arabic}{%
+  \\Hy@AtEndOfPackage{%
+    \\@ifundefined{T@PU}{}{%
+      \\input{puarenc.def}%
+    }%
+  }%
+}
+\\define@key{Hyp}{colorlinks}[true]{%
+  \\Hy@boolkey{colorlinks}{#1}%
+}
+\\DeclareVoidOption{hidelinks}{%
+  \\Hy@colorlinksfalse
+  \\Hy@ocgcolorlinksfalse
+  \\Hy@frenchlinksfalse
+  \\def\\Hy@colorlink##1{\\begingroup}%
+  \\def\\Hy@endcolorlink{\\endgroup}%
+  \\def\\@pdfborder{0 0 0}%
+  \\let\\@pdfborderstyle\\ltx@empty
+}
+\\define@key{Hyp}{ocgcolorlinks}[true]{%
+  \\Hy@boolkey{ocgcolorlinks}{#1}%
+}
+\\Hy@AtBeginDocument{%
+  \\begingroup
+    \\@ifundefined{OBJ@OCG@view}{%
+      \\ifHy@ocgcolorlinks
+        \\Hy@Warning{%
+          Driver does not support \`ocgcolorlinks',\\MessageBreak
+          using \`colorlinks' instead%
+        }%
+      \\fi
+    }{}%
+  \\endgroup
+}
+\\define@key{Hyp}{frenchlinks}[true]{%
+  \\Hy@boolkey{frenchlinks}{#1}%
+}
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname chapter\\endcsname\\relax
+  \\def\\toclevel@part{0}%
+\\else
+  \\def\\toclevel@part{-1}%
+\\fi
+\\def\\toclevel@chapter{0}
+\\def\\toclevel@section{1}
+\\def\\toclevel@subsection{2}
+\\def\\toclevel@subsubsection{3}
+\\def\\toclevel@paragraph{4}
+\\def\\toclevel@subparagraph{5}
+\\def\\toclevel@figure{0}
+\\def\\toclevel@table{0}
+\\@ifpackageloaded{listings}{%
+  \\providecommand*\\theHlstlisting{\\thelstlisting}%
+  \\providecommand*\\toclevel@lstlisting{0}%
+}{}
+\\@ifpackageloaded{listing}{%
+  \\providecommand*\\theHlisting{\\thelisting}%
+  \\providecommand*\\toclevel@listing{0}%
+}{}
+\\define@key{Hyp}{bookmarks}[true]{%
+  \\Hy@boolkey{bookmarks}{#1}%
+}
+\\define@key{Hyp}{bookmarksopen}[true]{%
+  \\Hy@boolkey{bookmarksopen}{#1}%
+}
+\\let\\Hy@bookmarksdepth\\c@tocdepth
+\\define@key{Hyp}{bookmarksdepth}[]{%
+  \\begingroup
+    \\edef\\x{#1}%
+    \\ifx\\x\\empty
+      \\global\\let\\Hy@bookmarksdepth\\c@tocdepth
+    \\else
+      \\@ifundefined{toclevel@\\x}{%
+        \\@onelevel@sanitize\\x
+        \\edef\\y{\\expandafter\\@car\\x\\@nil}%
+        \\ifcase 0\\expandafter\\ifx\\y-1\\fi
+                 \\expandafter\\ifnum\\expandafter\`\\y>47 %
+                   \\expandafter\\ifnum\\expandafter\`\\y<58 1\\fi\\fi\\relax
+          \\Hy@Warning{Unknown document division name (\\x)}%
+        \\else
+          \\setbox\\z@=\\hbox{%
+            \\count@=\\x
+            \\xdef\\Hy@bookmarksdepth{\\the\\count@}%
+          }%
+        \\fi
+      }{%
+        \\setbox\\z@=\\hbox{%
+          \\count@=\\csname toclevel@\\x\\endcsname
+          \\xdef\\Hy@bookmarksdepth{\\the\\count@}%
+        }%
+      }%
+    \\fi
+  \\endgroup
+}
+\\define@key{Hyp}{bookmarksopenlevel}{%
+  \\def\\@bookmarksopenlevel{#1}%
+}
+\\def\\@bookmarksopenlevel{\\maxdimen}
+\\define@key{Hyp}{bookmarkstype}{%
+  \\def\\Hy@bookmarkstype{#1}%
+}
+\\def\\Hy@bookmarkstype{toc}
+\\define@key{Hyp}{bookmarksnumbered}[true]{%
+  \\Hy@boolkey{bookmarksnumbered}{#1}%
+}
+\\define@key{Hyp}{CJKbookmarks}[true]{%
+  \\Hy@boolkey{CJKbookmarks}{#1}%
+}
+\\def\\Hy@temp#1{%
+  \\expandafter\\Hy@@temp\\csname @#1color\\endcsname{#1}%
+}
+\\def\\Hy@@temp#1#2#3{%
+  \\define@key{Hyp}{#2color}{%
+    \\HyColor@HyperrefColor{##1}#1%
+  }%
+  \\def#1{#3}%
+}
+\\Hy@temp{link}{red}
+\\Hy@temp{anchor}{black}
+\\Hy@temp{cite}{green}
+\\Hy@temp{file}{cyan}
+\\Hy@temp{url}{magenta}
+\\Hy@temp{menu}{red}
+\\Hy@temp{run}{\\@filecolor}
+\\define@key{Hyp}{pagecolor}{%
+  \\Hy@WarningPageColor
+}
+\\def\\Hy@WarningPageColor{%
+  \\Hy@WarningNoLine{Option \`pagecolor' is not available anymore}%
+  \\global\\let\\Hy@WarningPageColor\\relax
+}
+\\define@key{Hyp}{allcolors}{%
+  \\HyColor@HyperrefColor{#1}\\@linkcolor
+  \\HyColor@HyperrefColor{#1}\\@anchorcolor
+  \\HyColor@HyperrefColor{#1}\\@citecolor
+  \\HyColor@HyperrefColor{#1}\\@filecolor
+  \\HyColor@HyperrefColor{#1}\\@urlcolor
+  \\HyColor@HyperrefColor{#1}\\@menucolor
+  \\HyColor@HyperrefColor{#1}\\@runcolor
+}
+\\def\\hyperbaseurl#1{\\def\\@baseurl{#1}}
+\\define@key{Hyp}{baseurl}{\\hyperbaseurl{#1}}
+\\let\\@baseurl\\@empty
+\\def\\hyperlinkfileprefix#1{\\def\\Hy@linkfileprefix{#1}}
+\\define@key{Hyp}{linkfileprefix}{\\hyperlinkfileprefix{#1}}
+\\hyperlinkfileprefix{file:}
+\\let\\@pdfpagetransition\\relax
+\\define@key{Hyp}{pdfpagetransition}{%
+  \\def\\@pdfpagetransition{#1}%
+}
+\\let\\@pdfpageduration\\relax
+\\define@key{Hyp}{pdfpageduration}{%
+  \\def\\@pdfpageduration{#1}%
+  \\Hy@Match\\@pdfpageduration{}{%
+    ^(|[0-9]+\\.?[0-9]*|[0-9]*\\.?[0-9]+)\$%
+  }{}{%
+    \\Hy@Warning{%
+      Invalid value \`\\@pdfpageduration'\\MessageBreak
+      of option \`pdfpageduration'\\MessageBreak
+      is replaced by an empty value%
+    }%
+    \\let\\@pdfpageduration\\ltx@empty
+  }%
+}
+\\newif\\ifHy@useHidKey
+\\Hy@useHidKeyfalse
+\\define@key{Hyp}{pdfpagehidden}[true]{%
+  \\Hy@boolkey{pdfpagehidden}{#1}%
+  \\ifHy@pdfpagehidden
+    \\global\\Hy@useHidKeytrue
+  \\fi
+}
+\\def\\Hy@ColorList{cite,file,link,menu,run,url}
+\\@for\\Hy@temp:=\\Hy@ColorList\\do{%
+  \\edef\\Hy@temp{%
+    \\noexpand\\define@key{Hyp}{\\Hy@temp bordercolor}{%
+      \\noexpand\\HyColor@HyperrefBorderColor
+          {##1}%
+          \\expandafter\\noexpand\\csname @\\Hy@temp bordercolor\\endcsname
+          {hyperref}%
+          {\\Hy@temp bordercolor}%
+    }%
+  }%
+  \\Hy@temp
+}
+\\define@key{Hyp}{pagebordercolor}{%
+  \\Hy@WarningPageBorderColor
+}
+\\def\\Hy@WarningPageBorderColor{%
+  \\Hy@WarningNoLine{Option \`pagebordercolor' is not available anymore}%
+  \\global\\let\\Hy@WarningPageBorderColor\\relax
+}
+\\define@key{Hyp}{allbordercolors}{%
+  \\def\\Hy@temp##1##2{%
+    \\HyColor@HyperrefBorderColor{#1}##1{hyperref}{##2bordercolor}%
+  }%
+  \\Hy@temp\\@citebordercolor{cite}%
+  \\Hy@temp\\@filebordercolor{file}%
+  \\Hy@temp\\@linkbordercolor{link}%
+  \\Hy@temp\\@menubordercolor{menu}%
+  \\Hy@temp\\@runbordercolor{run}%
+  \\Hy@temp\\@urlbordercolor{url}%
+}
+\\define@key{Hyp}{pdfhighlight}{\\def\\@pdfhighlight{#1}}
+\\Hy@DefNameKey{pdfhighlight}{%
+  \\do{/I}{Invert}%
+  \\do{/N}{None}%
+  \\do{/O}{Outline}%
+  \\do{/P}{Push}%
+}
+\\def\\Hy@setpdfhighlight{%
+  \\ifx\\@pdfhighlight\\@empty
+  \\else
+    /H\\@pdfhighlight
+  \\fi
+}
+\\define@key{Hyp}{pdfborder}{%
+  \\let\\Hy@temp\\@pdfborder
+  \\def\\@pdfborder{#1}%
+  \\Hy@Match\\@pdfborder{}{%
+    ^\\HyPat@NonNegativeReal/ %
+     \\HyPat@NonNegativeReal/ %
+     \\HyPat@NonNegativeReal/%
+     ( ?\\[\\HyPat@NonNegativeReal/( \\HyPat@NonNegativeReal/)*])?\$%
+  }{}{%
+    \\Hy@Warning{%
+      Invalid value \`\\@pdfborder'\\MessageBreak
+      for option \`pdfborder'.\\MessageBreak
+      Option setting is ignored%
+    }%
+    \\let\\@pdfborder\\Hy@temp
+  }%
+}
+\\define@key{Hyp}{pdfborderstyle}{%
+  \\let\\Hy@temp\\@pdfborderstyle
+  \\def\\@pdfborderstyle{#1}%
+  \\Hy@Match\\@pdfborderstyle{}{%
+    ^%
+    ( */Type */Border%
+    | */W +\\HyPat@NonNegativeReal/%
+    | */S */[SDBIU]%
+    | */D *\\[ *(\\HyPat@NonNegativeReal/( \\HyPat@NonNegativeReal/)?)?]%
+    )* *\$%
+  }{}{%
+    \\Hy@Warning{%
+      Invalid value \`\\@pdfborderstyle'\\MessageBreak
+      for option \`pdfborderstyle'.\\MessageBreak
+      Option setting is ignored%
+    }%
+    \\let\\@pdfborderstyle\\Hy@temp
+  }%
+}
+\\def\\Hy@setpdfborder{%
+  \\ifx\\@pdfborder\\@empty
+  \\else
+    /Border[\\@pdfborder]%
+  \\fi
+  \\ifx\\@pdfborderstyle\\@empty
+  \\else
+    /BS<<\\@pdfborderstyle>>%
+  \\fi
+}
+\\Hy@DefNameKey{pdfpagemode}{%
+  \\do{UseNone}{}%
+  \\do{UseOutlines}{}%
+  \\do{UseThumbs}{}%
+  \\do{FullScreen}{}%
+  \\do{UseOC}{PDF 1.5}%
+  \\do{UseAttachments}{PDF 1.6}%
+}
+\\Hy@DefNameKey{pdfnonfullscreenpagemode}{%
+  \\do{UseNone}{}%
+  \\do{UseOutlines}{}%
+  \\do{UseThumbs}{}%
+  \\do{FullScreen}{}%
+  \\do{UseOC}{PDF 1.5}%
+  \\do{UseAttachments}{PDF 1.6}%
+}
+\\Hy@DefNameKey{pdfdirection}{%
+  \\do{L2R}{Left to right}%
+  \\do{R2L}{Right to left}%
+}
+\\Hy@DefNameKey{pdfviewarea}{%
+  \\do{MediaBox}{}%
+  \\do{CropBox}{}%
+  \\do{BleedBox}{}%
+  \\do{TrimBox}{}%
+  \\do{ArtBox}{}%
+}
+\\Hy@DefNameKey{pdfviewclip}{%
+  \\do{MediaBox}{}%
+  \\do{CropBox}{}%
+  \\do{BleedBox}{}%
+  \\do{TrimBox}{}%
+  \\do{ArtBox}{}%
+}
+\\Hy@DefNameKey{pdfprintarea}{%
+  \\do{MediaBox}{}%
+  \\do{CropBox}{}%
+  \\do{BleedBox}{}%
+  \\do{TrimBox}{}%
+  \\do{ArtBox}{}%
+}
+\\Hy@DefNameKey{pdfprintclip}{%
+  \\do{MediaBox}{}%
+  \\do{CropBox}{}%
+  \\do{BleedBox}{}%
+  \\do{TrimBox}{}%
+  \\do{ArtBox}{}%
+}
+\\Hy@DefNameKey{pdfprintscaling}{%
+  \\do{AppDefault}{}%
+  \\do{None}{}%
+}
+\\Hy@DefNameKey{pdfduplex}{%
+  \\do{Simplex}{}%
+  \\do{DuplexFlipShortEdge}{}%
+  \\do{DuplexFlipLongEdge}{}%
+}
+\\Hy@DefNameKey{pdfpicktraybypdfsize}{%
+  \\do{true}{}%
+  \\do{false}{}%
+}
+\\define@key{Hyp}{pdfprintpagerange}{%
+  \\def\\@pdfprintpagerange{#1}%
+}
+\\Hy@DefNameKey{pdfnumcopies}{%
+  \\do{2}{two copies}%
+  \\do{3}{three copies}%
+  \\do{4}{four copies}%
+  \\do{5}{five copies}%
+}
+\\define@key{Hyp}{pdfusetitle}[true]{%
+  \\Hy@boolkey{pdfusetitle}{#1}%
+}
+\\def\\HyXeTeX@CheckUnicode{%
+  \\ifxetex
+    \\ifHy@unicode
+    \\else
+      \\Hy@WarningNoLine{%
+        XeTeX driver only supports unicode.\\MessageBreak
+        Enabling option \`unicode'%
+      }%
+      \\kvsetkeys{Hyp}{unicode}%
+    \\fi
+  \\else
+    \\let\\HyXeTeX@CheckUnicode\\relax
+  \\fi
+}
+\\def\\HyPsd@PrerenderUnicode#1{%
+  \\begingroup
+    \\expandafter\\ifx\\csname PrerenderUnicode\\endcsname\\relax
+    \\else
+      \\sbox0{%
+        \\let\\GenericInfo\\@gobbletwo
+        \\let\\GenericWarning\\@gobbletwo
+        \\let\\GenericError\\@gobblefour
+        \\PrerenderUnicode{#1}%
+       }%
+    \\fi
+  \\endgroup
+}
+\\define@key{Hyp}{pdftitle}{%
+  \\HyXeTeX@CheckUnicode
+  \\HyPsd@XeTeXBigCharstrue
+  \\HyPsd@PrerenderUnicode{#1}%
+  \\pdfstringdef\\@pdftitle{#1}%
+}
+\\define@key{Hyp}{pdfauthor}{%
+  \\HyXeTeX@CheckUnicode
+  \\HyPsd@XeTeXBigCharstrue
+  \\HyPsd@PrerenderUnicode{#1}%
+  \\pdfstringdef\\@pdfauthor{#1}%
+}
+\\define@key{Hyp}{pdfproducer}{%
+  \\HyXeTeX@CheckUnicode
+  \\HyPsd@XeTeXBigCharstrue
+  \\HyPsd@PrerenderUnicode{#1}%
+  \\pdfstringdef\\@pdfproducer{#1}%
+}
+\\define@key{Hyp}{pdfcreator}{%
+  \\HyXeTeX@CheckUnicode
+  \\HyPsd@XeTeXBigCharstrue
+  \\HyPsd@PrerenderUnicode{#1}%
+  \\pdfstringdef\\@pdfcreator{#1}%
+}
+\\define@key{Hyp}{addtopdfcreator}{%
+ \\HyXeTeX@CheckUnicode
+ \\HyPsd@XeTeXBigCharstrue
+ \\HyPsd@PrerenderUnicode{#1}%
+ \\pdfstringdef\\@pdfcreator{\\@pdfcreator, #1}%
+}
+\\define@key{Hyp}{pdfcreationdate}{%
+  \\begingroup
+    \\Hy@unicodefalse
+    \\pdfstringdef\\@pdfcreationdate{#1}%
+  \\endgroup
+}
+\\define@key{Hyp}{pdfmoddate}{%
+  \\begingroup
+    \\Hy@unicodefalse
+    \\pdfstringdef\\@pdfmoddate{#1}%
+  \\endgroup
+}
+\\define@key{Hyp}{pdfsubject}{%
+  \\HyXeTeX@CheckUnicode
+  \\HyPsd@XeTeXBigCharstrue
+  \\HyPsd@PrerenderUnicode{#1}%
+  \\pdfstringdef\\@pdfsubject{#1}%
+}
+\\define@key{Hyp}{pdfkeywords}{%
+  \\HyXeTeX@CheckUnicode
+  \\HyPsd@XeTeXBigCharstrue
+  \\HyPsd@PrerenderUnicode{#1}%
+  \\pdfstringdef\\@pdfkeywords{#1}%
+}
+\\define@key{Hyp}{pdftrapped}{%
+  \\lowercase{\\edef\\Hy@temp{#1}}%
+  \\ifx\\Hy@temp\\HyInfo@trapped@true
+    \\def\\@pdftrapped{True}%
+  \\else
+    \\ifx\\Hy@temp\\HyInfo@trapped@false
+      \\def\\@pdftrapped{False}%
+    \\else
+      \\ifx\\Hy@temp\\HyInfo@trapped@unknown
+        \\def\\@pdftrapped{Unknown}%
+      \\else
+        \\ifx\\Hy@temp\\@empty
+        \\else
+          \\Hy@Warning{%
+            Unsupported value \`#1'\\MessageBreak
+            for option \`pdftrapped'%
+          }%
+        \\fi
+        \\def\\@pdftrapped{}%
+      \\fi
+    \\fi
+  \\fi
+}
+\\def\\HyInfo@trapped@true{true}
+\\def\\HyInfo@trapped@false{false}
+\\def\\HyInfo@trapped@unknown{unknown}
+\\def\\HyInfo@TrappedUnsupported{%
+  \\ifx\\@pdftrapped\\@empty
+  \\else
+    \\Hy@WarningNoLine{\`pdftrapped' is not supported by this driver}%
+    \\gdef\\HyInfo@TrappedUnsupported{}%
+  \\fi
+}
+\\define@key{Hyp}{pdfinfo}{%
+  \\kvsetkeys{pdfinfo}{#1}%
+}
+\\def\\Hy@temp#1{%
+  \\lowercase{\\Hy@temp@A{#1}}{#1}%
+}
+\\def\\Hy@temp@A#1#2{%
+  \\define@key{pdfinfo}{#2}{%
+    \\hypersetup{pdf#1={##1}}%
+  }%
+}
+\\Hy@temp{Title}
+\\Hy@temp{Author}
+\\Hy@temp{Keywords}
+\\Hy@temp{Subject}
+\\Hy@temp{Creator}
+\\Hy@temp{Producer}
+\\Hy@temp{CreationDate}
+\\Hy@temp{ModDate}
+\\Hy@temp{Trapped}
+\\newif\\ifHyInfo@AddonUnsupported
+\\kv@set@family@handler{pdfinfo}{%
+  \\HyInfo@AddonHandler{#1}{#2}%
+}
+\\let\\HyInfo@do\\relax
+\\def\\HyInfo@AddonHandler#1#2{%
+  \\ifx\\kv@value\\relax
+    \\Hy@Warning{%
+      Option \`pdfinfo': ignoring key \`\\kv@key' without value%
+    }%
+  \\else
+    \\EdefEscapeName\\HyInfo@KeyEscaped{\\kv@key}%
+    \\EdefUnescapeName\\HyInfo@Key{\\HyInfo@KeyEscaped}%
+    \\expandafter\\ifx\\csname KV@pdfinfo@\\HyInfo@Key\\endcsname\\relax
+      \\ifHyInfo@AddonUnsupported
+        \\Hy@Warning{%
+          This driver does not support additional\\MessageBreak
+          information entries, therefore\\MessageBreak
+          \`\\kv@key' is ignored%
+        }%
+      \\else
+        \\def\\HyInfo@tmp##1{%
+          \\kv@define@key{pdfinfo}{##1}{%
+            \\HyXeTeX@CheckUnicode
+            \\HyPsd@XeTeXBigCharstrue
+            \\HyPsd@PrerenderUnicode{####1}%
+            \\pdfstringdef\\HyInfo@Value{####1}%
+            \\global\\expandafter
+            \\let\\csname HyInfo@Value@##1\\endcsname
+                \\HyInfo@Value
+          }%
+        }%
+        \\expandafter\\HyInfo@tmp\\expandafter{\\HyInfo@Key}%
+        \\global\\expandafter
+        \\let\\csname KV@pdfinfo@\\HyInfo@Key\\expandafter\\endcsname
+            \\csname KV@pdfinfo@\\HyInfo@Key\\endcsname
+        \\xdef\\HyInfo@AddonList{%
+          \\HyInfo@AddonList
+          \\HyInfo@do{\\HyInfo@Key}%
+        }%
+        \\kv@parse@normalized{%
+          \\HyInfo@Key={#2}%
+        }{%
+          \\kv@processor@default{pdfinfo}%
+        }%
+      \\fi
+    \\else
+      \\kv@parse@normalized{%
+        \\HyInfo@Key={#2}%
+      }{%
+        \\kv@processor@default{pdfinfo}%
+      }%
+    \\fi
+  \\fi
+}
+\\def\\HyInfo@GenerateAddons{%
+  \\ifHyInfo@AddonUnsupported
+    \\def\\HyInfo@Addons{}%
+  \\else
+    \\begingroup
+      \\toks@{}%
+      \\def\\HyInfo@do##1{%
+        \\EdefEscapeName\\HyInfo@Key{##1}%
+        \\edef\\x{%
+          \\toks@{%
+            \\the\\toks@
+            /\\HyInfo@Key(\\csname HyInfo@Value@##1\\endcsname)%
+          }%
+        }%
+        \\x
+      }%
+      \\HyInfo@AddonList
+      \\edef\\x{\\endgroup
+        \\def\\noexpand\\HyInfo@Addons{\\the\\toks@}%
+      }%
+    \\x
+  \\fi
+}
+\\global\\let\\HyInfo@AddonList\\ltx@empty
+\\define@key{Hyp}{pdfview}{\\calculate@pdfview#1 \\\\}
+\\define@key{Hyp}{pdflinkmargin}{\\setpdflinkmargin{#1}}
+\\let\\setpdflinkmargin\\@gobble
+\\def\\calculate@pdfview#1 #2\\\\{%
+  \\def\\@pdfview{#1}%
+  \\ifx\\\\#2\\\\%
+    \\def\\@pdfviewparams{ -32768}%
+  \\else
+    \\def\\@pdfviewparams{ #2}%
+  \\fi
+}
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname numexpr\\endcsname\\relax
+  \\def\\Hy@number#1{%
+    \\expandafter\\@firstofone\\expandafter{\\number#1}%
+  }%
+\\else
+  \\def\\Hy@number#1{%
+    \\the\\numexpr#1\\relax
+  }%
+\\fi
+\\define@key{Hyp}{pdfstartpage}{%
+  \\ifx\\\\#1\\\\%
+    \\let\\@pdfstartpage\\ltx@empty
+  \\else
+    \\edef\\@pdfstartpage{\\Hy@number{#1}}%
+  \\fi
+}%
+\\define@key{Hyp}{pdfstartview}{%
+  \\ifx\\\\#1\\\\%
+    \\let\\@pdfstartview\\ltx@empty
+  \\else
+    \\hypercalcbpdef\\@pdfstartview{/#1}%
+  \\fi
+}
+\\def\\HyPat@NonNegativeReal/{%
+  \\ *([0-9]+\\.?[0-9]*|[0-9]*\\.?[0-9]+) *%
+}
+\\define@key{Hyp}{pdfremotestartview}{%
+  \\ifx\\\\#1\\\\%
+    \\def\\@pdfremotestartview{/Fit}%
+  \\else
+    \\hypercalcbpdef\\@pdfremotestartview{#1}%
+    \\edef\\@pdfremotestartview{\\@pdfremotestartview}%
+    \\Hy@Match\\@pdfremotestartview{}{%
+      ^(XYZ(%
+            ()| %
+            (null|-?\\HyPat@NonNegativeReal/) %
+            (null|-?\\HyPat@NonNegativeReal/) %
+            (null|\\HyPat@NonNegativeReal/)%
+          )|% end of "XYZ"
+        Fit(%
+            ()|%
+            B|%
+            (H|V|BH|BV)(%
+                ()| %
+                (null|\\HyPat@NonNegativeReal/)%
+              )|%
+            R %
+                \\HyPat@NonNegativeReal/ %
+                \\HyPat@NonNegativeReal/ %
+                \\HyPat@NonNegativeReal/ %
+                \\HyPat@NonNegativeReal/%
+          )% end of "Fit"
+      )\$%
+    }{}{%
+      \\Hy@Warning{%
+         Invalid value \`\\@pdfremotestartview'\\MessageBreak
+         of \`pdfremotestartview'\\MessageBreak
+         is replaced by \`Fit'%
+      }%
+      \\let\\@pdfremotestartview\\@empty
+    }%
+    \\ifx\\@pdfremotestartview\\@empty
+      \\def\\@pdfremotestartview{/Fit}%
+    \\else
+      \\edef\\@pdfremotestartview{/\\@pdfremotestartview}%
+    \\fi
+  \\fi
+}
+\\define@key{Hyp}{pdfpagescrop}{\\edef\\@pdfpagescrop{#1}}
+\\define@key{Hyp}{pdftoolbar}[true]{%
+  \\Hy@boolkey{pdftoolbar}{#1}%
+}
+\\define@key{Hyp}{pdfmenubar}[true]{%
+  \\Hy@boolkey{pdfmenubar}{#1}%
+}
+\\define@key{Hyp}{pdfwindowui}[true]{%
+  \\Hy@boolkey{pdfwindowui}{#1}%
+}
+\\define@key{Hyp}{pdffitwindow}[true]{%
+  \\Hy@boolkey{pdffitwindow}{#1}%
+}
+\\define@key{Hyp}{pdfcenterwindow}[true]{%
+  \\Hy@boolkey{pdfcenterwindow}{#1}%
+}
+\\define@key{Hyp}{pdfdisplaydoctitle}[true]{%
+  \\Hy@boolkey{pdfdisplaydoctitle}{#1}%
+}
+\\define@key{Hyp}{pdfa}[true]{%
+  \\Hy@boolkey{pdfa}{#1}%
+}
+\\define@key{Hyp}{pdfnewwindow}[true]{%
+  \\def\\Hy@temp{#1}%
+  \\ifx\\Hy@temp\\@empty
+    \\Hy@pdfnewwindowsetfalse
+  \\else
+    \\Hy@pdfnewwindowsettrue
+    \\Hy@boolkey{pdfnewwindow}{#1}%
+  \\fi
+}
+\\def\\Hy@SetNewWindow{%
+  \\ifHy@pdfnewwindowset
+    /NewWindow %
+    \\ifHy@pdfnewwindow true\\else false\\fi
+  \\fi
+}
+\\Hy@DefNameKey{pdfpagelayout}{%
+  \\do{SinglePage}{}%
+  \\do{OneColumn}{}%
+  \\do{TwoColumnLeft}{}%
+  \\do{TwoColumnRight}{}%
+  \\do{TwoPageLeft}{PDF 1.5}%
+  \\do{TwoPageRight}{PDF 1.5}%
+}
+\\define@key{Hyp}{pdflang}{%
+  \\edef\\@pdflang{#1}%
+  \\def\\Hy@temp{\\relax}%
+  \\ifx\\@pdflang\\Hy@temp
+    \\let\\@pdflang\\relax
+  \\fi
+  \\ifx\\@pdflang\\relax
+  \\else
+    \\ifx\\@pdflang\\ltx@empty
+    \\else
+      \\Hy@Match\\@pdflang{icase}{%
+        ^%
+        [a-z]{1,8}%
+        (-[a-z0-9]{1,8})*%
+        \$%
+      }{%
+        \\Hy@Match\\@pdflang{icase}{%
+          ^%
+          (%
+          % langtag
+            (% language
+              [a-z]{2,3}%
+              ([a-z]{3}(-[a-z]{3}){0,2})?% extlang
+              |[a-z]{4}% reserved for future use
+              |[a-z]{5,8}% registered language subtag
+            )%
+            (-[a-z]{4})?% script
+            (-([a-z]{2}|[0-9]{3}))?% region
+            (-([a-z]{5,8}|[0-9][a-z0-9]{3}))*% variant
+            (-[0-9a-wyz](-[a-z0-9]{2,8})+)*% extension
+            (-x(-[a-z0-9]{1,8})+)?% privateuse
+          % privateuse
+            |x-([a-z0-9]{1,8})+%
+          % grandfathered/irregular
+            |en-GB-oed%
+            |i-(ami|bnn|default|enochian|hak|klingon|lux|%
+                mingo|navajo|pwn|tao|tay|tsu)%
+            |sgn-(BE-FR|BE-NL|CH-DE)%
+          % grandfathered/regular
+            |art-lojban%
+            |cel-gaulish%
+            |no-(bok|nyn)%
+            |zh-(guoyu|hakka|min|min-nan|xiang)%
+          )%
+          \$%
+        }{%
+          \\Hy@Match{-\\@pdflang}{icase}{-[a-wyz0-9]-}{%
+            \\Hy@Match\\@pdflang{icase}{^x-}{}{%
+              % remove privateuse
+              \\edef\\Hy@temp{-\\@pdflang}%
+              \\Hy@Match\\Hy@temp{icase}{%
+                ^%
+                (%
+                  (-[a-wyz0-9]|-[a-z0-9]{2,8})*%
+                )%
+                -x-%
+              }{%
+                \\edef\\Hy@temp{%
+                  \\expandafter\\strip@prefix\\pdflastmatch1%
+                }%
+              }{}%
+              \\Hy@Match\\Hy@temp{icase}{%
+                (-[a-wyz0-9]-).*\\ltx@backslashchar1%
+              }{%
+                \\Hy@Warning{%
+                  Invalid language identifier \`#1'\\MessageBreak
+                  for option \`pdflang', because it violates\\MessageBreak
+                  well-formedness defined in RFC 4646\\MessageBreak
+                  by duplicate singleton subtags%
+                }%
+                \\let\\@pdflang\\relax
+              }{}%
+            }%
+          }{}%
+          \\ifx\\@pdflang\\relax
+          \\else
+            \\Hy@Match\\@pdflang{icase}{%
+              ^%
+              [a-zA-Z]{2}-%
+              (%
+                aa|AA|%
+                [qQ][m-zM-Z]|%
+                [xX][a-zA-Z]|%
+                zz|ZZ%
+              )%
+              (-|\$)%
+            }{%
+              \\Hy@Warning{%
+                Invalid language identifier \`#1'\\MessageBreak
+                for option \`pdflang' because of invalid country code%
+                \\MessageBreak
+                in second subtag (RFC 3066)%
+              }%
+              \\let\\@pdflang\\relax
+            }{}%
+          \\fi
+        }{%
+          \\Hy@Warning{%
+            Invalid language identifier \`#1'\\MessageBreak
+            for option \`pdflang', because it violates\\MessageBreak
+            well-formedness defined in RFC 5646%
+          }%
+          \\let\\@pdflang\\relax
+        }%
+      }{%
+        \\Hy@Warning{%
+          Invalid language identifier \`#1'\\MessageBreak
+          for option \`pdflang' (RFC 3066)%
+        }%
+        \\let\\@pdflang\\relax
+      }%
+    \\fi
+  \\fi
+}
+\\define@key{Hyp}{pdfpagelabels}[true]{%
+  \\Hy@boolkey{pdfpagelabels}{#1}%
+}
+\\define@key{Hyp}{pdfescapeform}[true]{%
+  \\Hy@boolkey{pdfescapeform}{#1}%
+}
+\\def\\@linkbordercolor{1 0 0}
+\\def\\@urlbordercolor{0 1 1}
+\\def\\@menubordercolor{1 0 0}
+\\def\\@filebordercolor{0 .5 .5}
+\\def\\@runbordercolor{0 .7 .7}
+\\def\\@citebordercolor{0 1 0}
+\\def\\@pdfhighlight{/I}
+\\let\\@pdftitle\\ltx@empty
+\\let\\@pdfauthor\\ltx@empty
+\\let\\@pdfproducer\\relax
+\\def\\@pdfcreator{LaTeX with hyperref}
+\\let\\@pdfcreationdate\\ltx@empty
+\\let\\@pdfmoddate\\ltx@empty
+\\let\\@pdfsubject\\ltx@empty
+\\let\\@pdfkeywords\\ltx@empty
+\\let\\@pdftrapped\\ltx@empty
+\\let\\@pdfpagescrop\\ltx@empty
+\\def\\@pdfstartview{/Fit}
+\\def\\@pdfremotestartview{/Fit}
+\\def\\@pdfstartpage{1}
+\\let\\@pdfprintpagerange\\ltx@empty
+\\let\\@pdflang\\relax
+\\let\\PDF@SetupDoc\\@empty
+\\let\\PDF@FinishDoc\\@empty
+\\let\\phantomsection\\@empty
+\\let\\special@paper\\@empty
+\\def\\HyperDestNameFilter#1{#1}
+\\Hy@AtBeginDocument{%
+  \\begingroup
+    \\edef\\x{\\@ifundefined{stockheight}\\paperheight\\stockheight}%
+    \\dimen@=\\x\\relax
+    \\ifdim\\dimen@>\\z@
+    \\else
+      \\dimen@=11in\\relax
+      \\Hy@WarningNoLine{%
+        Height of page (\\expandafter\\string\\x) %
+        is invalid (\\the\\x),\\MessageBreak
+        using 11in%
+      }%
+    \\fi
+    \\dimen@=0.99626401\\dimen@
+    \\xdef\\Hy@pageheight{\\strip@pt\\dimen@}%
+  \\endgroup
+}
+\\def\\HyInd@EncapChar{\\|}
+\\let\\hyper@normalise\\ExecuteOptions
+\\let\\ExecuteOptions\\hypersetup
+\\Hy@RestoreCatcodes
+\\InputIfFileExists{hyperref.cfg}{}{}
+\\Hy@SetCatcodes
+\\let\\ExecuteOptions\\hyper@normalise
+\\ifx\\Hy@MaybeStopNow\\relax
+\\else
+  \\Hy@stoppedearlytrue
+  \\expandafter\\Hy@MaybeStopNow
+\\fi
+\\Hy@stoppedearlyfalse
+\\SetupKeyvalOptions{family=Hyp}
+\\DeclareLocalOptions{%
+  a4paper,a5paper,b5paper,letterpaper,legalpaper,executivepaper%
+}
+\\@ifpackagewith{hyperref}{tex4ht}{%
+}{%
+  \\@ifpackageloaded{tex4ht}{%
+    \\PassOptionsToPackage{tex4ht}{hyperref}%
+  }{%
+    \\ltx@IfUndefined{HCode}{%
+    }{%
+      \\begingroup
+        \\def\\Hy@pkg{tex4ht}%
+        \\def\\Hy@temp@A#1\\RequirePackage[#2]#3#4\\Hy@NIL{%
+          \\def\\Hy@param{#2#3}%
+          \\ifx\\Hy@param\\ltx@empty
+            \\expandafter\\ltx@gobble
+          \\else
+            \\def\\Hy@param{#3}%
+            \\ifx\\Hy@param\\Hy@pkg
+              \\PassOptionsToPackage{#2}{tex4ht}%
+              \\expandafter\\expandafter\\expandafter\\@gobble
+            \\else
+              \\expandafter\\expandafter\\expandafter\\ltx@firstofone
+            \\fi
+          \\fi
+          {\\Hy@temp@A#4\\Hy@NIL}%
+        }%
+        \\expandafter
+        \\Hy@temp@A\\@documentclasshook\\RequirePackage[]{}\\Hy@NIL
+      \\endgroup
+      \\PassOptionsToPackage{tex4ht}{hyperref}%
+    }%
+  }%
+}
+\\let\\ReadBookmarks\\relax
+\\ProcessKeyvalOptions{Hyp}
+\\def\\Hy@xspace@end{}
+\\ltx@IfUndefined{xspaceaddexceptions}{%
+  \\Hy@AtBeginDocument{%
+    \\ltx@IfUndefined{xspaceaddexceptions}{%
+    }{%
+      \\def\\Hy@xspace@end{%
+        \\ltx@gobble{end for xspace}%
+      }%
+      \\xspaceaddexceptions{%
+        \\Hy@xspace@end,\\hyper@linkend,\\hyper@anchorend
+      }%
+    }%
+  }%
+}{%
+  \\def\\Hy@xspace@end{%
+    \\ltx@gobble{end for xspace}%
+  }%
+  \\xspaceaddexceptions{\\Hy@xspace@end,\\hyper@linkend,\\hyper@anchorend}%
+}
+\\Hy@AtBeginDocument{%
+  \\ifHy@draft
+    \\let\\hyper@@anchor\\@gobble
+    \\gdef\\hyper@link#1#2#3{#3\\Hy@xspace@end}%
+    \\def\\hyper@anchorstart#1#2{#2\\Hy@xspace@end}%
+    \\def\\hyper@anchorend{\\Hy@xspace@end}%
+    \\let\\hyper@linkstart\\@gobbletwo
+    \\def\\hyper@linkend{\\Hy@xspace@end}%
+    \\def\\hyper@linkurl#1#2{#1\\Hy@xspace@end}%
+    \\def\\hyper@linkfile#1#2#3{#1\\Hy@xspace@end}%
+    \\def\\hyper@link@[#1]#2#3#4{#4\\Hy@xspace@end}%
+    \\def\\Acrobatmenu#1#2{\\leavevmode#2\\Hy@xspace@end}%
+    \\let\\PDF@SetupDoc\\@empty
+    \\let\\PDF@FinishDoc\\@empty
+    \\let\\@fifthoffive\\@secondoftwo
+    \\let\\@secondoffive\\@secondoftwo
+    \\let\\ReadBookmarks\\relax
+    \\let\\WriteBookmarks\\relax
+    \\Hy@WarningNoLine{Draft mode on}%
+  \\fi
+  \\Hy@DisableOption{draft}%
+  \\Hy@DisableOption{nolinks}%
+  \\Hy@DisableOption{final}%
+}
+\\Hy@DisableOption{pdfa}
+\\ifHy@pdfa
+  \\ifnum \\Hy@pdf@majorminor@version< 104
+  \\kvsetkeys{Hyp}{pdfversion=1.4}%
+  \\fi
+  \\Hy@DisableOption{pdfversion}%
+  \\def\\Hy@Acrobatmenu#1#2{%
+    \\leavevmode
+    \\begingroup
+      \\edef\\x{#1}%
+      \\@onelevel@sanitize\\x
+      \\ifx\\x\\Hy@NextPage
+        \\let\\y=Y%
+      \\else
+        \\ifx\\x\\Hy@PrevPage
+          \\let\\y=Y%
+        \\else
+          \\ifx\\x\\Hy@FirstPage
+            \\let\\y=Y%
+          \\else
+            \\ifx\\x\\Hy@LastPage
+              \\let\\y=Y%
+            \\else
+              \\let\\y=N%
+            \\fi
+          \\fi
+        \\fi
+      \\fi
+    \\expandafter\\endgroup
+    \\ifx\\y Y%
+    \\else
+      \\Hy@Error{%
+        PDF/A: Named action \`#1' is not permitted%
+      }\\@ehc
+      {#2}%
+      \\expandafter\\@gobble
+    \\fi
+  }%
+  \\def\\Hy@temp#1{%
+    \\expandafter\\def\\csname Hy@#1\\endcsname{#1}%
+    \\expandafter\\@onelevel@sanitize\\csname Hy@#1\\endcsname
+  }%
+  \\Hy@temp{NextPage}%
+  \\Hy@temp{PrevPage}%
+  \\Hy@temp{FirstPage}%
+  \\Hy@temp{LastPage}%
+\\else
+  \\def\\Hy@Acrobatmenu#1#2{\\leavevmode}%
+\\fi
+\\Hy@nextfalse
+\\ltx@IfUndefined{spanish@sh@"@sel}{}{\\Hy@nexttrue}
+\\ltx@IfUndefined{galician@sh@"@sel}{}{\\Hy@nexttrue}
+\\ltx@IfUndefined{estonian@sh@"@sel}{}{\\Hy@nexttrue}
+\\ifHy@next
+  \\let\\texttilde\\~%
+\\fi
+\\def\\Hy@wrapper@babel#1#2{%
+  \\begingroup
+    \\Hy@safe@activestrue
+    \\set@display@protect
+    \\edef\\x{#2}%
+    \\@onelevel@sanitize\\x
+    \\toks@{#1}%
+    \\edef\\x{\\endgroup\\the\\toks@{\\x}}%
+  \\x
+}
+\\def\\Hy@WrapperDef#1{%
+  \\begingroup
+    \\escapechar=\\m@ne
+    \\xdef\\Hy@gtemp{%
+      \\expandafter\\noexpand\\csname HyWrap@\\string#1\\endcsname
+    }%
+  \\endgroup
+  \\edef#1{%
+    \\noexpand\\Hy@wrapper@babel
+    \\expandafter\\noexpand\\Hy@gtemp
+  }%
+  \\expandafter\\def\\Hy@gtemp
+}
+\\ifHy@hyperfigures
+  \\Hy@Info{Hyper figures ON}%
+\\else
+  \\Hy@Info{Hyper figures OFF}%
+\\fi
+\\ifHy@nesting
+  \\Hy@Info{Link nesting ON}%
+\\else
+  \\Hy@Info{Link nesting OFF}%
+\\fi
+\\ifHy@hyperindex
+  \\Hy@Info{Hyper index ON}%
+\\else
+  \\Hy@Info{Hyper index OFF}%
+\\fi
+\\ifHy@plainpages
+  \\Hy@Info{Plain pages ON}%
+\\else
+  \\Hy@Info{Plain pages OFF}%
+\\fi
+\\ifHy@backref
+  \\Hy@Info{Backreferencing ON}%
+\\else
+  \\Hy@Info{Backreferencing OFF}%
+\\fi
+\\ifHy@typexml
+  \\Hy@AtEndOfPackage{%
+    \\RequirePackage{color}%
+    \\RequirePackage{nameref}[2012/07/28]%
+  }%
+\\fi
+\\Hy@DisableOption{typexml}
+\\ifHy@implicit
+  \\Hy@InfoNoLine{Implicit mode ON; LaTeX internals redefined}%
+\\else
+  \\Hy@InfoNoLine{Implicit mode OFF; no redefinition of LaTeX internals}%
+  \\def\\MaybeStopEarly{%
+    \\Hy@Message{Stopped early}%
+    \\Hy@AtBeginDocument{%
+      \\PDF@FinishDoc
+      \\gdef\\PDF@FinishDoc{}%
+    }%
+    \\endinput
+  }%
+  \\Hy@AtBeginDocument{%
+    \\let\\autoref\\ref
+    \\let\\autopageref\\pageref
+    \\ifx\\@pdfpagemode\\@empty
+      \\gdef\\@pdfpagemode{UseNone}%
+    \\fi
+    \\global\\Hy@backreffalse
+  }%
+  \\Hy@AtEndOfPackage{%
+    \\global\\let\\ReadBookmarks\\relax
+    \\global\\let\\WriteBookmarks\\relax
+  }%
+\\fi
+\\Hy@DisableOption{implicit}
+\\Hy@AtEndOfPackage{%
+  \\@ifpackageloaded{tex4ht}{%
+    \\def\\Hy@driver{htex4ht}%
+    \\Hy@texhttrue
+  }{}%
+  \\ifx\\Hy@driver\\@empty
+  \\else
+     \\ifx\\pdfextension\\@undefined
+       \\def\\Hy@temp{hpdftex}%
+     \\else
+       \\def\\Hy@temp{hluatex}%
+     \\fi
+    \\ifpdf
+      \\ifx\\Hy@driver\\Hy@temp
+      \\else
+        \\Hy@WarningNoLine{%
+          Wrong driver \`\\Hy@driver.def';\\MessageBreak
+          pdfTeX is running in PDF mode.\\MessageBreak
+          Forcing driver \`\\Hy@temp.def'%
+        }%
+        \\let\\Hy@driver\\Hy@temp
+      \\fi
+    \\else
+      \\ifx\\Hy@driver\\Hy@temp
+        \\Hy@WarningNoLine{%
+          Wrong driver \`\\Hy@driver.def';\\MessageBreak
+          pdfTeX is not running in PDF mode.\\MessageBreak
+          Using default driver%
+        }%
+        \\let\\Hy@driver\\@empty
+      \\fi
+    \\fi
+  \\fi
+  \\ifHy@texht
+  \\else
+    \\ifx\\Hy@driver\\@empty
+    \\else
+      \\def\\Hy@temp{hxetex}%
+      \\ifxetex
+        \\ifx\\Hy@driver\\Hy@temp
+        \\else
+          \\Hy@WarningNoLine{%
+            Wrong driver \`\\Hy@driver.def';\\MessageBreak
+            XeTeX is running.\\MessageBreak
+            Forcing driver \`\\Hy@temp.def' for XeTeX%
+          }%
+          \\let\\Hy@driver\\Hy@temp
+        \\fi
+      \\fi
+    \\fi
+  \\fi
+  \\ifx\\Hy@driver\\@empty
+  \\else
+    \\def\\Hy@temp{hvtexhtm}%
+    \\ifnum\\ifvtex\\OpMode\\else\\m@ne\\fi=10 %
+      \\ifx\\Hy@driver\\Hy@temp
+      \\else
+        \\Hy@WarningNoLine{%
+          Wrong driver \`\\Hy@driver.def';\\MessageBreak
+          VTeX is running in HTML mode.\\MessageBreak
+          Forcing driver \`\\Hy@temp.def'%
+        }%
+        \\let\\Hy@driver\\Hy@temp
+      \\fi
+    \\else
+      \\ifx\\Hy@driver\\Hy@temp
+        \\Hy@WarningNoLine{%
+          Wrong driver \`\\Hy@driver.def';\\MessageBreak
+          VTeX is not running in HTML mode.\\MessageBreak
+          Using default driver%
+        }%
+        \\let\\Hy@driver\\@empty
+      \\fi
+    \\fi
+  \\fi
+  \\let\\HyOpt@DriverType\\ltx@empty
+  \\ifx\\HyOpt@CustomDriver\\ltx@empty
+    \\ifx\\Hy@driver\\@empty
+      \\def\\HyOpt@DriverType{ (autodetected)}%
+      \\providecommand*{\\Hy@defaultdriver}{hdvips}%
+      \\ifpdf
+        \\ifx\\pdfextension\\@undefined
+          \\def\\Hy@driver{hpdftex}%
+        \\else
+          \\def\\Hy@driver{hluatex}%
+        \\fi
+      \\else
+        \\ifxetex
+          \\def\\Hy@driver{hxetex}%
+        \\else
+          \\ifnum\\ifvtex\\OpMode\\else\\m@ne\\fi=10 %
+            \\def\\Hy@driver{hvtexhtm}%
+            \\def\\MaybeStopEarly{%
+              \\Hy@Message{Stopped early}%
+              \\Hy@AtBeginDocument{%
+                \\PDF@FinishDoc
+                \\gdef\\PDF@FinishDoc{}%
+              }%
+              \\endinput
+            }%
+          \\else
+            \\ifnum\\ifvtex\\OpMode\\else\\m@ne\\fi=\\@ne
+              \\def\\Hy@driver{hvtex}%
+            \\else
+              \\ifnum\\ifvtex\\OpMode\\else\\m@ne\\fi=\\tw@
+                \\def\\Hy@driver{hvtex}%
+              \\else
+                \\ifx\\HyOpt@DriverFallback\\ltx@empty
+                  \\let\\Hy@driver\\Hy@defaultdriver
+                  \\def\\HyOpt@DriverType{ (default)}%
+                \\else
+                  \\begingroup
+                    \\toks@\\expandafter{\\HyOpt@DriverFallback}%
+                    \\edef\\x{\\endgroup
+                      \\noexpand\\kvsetkeys{Hyp}{\\the\\toks@}%
+                    }%
+                  \\x
+                  \\ifx\\Hy@driver\\ltx@empty
+                    \\let\\Hy@driver\\Hy@defaultdriver
+                    \\def\\HyOpt@DriverType{ (default)}%
+                  \\else
+                    \\def\\HyOpt@DriverType{ (fallback)}%
+                  \\fi
+                \\fi
+              \\fi
+            \\fi
+          \\fi
+        \\fi
+      \\fi
+      \\ifx\\Hy@driver\\Hy@defaultdriver
+        \\def\\Hy@temp{hdviwind}%
+        \\ifx\\Hy@temp\\Hy@driver
+          \\kvsetkeys{Hyp}{colorlinks}%
+          \\PassOptionsToPackage{dviwindo}{color}%
+        \\fi
+      \\fi
+    \\fi
+  \\else
+    \\def\\HyOpt@DriverType{ (custom)}%
+    \\let\\Hy@driver\\HyOpt@CustomDriver
+  \\fi
+  \\Hy@InfoNoLine{Driver\\HyOpt@DriverType: \\Hy@driver}%
+  \\chardef\\Hy@VersionChecked=0 %
+  \\input{\\Hy@driver.def}%
+  \\ifcase\\Hy@VersionChecked
+    \\Hy@VersionCheck{\\Hy@driver.def}%
+  \\fi
+  \\let\\@unprocessedoptions\\relax
+  \\Hy@RestoreCatcodes
+  \\Hy@DisableOption{tex4ht}%
+  \\Hy@DisableOption{pdftex}%
+  \\Hy@DisableOption{nativepdf}%
+  \\Hy@DisableOption{dvipdfm}%
+  \\Hy@DisableOption{dvipdfmx}%
+  \\Hy@DisableOption{dvipdfmx-outline-open}%
+  \\Hy@DisableOption{pdfmark}%
+  \\Hy@DisableOption{dvips}%
+  \\Hy@DisableOption{hypertex}%
+  \\Hy@DisableOption{vtex}%
+  \\Hy@DisableOption{vtexpdfmark}%
+  \\Hy@DisableOption{dviwindo}%
+  \\Hy@DisableOption{dvipsone}%
+  \\Hy@DisableOption{textures}%
+  \\Hy@DisableOption{latex2html}%
+  \\Hy@DisableOption{ps2pdf}%
+  \\Hy@DisableOption{xetex}%
+  \\Hy@DisableOption{driverfallback}%
+  \\Hy@DisableOption{customdriver}%
+  \\Hy@DisableOption{pdfversion}%
+}
+\\newif\\ifHy@DvipdfmxOutlineOpen
+\\ifxetex
+  \\ifdim\\number\\XeTeXversion\\XeTeXrevision in<0.9995in %
+  \\else
+    \\chardef\\SpecialDvipdfmxOutlineOpen\\@ne
+    \\Hy@DvipdfmxOutlineOpentrue
+  \\fi
+\\fi
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname SpecialDvipdfmxOutlineOpen\\endcsname\\relax
+\\else
+  \\ifnum\\SpecialDvipdfmxOutlineOpen>\\z@
+    \\Hy@DvipdfmxOutlineOpentrue
+  \\fi
+\\fi
+\\def\\WriteBookmarks{0}
+\\def\\@bookmarkopenstatus#1{%
+  \\ifHy@bookmarksopen
+    \\ifnum#1<\\expandafter\\@firstofone\\expandafter
+             {\\number\\@bookmarksopenlevel} % explicit space
+    \\else
+      -%
+    \\fi
+  \\else
+    -%
+  \\fi
+}
+\\ifHy@bookmarks
+  \\Hy@Info{Bookmarks ON}%
+  \\ifx\\@pdfpagemode\\@empty
+    \\def\\@pdfpagemode{UseOutlines}%
+  \\fi
+\\else
+  \\let\\@bookmarkopenstatus\\ltx@gobble
+  \\Hy@Info{Bookmarks OFF}%
+  \\Hy@AtEndOfPackage{%
+    \\global\\let\\ReadBookmarks\\relax
+    \\global\\let\\WriteBookmarks\\relax
+  }%
+  \\ifx\\@pdfpagemode\\@empty
+    \\def\\@pdfpagemode{UseNone}%
+  \\fi
+\\fi
+\\Hy@DisableOption{bookmarks}
+\\def\\Hy@CatcodeWrapper#1{%
+  \\let\\Hy@EndWrap\\ltx@empty
+  \\def\\TMP@EnsureCode##1##2{%
+    \\edef\\Hy@EndWrap{%
+      \\Hy@EndWrap
+      \\catcode##1 \\the\\catcode##1\\relax
+    }%
+    \\catcode##1 ##2\\relax
+  }%
+  \\TMP@EnsureCode{10}{12}% ^^J
+  \\TMP@EnsureCode{33}{12}% !
+  \\TMP@EnsureCode{34}{12}% "
+  \\TMP@EnsureCode{36}{3}% \$ (math)
+  \\TMP@EnsureCode{38}{4}% & (alignment)
+  \\TMP@EnsureCode{39}{12}% '
+  \\TMP@EnsureCode{40}{12}% (
+  \\TMP@EnsureCode{41}{12}% )
+  \\TMP@EnsureCode{42}{12}% *
+  \\TMP@EnsureCode{43}{12}% +
+  \\TMP@EnsureCode{44}{12}% ,
+  \\TMP@EnsureCode{45}{12}% -
+  \\TMP@EnsureCode{46}{12}% .
+  \\TMP@EnsureCode{47}{12}% /
+  \\TMP@EnsureCode{58}{12}% :
+  \\TMP@EnsureCode{59}{12}% ;
+  \\TMP@EnsureCode{60}{12}% <
+  \\TMP@EnsureCode{61}{12}% =
+  \\TMP@EnsureCode{62}{12}% >
+  \\TMP@EnsureCode{63}{12}% ?
+  \\TMP@EnsureCode{91}{12}% [
+  \\TMP@EnsureCode{93}{12}% ]
+  \\TMP@EnsureCode{94}{7}% ^ (superscript)
+  \\TMP@EnsureCode{95}{8}% _ (subscript)
+  \\TMP@EnsureCode{96}{12}% \`
+  \\TMP@EnsureCode{124}{12}% |
+  \\TMP@EnsureCode{126}{13}% ~ (active)
+  #1\\relax
+  \\Hy@EndWrap
+}
+\\Hy@AtBeginDocument{%
+  \\ifHy@ocgcolorlinks
+    \\kvsetkeys{Hyp}{colorlinks}%
+    \\ifHy@pdfa
+      \\Hy@Warning{%
+        PDF/A: Optional Content Groups are prohibited,\\MessageBreak
+        using \`colorlinks' instead of \`ocgcolorlinks'%
+      }%
+      \\Hy@ocgcolorlinksfalse
+    \\fi
+  \\fi
+  \\ifHy@ocgcolorlinks
+  \\else
+    \\Hy@DisableOption{ocgcolorlinks}%
+  \\fi
+  \\ifHy@colorlinks
+    \\def\\@pdfborder{0 0 0}%
+    \\let\\@pdfborderstyle\\@empty
+    \\ifHy@typexml
+    \\else
+      \\Hy@CatcodeWrapper{%
+        \\RequirePackage{color}%
+      }%
+    \\fi
+    \\def\\Hy@colorlink#1{%
+      \\begingroup
+      \\HyColor@UseColor#1%
+    }%
+    \\def\\Hy@endcolorlink{\\endgroup}%
+    \\Hy@Info{Link coloring ON}%
+  \\else
+    \\ifHy@frenchlinks
+      \\def\\Hy@colorlink#1{\\begingroup\\fontshape{\\scdefault}\\selectfont}%
+      \\def\\Hy@endcolorlink{\\endgroup}%
+      \\Hy@Info{French linking ON}%
+    \\else
+      \\def\\Hy@colorlink#1{\\begingroup}%
+      \\def\\Hy@endcolorlink{\\endgroup}%
+      \\Hy@Info{Link coloring OFF}%
+    \\fi
+  \\fi
+  \\Hy@DisableOption{colorlinks}%
+  \\Hy@DisableOption{frenchlinks}%
+  \\ifHy@texht
+    \\long\\def\\@firstoffive#1#2#3#4#5{#1}%
+    \\long\\def\\@secondoffive#1#2#3#4#5{#2}%
+    \\long\\def\\@thirdoffive#1#2#3#4#5{#3}%
+    \\long\\def\\@fourthoffive#1#2#3#4#5{#4}%
+    \\long\\def\\@fifthoffive#1#2#3#4#5{#5}%
+    \\providecommand*\\@safe@activestrue{}%
+    \\providecommand*\\@safe@activesfalse{}%
+    \\def\\T@ref#1{%
+      \\Hy@safe@activestrue
+      \\expandafter\\@setref\\csname r@#1\\endcsname\\@firstoffive{#1}%
+      \\Hy@safe@activesfalse
+    }%
+    \\def\\T@pageref#1{%
+      \\Hy@safe@activestrue
+      \\expandafter\\@setref\\csname r@#1\\endcsname\\@secondoffive{#1}%
+      \\Hy@safe@activesfalse
+    }%
+  \\else
+    \\ifHy@typexml
+    \\else
+      \\Hy@CatcodeWrapper{%
+        \\RequirePackage{nameref}[2012/07/28]%
+      }%
+    \\fi
+  \\fi
+  \\DeclareRobustCommand\\ref{%
+    \\@ifstar\\@refstar\\T@ref
+  }%
+  \\DeclareRobustCommand\\pageref{%
+    \\@ifstar\\@pagerefstar\\T@pageref
+  }%
+    \\DeclareRobustCommand*{\\nameref}{%
+      \\@ifstar\\@namerefstar\\T@nameref
+    }%
+ \\ifHy@implicit
+ \\else
+   \\let \\@pagerefstar\\T@pageref
+   \\let \\@refstar\\T@ref
+   \\let \\@namerefstar\\T@nameref
+ \\fi
+}
+\\Hy@AtBeginDocument{%
+  \\ifHy@texht
+  \\else
+    \\Hy@CatcodeWrapper\\ReadBookmarks
+  \\fi
+}
+\\ifHy@backref
+  \\RequirePackage{backref}%
+\\else
+  \\let\\Hy@backout\\@gobble
+\\fi
+\\Hy@DisableOption{backref}
+\\Hy@DisableOption{pagebackref}
+\\Hy@activeanchorfalse
+\\begingroup
+  \\endlinechar=-1 %
+  \\catcode\`\\^^A=14 %
+  \\catcode\`\\^^M\\active
+  \\catcode\`\\%\\active
+  \\catcode\`\\#\\active
+  \\catcode\`\\_\\active
+  \\catcode\`\\\$\\active
+  \\catcode\`\\&\\active
+  \\gdef\\hyper@normalise{^^A
+    \\begingroup
+    \\catcode\`\\^^M\\active
+    \\def^^M{ }^^A
+    \\catcode\`\\%\\active
+    \\let%\\@percentchar
+    \\let\\%\\@percentchar
+    \\catcode\`\\#\\active
+    \\def#{\\hyper@hash}^^A
+    \\def\\#{\\hyper@hash}^^A
+    \\@makeother\\&^^A
+    \\edef&{\\string&}^^A
+    \\edef\\&{\\string&}^^A
+    \\edef\\textunderscore{\\string_}^^A
+    \\let\\_\\textunderscore
+    \\catcode\`\\_\\active
+    \\let_\\textunderscore
+    \\let~\\hyper@tilde
+    \\let\\~\\hyper@tilde
+    \\let\\textasciitilde\\hyper@tilde
+    \\let\\\\\\@backslashchar
+    \\edef\${\\string\$}^^A
+    \\Hy@safe@activestrue
+    \\hyper@n@rmalise
+  }^^A
+  \\catcode\`\\#=6 ^^A
+  \\gdef\\Hy@ActiveCarriageReturn{^^M}^^A
+  \\gdef\\hyper@n@rmalise#1#2{^^A
+    \\def\\Hy@tempa{#2}^^A
+    \\ifx\\Hy@tempa\\Hy@ActiveCarriageReturn
+      \\ltx@ReturnAfterElseFi{^^A
+        \\hyper@@normalise{#1}^^A
+      }^^A
+    \\else
+      \\ltx@ReturnAfterFi{^^A
+        \\hyper@@normalise{#1}{#2}^^A
+      }^^A
+    \\fi
+  }^^A
+  \\gdef\\hyper@@normalise#1#2{^^A
+    \\edef\\Hy@tempa{^^A
+      \\endgroup
+      \\noexpand#1{\\Hy@RemovePercentCr#2%^^M\\@nil}^^A
+    }^^A
+    \\Hy@tempa
+  }^^A
+  \\gdef\\Hy@RemovePercentCr#1%^^M#2\\@nil{^^A
+    #1^^A
+    \\ifx\\limits#2\\limits
+    \\else
+      \\ltx@ReturnAfterFi{^^A
+        \\Hy@RemovePercentCr #2\\@nil
+      }^^A
+    \\fi
+  }^^A
+\\endgroup
+\\providecommand*\\hyper@chars{%
+  \\let\\#\\hyper@hash
+  \\let\\%\\@percentchar
+  \\Hy@safe@activestrue
+}
+\\def\\hyperlink#1#2{%
+  \\hyper@@link{}{#1}{#2}%
+}
+\\def\\Hy@VerboseLinkStart#1#2{%
+  \\ifHy@verbose
+    \\begingroup
+      \\Hy@safe@activestrue
+      \\xdef\\Hy@VerboseGlobalTemp{(#1) \`#2'}%
+      \\Hy@Info{Reference \\Hy@VerboseGlobalTemp}%
+      \\xdef\\Hy@VerboseGlobalTemp{%
+        \\Hy@VerboseGlobalTemp, %
+        line \\the\\inputlineno
+      }%
+    \\endgroup
+    \\let\\Hy@VerboseLinkInfo\\Hy@VerboseGlobalTemp
+    \\@onelevel@sanitize\\Hy@VerboseLinkInfo
+  \\fi
+}
+\\def\\Hy@VerboseLinkInfo{<VerboseLinkInfo>}
+\\def\\Hy@VerboseLinkStop{%
+  \\ifHy@verbose
+    \\begingroup
+      \\edef\\x{\\endgroup
+        \\write\\m@ne{%
+          Package \`hyperref' Info: %
+          End of reference \\Hy@VerboseLinkInfo.%
+        }%
+      }%
+    \\x
+  \\fi
+}
+\\def\\Hy@VerboseAnchor#1{%
+  \\ifHy@verbose
+    \\begingroup
+      \\Hy@safe@activestrue
+      \\Hy@Info{Anchor \`\\HyperDestNameFilter{#1}'}%
+    \\endgroup
+  \\fi
+}
+\\def\\Hy@AllowHyphens{%
+  \\relax
+  \\ifhmode
+    \\penalty\\@M
+    \\hskip\\z@skip
+  \\fi
+}
+\\DeclareRobustCommand*{\\href}[1][]{%
+  \\begingroup
+  \\setkeys{href}{#1}%
+  \\@ifnextchar\\bgroup\\Hy@href{\\hyper@normalise\\href@}%
+}
+\\def\\Hy@href#{%
+  \\hyper@normalise\\href@
+}
+\\begingroup
+  \\catcode\`\\\$=6 %
+  \\catcode\`\\#=12 %
+  \\gdef\\href@\$1{\\expandafter\\href@split\$1##\\\\}%
+  \\gdef\\href@split\$1#\$2#\$3\\\\\$4{%
+    \\hyper@@link{\$1}{\$2}{\$4}%
+    \\endgroup
+  }%
+\\endgroup
+\\define@key{href}{page}{%
+  \\def\\Hy@href@page{#1}%
+}
+\\let\\Hy@href@page\\@empty
+\\newcount\\c@Hy@tempcnt
+\\def\\theHy@tempcnt{\\the\\c@Hy@tempcnt}
+\\def\\Hy@MakeRemoteAction{%
+  \\ifx\\Hy@href@page\\@empty
+    \\def\\Hy@href@page{0}%
+  \\else
+    \\setcounter{Hy@tempcnt}{\\Hy@href@page}%
+    \\ifnum\\c@Hy@tempcnt<\\@ne
+      \\Hy@Warning{%
+        Invalid page number (\\theHy@tempcnt)\\MessageBreak
+        for remote PDF file.\\MessageBreak
+        Using page 1%
+      }%
+      \\def\\Hy@href@page{0}%
+    \\else
+      \\global\\advance\\c@Hy@tempcnt\\m@ne
+      \\edef\\Hy@href@page{\\theHy@tempcnt}%
+    \\fi
+  \\fi
+  \\ifx\\Hy@href@nextactionraw\\@empty
+  \\else
+    \\Hy@pdfnewwindowsettrue
+    \\Hy@pdfnewwindowtrue
+  \\fi
+}
+\\define@key{href}{pdfremotestartview}{%
+  \\setkeys{Hyp}{pdfremotestartview={#1}}%
+}
+\\let\\KV@href@pdfnewwindow\\KV@Hyp@pdfnewwindow
+\\let\\KV@href@pdfnewwindow@default\\KV@Hyp@pdfnewwindow@default
+\\newif\\ifHy@href@ismap
+\\define@key{href}{ismap}[true]{%
+  \\ltx@IfUndefined{Hy@href@ismap#1}{%
+    \\Hy@Error{%
+      Invalid value (#1) for key \`ismap'.\\MessageBreak
+      Permitted values are \`true' or \`false'.\\MessageBreak
+      Ignoring \`ismap'%
+    }\\@ehc
+  }{%
+    \\csname Hy@href@ismap#1\\endcsname
+  }%
+}
+\\let\\Hy@href@nextactionraw\\@empty
+\\define@key{href}{nextactionraw}{%
+  \\edef\\Hy@href@nextactionraw{#1}%
+  \\ifx\\Hy@href@nextactionraw\\@empty
+  \\else
+    \\Hy@Match\\Hy@href@nextactionraw{}{%
+      ^(\\HyPat@ObjRef/|<<.*/S[ /].+>>|%
+       \\[( ?\\HyPat@ObjRef/|<<.*/S[ /].+>>)+ ?])\$%
+    }{}{%
+      \\Hy@Warning{Invalid value for \`nextactionraw':\\MessageBreak
+        \\Hy@href@nextactionraw\\MessageBreak
+        The action is discarded%
+      }%
+    }%
+    \\ifx\\Hy@href@nextactionraw\\@empty
+    \\else
+      \\edef\\Hy@href@nextactionraw{/Next \\Hy@href@nextactionraw}%
+    \\fi
+  \\fi
+}
+\\def\\HyPat@ObjRef/{.+}
+\\RequirePackage{url}
+\\let\\HyOrg@url\\url
+\\def\\Hurl{\\begingroup \\Url}
+\\DeclareRobustCommand*{\\nolinkurl}{\\hyper@normalise\\nolinkurl@}
+\\def\\nolinkurl@#1{\\Hurl{#1}}
+\\DeclareRobustCommand*{\\url}{\\hyper@normalise\\url@}
+\\def\\url@#1{\\hyper@linkurl{\\Hurl{#1}}{#1}}
+\\DeclareRobustCommand*{\\hyperimage}{\\hyper@normalise\\hyper@image}
+\\providecommand\\hyper@image[2]{#2}
+\\def\\hypertarget#1#2{%
+  \\ifHy@nesting
+    \\hyper@@anchor{#1}{#2}%
+  \\else
+    \\hyper@@anchor{#1}{\\relax}#2%
+  \\fi
+}
+\\DeclareRobustCommand*{\\hyperref}{%
+  \\@ifnextchar[{\\Hy@babelnormalise\\label@hyperref}\\@hyperref
+}
+\\def\\Hy@babelnormalise#1[#2]{%
+  \\begingroup
+    \\Hy@safe@activestrue
+    \\edef\\Hy@tempa{%
+      \\endgroup
+      \\noexpand#1[{#2}]%
+    }%
+  \\Hy@tempa
+}
+\\def\\@hyperref{\\hyper@normalise\\@@hyperref}
+\\def\\@@hyperref#1#2#3{%
+  \\edef\\ref@one{\\ifx\\\\#2\\\\\\else#2.\\fi#3}%
+  \\expandafter\\tryhyper@link\\ref@one\\\\{#1}%
+}
+\\def\\tryhyper@link#1\\\\#2{%
+  \\hyper@@link{#2}{#1}%
+}
+\\def\\hyperdef{\\@ifnextchar[{\\label@hyperdef}{\\@hyperdef}}
+\\def\\@hyperdef#1#2#3{%, category, name, text
+  \\ifx\\\\#1\\\\%
+    \\def\\Hy@AnchorName{#2}%
+  \\else
+    \\def\\Hy@AnchorName{#1.#2}%
+  \\fi
+  \\ifHy@nesting
+    \\expandafter\\hyper@@anchor\\expandafter{\\Hy@AnchorName}{#3}%
+  \\else
+    \\expandafter\\hyper@@anchor\\expandafter{\\Hy@AnchorName}{\\relax}#3%
+  \\fi
+}
+\\let\\hyperrefundefinedlink\\@firstofone
+\\def\\label@hyperref[#1]{%
+  \\expandafter\\label@@hyperref\\csname r@#1\\endcsname{#1}%
+}%
+\\def\\label@@hyperref#1#2#3{%
+  \\ifx#1\\relax
+    \\protect\\G@refundefinedtrue
+    \\@latex@warning{%
+      Hyper reference \`#2' on page \\thepage \\space undefined%
+    }%
+    \\begingroup
+      \\hyperrefundefinedlink{#3}%
+    \\endgroup
+  \\else
+    \\hyper@@link{\\expandafter\\@fifthoffive#1}%
+      {\\expandafter\\@fourthoffive#1\\@empty\\@empty}{#3}%
+  \\fi
+}
+\\def\\label@hyperdef[#1]#2#3#4{% label name, category, name,
+                                % anchor text
+  \\@bsphack
+  \\ifx\\\\#2\\\\%
+    \\def\\Hy@AnchorName{#3}%
+  \\else
+    \\def\\Hy@AnchorName{#2.#3}%
+  \\fi
+  \\if@filesw
+    \\protected@write\\@auxout{}{%
+      \\string\\newlabel{#1}{{}{}{}{\\Hy@AnchorName}{}}%
+    }%
+  \\fi
+  \\@esphack
+  \\ifHy@nesting
+    \\expandafter\\hyper@@anchor\\expandafter{\\Hy@AnchorName}{#4}%
+  \\else
+    \\expandafter\\hyper@@anchor\\expandafter{\\Hy@AnchorName}{\\relax}#4%
+  \\fi
+}
+\\newdimen\\XeTeXLinkMargin
+\\setlength{\\XeTeXLinkMargin}{2pt}
+\\ifxetex
+  \\font\\XeTeXLink@font=pzdr at 1sp\\relax
+  \\newcommand*{\\XeTeXLink@space}{%
+    \\begingroup
+      \\XeTeXLink@font
+      \\@xxxii
+    \\endgroup
+  }%
+  \\newcommand{\\XeTeXLinkBox}[1]{%
+    \\begingroup
+      \\leavevmode
+      \\sbox\\z@{#1}%
+      \\begingroup
+        \\dimen@=\\dp\\z@
+        \\advance\\dimen@\\XeTeXLinkMargin
+        \\setbox\\tw@=\\llap{%
+          \\hb@xt@\\XeTeXLinkMargin{%
+            \\lower\\dimen@\\hbox{\\XeTeXLink@space}%
+            \\hss
+          }%
+        }%
+        \\dp\\tw@=\\dp\\z@
+        \\ht\\tw@=\\ht\\z@
+        \\copy\\tw@
+      \\endgroup
+      \\copy\\z@
+      \\dimen@=\\ht\\z@
+      \\advance\\dimen@\\XeTeXLinkMargin
+      \\setbox\\tw@=\\rlap{%
+        \\hb@xt@\\XeTeXLinkMargin{%
+          \\hss
+          \\raise\\dimen@\\hbox{\\XeTeXLink@space}%
+        }%
+      }%
+      \\dp\\tw@=\\dp\\z@
+      \\ht\\tw@=\\ht\\z@
+      \\copy\\tw@
+    \\endgroup
+  }%
+\\else
+  \\newcommand*{\\XeTeXLinkBox}[1]{%
+    \\begingroup
+      \\leavevmode
+      \\sbox\\z@{#1}%
+      \\copy\\z@
+    \\endgroup
+  }%
+\\fi
+\\def\\hyper@@link{\\let\\Hy@reserved@a\\relax
+  \\@ifnextchar[{\\hyper@link@}{\\hyper@link@[link]}%
+}
+\\def\\hyper@link@[#1]#2#3#4{%
+  \\ltx@ifempty{#4}{% link text
+    \\Hy@Warning{Suppressing empty link}%
+  }{%
+    \\begingroup
+      \\protected@edef\\Hy@tempa{#2}%
+      \\edef\\Hy@tempb{#3}%
+      \\ifx\\Hy@tempa\\ltx@empty
+        \\ifx\\Hy@tempb\\ltx@empty
+          \\Hy@Warning{Suppressing link with empty target}%
+          \\toks@{%
+            \\endgroup
+            \\ltx@secondoftwo
+          }%
+        \\else
+          \\toks@{%
+            \\endgroup
+            \\hyper@link{#1}%
+          }%
+        \\fi
+      \\else
+        \\toks@{%
+          \\endgroup
+          \\expandafter\\hyper@readexternallink#2\\\\{#1}%
+        }%
+      \\fi
+      \\Hy@safe@activesfalse
+      \\toks@\\expandafter{%
+        \\the\\expandafter\\toks@
+        \\expandafter{\\Hy@tempb}{#4}%
+      }%
+    \\the\\toks@
+  }%
+}
+\\def\\hyper@readexternallink#1\\\\#2#3#4{%
+  \\begingroup
+    \\let\\\\\\relax
+  \\expandafter\\endgroup
+  \\expandafter\\@@hyper@@readexternallink#1\\\\{#2}{#3}{#4}%
+}
+\\def\\@@hyper@@readexternallink#1\\\\#2#3#4{%
+  \\@hyper@readexternallink{#2}{#3}{#4}#1::\\\\{#1}%
+}
+\\def\\@pdftempwordfile{file}%
+\\def\\@pdftempwordrun{run}%
+\\def\\@hyper@readexternallink#1#2#3#4:#5:#6\\\\#7{%
+  \\ifx\\\\#6\\\\%
+    \\@hyper@linkfile file:#7\\\\{#3}{#2}{#7}%
+  \\else
+    \\ifx\\\\#4\\\\%
+      \\@hyper@linkfile file:#7\\\\{#3}{#2}{#7}%
+    \\else
+      \\def\\@pdftempa{#4}%
+      \\ifx\\@pdftempa\\@pdftempwordfile
+        \\@hyper@linkfile#7\\\\{#3}{#2}{#7}%
+      \\else
+        \\ifx\\@pdftempa\\@pdftempwordrun
+          \\ifHy@pdfa
+            \\Hy@Error{%
+              PDF/A: Launch action is prohibited%
+            }\\@ehc
+            \\begingroup
+              \\leavevmode
+              #2%
+            \\endgroup
+          \\else
+            \\@hyper@launch#7\\\\{#3}{#2}%
+          \\fi
+        \\else
+          \\hyper@linkurl{#3}{#7\\ifx\\\\#2\\\\\\else\\hyper@hash#2\\fi}%
+        \\fi
+      \\fi
+    \\fi
+  \\fi
+}
+\\def\\@hyper@launch run:#1\\\\#2#3{% filename, anchor text, linkname
+  \\hyper@linkurl{#2}{%
+    \\Hy@linkfileprefix
+    #1%
+    \\ifx\\\\#3\\\\%
+    \\else
+      \\hyper@hash
+      #3%
+    \\fi
+  }%
+}
+\\def\\@hyper@linkfile file:#1\\\\#2#3#4{%
+     %file url,link string, name, original uri
+  \\filename@parse{#1}%
+  \\ifx\\filename@ext\\relax
+    \\edef\\filename@ext{\\XR@ext}%
+  \\fi
+  \\def\\use@file{\\filename@area\\filename@base.\\filename@ext}%
+  \\Hy@IfStringEndsWith\\filename@ext\\XR@ext{%
+    \\hyper@linkfile{#2}{\\use@file}{#3}%
+  }{%
+    \\ifx\\@baseurl\\@empty
+      \\hyper@linkurl{#2}{%
+        #4\\ifx\\\\#3\\\\\\else\\hyper@hash#3\\fi
+      }%
+    \\else
+      \\hyper@linkurl{#2}{\\use@file\\ifx\\\\#3\\\\\\else\\hyper@hash#3\\fi}%
+    \\fi
+  }%
+}
+\\def\\Hy@IfStringEndsWith#1#2{%
+  \\begingroup
+    \\edef\\x{#1}%
+    \\@onelevel@sanitize\\x
+    \\edef\\x{.\\x\$}%
+    \\edef\\y{#2}%
+    \\@onelevel@sanitize\\y
+    \\edef\\y{.\\y\$}%
+    \\expandafter\\def\\expandafter\\z\\expandafter##\\expandafter1\\y##2\\@nil{%
+      \\endgroup
+      \\ifx\\relax##2\\relax
+        \\expandafter\\ltx@secondoftwo
+      \\else
+        \\expandafter\\ltx@firstoftwo
+      \\fi
+    }%
+  \\expandafter\\expandafter\\expandafter\\z\\expandafter\\x\\y\\@nil
+}
+\\def\\Hy@StringLocalhost{localhost}
+\\@onelevel@sanitize\\Hy@StringLocalhost
+\\def\\Hy@CleanupFile#1{%
+  \\edef#1{#1}%
+  \\expandafter\\Hy@@CleanupFile#1\\hbox///\\hbox\\@nil{#1}%
+}
+\\def\\Hy@@CleanupFile#1//#2/#3\\hbox#4\\@nil#5{%
+  \\begingroup
+    \\toks@{\\endgroup}%
+    \\def\\x{#1}%
+    \\ifx\\x\\@empty
+      \\def\\x{#2}%
+      \\ifx\\x\\@empty
+        \\toks@{\\endgroup\\def#5{/#3}}%
+      \\else
+        \\@onelevel@sanitize\\x
+        \\ifx\\x\\Hy@StringLocalhost
+          \\toks@{\\endgroup\\def#5{/#3}}%
+        \\fi
+      \\fi
+    \\fi
+  \\the\\toks@
+}
+\\long\\def\\hyper@@anchor#1#2{\\@hyper@@anchor#1\\relax#2\\relax}
+\\long\\def\\@hyper@@anchor#1\\relax#2#3\\relax{%
+  \\ifx\\\\#1\\\\%
+    #2\\Hy@Warning{Ignoring empty anchor}%
+  \\else
+    \\def\\anchor@spot{#2#3}%
+    \\let\\put@me@back\\@empty
+    \\ifx\\relax#2\\relax
+    \\else
+      \\ifHy@nesting
+      \\else
+        \\ifcat a\\noexpand#2\\relax
+        \\else
+          \\ifcat 0\\noexpand#2 \\relax
+          \\else
+            \\let\\anchor@spot\\@empty
+            \\def\\put@me@back{#2#3}%
+          \\fi
+        \\fi
+      \\fi
+    \\fi
+    \\ifHy@activeanchor
+      \\anchor@spot
+    \\else
+      \\hyper@anchor{#1}%
+    \\fi
+    \\expandafter\\put@me@back
+  \\fi
+  \\let\\anchor@spot\\@empty
+}
+\\let\\anchor@spot\\ltx@empty
+\\ifHy@destlabel
+  \\def\\hyper@newdestlabel#1#2{%
+    \\begingroup
+      \\Hy@safe@activestrue
+      \\edef\\x{\\endgroup
+        \\noexpand\\@newl@bel{HyDL}{#1}{#2}%
+      }%
+    \\x
+  }%
+  \\providecommand*{\\hyper@destlabel@hook}{}%
+  \\newcommand*{\\Hy@DestRename}[2]{%
+    \\ltx@IfUndefined{HyDL!#1}{%
+      \\begingroup
+        \\Hy@safe@activestrue
+        \\edef\\dest@name{#1}%
+        \\edef\\label@name{#2}%
+        \\hyper@destlabel@hook
+        \\Hy@IsNotEmpty{dest@name}{%
+          \\Hy@IsNotEmpty{label@name}{%
+            \\global\\expandafter
+            \\let\\csname HyDL!#1\\endcsname\\ltx@empty
+            \\if@filesw
+              \\protected@write\\@auxout{}{%
+                \\string\\hyper@newdestlabel
+                {#1}%
+                {\\label@name}%
+              }%
+            \\fi
+          }%
+        }%
+      \\endgroup
+    }{}%
+  }%
+  \\newcommand*{\\HyperDestRename}[2]{%
+    \\AtBeginDocument{%
+      \\Hy@DestRename{#1}{#2}%
+    }%
+  }%
+  \\AtBeginDocument{%
+    \\let\\HyperDestRename\\Hy@DestRename
+  }%
+  \\def\\Hy@IsNotEmpty#1{%
+    \\ltx@IfUndefined{#1}\\ltx@gobble{%
+      \\expandafter\\ifx\\csname#1\\endcsname\\ltx@empty
+        \\expandafter\\ltx@gobble
+      \\else
+        \\expandafter\\ltx@firstofone
+      \\fi
+    }%
+  }%
+  \\ltx@GlobalAppendToMacro\\label@hook{%
+    \\HyperDestRename\\@currentHref\\label@name
+  }%
+  \\def\\HyperDestLabelReplace#1{%
+    \\ltx@ifundefined{HyDL@#1}{%
+      #1%
+    }{%
+      \\csname HyDL@#1\\endcsname
+    }%
+  }%
+\\let\\HyperDestNameFilter\\HyperDestLabelReplace
+\\else
+  \\let\\hyper@newdestlabel\\ltx@gobbletwo
+  \\let\\HyperDestLabelReplace\\ltx@firstofone
+  \\let\\HyperDestRename\\ltx@gobbletwo
+\\fi
+\\Hy@DisableOption{destlabel}
+\\AddLineBeginAux{%
+  \\string\\providecommand\\string\\hyper@newdestlabel[2]{}%
+}
+\\let\\htmladdimg\\hyperimage
+\\def\\htmladdnormallink#1#2{\\href{#2}{#1}}
+\\def\\htmladdnormallinkfoot#1#2{\\href{#2}{#1}\\footnote{#2}}
+\\def\\htmlref#1#2{% anchor text, label
+  \\label@hyperref[{#2}]{#1}%
+}
+\\def\\@@latextohtmlX{%
+  \\let\\hhyperref\\hyperref
+  \\def\\hyperref##1##2##3##4{% anchor text for HTML
+                     % text to print before label in print
+                     % label
+                     % post-label text in print
+    ##2\\ref{##4}##3%
+  }%
+}
+\\RequirePackage{bitset}
+\\def\\HyField@NewFlag#1#2{%
+  \\lowercase{\\HyField@NewOption{#2}}%
+  \\lowercase{\\HyField@NewBitsetFlag{#2}}{#2}{#1}%
+}
+\\def\\HyField@NewFlagOnly#1#2{%
+  \\lowercase{\\HyField@NewBitsetFlag{#2}}{#2}{#1}%
+}
+\\def\\HyField@NewOption#1{%
+  \\expandafter\\newif\\csname ifFld@#1\\endcsname
+  \\define@key{Field}{#1}[true]{%
+    \\lowercase{\\Field@boolkey{##1}}{#1}%
+  }%
+}
+\\def\\HyField@NewBitsetFlag#1#2#3#4{%
+  \\begingroup
+    \\count@=#4\\relax
+    \\advance\\count@\\m@ne
+    \\def\\x##1{%
+      \\endgroup
+      \\expandafter\\def\\csname HyField@#3@#1\\endcsname{##1}%
+      \\expandafter\\ifx\\csname HyField@#3@##1\\endcsname\\relax
+        \\expandafter\\edef\\csname HyField@#3@##1\\endcsname{%
+          (\\number#4) #2%
+        }%
+      \\else
+        \\expandafter\\edef\\csname HyField@#3@##1\\endcsname{%
+          \\csname HyField@#3@##1\\endcsname
+          /#2%
+        }%
+      \\fi
+    }%
+  \\expandafter\\x\\expandafter{\\the\\count@}%
+}
+\\def\\HyField@UseFlag#1#2{%
+  \\lowercase{\\HyField@@UseFlag{#2}}{#1}%
+}
+\\def\\HyField@@UseFlag#1#2{%
+  \\bitsetSetValue{HyField@#2}{%
+    \\csname HyField@#2@#1\\endcsname
+  }{%
+    \\csname ifFld@#1\\endcsname 1\\else 0\\fi
+  }%
+}
+\\def\\HyField@SetFlag#1#2{%
+  \\lowercase{\\HyField@@SetFlag{#2}}{#1}%
+}
+\\def\\HyField@@SetFlag#1#2{%
+  \\bitsetSetValue{HyField@#2}{%
+    \\csname HyField@#2@#1\\endcsname
+  }{1}%
+}
+\\def\\HyField@PrintFlags#1#2{%
+  \\ifHy@verbose
+    \\begingroup
+      \\let\\Hy@temp\\@empty
+      \\let\\MessageBreak\\relax
+      \\expandafter\\@for\\expandafter\\x\\expandafter:\\expandafter=%
+      \\bitsetGetSetBitList{HyField@#1}\\do{%
+        \\edef\\Hy@temp{%
+          \\Hy@temp
+          \\csname HyField@#1@\\x\\endcsname\\MessageBreak
+        }%
+      }%
+    \\edef\\x{\\endgroup
+      \\noexpand\\Hy@Info{%
+        Field flags: %
+          \\expandafter\\ifx\\@car#1\\@nil S\\else/\\fi
+          #1 %
+          \\bitsetGetDec{HyField@#1} %
+          (0x\\bitsetGetHex{HyField@#1}{32})\\MessageBreak
+        \\Hy@temp
+        for #2%
+      }%
+    }\\x
+  \\fi
+}
+\\HyField@NewFlag{Ff}{ReadOnly}{1}
+\\HyField@NewFlag{Ff}{Required}{2}
+\\HyField@NewFlag{Ff}{NoExport}{3}
+\\HyField@NewFlag{Ff}{NoToggleToOff}{15}
+\\HyField@NewFlag{Ff}{Radio}{16}
+\\HyField@NewFlag{Ff}{Pushbutton}{17}
+\\HyField@NewFlag{Ff}{RadiosInUnison}{26}
+\\HyField@NewFlag{Ff}{Multiline}{13}
+\\HyField@NewFlag{Ff}{Password}{14}
+\\HyField@NewFlag{Ff}{FileSelect}{21}% PDF 1.4
+\\HyField@NewFlag{Ff}{DoNotSpellCheck}{23}% PDF 1.4
+\\HyField@NewFlag{Ff}{DoNotScroll}{24}% PDF 1.4
+\\HyField@NewFlag{Ff}{Comb}{25}% PDF 1.4
+\\HyField@NewFlag{Ff}{RichText}{26}% PDF 1.5
+\\HyField@NewFlag{Ff}{Combo}{18}
+\\HyField@NewFlag{Ff}{Edit}{19}
+\\HyField@NewFlag{Ff}{Sort}{20}
+\\HyField@NewFlag{Ff}{MultiSelect}{22}% PDF 1.4
+\\HyField@NewFlag{Ff}{CommitOnSelChange}{27}% PDF 1.5
+\\newif\\ifFld@popdown
+\\define@key{Field}{popdown}[true]{%
+  \\lowercase{\\Field@boolkey{#1}}{popdown}%
+}
+\\HyField@NewFlag{F}{Invisible}{1}
+\\HyField@NewFlag{F}{Hidden}{2}% PDF 1.2
+\\HyField@NewFlag{F}{Print}{3}% PDF 1.2
+\\HyField@NewFlag{F}{NoZoom}{4}% PDF 1.2
+\\HyField@NewFlag{F}{NoRotate}{5}% PDF 1.3
+\\HyField@NewFlag{F}{NoView}{6}% PDF 1.3
+\\HyField@NewFlag{F}{Locked}{8}% PDF 1.4
+\\HyField@NewFlag{F}{ToggleNoView}{9}% PDF 1.5
+\\HyField@NewFlag{F}{LockedContents}{10}% PDF 1.7
+\\ifHy@pdfa
+  \\def\\HyField@PDFAFlagWarning#1#2{%
+    \\Hy@Warning{%
+      PDF/A: Annotation flag \`#1' must\\MessageBreak
+      be set to \`#2'%
+    }%
+  }%
+  \\Fld@invisiblefalse
+  \\def\\Fld@invisibletrue{%
+    \\HyField@PDFAFlagWarning{invisible}{false}%
+  }%
+  \\Fld@hiddenfalse
+  \\def\\Fld@hiddentrue{%
+    \\HyField@PDFAFlagWarning{hidden}{false}%
+  }%
+  \\Fld@printtrue
+  \\def\\Fld@printfalse{%
+    \\HyField@PDFAFlagWarning{print}{true}%
+  }%
+  \\Fld@nozoomtrue
+  \\def\\Fld@nozoomfalse{%
+    \\HyField@PDFAFlagWarning{nozoom}{true}%
+  }%
+  \\Fld@norotatetrue
+  \\def\\Fld@norotatefalse{%
+    \\HyField@PDFAFlagWarning{norotate}{true}%
+  }%
+  \\Fld@noviewfalse
+  \\def\\Fld@noviewtrue{%
+    \\HyField@PDFAFlagWarning{noview}{false}%
+  }%
+\\fi
+\\HyField@NewFlag{Submit}{IncludeNoValueFields}{2}
+\\HyField@NewFlagOnly{Submit}{ExportFormat}{3}
+\\HyField@NewFlag{Submit}{GetMethod}{4}
+\\HyField@NewFlag{Submit}{SubmitCoordinates}{5}
+\\HyField@NewFlagOnly{Submit}{XFDF}{6}
+\\HyField@NewFlag{Submit}{IncludeAppendSaves}{7}
+\\HyField@NewFlag{Submit}{IncludeAnnotations}{8}
+\\HyField@NewFlagOnly{Submit}{SubmitPDF}{9}
+\\HyField@NewFlag{Submit}{CanonicalFormat}{10}
+\\HyField@NewFlag{Submit}{ExclNonUserAnnots}{11}
+\\HyField@NewFlag{Submit}{ExclFKey}{12}
+\\HyField@NewFlag{Submit}{EmbedForm}{14}
+\\define@key{Field}{export}{%
+  \\lowercase{\\def\\Hy@temp{#1}}%
+  \\@ifundefined{Fld@export@\\Hy@temp}{%
+    \\@onelevel@sanitize\\Hy@temp
+    \\Hy@Error{%
+      Unknown export format \`\\Hy@temp'.\\MessageBreak
+      Known formats are \`FDF', \`HTML', \`XFDF', and \`PDF'%
+    }\\@ehc
+  }{%
+    \\let\\Fld@export\\Hy@temp
+  }%
+}
+\\def\\Fld@export{fdf}
+\\@namedef{Fld@export@fdf}{0}%
+\\@namedef{Fld@export@html}{1}%
+\\@namedef{Fld@export@xfdf}{2}%
+\\@namedef{Fld@export@pdf}{3}%
+\\def\\HyField@FlagsSubmit{%
+  \\bitsetReset{HyField@Submit}%
+  \\ifcase\\@nameuse{Fld@export@\\Fld@export} %
+    % FDF
+    \\HyField@UseFlag{Submit}{IncludeNoValueFields}%
+    \\HyField@UseFlag{Submit}{SubmitCoordinates}%
+    \\HyField@UseFlag{Submit}{IncludeAppendSaves}%
+    \\HyField@UseFlag{Submit}{IncludeAnnotations}%
+    \\HyField@UseFlag{Submit}{CanonicalFormat}%
+    \\HyField@UseFlag{Submit}{ExclNonUserAnnots}%
+    \\HyField@UseFlag{Submit}{ExclFKey}%
+    \\HyField@UseFlag{Submit}{EmbedForm}%
+  \\or % HTML
+    \\HyField@SetFlag{Submit}{ExportFormat}%
+    \\HyField@UseFlag{Submit}{IncludeNoValueFields}%
+    \\HyField@UseFlag{Submit}{GetMethod}%
+    \\HyField@UseFlag{Submit}{SubmitCoordinates}%
+    \\HyField@UseFlag{Submit}{CanonicalFormat}%
+  \\or % XFDF
+    \\HyField@SetFlag{Submit}{XFDF}%
+    \\HyField@UseFlag{Submit}{IncludeNoValueFields}%
+    \\HyField@UseFlag{Submit}{SubmitCoordinates}%
+    \\HyField@UseFlag{Submit}{CanonicalFormat}%
+  \\or % PDF
+    \\HyField@SetFlag{Submit}{SubmitPDF}%
+    \\HyField@UseFlag{Submit}{GetMethod}%
+  \\fi
+  \\HyField@PrintFlags{Submit}{submit button field}%
+  \\bitsetIsEmpty{HyField@Submit}{%
+    \\let\\Fld@submitflags\\ltx@empty
+  }{%
+    \\edef\\Fld@submitflags{/Flags \\bitsetGetDec{HyField@Submit}}%
+  }%
+}
+\\def\\HyField@FlagsAnnot#1{%
+  \\bitsetReset{HyField@F}%
+  \\HyField@UseFlag{F}{Invisible}%
+  \\HyField@UseFlag{F}{Hidden}%
+  \\HyField@UseFlag{F}{Print}%
+  \\HyField@UseFlag{F}{NoZoom}%
+  \\HyField@UseFlag{F}{NoRotate}%
+  \\HyField@UseFlag{F}{NoView}%
+  \\HyField@UseFlag{F}{Locked}%
+  \\HyField@UseFlag{F}{ToggleNoView}%
+  \\HyField@UseFlag{F}{LockedContents}%
+  \\HyField@PrintFlags{F}{#1}%
+  \\bitsetIsEmpty{HyField@F}{%
+    \\let\\Fld@annotflags\\ltx@empty
+  }{%
+    \\edef\\Fld@annotflags{/F \\bitsetGetDec{HyField@F}}%
+  }%
+}
+\\def\\HyField@FlagsPushButton{%
+  \\HyField@FlagsAnnot{push button field}%
+  \\bitsetReset{HyField@Ff}%
+  \\HyField@UseFlag{Ff}{ReadOnly}%
+  \\HyField@UseFlag{Ff}{Required}%
+  \\HyField@UseFlag{Ff}{NoExport}%
+  \\HyField@SetFlag{Ff}{Pushbutton}%
+  \\HyField@PrintFlags{Ff}{push button field}%
+  \\bitsetIsEmpty{HyField@Ff}{%
+    \\let\\Fld@flags\\ltx@empty
+  }{%
+    \\edef\\Fld@flags{/Ff \\bitsetGetDec{HyField@Ff}}%
+  }%
+}
+\\def\\HyField@FlagsCheckBox{%
+  \\HyField@FlagsAnnot{check box field}%
+  \\bitsetReset{HyField@Ff}%
+  \\HyField@UseFlag{Ff}{ReadOnly}%
+  \\HyField@UseFlag{Ff}{Required}%
+  \\HyField@UseFlag{Ff}{NoExport}%
+  \\HyField@PrintFlags{Ff}{check box field}%
+  \\bitsetIsEmpty{HyField@Ff}{%
+    \\let\\Fld@flags\\ltx@empty
+  }{%
+    \\edef\\Fld@flags{/Ff \\bitsetGetDec{HyField@Ff}}%
+  }%
+}
+\\def\\HyField@FlagsRadioButton{%
+  \\HyField@FlagsAnnot{radio button field}%
+  \\bitsetReset{HyField@Ff}%
+  \\HyField@UseFlag{Ff}{ReadOnly}%
+  \\HyField@UseFlag{Ff}{Required}%
+  \\HyField@UseFlag{Ff}{NoExport}%
+  \\HyField@UseFlag{Ff}{NoToggleToOff}%
+  \\HyField@SetFlag{Ff}{Radio}%
+  \\HyField@UseFlag{Ff}{RadiosInUnison}%
+  \\HyField@PrintFlags{Ff}{radio button field}%
+  \\bitsetIsEmpty{HyField@Ff}{%
+    \\let\\Fld@flags\\ltx@empty
+  }{%
+    \\edef\\Fld@flags{/Ff \\bitsetGetDec{HyField@Ff}}%
+  }%
+}
+\\def\\HyField@FlagsText{%
+  \\HyField@FlagsAnnot{text field}%
+  \\bitsetReset{HyField@Ff}%
+  \\HyField@UseFlag{Ff}{ReadOnly}%
+  \\HyField@UseFlag{Ff}{Required}%
+  \\HyField@UseFlag{Ff}{NoExport}%
+  \\HyField@UseFlag{Ff}{Multiline}%
+  \\HyField@UseFlag{Ff}{Password}%
+  \\HyField@UseFlag{Ff}{FileSelect}%
+  \\HyField@UseFlag{Ff}{DoNotSpellCheck}%
+  \\HyField@UseFlag{Ff}{DoNotScroll}%
+  \\ifFld@comb
+    \\ifcase0\\ifFld@multiline
+            \\else\\ifFld@password
+            \\else\\ifFld@fileselect
+            \\else 1\\fi\\fi\\fi\\relax
+      \\Hy@Error{%
+        Field option \`comb' cannot used together with\\MessageBreak
+        \`multiline', \`password', or \`fileselect'%
+      }\\@ehc
+    \\else
+      \\HyField@UseFlag{Ff}{Comb}%
+    \\fi
+  \\fi
+  \\HyField@UseFlag{Ff}{RichText}%
+  \\HyField@PrintFlags{Ff}{text field}%
+  \\bitsetIsEmpty{HyField@Ff}{%
+    \\let\\Fld@flags\\ltx@empty
+  }{%
+    \\edef\\Fld@flags{/Ff \\bitsetGetDec{HyField@Ff}}%
+  }%
+}
+\\def\\HyField@FlagsChoice{%
+  \\HyField@FlagsAnnot{choice field}%
+  \\bitsetReset{HyField@Ff}%
+  \\HyField@UseFlag{Ff}{ReadOnly}%
+  \\HyField@UseFlag{Ff}{Required}%
+  \\HyField@UseFlag{Ff}{NoExport}%
+  \\HyField@UseFlag{Ff}{Combo}%
+  \\ifFld@combo
+    \\HyField@UseFlag{Ff}{Edit}%
+  \\fi
+  \\HyField@UseFlag{Ff}{Sort}%
+  \\HyField@UseFlag{Ff}{MultiSelect}%
+  \\ifFld@combo
+    \\ifFld@edit
+      \\HyField@UseFlag{Ff}{DoNotSpellCheck}%
+    \\fi
+  \\fi
+  \\HyField@UseFlag{Ff}{CommitOnSelChange}%
+  \\HyField@PrintFlags{Ff}{choice field}%
+  \\bitsetIsEmpty{HyField@Ff}{%
+    \\let\\Fld@flags\\ltx@empty
+  }{%
+    \\edef\\Fld@flags{/Ff \\bitsetGetDec{HyField@Ff}}%
+  }%
+}
+\\def\\HyField@PDFChoices#1{%
+  \\begingroup
+    \\global\\let\\Fld@choices\\ltx@empty
+    \\let\\HyTmp@optlist\\ltx@empty
+    \\let\\HyTmp@optitem\\relax
+    \\count@=0 %
+    \\kv@parse{#1}{%
+      \\Hy@pdfstringdef\\kv@key\\kv@key
+      \\ifx\\kv@value\\relax
+        \\ifnum\\Hy@pdf@majorminor@version<103 % implementation note 122, PDF spec 1.7
+          \\xdef\\Fld@choices{\\Fld@choices[(\\kv@key)(\\kv@key)]}%
+        \\else
+          \\xdef\\Fld@choices{\\Fld@choices(\\kv@key)}%
+        \\fi
+      \\else
+        \\Hy@pdfstringdef\\kv@value\\kv@value
+        \\xdef\\Fld@choices{\\Fld@choices[(\\kv@value)(\\kv@key)]}%
+      \\fi
+      \\edef\\HyTmp@optlist{%
+        \\HyTmp@optlist
+        \\HyTmp@optitem{\\the\\count@}{\\kv@key}0%
+      }%
+      \\advance\\count@ by 1 %
+      \\@gobbletwo
+    }%
+    \\xdef\\Fld@choices{/Opt[\\Fld@choices]}%
+    \\ifFld@multiselect
+      \\HyField@@PDFChoices{DV}\\Fld@default
+      \\HyField@@PDFChoices{V}\\Fld@value
+    \\else
+      \\ifx\\Fld@default\\relax
+      \\else
+        \\pdfstringdef\\Hy@gtemp\\Fld@default
+        \\xdef\\Fld@choices{\\Fld@choices/DV(\\Hy@gtemp)}%
+      \\fi
+      \\ifx\\Fld@value\\relax
+      \\else
+        \\pdfstringdef\\Hy@gtemp\\Fld@value
+        \\xdef\\Fld@choices{\\Fld@choices/V(\\Hy@gtemp)}%
+      \\fi
+    \\fi
+  \\endgroup
+}
+\\def\\HyField@@PDFChoices#1#2{%
+  \\ifx#2\\relax
+  \\else
+    \\count@=0 %
+    \\def\\HyTmp@optitem##1##2##3{%
+      \\def\\HyTmp@key{##2}%
+      \\ifx\\HyTmp@key\\Hy@gtemp
+        \\expandafter\\def\\expandafter\\HyTmp@optlist\\expandafter{%
+          \\HyTmp@optlist
+          \\HyTmp@optitem{##1}{##2}1%
+        }%
+        \\let\\HyTmp@found=Y%
+      \\else
+        \\expandafter\\def\\expandafter\\HyTmp@optlist\\expandafter{%
+          \\HyTmp@optlist
+          \\HyTmp@optitem{##1}{##2}##3%
+        }%
+      \\fi
+    }%
+    \\expandafter\\comma@parse\\expandafter{#2}{%
+      \\pdfstringdef\\Hy@gtemp\\comma@entry
+      \\let\\HyTmp@found=N %
+      \\expandafter\\let\\expandafter\\HyTmp@optlist\\expandafter\\@empty
+      \\HyTmp@optlist
+      \\ifx\\HyTmp@found Y%
+        \\advance\\count@ by 1 %
+      \\else
+        \\@onelevel@sanitize\\comma@entry
+        \\PackageWarning{hyperref}{%
+          \\string\\ChoiceBox: Ignoring value \`\\comma@entry',%
+          \\MessageBreak
+          it cannot be found in the choices%
+        }%
+      \\fi
+      \\@gobble
+    }%
+    \\def\\HyTmp@optitem##1##2##3{%
+      \\ifnum##3=1 %
+        (##2)%
+      \\fi
+    }%
+    \\ifcase\\count@
+    \\or
+      \\xdef\\Fld@choices{\\Fld@choices/#1\\HyTmp@optlist}%
+    \\else
+      \\xdef\\Fld@choices{\\Fld@choices/#1[\\HyTmp@optlist]}%
+      \\ifx#1V%
+        \\def\\HyTmp@optitem##1##2##3{%
+          \\ifnum##3=1 %
+            \\@firstofone{ ##1}%
+          \\fi
+        }%
+        \\edef\\HyTmp@optlist{\\HyTmp@optlist}%
+        \\xdef\\Fld@choices{%
+          \\Fld@choices
+          /I[\\expandafter\\@firstofone\\HyTmp@optlist]%
+        }%
+      \\fi
+    \\fi
+  \\fi
+}
+\\def\\HyField@SetKeys{%
+  \\kvsetkeys{Field}%
+}
+\\newif\\ifFld@checked
+\\newif\\ifFld@disabled
+\\Fld@checkedfalse
+\\Fld@disabledfalse
+\\newcount\\Fld@menulength
+\\newdimen\\Field@Width
+\\newdimen\\Fld@charsize
+\\Fld@charsize=10\\p@
+\\def\\Fld@maxlen{0}
+\\def\\Fld@align{0}
+\\def\\Fld@color{0 0 0 rg}
+\\def\\Fld@bcolor{1 1 1}
+\\def\\Fld@bordercolor{1 0 0}
+\\def\\Fld@bordersep{1\\p@}
+\\def\\Fld@borderwidth{1}
+\\def\\Fld@borderstyle{S}
+\\def\\Fld@cbsymbol{4}
+\\def\\Fld@radiosymbol{H}
+\\def\\Fld@rotation{0}
+\\def\\Form{\\@ifnextchar[{\\@Form}{\\@Form[]}}
+\\def\\endForm{\\@endForm}
+\\newif\\ifForm@html
+\\Form@htmlfalse
+\\def\\Form@boolkey#1#2{%
+  \\csname Form@#2\\ifx\\relax#1\\relax true\\else#1\\fi\\endcsname
+}
+\\define@key{Form}{action}{%
+  \\hyper@normalise\\Hy@DefFormAction{#1}%
+}
+\\def\\Hy@DefFormAction{\\def\\Form@action}
+\\def\\enc@@html{html}
+\\define@key{Form}{encoding}{%
+  \\def\\Hy@tempa{#1}%
+  \\ifx\\Hy@tempa\\enc@@html
+    \\Form@htmltrue
+    \\def\\Fld@export{html}%
+  \\else
+    \\Hy@Warning{%
+       Form \`encoding' key with \\MessageBreak
+       unknown value \`#1'%
+    }%
+    \\Form@htmlfalse
+  \\fi
+}
+\\define@key{Form}{method}{%
+  \\lowercase{\\def\\Hy@temp{#1}}%
+  \\@ifundefined{Form@method@\\Hy@temp}{%
+    \\@onelevel@sanitize\\Hy@temp
+    \\Hy@Error{%
+      Unknown method \`\\Hy@temp'.\\MessageBreak
+      Known values are \`post' and \`get'%
+    }\\@ehc
+  }{%
+    \\let\\Form@method\\Hy@temp
+    \\ifcase\\@nameuse{Form@method@\\Hy@temp} %
+      \\Fld@getmethodfalse
+    \\else
+      \\Fld@getmethodtrue
+    \\fi
+  }%
+}
+\\def\\Form@method{}
+\\@namedef{Form@method@post}{0}
+\\@namedef{Form@method@get}{1}
+\\newif\\ifHyField@NeedAppearances
+\\def\\HyField@NeedAppearancesfalse{%
+  \\global\\let\\ifHyField@NeedAppearances\\iffalse
+}
+\\def\\HyField@NeedAppearancestrue{%
+  \\global\\let\\ifHyField@NeedAppearances\\iftrue
+}
+\\HyField@NeedAppearancestrue
+\\define@key{Form}{NeedAppearances}[true]{%
+  \\edef\\Hy@tempa{#1}%
+  \\ifx\\Hy@tempa\\Hy@true
+    \\HyField@NeedAppearancestrue
+  \\else
+    \\ifx\\Hy@tempa\\Hy@false
+      \\HyField@NeedAppearancesfalse
+    \\else
+      \\Hy@Error{%
+        Unexpected value \`\\Hy@tempa'\\MessageBreak
+        of option \`NeedAppearances' instead of\\MessageBreak
+        \`true' or \`false'%
+      }\\@ehc
+    \\fi
+  \\fi
+}
+\\def\\Field@boolkey#1#2{%
+  \\csname Fld@#2\\ifx\\relax#1\\relax true\\else#1\\fi\\endcsname
+}
+\\ifHy@texht
+  \\newtoks\\Field@toks
+  \\Field@toks={ }%
+  \\def\\Field@addtoks#1#2{%
+    \\edef\\@processme{\\Field@toks{\\the\\Field@toks\\space #1="#2"}}%
+    \\@processme
+  }%
+\\else
+  \\def\\Hy@WarnHTMLFieldOption#1{%
+    \\Hy@Warning{%
+      HTML field option \`#1'\\MessageBreak
+      is ignored%
+    }%
+  }%
+\\fi
+\\def\\Fld@checkequals#1=#2=#3\\\\{%
+  \\def\\@currDisplay{#1}%
+  \\ifx\\\\#2\\\\%
+    \\def\\@currValue{#1}%
+  \\else
+    \\def\\@currValue{#2}%
+  \\fi
+  \\expandafter\\Hy@pdfstringdef\\expandafter\\@currValue\\expandafter{\\@currValue}%
+}
+\\define@key{Field}{loc}{%
+  \\def\\Fld@loc{#1}%
+}
+\\define@key{Field}{checked}[true]{%
+  \\lowercase{\\Field@boolkey{#1}}{checked}%
+}
+\\define@key{Field}{disabled}[true]{%
+  \\lowercase{\\Field@boolkey{#1}}{disabled}%
+}
+\\ifHy@texht
+  \\define@key{Field}{accesskey}{%
+    \\Field@addtoks{accesskey}{#1}%
+  }%
+  \\define@key{Field}{tabkey}{%
+    \\Field@addtoks{tabkey}{#1}%
+  }%
+\\else
+  \\define@key{Field}{accesskey}{%
+    \\Hy@WarnHTMLFieldOption{accesskey}%
+  }%
+  \\define@key{Field}{tabkey}{%
+    \\Hy@WarnHTMLFieldOption{tabkey}%
+  }%
+\\fi
+\\define@key{Field}{name}{%
+  \\def\\Fld@name{#1}%
+}
+\\let\\Fld@altname\\relax
+\\define@key{Field}{altname}{%
+  \\def\\Fld@altname{#1}%
+}
+\\let\\Fld@mappingname\\relax
+\\define@key{Field}{mappingname}{%
+  \\def\\Fld@mappingname{#1}%
+}
+\\define@key{Field}{width}{%
+  \\def\\Fld@width{#1}%
+  \\Field@Width#1\\setbox0=\\hbox{m}%
+}
+\\define@key{Field}{maxlen}{%
+  \\def\\Fld@maxlen{#1}%
+}
+\\define@key{Field}{menulength}{%
+  \\Fld@menulength=#1\\relax
+}
+\\define@key{Field}{height}{%
+  \\def\\Fld@height{#1}%
+}
+\\define@key{Field}{charsize}{%
+  \\setlength{\\Fld@charsize}{#1}%
+}
+\\define@key{Field}{borderwidth}{%
+  \\Hy@defaultbp\\Fld@borderwidth{#1}%
+}
+\\def\\Hy@defaultbp#1#2{%
+  \\begingroup
+  \\afterassignment\\Hy@defaultbpAux
+  \\dimen@=#2bp\\relax{#1}{#2}%
+}
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname dimexpr\\endcsname\\relax
+  \\def\\Hy@defaultbpAux#1\\relax#2#3{%
+    \\ifx!#1!%
+      \\endgroup
+      \\def#2{#3}%
+    \\else
+      \\dimen@=.99626\\dimen@
+      \\edef\\x{\\endgroup
+        \\def\\noexpand#2{%
+          \\strip@pt\\dimen@
+        }%
+      }\\x
+    \\fi
+  }%
+\\else
+  \\def\\Hy@defaultbpAux#1\\relax#2#3{%
+    \\ifx!#1!%
+      \\endgroup
+      \\def#2{#3}%
+    \\else
+      \\edef\\x{\\endgroup
+        \\def\\noexpand#2{%
+          \\strip@pt\\dimexpr\\dimen@*800/803\\relax
+        }%
+      }\\x
+    \\fi
+  }%
+\\fi
+\\define@key{Field}{borderstyle}{%
+  \\let\\Hy@temp\\Fld@borderstyle
+  \\def\\Fld@borderstyle{#1}%
+  \\Hy@Match\\Fld@borderstyle{}{%
+    ^[SDBIU]\$%
+  }{}{%
+    \\Hy@Warning{%
+      Invalid value \`\\@pdfborderstyle'\\MessageBreak
+      for option \`pdfborderstyle'. Valid values:\\MessageBreak
+      \\space\\space S (Solid), D (Dashed), B (Beveled),\\MessageBreak
+      \\space\\space I (Inset), U (Underline)\\MessageBreak
+      Option setting is ignored%
+    }%
+    \\let\\Fld@borderstyle\\Hy@temp
+  }%
+}
+\\define@key{Field}{bordersep}{%
+  \\def\\Fld@bordersep{#1}%
+}
+\\define@key{Field}{default}{%
+  \\Hy@pdfstringdef\\Fld@default{#1}%
+}
+\\define@key{Field}{align}{%
+  \\def\\Fld@align{#1}%
+}
+\\define@key{Field}{value}{%
+  \\Hy@pdfstringdef\\Fld@value{#1}%
+}
+\\define@key{Field}{checkboxsymbol}{%
+  \\Fld@DingDef\\Fld@cbsymbol{#1}%
+}
+\\define@key{Field}{radiosymbol}{%
+  \\Fld@DingDef\\Fld@radiosymbol{#1}%
+}
+\\def\\Fld@DingDef#1#2{%
+  \\let\\Fld@temp\\ltx@empty
+  \\Fld@@DingDef#2\\ding{}\\@nil
+  \\let#1\\Fld@temp
+}
+\\def\\Fld@@DingDef#1\\ding#2#3\\@nil{%
+  \\expandafter\\def\\expandafter\\Fld@temp\\expandafter{%
+    \\Fld@temp
+    #1%
+  }%
+  \\ifx\\\\#3\\\\%
+    \\expandafter\\@gobble
+  \\else
+    \\begingroup
+      \\lccode\`0=#2\\relax
+    \\lowercase{\\endgroup
+      \\expandafter\\def\\expandafter\\Fld@temp\\expandafter{%
+        \\Fld@temp
+        0%
+      }%
+    }%
+    \\expandafter\\@firstofone
+  \\fi
+  {%
+    \\Fld@@DingDef#3\\@nil
+  }%
+}
+\\define@key{Field}{rotation}{%
+  \\def\\Fld@rotation{#1}%
+}
+\\define@key{Field}{backgroundcolor}{%
+  \\HyColor@FieldBColor{#1}\\Fld@bcolor{hyperref}{backgroundcolor}%
+}
+\\define@key{Field}{bordercolor}{%
+  \\HyColor@FieldBColor{#1}\\Fld@bordercolor{hyperref}{bordercolor}%
+}
+\\define@key{Field}{color}{%
+  \\HyColor@FieldColor{#1}\\Fld@color{hyperref}{color}%
+}
+\\let\\Fld@onclick@code\\ltx@empty
+\\let\\Fld@format@code\\ltx@empty
+\\let\\Fld@validate@code\\ltx@empty
+\\let\\Fld@calculate@code\\ltx@empty
+\\let\\Fld@keystroke@code\\ltx@empty
+\\let\\Fld@onfocus@code\\ltx@empty
+\\let\\Fld@onblur@code\\ltx@empty
+\\let\\Fld@onmousedown@code\\ltx@empty
+\\let\\Fld@onmouseup@code\\ltx@empty
+\\let\\Fld@onenter@code\\ltx@empty
+\\let\\Fld@onexit@code\\ltx@empty
+\\def\\Hy@temp#1{%
+  \\expandafter\\Hy@@temp\\csname Fld@#1@code\\endcsname{#1}%
+}
+\\def\\Hy@@temp#1#2{%
+  \\ifHy@pdfa
+    \\define@key{Field}{#2}{%
+      \\Hy@Error{%
+        PDF/A: Additional action \`#2' is prohibited%
+      }\\@ehc
+    }%
+  \\else
+    \\define@key{Field}{#2}{%
+      \\def#1{##1}%
+    }%
+  \\fi
+}
+\\Hy@temp{keystroke}
+\\Hy@temp{format}
+\\Hy@temp{validate}
+\\Hy@temp{calculate}
+\\Hy@temp{onfocus}
+\\Hy@temp{onblur}
+\\Hy@temp{onenter}
+\\Hy@temp{onexit}
+\\let\\Fld@calculate@sortkey\\ltx@empty
+\\define@key{Field}{calculatesortkey}[1]{%
+  \\def\\Fld@calculate@sortkey{#1}%
+}
+\\ifHy@texht
+  \\def\\Hy@temp#1{%
+    \\define@key{Field}{#1}{%
+      \\Field@addtoks{#1}{##1}%
+    }%
+  }%
+\\else
+  \\def\\Hy@temp#1{%
+    \\define@key{Field}{#1}{%
+      \\Hy@WarnHTMLFieldOption{#1}%
+    }%
+  }%
+\\fi
+\\Hy@temp{ondblclick}
+\\Hy@temp{onmousedown}
+\\Hy@temp{onmouseup}
+\\Hy@temp{onmouseover}
+\\Hy@temp{onmousemove}
+\\Hy@temp{onmouseout}
+\\Hy@temp{onkeydown}
+\\Hy@temp{onkeyup}
+\\Hy@temp{onselect}
+\\Hy@temp{onchange}
+\\Hy@temp{onkeypress}
+\\ifHy@texht
+  \\define@key{Field}{onclick}{%
+    \\Field@addtoks{onclick}{#1}%
+  }%
+\\else
+  \\ifHy@pdfa
+    \\define@key{Field}{onclick}{%
+      \\Hy@Error{%
+        PDF/A: Action \`onclick' is prohibited%
+      }\\@ehc
+    }%
+  \\else
+    \\define@key{Field}{onclick}{%
+      \\def\\Fld@onclick@code{#1}%
+    }%
+  \\fi
+\\fi
+\\DeclareRobustCommand\\TextField{%
+  \\@ifnextchar[{\\@TextField}{\\@TextField[]}%
+}
+\\DeclareRobustCommand\\ChoiceMenu{%
+  \\@ifnextchar[{\\@ChoiceMenu}{\\@ChoiceMenu[]}%
+}
+\\DeclareRobustCommand\\CheckBox{%
+  \\@ifnextchar[{\\@CheckBox}{\\@CheckBox[]}%
+}
+\\DeclareRobustCommand\\PushButton{%
+  \\@ifnextchar[{\\@PushButton}{\\@PushButton[]}%
+}
+\\DeclareRobustCommand\\Gauge{%
+  \\@ifnextchar[{\\@Gauge}{\\@Gauge[]}%
+}
+\\DeclareRobustCommand\\Submit{%
+  \\@ifnextchar[{\\@Submit}{\\@Submit[]}%
+}
+\\DeclareRobustCommand\\Reset{%
+  \\@ifnextchar[{\\@Reset}{\\@Reset[]}%
+}
+\\def\\LayoutTextField#1#2{% label, field
+  \\def\\Hy@temp{#1}%
+  \\ifx\\Hy@temp\\@empty
+    #2%
+  \\else
+    #1 #2%
+  \\fi
+}
+\\def\\LayoutChoiceField#1#2{% label, field
+  \\def\\Hy@temp{#1}%
+  \\ifx\\Hy@temp\\@empty
+    #2%
+  \\else
+    #1 #2%
+  \\fi
+}
+\\def\\LayoutCheckField#1#2{% label, field
+  \\def\\Hy@temp{#1}%
+  \\ifx\\Hy@temp\\@empty
+    #2%
+  \\else
+    #1 #2%
+  \\fi
+}
+\\def\\LayoutPushButtonField#1{% button
+  #1%
+}
+\\def\\MakeRadioField#1#2{\\vbox to #2{\\hbox to #1{\\hfill}\\vfill}}
+\\def\\MakeCheckField#1#2{\\vbox to #2{\\hbox to #1{\\hfill}\\vfill}}
+\\def\\MakeTextField#1#2{\\vbox to #2{\\hbox to #1{\\hfill}\\vfill}}
+\\def\\MakeChoiceField#1#2{\\vbox to #2{\\hbox to #1{\\hfill}\\vfill}}
+\\def\\MakeButtonField#1{%
+  \\sbox0{%
+    \\hskip\\Fld@borderwidth bp#1\\hskip\\Fld@borderwidth bp%
+  }%
+  \\@tempdima\\ht0 %
+  \\advance\\@tempdima by \\Fld@borderwidth bp %
+  \\advance\\@tempdima by \\Fld@borderwidth bp %
+  \\ht0\\@tempdima
+  \\@tempdima\\dp0 %
+  \\advance\\@tempdima by \\Fld@borderwidth bp %
+  \\advance\\@tempdima by \\Fld@borderwidth bp %
+  \\dp0\\@tempdima
+  \\box0\\relax
+}
+\\def\\DefaultHeightofSubmit{14pt}
+\\def\\DefaultWidthofSubmit{2cm}
+\\def\\DefaultHeightofReset{14pt}
+\\def\\DefaultWidthofReset{2cm}
+\\def\\DefaultHeightofCheckBox{\\normalbaselineskip}
+\\def\\DefaultWidthofCheckBox{\\normalbaselineskip}
+\\def\\DefaultHeightofChoiceMenu{\\normalbaselineskip}
+\\def\\DefaultWidthofChoiceMenu{\\normalbaselineskip}
+\\def\\DefaultHeightofText{\\normalbaselineskip}
+\\def\\DefaultHeightofTextMultiline{4\\normalbaselineskip}
+\\def\\DefaultWidthofText{3cm}
+\\def\\DefaultOptionsofSubmit{print,name=Submit,noexport}
+\\def\\DefaultOptionsofReset{print,name=Reset,noexport}
+\\def\\DefaultOptionsofPushButton{print}
+\\def\\DefaultOptionsofCheckBox{print}
+\\def\\DefaultOptionsofText{print}
+\\def\\DefaultOptionsofListBox{print}
+\\def\\DefaultOptionsofComboBox{print,edit,sort}
+\\def\\DefaultOptionsofPopdownBox{print}
+\\def\\DefaultOptionsofRadio{print,notoggletooff}
+\\ifHy@hyperfigures
+  \\Hy@Info{Hyper figures ON}%
+\\else
+  \\Hy@Info{Hyper figures OFF}%
+\\fi
+\\ifHy@nesting
+  \\Hy@Info{Link nesting ON}%
+\\else
+  \\Hy@Info{Link nesting OFF}%
+\\fi
+\\ifHy@hyperindex
+  \\Hy@Info{Hyper index ON}%
+\\else
+  \\Hy@Info{Hyper index OFF}%
+\\fi
+\\ifHy@backref
+  \\Hy@Info{backreferencing ON}%
+\\else
+  \\Hy@Info{backreferencing OFF}%
+\\fi
+\\ifHy@colorlinks
+  \\Hy@Info{Link coloring ON}%
+\\else
+  \\Hy@Info{Link coloring OFF}%
+\\fi
+\\ifHy@ocgcolorlinks
+  \\Hy@Info{Link coloring with OCG ON}%
+\\else
+  \\Hy@Info{Link coloring with OCG OFF}%
+\\fi
+\\ifHy@pdfa
+  \\Hy@Info{PDF/A mode ON}%
+\\else
+  \\Hy@Info{PDF/A mode OFF}%
+\\fi
+\\edef\\hyper@hash{\\string#}
+\\edef\\hyper@tilde{\\string~}
+\\edef\\hyper@quote{\\string"}
+\\def\\@currentHref{Doc-Start}
+\\let\\Hy@footnote@currentHref\\@empty
+\\Hy@AtBeginDocument{%
+  \\Hy@pdfstringtrue
+  \\PDF@SetupDoc
+  \\let\\PDF@SetupDoc\\@empty
+  \\Hy@DisableOption{pdfpagescrop}%
+  \\Hy@DisableOption{pdfpagemode}%
+  \\Hy@DisableOption{pdfnonfullscreenpagemode}%
+  \\Hy@DisableOption{pdfdirection}%
+  \\Hy@DisableOption{pdfviewarea}%
+  \\Hy@DisableOption{pdfviewclip}%
+  \\Hy@DisableOption{pdfprintarea}%
+  \\Hy@DisableOption{pdfprintclip}%
+  \\Hy@DisableOption{pdfprintscaling}%
+  \\Hy@DisableOption{pdfduplex}%
+  \\Hy@DisableOption{pdfpicktraybypdfsize}%
+  \\Hy@DisableOption{pdfprintpagerange}%
+  \\Hy@DisableOption{pdfnumcopies}%
+  \\Hy@DisableOption{pdfstartview}%
+  \\Hy@DisableOption{pdfstartpage}%
+  \\Hy@DisableOption{pdftoolbar}%
+  \\Hy@DisableOption{pdfmenubar}%
+  \\Hy@DisableOption{pdfwindowui}%
+  \\Hy@DisableOption{pdffitwindow}%
+  \\Hy@DisableOption{pdfcenterwindow}%
+  \\Hy@DisableOption{pdfdisplaydoctitle}%
+  \\Hy@DisableOption{pdfpagelayout}%
+  \\Hy@DisableOption{pdflang}%
+  \\Hy@DisableOption{baseurl}%
+  \\ifHy@texht\\else\\hyper@anchorstart{Doc-Start}\\hyper@anchorend\\fi
+  \\Hy@pdfstringfalse
+}
+
+\\LetLtxMacro\\NoHy@OrgRef\\ref
+\\DeclareRobustCommand*{\\ref}{%
+  \\@ifstar\\NoHy@OrgRef\\NoHy@OrgRef
+}
+\\LetLtxMacro\\NoHy@OrgPageRef\\pageref
+\\DeclareRobustCommand*{\\pageref}{%
+  \\@ifstar\\NoHy@OrgPageRef\\NoHy@OrgPageRef
+}
+\\def\\NoHyper{%
+  \\def\\hyper@link@[##1]##2##3##4{##4\\Hy@xspace@end}%
+  \\def\\hyper@@anchor##1##2{##2\\Hy@xspace@end}%
+  \\global\\let\\hyper@livelink\\hyper@link
+  \\gdef\\hyper@link##1##2##3{##3\\Hy@xspace@end}%
+  \\let\\hyper@anchor\\ltx@gobble
+  \\let\\hyper@anchorstart\\ltx@gobble
+  \\def\\hyper@anchorend{\\Hy@xspace@end}%
+  \\let\\hyper@linkstart\\ltx@gobbletwo
+  \\def\\hyper@linkend{\\Hy@xspace@end}%
+  \\def\\hyper@linkurl##1##2{##1\\Hy@xspace@end}%
+  \\def\\hyper@linkfile##1##2##3{##1\\Hy@xspace@end}%
+  \\let\\Hy@backout\\@gobble
+}
+\\def\\stop@hyper{%
+  \\def\\hyper@link@[##1]##2##3##4{##4\\Hy@xspace@end}%
+  \\let\\Hy@backout\\@gobble
+  \\let\\hyper@@anchor\\ltx@gobble
+  \\def\\hyper@link##1##2##3{##3\\Hy@xspace@end}%
+  \\let\\hyper@anchor\\ltx@gobble
+  \\let\\hyper@anchorstart\\ltx@gobble
+  \\def\\hyper@anchorend{\\Hy@xspace@end}%
+  \\let\\hyper@linkstart\\ltx@gobbletwo
+  \\def\\hyper@linkend{\\Hy@xspace@end}%
+  \\def\\hyper@linkurl##1##2{##1\\Hy@xspace@end}%
+  \\def\\hyper@linkfile##1##2##3{##1\\Hy@xspace@end}%
+}
+\\def\\endNoHyper{%
+  \\global\\let\\hyper@link\\hyper@livelink
+}
+\\Hy@AtBeginDocument{%
+  \\if@filesw
+    \\ifHy@typexml
+      \\immediate\\closeout\\@mainaux
+      \\immediate\\openout\\@mainaux\\jobname.aux\\relax
+      \\immediate\\write\\@auxout{<relaxxml>\\relax}%
+    \\fi
+    \\immediate\\write\\@auxout{%
+      \\string\\providecommand\\string\\HyperFirstAtBeginDocument{%
+        \\string\\AtBeginDocument}^^J%
+      \\string\\HyperFirstAtBeginDocument{%
+        \\string\\ifx\\string\\hyper@anchor\\string\\@undefined^^J%
+          \\string\\global\\string\\let\\string\\oldcontentsline\\string\\contentsline^^J%
+          \\string\\gdef\\string\\contentsline%
+            \\string#1\\string#2\\string#3\\string#4{%
+            \\string\\oldcontentsline%
+              {\\string#1}{\\string#2}{\\string#3}}^^J%
+          \\string\\global\\string\\let\\string\\oldnewlabel\\string\\newlabel^^J%
+          \\string\\gdef\\string\\newlabel\\string#1\\string#2{%
+             \\string\\newlabelxx{\\string#1}\\string#2}^^J%
+          \\string\\gdef\\string\\newlabelxx%
+             \\string#1\\string#2\\string#3\\string#4\\string#5\\string#6{%
+             \\string\\oldnewlabel{\\string#1}{{\\string#2}{\\string#3}}}^^J%
+          \\string\\AtEndDocument{%
+            \\string\\ifx\\string\\hyper@anchor\\string\\@undefined^^J%
+              \\string\\let\\string\\contentsline\\string\\oldcontentsline^^J%
+              \\string\\let\\string\\newlabel\\string\\oldnewlabel^^J%
+            \\string\\fi%
+          }^^J%
+        \\string\\fi%
+      }^^J%
+      \\string\\global\\string\\let\\string\\hyper@last\\relax^^J%
+      \\string\\gdef\\string\\HyperFirstAtBeginDocument\\string#1{\\string#1}%
+    }%
+  \\fi
+  \\let\\HyperFirstAtBeginDocument\\ltx@firstofone
+  \\ifx\\hyper@last\\@undefined
+    \\def\\@starttoc#1{%
+      \\begingroup
+        \\makeatletter
+        \\ltx@ifpackageloaded{parskip}{\\parskip\\z@}{}%
+        \\IfFileExists{\\jobname.#1}{%
+          \\Hy@WarningNoLine{%
+            old #1 file detected, not used; run LaTeX again%
+          }%
+        }{}%
+        \\if@filesw
+          \\expandafter\\newwrite\\csname tf@#1\\endcsname
+          \\immediate\\openout\\csname tf@#1\\endcsname \\jobname.#1\\relax
+        \\fi
+        \\@nobreakfalse
+      \\endgroup
+    }%
+    \\def\\newlabel#1#2{\\@newl@bel r{#1}{#2{}{}{}{}}}%
+  \\fi
+}
+\\ifHy@pdfusetitle
+  \\let\\HyOrg@title\\title
+  \\let\\HyOrg@author\\author
+  \\def\\title{\\@ifnextchar[{\\Hy@scanopttitle}{\\Hy@scantitle}}%
+  \\def\\Hy@scanopttitle[#1]{%
+    \\gdef\\Hy@title{#1}%
+    \\HyOrg@title[{#1}]%
+  }%
+  \\def\\Hy@scantitle#1{%
+    \\gdef\\Hy@title{#1}%
+    \\HyOrg@title{#1}%
+  }%
+  \\def\\author{\\@ifnextchar[{\\Hy@scanoptauthor}{\\Hy@scanauthor}}%
+  \\def\\Hy@scanoptauthor[#1]{%
+    \\gdef\\Hy@author{#1}%
+    \\HyOrg@author[{#1}]%
+  }%
+  \\def\\Hy@scanauthor#1{%
+    \\gdef\\Hy@author{#1}%
+    \\HyOrg@author{#1}%
+  }%
+  \\begingroup
+    \\def\\process@me#1\\@nil#2{%
+      \\expandafter\\let\\expandafter\\x\\csname @#2\\endcsname
+      \\edef\\y{\\expandafter\\strip@prefix\\meaning\\x}%
+      \\def\\c##1#1##2\\@nil{%
+        \\ifx\\\\##1\\\\%
+        \\else
+         \\expandafter\\gdef\\csname Hy@#2\\expandafter\\endcsname
+              \\expandafter{\\x}%
+        \\fi
+      }%
+      \\expandafter\\c\\y\\relax#1\\@nil
+    }%
+    \\expandafter\\process@me\\string\\@latex@\\@nil{title}%
+    \\expandafter\\process@me\\string\\@latex@\\@nil{author}%
+  \\endgroup
+\\fi
+\\Hy@DisableOption{pdfusetitle}
+\\def\\Hy@UseMaketitleString#1{%
+  \\ltx@IfUndefined{Hy@#1}{}{%
+    \\begingroup
+      \\let\\Hy@saved@hook\\pdfstringdefPreHook
+      \\pdfstringdefDisableCommands{%
+        \\expandafter\\let\\expandafter\\\\\\csname Hy@newline@#1\\endcsname
+        \\let\\newline\\\\%
+        \\def\\and{; }%
+        \\let\\thanks\\@gobble%
+      }%
+      \\expandafter\\ifx\\csname @pdf#1\\endcsname\\@empty
+        \\expandafter\\pdfstringdef\\csname @pdf#1\\endcsname{%
+          \\csname Hy@#1\\endcsname\\@empty
+        }%
+      \\fi
+      \\global\\let\\pdfstringdefPreHook\\Hy@saved@hook
+    \\endgroup
+  }%
+}
+\\def\\Hy@newline@title#1{ #1}
+\\def\\Hy@newline@author#1{, #1}
+\\def\\Hy@UseMaketitleInfos{%
+  \\Hy@UseMaketitleString{title}%
+  \\Hy@UseMaketitleString{author}%
+}
+\\RequirePackage{atbegshi}[2007/09/09]
+\\let\\Hy@EveryPageHook\\ltx@empty
+\\let\\Hy@EveryPageBoxHook\\ltx@empty
+\\let\\Hy@FirstPageHook\\ltx@empty
+\\AtBeginShipout{%
+  \\Hy@EveryPageHook
+  \\ifx\\Hy@EveryPageBoxHook\\ltx@empty
+  \\else
+    \\setbox\\AtBeginShipoutBox=\\vbox{%
+      \\offinterlineskip
+      \\Hy@EveryPageBoxHook
+      \\box\\AtBeginShipoutBox
+    }%
+  \\fi
+}
+\\ltx@iffileloaded{hpdftex.def}{%
+  \\AtBeginShipout{%
+    \\Hy@FirstPageHook
+    \\global\\let\\Hy@FirstPageHook\\ltx@empty
+  }%
+}{%
+  \\AtBeginShipoutFirst{%
+    \\Hy@FirstPageHook
+  }%
+}
+\\g@addto@macro\\Hy@FirstPageHook{%
+  \\PDF@FinishDoc
+  \\global\\let\\PDF@FinishDoc\\ltx@empty
+}
+\\ifHy@pdfpagelabels
+  \\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+  \\expandafter\\ifx\\csname thepage\\endcsname\\relax
+    \\Hy@pdfpagelabelsfalse
+    \\Hy@WarningNoLine{%
+      Option \`pdfpagelabels' is turned off\\MessageBreak
+      because \\string\\thepage\\space is undefined%
+    }%
+    \\csname fi\\endcsname
+    \\csname iffalse\\expandafter\\endcsname
+  \\fi
+  \\def\\thispdfpagelabel#1{%
+    \\gdef\\HyPL@thisLabel{#1}%
+  }%
+  \\global\\let\\HyPL@thisLabel\\relax
+  \\let\\HyPL@Labels\\ltx@empty
+  \\newcount\\Hy@abspage
+  \\Hy@abspage=0 %
+  \\def\\HyPL@LastType{init}%
+  \\def\\HyPL@LastNumber{0}%
+  \\let\\HyPL@LastPrefix\\ltx@empty
+  \\def\\HyPL@arabic{D}%
+  \\def\\HyPL@Roman{R}%
+  \\def\\HyPL@roman{r}%
+  \\def\\HyPL@Alph{A}%
+  \\def\\HyPL@alph{a}%
+  \\let\\HyPL@SlidesSetPage\\ltx@empty
+  \\ltx@ifclassloaded{slides}{%
+    \\def\\HyPL@SlidesSetPage{%
+      \\advance\\c@page\\ltx@one
+      \\ifnum\\value{page}>\\ltx@one
+        \\protected@edef\\HyPL@SlidesOptionalPage{%
+          \\Hy@SlidesFormatOptionalPage{\\thepage}%
+        }%
+      \\else
+        \\let\\HyPL@SlidesOptionalPage\\ltx@empty
+      \\fi
+      \\advance\\c@page-\\ltx@one
+      \\def\\HyPL@page{%
+        \\csname the\\Hy@SlidesPage\\endcsname
+        \\HyPL@SlidesOptionalPage
+      }%
+    }%
+  }{}%
+  \\def\\HyPL@EveryPage{%
+    \\begingroup
+      \\ifx\\HyPL@thisLabel\\relax
+        \\let\\HyPL@page\\thepage
+        \\HyPL@SlidesSetPage
+      \\else
+        \\let\\HyPL@page\\HyPL@thisLabel
+        \\global\\let\\HyPL@thisLabel\\relax
+      \\fi
+      \\let\\HyPL@Type\\relax
+      \\ifnum\\c@page>0 %
+        \\ifx\\HyPL@SlidesSetPage\\ltx@empty
+          \\expandafter\\HyPL@CheckThePage\\HyPL@page\\@nil
+        \\fi
+      \\fi
+      \\let\\Hy@temp Y%
+      \\ifx\\HyPL@Type\\HyPL@LastType
+      \\else
+        \\let\\Hy@temp N%
+      \\fi
+      \\ifx\\HyPL@Type\\relax
+         \\pdfstringdef\\HyPL@Prefix{\\HyPL@page}%
+      \\else
+         \\pdfstringdef\\HyPL@Prefix\\HyPL@Prefix
+      \\fi
+      \\ifx\\HyPL@Prefix\\HyPL@LastPrefix
+      \\else
+        \\let\\Hy@temp N%
+      \\fi
+      \\if Y\\Hy@temp
+        \\advance\\c@page by -1 %
+        \\ifnum\\HyPL@LastNumber=\\the\\c@page\\relax
+        \\else
+          \\let\\Hy@temp N%
+        \\fi
+        \\Hy@StepCount\\c@page
+      \\fi
+      \\if N\\Hy@temp
+        \\ifx\\HyPL@Type\\relax
+          \\HyPL@StorePageLabel{/P(\\HyPL@Prefix)}%
+        \\else
+          \\HyPL@StorePageLabel{%
+            \\ifx\\HyPL@Prefix\\@empty
+            \\else
+              /P(\\HyPL@Prefix)%
+            \\fi
+            /S/\\csname HyPL\\HyPL@Type\\endcsname
+            \\ifnum\\the\\c@page=1 %
+            \\else
+              \\space/St \\the\\c@page
+            \\fi
+          }%
+        \\fi
+      \\fi
+      \\xdef\\HyPL@LastNumber{\\the\\c@page}%
+      \\global\\let\\HyPL@LastType\\HyPL@Type
+      \\global\\let\\HyPL@LastPrefix\\HyPL@Prefix
+    \\endgroup
+    \\Hy@GlobalStepCount\\Hy@abspage
+  }%
+  \\def\\HyPL@CheckThePage#1\\@nil{%
+    \\HyPL@@CheckThePage{#1}#1\\csname\\endcsname\\c@page\\@nil
+  }%
+  \\def\\HyPL@@CheckThePage#1#2\\csname#3\\endcsname\\c@page#4\\@nil{%
+    \\def\\Hy@tempa{#4}%
+    \\def\\Hy@tempb{\\csname\\endcsname\\c@page}%
+    \\ifx\\Hy@tempa\\Hy@tempb
+      \\expandafter\\ifx\\csname HyPL#3\\endcsname\\relax
+      \\else
+        \\def\\HyPL@Type{#3}%
+        \\def\\HyPL@Prefix{#2}%
+      \\fi
+    \\else
+      \\begingroup
+        \\let\\Hy@next\\endgroup
+        \\let\\HyPL@found\\@undefined
+        \\def\\arabic{\\HyPL@Format{arabic}}%
+        \\def\\Roman{\\HyPL@Format{Roman}}%
+        \\def\\roman{\\HyPL@Format{roman}}%
+        \\def\\Alph{\\HyPL@Format{Alph}}%
+        \\def\\alph{\\HyPL@Format{alph}}%
+        \\protected@edef\\Hy@temp{#1}%
+        \\ifx\\HyPL@found\\relax
+          \\toks@\\expandafter{\\Hy@temp}%
+          \\edef\\Hy@next{\\endgroup
+            \\noexpand\\HyPL@@@CheckThePage\\the\\toks@
+               \\noexpand\\HyPL@found\\relax\\noexpand\\@nil
+          }%
+        \\fi
+      \\Hy@next
+    \\fi
+  }%
+  \\def\\HyPL@Format#1#2{%
+    \\ifx\\HyPL@found\\@undefined
+      \\expandafter\\ifx\\csname c@#2\\endcsname\\c@page
+        \\expandafter\\noexpand\\csname HyPL@found\\endcsname{#1}%
+      \\else
+        \\expandafter\\noexpand\\csname#1\\endcsname{#2}%
+      \\fi
+    \\else
+      \\expandafter\\noexpand\\csname#1\\endcsname{#2}%
+    \\fi
+  }%
+  \\def\\HyPL@@@CheckThePage#1\\HyPL@found#2#3\\@nil{%
+    \\def\\Hy@tempa{#3}%
+    \\def\\Hy@tempb{\\HyPL@found\\relax}%
+    \\ifx\\Hy@tempa\\Hy@tempb
+      \\def\\HyPL@Type{@#2}%
+      \\def\\HyPL@Prefix{#1}%
+    \\fi
+  }%
+  \\providecommand*{\\HyPL@StorePageLabel}[1]{}%
+  \\def\\HyPL@Useless{0<</S/D>>}%
+  \\@onelevel@sanitize\\HyPL@Useless
+  \\def\\HyPL@SetPageLabels{%
+    \\@onelevel@sanitize\\HyPL@Labels
+    \\ifx\\HyPL@Labels\\@empty
+    \\else
+      \\ifx\\HyPL@Labels\\HyPL@Useless
+      \\else
+        \\Hy@PutCatalog{/PageLabels<</Nums[\\HyPL@Labels]>>}%
+      \\fi
+    \\fi
+  }%
+  \\g@addto@macro\\Hy@EveryPageHook{\\HyPL@EveryPage}%
+\\fi
+\\Hy@DisableOption{pdfpagelabels}
+\\ifx\\MaybeStopEarly\\relax
+\\else
+  \\Hy@stoppedearlytrue
+  \\expandafter\\MaybeStopEarly
+\\fi
+\\Hy@stoppedearlyfalse
+\\def\\Hy@CounterExists#1{%
+  \\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+  \\expandafter\\ifx\\csname c@#1\\endcsname\\relax
+    \\expandafter\\@gobble
+  \\else
+    \\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+    \\expandafter\\ifx\\csname the#1\\endcsname\\relax
+      \\expandafter\\expandafter\\expandafter\\@gobble
+    \\else
+      \\expandafter\\expandafter\\expandafter\\@firstofone
+    \\fi
+  \\fi
+}
+\\Hy@CounterExists{section}{%
+  \\providecommand\\theHequation{\\theHsection.\\arabic{equation}}%
+}
+\\Hy@CounterExists{part}{%
+  \\providecommand\\theHpart{\\arabic{part}}%
+}
+\\ltx@IfUndefined{thechapter}{%
+  \\providecommand\\theHsection    {\\arabic{section}}%
+  \\providecommand\\theHfigure     {\\arabic{figure}}%
+  \\providecommand\\theHtable      {\\arabic{table}}%
+}{%
+  \\providecommand\\theHchapter    {\\arabic{chapter}}%
+  \\providecommand\\theHfigure     {\\theHchapter.\\arabic{figure}}%
+  \\providecommand\\theHtable      {\\theHchapter.\\arabic{table}}%
+  \\providecommand\\theHsection    {\\theHchapter.\\arabic{section}}%
+}
+\\providecommand\\theHsubsection   {\\theHsection.\\arabic{subsection}}
+\\providecommand\\theHsubsubsection{\\theHsubsection.\\arabic{subsubsection}}
+\\providecommand\\theHparagraph    {\\theHsubsubsection.\\arabic{paragraph}}
+\\providecommand\\theHsubparagraph {\\theHparagraph.\\arabic{subparagraph}}
+\\providecommand\\theHtheorem      {\\theHsection.\\arabic{theorem}}
+\\providecommand\\theHthm          {\\theHsection.\\arabic{thm}}
+\\let\\H@item\\item
+\\newcounter{Item}
+\\def\\theHItem{\\arabic{Item}}
+\\def\\item{%
+  \\@hyper@itemfalse
+  \\if@nmbrlist\\@hyper@itemtrue\\fi
+  \\H@item
+}
+\\providecommand\\theHenumi     {\\theHItem}
+\\providecommand\\theHenumii    {\\theHItem}
+\\providecommand\\theHenumiii   {\\theHItem}
+\\providecommand\\theHenumiv    {\\theHItem}
+\\providecommand\\theHHfootnote {\\arabic{Hfootnote}}
+\\providecommand\\theHmpfootnote{\\arabic{mpfootnote}}
+\\@ifundefined{theHHmpfootnote}{%
+  \\let\\theHHmpfootnote\\theHHfootnote
+}{}
+\\let\\H@refstepcounter\\refstepcounter
+\\edef\\name@of@eq{equation}%
+\\edef\\name@of@slide{slide}%
+\\newif\\if@hyper@item
+\\newif\\if@skiphyperref
+\\@hyper@itemfalse
+\\@skiphyperreffalse
+\\def\\refstepcounter#1{%
+  \\ifHy@pdfstring
+  \\else
+    \\H@refstepcounter{#1}%
+    \\edef\\This@name{#1}%
+    \\ifx\\This@name\\name@of@slide
+    \\else
+      \\if@skiphyperref
+      \\else
+        \\if@hyper@item
+          \\stepcounter{Item}%
+          \\hyper@refstepcounter{Item}%
+          \\@hyper@itemfalse
+        \\else
+          \\hyper@refstepcounter{#1}%
+        \\fi
+      \\fi
+    \\fi
+  \\fi
+}
+\\let\\Hy@saved@refstepcounter\\refstepcounter
+\\@ifpackageloaded{amsmath}{}{\\newif\\ifmeasuring@\\measuring@false}
+\\def\\hyper@refstepcounter#1{%
+  \\edef\\This@name{#1}%
+  \\ifx\\This@name\\name@of@eq
+    \\@ifundefined{theHequation}{%
+      \\make@stripped@name{\\theequation}%
+      \\let\\theHequation\\newname
+    }{}%
+  \\fi
+  \\HyCnt@ProvideTheHCounter{#1}%
+  \\hyper@makecurrent{#1}%
+  \\ifmeasuring@
+  \\else
+    \\Hy@raisedlink{%
+      \\hyper@anchorstart{\\@currentHref}\\hyper@anchorend
+    }%
+  \\fi
+}
+\\def\\HyCnt@ProvideTheHCounter#1{%
+  \\@ifundefined{theH#1}{%
+    \\expandafter\\def\\csname theH#1\\endcsname{}%
+    \\def\\Hy@temp{\\@elt{#1}}%
+    \\ltx@onelevel@sanitize\\Hy@temp
+    \\let\\HyOrg@elt\\@elt
+    \\edef\\@elt{%
+      \\noexpand\\HyCnt@LookForParentCounter
+      \\expandafter\\noexpand\\csname theH#1\\endcsname
+    }%
+    \\cl@@ckpt
+    \\let\\@elt\\HyOrg@elt
+    \\expandafter
+    \\ltx@LocalAppendToMacro\\csname theH#1\\expandafter\\endcsname
+    \\expandafter{%
+      \\expandafter\\@arabic\\csname c@#1\\endcsname
+    }%
+  }{}%
+}
+\\def\\HyCnt@LookForParentCounter#1#2{%
+  \\expandafter\\let\\expandafter\\Hy@temp@A\\csname cl@#2\\endcsname
+  \\ltx@IfUndefined{cl@#2}{%
+  }{%
+    \\ltx@onelevel@sanitize\\Hy@temp@A
+    \\edef\\Hy@temp@A{%
+      \\noexpand\\in@{\\Hy@temp}{\\Hy@temp@A}%
+    }\\Hy@temp@A
+    \\ifin@
+      \\ltx@IfUndefined{theH#2}{%
+        \\expandafter\\ltx@LocalAppendToMacro\\expandafter#1%
+        \\expandafter{%
+          \\expandafter\\@arabic\\csname c@#2\\endcsname.%
+        }%
+      }{%
+        \\expandafter\\ltx@LocalAppendToMacro\\expandafter#1%
+        \\expandafter{%
+          \\csname theH#2\\endcsname.%
+        }%
+      }%
+    \\fi
+  }%
+}
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname chapter\\endcsname\\relax
+  \\def\\Hy@chapterstring{section}%
+\\else
+  \\def\\Hy@chapterstring{chapter}%
+\\fi
+\\def\\Hy@appendixstring{appendix}
+\\def\\Hy@chapapp{\\Hy@chapterstring}
+\\ltx@IfUndefined{appendix}{%
+}{%
+  \\let\\HyOrg@appendix\\appendix
+  \\def\\Hy@AlphNoErr#1{%
+    \\ifnum\\value{#1}>26 %
+      Alph\\number\\value{#1}%
+    \\else
+      \\ifnum\\value{#1}<1 %
+        Alph\\number\\value{#1}%
+      \\else
+        \\Alph{#1}%
+      \\fi
+    \\fi
+  }%
+  \\def\\appendix{%
+    \\ltx@IfUndefined{chapter}{%
+      \\gdef\\theHsection{\\Hy@AlphNoErr{section}}%
+    }{%
+      \\gdef\\theHchapter{\\Hy@AlphNoErr{chapter}}%
+    }%
+    \\xdef\\Hy@chapapp{\\Hy@appendixstring}%
+    \\HyOrg@appendix
+  }%
+}
+\\def\\Hy@Test@alph#1{%
+  \\ifcase#1\\or
+    a\\or b\\or c\\or d\\or e\\or f\\or g\\or h\\or i\\or j\\or
+    k\\or l\\or m\\or n\\or o\\or p\\or q\\or r\\or s\\or t\\or
+    u\\or v\\or w\\or x\\or y\\or z%
+  \\else
+    \\@ctrerr
+  \\fi
+}
+\\def\\Hy@Test@Alph#1{%
+  \\ifcase#1\\or
+    A\\or B\\or C\\or D\\or E\\or F\\or G\\or H\\or I\\or J\\or
+    K\\or L\\or M\\or N\\or O\\or P\\or Q\\or R\\or S\\or T\\or
+    U\\or V\\or W\\or X\\or Y\\or Z%
+  \\else
+    \\@ctrerr
+  \\fi
+}
+\\def\\hyper@makecurrent#1{%
+  \\begingroup
+    \\Hy@safe@activestrue
+    \\edef\\Hy@param{#1}%
+    \\ifx\\Hy@param\\Hy@chapterstring
+      \\let\\Hy@param\\Hy@chapapp
+    \\fi
+    \\ifHy@hypertexnames
+      \\let\\@number\\@firstofone
+      \\def\\@fnsymbol##1{fnsymbol\\number##1}%
+      \\def\\@arabic##1{\\number##1}%
+      \\ifx\\@alph\\Hy@Test@alph
+      \\else
+        \\def\\@alph{alph\\number}%
+      \\fi
+      \\ifx\\@Alph\\Hy@Test@Alph
+      \\else
+        \\def\\@Alph{Alph\\number}%
+      \\fi
+      \\ifHy@naturalnames
+        \\let\\textlatin\\@firstofone
+        \\xdef\\HyperGlobalCurrentHref{\\csname the#1\\endcsname}%
+      \\else
+        \\xdef\\HyperGlobalCurrentHref{%
+          \\csname
+            the%
+            \\expandafter\\ifx\\csname theH#1\\endcsname\\relax\\else H\\fi
+            #1%
+          \\endcsname
+        }%
+      \\fi
+      \\xdef\\HyperGlobalCurrentHref{%
+        \\Hy@param.\\expandafter\\strip@prefix\\meaning\\HyperGlobalCurrentHref
+      }%
+    \\else
+      \\Hy@GlobalStepCount\\Hy@linkcounter
+      \\xdef\\HyperGlobalCurrentHref{\\Hy@param.\\the\\Hy@linkcounter}%
+    \\fi
+  \\endgroup
+  \\let\\HyperLocalCurrentHref\\HyperGlobalCurrentHref
+  \\ifHy@localanchorname
+    \\let\\@currentHref\\HyperLocalCurrentHref
+  \\else
+    \\global\\let\\@currentHref\\HyperGlobalCurrentHref
+  \\fi
+}
+\\def\\Hy@MakeCurrentHref#1{%
+  \\edef\\HyperLocalCurrentHref{#1}%
+  \\@onelevel@sanitize\\HyperLocalCurrentHref
+  \\global\\let\\HyperGlobalCurrentHref\\HyperLocalCurrentHref
+  \\let\\HyperLocalCurrentHref\\HyperGlobalCurrentHref
+  \\ifHy@localanchorname
+    \\let\\@currentHref\\HyperLocalCurrentHref
+  \\else
+    \\global\\let\\@currentHref\\HyperGlobalCurrentHref
+  \\fi
+}
+\\def\\Hy@MakeCurrentHrefAuto#1{%
+  \\Hy@GlobalStepCount\\Hy@linkcounter
+  \\Hy@MakeCurrentHref{#1.\\the\\Hy@linkcounter}%
+}
+\\def\\@currentHlabel{\\@currentHref}
+\\@ifpackageloaded{fancyvrb}{%
+  \\@ifpackagelater{fancyvrb}{1998/05/20}{}{%
+    \\def\\FV@StepLineNo{%
+      \\FV@SetLineNo
+      \\def\\FV@StepLineNo{\\H@refstepcounter{FancyVerbLine}}%
+      \\FV@StepLineNo
+    }%
+  }%
+}{}
+\\Hy@AtBeginDocument{%
+  \\@ifclassloaded{revtex4}{%
+    \\@namedef{ver@lastpage.sty}{1994/06/25}%
+  }{}%
+  \\@ifpackageloaded{lastpage}{%
+    \\ifHy@pageanchor
+    \\else
+      \\Hy@WarningNoLine{%
+        The \\string\\pageref{LastPage} link doesn't work\\MessageBreak
+        with disabled option \`pageanchor'%
+      }%
+    \\fi
+    \\def\\lastpage@putlabel{%
+      \\addtocounter{page}{-1}%
+      \\if@filesw
+        \\begingroup
+          \\let\\@number\\@firstofone
+          \\ifHy@pageanchor
+            \\ifHy@hypertexnames
+              \\ifHy@plainpages
+                \\def\\Hy@temp{\\arabic{page}}%
+              \\else
+                \\Hy@unicodefalse
+                \\pdfstringdef\\Hy@temp{\\thepage}%
+              \\fi
+            \\else
+              \\def\\Hy@temp{\\the\\Hy@pagecounter}%
+            \\fi
+          \\fi
+          \\immediate\\write\\@auxout{%
+            \\string\\newlabel
+              {LastPage}{{}{\\thepage}{}{%
+                \\ifHy@pageanchor page.\\Hy@temp\\fi}{}}%
+          }%
+        \\endgroup
+      \\fi
+      \\addtocounter{page}{1}%
+    }%
+    \\@ifclassloaded{revtex4}{%
+      \\begingroup
+        \\toks@\\expandafter{\\lastpage@putlabel}%
+        \\edef\\x{\\endgroup
+          \\def\\noexpand\\lastpage@putlabel{%
+            \\noexpand\\stepcounter{page}%
+            \\the\\toks@
+            \\noexpand\\addtocounter{page}\\noexpand\\m@ne
+          }%
+        }%
+      \\x
+    }{}%
+  }{}%
+}
+\\def\\hypergetref#1{\\getrefbykeydefault{#1}{}{??}}
+\\def\\hypergetpageref#1{\\getrefbykeydefault{#1}{page}{0}}
+\\@ifpackageloaded{titlesec}{%
+  \\def\\ttl@Hy@steplink#1{%
+    \\Hy@MakeCurrentHrefAuto{#1*}%
+    \\edef\\ttl@Hy@saveanchor{%
+      \\noexpand\\Hy@raisedlink{%
+        \\noexpand\\hyper@anchorstart{\\@currentHref}%
+        \\noexpand\\hyper@anchorend
+        \\def\\noexpand\\ttl@Hy@SavedCurrentHref{\\@currentHref}%
+        \\noexpand\\ttl@Hy@PatchSaveWrite
+      }%
+    }%
+  }%
+  \\def\\ttl@Hy@PatchSaveWrite{%
+    \\begingroup
+      \\toks@\\expandafter{\\ttl@savewrite}%
+      \\edef\\x{\\endgroup
+        \\def\\noexpand\\ttl@savewrite{%
+          \\let\\noexpand\\@currentHref
+              \\noexpand\\ttl@Hy@SavedCurrentHref
+          \\the\\toks@
+        }%
+      }%
+    \\x
+  }%
+  \\def\\ttl@Hy@refstepcounter#1{%
+    \\let\\ttl@b\\Hy@raisedlink
+    \\def\\Hy@raisedlink##1{%
+      \\def\\ttl@Hy@saveanchor{\\Hy@raisedlink{##1}}%
+    }%
+    \\refstepcounter{#1}%
+    \\let\\Hy@raisedlink\\ttl@b
+  }%
+}{}
+\\@ifpackageloaded{titletoc}{%
+  \\def\\ttl@gobblecontents#1#2#3#4{\\ignorespaces}%
+}{}
+\\AtBeginDocument{%
+\\def\\Hy@varioref@undefined{{??}{??}{}{}{}}
+\\@ifpackageloaded{varioref}{%
+  \\def\\vref@pagenum#1#2{%
+    \\@ifundefined{r@#2}{%
+      \\expandafter\\let\\csname r@#2\\endcsname\\Hy@varioref@undefined
+    }{}%
+    \\edef#1{\\getpagerefnumber{#2}}%
+  }%
+}{}
+\\def\\Hy@varioref@refstepcounter#1{%
+  \\stepcounter{#1}%
+  \\protected@edef\\@currentlabel{%
+    \\csname p@#1\\expandafter\\endcsname\\csname the#1\\endcsname
+  }%
+}
+  \\ifx\\refstepcounter\\Hy@varioref@refstepcounter
+    \\let\\H@refstepcounter\\refstepcounter
+    \\let\\refstepcounter\\Hy@saved@refstepcounter
+  \\fi
+}
+\\@ifpackageloaded{longtable}{%
+  \\begingroup
+    \\def\\y{\\LT@array}%
+    \\@ifundefined{scr@LT@array}{%
+      \\@ifundefined{adl@LT@array}{}{\\def\\y{\\adl@LT@array}}%
+    }{\\def\\y{\\scr@LT@array}}%
+    \\long\\def\\x\\refstepcounter#1#2\\@sharp#3#4\\@nil{%
+      \\expandafter\\endgroup
+      \\expandafter\\def\\y[##1]##2{%
+        \\H@refstepcounter{#1}%
+        \\hyper@makecurrent{table}%
+        \\let\\Hy@LT@currentHref\\@currentHref
+        #2\\@sharp#####4%
+      }%
+    }%
+  \\expandafter\\expandafter\\expandafter\\x\\y[{#1}]{#2}\\@nil
+  \\begingroup
+    \\def\\x#1\\ifvoid\\LT@foot#2\\fi#3\\@nil{%
+      \\endgroup
+      \\def\\LT@start{%
+        #1%
+        \\ifvoid\\LT@foot#2\\fi
+        \\let\\@currentHref\\Hy@LT@currentHref
+        \\Hy@raisedlink{%
+          \\hyper@anchorstart{\\@currentHref}\\hyper@anchorend
+        }%
+        #3%
+      }%
+    }%
+  \\expandafter\\x\\LT@start\\@nil
+}{}
+\\let\\new@refstepcounter\\refstepcounter
+\\let\\H@equation\\equation
+\\let\\H@endequation\\endequation
+\\@ifpackageloaded{amsmath}{%
+  \\long\\def\\Hy@temp{%
+    \\incr@eqnum
+    \\mathdisplay@push
+    \\st@rredfalse \\global\\@eqnswtrue
+    \\mathdisplay{equation}%
+  }%
+  \\ifx\\Hy@temp\\equation
+    \\expandafter\\ifx\\csname if@fleqn\\expandafter\\endcsname
+                    \\csname iftrue\\endcsname
+    \\else
+      \\long\\def\\equation{%
+        \\mathdisplay@push
+        \\st@rredfalse \\global\\@eqnswtrue
+        \\mathdisplay{equation}%
+        \\incr@eqnum
+      }%
+    \\fi
+  \\fi
+}{%
+  \\def\\equation{%
+    \\let\\refstepcounter\\H@refstepcounter
+    \\H@equation
+    \\@ifundefined{theHequation}{%
+      \\make@stripped@name{\\theequation}%
+      \\let\\theHequation\\newname
+    }{}%
+    \\hyper@makecurrent{equation}%
+    \\mathopen{%
+      \\Hy@raisedlink{\\hyper@anchorstart{\\@currentHref}}%
+    }%
+    \\let\\refstepcounter\\new@refstepcounter
+  }%
+  \\def\\endequation{%
+    \\ifx\\Hy@raisedlink\\ltx@empty
+      \\hyper@anchorend
+    \\else
+      \\mathclose{\\Hy@raisedlink{\\hyper@anchorend}}%
+    \\fi
+    \\H@endequation
+  }%
+}
+\\newif\\if@eqnstar
+\\@eqnstarfalse
+\\let\\H@eqnarray\\eqnarray
+\\let\\H@endeqnarray\\endeqnarray
+\\def\\eqnarray{%
+  \\let\\Hy@reserved@a\\relax
+  \\def\\@currentHref{}%
+  \\H@eqnarray
+  \\if@eqnstar
+  \\else
+    \\ifx\\\\\\@currentHref\\\\%
+    \\else
+      \\@ifundefined{theHequation}{%
+        \\make@stripped@name{\\theequation}%
+        \\let\\theHequation\\newname
+      }{}%
+      \\hyper@makecurrent{equation}%
+      \\mathopen{%
+        \\Hy@raisedlink{%
+          \\hyper@anchorstart{\\@currentHref}\\hyper@anchorend
+        }%
+      }%
+    \\fi
+  \\fi
+}
+\\def\\endeqnarray{%
+  \\H@endeqnarray
+}
+\\@namedef{eqnarray*}{%
+  \\def\\@eqncr{\\nonumber\\@seqncr}\\@eqnstartrue\\eqnarray
+}
+\\@namedef{endeqnarray*}{%
+  \\nonumber\\endeqnarray\\@eqnstarfalse
+}
+\\ltx@IfUndefined{subeqnarray}{}{%
+  \\let\\H@subeqnarray\\subeqnarray
+  \\let\\H@endsubeqnarray\\endsubeqnarray
+  \\def\\subeqnarray{%
+    \\let\\Hy@reserved@a\\relax
+    \\H@subeqnarray
+    \\@ifundefined{theHequation}{%
+      \\make@stripped@name{\\theequation}%
+      \\let\\theHequation\\newname
+    }{}%
+    \\hyper@makecurrent{equation}%
+    \\hyper@anchorstart{\\@currentHref}{}\\hyper@anchorend
+  }%
+  \\def\\endsubeqnarray{%
+    \\H@endsubeqnarray
+  }%
+  \\providecommand\\theHsubequation{\\theHequation\\alph{subequation}}%
+}
+\\def\\make@stripped@name#1{%
+  \\begingroup
+    \\escapechar\\m@ne
+    \\global\\let\\newname\\@empty
+    \\protected@edef\\Hy@tempa{#1}%
+    \\edef\\@tempb{%
+      \\noexpand\\@tfor\\noexpand\\Hy@tempa:=%
+        \\expandafter\\strip@prefix\\meaning\\Hy@tempa
+    }%
+    \\@tempb\\do{%
+      \\if{\\Hy@tempa\\else
+        \\if}\\Hy@tempa\\else
+          \\xdef\\newname{\\newname\\Hy@tempa}%
+        \\fi
+      \\fi
+    }%
+  \\endgroup
+}
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname subequations\\endcsname\\relax
+\\else
+  \\let\\HyOrg@subequations\\subequations
+  \\def\\subequations{%
+    \\stepcounter{equation}%
+    \\protected@edef\\theHparentequation{%
+      \\@ifundefined{theHequation}\\theequation\\theHequation
+    }%
+    \\addtocounter{equation}{-1}%
+    \\HyOrg@subequations
+    \\def\\theHequation{\\theHparentequation\\alph{equation}}%
+    \\ignorespaces
+  }%
+\\fi
+\\Hy@AtBeginDocument{%
+\\@ifpackageloaded{cleveref}{%
+\\let\\Hy@savedthm\\@thm
+\\def\\@thm{\\ifhmode\\unskip\\fi\\Hy@savedthm}%
+}{%
+\\@ifpackageloaded{amsthm}{%
+  \\def\\Hy@temp#1#2#3{%
+    \\ifhmode\\unskip\\unskip\\par\\fi
+    \\normalfont
+    \\trivlist
+    \\let\\thmheadnl\\relax
+    \\let\\thm@swap\\@gobble
+    \\let\\thm@indent\\indent % indent
+    \\thm@headfont{\\scshape}% heading font small caps
+    \\thm@notefont{\\fontseries\\mddefault\\upshape}%
+    \\thm@headpunct{.}% add period after heading
+    \\thm@headsep 5\\p@ plus\\p@ minus\\p@\\relax
+    \\thm@space@setup
+    #1% style overrides
+    \\@topsep \\thm@preskip               % used by thm head
+    \\@topsepadd \\thm@postskip           % used by \\@endparenv
+    \\def\\@tempa{#2}\\ifx\\@empty\\@tempa
+      \\def\\@tempa{\\@oparg{\\@begintheorem{#3}{}}[]}%
+    \\else
+      \\refstepcounter{#2}%
+      \\def\\@tempa{%
+        \\@oparg{\\@begintheorem{#3}{\\csname the#2\\endcsname}}[]%
+      }%
+    \\fi
+    \\@tempa
+  }%
+  \\ifx\\Hy@temp\\@thm
+    \\def\\@thm#1#2#3{%
+      \\ifhmode
+        \\unskip\\unskip\\par
+      \\fi
+      \\normalfont
+      \\trivlist
+      \\let\\thmheadnl\\relax
+      \\let\\thm@swap\\@gobble
+      \\let\\thm@indent\\indent % indent
+      \\thm@headfont{\\scshape}% heading font small caps
+      \\thm@notefont{\\fontseries\\mddefault\\upshape}%
+      \\thm@headpunct{.}% add period after heading
+      \\thm@headsep 5\\p@ plus\\p@ minus\\p@\\relax
+      \\thm@space@setup
+      #1% style overrides
+      \\@topsep \\thm@preskip               % used by thm head
+      \\@topsepadd \\thm@postskip           % used by \\@endparenv
+      \\def\\dth@counter{#2}%
+      \\ifx\\@empty\\dth@counter
+        \\def\\@tempa{%
+          \\@oparg{\\@begintheorem{#3}{}}[]%
+        }%
+      \\else
+        \\H@refstepcounter{#2}%
+        \\hyper@makecurrent{#2}%
+        \\let\\Hy@dth@currentHref\\@currentHref
+        \\def\\@tempa{%
+          \\@oparg{\\@begintheorem{#3}{\\csname the#2\\endcsname}}[]%
+        }%
+      \\fi
+      \\@tempa
+    }%
+  \\else
+    \\def\\@thm#1#2#3{%
+      \\ifhmode
+        \\unskip\\unskip\\par
+      \\fi
+      \\normalfont
+      \\trivlist
+      \\let\\thmheadnl\\relax
+      \\let\\thm@swap\\@gobble
+      \\thm@notefont{\\fontseries\\mddefault\\upshape}%
+      \\thm@headpunct{.}% add period after heading
+      \\thm@headsep 5\\p@ plus\\p@ minus\\p@\\relax
+      \\thm@space@setup
+      #1% style overrides
+      \\@topsep \\thm@preskip               % used by thm head
+      \\@topsepadd \\thm@postskip           % used by \\@endparenv
+      \\def\\dth@counter{#2}%
+      \\ifx\\@empty\\dth@counter
+        \\def\\@tempa{%
+          \\@oparg{\\@begintheorem{#3}{}}[]%
+        }%
+      \\else
+        \\H@refstepcounter{#2}%
+        \\hyper@makecurrent{#2}%
+        \\let\\Hy@dth@currentHref\\@currentHref
+        \\def\\@tempa{%
+          \\@oparg{\\@begintheorem{#3}{\\csname the#2\\endcsname}}[]%
+        }%
+      \\fi
+      \\@tempa
+    }%
+  \\fi
+  \\dth@everypar={%
+    \\@minipagefalse
+    \\global\\@newlistfalse
+    \\@noparitemfalse
+    \\if@inlabel
+      \\global\\@inlabelfalse
+      \\begingroup
+        \\setbox\\z@\\lastbox
+        \\ifvoid\\z@
+          \\kern-\\itemindent
+        \\fi
+      \\endgroup
+      \\ifx\\@empty\\dth@counter
+      \\else
+        \\Hy@raisedlink{%
+          \\hyper@anchorstart{%
+            \\ltx@ifundefined{Hy@dth@currentHref}%
+            \\@currentHref\\Hy@dth@currentHref
+          }\\hyper@anchorend
+        }%
+      \\fi
+      \\unhbox\\@labels
+    \\fi
+    \\if@nobreak
+      \\@nobreakfalse \\clubpenalty\\@M
+    \\else
+      \\clubpenalty\\@clubpenalty \\everypar{}%
+    \\fi
+  }%
+}%
+{%
+\\let\\Hy@savedthm\\@thm
+\\def\\@thm{\\ifhmode\\unskip\\fi\\Hy@savedthm}%
+}%
+}%
+}
+\\ifHy@hyperfootnotes
+  \\newcounter{Hfootnote}%
+  \\let\\H@@footnotetext\\@footnotetext
+  \\let\\H@@footnotemark\\@footnotemark
+  \\def\\@xfootnotenext[#1]{%
+    \\begingroup
+      \\csname c@\\@mpfn\\endcsname #1\\relax
+      \\unrestored@protected@xdef\\@thefnmark{\\thempfn}%
+    \\endgroup
+    \\ifx\\@footnotetext\\@mpfootnotetext
+      \\expandafter\\H@@mpfootnotetext
+    \\else
+      \\expandafter\\H@@footnotetext
+    \\fi
+  }%
+  \\def\\@xfootnotemark[#1]{%
+    \\begingroup
+      \\c@footnote #1\\relax
+      \\unrestored@protected@xdef\\@thefnmark{\\thefootnote}%
+    \\endgroup
+    \\H@@footnotemark
+  }%
+  \\let\\H@@mpfootnotetext\\@mpfootnotetext
+  \\long\\def\\@mpfootnotetext#1{%
+    \\H@@mpfootnotetext{%
+      \\ifHy@nesting
+        \\expandafter\\ltx@firstoftwo
+      \\else
+        \\expandafter\\ltx@secondoftwo
+      \\fi
+      {%
+        \\expandafter\\hyper@@anchor\\expandafter{%
+          \\Hy@footnote@currentHref
+         }{\\ignorespaces #1}%
+      }{%
+        \\Hy@raisedlink{%
+          \\expandafter\\hyper@@anchor\\expandafter{%
+            \\Hy@footnote@currentHref
+          }{\\relax}%
+        }\\ignorespaces #1%
+      }%
+    }%
+  }%
+  \\long\\def\\@footnotetext#1{%
+    \\H@@footnotetext{%
+      \\ifHy@nesting
+        \\expandafter\\ltx@firstoftwo
+      \\else
+        \\expandafter\\ltx@secondoftwo
+      \\fi
+      {%
+        \\expandafter\\hyper@@anchor\\expandafter{%
+          \\Hy@footnote@currentHref
+        }{\\ignorespaces #1}%
+      }{%
+        \\Hy@raisedlink{%
+          \\expandafter\\hyper@@anchor\\expandafter{%
+            \\Hy@footnote@currentHref
+          }{\\relax}%
+        }%
+        \\let\\@currentHref\\Hy@footnote@currentHref
+        \\let\\@currentlabelname\\@empty
+        \\ignorespaces #1%
+      }%
+    }%
+  }%
+  \\def\\@footnotemark{%
+    \\leavevmode
+    \\ifhmode\\edef\\@x@sf{\\the\\spacefactor}\\nobreak\\fi
+    \\stepcounter{Hfootnote}%
+    \\global\\let\\Hy@saved@currentHref\\@currentHref
+    \\hyper@makecurrent{Hfootnote}%
+    \\global\\let\\Hy@footnote@currentHref\\@currentHref
+    \\global\\let\\@currentHref\\Hy@saved@currentHref
+    \\hyper@linkstart{link}{\\Hy@footnote@currentHref}%
+    \\@makefnmark
+    \\hyper@linkend
+    \\ifhmode\\spacefactor\\@x@sf\\fi
+    \\relax
+  }%
+  \\@ifpackageloaded{tabularx}{%
+    \\let\\HyOrg@TX@endtabularx\\TX@endtabularx
+    \\def\\Hy@tabularx@hook{%
+      \\let\\@footnotetext\\H@@footnotetext
+      \\let\\@footnotemark\\H@@footnotemark
+      \\let\\@mpfootnotetext\\H@@mpfootnotetext
+    }%
+    \\begingroup
+      \\toks@\\expandafter{\\TX@endtabularx}%
+      \\xdef\\Hy@gtemp{%
+        \\noexpand\\Hy@tabularx@hook
+        \\the\\toks@
+      }%
+    \\endgroup
+    \\let\\TX@endtabularx\\Hy@gtemp
+  }{}%
+  \\@ifpackageloaded{longtable}{%
+    \\CheckCommand*{\\LT@p@ftntext}[1]{%
+      \\edef\\@tempa{%
+        \\the\\LT@p@ftn
+        \\noexpand\\footnotetext[\\the\\c@footnote]%
+      }%
+      \\global\\LT@p@ftn\\expandafter{\\@tempa{#1}}%
+    }%
+    \\long\\def\\LT@p@ftntext#1{%
+      \\edef\\@tempa{%
+        \\the\\LT@p@ftn
+        \\begingroup
+          \\noexpand\\c@footnote=\\the\\c@footnote\\relax
+          \\noexpand\\protected@xdef\\noexpand\\@thefnmark{%
+            \\noexpand\\thempfn
+          }%
+          \\noexpand\\Hy@LT@footnotetext{%
+            \\Hy@footnote@currentHref
+          }%
+      }%
+      \\global\\LT@p@ftn\\expandafter{%
+          \\@tempa{#1}%
+        \\endgroup
+      }%
+    }%
+    \\long\\def\\Hy@LT@footnotetext#1#2{%
+      \\H@@footnotetext{%
+        \\ifHy@nesting
+          \\hyper@@anchor{#1}{#2}%
+        \\else
+          \\Hy@raisedlink{%
+            \\hyper@@anchor{#1}{\\relax}%
+          }%
+          \\def\\@currentHref{#1}%
+          \\let\\@currentlabelname\\@empty
+          #2%
+        \\fi
+      }%
+    }%
+  }{}%
+  \\@ifpackageloaded{fancyvrb}{%
+    \\def\\V@@footnotetext{%
+      \\insert\\footins\\bgroup
+      \\csname reset@font\\endcsname
+      \\footnotesize
+      \\interlinepenalty\\interfootnotelinepenalty
+      \\splittopskip\\footnotesep
+      \\splitmaxdepth\\dp\\strutbox
+      \\floatingpenalty \\@MM
+      \\hsize\\columnwidth
+      \\@parboxrestore
+      \\edef\\@currentlabel{\\csname p@footnote\\endcsname\\@thefnmark}%
+      \\@makefntext{}%
+      \\rule{\\z@}{\\footnotesep}%
+      \\bgroup
+      \\aftergroup\\V@@@footnotetext
+      \\Hy@raisedlink{%
+        \\expandafter\\hyper@@anchor\\expandafter{%
+          \\Hy@footnote@currentHref
+        }{\\relax}%
+      }%
+      \\let\\@currentHref\\Hy@footnote@currentHref
+      \\let\\@currentlabelname\\@empty
+      \\ignorespaces
+    }%
+  }{}%
+  \\def\\Hy@temp#1{%
+    \\begingroup
+      \\unrestored@protected@xdef\\@thefnmark{\\ref{#1}}%
+    \\endgroup
+    \\@footnotemark
+  }%
+  \\ifx\\Hy@temp\\footref
+    \\def\\footref#1{%
+    \\begingroup
+      \\unrestored@protected@xdef\\@thefnmark{\\ref{#1}}%
+    \\endgroup
+    \\H@@footnotemark
+    }%
+  \\fi
+  \\let\\HyOrg@maketitle\\maketitle
+  \\def\\maketitle{%
+    \\let\\Hy@saved@footnotemark\\@footnotemark
+    \\let\\Hy@saved@footnotetext\\@footnotetext
+    \\let\\@footnotemark\\H@@footnotemark
+    \\let\\@footnotetext\\H@@footnotetext
+    \\@ifnextchar[\\Hy@maketitle@optarg{% ]
+      \\HyOrg@maketitle
+      \\Hy@maketitle@end
+    }%
+  }%
+  \\def\\Hy@maketitle@optarg[#1]{%
+    \\HyOrg@maketitle[{#1}]%
+    \\Hy@maketitle@end
+  }%
+  \\def\\Hy@maketitle@end{%
+    \\ifx\\@footnotemark\\H@@footnotemark
+      \\let\\@footnotemark\\Hy@saved@footnotemark
+    \\fi
+    \\ifx\\@footnotetext\\H@@footnotetext
+      \\let\\@footnotetext\\Hy@saved@footnotetext
+    \\fi
+  }%
+  \\def\\realfootnote{%
+    \\@ifnextchar[\\@xfootnote{%
+      \\stepcounter{\\@mpfn}%
+      \\protected@xdef\\@thefnmark{\\thempfn}%
+      \\H@@footnotemark\\H@@footnotetext
+    }%
+  }%
+\\fi
+\\Hy@DisableOption{hyperfootnotes}
+\\def\\caption{%
+  \\ifx\\@captype\\@undefined
+    \\@latex@error{\\noexpand\\caption outside float}\\@ehd
+    \\expandafter\\@gobble
+  \\else
+    \\H@refstepcounter\\@captype
+    \\let\\Hy@tempa\\@caption
+    \\@ifundefined{float@caption}{%
+    }{%
+      \\expandafter\\ifx\\csname @float@c@\\@captype\\endcsname
+                      \\float@caption
+        \\let\\Hy@tempa\\Hy@float@caption
+      \\fi
+    }%
+    \\expandafter\\@firstofone
+  \\fi
+  {\\@dblarg{\\Hy@tempa\\@captype}}%
+}
+\\long\\def\\@caption#1[#2]#3{%
+  \\expandafter\\ifx\\csname if@capstart\\expandafter\\endcsname
+                  \\csname iftrue\\endcsname
+    \\global\\let\\@currentHref\\hc@currentHref
+  \\else
+    \\hyper@makecurrent{\\@captype}%
+  \\fi
+  \\@ifundefined{NR@gettitle}{%
+    \\def\\@currentlabelname{#2}%
+  }{%
+    \\NR@gettitle{#2}%
+  }%
+  \\par\\addcontentsline{\\csname ext@#1\\endcsname}{#1}{%
+    \\protect\\numberline{\\csname the#1\\endcsname}{\\ignorespaces #2}%
+  }%
+  \\begingroup
+    \\@parboxrestore
+    \\if@minipage
+      \\@setminipage
+    \\fi
+    \\normalsize
+    \\expandafter\\ifx\\csname if@capstart\\expandafter\\endcsname
+                    \\csname iftrue\\endcsname
+      \\global\\@capstartfalse
+      \\@makecaption{\\csname fnum@#1\\endcsname}{\\ignorespaces#3}%
+    \\else
+      \\@makecaption{\\csname fnum@#1\\endcsname}{%
+        \\ignorespaces
+        \\ifHy@nesting
+          \\expandafter\\hyper@@anchor\\expandafter{\\@currentHref}{#3}%
+        \\else
+          \\Hy@raisedlink{%
+            \\expandafter\\hyper@@anchor\\expandafter{%
+              \\@currentHref
+            }{\\relax}%
+          }%
+          #3%
+        \\fi
+      }%
+    \\fi
+    \\par
+  \\endgroup
+}
+\\let\\Hy@float@caption\\@caption
+\\newcommand{\\HyNew@float@makebox}[1]{%
+  \\HyOrg@float@makebox{%
+    #1\\relax
+    \\ifx\\Hy@float@currentHref\\@undefined
+    \\else
+      \\expandafter\\hyper@@anchor\\expandafter{%
+        \\Hy@float@currentHref
+      }{\\relax}%
+      \\global\\let\\Hy@float@currentHref\\@undefined
+    \\fi
+  }%
+}%
+\\@ifpackageloaded{float}{%
+  \\def\\Hy@float@caption{%
+    \\ifx\\Hy@float@currentHref\\@undefined
+      \\hyper@makecurrent{\\@captype}%
+      \\global\\let\\Hy@float@currentHref\\@currentHref
+    \\else
+      \\let\\@currentHref\\Hy@float@currentHref
+    \\fi
+    \\float@caption
+  }%
+  \\let\\HyOrg@float@makebox\\float@makebox
+  \\let\\float@makebox\\HyNew@float@makebox
+}{}
+\\def\\hyper@natlinkstart#1{%
+  \\Hy@backout{#1}%
+  \\hyper@linkstart{cite}{cite.#1}%
+  \\def\\hyper@nat@current{#1}%
+}
+\\def\\hyper@natlinkend{%
+  \\hyper@linkend
+}
+\\def\\hyper@natlinkbreak#1#2{%
+  \\hyper@linkend#1\\hyper@linkstart{cite}{cite.#2}%
+}
+\\def\\hyper@natanchorstart#1{%
+  \\Hy@raisedlink{\\hyper@anchorstart{cite.#1}}%
+}
+\\def\\hyper@natanchorend{\\hyper@anchorend}
+\\ltx@IfUndefined{NAT@parse}{%
+  \\providecommand*\\@extra@binfo{}%
+  \\providecommand*\\@extra@b@citeb{}%
+  \\def\\bibcite#1#2{%
+    \\@newl@bel{b}{#1\\@extra@binfo}{%
+      \\hyper@@link[cite]{}{cite.#1\\@extra@b@citeb}{#2}%
+    }%
+  }%
+  \\gdef\\@extra@binfo{}%
+  \\let\\Hy@bibcite\\bibcite
+  \\begingroup
+    \\@ifundefined{bbl@cite@choice}{}{%
+      \\g@addto@macro\\bbl@cite@choice{%
+        \\let\\bibcite\\Hy@bibcite
+      }%
+    }%
+  \\endgroup
+  \\providecommand*{\\@BIBLABEL}{\\@biblabel}%
+  \\def\\@lbibitem[#1]#2{%
+    \\@skiphyperreftrue
+    \\H@item[%
+      \\ifx\\Hy@raisedlink\\@empty
+        \\hyper@anchorstart{cite.#2\\@extra@b@citeb}%
+          \\@BIBLABEL{#1}%
+        \\hyper@anchorend
+      \\else
+        \\Hy@raisedlink{%
+          \\hyper@anchorstart{cite.#2\\@extra@b@citeb}\\hyper@anchorend
+        }%
+        \\@BIBLABEL{#1}%
+      \\fi
+      \\hfill
+    ]%
+    \\@skiphyperreffalse
+    \\if@filesw
+      \\begingroup
+        \\let\\protect\\noexpand
+        \\immediate\\write\\@auxout{%
+          \\string\\bibcite{#2}{#1}%
+        }%
+      \\endgroup
+    \\fi
+    \\ignorespaces
+  }%
+  \\def\\@bibitem#1{%
+    \\@skiphyperreftrue\\H@item\\@skiphyperreffalse
+    \\Hy@raisedlink{%
+      \\hyper@anchorstart{cite.#1\\@extra@b@citeb}\\relax\\hyper@anchorend
+    }%
+    \\if@filesw
+      \\begingroup
+        \\let\\protect\\noexpand
+        \\immediate\\write\\@auxout{%
+          \\string\\bibcite{#1}{\\the\\value{\\@listctr}}%
+        }%
+      \\endgroup
+    \\fi
+    \\ignorespaces
+  }%
+}{}
+\\@ifclassloaded{revtex}{%
+  \\Hy@Info{*** compatibility with revtex **** }%
+  \\def\\revtex@checking#1#2{%
+    \\expandafter\\let\\expandafter\\T@temp\\csname b@#1\\endcsname
+    \\expandafter\\def\\csname b@#1\\endcsname{#2}%
+    \\@SetMaxRnhefLabel{#1}%
+    \\expandafter\\let\\csname b@#1\\endcsname\\T@temp
+  }%
+  \\@ifundefined{@CITE}{\\def\\@CITE{\\@cite}}{}%
+  \\providecommand*{\\@extra@b@citeb}{}%
+  \\def\\@CITEX[#1]#2{%
+    \\let\\@citea\\@empty
+    \\leavevmode
+    \\unskip
+    \$^{%
+      \\scriptstyle
+      \\@CITE{%
+        \\@for\\@citeb:=#2\\do{%
+          \\@citea
+          \\def\\@citea{,\\penalty\\@m\\ }%
+          \\edef\\@citeb{\\expandafter\\@firstofone\\@citeb}%
+          \\if@filesw
+            \\immediate\\write\\@auxout{\\string\\citation{\\@citeb}}%
+          \\fi
+          \\@ifundefined{b@\\@citeb\\extra@b@citeb}{%
+            \\mbox{\\reset@font\\bfseries ?}%
+            \\G@refundefinedtrue
+            \\@latex@warning{%
+              Citation \`\\@citeb' on page \\thepage \\space undefined%
+            }%
+          }{%
+            {\\csname b@\\@citeb\\@extra@b@citeb\\endcsname}%
+          }%
+        }%
+      }{#1}%
+    }\$%
+  }%
+  \\def\\@citex[#1]#2{%
+    \\let\\@citea\\@empty
+    \\@cite{%
+      \\@for\\@citeb:=#2\\do{%
+        \\@citea
+        \\def\\@citea{,\\penalty\\@m\\ }%
+        \\edef\\@citeb{\\expandafter\\@firstofone\\@citeb}%
+        \\if@filesw
+          \\immediate\\write\\@auxout{\\string\\citation{\\@citeb}}%
+        \\fi
+        \\@ifundefined{b@\\@citeb\\@extra@b@citeb}{%
+          \\mbox{\\reset@font\\bfseries ?}%
+          \\G@refundefinedtrue
+          \\@latex@warning{%
+            Citation \`\\@citeb' on page \\thepage \\space undefined%
+          }%
+        }{%
+          \\hbox{\\csname b@\\@citeb\\@extra@b@citeb\\endcsname}%
+        }%
+      }%
+    }{#1}%
+  }%
+}{}
+\\@ifpackageloaded{harvard}{%
+  \\Hy@AtBeginDocument{%
+    \\Hy@Info{*** compatibility with harvard **** }%
+    \\Hy@raiselinksfalse
+    \\def\\harvardcite#1#2#3#4{%
+      \\global\\@namedef{HAR@fn@#1}{\\hyper@@link[cite]{}{cite.#1}{#2}}%
+      \\global\\@namedef{HAR@an@#1}{\\hyper@@link[cite]{}{cite.#1}{#3}}%
+      \\global\\@namedef{HAR@yr@#1}{\\hyper@@link[cite]{}{cite.#1}{#4}}%
+      \\global\\@namedef{HAR@df@#1}{\\csname HAR@fn@#1\\endcsname}%
+    }%
+    \\def\\HAR@citetoaux#1{%
+      \\if@filesw\\immediate\\write\\@auxout{\\string\\citation{#1}}\\fi%
+      \\ifHy@backref
+        \\ifx\\@empty\\@currentlabel
+        \\else
+          \\@bsphack
+          \\if@filesw
+            \\protected@write\\@auxout{}{%
+              \\string\\@writefile{brf}{%
+                \\string\\backcite{#1}{%
+                  {\\thepage}{\\@currentlabel}{\\@currentHref}%
+                }%
+              }%
+            }%
+          \\fi
+          \\@esphack
+        \\fi
+      \\fi
+    }%
+    \\def\\harvarditem{%
+      \\@ifnextchar[{\\@harvarditem}{\\@harvarditem[\\null]}%
+    }%
+    \\def\\@harvarditem[#1]#2#3#4#5\\par{%
+      \\item[]%
+      \\hyper@anchorstart{cite.#4}\\relax\\hyper@anchorend
+      \\if@filesw
+        \\begingroup
+          \\def\\protect##1{\\string ##1\\space}%
+          \\ifthenelse{\\equal{#1}{\\null}}%
+            {\\def\\next{{#4}{#2}{#2}{#3}}}%
+            {\\def\\next{{#4}{#2}{#1}{#3}}}%
+          \\immediate\\write\\@auxout{\\string\\harvardcite\\codeof\\next}%
+       \\endgroup
+      \\fi
+      \\protect\\hspace*{-\\labelwidth}%
+      \\protect\\hspace*{-\\labelsep}%
+      \\ignorespaces
+      #5%
+      \\ifHy@backref
+        \\newblock
+        \\backref{\\csname br@#4\\endcsname}%
+      \\fi
+      \\par
+    }%
+    \\long\\def\\HAR@checkcitations#1#2#3#4{%
+      \\def\\HAR@tempa{\\hyper@@link[cite]{}{cite.#1}{#2}}%
+      \\expandafter\\ifx\\csname HAR@fn@#1\\endcsname\\HAR@tempa
+        \\def\\HAR@tempa{\\hyper@@link[cite]{}{cite.#1}{#3}}%
+        \\expandafter\\ifx\\csname HAR@an@#1\\endcsname\\HAR@tempa
+          \\def\\HAR@tempa{\\hyper@@link[cite]{}{cite.#1}{#4}}%
+          \\expandafter\\ifx\\csname HAR@yr@#1\\endcsname\\HAR@tempa
+          \\else
+            \\@tempswatrue
+          \\fi
+        \\else
+          \\@tempswatrue
+        \\fi
+      \\else
+        \\@tempswatrue
+      \\fi
+    }%
+  }%
+}{}
+\\@ifpackageloaded{chicago}{%
+  \\def\\citeN{%
+    \\def\\@citeseppen{-1000}%
+    \\def\\@cite##1##2{##1}%
+    \\def\\citeauthoryear##1##2##3{##1 (##3\\@cite@opt)}%
+    \\@citedata@opt
+  }%
+  \\def\\shortciteN{%
+    \\def\\@citeseppen{-1000}%
+    \\def\\@cite##1##2{##1}%
+    \\def\\citeauthoryear##1##2##3{##2 (##3\\@cite@opt)}%
+    \\@citedata@opt
+  }%
+  \\def\\@citedata@opt{%
+    \\let\\@cite@opt\\@empty
+    \\@ifnextchar [{%
+      \\@tempswatrue
+      \\@citedatax@opt
+    }{%
+      \\@tempswafalse
+      \\@citedatax[]%
+    }%
+  }%
+  \\def\\@citedatax@opt[#1]{%
+    \\def\\@cite@opt{, #1}%
+    \\@citedatax[{#1}]%
+  }%
+}{}
+\\ltx@ifclassloaded{slides}{%
+  \\def\\Hy@SlidesFormatOptionalPage#1{(#1)}%
+  \\def\\Hy@PageAnchorSlidesPlain{%
+    \\advance\\c@page\\ltx@one
+    \\edef\\Hy@TempPageAnchor{%
+      \\noexpand\\hyper@@anchor{%
+        page.\\the\\c@slide.\\the\\c@overlay.\\the\\c@note%
+        \\ifnum\\c@page=\\ltx@one
+        \\else
+          .\\the\\c@page
+        \\fi
+      }%
+    }%
+    \\advance\\c@page-\\ltx@one
+  }%
+  \\def\\Hy@PageAnchorSlide{%
+    \\advance\\c@page\\ltx@one
+    \\ifnum\\c@page>\\ltx@one
+      \\ltx@IfUndefined{theHpage}{%
+        \\protected@edef\\Hy@TheSlideOptionalPage{%
+          \\Hy@SlidesFormatOptionalPage{\\thepage}%
+        }%
+      }{%
+        \\protected@edef\\Hy@TheSlideOptionalPage{%
+          \\Hy@SlidesFormatOptionalPage{\\theHpage}%
+        }%
+      }%
+    \\else
+      \\def\\Hy@TheSlideOptionalPage{}%
+    \\fi
+    \\advance\\c@page-\\ltx@one
+    \\pdfstringdef\\@the@H@page{%
+      \\csname
+        the%
+        \\ltx@ifundefined{theH\\Hy@SlidesPage}{}{H}%
+        \\Hy@SlidesPage
+      \\endcsname
+      \\Hy@TheSlideOptionalPage
+    }%
+    \\ltx@gobblethree
+  }%
+  \\def\\Hy@SlidesPage{slide}%
+  \\g@addto@macro\\slide{%
+    \\def\\Hy@SlidesPage{slide}%
+  }%
+  \\g@addto@macro\\overlay{%
+    \\def\\Hy@SlidesPage{overlay}%
+  }%
+  \\g@addto@macro\\note{%
+    \\def\\Hy@SlidesPage{note}%
+  }%
+}{%
+  \\def\\Hy@PageAnchorSlidesPlain{}%
+  \\def\\Hy@PageAnchorSlide{}%
+}
+\\def\\Hy@EveryPageAnchor{%
+  \\Hy@DistillerDestFix
+  \\ifHy@pageanchor
+    \\ifHy@hypertexnames
+      \\ifHy@plainpages
+        \\def\\Hy@TempPageAnchor{\\hyper@@anchor{page.\\the\\c@page}}%
+        \\Hy@PageAnchorSlidesPlain
+      \\else
+        \\begingroup
+          \\let\\@number\\@firstofone
+          \\Hy@unicodefalse
+          \\Hy@PageAnchorSlide
+          \\pdfstringdef\\@the@H@page{\\thepage}%
+        \\endgroup
+        \\EdefUnescapeString\\@the@H@page{\\@the@H@page}%
+        \\def\\Hy@TempPageAnchor{\\hyper@@anchor{page.\\@the@H@page}}%
+      \\fi
+    \\else
+      \\Hy@GlobalStepCount\\Hy@pagecounter
+      \\def\\Hy@TempPageAnchor{%
+        \\hyper@@anchor{page.\\the\\Hy@pagecounter}%
+      }%
+    \\fi
+    \\vbox to 0pt{%
+      \\kern\\voffset
+      \\kern\\topmargin
+      \\kern-1bp\\relax
+      \\hbox to 0pt{%
+        \\kern\\hoffset
+        \\kern\\ifodd\\value{page}%
+               \\oddsidemargin
+             \\else
+               \\evensidemargin
+             \\fi
+        \\kern-1bp\\relax
+        \\Hy@TempPageAnchor\\relax
+        \\hss
+      }%
+      \\vss
+    }%
+  \\fi
+}
+\\g@addto@macro\\Hy@EveryPageBoxHook{%
+  \\Hy@EveryPageAnchor
+}
+\\providecommand\\protected@file@percent{}
+\\def\\addcontentsline#1#2#3{% toc extension, type, tag
+  \\begingroup
+    \\let\\label\\@gobble
+    \\ifx\\@currentHref\\@empty
+      \\Hy@Warning{%
+        No destination for bookmark of \\string\\addcontentsline,%
+        \\MessageBreak destination is added%
+      }%
+      \\phantomsection
+    \\fi
+    \\expandafter\\ifx\\csname toclevel@#2\\endcsname\\relax
+      \\begingroup
+        \\def\\Hy@tempa{#1}%
+        \\ifx\\Hy@tempa\\Hy@bookmarkstype
+          \\Hy@WarningNoLine{%
+            bookmark level for unknown #2 defaults to 0%
+          }%
+        \\else
+          \\Hy@Info{bookmark level for unknown #2 defaults to 0}%
+        \\fi
+      \\endgroup
+      \\expandafter\\gdef\\csname toclevel@#2\\endcsname{0}%
+    \\fi
+    \\edef\\Hy@toclevel{\\csname toclevel@#2\\endcsname}%
+    \\Hy@writebookmark{\\csname the#2\\endcsname}%
+      {#3}%
+      {\\@currentHref}%
+      {\\Hy@toclevel}%
+      {#1}%
+    \\ifHy@verbose
+      \\begingroup
+        \\def\\Hy@tempa{#3}%
+        \\@onelevel@sanitize\\Hy@tempa
+        \\let\\temp@online\\on@line
+        \\let\\on@line\\@empty
+        \\Hy@Info{%
+          bookmark\\temp@online:\\MessageBreak
+          thecounter {\\csname the#2\\endcsname}\\MessageBreak
+          text {\\Hy@tempa}\\MessageBreak
+          reference {\\@currentHref}\\MessageBreak
+          toclevel {\\Hy@toclevel}\\MessageBreak
+          type {#1}%
+        }%
+      \\endgroup
+    \\fi
+    \\addtocontents{#1}{%
+      \\protect\\contentsline{#2}{#3}{\\thepage}{\\@currentHref}\\protected@file@percent
+    }%
+  \\endgroup
+}
+\\def\\contentsline#1#2#3#4{%
+  \\begingroup
+    \\Hy@safe@activestrue
+  \\edef\\x{\\endgroup
+    \\def\\noexpand\\Hy@tocdestname{#4}%
+  }\\x
+  \\ifx\\Hy@tocdestname\\ltx@empty
+    \\csname l@#1\\endcsname{#2}{#3}%
+  \\else
+    \\ifcase\\Hy@linktoc % none
+      \\csname l@#1\\endcsname{#2}{#3}%
+    \\or % section
+      \\csname l@#1\\endcsname{%
+        \\hyper@linkstart{link}{\\Hy@tocdestname}{#2}\\hyper@linkend
+      }{#3}%
+    \\or % page
+      \\def\\Hy@temp{#3}%
+      \\ifx\\Hy@temp\\ltx@empty
+        \\csname l@#1\\endcsname{#2}{#3}%
+      \\else
+        \\csname l@#1\\endcsname{{#2}}{%
+          \\hyper@linkstart{link}{\\Hy@tocdestname}{#3}\\hyper@linkend
+        }%
+      \\fi
+    \\else % all
+      \\def\\Hy@temp{#3}%
+      \\ifx\\Hy@temp\\ltx@empty
+        \\csname l@#1\\endcsname{%
+          \\hyper@linkstart{link}{\\Hy@tocdestname}{#2}\\hyper@linkend
+        }{}%
+      \\else
+        \\csname l@#1\\endcsname{%
+          \\hyper@linkstart{link}{\\Hy@tocdestname}{#2}\\hyper@linkend
+        }{%
+          \\hyper@linkstart{link}{\\Hy@tocdestname}{#3}\\hyper@linkend
+        }%
+      \\fi
+    \\fi
+  \\fi
+}
+\\let\\H@definecounter\\@definecounter
+\\def\\@definecounter#1{%
+  \\H@definecounter{#1}%
+  \\expandafter\\gdef\\csname theH#1\\endcsname{\\arabic{#1}}%
+}
+\\let\\H@newctr\\@newctr
+\\def\\@newctr#1[#2]{%
+  \\H@newctr#1[{#2}]%
+  \\expandafter\\gdef\\csname theH#1\\endcsname{%
+    \\csname the\\@ifundefined{theH#2}{}{H}#2\\endcsname.\\arabic{#1}%
+  }%
+}
+\\@ifpackageloaded{amsmath}{%
+  \\def\\Hy@make@anchor{%
+    \\Hy@MakeCurrentHrefAuto{AMS}%
+    \\Hy@raisedlink{\\hyper@anchorstart{\\@currentHref}\\hyper@anchorend}%
+  }%
+  \\def\\Hy@make@df@tag@@#1{%
+    \\gdef\\df@tag{%
+      \\maketag@@@{\\Hy@make@anchor#1}%
+      \\def\\@currentlabel{#1}%
+    }%
+  }%
+  \\def\\Hy@make@df@tag@@@#1{%
+    \\gdef\\df@tag{%
+      \\tagform@{\\Hy@make@anchor#1}%
+      \\toks@\\@xp{\\p@equation{#1}}%
+      \\edef\\@currentlabel{\\the\\toks@}%
+    }%
+  }%
+  \\let\\HyOrg@make@df@tag@@\\make@df@tag@@
+  \\let\\HyOrg@make@df@tag@@@\\make@df@tag@@@
+  \\let\\make@df@tag@@\\Hy@make@df@tag@@
+  \\let\\make@df@tag@@@\\Hy@make@df@tag@@@
+}{}
+\\@ifpackagewith{hyperref}{pdftex}{%
+   \\let\\H@seteqlabel\\@seteqlabel
+   \\def\\@seteqlabel#1{%
+     \\H@seteqlabel{#1}%
+     \\xdef\\@currentHref{AMS.\\the\\Hy@linkcounter}%
+     \\Hy@raisedlink{%
+       \\hyper@anchorstart{\\@currentHref}\\hyper@anchorend
+     }%
+   }%
+}{}
+\\let\\HyOrg@addtoreset\\@addtoreset
+\\def\\@addtoreset#1#2{%
+  \\HyOrg@addtoreset{#1}{#2}%
+  \\expandafter\\xdef\\csname theH#1\\endcsname{%
+    \\expandafter\\noexpand
+        \\csname the\\@ifundefined{theH#2}{}H#2\\endcsname
+    .\\noexpand\\the\\noexpand\\value{#1}%
+  }%
+}
+\\@ifpackageloaded{amsmath}{%
+  \\@ifpackagelater{amsmath}{1999/12/14}{%
+    \\renewcommand*{\\numberwithin}[3][\\arabic]{%
+      \\@ifundefined{c@#2}{\\@nocounterr{#2}}{%
+        \\@ifundefined{c@#3}{\\@nocnterr{#3}}{%
+          \\HyOrg@addtoreset{#2}{#3}%
+          \\@xp\\xdef\\csname the#2\\endcsname{%
+            \\@xp\\@nx\\csname the#3\\endcsname .\\@nx#1{#2}%
+          }%
+          \\@xp\\xdef\\csname theH#2\\endcsname{%
+            \\@xp\\@nx
+            \\csname the\\@ifundefined{theH#3}{}H#3\\endcsname
+            .\\@nx#1{#2}%
+          }%
+        }%
+      }%
+    }%
+  }{%
+    \\Hy@WarningNoLine{%
+      \\string\\numberwithin\\space of package \`amsmath' %
+      only fixed\\MessageBreak
+      for version 2000/06/06 v2.12 or newer%
+    }%
+  }%
+}{}
+\\ifHy@hyperfigures
+  \\let\\Hy@Gin@setfile\\Gin@setfile
+  \\def\\Gin@setfile#1#2#3{%
+    \\hyperimage{#3}{\\Hy@Gin@setfile{#1}{#2}{#3}}%
+  }%
+\\fi
+\\Hy@DisableOption{hyperfigures}
+\\ifHy@hyperindex
+  \\def\\HyInd@ParenLeft{(}%
+  \\def\\HyInd@ParenRight{)}%
+  \\def\\hyperindexformat#1#2{%
+    \\let\\HyOrg@hyperpage\\hyperpage
+    \\let\\hyperpage\\@firstofone
+    #1{\\HyOrg@hyperpage{#2}}%
+    \\let\\hyperpage\\HyOrg@hyperpage
+  }%
+  \\Hy@nextfalse
+  \\@ifpackageloaded{multind}{\\Hy@nexttrue}{}%
+  \\@ifpackageloaded{index}{\\Hy@nexttrue}{}%
+  \\@ifpackageloaded{amsmidx}{\\Hy@nexttrue}{}%
+  \\begingroup
+    \\lccode\`\\|=\\expandafter\`\\HyInd@EncapChar\\relax
+    \\lccode\`\\/=\`\\\\\\relax
+  \\lowercase{\\endgroup
+    \\ifHy@next
+      \\let\\HyInd@org@wrindex\\@wrindex
+      \\def\\@wrindex#1#2{\\HyInd@@wrindex{#1}#2||\\\\}%
+      \\def\\HyInd@@wrindex#1#2|#3|#4\\\\{%
+        \\ifx\\\\#3\\\\%
+          \\HyInd@org@wrindex{#1}{#2|hyperpage}%
+        \\else
+          \\HyInd@@@wrindex{#1}{#2}#3\\\\%
+        \\fi
+      }%
+      \\def\\HyInd@@@wrindex#1#2#3#4\\\\{%
+        \\def\\Hy@temp@A{#3}%
+        \\ifcase0\\ifx\\Hy@temp@A\\HyInd@ParenLeft 1\\fi
+                \\ifx\\Hy@temp@A\\HyInd@ParenRight 1\\fi
+                \\relax
+          \\HyInd@org@wrindex{#1}{%
+            #2|hyperindexformat{/#3#4}%
+          }%
+        \\else
+          \\ifx\\\\#4\\\\%
+            \\ifx\\Hy@temp@A\\HyInd@ParenRight
+              \\HyInd@org@wrindex{#1}{#2|#3}%
+            \\else
+              \\HyInd@org@wrindex{#1}{#2|#3hyperpage}%
+            \\fi
+          \\else
+            \\HyInd@org@wrindex{#1}{%
+              #2|#3hyperindexformat{/#4}%
+            }%
+          \\fi
+        \\fi
+      }%
+    \\else
+      \\def\\@wrindex#1{\\@@wrindex#1||\\\\}%
+      \\def\\@@wrindex#1|#2|#3\\\\{%
+        \\if@filesw
+          \\ifx\\\\#2\\\\%
+            \\protected@write\\@indexfile{}{%
+              \\string\\indexentry{#1|hyperpage}{\\thepage}%
+            }%
+          \\else
+            \\HyInd@@@wrindex{#1}#2\\\\%
+          \\fi
+        \\fi
+        \\endgroup
+        \\@esphack
+      }%
+      \\def\\HyInd@@@wrindex#1#2#3\\\\{%
+        \\def\\Hy@temp@A{#2}%
+        \\ifcase0\\ifx\\Hy@temp@A\\HyInd@ParenLeft 1\\fi
+                \\ifx\\Hy@temp@A\\HyInd@ParenRight 1\\fi
+                \\relax
+          \\protected@write\\@indexfile{}{%
+            \\string\\indexentry{%
+              #1|hyperindexformat{/#2#3}%
+            }{\\thepage}%
+          }%
+        \\else
+          \\ifx\\\\#3\\\\%
+            \\ifx\\Hy@temp@A\\HyInd@ParenRight
+              \\HyInd@DefKey{#1}%
+              \\ltx@IfUndefined{HyInd@(\\HyInd@key)}{%
+                \\let\\Hy@temp\\ltx@empty
+              }{%
+                \\expandafter\\let\\expandafter\\Hy@temp
+                \\csname HyInd@(\\HyInd@key)\\endcsname
+              }%
+              \\protected@write\\@indexfile{}{%
+                 \\string\\indexentry{#1|#2\\Hy@temp}{\\thepage}%
+              }%
+            \\else
+              \\protected@write\\@indexfile{}{%
+                 \\string\\indexentry{#1|#2hyperpage}{\\thepage}%
+              }%
+              \\HyInd@DefKey{#1}%
+              \\expandafter
+              \\gdef\\csname HyInd@(\\HyInd@key)\\endcsname{%
+                hyperpage%
+              }%
+            \\fi
+          \\else
+            \\protected@write\\@indexfile{}{%
+               \\string\\indexentry{%
+                 #1|#2hyperindexformat{/#3}%
+               }{\\thepage}%
+            }%
+            \\ifx\\Hy@temp@A\\HyInd@ParenLeft
+              \\HyInd@DefKey{#1}%
+              \\expandafter
+              \\gdef\\csname HyInd@(\\HyInd@key)\\endcsname{%
+                hyperindexformat{/#3}%
+              }%
+            \\fi
+          \\fi
+        \\fi
+      }%
+      \\def\\HyInd@DefKey#1{%
+        \\begingroup
+          \\let\\protect\\@unexpandable@protect
+          \\edef\\Hy@temp{#1}%
+          \\ltx@onelevel@sanitize\\Hy@temp
+          \\global\\let\\HyInd@key\\Hy@temp
+        \\endgroup
+      }%
+    \\fi
+  }%
+\\fi
+\\Hy@DisableOption{hyperindex}
+\\Hy@DisableOption{encap}
+\\def\\nohyperpage#1{#1}
+\\def\\hyperpage#1{%
+  \\HyInd@hyperpage#1\\nohyperpage{}\\@nil
+}
+\\def\\HyInd@hyperpage#1\\nohyperpage#2#3\\@nil{%
+  \\HyInd@@hyperpage{#1}%
+  #2%
+  \\def\\Hy@temp{#3}%
+  \\ifx\\Hy@temp\\@empty
+  \\else
+    \\ltx@ReturnAfterFi{%
+      \\HyInd@hyperpage#3\\@nil
+    }%
+  \\fi
+}
+\\def\\HyInd@@hyperpage#1{\\@hyperpage#1----\\\\}
+\\def\\@hyperpage#1--#2--#3\\\\{%
+  \\ifx\\\\#2\\\\%
+    \\@commahyperpage{#1}%
+  \\else
+    \\HyInd@pagelink{#1}--\\HyInd@pagelink{#2}%
+  \\fi
+}
+\\def\\@commahyperpage#1{\\@@commahyperpage#1, ,\\\\}
+\\def\\@@commahyperpage#1, #2,#3\\\\{%
+  \\ifx\\\\#2\\\\%
+    \\HyInd@pagelink{#1}%
+  \\else
+    \\HyInd@pagelink{#1}, \\HyInd@pagelink{#2}%
+  \\fi
+}
+\\def\\HyInd@pagelink#1{%
+  \\begingroup
+    \\toks@={}%
+    \\HyInd@removespaces#1 \\@nil
+  \\endgroup
+}
+\\def\\HyInd@removespaces#1 #2\\@nil{%
+  \\toks@=\\expandafter{\\the\\toks@#1}%
+  \\ifx\\\\#2\\\\%
+    \\edef\\x{\\the\\toks@}%
+    \\ifx\\x\\@empty
+    \\else
+      \\hyperlink{page.\\the\\toks@}{\\the\\toks@}%
+    \\fi
+  \\else
+    \\ltx@ReturnAfterFi{%
+      \\HyInd@removespaces#2\\@nil
+    }%
+  \\fi
+}
+\\@ifclassloaded{foils}{%
+  \\providecommand*\\ext@table{lot}%
+  \\providecommand*\\ext@figure{lof}%
+}{}
+\\@ifclassloaded{seminar}{%
+  \\Hy@seminarslidestrue
+  \\providecommand\\theHslide{\\arabic{slide}}%
+}{%
+  \\Hy@seminarslidesfalse
+}
+\\@ifpackageloaded{slidesec}{%
+  \\providecommand\\theHslidesection   {\\arabic{slidesection}}%
+  \\providecommand\\theHslidesubsection{%
+    \\theHslidesection.\\arabic{slidesubsection}%
+  }%
+  \\def\\slide@heading[#1]#2{%
+    \\H@refstepcounter{slidesection}%
+    \\@addtoreset{slidesubsection}{slidesection}%
+    \\addtocontents{los}{%
+      \\protect\\l@slide{\\the\\c@slidesection}{\\ignorespaces#1}%
+        {\\@SCTR}{slideheading.\\theslidesection}%
+    }%
+    \\def\\Hy@tempa{#2}%
+    \\ifx\\Hy@tempa\\@empty
+    \\else
+      {%
+        \\edef\\@currentlabel{%
+          \\csname p@slidesection\\endcsname\\theslidesection
+        }%
+        \\makeslideheading{#2}%
+      }%
+    \\fi
+    \\gdef\\theslideheading{#1}%
+    \\gdef\\theslidesubheading{}%
+    \\ifHy@bookmarksnumbered
+      \\def\\Hy@slidetitle{\\theslidesection\\space #1}%
+    \\else
+      \\def\\Hy@slidetitle{#1}%
+    \\fi
+    \\ifHy@hypertexnames
+       \\ifHy@naturalnames
+         \\hyper@@anchor{slideheading.\\theslidesection}{\\relax}%
+         \\Hy@writebookmark
+           {\\theslidesection}%
+           {\\Hy@slidetitle}%
+           {slideheading.\\theslidesection}%
+           {1}%
+           {toc}%
+       \\else
+         \\hyper@@anchor{slideheading.\\theHslidesection}{\\relax}%
+         \\Hy@writebookmark
+           {\\theslidesection}%
+           {\\Hy@slidetitle}%
+           {slideheading.\\theHslidesection}%
+           {1}%
+           {toc}%
+       \\fi
+    \\else
+      \\Hy@GlobalStepCount\\Hy@linkcounter
+      \\hyper@@anchor{slideheading.\\the\\Hy@linkcounter}{\\relax}%
+      \\Hy@writebookmark
+        {\\theslidesection}%
+        {\\Hy@slidetitle}%
+        {slideheading.\\the\\Hy@linkcounter}%
+        {1}%
+        {toc}%
+    \\fi
+  }%
+  \\def\\slide@subheading[#1]#2{%
+    \\H@refstepcounter{slidesubsection}%
+    \\addtocontents{los}{%
+      \\protect\\l@subslide{\\the\\c@slidesubsection}{\\ignorespaces#1}%
+        {\\@SCTR}{slideheading.\\theslidesubsection}%
+    }%
+    \\def\\Hy@tempa{#2}%
+    \\ifx\\Hy@tempa\\@empty
+    \\else
+      {%
+        \\edef\\@currentlabel{%
+          \\csname p@slidesubsection\\endcsname\\theslidesubsection
+        }%
+        \\makeslidesubheading{#2}%
+      }%
+    \\fi
+    \\gdef\\theslidesubheading{#1}%
+    \\ifHy@bookmarksnumbered
+      \\def\\Hy@slidetitle{\\theslidesubsection\\space #1}%
+    \\else
+      \\def\\Hy@slidetitle{#1}%
+    \\fi
+    \\ifHy@hypertexnames
+      \\ifHy@naturalnames
+        \\hyper@@anchor{slideheading.\\theslidesubsection}{\\relax}%
+        \\Hy@writebookmark
+          {\\theslidesubsection}%
+          {\\Hy@slidetitle}%
+          {slideheading.\\theslidesubsection}%
+          {2}%
+          {toc}%
+      \\else
+        \\hyper@@anchor{slideheading.\\theHslidesubsection}{\\relax}%
+        \\Hy@writebookmark
+          {\\theslidesubsection}%
+          {\\Hy@slidetitle}%
+          {slideheading.\\theHslidesubsection}%
+          {2}%
+          {toc}%
+      \\fi
+    \\else
+      \\Hy@GlobalStepCount\\Hy@linkcounter
+      \\hyper@@anchor{slideheading.\\the\\Hy@linkcounter}{\\relax}%
+      \\Hy@writebookmark
+        {\\theslidesubsection}%
+        {\\Hy@slidetitle}%
+        {slideheading.\\the\\Hy@linkcounter}%
+        {1}%
+        {toc}%
+    \\fi
+  }%
+  \\providecommand*{\\listslidename}{List of Slides}%
+  \\def\\listofslides{%
+    \\section*{%
+      \\listslidename
+      \\@mkboth{%
+        \\expandafter\\MakeUppercase\\listslidename
+      }{%
+        \\expandafter\\MakeUppercase\\listslidename
+      }%
+    }%
+    \\def\\l@slide##1##2##3##4{%
+      \\slide@undottedcline{%
+        \\slidenumberline{##3}{\\hyperlink{##4}{##2}}%
+      }{}%
+    }%
+    \\let\\l@subslide\\l@slide
+    \\@startlos
+  }%
+  \\def\\slide@contents{%
+    \\def\\l@slide##1##2##3##4{%
+      \\slide@cline{\\slidenumberline{##3}{\\hyperlink{##4}{##2}}}{##3}%
+    }%
+    \\let\\l@subslide\\@gobblefour
+    \\@startlos
+  }%
+  \\def\\Slide@contents{%
+    \\def\\l@slide##1##2##3##4{%
+      \\ifcase\\lslide@flag
+        \\message{##1 ** \\the\\c@slidesection}%
+        \\ifnum##1>\\c@slidesection
+          \\def\\lslide@flag{1}%
+          {%
+            \\large
+            \\slide@cline{%
+              \\slidenumberline{\$\\Rightarrow\\bullet\$}%
+                {\\hyperlink{##4}{##2}}%
+            }{##3}%
+          }%
+        \\else
+          {%
+            \\large
+            \\slide@cline{%
+              \\slidenumberline{\$\\surd\\;\\bullet\$}%
+                {\\hyperlink{##4}{##2}}%
+            }{##3}%
+          }%
+        \\fi
+      \\or
+        \\def\\lslide@flag{2}%
+        {%
+          \\large
+          \\slide@cline{%
+            \\slidenumberline{\$\\bullet\$}%
+              {\\hyperlink{##4}{##2}}%
+          }{##3}%
+        }%
+      \\or
+        {%
+          \\large
+          \\slide@cline{%
+            \\slidenumberline{\$\\bullet\$}%
+             {\\hyperlink{##4}{##2}}%
+          }{##3}%
+        }%
+      \\fi
+    }%
+    \\def\\l@subslide##1##2##3##4{%
+      \\ifnum\\lslide@flag=1 %
+        \\@undottedtocline{2}{3.8em}{3.2em}{\\hyperlink{##4}{##2}}{}%
+      \\fi
+    }%
+    \\def\\lslide@flag{0}%
+    \\@startlos
+  }%
+}{}
+\\ifHy@texht
+  \\expandafter\\endinput
+\\fi
+\\let\\real@setref\\@setref
+\\def\\@setref#1#2#3{% csname, extract group, refname
+  \\ifx#1\\relax
+    \\protect\\G@refundefinedtrue
+    \\nfss@text{\\reset@font\\bfseries ??}%
+    \\@latex@warning{%
+      Reference \`#3' on page \\thepage \\space undefined%
+    }%
+  \\else
+    \\expandafter\\Hy@setref@link#1\\@empty\\@empty\\@nil{#2}%
+  \\fi
+}
+\\def\\Hy@setref@link#1#2#3#4#5#6\\@nil#7{%
+  \\begingroup
+    \\toks0={\\hyper@@link{#5}{#4}}%
+    \\toks1=\\expandafter{#7{#1}{#2}{#3}{#4}{#5}}%
+    \\edef\\x{\\endgroup
+      \\the\\toks0 {\\the\\toks1 }%
+    }%
+  \\x
+}
+\\def\\@pagesetref#1#2#3{% csname, extract macro, ref
+  \\ifx#1\\relax
+    \\protect\\G@refundefinedtrue
+    \\nfss@text{\\reset@font\\bfseries ??}%
+    \\@latex@warning{%
+      Reference \`#3' on page \\thepage \\space undefined%
+    }%
+  \\else
+    \\protect\\hyper@@link
+      {\\expandafter\\@fifthoffive#1}%
+      {page.\\expandafter\\@secondoffive#1}%
+      {\\expandafter\\@secondoffive#1}%
+  \\fi
+}
+\\def\\HyRef@StarSetRef#1{%
+  \\begingroup
+    \\Hy@safe@activestrue
+    \\edef\\x{#1}%
+    \\@onelevel@sanitize\\x
+    \\edef\\x{\\endgroup
+      \\noexpand\\HyRef@@StarSetRef
+        \\expandafter\\noexpand\\csname r@\\x\\endcsname{\\x}%
+    }%
+  \\x
+}
+\\def\\HyRef@@StarSetRef#1#2#3{%
+  \\ifx#1\\@undefined
+    \\let#1\\relax
+  \\fi
+  \\real@setref#1#3{#2}%
+}
+\\def\\@refstar#1{%
+  \\HyRef@StarSetRef{#1}\\@firstoffive
+}
+\\def\\@pagerefstar#1{%
+  \\HyRef@StarSetRef{#1}\\@secondoffive
+}
+\\def\\@namerefstar#1{%
+  \\HyRef@StarSetRef{#1}\\@thirdoffive
+}
+
+\\Hy@AtBeginDocument{%
+  \\@ifpackageloaded{varioref}{%
+    \\def\\@Refstar#1{%
+      \\HyRef@StarSetRef{#1}\\HyRef@MakeUppercaseFirstOfFive
+    }%
+    \\def\\HyRef@MakeUppercaseFirstOfFive#1#2#3#4#5{%
+      \\MakeUppercase#1%
+    }%
+    \\DeclareRobustCommand*{\\Ref}{%
+      \\@ifstar\\@Refstar\\HyRef@Ref
+    }%
+    \\def\\HyRef@Ref#1{%
+      \\hyperref[{#1}]{\\Ref*{#1}}%
+    }%
+  \\ifdefined\\vp@gerefstar
+   \\renewcommand\\Vref@star[2][]{%
+     \\begingroup
+       \\let\\T@pageref\\@pagerefstar
+       \\Ref*{#2}
+       \\vpageref[#1]{#2}%
+     \\endgroup
+   }%
+   \\renewcommand\\Vr@f[2][]{%
+     \\begingroup
+       \\let\\T@pageref\\@pagerefstar
+       \\hyperref[{#2}]{%
+         \\Ref*{#2}
+         \\vpageref[#1]{#2}%
+       }%
+     \\endgroup
+   }%
+    \\renewcommand\\vr@f[2][]{%
+      \\begingroup
+        \\let\\T@pageref\\@pagerefstar
+        \\hyperref[{#2}]{%
+          \\ref*{#2}
+          \\vpageref[#1]{#2}%
+        }%
+       \\endgroup
+    }%
+    \\renewcommand\\vref@star[2][]{%
+      \\begingroup
+        \\let\\T@pageref\\@pagerefstar
+        \\ref*{#2}
+        \\vpageref[#1]{#2}%
+       \\endgroup
+    }%
+ \\else
+   \\def\\Vr@f#1{%
+     \\leavevmode\\unskip\\vref@space
+     \\hyperref[{#1}]{%
+       \\Ref*{#1}%
+       \\let\\vref@space\\nobreakspace
+       \\@vpageref[\\unskip]{#1}%
+     }%
+   }%
+   \\def\\vr@f#1{%
+     \\leavevmode\\unskip\\vref@space
+     \\begingroup
+       \\let\\T@pageref\\@pagerefstar
+       \\hyperref[{#1}]{%
+         \\ref*{#1}%
+         \\vpageref[\\unskip]{#1}%
+       }%
+     \\endgroup
+   }%
+ \\fi
+  }{}%
+}
+
+\\DeclareRobustCommand*{\\autopageref}{%
+  \\@ifstar{%
+    \\HyRef@autopagerefname\\pageref*%
+  }\\HyRef@autopageref
+}
+\\def\\HyRef@autopageref#1{%
+  \\hyperref[{#1}]{\\HyRef@autopagerefname\\pageref*{#1}}%
+}
+\\def\\HyRef@autopagerefname{%
+  \\ltx@IfUndefined{pageautorefname}{%
+    \\ltx@IfUndefined{pagename}{%
+      \\Hy@Warning{No autoref name for \`page'}%
+    }{%
+      \\pagename\\nobreakspace
+    }%
+  }{%
+    \\pageautorefname\\nobreakspace
+  }%
+}
+\\DeclareRobustCommand*{\\autoref}{%
+  \\leavevmode
+  \\@ifstar{\\HyRef@autoref\\@gobbletwo}{\\HyRef@autoref\\hyper@@link}%
+}
+\\def\\HyRef@autoref#1#2{%
+  \\begingroup
+    \\Hy@safe@activestrue
+    \\expandafter\\HyRef@autosetref\\csname r@#2\\endcsname{#2}{#1}%
+  \\endgroup
+}
+\\def\\HyRef@autosetref#1#2#3{% link command, csname, refname
+  \\HyRef@ShowKeysRef{#2}%
+  \\ifcase 0\\ifx#1\\relax 1\\fi\\ifx#1\\Hy@varioref@undefined 1\\fi\\relax
+    \\edef\\HyRef@thisref{%
+      \\expandafter\\@fourthoffive#1\\@empty\\@empty\\@empty
+    }%
+    \\expandafter\\HyRef@testreftype\\HyRef@thisref.\\\\%
+    \\Hy@safe@activesfalse
+    #3{%
+      \\expandafter\\@fifthoffive#1\\@empty\\@empty\\@empty
+    }{%
+      \\expandafter\\@fourthoffive#1\\@empty\\@empty\\@empty
+    }{%
+      \\HyRef@currentHtag
+      \\expandafter\\@firstoffive#1\\@empty\\@empty\\@empty
+      \\null
+    }%
+  \\else
+    \\protect\\G@refundefinedtrue
+    \\nfss@text{\\reset@font\\bfseries ??}%
+    \\@latex@warning{%
+      Reference \`#2' on page \\thepage\\space undefined%
+    }%
+  \\fi
+}
+\\def\\HyRef@testreftype#1.#2\\\\{%
+  \\ltx@IfUndefined{#1autorefname}{%
+    \\ltx@IfUndefined{#1name}{%
+      \\HyRef@StripStar#1\\\\*\\\\\\@nil{#1}%
+      \\ltx@IfUndefined{\\HyRef@name autorefname}{%
+        \\ltx@IfUndefined{\\HyRef@name name}{%
+          \\def\\HyRef@currentHtag{}%
+          \\Hy@Warning{No autoref name for \`#1'}%
+        }{%
+          \\edef\\HyRef@currentHtag{%
+            \\expandafter\\noexpand\\csname\\HyRef@name name\\endcsname
+            \\noexpand~%
+          }%
+        }%
+      }{%
+        \\edef\\HyRef@currentHtag{%
+          \\expandafter\\noexpand
+          \\csname\\HyRef@name autorefname\\endcsname
+          \\noexpand~%
+        }%
+      }%
+    }{%
+      \\edef\\HyRef@currentHtag{%
+        \\expandafter\\noexpand\\csname#1name\\endcsname
+        \\noexpand~%
+      }%
+    }%
+  }{%
+    \\edef\\HyRef@currentHtag{%
+      \\expandafter\\noexpand\\csname#1autorefname\\endcsname
+      \\noexpand~%
+    }%
+  }%
+}
+\\def\\HyRef@StripStar#1*\\\\#2\\@nil#3{%
+  \\def\\HyRef@name{#2}%
+  \\ifx\\HyRef@name\\HyRef@CaseStar
+    \\def\\HyRef@name{#1}%
+  \\else
+    \\def\\HyRef@name{#3}%
+  \\fi
+}
+\\def\\HyRef@CaseStar{*\\\\}
+\\def\\HyRef@currentHtag{}
+\\let\\HyRef@ShowKeysRef\\@gobble
+\\def\\HyRef@ShowKeysInit{%
+  \\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+  \\expandafter\\ifx\\csname SK@@label\\endcsname\\relax
+  \\else
+    \\ifx\\SK@ref\\@empty
+    \\else
+      \\def\\HyRef@ShowKeysRef{%
+        \\SK@\\SK@@ref
+      }%
+    \\fi
+  \\fi
+}
+\\@ifpackageloaded{showkeys}{%
+  \\HyRef@ShowKeysInit
+}{%
+  \\Hy@AtBeginDocument{%
+    \\@ifpackageloaded{showkeys}{%
+      \\HyRef@ShowKeysInit
+    }{}%
+  }%
+}
+\\providecommand*\\AMSautorefname{\\equationautorefname}
+\\providecommand*\\Hfootnoteautorefname{\\footnoteautorefname}
+\\providecommand*\\Itemautorefname{\\itemautorefname}
+\\providecommand*\\itemautorefname{item}
+\\providecommand*\\equationautorefname{Equation}
+\\providecommand*\\footnoteautorefname{footnote}
+\\providecommand*\\itemautorefname{item}
+\\providecommand*\\figureautorefname{Figure}
+\\providecommand*\\tableautorefname{Table}
+\\providecommand*\\partautorefname{Part}
+\\providecommand*\\appendixautorefname{Appendix}
+\\providecommand*\\chapterautorefname{chapter}
+\\providecommand*\\sectionautorefname{section}
+\\providecommand*\\subsectionautorefname{subsection}
+\\providecommand*\\subsubsectionautorefname{subsubsection}
+\\providecommand*\\paragraphautorefname{paragraph}
+\\providecommand*\\subparagraphautorefname{subparagraph}
+\\providecommand*\\FancyVerbLineautorefname{line}
+\\providecommand*\\theoremautorefname{Theorem}
+\\providecommand*\\pageautorefname{page}
+\\providecommand*{\\Hy@DistillerDestFix}{}
+\\def\\phantomsection{%
+  \\Hy@MakeCurrentHrefAuto{section*}%
+  \\Hy@raisedlink{\\hyper@anchorstart{\\@currentHref}\\hyper@anchorend}%
+}
+\\endinput
+%%
+%% End of file \`hyperref.sty'.
+` },
+  { format: 26, filename: 'hyperref.sty', content: `
 %%
 %% This is file \`hyperref.sty',
 %% generated with the docstrip utility.
@@ -18686,7 +35685,462 @@ end
 % restore things
 \\catcode64 \\IFTEX@atcatcode
 ` },
+  { format: 26, filename: 'iftex.sty', content: `
+%% iftex TeX engine tests
+
+%% LaTeX3 Project
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either
+%% version 1.3c of this license or (at your option) any later
+%% version.
+%%
+%% Using ideas from:
+%%
+%% ifetex Martin Scharrer
+%% ifxetex Will Robertson
+%% iftex 0.2 Persian TeX Group / Vafa Khalighi
+%% ifluatex ifvtex Heiko Oberdiek
+%% ifptex Takayuki YATO
+%% ifpdf Heiko Oberdiek and LaTeX3 Project
+
+% Only load once (not needed in LaTeX, but does no harm).
+\\csname IFTEX\\string @loaded\\endcsname
+\\expandafter\\let\\csname IFTEX\\string @loaded\\endcsname\\endinput
+
+% File loadable in initex
+% require { } # with standard catcodes.
+\\catcode123=1
+\\catcode125=2
+\\catcode35=6
+
+
+% ProvidesPackage declaration in LaTeX
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname ProvidesPackage\\endcsname\\relax\\else
+  \\ProvidesPackage{iftex}[2024/12/12 v1.0g TeX engine tests]
+\\fi
+
+% Save @ catcode, to restore at end, not needed in LaTeX.
+\\expandafter\\chardef\\csname IFTEX\\string @atcatcode\\endcsname\\catcode64
+\\catcode 64 11
+
+% Message format used in several pre-existing if*tex packages
+% Modified here to do a hard stop and not show any error context lines.
+\\def\\IFTEX@Require#1#2#3{%
+  #1\\else
+      \\newlinechar 64\\relax
+      \\errorcontextlines -1\\relax
+      \\immediate\\write20{@
+      ********************************************@
+      * #2 is required to compile this document.@
+      * Sorry!@
+      ********************************************}%
+    \\batchmode\\read -1 to \\@tempa
+    #3%
+}
+
+
+% eTeX \\protected if available.
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname protected\\endcsname\\relax
+  \\let\\IFTEX@protected\\relax
+\\else
+  \\let\\IFTEX@protected\\protected
+\\fi
+
+% make sure \\detokenize and \\protected are available in lualatex,
+% but avoid defining them after the package if not already defined.
+  {
+  \\catcode34 12 % "
+  \\catcode40 12 % (
+  \\catcode41 12 % )
+  \\catcode44 12 % ,
+  \\catcode46 12 % .
+  \\expandafter\\ifx\\csname directlua\\endcsname\\relax\\else
+    \\directlua{tex.enableprimitives("IFTEX@", {"detokenize","protected"})}
+  \\fi
+  }
+
+% \\Require... commands that stop if the wrong engine detected.
+\\IFTEX@protected\\def\\RequireeTeX{\\IFTEX@Require\\ifetex{eTeX}\\fi}
+\\IFTEX@protected\\def\\RequirePDFTeX{\\IFTEX@Require\\ifpdftex{pdfTeX}\\fi}
+\\IFTEX@protected\\def\\RequireXeTeX{\\IFTEX@Require\\ifxetex{XeTeX}\\fi}
+\\IFTEX@protected\\def\\RequireLuaTeX{\\IFTEX@Require\\ifluatex{LuaTeX}\\fi}
+\\IFTEX@protected\\def\\RequireLuaHBTeX{\\IFTEX@Require\\ifluahbtex{LuaHBTeX}\\fi}
+\\IFTEX@protected\\def\\RequireLuaMetaTeX{\\IFTEX@Require\\ifluahbtex{LuaMetaTeX}\\fi}
+\\IFTEX@protected\\def\\RequirepTeX{\\IFTEX@Require\\ifptex{pTeX}\\fi}
+\\IFTEX@protected\\def\\RequireupTeX{\\IFTEX@Require\\ifuptex{upTeX}\\fi}
+\\IFTEX@protected\\def\\RequirepTeXng{\\IFTEX@Require\\ifptexng{pTeX-ng}\\fi}
+\\IFTEX@protected\\def\\RequireVTeX{\\IFTEX@Require\\ifvtex{VTeX}\\fi}
+% alephtex as aleph name too generic
+\\IFTEX@protected\\def\\RequireAlephTeX{\\IFTEX@Require\\ifalephtex{Aleph}\\fi}
+% tutex == has \\Umathchardef == XeTeX or Lua(HB)TeX currently
+\\IFTEX@protected\\def\\RequireTUTeX{\\IFTEX@Require\\iftutex{LuaTeX or XeTeX}\\fi}
+% TeXpad TeX
+\\IFTEX@protected\\def\\RequireTexpadTeX{\\IFTEX@Require\\iftexpadtex{TexpadTeX}\\fi}
+% HiTeX/HINT
+\\IFTEX@protected\\def\\RequireHINT{\\IFTEX@Require\\ifhint{HINT}\\fi}
+% Prote
+\\IFTEX@protected\\def\\RequireProte{\\IFTEX@Require\\ifprote{Prote}\\fi}
+
+% As a matter of policy over-write any existing \\if*tex macro and set
+% by the tests here.
+
+% \\csname and \\let construct useful for hiding \\ifzzz tokens from
+% outer level \\if tests.
+\\def\\IFTEX@let#1#2{%
+  \\expandafter\\let\\csname if#1\\expandafter\\endcsname
+  \\csname if#2\\endcsname}
+
+% etex (should always be true in latex based formats)
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname numexpr\\endcsname\\relax
+  \\IFTEX@let{etex}{false}
+\\else
+  \\IFTEX@let{etex}{true}
+\\fi
+\\IFTEX@let{eTeX}{etex}
+
+% pdftex (including in dvi mode)
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname pdftexversion\\endcsname\\relax
+  \\IFTEX@let{pdftex}{false}
+\\else
+  \\IFTEX@let{pdftex}{true}
+\\fi
+\\IFTEX@let{PDFTeX}{pdftex}
+
+% xetex
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname XeTeXrevision\\endcsname\\relax
+  \\IFTEX@let{xetex}{false}
+\\else
+  \\IFTEX@let{xetex}{true}
+\\fi
+\\IFTEX@let{XeTeX}{xetex}
+
+
+% luatex (including luahbtex and luametatex)
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname directlua\\endcsname\\relax
+  \\IFTEX@let{luatex}{false}
+\\else
+  \\IFTEX@let{luatex}{true}
+\\fi
+\\IFTEX@let{LuaTeX}{luatex}
+
+
+% luahbtex (or luatex + luaharfbuzz)
+% Use luaharfbuzz test rather than status.luatex_engine=="luahbtex"
+% for issue #2.
+\\IFTEX@let{luahbtex}{false}
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname directlua\\endcsname\\relax
+\\else
+  \\directlua{\\IFTEX@detokenize{
+   if(pcall(require, 'luaharfbuzz')) then
+     tex.print("\\\\let\\\\ifluahbtex\\\\iftrue ")
+   end
+  }}
+
+\\fi
+\\IFTEX@let{LuaHBTeX}{luahbtex}
+
+
+% luametatex
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname directlua\\endcsname\\relax
+  \\IFTEX@let{luametatex}{false}
+\\else
+  \\ifnum\\luatexversion<200
+    \\IFTEX@let{luametatex}{false}
+  \\else
+    \\IFTEX@let{luametatex}{true}
+  \\fi
+\\fi
+\\IFTEX@let{LuaMetaTeX}{luametatex}
+
+
+% ptex (including all variants) (note that the ptex command uses uptex in current releases)
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname kanjiskip\\endcsname\\relax
+  \\IFTEX@let{ptex}{false}
+\\else
+  \\IFTEX@let{ptex}{true}
+\\fi
+\\IFTEX@let{pTeX}{ptex}
+
+% uptex (including euptex)
+\\ifx\\enablecjktoken \\@undefined
+  \\IFTEX@let{uptex}{false}
+\\else
+  \\IFTEX@let{uptex}{true}
+\\fi
+\\IFTEX@let{upTeX}{uptex}
+
+% ptex-ng
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname ngbanner\\endcsname\\relax
+  \\IFTEX@let{ptexng}{false}
+\\else
+  \\IFTEX@let{ptexng}{true}
+\\fi
+\\IFTEX@let{pTeXng}{ptexng}
+
+% vtex
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname VTeXversion\\endcsname\\relax
+  \\IFTEX@let{vtex}{false}
+\\else
+  \\IFTEX@let{vtex}{true}
+\\fi
+\\IFTEX@let{VTeX}{vtex}
+
+% aleph
+\\IFTEX@let{alephtex}{false}
+\\ifptex\\else
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname omathchardef\\endcsname\\relax
+\\else
+  \\IFTEX@let{alephtex}{true}
+\\fi
+\\fi
+\\IFTEX@let{AlephTeX}{alephtex}
+
+
+% tutex (LuaTeX or XeTeX)
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname Umathchardef\\endcsname\\relax
+  \\IFTEX@let{tutex}{false}
+\\else
+  \\IFTEX@let{tutex}{true}
+\\fi
+\\IFTEX@let{TUTeX}{tutex}
+
+
+% texpadtex
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname TexpadTeXMode\\endcsname\\relax
+  \\IFTEX@let{texpadtex}{false}
+\\else
+  \\IFTEX@let{texpadtex}{true}
+  \\ifcase\\TexpadTeXMode\\relax
+    % This is 8 bit mode
+  \\or
+    \\IFTEX@let{tutex}{true}
+  \\fi
+\\fi
+\\IFTEX@let{TexpadTeX}{texpadtex}
+
+% HiTeX
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname HINTversion\\endcsname\\relax
+  \\IFTEX@let{hint}{false}
+\\else
+  \\IFTEX@let{hint}{true}
+\\fi
+\\IFTEX@let{HINT}{hint}
+
+% Prote
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname Proteversion\\endcsname\\relax
+  \\IFTEX@let{prote}{false}
+\\else
+  \\IFTEX@let{prote}{true}
+\\fi
+\\IFTEX@let{Prote}{prote}
+ 
+
+% Output mode
+% declare as if with \\newif
+\\def\\pdftrue{\\let\\ifpdf\\iftrue}
+\\def\\pdffalse{\\let\\ifpdf\\iffalse}
+\\pdffalse
+\\ifluatex
+\\directlua{\\IFTEX@detokenize{
+if (tex.outputmode or tex.pdfoutput or 0) > 0 then
+  tex.print('\\\\pdftrue')
+end
+}}
+\\else
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname pdfoutput\\endcsname\\relax
+\\ifvtex
+  \\ifnum\\OpMode=3 %
+    \\pdftrue
+  \\fi
+\\else
+  \\iftexpadtex
+    \\pdftrue
+  \\fi
+\\fi
+\\else
+  \\ifnum\\pdfoutput>0 %
+    \\pdftrue
+  \\fi
+\\fi
+\\fi
+
+
+% restore things
+\\catcode64 \\IFTEX@atcatcode
+` },
   { format: 27, filename: 'ifthen.sty', content: `
+%%
+%% This is file \`ifthen.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% ifthen.dtx  (with options: \`package')
+%% 
+%% This is a generated file.
+%% 
+%% The source is maintained by the LaTeX Project team and bug
+%% reports for it can be opened at https://latex-project.org/bugs.html
+%% (but please observe conditions on bug reports sent to that address!)
+%% 
+%% 
+%% Copyright (C) 1993-2020
+%% The LaTeX3 Project and any individual authors listed elsewhere
+%% in this file.
+%% 
+%% This file was generated from file(s) of the LaTeX base system.
+%% --------------------------------------------------------------
+%% 
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    https://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2008 or later.
+%% 
+%% This file has the LPPL maintenance status "maintained".
+%% 
+%% This file may only be distributed together with a copy of the LaTeX
+%% base system. You may however distribute the LaTeX base system without
+%% such generated files.
+%% 
+%% The list of all files belonging to the LaTeX base distribution is
+%% given in the file \`manifest.txt'. See also \`legal.txt' for additional
+%% information.
+%% 
+%% The list of derived (unpacked) files belonging to the distribution
+%% and covered by LPPL is defined by the unpacking scripts (with
+%% extension .ins) which are part of the distribution.
+%%
+%% File \`ifthen.dtx'.
+%% Copyright (C) 1991 by Leslie Lamport
+%% Copyright (C) 1994-2001 LaTeX3 project, David Carlisle
+%%                       all rights reserved.
+%%
+\\NeedsTeXFormat{LaTeX2e}[1994/12/01]
+\\ProvidesPackage{ifthen}
+          [2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)]
+\\def\\TE@throw{\\@ne=\\@ne\\noexpand\\fi}
+\\def\\boolean#1#2{%
+  \\TE@throw\\expandafter\\noexpand\\csname if#1\\endcsname#2}
+\\def\\TE@length#1#2{\\TE@throw\\noexpand\\ifdim#1#2}
+\\def\\TE@odd#1#2{%
+  \\TE@throw\\noexpand\\TE@@odd#1\\noexpand\\@nil\\noexpand\\ifodd\\count@#2}
+\\def\\TE@@odd#1#2\\@nil{%
+  \\@defaultunits
+  \\count@\\if-#1-0\\else0\\expandafter#1\\fi#2\\relax\\@nnil}
+\\def\\TE@repl#1#2{%
+  \\long\\def\\@tempc##1#1##2{%
+    \\def\\@tempa{##2}\\def\\@tempb{\\@tempc}%
+    \\ifx\\@tempa\\@tempb
+     \\toks@\\expandafter{\\the\\toks@##1}%
+     \\expandafter\\@gobble
+    \\else
+      \\toks@\\expandafter{\\the\\toks@##1#2}%
+    \\expandafter\\@tempc
+    \\fi
+    ##2}%
+  \\expandafter\\toks@\\expandafter{\\expandafter}%
+  \\expandafter\\@tempc\\the\\toks@#1\\@tempc}
+\\long\\def\\ifthenelse#1{%
+  \\toks@{#1}%
+  \\TE@repl\\or\\TE@or
+  \\TE@repl\\and\\TE@and
+  \\TE@repl\\not\\TE@neg
+  \\TE@repl\\OR\\TE@or
+  \\TE@repl\\AND\\TE@and
+  \\TE@repl\\NOT\\TE@neg
+    \\begingroup
+        \\let\\protect\\@unexpandable@protect
+        \\def\\@setref##1##2##3{%
+         \\ifx##1\\relax\\z@\\else\\expandafter##2##1\\fi}%
+        \\def\\value##1{\\the\\csname c@##1\\endcsname}%
+        \\let\\equal\\TE@equal \\let\\(\\TE@lparen \\let\\)\\TE@rparen
+        \\let\\isodd\\TE@odd \\let\\lengthtest\\TE@length
+        \\let\\isundefined\\TE@undef
+        \\begingroup
+          \\let\\@tempa\\relax\\let\\@tempb\\relax
+          \\xdef\\@gtempa{\\expandafter\\TE@eval\\the\\toks@\\TE@endeval}%
+        \\endgroup
+        \\@gtempa
+        \\expandafter\\endgroup\\ifTE@val
+          \\expandafter\\@firstoftwo
+        \\else
+          \\expandafter\\@secondoftwo
+        \\fi}
+\\def\\TE@eval{\\noexpand\\TE@negatefalse\\noexpand\\iftrue\\noexpand\\ifnum}
+\\newif\\ifTE@val
+\\newif\\ifTE@negate
+\\def\\TE@endeval{\\relax
+      \\noexpand\\TE@setvaltrue\\noexpand
+    \\else
+      \\noexpand\\TE@setvalfalse\\noexpand
+    \\fi
+    \\noexpand\\TE@negatefalse\\noexpand
+  \\fi}
+\\def\\TE@setvaltrue{%
+  \\ifTE@negate\\TE@valfalse\\else\\TE@valtrue\\fi}
+\\def\\TE@setvalfalse{\\let\\ifTE@val\\ifTE@negate}
+\\def\\TE@or{\\TE@endeval\\noexpand\\ifTE@val\\noexpand\\else\\noexpand\\ifnum}
+\\def\\TE@and{\\TE@endeval\\noexpand\\ifTE@val\\noexpand\\ifnum}
+\\def\\TE@neg{\\TE@throw\\noexpand\\TE@negswitch\\noexpand\\ifnum}
+\\def\\TE@negswitch{\\ifTE@negate\\TE@negatefalse\\else\\TE@negatetrue\\fi}
+\\def\\TE@lparen#1{\\TE@throw\\begingroup\\TE@eval#1}
+\\def\\TE@rparen#1{%
+  \\TE@endeval
+  \\noexpand\\expandafter\\endgroup\\noexpand\\ifTE@val#1}
+\\long\\def\\TE@equal#1#2#3{\\TE@throw
+      \\def\\@tempa{#1}\\def\\@tempb{#2}%
+      \\noexpand\\ifx\\@tempa\\@tempb#3}
+\\def\\setboolean#1#2{%
+  \\lowercase{\\def\\@tempa{#2}}%
+  \\@ifundefined{@tempswa\\@tempa}%
+    {\\PackageError{ifthen}%
+       {You can only set a boolean to \`true' or \`false'}\\@ehc}%
+    {\\@ifundefined{#1\\@tempa}%
+      {\\PackageError{ifthen}{Boolean #1 undefined}\\@ehc}%
+      {\\csname#1\\@tempa\\endcsname}}}
+\\def\\newboolean#1{%
+  \\expandafter\\@ifdefinable\\csname if#1\\endcsname{%
+    \\expandafter\\newif\\csname if#1\\endcsname}}
+\\def\\provideboolean#1{%
+  \\@ifundefined{if#1}{%
+    \\expandafter\\newif\\csname if#1\\endcsname}\\relax}
+\\long\\def\\whiledo#1#2{%
+  \\ifthenelse{#1}%
+    {\\@whiledotrue
+     \\@whilesw\\if@whiledo\\fi
+       {#2%
+        \\ifthenelse{#1}\\@whiledotrue\\@whiledofalse}}%
+    {}%
+  }
+\\def\\TE@undef#1#2{%
+  \\TE@throw\\noexpand\\ifx\\noexpand\\@undefined\\noexpand#1#2}
+\\newif\\if@whiledo
+\\endinput
+%%
+%% End of file \`ifthen.sty'.
+` },
+  { format: 26, filename: 'ifthen.sty', content: `
 %%
 %% This is file \`ifthen.sty',
 %% generated with the docstrip utility.
@@ -18880,7 +36334,87 @@ end
 </body>
 </html>
 ` },
+  { format: 26, filename: 'infwarerr.sty', content: `
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- ViewVC :: http://www.viewvc.org/ -->
+<head>
+<title>ViewVC Error</title>
+</head>
+<body>
+<h3>An Error Has Occurred</h3>
+
+ <p>Unknown location: /trunk/Master/texmf-dist/tex/latex/infwarerr/infwarerr.sty</p>
+
+
+ <h4>HTTP Response Status</h4>
+ <p><pre>404 Not Found</pre></p>
+ <hr />
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</body>
+</html>
+` },
   { format: 27, filename: 'intcalc.sty', content: `
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- ViewVC :: http://www.viewvc.org/ -->
+<head>
+<title>ViewVC Error</title>
+</head>
+<body>
+<h3>An Error Has Occurred</h3>
+
+ <p>Unknown location: /trunk/Master/texmf-dist/tex/latex/intcalc/intcalc.sty</p>
+
+
+ <h4>HTTP Response Status</h4>
+ <p><pre>404 Not Found</pre></p>
+ <hr />
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</body>
+</html>
+` },
+  { format: 26, filename: 'intcalc.sty', content: `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -19009,6 +36543,95 @@ end
 %%
 %% End of file \`keyval.sty'.
 ` },
+  { format: 26, filename: 'keyval.sty', content: `
+%%
+%% This is file \`keyval.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% keyval.dtx  (with options: \`package')
+%% 
+%% The source is maintained by the LaTeX Project team and bug
+%% reports for it can be opened at https://latex-project.org/bugs/
+%% (but please observe conditions on bug reports sent to that address!)
+%% 
+%% 
+%% keyval.dtx Copyright (C) 1993 1994 1995 1997 1998 1999 David Carlisle
+%%            Copyright (C) 2000-2020 David Carlisle, LaTeX3 Project
+%%
+%% This file is part of the Standard LaTeX \`Graphics Bundle'.
+%% It may be distributed under the terms of the LaTeX Project Public
+%% License, as described in lppl.txt in the base LaTeX distribution.
+%% Either version 1.3c or, at your option, any later version.
+%%
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{keyval}
+                 [2014/10/28 v1.15 key=value parser (DPC)]
+\\long\\def\\setkeys#1#2{%
+  \\def\\KV@prefix{KV@#1@}%
+  \\let\\@tempc\\relax
+  \\KV@do#2,\\relax,}
+\\long\\def\\KV@do#1,{%
+ \\ifx\\relax#1\\@empty\\else
+  \\KV@split#1==\\relax
+  \\expandafter\\KV@do\\fi}
+\\long\\def\\KV@split#1=#2=#3\\relax{%
+  \\KV@@sp@def\\@tempa{#1}%
+  \\ifx\\@tempa\\@empty\\else
+    \\expandafter\\let\\expandafter\\@tempc
+      \\csname\\KV@prefix\\@tempa\\endcsname
+    \\ifx\\@tempc\\relax
+      \\KV@errx
+       {\\@tempa\\space undefined}%
+    \\else
+      \\ifx\\@empty#3\\@empty
+        \\KV@default
+      \\else
+        \\KV@@sp@def\\@tempb{#2}%
+        \\expandafter\\@tempc\\expandafter{\\@tempb}\\relax
+      \\fi
+    \\fi
+  \\fi}
+\\def\\KV@default{%
+  \\expandafter\\let\\expandafter\\@tempb
+    \\csname\\KV@prefix\\@tempa @default\\endcsname
+  \\ifx\\@tempb\\relax
+    \\KV@err{No value specified for \\@tempa}%
+  \\else
+    \\@tempb\\relax
+  \\fi}
+\\DeclareOption{unknownkeysallowed}{%
+  \\def\\KV@errx#1{\\PackageInfo{keyval}{#1}}}
+\\DeclareOption{unknownkeyserror}{%
+  \\def\\KV@errx#1{\\PackageError{keyval}{#1}\\@ehc}}
+\\ExecuteOptions{unknownkeyserror}
+\\let\\KV@err\\KV@errx
+\\ProcessOptions
+\\def\\@tempa#1{%
+\\long\\def\\KV@@sp@def##1##2{%
+  \\futurelet\\KV@tempa\\KV@@sp@d##2\\@nil\\@nil#1\\@nil\\relax##1}%
+\\def\\KV@@sp@d{%
+  \\ifx\\KV@tempa\\@sptoken
+    \\expandafter\\KV@@sp@b
+  \\else
+    \\expandafter\\KV@@sp@b\\expandafter#1%
+  \\fi}%
+\\long\\def\\KV@@sp@b#1##1 \\@nil{\\KV@@sp@c##1}%
+  }
+\\@tempa{ }
+\\long\\def\\KV@@sp@c#1\\@nil#2\\relax#3{\\KV@toks@{#1}\\edef#3{\\the\\KV@toks@}}
+\\newtoks\\KV@toks@
+\\def\\define@key#1#2{%
+  \\@ifnextchar[{\\KV@def{#1}{#2}}{\\long\\@namedef{KV@#1@#2}####1}}
+\\def\\KV@def#1#2[#3]{%
+  \\long\\@namedef{KV@#1@#2@default\\expandafter}\\expandafter
+    {\\csname KV@#1@#2\\endcsname{#3}}%
+  \\long\\@namedef{KV@#1@#2}##1}
+\\endinput
+%%
+%% End of file \`keyval.sty'.
+` },
   { format: 27, filename: 'kvdefinekeys.sty', content: `
 
 		<!DOCTYPE html>
@@ -19022,7 +36645,858 @@ end
 		and try again.
 		<p><a href="https://tug.org">Return to the main site.</a>
 		` },
+  { format: 26, filename: 'kvdefinekeys.sty', content: `
+
+		<!DOCTYPE html>
+		<html lang="en">
+		<meta charset="UTF-8">
+		<title>Too Many Requests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+		<meta name="color-scheme" content="light dark">
+		<h1>Too Many Requests</h1>
+		<p>You can only make 10 requests per minute. Please wait a little bit
+		and try again.
+		<p><a href="https://tug.org">Return to the main site.</a>
+		` },
   { format: 27, filename: 'kvoptions.sty', content: `
+%%
+%% This is file \`kvoptions.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% kvoptions.dtx  (with options: \`package')
+%% 
+%% This is a generated file.
+%% 
+%% Project: kvoptions
+%% Version: 2022-06-15 v3.15
+%% 
+%% Copyright (C)
+%%    2004, 2006, 2007, 2009-2011 Heiko Oberdiek
+%%    2016-2022 Oberdiek Package Support Group
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either
+%% version 1.3c of this license or (at your option) any later
+%% version. This version of this license is in
+%%    https://www.latex-project.org/lppl/lppl-1-3c.txt
+%% and the latest version of this license is in
+%%    https://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of
+%% LaTeX version 2005/12/01 or later.
+%% 
+%% This work has the LPPL maintenance status "maintained".
+%% 
+%% The Current Maintainers of this work are
+%% Heiko Oberdiek and the Oberdiek Package Support Group
+%% https://github.com/ho-tex/kvoptions/issues
+%% 
+%% This work consists of the main source file kvoptions.dtx
+%% and the derived files
+%%    kvoptions.sty, kvoptions.pdf, kvoptions.ins, kvoptions.drv,
+%%    kvoptions-patch.sty, example-mycolorsetup.sty,
+%%    kvoptions-test1.tex, kvoptions-test2.tex,
+%%    kvoptions-test3.tex, kvoptions-test4.tex,
+%%    kvoptions-test4.sty.
+%% 
+%% No we don't need the option 'color'.
+%% With color support option 'emphcolor' will dynamically
+%% change the color of \\emph statements.
+
+\\begingroup\\catcode61\\catcode48\\catcode32=10\\relax%
+  \\catcode13=5 % ^^M
+  \\endlinechar=13 %
+  \\catcode35=6 % #
+  \\catcode39=12 % '
+  \\catcode44=12 % ,
+  \\catcode45=12 % -
+  \\catcode46=12 % .
+  \\catcode58=12 % :
+  \\catcode64=11 % @
+  \\catcode123=1 % {
+  \\catcode125=2 % }
+  \\expandafter\\let\\expandafter\\x\\csname ver@kvoptions.sty\\endcsname
+  \\ifx\\x\\relax % plain-TeX, first loading
+  \\else
+    \\def\\empty{}%
+    \\ifx\\x\\empty % LaTeX, first loading,
+      % variable is initialized, but \\ProvidesPackage not yet seen
+    \\else
+      \\expandafter\\ifx\\csname PackageInfo\\endcsname\\relax
+        \\def\\x#1#2{%
+          \\immediate\\write-1{Package #1 Info: #2.}%
+        }%
+      \\else
+        \\def\\x#1#2{\\PackageInfo{#1}{#2, stopped}}%
+      \\fi
+      \\x{kvoptions}{The package is already loaded}%
+      \\aftergroup\\endinput
+    \\fi
+  \\fi
+\\endgroup%
+\\begingroup\\catcode61\\catcode48\\catcode32=10\\relax%
+  \\catcode13=5 % ^^M
+  \\endlinechar=13 %
+  \\catcode35=6 % #
+  \\catcode39=12 % '
+  \\catcode40=12 % (
+  \\catcode41=12 % )
+  \\catcode44=12 % ,
+  \\catcode45=12 % -
+  \\catcode46=12 % .
+  \\catcode47=12 % /
+  \\catcode58=12 % :
+  \\catcode64=11 % @
+  \\catcode91=12 % [
+  \\catcode93=12 % ]
+  \\catcode123=1 % {
+  \\catcode125=2 % }
+  \\expandafter\\ifx\\csname ProvidesPackage\\endcsname\\relax
+    \\def\\x#1#2#3[#4]{\\endgroup
+      \\immediate\\write-1{Package: #3 #4}%
+      \\xdef#1{#4}%
+    }%
+  \\else
+    \\def\\x#1#2[#3]{\\endgroup
+      #2[{#3}]%
+      \\ifx#1\\@undefined
+        \\xdef#1{#3}%
+      \\fi
+      \\ifx#1\\relax
+        \\xdef#1{#3}%
+      \\fi
+    }%
+  \\fi
+\\expandafter\\x\\csname ver@kvoptions.sty\\endcsname
+\\ProvidesPackage{kvoptions}%
+  [2022-06-15 v3.15 Key value format for package options (HO)]%
+\\begingroup\\catcode61\\catcode48\\catcode32=10\\relax%
+  \\catcode13=5 % ^^M
+  \\endlinechar=13 %
+  \\catcode123=1 % {
+  \\catcode125=2 % }
+  \\catcode64=11 % @
+  \\def\\x{\\endgroup
+    \\expandafter\\edef\\csname KVO@AtEnd\\endcsname{%
+      \\endlinechar=\\the\\endlinechar\\relax
+      \\catcode13=\\the\\catcode13\\relax
+      \\catcode32=\\the\\catcode32\\relax
+      \\catcode35=\\the\\catcode35\\relax
+      \\catcode61=\\the\\catcode61\\relax
+      \\catcode64=\\the\\catcode64\\relax
+      \\catcode123=\\the\\catcode123\\relax
+      \\catcode125=\\the\\catcode125\\relax
+    }%
+  }%
+\\x\\catcode61\\catcode48\\catcode32=10\\relax%
+\\catcode13=5 % ^^M
+\\endlinechar=13 %
+\\catcode35=6 % #
+\\catcode64=11 % @
+\\catcode123=1 % {
+\\catcode125=2 % }
+\\def\\TMP@EnsureCode#1#2{%
+  \\edef\\KVO@AtEnd{%
+    \\KVO@AtEnd
+    \\catcode#1=\\the\\catcode#1\\relax
+  }%
+  \\catcode#1=#2\\relax
+}
+\\TMP@EnsureCode{1}{14}% ^^A (comment)
+\\TMP@EnsureCode{2}{14}% ^^A (comment)
+\\TMP@EnsureCode{33}{12}% !
+\\TMP@EnsureCode{39}{12}% '
+\\TMP@EnsureCode{40}{12}% (
+\\TMP@EnsureCode{41}{12}% )
+\\TMP@EnsureCode{42}{12}% *
+\\TMP@EnsureCode{44}{12}% ,
+\\TMP@EnsureCode{45}{12}% -
+\\TMP@EnsureCode{46}{12}% .
+\\TMP@EnsureCode{47}{12}% /
+\\TMP@EnsureCode{58}{12}% :
+\\TMP@EnsureCode{62}{12}% >
+\\TMP@EnsureCode{91}{12}% [
+\\TMP@EnsureCode{93}{12}% ]
+\\TMP@EnsureCode{94}{7}% ^ (superscript)
+\\TMP@EnsureCode{96}{12}% \`
+\\edef\\KVO@AtEnd{\\KVO@AtEnd\\noexpand\\endinput}
+\\@ifundefined{define@key}{%
+  \\RequirePackage{keyval}\\relax
+}{}
+\\RequirePackage{ltxcmds}[2010/12/02]
+\\RequirePackage{kvsetkeys}[2007/09/29]
+\\@ifundefined{@x@protect}{%
+  \\def\\@x@protect#1\\fi#2#3{%
+    \\fi\\protect#1%
+  }%
+  \\let\\@typeset@protect\\relax
+}{}
+\\@ifundefined{@currname}{%
+  \\def\\@currname{}%
+}{}
+\\@ifundefined{@currext}{%
+  \\def\\@currext{}%
+}{}
+\\DeclareOption{debugshow}{\\catcode\\@ne=9 }
+\\DeclareOption{patch}{%
+  \\AtEndOfPackage{%
+    \\RequirePackage{kvoptions-patch}[2019/11/29]%
+  }%
+}
+\\ProcessOptions\\relax
+\\define@key{KVO}{family}{%
+  \\expandafter\\edef\\csname KVO@family@%
+      \\@currname.\\@currext\\endcsname{#1}%
+}
+\\def\\KVO@family{%
+  \\@ifundefined{KVO@family@\\@currname.\\@currext}{%
+    \\@currname
+  }{%
+    \\csname KVO@family@\\@currname.\\@currext\\endcsname
+  }%
+}
+\\define@key{KVO}{prefix}{%
+  \\expandafter\\edef\\csname KVO@prefix@%
+      \\@currname.\\@currext\\endcsname{#1}%
+}
+\\def\\KVO@prefix{%
+  \\ltx@ifundefined{KVO@prefix@\\@currname.\\@currext}{%
+    \\@currname @%
+  }{%
+    \\csname KVO@prefix@\\@currname.\\@currext\\endcsname
+  }%
+}
+\\define@key{KVO}{setkeys}{%
+  \\expandafter\\def\\csname KVO@setkeys@%
+      \\@currname.\\@currext\\endcsname{#1}%
+}
+\\def\\KVO@setkeys{%
+  \\ltx@IfUndefined{KVO@setkeys@\\@currname.\\@currext}{%
+    \\setkeys
+  }{%
+    \\csname KVO@setkeys@\\@currname.\\@currext\\endcsname
+  }%
+}
+\\newcommand*{\\SetupKeyvalOptions}{%
+  \\kvsetkeys{KVO}%
+}
+\\newcommand*{\\DeclareBoolOption}[2][false]{%
+  \\KVO@ifdefinable{if\\KVO@prefix#2}{%
+    \\KVO@ifdefinable{\\KVO@prefix#2true}{%
+      \\KVO@ifdefinable{\\KVO@prefix#2false}{%
+        \\csname newif\\expandafter\\endcsname
+        \\csname if\\KVO@prefix#2\\endcsname
+        \\@ifundefined{\\KVO@prefix#2#1}{%
+          \\PackageWarning{kvoptions}{%
+            Initialization of option \`#2' failed,\\MessageBreak
+            cannot set boolean option to \`#1',\\MessageBreak
+            use \`true' or \`false', now using \`false'%
+          }%
+        }{%
+          \\csname\\KVO@prefix#2#1\\endcsname
+        }%
+        \\begingroup
+          \\edef\\x{\\endgroup
+            \\noexpand\\define@key{\\KVO@family}{#2}[true]{%
+              \\noexpand\\KVO@boolkey{\\@currname}%
+              \\ifx\\@currext\\@clsextension
+                \\noexpand\\@clsextension
+              \\else
+                \\noexpand\\@pkgextension
+              \\fi
+              {\\KVO@prefix}{#2}{####1}%
+            }%
+          }%
+        \\x
+      }%
+    }%
+  }%
+}
+\\newcommand*{\\DeclareComplementaryOption}[2]{%
+  \\@ifundefined{if\\KVO@prefix#2}{%
+    \\PackageError{kvoptions}{%
+      Cannot generate option code for \`#1',\\MessageBreak
+      parent switch \`#2' does not exist%
+    }{%
+      You are inside %
+      \\ifx\\@currext\\@clsextension class\\else package\\fi\\space
+      \`\\@currname.\\@currext'.\\MessageBreak
+      \`\\KVO@family' is used as familiy %
+      for the keyval options.\\MessageBreak
+      \`\\KVO@prefix' serves as prefix %
+      for internal switch macros.\\MessageBreak
+      \\MessageBreak
+      \\@ehc
+    }%
+  }{%
+    \\KVO@ifdefinable{\\KVO@prefix#1true}{%
+      \\KVO@ifdefinable{\\KVO@prefix#1false}{%
+        \\expandafter\\let\\csname\\KVO@prefix#1false\\expandafter\\endcsname
+          \\csname\\KVO@prefix#2true\\endcsname
+        \\expandafter\\let\\csname\\KVO@prefix#1true\\expandafter\\endcsname
+          \\csname\\KVO@prefix#2false\\endcsname
+        \\begingroup
+          \\edef\\x{\\endgroup
+            \\noexpand\\define@key{\\KVO@family}{#1}[true]{%
+              \\noexpand\\KVO@boolkey{\\@currname}%
+              \\ifx\\@currext\\@clsextension
+                \\noexpand\\@clsextension
+              \\else
+                \\noexpand\\@pkgextension
+              \\fi
+              {\\KVO@prefix}{#1}{####1}%
+            }%
+          }%
+        \\x
+      }%
+    }%
+  }%
+}
+\\def\\KVO@ifdefinable#1{%
+  \\expandafter\\@ifdefinable\\csname #1\\endcsname
+}
+\\def\\KVO@boolkey#1#2#3#4#5{%
+  \\edef\\KVO@param{#5}%
+  \\ltx@onelevel@sanitize\\KVO@param
+  \\ifx\\KVO@param\\KVO@true
+    \\expandafter\\@firstofone
+  \\else
+    \\ifx\\KVO@param\\KVO@false
+      \\expandafter\\expandafter\\expandafter\\@firstofone
+    \\else
+      \\ifx#2\\@clsextension
+        \\expandafter\\ClassWarning
+      \\else
+        \\expandafter\\PackageWarning
+      \\fi
+      {#1}{%
+        Value \`\\KVO@param' is not supported by\\MessageBreak
+        option \`#4'%
+      }%
+      \\expandafter\\expandafter\\expandafter\\@gobble
+    \\fi
+  \\fi
+  {%
+    ^^A\\ifx#2\\@clsextension
+    ^^A  \\expandafter\\ClassInfo
+    ^^A\\else
+    ^^A  \\expandafter\\PackageInfo
+    ^^A\\fi
+    ^^A{#1}{[option] #4=\\KVO@param}%
+    \\csname#3#4\\KVO@param\\endcsname
+  }%
+}
+\\def\\KVO@true{true}
+\\def\\KVO@false{false}
+\\ltx@onelevel@sanitize\\KVO@true
+\\ltx@onelevel@sanitize\\KVO@false
+\\newcommand*{\\DeclareStringOption}[2][]{%
+  \\@ifnextchar[{%
+    \\KVO@DeclareStringOption{#1}{#2}@%
+  }{%
+    \\KVO@DeclareStringOption{#1}{#2}{}[]%
+  }%
+}
+\\def\\KVO@DeclareStringOption#1#2#3[#4]{%
+  \\KVO@ifdefinable{\\KVO@prefix#2}{%
+    \\@namedef{\\KVO@prefix#2}{#1}%
+    \\begingroup
+      \\ifx\\\\#3\\\\%
+        \\toks@{}%
+      \\else
+        \\toks@{[{#4}]}%
+      \\fi
+      \\edef\\x{\\endgroup
+        \\noexpand\\define@key{\\KVO@family}{#2}\\the\\toks@{%
+          ^^A\\begingroup
+          ^^A  \\toks@{####1}%
+          ^^A  \\ifx\\@currext\\@clsextension
+          ^^A    \\noexpand\\ClassInfo
+          ^^A  \\else
+          ^^A    \\noexpand\\PackageInfo
+          ^^A  \\fi
+          ^^A  {\\@currname}{%
+          ^^A    [option] #2={\\noexpand\\the\\toks@}%
+          ^^A  }%
+          ^^A\\endgroup
+          \\noexpand\\def
+          \\expandafter\\noexpand\\csname\\KVO@prefix#2\\endcsname{####1}%
+        }%
+      }%
+    \\x
+  }%
+}
+\\newcommand*{\\DeclareVoidOption}[2]{%
+  \\begingroup
+    \\let\\next\\@gobbletwo
+    \\KVO@ifdefinable{\\KVO@prefix#1}{%
+      \\let\\next\\@firstofone
+    }%
+  \\expandafter\\endgroup
+  \\next{%
+    \\begingroup
+      \\edef\\x{\\endgroup
+        \\noexpand\\define@key{\\KVO@family}{#1}[\\KVO@VOID@]{%
+          \\noexpand\\KVO@voidkey{\\@currname}%
+          \\ifx\\@currext\\@clsextension
+            \\noexpand\\@clsextension
+          \\else
+            \\noexpand\\@pkgextension
+          \\fi
+          {#1}%
+          {####1}%
+          \\expandafter\\noexpand\\csname\\KVO@prefix#1\\endcsname
+        }%
+      }%
+    \\x
+    \\begingroup
+      \\toks@{#2}%
+    \\expandafter\\endgroup
+    \\expandafter\\def
+    \\csname\\KVO@prefix#1\\expandafter\\endcsname
+    \\expandafter{\\the\\toks@}%
+  }%
+}
+\\def\\KVO@VOID@{@VOID@}
+\\def\\KVO@voidkey#1#2#3#4{%
+  \\def\\CurrentOption{#3}%
+  \\begingroup
+    \\def\\x{#4}%
+  \\expandafter\\endgroup
+  \\ifx\\x\\KVO@VOID@
+  \\else
+    \\ifx#2\\@clsextension
+      \\expandafter\\ClassWarning
+    \\else
+      \\expandafter\\PackageWarning
+    \\fi
+    {#1}{%
+      Unexpected value for option \`#3'\\MessageBreak
+      is ignored%
+    }%
+  \\fi
+  ^^A\\ifx#2\\@clsextension
+  ^^A  \\expandafter\\ClassInfo
+  ^^A\\else
+  ^^A  \\expandafter\\PackageInfo
+  ^^A\\fi
+  ^^A{#1}{[option] #3}%
+}
+\\newcommand*{\\DeclareDefaultOption}{%
+  \\@namedef{KVO@default@\\@currname.\\@currext}%
+}
+\\newcommand*{\\DeclareLocalOptions}[1]{%
+  \\comma@parse{#1}\\KVO@DeclareLocalOption
+}
+\\def\\KVO@DeclareLocalOption#1{%
+  \\expandafter\\def\\csname KVO@local@\\KVO@family @#1\\endcsname{}%
+}
+\\SetupKeyvalOptions{%
+  family=KVOdyn,%
+  prefix=KVOdyn@%
+}
+\\DeclareBoolOption[true]{global}
+\\DeclareComplementaryOption{local}{global}
+\\DeclareStringOption[undef]{action}
+\\let\\KVOdyn@name\\relax
+\\let\\KVOdyn@ext\\@empty
+\\define@key{KVOdyn}{class}{%
+  \\def\\KVOdyn@name{#1}%
+  \\let\\KVOdyn@ext\\@clsextension
+}
+\\define@key{KVOdyn}{package}{%
+  \\def\\KVOdyn@name{#1}%
+  \\let\\KVOdyn@ext\\@pkgextension
+}
+\\newcommand*{\\DisableKeyvalOption}[3][]{%
+  \\begingroup
+    \\kvsetkeys{KVOdyn}{#1}%
+    \\def\\x{\\endgroup}%
+    \\@ifundefined{KVO@action@\\KVOdyn@action}{%
+      \\PackageError{kvoptions}{%
+        Unknown disable action %
+        \`\\expandafter\\strip@prefix\\meaning\\KVOdyn@action'\\MessageBreak
+        for option \`#3' in keyval family '#2'%
+      }\\@ehc
+    }{%
+      \\csname KVO@action@\\KVOdyn@action\\endcsname{#2}{#3}%
+    }%
+  \\x
+}
+\\def\\KVO@action@undef#1#2{%
+  \\edef\\x{\\endgroup
+    \\ifKVOdyn@global\\global\\fi
+    \\let
+    \\expandafter\\noexpand\\csname KV@#1@#2\\endcsname
+    \\relax
+    \\ifKVOdyn@global\\global\\fi
+    \\let
+    \\expandafter\\noexpand\\csname KV@#1@#2@default\\endcsname
+    \\relax
+  }%
+  ^^A\\PackageInfo{kvoptions}{%
+  ^^A  [option] key \`#2' of family \`#1'\\MessageBreak
+  ^^A  is disabled (undef, \\ifKVOdyn@global global\\else local\\fi)%
+  ^^A}%
+}
+\\def\\KVO@action@ignore#1#2{%
+  \\edef\\x{\\endgroup
+    \\ifKVOdyn@global\\global\\fi
+    \\let
+    \\expandafter\\noexpand\\csname KV@#1@#2\\endcsname
+    \\noexpand\\@gobble
+    \\ifKVOdyn@global\\global\\fi
+    \\let
+    \\expandafter\\noexpand\\csname KV@#1@#2@default\\endcsname
+    \\noexpand\\@empty
+  }%
+  ^^A\\PackageInfo{kvoptions}{%
+  ^^A  [option] key \`#2' of family \`#1'\\MessageBreak
+  ^^A  is disabled (ignore, \\ifKVOdyn@global global\\else local\\fi)%
+  ^^A}%
+}
+\\def\\KVO@action@error{%
+  \\KVO@do@action{error}%
+}
+\\def\\KVO@action@warning{%
+  \\KVO@do@action{warning}%
+}
+\\def\\KVO@do@action#1#2#3{%
+  \\ifx\\KVOdyn@name\\relax
+    \\PackageError{kvoptions}{%
+      Action type \`#1' needs package/class name\\MessageBreak
+      for key \`#3' in family \`#2'%
+    }\\@ehc
+  \\else
+    \\edef\\x{\\endgroup
+      \\noexpand\\define@key{#2}{#3}[]{%
+        \\expandafter\\noexpand\\csname KVO@disable@#1\\endcsname
+        {\\KVOdyn@name}\\noexpand\\KVOdyn@ext{#3}%
+      }%
+      \\ifKVOdyn@global
+        \\global\\let
+        \\expandafter\\noexpand\\csname KV@#2@#3\\endcsname
+        \\expandafter\\noexpand\\csname KV@#2@#3\\endcsname
+        \\global\\let
+        \\expandafter\\noexpand\\csname KV@#2@#3@default\\endcsname
+        \\expandafter\\noexpand\\csname KV@#2@#3@default\\endcsname
+      \\fi
+    }%
+    ^^A\\ifx\\KVOdyn@ext\\@clsextension
+    ^^A  \\expandafter\\ClassInfo
+    ^^A\\else
+    ^^A   \\expandafter\\PackageInfo
+    ^^A\\fi
+    ^^A{\\KVOdyn@name}{%
+    ^^A  [option] key \`#3' of family \`#2'\\MessageBreak
+    ^^A  is disabled (#1, \\ifKVOdyn@global global\\else local\\fi)%
+    ^^A}%
+  \\fi
+}
+\\def\\KVO@disable@error#1#2#3{%
+  \\ifx#2\\@clsextension
+    \\expandafter\\ClassError
+  \\else
+    \\expandafter\\PackageError
+  \\fi
+  {#1}{%
+    Option \`#3' is given too late,\\MessageBreak
+    now the option is ignored%
+  }\\@ehc
+}
+\\def\\KVO@disable@warning#1#2#3{%
+  \\ifx#2\\@clsextension
+    \\expandafter\\ClassWarning
+  \\else
+    \\expandafter\\PackageWarning
+  \\fi
+  {#1}{%
+    Option \`#3' is already consumed\\MessageBreak
+    and has no effect%
+  }%
+}
+\\newcommand*{\\AddToKeyvalOption}{%
+  \\@ifstar{%
+    \\begingroup
+      \\edef\\x{\\endgroup
+        \\noexpand\\KVO@AddToKeyvalOption{\\KVO@family}%
+      }%
+    \\x
+  }%
+  \\KVO@AddToKeyvalOption
+}
+\\def\\KVO@AddToKeyvalOption#1#2{%
+  \\@ifundefined{KV@#1@#2}{%
+    \\PackageWarning{kvoptions}{%
+      Key \`#2' of family \`#1' does not exist.\\MessageBreak
+      Ignoring \\string\\AddToKeyvalOption
+    }%
+    \\@gobble
+  }{%
+    \\edef\\KVO@next{%
+      \\noexpand\\KVO@@AddToKeyvalOption
+      \\expandafter\\noexpand\\csname KV@#1@#2\\endcsname
+    }%
+    \\afterassignment\\KVO@next
+    \\def\\KVO@temp##1%
+  }%
+}
+\\def\\KVO@@AddToKeyvalOption#1{%
+  \\begingroup
+    \\toks@\\expandafter{#1{##1}}%
+    \\toks@\\expandafter{\\the\\expandafter\\toks@\\KVO@temp{##1}}%
+    \\edef\\x{\\endgroup
+      \\noexpand\\def\\noexpand#1####1{\\the\\toks@}%
+    }%
+  \\x
+}
+\\def\\KVO@IfDefThen#1#2{%
+  \\ifx#1\\ltx@undefined
+  \\else
+    \\ifx#1\\relax
+    \\else
+      #2%
+    \\fi
+  \\fi
+}%
+\\def\\KVO@GetClassOptionsList{%
+  \\let\\KVO@classoptionslist\\@classoptionslist
+  \\KVO@IfDefThen\\@classoptionslist{%
+    \\KVO@IfDefThen\\XKV@documentclass{%
+      \\ifx\\XKV@documentclass\\ltx@empty
+      \\else
+        \\KVO@IfDefThen\\XKV@classoptionslist{%
+          \\ifx\\XKV@classoptionslist\\ltx@empty
+          \\else
+            \\let\\KVO@classoptionslist\\XKV@classoptionslist
+          \\fi
+        }%
+      \\fi
+    }%
+  }%
+}%
+\\newcommand*{\\ProcessKeyvalOptions}{%
+  \\@ifstar{%
+    \\begingroup
+      \\edef\\x{\\endgroup
+        \\noexpand\\KVO@ProcessKeyvalOptions{\\KVO@family}%
+      }%
+    \\x
+  }%
+  \\KVO@ProcessKeyvalOptions
+}
+\\def\\KVO@ProcessKeyvalOptions#1{%
+  \\let\\@tempc\\relax
+  \\let\\KVO@temp\\@empty
+  \\ifx\\@currext\\@clsextension
+  \\else
+    \\KVO@GetClassOptionsList
+    \\ifx\\KVO@classoptionslist\\relax
+    \\else
+      \\@for\\KVO@CurrentOption:=\\KVO@classoptionslist\\do{%
+        \\@ifundefined{KV@#1@\\expandafter\\KVO@getkey
+                      \\KVO@CurrentOption=\\@nil}{%
+        }{%
+          \\@ifundefined{KVO@local@#1@\\expandafter\\KVO@getkey
+                        \\KVO@CurrentOption=\\@nil}{%
+            \\ifx\\KVO@Patch Y%
+              \\edef\\KVO@temp{%
+                \\etex@unexpanded\\expandafter{%
+                  \\KVO@temp
+                }%
+                ,%
+                \\etex@unexpanded\\expandafter{%
+                  \\KVO@CurrentOption
+                }%
+                ,%
+              }%
+              \\ltx@onelevel@sanitize\\KVO@CurrentOption
+            \\else
+              \\edef\\KVO@temp{%
+                \\KVO@temp
+                ,%
+                \\KVO@CurrentOption
+                ,%
+              }%
+            \\fi
+            \\@expandtwoargs\\@removeelement{\\expandafter\\@remove@eq@value\\KVO@CurrentOption=\\@nil}%
+              \\@unusedoptionlist\\@unusedoptionlist
+          }{}%
+        }%
+      }%
+    \\fi
+  \\fi
+  \\begingroup
+    \\toks\\tw@{}%
+    \\@ifundefined{opt@\\@currname.\\@currext}{%
+      \\toks@\\expandafter{\\KVO@temp}%
+    }{%
+      \\toks@\\expandafter\\expandafter\\expandafter{%
+        \\csname opt@\\@currname.\\@currext\\endcsname
+      }%
+      \\ifx\\@currext\\@clsextension
+        \\edef\\CurrentOption{\\the\\toks@}%
+        \\toks@\\expandafter{\\KVO@temp}%
+        \\@for\\CurrentOption:=\\CurrentOption\\do{%
+          \\@ifundefined{%
+            KV@#1@\\expandafter\\KVO@getkey\\CurrentOption=\\@nil
+          }{%
+            \\@ifundefined{KVO@default@\\@currname.\\@currext}{%
+              \\ifx\\KVO@Patch Y%
+                \\ltx@onelevel@sanitize\\CurrentOption
+              \\fi
+              \\ifx\\@unusedoptionlist\\@empty
+                \\global\\let\\@unusedoptionlist\\CurrentOption
+              \\else
+                \\expandafter\\expandafter\\expandafter\\gdef
+                \\expandafter\\expandafter\\expandafter\\@unusedoptionlist
+                \\expandafter\\expandafter\\expandafter{%
+                  \\expandafter\\@unusedoptionlist
+                  \\expandafter,\\CurrentOption
+                }%
+              \\fi
+            }{%
+              \\toks\\tw@\\expandafter{%
+                \\the\\toks\\expandafter\\tw@\\expandafter,\\CurrentOption
+              }%
+            }%
+          }{%
+            \\toks@\\expandafter{%
+              \\the\\expandafter\\toks@\\expandafter,\\CurrentOption
+            }%
+          }%
+        }%
+      \\else
+        \\@ifundefined{KVO@default@\\@currname.\\@currext}{%
+          \\toks@\\expandafter\\expandafter\\expandafter{%
+            \\expandafter\\KVO@temp\\the\\toks@
+          }%
+        }{%
+          \\edef\\CurrentOption{\\the\\toks@}%
+          \\toks@\\expandafter{\\KVO@temp}%
+          \\@for\\CurrentOption:=\\CurrentOption\\do{%
+            \\@ifundefined{%
+              KV@#1@\\expandafter\\KVO@getkey\\CurrentOption=\\@nil
+            }{%
+              \\toks\\tw@\\expandafter{%
+                \\the\\toks\\expandafter\\tw@\\expandafter,\\CurrentOption
+              }%
+            }{%
+              \\toks@\\expandafter{%
+                \\the\\expandafter\\toks@\\expandafter,\\CurrentOption
+              }%
+            }%
+          }%
+        }%
+      \\fi
+    }%
+    \\edef\\KVO@temp{\\endgroup
+      \\noexpand\\KVO@calldefault{\\the\\toks\\tw@}%
+      \\noexpand\\KVO@setkeys{#1}{\\the\\toks@}%
+    }%
+  \\KVO@temp
+  \\let\\CurrentOption\\@empty
+  \\AtEndOfPackage{\\let\\@unprocessedoptions\\relax}%
+}
+\\newcommand*{\\ProcessLocalKeyvalOptions}{%
+  \\@ifstar{%
+    \\begingroup
+      \\edef\\x{\\endgroup
+        \\noexpand\\KVO@ProcessLocalKeyvalOptions{\\KVO@family}%
+      }%
+    \\x
+  }%
+  \\KVO@ProcessLocalKeyvalOptions
+}
+\\def\\KVO@ProcessLocalKeyvalOptions#1{%
+  \\let\\@tempc\\relax
+  \\let\\KVO@temp\\@empty
+  \\ifx\\@currext\\@pkgextension
+  \\else
+    \\PackageError{kvoptions}{%
+      \\string\\ProcessLocalKeyvalOptions\\space is intended for packages only%
+    }\\@ehc
+  \\fi
+  \\begingroup
+    \\toks\\tw@{}%
+    \\@ifundefined{opt@\\@currname.\\@currext}{%
+      \\toks@\\expandafter{\\KVO@temp}%
+    }{%
+      \\toks@\\expandafter\\expandafter\\expandafter{%
+        \\csname opt@\\@currname.\\@currext\\endcsname
+      }%
+      \\@ifundefined{KVO@default@\\@currname.\\@currext}{%
+        \\toks@\\expandafter\\expandafter\\expandafter{%
+          \\expandafter\\KVO@temp\\the\\toks@
+        }%
+      }{%
+        \\edef\\CurrentOption{\\the\\toks@}%
+        \\toks@\\expandafter{\\KVO@temp}%
+        \\@for\\CurrentOption:=\\CurrentOption\\do{%
+          \\@ifundefined{%
+            KV@#1@\\expandafter\\KVO@getkey\\CurrentOption=\\@nil
+          }{%
+            \\toks\\tw@\\expandafter{%
+              \\the\\toks\\expandafter\\tw@\\expandafter,\\CurrentOption
+            }%
+          }{%
+            \\toks@\\expandafter{%
+              \\the\\expandafter\\toks@\\expandafter,\\CurrentOption
+            }%
+          }%
+        }%
+      }%
+    }%
+    \\edef\\KVO@temp{\\endgroup
+      \\noexpand\\KVO@calldefault{\\the\\toks\\tw@}%
+      \\noexpand\\KVO@setkeys{#1}{\\the\\toks@}%
+    }%
+  \\KVO@temp
+  \\let\\CurrentOption\\@empty
+  \\AtEndOfPackage{\\let\\@unprocessedoptions\\relax}%
+}
+\\def\\KVO@getkey#1=#2\\@nil{#1}
+\\def\\KVO@calldefault#1{%
+  \\begingroup
+    \\def\\x{#1}%
+  \\expandafter\\endgroup
+  \\ifx\\x\\@empty
+  \\else
+    \\@for\\CurrentOption:=#1\\do{%
+      \\ifx\\CurrentOption\\@empty
+      \\else
+        \\expandafter\\KVO@setcurrents\\CurrentOption=\\@nil
+        \\@nameuse{KVO@default@\\@currname.\\@currext}%
+      \\fi
+    }%
+  \\fi
+}
+\\def\\KVO@setcurrents#1=#2\\@nil{%
+  \\def\\CurrentOptionValue{#2}%
+  \\ifx\\CurrentOptionValue\\@empty
+    \\let\\CurrentOptionKey\\CurrentOption
+    \\let\\CurrentOptionValue\\relax
+  \\else
+    \\edef\\CurrentOptionKey{\\zap@space#1 \\@empty}%
+    \\expandafter\\KVO@setcurrentvalue\\CurrentOption\\@nil
+  \\fi
+}
+\\def\\KVO@setcurrentvalue#1=#2\\@nil{%
+  \\KV@@sp@def\\CurrentOptionValue{#2}%
+}
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname documentclass\\endcsname\\relax
+  \\def\\ProcessKeyvalOptions{%
+    \\@ifstar{}\\@gobble
+  }%
+\\fi
+\\KVO@AtEnd%
+\\endinput
+%%
+%% End of file \`kvoptions.sty'.
+` },
+  { format: 26, filename: 'kvoptions.sty', content: `
 %%
 %% This is file \`kvoptions.sty',
 %% generated with the docstrip utility.
@@ -20434,6 +38908,580 @@ end
 %%
 %% End of file \`kvsetkeys.sty'.
 ` },
+  { format: 26, filename: 'kvsetkeys.sty', content: `
+%%
+%% This is file \`kvsetkeys.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% kvsetkeys.dtx  (with options: \`package')
+%% 
+%% This is a generated file.
+%% 
+%% Project: kvsetkeys
+%% Version: 2022-10-05 v1.19
+%% 
+%% Copyright (C)
+%%    2006, 2007, 2009-2012 Heiko Oberdiek
+%%    2016-2022 Oberdiek Package Support Group
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either
+%% version 1.3c of this license or (at your option) any later
+%% version. This version of this license is in
+%%    https://www.latex-project.org/lppl/lppl-1-3c.txt
+%% and the latest version of this license is in
+%%    https://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of
+%% LaTeX version 2005/12/01 or later.
+%% 
+%% This work has the LPPL maintenance status "maintained".
+%% 
+%% The Current Maintainers of this work are
+%% Heiko Oberdiek and the Oberdiek Package Support Group
+%% https://github.com/ho-tex/kvsetkeys/issues
+%% 
+%% The Base Interpreter refers to any \`TeX-Format',
+%% because some files are installed in TDS:tex/generic//.
+%% 
+%% This work consists of the main source file kvsetkeys.dtx
+%% and the derived files
+%%    kvsetkeys.sty, kvsetkeys.pdf, kvsetkeys.ins, kvsetkeys.drv,
+%%    kvsetkeys-example.tex, kvsetkeys-test1.tex,
+%%    kvsetkeys-test2.tex, kvsetkeys-test3.tex,
+%%    kvsetkeys-test4.tex.
+%% 
+\\begingroup\\catcode61\\catcode48\\catcode32=10\\relax%
+  \\catcode13=5 % ^^M
+  \\endlinechar=13 %
+  \\catcode35=6 % #
+  \\catcode39=12 % '
+  \\catcode44=12 % ,
+  \\catcode45=12 % -
+  \\catcode46=12 % .
+  \\catcode58=12 % :
+  \\catcode64=11 % @
+  \\catcode123=1 % {
+  \\catcode125=2 % }
+  \\expandafter\\let\\expandafter\\x\\csname ver@kvsetkeys.sty\\endcsname
+  \\ifx\\x\\relax % plain-TeX, first loading
+  \\else
+    \\def\\empty{}%
+    \\ifx\\x\\empty % LaTeX, first loading,
+      % variable is initialized, but \\ProvidesPackage not yet seen
+    \\else
+      \\expandafter\\ifx\\csname PackageInfo\\endcsname\\relax
+        \\def\\x#1#2{%
+          \\immediate\\write-1{Package #1 Info: #2.}%
+        }%
+      \\else
+        \\def\\x#1#2{\\PackageInfo{#1}{#2, stopped}}%
+      \\fi
+      \\x{kvsetkeys}{The package is already loaded}%
+      \\aftergroup\\endinput
+    \\fi
+  \\fi
+\\endgroup%
+\\begingroup\\catcode61\\catcode48\\catcode32=10\\relax%
+  \\catcode13=5 % ^^M
+  \\endlinechar=13 %
+  \\catcode35=6 % #
+  \\catcode39=12 % '
+  \\catcode40=12 % (
+  \\catcode41=12 % )
+  \\catcode44=12 % ,
+  \\catcode45=12 % -
+  \\catcode46=12 % .
+  \\catcode47=12 % /
+  \\catcode58=12 % :
+  \\catcode64=11 % @
+  \\catcode91=12 % [
+  \\catcode93=12 % ]
+  \\catcode123=1 % {
+  \\catcode125=2 % }
+  \\expandafter\\ifx\\csname ProvidesPackage\\endcsname\\relax
+    \\def\\x#1#2#3[#4]{\\endgroup
+      \\immediate\\write-1{Package: #3 #4}%
+      \\xdef#1{#4}%
+    }%
+  \\else
+    \\def\\x#1#2[#3]{\\endgroup
+      #2[{#3}]%
+      \\ifx#1\\@undefined
+        \\xdef#1{#3}%
+      \\fi
+      \\ifx#1\\relax
+        \\xdef#1{#3}%
+      \\fi
+    }%
+  \\fi
+\\expandafter\\x\\csname ver@kvsetkeys.sty\\endcsname
+\\ProvidesPackage{kvsetkeys}%
+  [2022-10-05 v1.19 Key value parser (HO)]%
+\\begingroup\\catcode61\\catcode48\\catcode32=10\\relax%
+  \\catcode13=5 % ^^M
+  \\endlinechar=13 %
+  \\catcode123=1 % {
+  \\catcode125=2 % }
+  \\catcode64=11 % @
+  \\def\\x{\\endgroup
+    \\expandafter\\edef\\csname KVS@AtEnd\\endcsname{%
+      \\endlinechar=\\the\\endlinechar\\relax
+      \\catcode13=\\the\\catcode13\\relax
+      \\catcode32=\\the\\catcode32\\relax
+      \\catcode35=\\the\\catcode35\\relax
+      \\catcode61=\\the\\catcode61\\relax
+      \\catcode64=\\the\\catcode64\\relax
+      \\catcode123=\\the\\catcode123\\relax
+      \\catcode125=\\the\\catcode125\\relax
+    }%
+  }%
+\\x\\catcode61\\catcode48\\catcode32=10\\relax%
+\\catcode13=5 % ^^M
+\\endlinechar=13 %
+\\catcode35=6 % #
+\\catcode64=11 % @
+\\catcode123=1 % {
+\\catcode125=2 % }
+\\def\\TMP@EnsureCode#1#2{%
+  \\edef\\KVS@AtEnd{%
+    \\KVS@AtEnd
+    \\catcode#1=\\the\\catcode#1\\relax
+  }%
+  \\catcode#1=#2\\relax
+}
+\\TMP@EnsureCode{36}{3}% \$
+\\TMP@EnsureCode{38}{4}% &
+\\TMP@EnsureCode{39}{12}% '
+\\TMP@EnsureCode{43}{12}% +
+\\TMP@EnsureCode{44}{12}% ,
+\\TMP@EnsureCode{45}{12}% -
+\\TMP@EnsureCode{46}{12}% .
+\\TMP@EnsureCode{47}{12}% /
+\\TMP@EnsureCode{91}{12}% [
+\\TMP@EnsureCode{93}{12}% ]
+\\TMP@EnsureCode{94}{7}% ^ (superscript)
+\\TMP@EnsureCode{96}{12}% \`
+\\TMP@EnsureCode{126}{13}% ~ (active)
+\\edef\\KVS@AtEnd{\\KVS@AtEnd\\noexpand\\endinput}
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname RequirePackage\\endcsname\\relax
+  \\def\\TMP@RequirePackage#1[#2]{%
+    \\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+    \\expandafter\\ifx\\csname ver@#1.sty\\endcsname\\relax
+      \\input #1.sty\\relax
+    \\fi
+  }%
+  \\TMP@RequirePackage{infwarerr}[2007/09/09]%
+  \\let\\PackageError\\@PackageError
+\\else
+\\fi
+\\expandafter\\ifx\\csname toks@\\endcsname\\relax
+  \\toksdef\\toks@=0 %
+\\fi
+\\ifx\\numexpr\\@undefined
+  \\catcode\`\\\$=9 % ignore
+  \\catcode\`\\&=14 % comment
+\\else % e-TeX
+  \\catcode\`\\\$=14 % comment
+  \\catcode\`\\&=9  % ignore
+\\fi
+\\def\\KVS@Empty{}
+\\long\\def\\KVS@FirstOfTwo#1#2{#1}
+\\long\\def\\KVS@SecondOfTwo#1#2{#2}
+\\long\\def\\KVS@IfEmpty#1{%
+& \\edef\\KVS@Temp{\\unexpanded{#1}}%
+\$ \\begingroup
+\$   \\toks@{#1}%
+\$   \\edef\\KVS@Temp{\\the\\toks@}%
+\$ \\expandafter\\endgroup
+  \\ifx\\KVS@Temp\\KVS@Empty
+    \\expandafter\\KVS@FirstOfTwo
+  \\else
+    \\expandafter\\KVS@SecondOfTwo
+  \\fi
+}
+\\long\\def\\kv@normalize#1{%
+  \\begingroup
+    \\toks@{,#1,}%
+    \\KVS@Comma
+    \\KVS@SpaceComma
+    \\KVS@CommaSpace
+    \\KVS@CommaComma
+    \\KVS@Equals
+    \\KVS@SpaceEquals
+    \\KVS@EqualsSpace
+    \\xdef\\KVS@Global{\\the\\toks@}%
+  \\endgroup
+  \\let\\kv@list\\KVS@Global
+}
+\\def\\comma@normalize#1{%
+  \\begingroup
+    \\toks@{,#1,}%
+    \\KVS@Comma
+    \\KVS@SpaceComma
+    \\KVS@CommaSpace
+    \\KVS@CommaComma
+    \\xdef\\KVS@Global{\\the\\toks@}%
+  \\endgroup
+  \\let\\comma@list\\KVS@Global
+}
+\\begingroup
+  \\lccode\`\\,=\`\\,%
+  \\lccode\`\\~=\`\\,%
+\\lowercase{\\endgroup
+  \\def\\KVS@Comma{%
+    \\toks@\\expandafter{\\expandafter}\\expandafter
+    \\KVS@@Comma\\the\\toks@~\\KVS@Nil
+  }%
+  \\long\\def\\KVS@@Comma#1~#2\\KVS@Nil{%
+    \\toks@\\expandafter{\\the\\toks@#1}%
+    \\KVS@IfEmpty{#2}{%
+    }{%
+      \\KVS@@Comma,#2\\KVS@Nil
+    }%
+  }%
+}
+\\def\\KVS@SpaceComma#1{%
+  \\def\\KVS@SpaceComma{%
+    \\expandafter\\KVS@@SpaceComma\\the\\toks@#1,\\KVS@Nil
+  }%
+}
+\\KVS@SpaceComma{ }
+\\long\\def\\KVS@@SpaceComma#1 ,#2\\KVS@Nil{%
+  \\KVS@IfEmpty{#2}{%
+    \\toks@{#1}%
+  }{%
+    \\KVS@@SpaceComma#1,#2\\KVS@Nil
+  }%
+}
+\\def\\KVS@CommaSpace{%
+  \\expandafter\\KVS@@CommaSpace\\the\\toks@, \\KVS@Nil
+}
+\\long\\def\\KVS@@CommaSpace#1, #2\\KVS@Nil{%
+  \\KVS@IfEmpty{#2}{%
+    \\toks@{#1}%
+  }{%
+    \\KVS@@CommaSpace#1,#2\\KVS@Nil
+  }%
+}
+\\def\\KVS@CommaComma{%
+  \\expandafter\\KVS@@CommaComma\\the\\toks@,\\KVS@Nil
+}
+\\long\\def\\KVS@@CommaComma#1,,#2\\KVS@Nil{%
+  \\KVS@IfEmpty{#2}{%
+    \\toks@{#1,}% (!)
+  }{%
+    \\KVS@@CommaComma#1,#2\\KVS@Nil
+  }%
+}
+\\begingroup
+  \\lccode\`\\==\`\\=%
+  \\lccode\`\\~=\`\\=%
+\\lowercase{\\endgroup
+  \\def\\KVS@Equals{%
+    \\toks@\\expandafter{\\expandafter}\\expandafter
+    \\KVS@@Equals\\the\\toks@~\\KVS@Nil
+  }%
+  \\long\\def\\KVS@@Equals#1~#2\\KVS@Nil{%
+    \\edef\\KVS@Temp{\\the\\toks@}%
+    \\ifx\\KVS@Temp\\KVS@Empty
+      \\expandafter\\KVS@FirstOfTwo
+    \\else
+      \\expandafter\\KVS@SecondOfTwo
+    \\fi
+    {%
+      \\toks@{#1}%
+    }{%
+      \\toks@\\expandafter{\\the\\toks@=#1}%
+    }%
+    \\KVS@IfEmpty{#2}{%
+    }{%
+      \\KVS@@Equals#2\\KVS@Nil
+    }%
+  }%
+}
+\\def\\KVS@SpaceEquals#1{%
+  \\def\\KVS@SpaceEquals{%
+    \\expandafter\\KVS@@SpaceEquals\\the\\toks@#1=\\KVS@Nil
+  }%
+}
+\\KVS@SpaceEquals{ }
+\\long\\def\\KVS@@SpaceEquals#1 =#2\\KVS@Nil{%
+  \\KVS@IfEmpty{#2}{%
+    \\toks@{#1}%
+  }{%
+    \\KVS@@SpaceEquals#1=#2\\KVS@Nil
+  }%
+}
+\\def\\KVS@EqualsSpace{%
+  \\expandafter\\KVS@@EqualsSpace\\the\\toks@= \\KVS@Nil
+}
+\\long\\def\\KVS@@EqualsSpace#1= #2\\KVS@Nil{%
+  \\KVS@IfEmpty{#2}{%
+    \\toks@{#1}%
+  }{%
+    \\KVS@@EqualsSpace#1=#2\\KVS@Nil
+  }%
+}
+\\long\\def\\kv@parse#1{%
+  \\kv@normalize{#1}%
+  \\expandafter\\kv@parse@normalized\\expandafter{\\kv@list}%
+}
+\\long\\def\\kv@parse@normalized#1#2{%
+  \\KVS@Parse#1,\\KVS@Nil{#2}%
+}
+\\long\\def\\KVS@Parse#1,#2\\KVS@Nil#3{%
+  \\KVS@IfEmpty{#1}{%
+  }{%
+    \\KVS@Process#1=\\KVS@Nil{#3}%
+  }%
+  \\KVS@MaybeBreak
+  \\KVS@IfEmpty{#2}{%
+  }{%
+    \\KVS@Parse#2\\KVS@Nil{#3}%
+  }%
+}
+\\long\\def\\KVS@Process#1=#2\\KVS@Nil#3{%
+  \\let\\KVS@MaybeBreak\\relax
+  \\def\\kv@key{#1}%
+  \\KVS@IfEmpty{#2}{%
+    \\let\\kv@value\\relax
+    #3{#1}{}%
+  }{%
+    \\KVS@@Process{#1}#2\\KVS@Nil{#3}%
+  }%
+}
+\\long\\def\\KVS@@Process#1#2=\\KVS@Nil#3{%
+& \\edef\\kv@value{\\unexpanded{#2}}%
+\$ \\begingroup
+\$   \\toks@{#2}%
+\$   \\xdef\\KVS@Global{\\the\\toks@}%
+\$ \\endgroup
+\$ \\let\\kv@value\\KVS@Global
+  #3{#1}{#2}%
+}
+\\let\\KVS@MaybeBreak\\relax
+\\def\\KVS@break#1#2#3#4{%
+  \\let\\KVS@MaybeBreak\\relax
+}
+\\def\\kv@break{%
+  \\let\\KVS@MaybeBreak\\KVS@break
+}
+\\def\\comma@parse#1{%
+  \\comma@normalize{#1}%
+  \\expandafter\\comma@parse@normalized\\expandafter{\\comma@list}%
+}
+\\def\\comma@parse@normalized#1#2{%
+  \\KVS@CommaParse#1,\\KVS@Nil{#2}%
+}
+\\def\\KVS@CommaParse#1,#2\\KVS@Nil#3{%
+  \\KVS@IfEmpty{#1}{%
+  }{%
+    \\def\\comma@entry{#1}%
+    #3{#1}%
+  }%
+  \\KVS@MaybeBreak
+  \\KVS@IfEmpty{#2}{%
+  }{%
+    \\KVS@CommaParse#2\\KVS@Nil{#3}%
+  }%
+}
+\\def\\comma@break{%
+  \\let\\KVS@MaybeBreak\\KVS@break
+}
+\\def\\kv@handled@false{%
+  \\let\\ifkv@handled@\\iffalse
+}
+\\def\\kv@handled@true{%
+  \\let\\ifkv@handled@\\iftrue
+}
+\\kv@handled@true
+\\def\\kv@processor@default#1#2{%
+  \\begingroup
+    \\csname @safe@activestrue\\endcsname
+    \\let\\ifincsname\\iftrue
+    \\edef\\KVS@temp{\\endgroup
+      \\noexpand\\KVS@ProcessorDefault{#1}{#2}%
+    }%
+  \\KVS@temp
+}
+\\long\\def\\KVS@ProcessorDefault#1#2#3{%
+  \\def\\kv@fam{#1}%
+& \\unless\\ifcsname KV@#1@#2\\endcsname
+\$ \\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\$ \\expandafter\\ifx\\csname KV@#1@#2\\endcsname\\relax
+&   \\unless\\ifcsname KVS@#1@handler\\endcsname
+\$   \\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\$   \\expandafter\\ifx\\csname KVS@#1@handler\\endcsname\\relax
+      \\kv@error@unknownkey{#1}{#2}%
+    \\else
+      \\kv@handled@true
+      \\csname KVS@#1@handler\\endcsname{#2}{#3}%
+      \\relax
+      \\ifkv@handled@
+      \\else
+        \\kv@error@unknownkey{#1}{#2}%
+      \\fi
+    \\fi
+  \\else
+    \\ifx\\kv@value\\relax
+&     \\unless\\ifcsname KV@#1@#2@default\\endcsname
+\$     \\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\$     \\expandafter\\ifx\\csname KV@#1@#2@default\\endcsname\\relax
+        \\kv@error@novalue{#1}{#2}%
+      \\else
+        \\csname KV@#1@#2@default\\endcsname
+        \\relax
+      \\fi
+    \\else
+      \\csname KV@#1@#2\\endcsname{#3}%
+    \\fi
+  \\fi
+}
+\\def\\kv@processor@known#1#2#3{%
+  \\begingroup
+    \\csname @safe@activestrue\\endcsname
+    \\let\\ifincsname\\iftrue
+    \\edef\\KVS@temp{\\endgroup
+      \\noexpand\\KVS@ProcessorKnown{#1}\\noexpand#2{#3}%
+    }%
+  \\KVS@temp
+}
+\\long\\def\\KVS@ProcessorKnown#1#2#3#4{%
+  \\def\\kv@fam{#1}%
+& \\unless\\ifcsname KV@#1@#3\\endcsname
+\$ \\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\$ \\expandafter\\ifx\\csname KV@#1@#3\\endcsname\\relax
+&   \\unless\\ifcsname KVS@#1@handler\\endcsname
+\$   \\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\$   \\expandafter\\ifx\\csname KVS@#1@handler\\endcsname\\relax
+      \\KVS@AddUnhandled#2{#3}{#4}%
+    \\else
+      \\kv@handled@true
+      \\csname KVS@#1@handler\\endcsname{#3}{#4}%
+      \\relax
+      \\ifkv@handled@
+      \\else
+        \\KVS@AddUnhandled#2{#3}{#4}%
+      \\fi
+    \\fi
+  \\else
+    \\ifx\\kv@value\\relax
+&     \\unless\\ifcsname KV@#1@#2@default\\endcsname
+\$     \\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\$     \\expandafter\\ifx\\csname KV@#1@#3@default\\endcsname\\relax
+        \\kv@error@novalue{#1}{#3}%
+      \\else
+        \\csname KV@#1@#3@default\\endcsname
+        \\relax
+      \\fi
+    \\else
+      \\csname KV@#1@#3\\endcsname{#4}%
+    \\fi
+  \\fi
+}
+\\long\\def\\KVS@AddUnhandled#1#2#3{%
+& \\edef#1{%
+&   \\ifx#1\\KVS@empty
+&   \\else
+&     \\unexpanded\\expandafter{#1},%
+&   \\fi
+&   \\unexpanded{{#2}={#3}}%
+& }%
+\$ \\begingroup
+\$   \\ifx#1\\KVS@empty
+\$     \\toks@{{#2}={#3}}%
+\$   \\else
+\$     \\toks@\\expandafter{#1,{#2}={#3}}%
+\$   \\fi
+\$   \\xdef\\KVS@Global{\\the\\toks@}%
+\$ \\endgroup
+\$ \\let#1\\KVS@Global
+}
+\\long\\def\\kv@set@family@handler#1#2{%
+  \\begingroup
+    \\csname @safe@activestrue\\endcsname
+    \\let\\ifincsname\\iftrue
+  \\expandafter\\endgroup
+  \\expandafter\\def\\csname KVS@#1@handler\\endcsname##1##2{#2}%
+}
+\\long\\def\\kv@unset@family@handler#1#2{%
+  \\begingroup
+    \\csname @safe@activestrue\\endcsname
+    \\let\\ifincsname\\iftrue
+  \\expandafter\\endgroup
+  \\expandafter\\let\\csname KVS@#1@handler\\endcsname\\@UnDeFiNeD
+}
+\\def\\kv@error@novalue{%
+  \\kv@error@generic{No value specified for}%
+}
+\\def\\kv@error@unknownkey{%
+  \\kv@error@generic{Undefined}%
+}
+\\def\\kv@error@generic#1#2#3{%
+  \\PackageError{kvsetkeys}{%
+    #1 key \`#3'%
+  }{%
+    The keyval family of the key \`#3' is \`#2'.\\MessageBreak
+    The setting of the key is ignored because of the error.\\MessageBreak
+    \\MessageBreak
+    \\@ehc
+  }%
+}
+\\long\\def\\kvsetkeys#1#2{%
+  \\kv@parse{#2}{\\kv@processor@default{#1}}%
+}
+\\def\\kvsetkeys@expandafter#1#2{%
+  \\expandafter\\kv@parse\\expandafter{#2}{%
+    \\kv@processor@default{#1}%
+  }%
+}
+\\def\\KVS@cmd{0}%
+\\def\\KVS@cmd@inc{%
+& \\edef\\KVS@cmd{\\the\\numexpr\\KVS@cmd+1}%
+\$ \\begingroup
+\$   \\count255=\\KVS@cmd\\relax
+\$   \\advance\\count255 by 1\\relax
+\$ \\edef\\x{\\endgroup
+\$   \\noexpand\\def\\noexpand\\KVS@cmd{\\number\\count255}%
+\$ }%
+\$ \\x
+}
+\\def\\KVS@cmd@dec{%
+& \\edef\\KVS@cmd{\\the\\numexpr\\KVS@cmd-1}%
+\$ \\begingroup
+\$   \\count255=\\KVS@cmd\\relax
+\$   \\advance\\count255 by -1\\relax
+\$ \\edef\\x{\\endgroup
+\$   \\noexpand\\def\\noexpand\\KVS@cmd{\\number\\count255}%
+\$ }%
+\$ \\x
+}
+\\def\\KVS@empty{}
+\\def\\kvsetknownkeys{%
+  \\expandafter
+  \\KVS@setknownkeys\\csname KVS@cmd\\KVS@cmd\\endcsname{}%
+}
+\\long\\def\\KVS@setknownkeys#1#2#3#4#5{%
+  \\let#1\\KVS@empty
+  \\KVS@cmd@inc
+  #2\\kv@parse#2{#5}{\\kv@processor@known{#3}#1}%
+  \\KVS@cmd@dec
+  \\let#4=#1%
+}
+\\def\\kvsetknownkeys@expandafter{%
+  \\expandafter
+  \\KVS@setknownkeys
+      \\csname KVS@cmd\\KVS@cmd\\endcsname\\expandafter
+}
+\\KVS@AtEnd%
+%% \\section{Installation}
+\\endinput
+%%
+%% End of file \`kvsetkeys.sty'.
+` },
   { format: 27, filename: 'lastpage.sty', content: `
 %%
 %% This is file \`lastpage.sty',
@@ -20505,7 +39553,153 @@ end
 %%
 %% End of file \`lastpage.sty'.
 ` },
+  { format: 26, filename: 'lastpage.sty', content: `
+%%
+%% This is file \`lastpage.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% lastpage.dtx  (with options: \`package')
+%% 
+%% This is a generated file.
+%% 
+%% Project: lastpage
+%% Version: 2025-08-14 v2.1h
+%% Info: Refers to last page's name
+%% 
+%% Copyright (C) 2010 - 2025 by
+%%     H.-Martin Muench <Martin dot Muench at Uni-Bonn dot de>
+%% Portions of code copyrighted by other people as marked.
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either
+%% version 1.3c of this license or (at your option) any later
+%% version. This version of this license is in
+%%    https://www.latex-project.org/lppl/lppl-1-3c.txt
+%% and the latest version of this license is in
+%%    https://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of
+%% LaTeX version 2005-12-01 or later.
+%% 
+%% This work has the LPPL maintenance status "maintained".
+%% 
+%% The Current Maintainer of this work is H.-Martin Muench.
+%% 
+%% This package was invented by Jeffrey P. Goldberg.
+%% I thought that an enhancement was needed and therefore created the pageslts package,
+%% https://ctan.org/pkg/pageslts. Nevertheless, for compatibility with existing
+%% documents/packages as well as for the low amount of resources needed by the
+%% lastpage package (no new counter!), I updated this package.
+%% Thanks go to Jeffrey P. Goldberg for allowing me to do this.
+%% 
+%% While this package allows for things like "Page slash thepage{} of slash pageref{LastPage}"
+%% to get "Page 7 of 9" or "Page VII of IX",
+%% the NUMBER of pages is nowadays available from the kernel
+%% (slash @abspage@last, slash thetotalpages, slash PreviousTotalPages),
+%% but with pages for example I to X and then 1 to 10, the number of pages would be "20",
+%% while the name of the last page is "10". Decide what you need/want!
+%% 
+%% This work consists of the main source file lastpage.dtx,
+%% the README, and the derived files
+%%    lastpage.sty, lastpage209.sty, lastpage2e.sty,
+%%    lastpageclassic.sty, lastpagemodern.sty,
+%%    lastpage.pdf, lastpage.ins, lastpage.drv,
+%%    lastpage-example.tex, lastpage-example.pdf.
+%% 
+%% In memoriam
+%%  Claudia Simone Barth + 1996-01-30
+%%  Tommy Muench         + 2014-01-02
+%%  Hans-Klaus Muench    + 2014-08-24
+%% 
+%% Part of the "lastpage" package
+%% loads either lastpage2.09.sty for TeX 2.09 or lastpage2e.sty for LaTeX 2e
+%% with code from https://groups.google.com/g/comp.text.tex/c/-Qmhj1ZI4xM
+\\def\\loadlastpage{\\ProvidesPackage{lastpage}[2025/08/14 v2.1h lastpage: 2.09 or 2e? (HMM)]\\relax\\RequirePackage{lastpage2e}}
+\\begingroup \\expandafter \\ifx \\csname documentclass\\endcsname\\relax
+\\endgroup \\expandafter \\input{lastpage209.sty}
+\\else \\endgroup \\expandafter \\loadlastpage
+\\fi
+\\endinput
+%%
+%% End of file \`lastpage.sty'.
+` },
   { format: 27, filename: 'latexsym.sty', content: `
+%%
+%% This is file \`latexsym.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% latexsym.dtx  (with options: \`package')
+%% 
+%% This is a generated file.
+%% 
+%% The source is maintained by the LaTeX Project team and bug
+%% reports for it can be opened at https://latex-project.org/bugs.html
+%% (but please observe conditions on bug reports sent to that address!)
+%% 
+%% 
+%% Copyright (C) 1993-2025
+%% The LaTeX Project and any individual authors listed elsewhere
+%% in this file.
+%% 
+%% This file was generated from file(s) of the LaTeX base system.
+%% --------------------------------------------------------------
+%% 
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    https://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2008 or later.
+%% 
+%% This file has the LPPL maintenance status "maintained".
+%% 
+%% This file may only be distributed together with a copy of the LaTeX
+%% base system. You may however distribute the LaTeX base system without
+%% such generated files.
+%% 
+%% The list of all files belonging to the LaTeX base distribution is
+%% given in the file \`manifest.txt'. See also \`legal.txt' for additional
+%% information.
+%% 
+%% The list of derived (unpacked) files belonging to the distribution
+%% and covered by LPPL is defined by the unpacking scripts (with
+%% extension .ins) which are part of the distribution.
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{latexsym}
+             [1998/08/17 v2.2e
+                 Standard LaTeX package (lasy symbols)]
+\\ifx\\symlasy\\undefined \\else
+  \\wlog{Package latexsym: nothing to set up^^J}%
+  \\endinput \\fi
+  \\DeclareSymbolFont{lasy}{U}{lasy}{m}{n}
+  \\SetSymbolFont{lasy}{bold}{U}{lasy}{b}{n}
+  \\let\\mho\\undefined            \\let\\sqsupset\\undefined
+  \\let\\Join\\undefined           \\let\\lhd\\undefined
+  \\let\\Box\\undefined            \\let\\unlhd\\undefined
+  \\let\\Diamond\\undefined        \\let\\rhd\\undefined
+  \\let\\leadsto\\undefined        \\let\\unrhd\\undefined
+  \\let\\sqsubset\\undefined
+  \\DeclareMathSymbol\\mho     {\\mathord}{lasy}{"30}
+  \\DeclareMathSymbol\\Join    {\\mathrel}{lasy}{"31}
+  \\DeclareMathSymbol\\Box     {\\mathord}{lasy}{"32}
+  \\DeclareMathSymbol\\Diamond {\\mathord}{lasy}{"33}
+  \\DeclareMathSymbol\\leadsto {\\mathrel}{lasy}{"3B}
+  \\DeclareMathSymbol\\sqsubset{\\mathrel}{lasy}{"3C}
+  \\DeclareMathSymbol\\sqsupset{\\mathrel}{lasy}{"3D}
+  \\DeclareMathSymbol\\lhd     {\\mathbin}{lasy}{"01}
+  \\DeclareMathSymbol\\unlhd   {\\mathbin}{lasy}{"02}
+  \\DeclareMathSymbol\\rhd     {\\mathbin}{lasy}{"03}
+  \\DeclareMathSymbol\\unrhd   {\\mathbin}{lasy}{"04}
+  \\let\\not@base\\@undefined
+\\endinput
+%%
+%% End of file \`latexsym.sty'.
+` },
+  { format: 26, filename: 'latexsym.sty', content: `
 %%
 %% This is file \`latexsym.sty',
 %% generated with the docstrip utility.
@@ -20798,6 +39992,224 @@ end
 %%
 %% End of file \`letltxmacro.sty'.
 ` },
+  { format: 26, filename: 'letltxmacro.sty', content: `
+%%
+%% This is file \`letltxmacro.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% letltxmacro.dtx  (with options: \`package')
+%% 
+%% This is a generated file.
+%% 
+%% Project: letltxmacro
+%% Version: 2019/12/03 v1.6
+%% 
+%% Copyright (C)
+%%    2008, 2010 Heiko Oberdiek
+%%    2016-2019 Oberdiek Package Support Group
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either
+%% version 1.3c of this license or (at your option) any later
+%% version. This version of this license is in
+%%    https://www.latex-project.org/lppl/lppl-1-3c.txt
+%% and the latest version of this license is in
+%%    https://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of
+%% LaTeX version 2005/12/01 or later.
+%% 
+%% This work has the LPPL maintenance status "maintained".
+%% 
+%% The Current Maintainers of this work are
+%% Heiko Oberdiek and the Oberdiek Package Support Group
+%% https://github.com/ho-tex/letltxmacro/issues
+%% 
+%% 
+%% This work consists of the main source file letltxmacro.dtx
+%% and the derived files
+%%    letltxmacro.sty, letltxmacro.pdf, letltxmacro.ins, letltxmacro.drv,
+%%    letltxmacro-showcases.tex, letltxmacro-test1.tex,
+%%    letltxmacro-test2.tex.
+%% 
+\\begingroup\\catcode61\\catcode48\\catcode32=10\\relax%
+  \\catcode13=5 % ^^M
+  \\endlinechar=13 %
+  \\catcode123=1 % {
+  \\catcode125=2 % }
+  \\catcode64=11 % @
+  \\def\\x{\\endgroup
+    \\expandafter\\edef\\csname llm@AtEnd\\endcsname{%
+      \\endlinechar=\\the\\endlinechar\\relax
+      \\catcode13=\\the\\catcode13\\relax
+      \\catcode32=\\the\\catcode32\\relax
+      \\catcode35=\\the\\catcode35\\relax
+      \\catcode61=\\the\\catcode61\\relax
+      \\catcode64=\\the\\catcode64\\relax
+      \\catcode123=\\the\\catcode123\\relax
+      \\catcode125=\\the\\catcode125\\relax
+    }%
+  }%
+\\x\\catcode61\\catcode48\\catcode32=10\\relax%
+\\catcode13=5 % ^^M
+\\endlinechar=13 %
+\\catcode35=6 % #
+\\catcode64=11 % @
+\\catcode123=1 % {
+\\catcode125=2 % }
+\\def\\TMP@EnsureCode#1#2{%
+  \\edef\\llm@AtEnd{%
+    \\llm@AtEnd
+    \\catcode#1=\\the\\catcode#1\\relax
+  }%
+  \\catcode#1=#2\\relax
+}
+\\TMP@EnsureCode{40}{12}% (
+\\TMP@EnsureCode{41}{12}% )
+\\TMP@EnsureCode{42}{12}% *
+\\TMP@EnsureCode{45}{12}% -
+\\TMP@EnsureCode{46}{12}% .
+\\TMP@EnsureCode{47}{12}% /
+\\TMP@EnsureCode{58}{12}% :
+\\TMP@EnsureCode{62}{12}% >
+\\TMP@EnsureCode{91}{12}% [
+\\TMP@EnsureCode{93}{12}% ]
+\\edef\\llm@AtEnd{%
+  \\llm@AtEnd
+  \\escapechar\\the\\escapechar\\relax
+  \\noexpand\\endinput
+}
+\\escapechar=92 % \`\\\\
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{letltxmacro}%
+  [2019/12/03 v1.6 Let assignment for LaTeX macros (HO)]
+\\newcommand*{\\LetLtxMacro}{%
+  \\llm@ModeLetLtxMacro{}%
+}
+\\newcommand*{\\GlobalLetLtxMacro}{%
+  \\llm@ModeLetLtxMacro\\global
+}
+\\newcommand*{\\llm@ModeLetLtxMacro}[3]{%
+  \\edef\\llm@escapechar{\\the\\escapechar}%
+  \\escapechar=-1 %
+  \\edef\\reserved@a{%
+    \\noexpand\\protect
+    \\expandafter\\noexpand
+    \\csname\\string#3 \\endcsname
+  }%
+  \\ifx\\reserved@a#3\\relax
+    #1\\edef#2{%
+      \\noexpand\\protect
+      \\expandafter\\noexpand
+      \\csname\\string#2 \\endcsname
+    }%
+    #1\\expandafter\\let
+    \\csname\\string#2 \\expandafter\\endcsname
+    \\csname\\string#3 \\endcsname
+    \\expandafter\\llm@LetLtxMacro
+        \\csname\\string#2 \\expandafter\\endcsname
+        \\csname\\string#3 \\endcsname{#1}%
+  \\else
+    \\llm@LetLtxMacro{#2}{#3}{#1}%
+  \\fi
+  \\escapechar=\\llm@escapechar\\relax
+}
+\\def\\llm@LetLtxMacro#1#2#3{%
+  \\escapechar=92 %
+  \\expandafter\\llm@CheckParams\\meaning#2:->\\@nil{%
+    \\begingroup
+      \\def\\@protected@testopt{%
+        \\expandafter\\@testopt\\@gobble
+      }%
+      \\def\\@testopt##1##2{%
+        \\toks@={##2}%
+      }%
+      \\let\\llm@testopt\\@empty
+      \\edef\\x{%
+        \\noexpand\\@protected@testopt
+        \\noexpand#2%
+        \\expandafter\\noexpand\\csname\\string#2\\endcsname
+      }%
+      \\expandafter\\expandafter\\expandafter\\def
+      \\expandafter\\expandafter\\expandafter\\y
+      \\expandafter\\expandafter\\expandafter{%
+        \\expandafter\\llm@CarThree#2{}{}{}\\llm@nil
+      }%
+      \\ifx\\x\\y
+        #2%
+        \\def\\llm@testopt{%
+          \\noexpand\\@protected@testopt
+          \\noexpand#1%
+        }%
+      \\else
+        \\edef\\x{%
+          \\noexpand\\@testopt
+          \\expandafter\\noexpand
+          \\csname\\string#2\\endcsname
+        }%
+        \\expandafter\\expandafter\\expandafter\\def
+        \\expandafter\\expandafter\\expandafter\\y
+        \\expandafter\\expandafter\\expandafter{%
+          \\expandafter\\llm@CarTwo#2{}{}\\llm@nil
+        }%
+        \\ifx\\x\\y
+          #2%
+          \\def\\llm@testopt{%
+            \\noexpand\\@testopt
+          }%
+        \\fi
+      \\fi
+      \\ifx\\llm@testopt\\@empty
+      \\else
+        \\llm@protected\\xdef\\llm@GlobalTemp{%
+          \\llm@testopt
+          \\expandafter\\noexpand
+          \\csname\\string#1\\endcsname
+          {\\the\\toks@}%
+        }%
+      \\fi
+    \\expandafter\\endgroup\\ifx\\llm@testopt\\@empty
+      #3\\let#1=#2\\relax
+    \\else
+      #3\\let#1=\\llm@GlobalTemp
+      #3\\expandafter\\let
+          \\csname\\string#1\\expandafter\\endcsname
+          \\csname\\string#2\\endcsname
+    \\fi
+  }{%
+    #3\\let#1=#2\\relax
+  }%
+}
+\\def\\llm@CheckParams#1:->#2\\@nil{%
+  \\begingroup
+    \\def\\x{#1}%
+  \\ifx\\x\\llm@macro
+    \\endgroup
+    \\def\\llm@protected{}%
+    \\expandafter\\@firstoftwo
+  \\else
+    \\ifx\\x\\llm@protectedmacro
+      \\endgroup
+      \\def\\llm@protected{\\protected}%
+      \\expandafter\\expandafter\\expandafter\\@firstoftwo
+    \\else
+      \\endgroup
+      \\expandafter\\expandafter\\expandafter\\@secondoftwo
+    \\fi
+  \\fi
+}
+\\def\\llm@macro{macro}
+\\@onelevel@sanitize\\llm@macro
+\\def\\llm@protectedmacro{\\protected macro}
+\\@onelevel@sanitize\\llm@protectedmacro
+\\def\\llm@CarThree#1#2#3#4\\llm@nil{#1#2#3}%
+\\def\\llm@CarTwo#1#2#3\\llm@nil{#1#2}%
+\\llm@AtEnd%
+\\endinput
+%%
+%% End of file \`letltxmacro.sty'.
+` },
   { format: 27, filename: 'ltxcmds.sty', content: `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -20838,7 +40250,476 @@ end
 </body>
 </html>
 ` },
+  { format: 26, filename: 'ltxcmds.sty', content: `
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- ViewVC :: http://www.viewvc.org/ -->
+<head>
+<title>ViewVC Error</title>
+</head>
+<body>
+<h3>An Error Has Occurred</h3>
+
+ <p>Unknown location: /trunk/Master/texmf-dist/tex/latex/ltxcmds/ltxcmds.sty</p>
+
+
+ <h4>HTTP Response Status</h4>
+ <p><pre>404 Not Found</pre></p>
+ <hr />
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</body>
+</html>
+` },
   { format: 27, filename: 'nameref.sty', content: `
+%%
+%% This is file \`nameref.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% nameref.dtx  (with options: \`package')
+%% 
+%% Copyright
+%% 1995-2001 Sebastian Rahtz, with portions written by David Carlisle and Heiko Oberdiek
+%% 2001-2015 Heiko Oberdiek
+%% 2016-2019 Oberdiek Package Support Group
+%% 2019-2025 LaTeX Project
+%%      https://github.com/latex3/hyperref/issues
+%% 
+%% This file is part of the \`Hyperref Bundle'.
+%% -------------------------------------------
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%% 
+%% This work has the LPPL maintenance status \`maintained'.
+%% 
+%% The Current Maintainer of this work is the LaTeX Project.
+%% 
+%% The list of all files belonging to the \`Hyperref Bundle' is
+%% given in the file \`manifest.txt'.
+%% 
+%% File: nameref.dtx
+%% Copyright (C) 1995-1999 Sebastian Rahtz
+%%               2000 Sebastian Rahtz, Heiko Oberdiek
+%%               2001-2012 Heiko Oberdiek
+%%               2016-2019 Oberdiek Package Support Group
+%%               2019-2025 The LaTeX Project
+%%      https://github.com/latex3/hyperref/issues
+%%
+%% This file is part of the \`Hyperref Bundle'.
+%% -------------------------------------------
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status \`maintained'.
+%%
+%% The Current Maintainer of this work is The LaTeX Project.
+%%
+%% The list of all files belonging to the \`Hyperref Bundle' is
+%% given in the file \`manifest.txt'.
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{nameref}
+  [2025-06-21 v2.57 Cross-referencing by name of section]%
+\\RequirePackage{refcount}[2006/02/12]
+\\RequirePackage{gettitlestring}[2009/12/18]
+
+\\ExplSyntaxOn
+\\let\\NR@GlobalAppendToMacro\\tl_gput_right:Nn
+\\ExplSyntaxOff
+
+\\def\\NR@strip@period#1.\\@empty#2\\@nil{#1}
+\\def\\strip@period#1.\\relax#2\\@@@{#1}
+\\def\\NR@sanitize@labelname{%
+  \\@onelevel@sanitize\\@currentlabelname
+  \\edef\\@currentlabelname{%
+    \\expandafter\\NR@strip@period\\@currentlabelname
+    \\@empty.\\@empty\\@nil
+  }%
+}
+\\newif\\ifNR@showkeys
+\\NR@showkeysfalse
+\\@ifpackageloaded{showkeys}{%
+  \\begingroup
+    \\@ifundefined{SK@@label}{%
+    }{%
+      \\global\\NR@showkeystrue
+    }%
+  \\endgroup
+}{}
+\\providecommand*{\\label@hook}{}
+\\NR@GlobalAppendToMacro{\\label@hook}{%
+    \\NR@sanitize@labelname
+    }
+\\@ifl@t@r\\fmtversion{2023-06-01}
+  {
+   \\def\\NR@label@copy#1{\\@bsphack
+     \\begingroup
+     \\UseHookWithArguments{label}{1}{#1}%
+     \\protected@write\\@auxout{}%
+         {\\string\\newlabel{#1}{{\\@currentlabel}{\\thepage}%
+         {\\@currentlabelname}{\\@currentHref}{\\@kernel@reserved@label@data}}}%
+  \\endgroup
+  \\@esphack}
+    \\ifx\\label\\NR@label@copy
+    \\else
+      \\PackageWarning{nameref}{The definition of \\string\\label\\space has changed!
+                               \\MessageBreak Check your packages!
+                               \\MessageBreak Replacing it with the kernel definition}
+      \\let\\label\\NR@label@copy
+      \\let\\ltx@label\\label %for amsmath
+    \\fi
+    \\AddToHookWithArguments{label}{\\def\\label@name{#1}\\label@hook}
+  }
+  {
+
+    \\def\\label#1{%
+      \\@bsphack
+      \\begingroup
+        \\def\\label@name{#1}%
+        \\label@hook
+        \\protected@write\\@auxout{}{%
+          \\string\\newlabel{#1}{%
+            {\\@currentlabel}%
+            {\\thepage}%
+            {\\@currentlabelname}%
+            {\\@currentHref}{}%
+          }%
+        }%
+      \\endgroup
+      \\@esphack
+    }%
+    \\ifNR@showkeys
+      \\def\\label#1{%
+        \\@bsphack
+        \\SK@\\SK@@label{#1}%
+        \\begingroup
+          \\def\\label@name{#1}%
+          \\label@hook
+          \\protected@write\\@auxout{}{%
+            \\string\\newlabel{#1}{%
+              {\\@currentlabel}%
+              {\\thepage}%
+              {\\@currentlabelname}%
+              {\\@currentHref}{}%
+            }%
+          }%
+        \\endgroup
+        \\@esphack
+      }%
+    \\fi
+  }
+\\@ifl@t@r\\fmtversion{2023-06-01}
+  {}{\\let\\ltx@label\\label}
+\\@ifundefined{slabel}{}{%
+  \\def\\slabel#1{%
+    \\@bsphack
+    \\if@filesw
+      \\begingroup
+        \\def\\label@name{#1}%
+        \\label@hook
+        \\let\\thepage\\relax
+        \\def\\protect{\\noexpand\\noexpand\\noexpand}%
+        \\edef\\@tempa{%
+          \\write\\@auxout{%
+            \\string\\newlabel{#1}{%
+              {\\thesubequation}%
+              {\\thepage}%
+              {\\@currentlabelname}%
+              {\\@currentHref}{}%
+            }%
+          }%
+        }%
+      \\expandafter\\endgroup
+      \\@tempa
+      \\if@nobreak\\ifvmode\\nobreak\\fi\\fi
+    \\fi
+    \\@esphack
+  }%
+}
+\\def\\@writetocindents@{%
+  \\begingroup
+  \\@for\\@tempa:=-1,0,1,2,3\\do{%
+    \\immediate\\write\\@auxout{%
+      \\string\\newlabel{tocindent\\@tempa}{%
+        \\csname r@tocindent\\@tempa\\endcsname{}{}{}{}%
+      }%
+    }%
+  }%
+  \\endgroup
+}
+\\def\\NR@gettitle#1{%
+  \\GetTitleString{#1}%
+  \\let\\@currentlabelname\\GetTitleStringResult
+}
+\\let\\NR@sect\\@sect
+\\newcounter{section@level}
+\\@ifundefined{NR@nopatch@sectioning}
+ {\\def\\@sect#1#2#3#4#5#6[#7]#8{%
+   \\setcounter{section@level}{#2}%
+   \\NR@gettitle{#7}%
+   \\NR@sect{#1}{#2}{#3}{#4}{#5}{#6}[{#7}]{\\Sectionformat{#8}{#2}}%
+ }}{}
+\\let\\NR@ssect\\@ssect
+\\@ifundefined{NR@nopatch@sectioning}
+ {\\def\\@ssect#1#2#3#4#5{%
+   \\NR@gettitle{#5}%
+   \\NR@ssect{#1}{#2}{#3}{#4}{\\Sectionformat{#5}{#1}}%
+ }}{}
+\\let\\NR@part\\@part
+\\let\\NR@spart\\@spart
+\\let\\NR@chapter\\@chapter
+\\let\\NR@schapter\\@schapter
+\\@ifundefined{NR@nopatch@sectioning}
+ {%
+  \\long\\def\\@part[#1]#2{%
+    \\NR@gettitle{#1}%
+    \\NR@part[{#1}]{#2}%
+  }
+  \\long\\def\\@spart#1{%
+    \\NR@gettitle{#1}%
+    \\NR@spart{#1}%
+  }
+  \\def\\@chapter[#1]#2{%
+    \\NR@gettitle{#1}%
+    \\NR@chapter[{#1}]{#2}%
+  }
+  \\def\\@schapter#1{%
+    \\NR@gettitle{#1}%
+    \\NR@schapter{#1}%
+  }}{}
+\\AtBeginDocument{%
+  \\@ifpackageloaded{hyperref}{}
+  {%
+    \\@ifundefined{NR@nopatch@caption}
+     {\\let\\NR@@caption\\@caption
+      \\long\\def\\@caption#1[#2]{%
+      \\NR@gettitle{#2}%
+      \\NR@@caption{#1}[{#2}]%
+       }}%
+     {}%
+  }%
+  \\@ifpackageloaded{longtable}{%
+   \\@ifundefined{NR@nopatch@longtable}
+    {%
+      \\let\\NRorg@LT@c@ption\\LT@c@ption
+      \\def\\LT@c@ption#1[#2]#3{%
+       \\NRorg@LT@c@ption{#1}[{#2}]{#3}%
+       \\def\\@tempa{#2}%
+       \\ifx\\@tempa\\@empty
+       \\else
+        \\NR@gettitle{#2}%
+       \\fi
+      }%
+    }{}%
+  }{}%
+  \\@ifundefined{descriptionlabel}{%
+  }{%
+    \\@ifundefined{NR@nopatch@lists}
+     {\\let\\NRorg@descriptionlabel\\descriptionlabel
+      \\def\\descriptionlabel#1{%
+       \\NR@gettitle{#1}%
+       \\NRorg@descriptionlabel{#1}%
+       }%
+     }{}%
+  }%
+}
+\\@ifundefined{NR@nopatch@theorem}{%
+ \\@ifundefined{@opargbegintheorem}{}{%
+   \\let\\NRorg@opargbegintheorem\\@opargbegintheorem
+   \\def\\@opargbegintheorem#1#2#3{%
+     \\NR@gettitle{#3}%
+     \\NRorg@opargbegintheorem{#1}{#2}{#3}%
+   }%
+ }
+}{}
+\\@ifundefined{NR@nopatch@amsthm}{%
+\\AtBeginDocument{%
+  \\@ifpackageloaded{amsthm}{%
+    \\let\\NRorg@begintheorem\\@begintheorem
+    \\begingroup
+      \\edef\\x{macro:\\string#1\\string#2[\\string#3]}%
+      \\@onelevel@sanitize\\x
+      \\def\\y#1->#2\\@nil{#1}%
+      \\edef\\z{\\expandafter\\y\\meaning\\@begintheorem->\\@nil}%
+      \\@onelevel@sanitize\\z
+    \\expandafter\\endgroup
+    \\ifx\\x\\z
+      \\def\\@begintheorem#1#2[#3]{%
+        \\NR@gettitle{#3}%
+        \\NRorg@begintheorem{#1}{#2}[{#3}]%
+      }%
+    \\fi
+  }{}%
+}}{}
+\\providecommand*{\\@currentlabelname}{}
+\\providecommand*{\\@currentHref}{}
+\\long\\def\\@firstoffive#1#2#3#4#5{#1}
+\\long\\def\\@secondoffive#1#2#3#4#5{#2}
+\\long\\def\\@thirdoffive#1#2#3#4#5{#3}
+\\long\\def\\@fourthoffive#1#2#3#4#5{#4}
+\\long\\def\\@fifthoffive#1#2#3#4#5{#5}
+\\providecommand*\\@safe@activestrue{}%
+\\providecommand*\\@safe@activesfalse{}%
+\\newcommand\\NR@ref@showkeys[1]{}%
+\\def\\NR@setref#1{%
+  \\begingroup
+    \\@safe@activestrue
+    \\expandafter
+  \\endgroup
+  \\expandafter\\NR@@setref\\csname r@#1\\endcsname
+}
+\\def\\NR@@setref#1{%
+  \\ifx\\@undefined#1%
+    \\let#1\\relax
+  \\fi
+  \\@setref#1%
+}
+\\def\\T@ref#1{%
+  \\NR@ref@showkeys{#1}%
+  \\NR@setref{#1}\\@firstoffive{#1}%
+}%
+\\def\\@refstar#1{%
+  \\NR@ref@showkeys{#1}%
+  \\NR@setref{#1}\\@firstoffive{#1}%
+}%
+\\def\\T@pageref#1{%
+  \\NR@ref@showkeys{#1}%
+  \\NR@setref{#1}\\@secondoffive{#1}%
+}%
+\\def\\@pagerefstar#1{%
+  \\NR@ref@showkeys{#1}%
+  \\NR@setref{#1}\\@secondoffive{#1}%
+}%
+\\def\\T@Ref#1{%
+    \\NR@ref@showkeys{#1}%
+    \\NR@setref{#1}\\NR@MakeUppercaseFirstOfFive{#1}%
+  }%
+\\def\\NR@MakeUppercaseFirstOfFive#1#2#3#4#5{%
+    \\MakeUppercase#1%
+  }%
+\\def\\@Refstar#1{%
+    \\NR@ref@showkeys{#1}%
+    \\NR@setref{#1}\\NR@MakeUppercaseFirstOfFive{#1}%
+  }%
+\\ifNR@showkeys
+  \\ifx\\SK@ref\\@empty
+  \\else
+  \\renewcommand\\NR@ref@showkeys[1]{%
+    \\@safe@activestrue
+    \\SK@\\SK@@ref{#1}%
+    \\@safe@activesfalse}
+  \\fi
+\\fi
+\\AddToHook{begindocument}{%
+  \\DeclareDocumentCommand\\ref{s}
+   {\\IfBooleanTF{#1}{\\@refstar}{\\T@ref}}%
+  \\DeclareDocumentCommand\\pageref{s}
+   {\\IfBooleanTF{#1}{\\@pagerefstar}{\\T@pageref}}%
+  \\DeclareDocumentCommand\\Ref{s}
+   {\\IfBooleanTF{#1}{\\@Refstar}{\\T@Ref}}%
+}
+\\DeclareHookRule{begindocument}{showkeys}{before}{nameref}
+\\def\\T@nameref#1{%
+  \\NR@ref@showkeys{#1}%
+  \\begingroup
+    \\let\\label\\@gobble
+    \\NR@setref{#1}\\@thirdoffive{#1}%
+  \\endgroup
+}%
+\\def\\@namerefstar#1{%
+  \\NR@ref@showkeys{#1}%
+  \\begingroup
+    \\let\\label\\@gobble
+    \\NR@setref{#1}\\@thirdoffive{#1}%
+  \\endgroup
+}%
+\\@ifundefined{nameref}
+  {
+   \\NewDocumentCommand\\nameref{s}
+    {\\IfBooleanTF{#1}{\\@namerefstar}{\\T@nameref}}
+  }
+  {
+    \\PackageWarning{nameref}{Redefining \\string\\nameref}
+    \\RenewDocumentCommand\\nameref{s}
+    {\\IfBooleanTF{#1}{\\@namerefstar}{\\T@nameref}}
+  }
+\\def\\Nameref#1{\`\\nameref{#1}' on page~\\pageref{#1}}
+\\providecommand\\Sectionformat[2]{#1}
+\\AtBeginDocument{%
+  \\ifx\\csname @@vpageref\\endcsname\\relax
+  \\else
+   \\let\\NR@@vpageref\\@@vpageref
+   \\def\\@@vpageref#1[#2]#3{%
+      \\begingroup
+        \\csname @safe@activestrue\\endcsname
+        \\edef\\x{#3}%
+        \\@onelevel@sanitize\\x
+        \\toks@{%
+          \\NR@@vpageref{#1}[{#2}]%
+        }%
+        \\edef\\x{\\endgroup
+          \\the\\toks@{\\x}%
+        }%
+      \\x
+    }%
+    \\DeclareRobustCommand\\vnameref[1]{%
+      \\unskip~\\nameref{#1} %
+      \\@vpageref[\\unskip]{#1}%
+    }%
+  \\fi
+}
+\\AtBeginDocument{%
+  \\@ifpackageloaded{listings}{%
+    \\@ifundefined{NR@nopatch@listings}
+     {%
+       \\let\\NROrg@lst@MakeCaption\\lst@MakeCaption
+       \\def\\lst@MakeCaption{%
+         \\ifx\\lst@label\\@empty
+         \\else
+           \\let\\@currentlabelname\\lst@@caption
+         \\fi
+         \\NROrg@lst@MakeCaption
+       }%
+      }{}%
+  }{}%
+}
+\\endinput
+%%
+%% End of file \`nameref.sty'.
+` },
+  { format: 26, filename: 'nameref.sty', content: `
 %%
 %% This is file \`nameref.sty',
 %% generated with the docstrip utility.
@@ -21395,7 +41276,175 @@ end
 %%
 %% End of file \`parskip.sty'.
 ` },
+  { format: 26, filename: 'parskip.sty', content: `
+%%
+%% This is file \`parskip.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% parskip.dtx  (with options: \`package')
+%% 
+%% This is a generated file.
+%% 
+%% Copyright 2018-2021 Frank Mittelbach
+%% 
+%% This file was generated from file(s) of the LaTeX \`parskip Bundle'.
+%% -------------------------------------------------------------------
+%% 
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2008 or later.
+%% 
+%% This file may only be distributed together with a copy of the LaTeX
+%% \`parskip Bundle'. You may however distribute the  \`parskip Bundle'
+%% without such generated files.
+%% 
+%% The newest sources can be found below
+%% 
+%%    https://github.com/FrankMittelbach/fmitex/
+%% 
+%% where one can also log issues in case there are any.
+%% 
+%% 
+%% File: parskip.dtx
+%%   (C) Copyright 1989 H.Partl, TU Wien
+%%   (C) Copyright 2001 Robin Fairbairns
+%%   (C) Copyright 2018-2021 Frank Mittelbach
+\\NeedsTeXFormat{LaTeX2e}[2018-04-01]
+
+\\DeclareRelease       {v1}{2001-04-09}{parskip-2001-04-09.sty}
+\\DeclareCurrentRelease{v2}{2018-08-24}
+\\ProvidesPackage{parskip}[2021-03-14 v2.0h non-zero parskip adjustments]
+\\RequirePackage{kvoptions}
+\\SetupKeyvalOptions{family=parskip,prefix=parskip@}
+\\DeclareStringOption[0pt]{indent}[\\parindent]
+\\DeclareStringOption[0pt]{parfill}[30pt]
+\\DeclareStringOption{skip}[]
+\\DeclareStringOption[0pt]{tocskip}[\\parskip]
+\\ProcessKeyvalOptions*
+\\ifx\\parskip@skip\\@empty
+  \\parskip=.5\\baselineskip plus 2pt\\relax
+\\else
+  \\setlength\\parskip\\parskip@skip
+\\fi
+\\setlength\\parfillskip\\parskip@parfill
+\\advance\\parfillskip 0pt plus 1fil\\relax
+\\setlength\\parindent\\parskip@indent
+\\RequirePackage{etoolbox}
+\\ifdim \\parskip > 0pt
+  \\def\\@listI{\\leftmargin\\leftmargini
+     \\topsep\\z@ \\parsep\\parskip \\itemsep\\z@}
+  \\let\\@listi\\@listI
+  \\@listi
+  \\def\\@listii{\\leftmargin\\leftmarginii
+     \\labelwidth\\leftmarginii\\advance\\labelwidth-\\labelsep
+     \\topsep\\z@ \\parsep\\parskip \\itemsep\\z@}
+  \\def\\@listiii{\\leftmargin\\leftmarginiii
+      \\labelwidth\\leftmarginiii\\advance\\labelwidth-\\labelsep
+      \\topsep\\z@ \\parsep\\parskip \\itemsep\\z@}
+  \\partopsep=\\z@
+\\fi
+\\patchcmd\\@starttoc
+    {\\begingroup \\makeatletter}
+    {\\begingroup \\makeatletter
+      \\skip@\\lastskip
+      \\advance\\skip@\\parskip
+      \\vskip-\\lastskip
+      \\vskip\\skip@
+      \\parskip\\parskip@tocskip}
+    {}{\\typeout{Couldn't patch \\string\\@starttoc}}
+\\patchcmd\\@startsection
+    {\\addvspace\\@tempskipa}
+    {\\advance\\@tempskipa-\\parskip\\addvspace\\@tempskipa}
+    {}{\\typeout{Couldn't patch \\string\\@startsection}}
+\\patchcmd\\@xsect
+    {\\vskip\\@tempskipa}
+    {\\advance\\@tempskipa-\\parskip\\vskip\\@tempskipa}
+    {}{\\typeout{Couldn't patch \\string\\@xsect}}
+\\AtBeginDocument{%
+\\ifx\\ttl@straight@ii\\@undefined\\else  % titlesec got loaded
+\\patchcmd\\ttl@straight@ii
+    {\\addvspace{\\@tempskipa}}%
+    {\\advance\\@tempskipa-\\parskip \\addvspace\\@tempskipa}%
+    {}{\\typeout{Couldn't patch \\string\\ttl@straight@ii}}%
+\\patchcmd\\ttl@straight@ii
+    {\\vspace{\\@tempskipb}}%
+    {\\advance\\@tempskipb-\\parskip \\vspace\\@tempskipb}%
+    {}{\\typeout{Couldn't patch \\string\\ttl@straight@ii}}%
+\\patchcmd\\ttl@part@ii
+    {\\vspace*{\\@tempskipa}}%
+    {\\advance\\@tempskipa-\\parskip \\vspace*\\@tempskipa}%
+    {}{\\typeout{Couldn't patch \\string\\ttl@part@ii}}%
+\\patchcmd\\ttl@part@ii
+    {\\vspace{\\@tempskipb}}%
+    {\\advance\\@tempskipb-\\parskip \\vspace\\@tempskipb}%
+    {}{\\typeout{Couldn't patch \\string\\ttl@part@ii}}%
+\\patchcmd\\ttl@page@ii
+    {\\vspace*{\\@tempskipa}}%
+    {\\advance\\@tempskipa-\\parskip \\vspace*\\@tempskipa}%
+    {}{\\typeout{Couldn't patch \\string\\ttl@page@ii}}%
+\\patchcmd\\ttl@page@ii
+    {\\vspace{\\@tempskipb}}%
+    {\\advance\\@tempskipb-\\parskip \\vspace\\@tempskipb}%
+    {}{\\typeout{Couldn't patch \\string\\ttl@page@ii}}%
+\\fi}
+\\AtBeginDocument{%
+\\ifx\\deferred@thm@head\\@undefined\\else  % amsthm got loaded
+\\patchcmd\\deferred@thm@head
+  {\\addvspace{-\\parskip}}{}%
+  {}{\\typeout{Couldn't patch \\string\\deferred@thm@head!}}%
+\\fi}
+
+\\endinput
+%%
+%% End of file \`parskip.sty'.
+` },
   { format: 27, filename: 'pdfescape.sty', content: `
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- ViewVC :: http://www.viewvc.org/ -->
+<head>
+<title>ViewVC Error</title>
+</head>
+<body>
+<h3>An Error Has Occurred</h3>
+
+ <p>Unknown location: /trunk/Master/texmf-dist/tex/latex/pdfescape/pdfescape.sty</p>
+
+
+ <h4>HTTP Response Status</h4>
+ <p><pre>404 Not Found</pre></p>
+ <hr />
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</body>
+</html>
+` },
+  { format: 26, filename: 'pdfescape.sty', content: `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -23180,7 +43229,1792 @@ end
 %%
 %% End of file \`pdfpages.sty'.
 ` },
+  { format: 26, filename: 'pdfpages.sty', content: `
+%%
+%% This is file \`pdfpages.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% pdfpages.dtx  (with options: \`package')
+%% 
+%% This file is part of the pdfpages package.
+%% 
+%% Copyright (C) 2001-2025 Andreas MATTHIAS
+%%
+%% This work may be distributed and/or modified under the conditions
+%% of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   <http://www.latex-project.org/lppl.txt>.
+%%
+%% This work has the LPPL maintenance status \`maintained'.
+%%
+%% The Current Maintainer of this work is
+%%   Andreas Matthias <andreas.matthias@gmail.com>.
+%%
+%% Please send error reports and suggestions for improvements to
+%%   Andreas MATTHIAS <andreas.matthias@gmail.com>.
+%%
+\\def\\AM@git@tag{v0.6g}
+\\def\\AM@git@date{2025/07/23}
+\\def\\AM@git@hash{b55a30b6b0}
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{pdfpages}
+   [\\AM@git@date\\space\\AM@git@tag\\space
+    Insert pages of external PDF documents (AM)]
+\\newif\\ifAM@pkg@draft \\AM@pkg@draftfalse
+\\DeclareOption{draft}{\\AM@pkg@drafttrue}
+\\DeclareOption{final}{\\AM@pkg@draftfalse}
+\\newif\\ifAM@pkg@survey \\AM@pkg@surveyfalse
+\\DeclareOption{enable-survey}{\\AM@pkg@surveytrue}
+\\DeclareOption{disable-survey}{\\AM@pkg@surveyfalse}
+\\newif\\ifAM@pkg@demo \\AM@pkg@demofalse
+\\DeclareOption{demo}{\\AM@pkg@demotrue}
+\\DeclareOption{nodemo}{\\AM@pkg@demofalse}
+\\def\\AM@ifdriverlater{\\@ifl@ter{def}}
+\\InputIfFileExists{pdfpages.cfg}{%
+  \\PackageInfo{pdfpages}{Loading configuration file \`pdfpages.cfg'}}{}
+\\DeclareOption{pdftex}{\\def\\AM@driver{pdftex}}
+\\DeclareOption{luatex}{\\def\\AM@driver{luatex}}
+\\DeclareOption{vtex}{\\def\\AM@driver{vtex}}
+\\DeclareOption{xetex}{\\def\\AM@driver{xetex}}
+\\DeclareOption{dvips}{\\def\\AM@driver{dvips}}
+\\DeclareOption{dvipdfmx}{\\def\\AM@driver{dvipdfmx}}
+\\DeclareOption{null}{\\def\\AM@driver{null}}
+\\ProcessOptions
+\\ifAM@pkg@demo
+  \\def\\AM@driver{null}
+\\fi
+\\@ifundefined{AM@driver}{
+  \\begingroup
+  \\@ifundefined{luatexversion}{%
+    \\@ifundefined{pdftexversion}{%
+      \\@ifundefined{XeTeXversion}{%
+        \\@ifundefined{OpMode}{%
+          \\gdef\\AM@driver{null}
+        }{\\gedf\\AM@driver{vtex}}%
+      }{\\gdef\\AM@driver{xetex}}%
+    }{\\gdef\\AM@driver{pdftex}}%
+  }{\\gdef\\AM@driver{luatex}}%
+  \\endgroup
+}{}
+\\RequirePackage{ifthen, calc, eso-pic, etoolbox}
+  \\RequirePackage{graphicx}%
+\\newif\\ifAM@DVIoutput\\AM@DVIoutputfalse
+\\newdimen\\AM@pagewidth
+\\newdimen\\AM@pageheight
+\\newdimen\\AM@fboxrule
+\\input{pp\\AM@driver.def}
+\\ifx\\AM@endinput\\relax\\expandafter\\endinput\\fi
+\\ifAM@pkg@survey
+  \\let\\AM@setanchor\\AM@anchor@special
+  \\RequirePackage{count1to}%
+  \\AddToShipoutPicture{\\AM@setanchor}%
+\\fi
+\\AtBeginDocument{%
+  \\let\\AM@orig@landscape\\landscape
+  \\let\\AM@orig@endlandscape\\endlandscape
+  \\RequirePackage{pdflscape}%
+  \\let\\landscape\\AM@orig@landscape
+  \\let\\endlandscape\\AM@orig@endlandscape
+}
+\\let\\AM@Ginclude@graphics\\Ginclude@graphics
+\\@ifpackagelater{eso-pic}{2001/07/20}
+  {\\def\\AM@AddToShipoutPicture{\\AddToShipoutPicture*}%
+   \\def\\AM@ClearShipoutPicture{\\relax}}
+  {\\def\\AM@AddToShipoutPicture{\\AddToShipoutPicture}%
+   \\def\\AM@ClearShipoutPicture{\\ClearShipoutPicture}}
+ \\let\\Orig@AM@AddToShipoutPicture\\AM@AddToShipoutPicture
+\\newif\\ifAM@openright\\AM@openrightfalse
+\\newif\\ifAM@openrighteach\\AM@openrighteachfalse
+\\newif\\ifAM@frame\\AM@framefalse
+\\newif\\ifAM@landscape\\AM@landscapefalse
+\\newif\\ifAM@turn\\AM@turntrue
+\\newif\\ifAM@thread\\AM@threadfalse
+\\newif\\ifAM@link\\AM@linkfalse
+\\newif\\ifAM@linktodoc\\AM@linktodocfalse
+\\newif\\ifAM@survey\\AM@surveyfalse
+\\newif\\ifAM@surveynolink\\AM@surveynolinkfalse
+\\newif\\ifAM@output\\AM@outputtrue
+\\newif\\ifAM@column\\AM@columnfalse
+\\newif\\ifAM@columnstrict\\AM@columnstrictfalse
+\\newif\\ifAM@noautoscale\\AM@noautoscalefalse
+\\newif\\ifAM@fitpaper\\AM@fitpaperfalse
+\\newif\\ifAM@doublepages\\AM@doublepagesfalse
+\\newif\\ifAM@doublepagestwist\\AM@doublepagestwistfalse
+\\newif\\ifAM@doublepagestwistx\\AM@doublepagestwistxfalse
+\\newif\\ifAM@doublepagestmp\\AM@doublepagestmpfalse
+\\newif\\ifAM@doublepagestmpi\\AM@doublepagestmpifalse
+\\newif\\ifAM@duplicatepages\\AM@duplicatepagesfalse
+\\newif\\ifAM@linkfilename\\AM@linkfilenamefalse
+\\newif\\ifAM@signature\\AM@signaturefalse
+\\newif\\ifAM@signaturestar\\AM@signaturestarfalse
+\\newif\\ifAM@booklet\\AM@bookletfalse
+\\newif\\ifAM@swap@flip@edge\\AM@swap@flip@edgefalse
+\\newif\\ifAM@upsidedown\\AM@upsidedownfalse
+\\newif\\ifAM@newwindow\\AM@newwindowtrue
+\\newif\\ifAM@rescale\\AM@rescalefalse
+\\newif\\ifAM@rotateoversize\\AM@rotateoversizefalse
+\\newif\\ifAM@firstpage\\AM@firstpagefalse
+\\newif\\ifAM@reflect\\AM@reflectfalse
+\\newif\\ifAM@reflectall\\AM@reflectallfalse
+\\newif\\ifAM@scale\\AM@scaletrue
+\\newif\\ifAM@newpage\\AM@newpagefalse
+\\newif\\ifAM@pagecount@updated
+\\newif\\ifAM@memoir\\AM@memoirfalse
+\\@ifclassloaded{memoir}{\\AM@memoirtrue}{}
+\\newcount\\pdfpages@includegraphics@status
+\\pdfpages@includegraphics@status\\z@
+\\newcommand*{\\AM@pagestemp}{1}
+\\newcommand*{\\AM@pagecommand}{\\thispagestyle{empty}}
+\\newcommand*{\\AM@pagecommandstar}{}
+\\newcommand*{\\AM@lscape@rot}{0}
+\\newcommand*{\\AM@threadname}{}\\newcommand*{\\AM@linkname}{}
+\\newcommand*{\\AM@linkname@option}{}
+\\newcommand*{\\AM@linktodocfit}{/Fit}
+\\newcommand*{\\threadinfodict}{}
+\\newcommand*{\\AM@toclist}{}\\newcommand*{\\AM@loflist}{}
+\\newcommand*{\\AM@signature}{}
+\\newcommand*{\\AM@ARBug@hook}{}
+\\newcommand*{\\AM@xrprefix}{}
+\\newcommand*{\\AM@picturecommand}{}
+\\newcommand*{\\AM@picturecommandstar}{}
+\\newsavebox{\\AM@pagebox}
+\\newif\\ifAM@integer
+\\def\\AM@checkinteger#1{%
+  \\expandafter\\AM@checkinteger@\\expandafter{#1}}
+\\def\\AM@checkinteger@#1{%
+  \\begingroup
+  \\def\\do##1{\\uccode\`##1=\`\\%}%
+  \\do\\0\\do\\1\\do\\2\\do\\3\\do\\4\\do\\5\\do\\6\\do\\7\\do\\8\\do\\9%
+  \\makeatletter
+  \\catcode\`\\%=9
+  \\endlinechar\\m@ne
+  \\uppercase{\\scantokens{\\def\\AM@temp{#1}}}%
+  \\ifx\\AM@temp\\@empty
+    \\global\\AM@integertrue
+  \\else
+    \\global\\AM@integerfalse
+  \\fi
+  \\endgroup}
+\\newcommand*{\\AM@findfile@i}[2]{%
+  \\ifAM@pkg@demo
+  \\else
+    \\let\\Ginclude@graphics\\AM@Ginclude@graphics
+  \\fi
+  \\let\\AM@currentdocname\\relax
+  \\AM@IfFileExists{#1.#2}{\\edef\\AM@currentdocname{#1.#2}}{%
+     \\AM@IfFileExists{#1}{\\edef\\AM@currentdocname{#1}}{%
+       \\ifx\\Ginput@path\\@undefined\\else
+         \\expandafter\\@tfor\\expandafter\\AM@dir\\expandafter
+                   :\\expandafter=\\Ginput@path\\do{%
+           \\AM@IfFileExists{\\AM@dir#1.#2}{%
+             \\ifx\\AM@currentdocname\\relax
+               \\edef\\AM@currentdocname{\\AM@dir#1.#2}%
+             \\fi
+           }{%
+             \\AM@IfFileExists{\\AM@dir#1}{%
+               \\ifx\\AM@currentdocname\\relax
+                 \\edef\\AM@currentdocname{\\AM@dir#1}%
+               \\fi
+             }{}%
+           }%
+         }% \\@tfor
+       \\fi
+     }%
+   }%
+}
+\\newcommand*{\\AM@findfile@ii}[1]{%
+  \\ifx\\AM@currentdocname\\relax
+    \\PackageError{pdfpages}{Cannot find file \`#1'}{}%
+    \\let\\AM@filenotfound\\relax
+  \\fi
+}
+\\newtoks\\AM@global@opts
+\\newcommand*{\\AM@disable@width@height}{width=!,height=!}
+\\AM@global@opts\\expandafter{\\AM@disable@width@height}
+\\newcommand*{\\includepdfset}[1]{%
+  \\AM@global@opts\\expandafter{\\AM@disable@width@height,#1}%
+}
+\\newcommand*{\\includepdf}[2][]{%
+  \\begingroup
+  \\global\\pdfpages@includegraphics@status\\tw@
+  \\@ifundefined{@setmarks}{\\let\\@setmarks\\relax}{}
+  \\AM@pagecnt\\@ne
+  \\AM@reset@view
+  \\let\\AM@threadname\\relax
+  \\def\\AM@tmp{pdfpages}
+  \\expandafter\\AM@split@options
+    \\expandafter\\AM@tmp
+    \\expandafter{\\the\\AM@global@opts,#1}%
+  \\edef\\AM@temp{{pdfpages}{\\the\\@temptokena}}%
+  \\expandafter\\setkeys\\AM@temp
+  \\ifthenelse{\\boolean{AM@pkg@draft} \\and \\boolean{AM@survey}}{%
+    \\let\\AM@currentdocname\\relax
+    \\renewcommand\\includegraphics[2][]{Survey in draft-mode}%
+    \\def\\AM@pagecount{0}%
+  }{%
+    \\AM@findfile{#2}%
+    \\ifx\\AM@threadname\\relax
+      \\def\\AM@threadname{\\AM@currentdocname}%
+    \\fi
+  }%
+  \\ifAM@survey
+    \\def\\AM@pagestemp{}%
+    \\@tempcnta=0
+    \\def\\foo{%
+      \\@ifundefined{r@\\AM@xrprefix pdfpages@page\\the\\@tempcnta}%
+         {\\let\\foo\\relax}
+         {\\expandafter\\ifx\\expandafter\\\\\\AM@pagestemp\\\\
+             \\edef\\AM@pagestemp{%
+                \\AM@pageref{\\AM@xrprefix pdfpages@page\\the\\@tempcnta}}%
+          \\else
+            \\edef\\AM@pagestemp{\\AM@pagestemp,%
+               \\AM@pageref{\\AM@xrprefix pdfpages@page\\the\\@tempcnta}}%
+          \\fi
+          \\advance\\@tempcnta 1\\relax
+         }%
+      \\foo
+    }%
+    \\foo
+    \\expandafter\\ifx\\expandafter\\\\\\AM@pagestemp\\\\
+      \\def\\AM@pagestemp{1}%
+    \\fi
+  \\fi
+  \\ifAM@output
+    \\expandafter\\AM@readlist\\expandafter{\\AM@pagestemp}%
+    \\expandafter\\AM@output\\expandafter{\\the\\AM@global@opts,#1}%
+  \\fi
+  \\AM@CheckAtEnd
+  \\endgroup
+  \\AM@ClearShipoutPicture
+  \\global\\pdfpages@includegraphics@status\\z@
+}
+\\newcommand*{\\includepdfmerge}[2][]{%
+  \\begingroup
+  \\global\\pdfpages@includegraphics@status\\tw@
+  \\AM@pagecnt\\@ne
+  \\AM@reset@view
+  \\let\\AM@threadname\\relax
+  \\let\\AM@currentdocname\\relax
+  \\def\\AM@tmp{pdfpages}
+  \\expandafter\\AM@split@options
+    \\expandafter\\AM@tmp
+    \\expandafter{\\the\\AM@global@opts,#1}%
+  \\edef\\AM@temp{{pdfpages}{\\the\\@temptokena}}%
+  \\expandafter\\setkeys\\AM@temp
+  \\AM@readlist{#2}%
+  \\expandafter\\AM@output\\expandafter{\\the\\AM@global@opts,#1}%
+  \\AM@CheckAtEnd
+  \\endgroup
+  \\AM@ClearShipoutPicture
+  \\global\\pdfpages@includegraphics@status\\z@
+}
+\\newcommand{\\AM@CheckAtEnd}{%
+    \\ifx\\@empty\\AM@toclist\\else
+      \\PackageWarning{pdfpages}{%
+           There's something wrong with the entries\\MessageBreak
+           of \`addtotoc'. Not all entries were\\MessageBreak
+           processed. Check \`addtotoc'}%
+    \\fi
+    \\ifx\\@empty\\AM@loflist\\else
+      \\PackageWarning{pdfpages}{%
+           There's something wrong with the entries\\MessageBreak
+           of \`addtolist'. Not all entries were\\MessageBreak
+           processed. Check \`addtolist'}%
+    \\fi
+}
+\\newcommand\\AM@output{%
+  \\ifdefined\\AM@filenotfound
+  \\else
+    \\expandafter\\AM@output@i
+  \\fi
+}
+\\newcommand{\\AM@output@i}[1]{%
+    \\AM@getpagedimen
+    \\ifdim\\AM@pagewidth=\\z@
+      \\AM@pagewidth=210mm
+      \\PackageWarningNoLine{pdfpages}{%
+        Erroneous page width of 0.0pt is corrected}%
+    \\fi
+    \\ifdim\\AM@pageheight=\\z@
+      \\AM@pageheight=297mm
+      \\PackageWarningNoLine{pdfpages}{%
+        Erroneous page height of 0.0pt is corrected}%
+    \\fi
+  \\xdef\\@deferlist{\\@toplist\\@botlist\\@deferlist}%
+  \\gdef\\@toplist{}%
+  \\gdef\\@botlist{}%
+  \\xdef\\@dbldeferlist{\\@dbltoplist\\@dbldeferlist}%
+  \\gdef\\@dbltoplist{}%
+  \\global\\let\\AM@deferlist\\@deferlist
+  \\gdef\\@deferlist{}%
+  \\global\\let\\AM@dbldeferlist\\@dbldeferlist
+  \\gdef\\@dbldeferlist{}%
+  \\AM@disable@includegraphics
+  \\@ifundefined{AM@xnup}
+    {\\def\\AM@xnup{\\@ne}\\def\\AM@ynup{\\@ne}%
+     \\def\\AM@xnupminusi{\\z@}\\def\\AM@ynupminusi{\\z@}}{}%
+  \\@ifundefined{AM@deltax}
+    {\\def\\AM@deltax{-\\AM@fboxrule}\\def\\AM@deltay{-\\AM@fboxrule}}{}%
+  \\@ifundefined{AM@xoffset}
+    {\\def\\AM@xoffset{\\z@}\\def\\AM@yoffset{\\z@}}{}%
+  \\def\\AM@xpos{\\z@}\\def\\AM@ypos{\\z@}%
+  \\ifAM@pkg@draft \\setkeys{Gin}{draft=true}%
+  \\else \\setkeys{Gin}{draft=false}%
+  \\fi
+  \\ifAM@landscape
+    \\def\\AM@lscape@rot{90}%
+      \\let\\AM@temp\\AM@xnup
+      \\let\\AM@xnup\\AM@ynup
+      \\let\\AM@ynup\\AM@temp
+  \\fi
+  \\AM@setphantom
+  \\ifthenelse{\\boolean{AM@openright}\\and\\not\\boolean{AM@openrighteach}}
+         {\\AM@openright}{}%
+  \\ifx\\AM@signature\\@empty\\AM@filluppagelist
+  \\else\\AM@prepare@signature\\AM@signaturetrue\\fi
+  \\@tempcnta=\\AM@xnup\\relax \\advance\\@tempcnta\\m@ne
+  \\edef\\AM@xnupminusi{\\the\\@tempcnta}%
+  \\@tempcnta=\\AM@ynup\\relax \\advance\\@tempcnta\\m@ne
+  \\edef\\AM@ynupminusi{\\the\\@tempcnta}%
+  \\ifthenelse{\\boolean{AM@column}%
+              \\and\\not\\boolean{AM@columnstrict}}
+         {\\AM@getlastn{\\AM@doclist}{\\AM@nup}%
+          \\edef\\AM@lastndocs{\\AM@lastnitems}%
+          \\AM@getlastn{\\AM@pagelist}{\\AM@nup}%
+          \\edef\\AM@lastnpages{\\AM@lastnitems}%
+          \\AM@resort
+          \\AM@count{\\AM@pagelist}%
+          \\expandafter\\ifx\\expandafter\\\\\\AM@pagelist\\\\%
+            \\edef\\AM@pagelist{\\AM@resortedpagelist}%
+            \\edef\\AM@doclist{\\AM@resorteddoclist}%
+          \\else
+            \\edef\\AM@pagelist{\\AM@pagelist,\\AM@resortedpagelist}%
+            \\edef\\AM@doclist{\\AM@doclist,\\AM@resorteddoclist}%
+          \\fi}{}%
+  \\ifthenelse{\\boolean{AM@frame}}%
+         {\\global\\let\\AM@fbox\\fbox
+          \\setlength\\AM@fboxrule{\\fboxrule}}%
+         {\\global\\let\\AM@fbox\\relax
+          \\setlength\\AM@fboxrule{\\z@}}%
+  \\ifthenelse{\\boolean{AM@reflect}}%
+         {\\global\\let\\AM@reflectbox\\reflectbox}%
+         {\\global\\let\\AM@reflectbox\\relax}%
+  \\setbox\\AM@pagebox\\null
+  \\ifthenelse{\\boolean{AM@column}}
+         {\\def\\AM@xnupi{\\@ne}%
+          \\def\\AM@ynupi{\\z@}}
+         {\\def\\AM@xnupi{\\z@}%
+          \\def\\AM@ynupi{\\@ne}}%
+  \\AM@firstpagetrue
+  \\@ifundefined{AM@pagetemplate}
+      {\\AM@readfirst{\\AM@pagelist}%
+       \\edef\\AM@nextpage{\\the\\toks@}}
+      {\\edef\\AM@nextpage{\\AM@pagetemplate}}%
+  \\AM@readfirst{\\AM@doclist}%
+  \\edef\\AM@docname{\\the\\toks@}%
+  \\AM@isphantom
+  \\edef\\AM@page{\\AM@nextpage}%
+  \\ifAM@noautoscale
+    \\def\\AM@globalscale{1}%
+  \\else
+    \\AM@split@options{Gin@noscale}{#1}%
+    \\let\\AM@filelist@save\\@filelist
+    \\ifAM@DVIoutput
+      \\setbox\\@tempboxa=\\hbox{\\rule{597pt}{845pt}}%
+    \\else
+      \\ifAM@templatesize
+        \\setbox\\@tempboxa=\\hbox{%
+          \\rotatebox{\\AM@lscape@rot}{\\copy\\AM@templatesizebox}}%
+      \\else
+        \\edef\\AM@opts{[\\AM@disable@width@height,\\the\\@temptokena,
+                       page=\\AM@page, angle=\\AM@lscape@rot]}%
+        \\setbox\\@tempboxa=\\hbox{%
+          \\expandafter\\includegraphics\\AM@opts{\\AM@docname}}%
+      \\fi
+    \\fi
+    \\ifthenelse{\\boolean{AM@fitpaper}}{
+      \\setlength{\\AM@pagewidth}{\\wd\\@tempboxa}%
+      \\setlength{\\AM@pageheight}{\\ht\\@tempboxa + \\dp\\@tempboxa}%
+    }{}%
+    \\def\\AM@xscale{%
+      (\\AM@pagewidth - \\tw@\\AM@fboxrule*\\AM@xnup
+       - \\AM@deltax * \\AM@xnupminusi) /
+      (\\AM@xnup * \\real{\\strip@pt\\wd\\@tempboxa})
+    }%
+    \\setlength{\\@tempdima}{\\AM@xscale}%
+    \\edef\\AM@xscale{\\strip@pt\\@tempdima}%
+    \\setlength{\\@tempdimb}{\\ht\\@tempboxa + \\dp\\@tempboxa}%
+    \\def\\AM@yscale{
+      (\\AM@pageheight - \\tw@\\AM@fboxrule*\\AM@ynup
+       - \\AM@deltay *\\AM@ynupminusi) /
+      (\\AM@ynup * \\real{\\strip@pt\\@tempdimb})
+    }%
+    \\setlength{\\@tempdima}{\\AM@yscale}%
+    \\edef\\AM@yscale{\\strip@pt\\@tempdima}%
+    \\@tempdima=\\AM@xscale\\p@
+    \\@tempdimb=\\AM@yscale\\p@
+    \\ifdim\\@tempdima<\\@tempdimb
+      \\let\\AM@globalscale\\AM@xscale
+    \\else
+      \\let\\AM@globalscale\\AM@yscale
+    \\fi
+  \\fi
+  \\let\\AM@filelist@save\\@filelist
+  \\AM@split@options{Gin}{#1}%
+  \\ifAM@templatesize
+    \\setbox\\@tempboxa=\\hbox{%
+      \\scalebox{\\AM@scale@factor}{\\copy\\AM@templatesizebox}}%
+    \\setbox\\@tempboxa=\\hbox{%
+      \\scalebox{\\AM@globalscale}{\\copy\\@tempboxa}}%
+    \\setbox\\@tempboxa=\\hbox{%
+      \\rotatebox{\\AM@lscape@rot}{\\copy\\@tempboxa}}%
+  \\else
+    \\edef\\AM@opts{[\\AM@disable@width@height,\\the\\@temptokena,
+                   page=\\AM@page, scale=\\AM@globalscale,
+                   angle=\\AM@lscape@rot]}%
+    \\setbox\\@tempboxa=\\hbox{%
+      \\expandafter\\includegraphics\\AM@opts{\\AM@docname}}%
+  \\fi
+  \\let\\@filelist\\AM@filelist@save
+  \\edef\\AM@templatewidth{\\the\\wd\\@tempboxa}%
+  \\setlength{\\@tempdima}{\\ht\\@tempboxa + \\dp\\@tempboxa}%
+  \\edef\\AM@templateheight{\\the\\@tempdima}%
+  \\setlength{\\@tempdimb}{\\ht\\@tempboxa + \\dp\\@tempboxa}%
+  \\def\\AM@xmargin{%
+    (\\AM@pagewidth - (\\wd\\@tempboxa+\\tw@\\AM@fboxrule)*\\AM@xnup
+     - \\AM@deltax * \\AM@xnupminusi) * \\real{.5}%
+  }%
+  \\def\\AM@ymargin{%
+    (\\AM@pageheight - (\\@tempdimb+\\tw@\\AM@fboxrule)*\\AM@ynup
+     - \\AM@deltay * \\AM@ynupminusi) * \\real{.5}%
+  }%
+  \\setlength{\\@tempdima}{\\AM@xmargin}%
+  \\edef\\AM@xmargin{\\the\\@tempdima}%
+  \\setlength{\\@tempdima}{\\AM@ymargin}%
+  \\edef\\AM@ymargin{\\the\\@tempdima}%
+  \\ifthenelse{\\boolean{AM@landscape}}{%
+    \\edef\\AM@temp{\\AM@xnup}%
+    \\edef\\AM@xnup{\\AM@ynup}%
+    \\edef\\AM@ynup{\\AM@temp}%
+  }{}%
+  \\setboolean{AM@endoflist}{false}%
+  \\clearpage
+  \\whiledo{\\not\\boolean{AM@endoflist}}{%
+    \\AM@getfirst{\\AM@pagelist}%
+      \\edef\\AM@nextpage{\\the\\toks@}%
+      \\AM@isphantom
+      \\@tempcnta=\\AM@nextpage\\relax
+      \\edef\\AM@linktodoc@page{\\the\\@tempcnta}%
+      \\advance\\@tempcnta\\m@ne
+      \\edef\\AM@linktodoc@page@m@ne{\\the\\@tempcnta}%
+    \\AM@getfirst{\\AM@doclist}%
+      \\edef\\AM@docname{\\the\\toks@}%
+      \\ifAM@linkfilename
+      \\else
+        \\let\\AM@linkfilename\\AM@docname
+      \\fi
+      \\ifx\\@empty\\AM@linkname@option \\edef\\AM@linkname{\\the\\toks@}%
+      \\else \\edef\\AM@linkname{\\AM@linkname@option} \\fi
+    \\ifthenelse{\\boolean{AM@column}}
+      {\\@tempcnta=\\AM@ynupi\\relax
+       \\@tempcntb=\\AM@ynup\\relax
+       \\advance\\@tempcnta\\@ne
+       \\ifnum\\@tempcnta>\\@tempcntb
+         \\@tempcnta=\\@ne
+         \\@tempcntb=\\AM@xnupi\\relax
+         \\advance\\@tempcntb\\@ne
+         \\edef\\AM@xnupi{\\the\\@tempcntb}%
+       \\fi
+       \\edef\\AM@ynupi{\\the\\@tempcnta}%
+       \\@tempcnta=\\AM@xnupi\\relax
+       \\@tempcntb=\\AM@xnup\\relax
+       \\ifnum\\@tempcnta>\\@tempcntb
+         \\def\\AM@xnupi{\\@ne}%
+         \\AM@newpagetrue
+       \\fi
+      }
+      {\\@tempcnta=\\AM@xnupi\\relax
+       \\@tempcntb=\\AM@xnup\\relax
+       \\advance\\@tempcnta\\@ne
+       \\ifnum\\@tempcnta>\\@tempcntb
+         \\@tempcnta=\\@ne
+         \\@tempcntb=\\AM@ynupi\\relax
+         \\advance\\@tempcntb\\@ne
+         \\edef\\AM@ynupi{\\the\\@tempcntb}%
+       \\fi
+       \\edef\\AM@xnupi{\\the\\@tempcnta}%
+       \\@tempcnta=\\AM@ynupi\\relax
+       \\@tempcntb=\\AM@ynup\\relax
+       \\ifnum\\@tempcnta>\\@tempcntb
+         \\def\\AM@ynupi{\\@ne}%
+         \\AM@newpagetrue
+       \\fi
+      }%
+     \\ifAM@newpage
+       \\clearpage
+       \\AM@newpagefalse
+     \\fi
+     \\edef\\AM@page{\\AM@nextpage}%
+    \\edef\\AM@opts{[\\AM@disable@width@height,\\the\\@temptokena,
+                   page=\\AM@page, scale=\\AM@globalscale,
+                   angle=\\AM@lscape@rot]}%
+    \\setbox\\@tempboxa=\\hbox{%
+      \\expandafter\\includegraphics\\AM@opts{\\AM@docname}}%
+    \\edef\\AM@localwd{\\the\\wd\\@tempboxa}%
+    \\setlength{\\@tempdima}{\\ht\\@tempboxa + \\dp\\@tempboxa}%
+    \\edef\\AM@localht{\\the\\@tempdima}%
+    \\AM@rescalefalse
+    \\ifdim\\AM@localwd=\\AM@templatewidth \\else \\AM@rescaletrue \\fi
+    \\ifdim\\AM@localht=\\AM@templateheight \\else \\AM@rescaletrue \\fi
+    \\def\\AM@localxoff{\\z@}%
+    \\def\\AM@localyoff{\\z@}%
+    \\def\\AM@rotateoversize{0}%
+    \\def\\AM@localscale{\\p@}%
+    \\ifAM@rescale
+      \\ifthenelse{\\lengthtest{\\AM@localwd<\\AM@templatewidth} \\and
+                  \\lengthtest{\\AM@localht<\\AM@templateheight}}{%
+        \\setlength{\\@tempdima}{(\\AM@templatewidth - \\AM@localwd)
+             * \\real{.5}}%
+        \\edef\\AM@localxoff{\\the\\@tempdima}%
+        \\setlength{\\@tempdima}{(\\AM@templateheight - \\AM@localht)
+             * \\real{.5}}%
+        \\edef\\AM@localyoff{\\the\\@tempdima}%
+      }{%
+        \\ifAM@rotateoversize
+          \\def\\AM@rotateoversize{90}%
+          \\let\\AM@filelist@save\\@filelist
+          \\edef\\AM@opts{[\\AM@disable@width@height,\\the\\@temptokena,
+                        page=\\AM@page, scale=\\AM@globalscale,
+                        angle=\\AM@lscape@rot, angle=90]}%
+          \\setbox\\@tempboxa=\\hbox{%
+            \\expandafter\\includegraphics\\AM@opts{\\AM@docname}}%
+          \\let\\@filelist\\AM@filelist@save
+          \\edef\\AM@localwd{\\the\\wd\\@tempboxa}%
+          \\setlength{\\@tempdima}{\\ht\\@tempboxa + \\dp\\@tempboxa}%
+          \\edef\\AM@localht{\\the\\@tempdima}%
+        \\fi
+        \\setlength{\\@tempdima}
+                  {\\p@ * \\ratio{\\AM@templatewidth}{\\AM@localwd}}%
+        \\edef\\AM@localxscale{\\the\\@tempdima}%
+        \\setlength{\\@tempdima}
+                  {\\p@ * \\ratio{\\AM@templateheight}{\\AM@localht}}%
+        \\edef\\AM@localyscale{\\the\\@tempdima}%
+        \\ifdim\\AM@localxscale<\\AM@localyscale
+          \\let\\AM@localscale\\AM@localxscale
+          \\setlength{\\@tempdima}{\\AM@localxscale}%
+          \\setlength{\\@tempdima}{(\\AM@templateheight -
+            \\AM@localht * \\real{\\strip@pt\\@tempdima}) * \\real{.5}}%
+          \\edef\\AM@localyoff{\\the\\@tempdima}%
+        \\else
+          \\let\\AM@localscale\\AM@localyscale
+          \\setlength{\\@tempdima}{\\AM@localyscale}%
+          \\setlength{\\@tempdima}{(\\AM@templatewidth -
+             \\AM@localwd * \\real{\\strip@pt\\@tempdima}) * \\real{.5}}%
+          \\edef\\AM@localxoff{\\the\\@tempdima}%
+        \\fi
+      }%
+    \\fi
+    \\setlength{\\@tempdima}{\\AM@localscale}%
+    \\edef\\AM@localscale{\\strip@pt\\@tempdima}%
+    \\ifAM@noautoscale
+      \\def\\AM@localxoff{\\z@}%
+      \\def\\AM@localyoff{\\z@}%
+      \\def\\AM@localscale{1}%
+    \\fi
+    \\let\\AM@filelist@save\\@filelist
+    \\AM@split@options{Gin}{#1}%
+    \\edef\\AM@opts{[\\AM@disable@width@height,\\the\\@temptokena,
+                   page=\\AM@page, scale=\\AM@globalscale,
+                   angle=\\AM@lscape@rot]}%
+    \\setbox\\@tempboxa=\\hbox{%
+      \\expandafter\\includegraphics\\AM@opts{\\AM@docname}}%
+    \\let\\@filelist\\AM@filelist@save
+    \\setlength{\\@tempdimc}{\\ht\\@tempboxa + \\dp\\@tempboxa}%
+    \\edef\\AM@texcoord{%
+      \\ifESO@texcoord
+        -\\AM@pageheight
+      \\else
+         \\z@
+      \\fi
+    }%
+    \\def\\AM@add{+}%
+    \\if@twoside\\ifodd\\c@page\\else\\def\\AM@add{-}\\fi\\fi
+    \\setlength{\\@tempdimb}{\\ht\\@tempboxa + \\dp\\@tempboxa}%
+    \\ifthenelse{\\boolean{AM@landscape}}
+      {\\def\\AM@xpos{%
+         \\AM@xmargin \\AM@add\\AM@xoffset + \\AM@localxoff +
+         (\\AM@templatewidth + \\AM@deltax + \\tw@\\AM@fboxrule) *
+         (\\AM@ynupi - 1)
+       }%
+       \\def\\AM@ypos{%
+         \\AM@texcoord +
+         \\AM@ymargin + \\AM@yoffset + \\AM@localyoff +
+         (\\AM@templateheight + \\AM@deltay + \\tw@\\AM@fboxrule) *
+         (\\AM@xnupi - 1)
+       }%
+      }
+      {\\def\\AM@xpos{%
+         \\AM@xmargin \\AM@add\\AM@xoffset + \\AM@localxoff +
+         (\\AM@templatewidth + \\AM@deltax + \\tw@\\AM@fboxrule) *
+         (\\AM@xnupi - 1)
+       }%
+       \\def\\AM@ypos{%
+         \\AM@texcoord +
+         \\AM@ymargin + \\AM@yoffset + \\AM@localyoff +
+         (\\AM@templateheight + \\AM@deltay + \\tw@\\AM@fboxrule) *
+         (\\AM@ynup-\\AM@ynupi)
+       }%
+      }%
+    \\setlength{\\@tempdima}{\\AM@xpos}%
+    \\edef\\AM@xpos{\\strip@pt\\@tempdima}%
+    \\setlength{\\@tempdima}{\\AM@ypos}%
+    \\edef\\AM@ypos{\\strip@pt\\@tempdima}%
+    \\ifnum\\AM@xnupi=1
+      \\ifnum\\AM@ynupi=1
+        \\ifAM@reflectall
+          \\setbox\\AM@pagebox\\null
+        \\fi
+        \\ifAM@swap@flip@edge
+          \\ifAM@signature
+            \\ifAM@upsidedown\\AM@upsidedownfalse\\else\\AM@upsidedowntrue\\fi
+            \\@tempdima=\\AM@xoffset\\relax
+            \\multiply\\@tempdima\\m@ne
+            \\edef\\AM@xoffset{\\the\\@tempdima}%
+          \\fi
+        \\fi
+      \\fi
+    \\fi
+    \\ifAM@phantompage
+      \\def\\AM@shippage{}%
+    \\else
+      \\AM@split@options{Gin}{#1}%
+        \\edef\\AM@opts{[\\AM@disable@width@height,\\the\\@temptokena,
+                       page=\\AM@page, scale=\\AM@globalscale,
+                       scale=\\AM@localscale,
+                       \\ifAM@upsidedown angle=180,\\fi
+                       \\ifAM@doublepagestwist\\ifAM@doublepagestmp
+                       angle=180,\\fi\\fi
+                       angle=\\AM@rotateoversize, angle=\\AM@lscape@rot]}%
+      \\edef\\AM@shippage{%
+        \\noexpand\\put(\\AM@xpos,\\AM@ypos){%
+        \\noexpand\\raisebox{\\dp\\@tempboxa}{%
+        \\noexpand\\raise \\ifx\\\\\\AM@view@ypos\\\\\\ht\\@tempbox\\else\\AM@view@ypos\\p@\\fi
+        \\hbox to 0pt {\\hskip\\AM@view@xpos bp\\AM@hyper@begin@i}%
+        \\global\\pdfpages@includegraphics@status\\@ne
+        \\fboxsep=\\z@
+        \\AM@hyper@begin@ii\\noexpand\\AM@fbox{%
+          \\noexpand\\AM@ARBug@hook
+          \\noexpand\\AM@reflectbox{%
+            \\expandafter\\noexpand\\expandafter
+            \\includegraphics\\AM@opts{\\AM@docname}}}%
+        \\global\\pdfpages@includegraphics@status\\tw@
+        \\AM@hyper@end}}%
+      }%
+    \\fi
+    \\ifAM@doublepagestwist
+      \\ifAM@doublepagestmpi
+        \\ifAM@doublepagestwistx\\AM@doublepagestmpifalse\\fi
+        \\ifAM@doublepagestmp\\AM@doublepagestmpfalse
+        \\else\\AM@doublepagestmptrue\\fi
+      \\else\\AM@doublepagestmpitrue\\fi
+    \\fi
+    \\AM@AddToShipoutPicture{\\setlength{\\unitlength}{\\p@}%
+      \\global\\let\\AM@filelist@save\\@filelist}%
+    \\ifthenelse{\\boolean{AM@fitpaper}}{
+      \\setlength{\\paperwidth}{\\AM@pagewidth}%
+      \\setlength{\\paperheight}{\\AM@pageheight}%
+      \\AM@fitpaper@special
+      \\AM@setpagedimen
+      \\ifAM@memoir
+        \\setlength{\\stockwidth}{\\AM@pagewidth}%
+        \\setlength{\\stockheight}{\\AM@pageheight}%
+        \\setlength{\\trimtop}{0pt}%
+        \\setlength{\\trimedge}{0pt}%
+      \\fi
+    }{}
+    \\ifdim\\paperwidth=\\z@
+      \\let\\paperwidth\\AM@pagewidth
+    \\fi
+    \\ifdim\\paperheight=\\z@
+      \\let\\paperheight\\AM@pageheight
+    \\fi
+    \\if@twocolumn
+      \\@twocolumnfalse
+      \\let\\AM@twocolumn\\relax
+    \\fi
+    \\ifAM@reflectall
+      \\begin{lrbox}{\\AM@pagebox}
+        \\global\\let\\AM@filelist@save\\@filelist
+        \\usebox{\\AM@pagebox}\\AM@shippage
+        \\global\\let\\@filelist\\AM@filelist@save
+      \\end{lrbox}
+    \\else
+      \\expandafter\\AM@AddToShipoutPicture\\expandafter{%
+        \\AM@shippage
+        \\global\\let\\@filelist\\AM@filelist@save
+      }%
+    \\fi
+    \\AM@toclof{\\AM@page}%
+    \\ifnum\\AM@xnupi=\\AM@xnup\\relax
+      \\ifnum\\AM@ynupi=\\AM@ynup\\relax
+        \\begingroup
+           \\ifAM@firstpage\\AM@pagecommandstar\\fi
+           \\AM@pagecommand
+        \\endgroup
+        \\hskip\\z@
+        \\ifthenelse{\\boolean{AM@turn}\\AND\\boolean{AM@landscape}}{%
+          \\AM@setRotate
+        }{}%
+        \\AM@AddToShipoutPicture{%
+          \\begingroup\\AM@picturecommand\\endgroup}%
+        \\ifAM@firstpage
+          \\AM@AddToShipoutPicture{%
+            \\begingroup\\AM@picturecommandstar\\endgroup}%
+          \\AM@firstpagefalse
+        \\fi
+        \\ifAM@reflectall
+          \\AM@AddToShipoutPicture{%
+            \\hskip\\AM@pagewidth
+            \\reflectbox{\\usebox\\AM@pagebox}%
+            \\global\\let\\@filelist\\AM@filelist@save
+          }%
+          \\AM@ClearShipoutPicture
+        \\fi
+      \\fi
+    \\fi
+  }% whiledo
+  \\global\\let\\@deferlist\\AM@deferlist
+  \\global\\let\\@dbldeferlist\\AM@dbldeferlist
+  \\ifx\\AM@twocolumn\\relax
+    \\@twocolumntrue
+    \\@firstcolumnfalse
+  \\fi
+  \\newpage
+  \\ifthenelse{\\boolean{AM@turn}\\AND\\boolean{AM@landscape}}{%
+    \\AM@resetRotate
+  }{}
+}% AM@output
+\\newif\\ifAM@default@range@added
+\\newcommand*{\\AM@readlist}[1]{%
+  \\AM@pagecount@updatedfalse
+  \\AM@default@range@addedtrue
+  \\def\\AM@pagelist{}%
+  \\def\\AM@doclist{}%
+  \\AM@readlisti#1,\\END,
+  \\AM@add@default@range
+  \\edef\\AM@doclist{\\expandafter\\@gobble\\AM@doclist\\@empty}%
+  \\edef\\AM@pagelist{\\expandafter\\@gobble\\AM@pagelist\\@empty}%
+}
+\\def\\AM@add@default@range{%
+  \\ifAM@default@range@added
+  \\else
+    \\expandafter\\AM@read@defaultpages\\AM@pagestemp,\\END,
+  \\fi
+  \\AM@default@range@addedtrue
+}
+\\def\\AM@read@defaultpages#1,{%
+  \\ifx\\END#1
+  \\else
+    \\edef\\AM@x{\\AM@trim@space{#1}}%
+    \\ifx\\AM@x\\@empty
+      \\AM@append{}%
+      \\AM@ReturnAfterElseFiFi\\AM@read@defaultpages
+    \\else
+      \\expandafter\\AM@checkrange\\AM@x-\\END
+      \\AM@expand@range\\AM@i\\AM@ii
+      \\AM@ReturnAfterFiFi\\AM@read@defaultpages
+    \\fi
+  \\fi
+}
+\\newcommand{\\AM@readlisti}{}
+\\def\\AM@readlisti#1,{%
+  \\ifx\\AM@currentdocname\\relax
+  \\else
+    \\ifAM@pagecount@updated
+    \\else
+      \\AM@getpagecount
+      \\AM@pagecount@updatedtrue
+    \\fi
+  \\fi
+  \\def\\AM@temp{#1}%
+  \\ifx\\END#1
+  \\else
+    \\AM@range@or@docname{#1}%
+    \\expandafter\\AM@readlisti
+  \\fi
+}
+\\def\\AM@range@or@docname#1{%
+  \\edef\\AM@arg{\\AM@trim@space{#1}}%
+  \\ifx\\AM@arg\\@empty
+    \\AM@append{}%
+  \\else
+    \\expandafter\\AM@checkrange\\AM@arg-\\END
+    \\ifAM@isrange
+      \\ifx\\AM@currentdocname\\relax
+        \\AM@setnewdocname{\\AM@arg}%
+      \\else
+        \\AM@expand@range\\AM@i\\AM@ii
+        \\AM@default@range@addedtrue
+      \\fi
+    \\else
+      \\AM@add@default@range
+      \\AM@setnewdocname{\\AM@arg}%
+      \\AM@pagecount@updatedfalse
+    \\fi
+  \\fi
+}
+\\def\\AM@last{last}
+\\def\\AM@empty{}
+\\newif\\ifAM@isrange
+\\def\\AM@checkrange#1-#2\\END{%
+  \\AM@israngefalse
+  \\AM@check@valid@pagenumber{#1}%
+  \\ifx\\\\#1\\\\%
+    \\def\\AM@i{1}%
+  \\else
+    \\edef\\AM@i{#1}%
+  \\fi
+  \\def\\AM@ii{}%
+  \\ifAM@isrange
+    \\ifx\\\\#2\\\\%
+    \\else
+      \\edef\\AM@ii{\\AM@strip@slash#2\\END}%
+      \\AM@check@valid@pagenumber{\\AM@ii}%
+      \\ifx\\AM@ii\\AM@empty
+        \\let\\AM@ii\\AM@last
+      \\fi
+    \\fi
+  \\fi
+}
+\\def\\AM@expand@range#1#2{%
+  \\edef\\AM@i{#1}%
+  \\edef\\AM@ii{#2}%
+  \\ifx\\AM@i\\AM@last
+    \\let\\AM@i\\AM@lastpage
+    \\let\\AM@i\\AM@pagecount
+  \\fi
+  \\ifx\\AM@ii\\AM@last
+    \\let\\AM@ii\\AM@lastpage
+    \\let\\AM@ii\\AM@pagecount
+  \\fi
+  \\ifx\\AM@ii\\AM@empty
+    \\let\\AM@ii\\AM@i
+  \\fi
+  \\@tempcnta=\\AM@i\\relax
+  \\@tempcntb=\\AM@ii\\relax
+  \\ifnum\\@tempcnta<\\@tempcntb
+    \\def\\AM@rel{<}%
+    \\let\\AM@inc\\@ne
+  \\else
+    \\def\\AM@rel{>}%
+    \\let\\AM@inc\\m@ne
+  \\fi
+  \\advance\\@tempcntb\\AM@inc
+  \\whiledo{\\@tempcnta\\AM@rel\\@tempcntb}{%
+    \\AM@checkpagenumber{\\the\\@tempcnta}%
+    \\AM@append{\\the\\@tempcnta}%
+    \\advance\\@tempcnta\\AM@inc
+  }%
+}
+\\def\\AM@check@valid@pagenumber#1{%
+  \\AM@checkinteger{#1}%
+  \\ifAM@integer
+    \\AM@israngetrue
+  \\else
+    \\AM@israngefalse
+  \\fi
+  \\edef\\AM@tmp{#1}%
+  \\ifx\\AM@tmp\\AM@last
+    \\AM@israngetrue
+  \\fi
+}
+\\def\\AM@strip@slash#1-#2\\END{%
+  \\ifx\\\\#2\\\\%
+    #1%
+  \\else
+    #1-#2%
+  \\fi
+}
+\\providecommand*{\\AM@checkpagenumber}[1]{%
+  \\ifnum#1>\\AM@pagecount\\relax
+    \\ifthenelse{\\boolean{AM@pkg@draft} \\and \\boolean{AM@survey}}{%
+    }{%
+      \\PackageError{pdfpages}
+        {Page #1 of \`\\AM@currentdocname' does not exist}
+        {You have set a wrong page number in the \`pages' option.
+         Document \\MessageBreak \`\\AM@currentdocname' does not
+         have #1 pages.}%
+    }%
+  \\fi
+}
+\\newcommand*{\\AM@setnewdocname}[1]{%
+  \\ifAM@openrighteach
+    \\ifodd\\AM@pagecnt
+      \\AM@append{}
+    \\fi
+  \\fi
+  \\AM@add@default@range
+  \\edef\\AM@temp{\\AM@trim@space{#1}}%
+  \\AM@findfile{\\AM@temp}%
+  \\AM@default@range@addedfalse
+}
+\\newcount\\AM@pagecnt
+\\newcommand*{\\AM@append}[1]{%
+  \\advance\\AM@pagecnt\\@ne
+  \\edef\\AM@doclist{\\AM@doclist,\\AM@currentdocname}%
+  \\edef\\AM@pagelist{\\AM@pagelist,#1}%
+  \\ifAM@doublepages
+    \\edef\\AM@doclist{\\AM@doclist,\\AM@currentdocname}%
+    \\edef\\AM@pagelist{\\AM@pagelist,#1}%
+  \\fi
+  \\ifAM@duplicatepages
+    \\count@=0
+    \\loop
+    \\advance\\count@ 1
+    \\ifnum\\count@<\\AM@nduplicatepages
+    \\edef\\AM@doclist{\\AM@doclist,\\AM@currentdocname}%
+    \\edef\\AM@pagelist{\\AM@pagelist,#1}%
+    \\repeat
+  \\fi
+}
+\\newif\\ifAM@endoflist\\AM@endoflistfalse
+\\newcommand{\\AM@getfirst}{}
+\\def\\AM@getfirst#1{\\expandafter\\AM@getfirsti#1,\\END#1\\END}
+\\newcommand{\\AM@getfirsti}{}
+\\def\\AM@getfirsti#1,#2\\END#3\\END{%
+  \\edef#3{#2}%
+  \\ifx\\\\#2\\\\%
+    \\setboolean{AM@endoflist}{true}%
+    \\def#3{}%
+  \\else
+    \\edef#3{\\AM@getfirstii#2\\END}%
+  \\fi
+  \\toks@{#1}%
+}
+\\newcommand{\\AM@getfirstii}{}
+\\def\\AM@getfirstii#1,\\END{#1}
+\\newcommand{\\AM@readfirst}{}
+\\newcommand{\\AM@readfirsti}{}
+\\def\\AM@readfirst#1{\\expandafter\\AM@readfirsti#1,\\END}
+\\def\\AM@readfirsti#1,#2\\END{\\toks@{#1}}
+\\newcommand{\\AM@getlast}{}
+\\def\\AM@getlast#1{%
+  \\let\\AM@temp\\relax
+  \\expandafter\\AM@getlasti#1,\\END
+  \\@ifundefined{AM@temp}{\\def#1{}}{\\edef#1{\\AM@temp}}%
+}
+\\def\\AM@ReturnAfterFi#1\\fi{\\fi#1}
+\\def\\AM@ReturnAfterFiFi#1\\fi\\fi{\\fi\\fi#1}
+\\def\\AM@ReturnAfterElseFiFi#1\\else#2\\fi#3\\fi{\\fi\\fi#1}
+\\newcommand{\\AM@getlasti}{}
+\\def\\AM@getlasti#1,#2\\END{%
+  \\ifx\\\\#2\\\\%
+    \\def\\AM@lastitem{#1}%
+  \\else
+    \\@ifundefined{AM@temp}
+      {\\edef\\AM@temp{#1}}
+      {\\edef\\AM@temp{\\AM@temp,#1}}%
+    \\AM@ReturnAfterFi{\\AM@getlasti#2\\END}%
+  \\fi
+}
+\\newcommand{\\AM@getlastn}{}
+\\def\\AM@getlastn#1#2{%
+  \\let\\AM@templist\\relax
+  \\@tempcnta=\\z@
+  \\loop
+  \\ifnum\\@tempcnta<#2
+    \\AM@getlast{#1}%
+    \\@ifundefined{AM@templist}
+      {\\edef\\AM@templist{\\AM@lastitem}}
+      {\\edef\\AM@templist{\\AM@lastitem,\\AM@templist}}%
+    \\advance\\@tempcnta\\@ne
+  \\repeat
+  \\edef\\AM@lastnitems{\\AM@templist}%
+}
+\\newcommand{\\AM@split@firstn}{}
+\\def\\AM@split@firstn#1#2{%
+  \\edef\\AM@tmp{\\expandafter\\@gobble\\string#1@firstn}%
+  \\AM@getfirst{#1}%
+  \\expandafter\\edef\\csname\\AM@tmp\\endcsname{\\the\\toks@}%
+  \\@tempcnta=\\@ne
+  \\@tempcntb=#2 \\divide\\@tempcntb\\tw@
+  \\loop\\ifnum\\@tempcnta<\\@tempcntb
+    \\AM@getfirst{#1}%
+    \\expandafter\\edef\\csname\\AM@tmp\\endcsname
+        {\\@nameuse{\\AM@tmp},\\the\\toks@}%
+    \\advance\\@tempcnta\\@ne
+  \\repeat
+  \\edef\\AM@tmp{\\expandafter\\@gobble\\string#1@lastn}%
+  \\AM@getfirst{#1}%
+  \\expandafter\\edef\\csname\\AM@tmp\\endcsname{\\the\\toks@}%
+  \\@tempcnta=\\@ne
+  \\loop\\ifnum\\@tempcnta<\\@tempcntb
+    \\AM@getfirst{#1}%
+    \\expandafter\\edef\\csname\\AM@tmp\\endcsname
+        {\\the\\toks@,\\@nameuse{\\AM@tmp}}%
+    \\advance\\@tempcnta\\@ne
+  \\repeat
+}
+\\newif\\ifAM@again\\AM@againtrue
+\\newcommand{\\AM@count}{}
+\\def\\AM@count#1{%
+  \\edef\\AM@templist{#1}%
+  \\loop
+    \\AM@getlast{\\AM@templist}%
+    \\expandafter\\ifx\\expandafter\\\\\\AM@lastitem\\\\%
+    \\else
+      \\AM@againfalse
+      \\expandafter\\ifx\\expandafter\\\\\\AM@templist\\\\%
+        \\edef\\AM@templist{\\AM@lastitem}%
+      \\else
+        \\edef\\AM@templist{\\AM@templist,\\AM@lastitem}%
+      \\fi
+      \\@tempcnta=\\z@
+      \\expandafter\\AM@counti\\AM@templist,\\END,
+    \\fi
+  \\ifAM@again
+  \\repeat
+}
+\\newcommand{\\AM@counti}{}
+\\def\\AM@counti#1,{%
+  \\ifx\\END#1
+  \\else
+    \\advance\\@tempcnta\\@ne
+    \\expandafter\\AM@counti
+  \\fi
+}
+\\newif\\ifAM@resort@end\\AM@resort@endfalse
+\\newcommand{\\AM@resort}{}
+\\def\\AM@resort{%
+  \\def\\AM@resortedpagelist{}%
+  \\def\\AM@resorteddoclist{}%
+  \\def\\AM@xnupi{\\@ne}%
+  \\def\\AM@ynupi{\\@ne}%
+  \\AM@count{\\AM@lastnpages}%
+  \\def\\AM@xnuplast{%
+    \\the\\@tempcnta - (\\the\\@tempcnta / \\AM@xnup * \\AM@xnup) + 1}%
+  \\def\\AM@ynuplast{1 + (\\the\\@tempcnta / \\AM@xnup)}%
+  \\setlength{\\@tempdima}{\\p@*(\\AM@xnuplast)}%
+  \\edef\\AM@xnuplast{\\strip@pt\\@tempdima}%
+  \\setlength{\\@tempdima}{\\p@*(\\AM@ynuplast)}%
+  \\edef\\AM@ynuplast{\\strip@pt\\@tempdima}%
+  \\whiledo{\\not\\boolean{AM@resort@end}}{%
+    \\@tempcnta=\\AM@ynupi\\relax
+    \\@tempcntb=\\AM@ynuplast\\relax
+    \\ifnum\\@tempcnta=\\@tempcntb
+        \\@tempcnta=\\AM@xnupi\\relax
+        \\@tempcntb=\\AM@xnuplast\\relax
+        \\ifnum\\@tempcnta<\\@tempcntb
+          \\AM@getfirst{\\AM@lastndocs}%
+          \\edef\\AM@firstdocitem{\\the\\toks@}%
+          \\AM@getfirst{\\AM@lastnpages}%
+          \\edef\\AM@resortedpagelist{\\AM@resortedpagelist,\\the\\toks@}%
+          \\edef\\AM@resorteddoclist{%
+            \\AM@resorteddoclist,\\AM@firstdocitem}%
+        \\else
+          \\edef\\AM@resortedpagelist{\\AM@resortedpagelist,}%
+          \\edef\\AM@resorteddoclist{\\AM@resorteddoclist,\\AM@phantomdoc}%
+        \\fi
+    \\else
+      \\ifnum\\@tempcnta<\\@tempcntb
+        \\AM@getfirst{\\AM@lastndocs}%
+        \\edef\\AM@firstdocitem{\\the\\toks@}%
+        \\AM@getfirst{\\AM@lastnpages}%
+        \\edef\\AM@resortedpagelist{\\AM@resortedpagelist,\\the\\toks@}%
+        \\edef\\AM@resorteddoclist{\\AM@resorteddoclist,\\AM@firstdocitem}%
+      \\else
+        \\edef\\AM@resortedpagelist{\\AM@resortedpagelist,}%
+        \\edef\\AM@resorteddoclist{\\AM@resorteddoclist,\\AM@phantomdoc}%
+      \\fi
+    \\fi
+    \\@tempcnta=\\AM@ynupi\\relax
+    \\advance\\@tempcnta\\@ne
+    \\edef\\AM@ynupi{\\the\\@tempcnta}%
+    \\@tempcntb=\\AM@ynup\\relax
+    \\ifnum\\@tempcnta>\\@tempcntb
+      \\@tempcntb=\\AM@xnupi\\relax
+      \\advance\\@tempcntb\\@ne
+      \\edef\\AM@xnupi{\\the\\@tempcntb}%
+      \\def\\AM@ynupi{\\@ne}%
+      \\@tempcnta=\\AM@xnup\\relax
+      \\ifnum\\@tempcntb>\\@tempcnta
+        \\setboolean{AM@resort@end}{true}%
+      \\fi
+    \\fi
+  }%
+  \\edef\\AM@resortedpagelist{\\expandafter\\@gobble\\AM@resortedpagelist}%
+  \\edef\\AM@resorteddoclist{\\expandafter\\@gobble\\AM@resorteddoclist}%
+}
+\\newif\\ifAM@pdfpages@options
+\\newcommand{\\AM@split@options}{}
+\\def\\AM@split@options#1#2{%
+  \\def\\AM@param{#1}%
+  \\def\\AM@scale@factor{1}%
+  \\@temptokena{}%
+  \\AM@split@optionsi#2,\\END,
+}
+\\def\\AM@split@optionsi#1,{%
+  \\ifx\\END#1
+  \\else
+    \\AM@pdfpages@optionsfalse \\AM@scalefalse
+    \\AM@split@optionsii#1=\\END
+    \\ifthenelse{\\equal{\\AM@param}{pdfpages}}
+      {\\ifAM@pdfpages@options
+          \\@temptokena\\expandafter{\\the\\@temptokena,#1}%
+       \\fi}{}%
+    \\ifthenelse{\\equal{\\AM@param}{Gin}}
+      {\\ifAM@pdfpages@options\\else
+         \\@temptokena\\expandafter{\\the\\@temptokena,#1}%
+       \\fi}{}%
+    \\ifthenelse{\\equal{\\AM@param}{Gin@noscale}}
+      {\\ifAM@pdfpages@options\\else
+         \\ifAM@scale\\else
+           \\@temptokena\\expandafter{\\the\\@temptokena,#1}%
+         \\fi
+       \\fi}{}%
+    \\expandafter\\AM@split@optionsi
+  \\fi
+}
+\\newcommand{\\AM@split@optionsii}{}
+\\def\\AM@split@optionsii#1=#2\\END{%
+  \\edef\\AM@temp{\\AM@trim@space{#1}}%
+  \\ifthenelse{\\equal{page}{\\AM@temp}\\or
+              \\equal{pages}{\\AM@temp}\\or
+              \\equal{nup}{\\AM@temp}\\or
+              \\equal{deltax}{\\AM@temp}\\or
+              \\equal{deltay}{\\AM@temp}\\or
+              \\equal{delta}{\\AM@temp}\\or
+              \\equal{offset}{\\AM@temp}\\or
+              \\equal{frame}{\\AM@temp}\\or
+              \\equal{openright}{\\AM@temp}\\or
+              \\equal{openrighteach}{\\AM@temp}\\or
+              \\equal{pagecommand}{\\AM@temp}\\or
+              \\equal{pagecommand*}{\\AM@temp}\\or
+              \\equal{landscape}{\\AM@temp}\\or
+              \\equal{turn}{\\AM@temp}\\or
+              \\equal{column}{\\AM@temp}\\or
+              \\equal{columnstrict}{\\AM@temp}\\or
+              \\equal{noautoscale}{\\AM@temp}\\or
+              \\equal{thread}{\\AM@temp}\\or
+              \\equal{threadname}{\\AM@temp}\\or
+              \\equal{link}{\\AM@temp}\\or
+              \\equal{linkfit}{\\AM@temp}\\or
+              \\equal{linkname}{\\AM@temp}\\or
+              \\equal{linktodoc}{\\AM@temp}\\or
+              \\equal{linktodocfit}{\\AM@temp}\\or
+              \\equal{linkfilename}{\\AM@temp}\\or
+              \\equal{survey}{\\AM@temp}\\or
+              \\equal{survey-nolink}{\\AM@temp}\\or
+              \\equal{output}{\\AM@temp}\\or
+              \\equal{xr-prefix}{\\AM@temp}\\or
+              \\equal{fitpaper}{\\AM@temp}\\or
+              \\equal{addtotoc}{\\AM@temp}\\or
+              \\equal{addtolist}{\\AM@temp}\\or
+              \\equal{doublepages}{\\AM@temp}\\or
+              \\equal{doublepagestwist}{\\AM@temp}\\or
+              \\equal{doublepagestwistodd}{\\AM@temp}\\or
+              \\equal{doublepagestwist*}{\\AM@temp}\\or
+              \\equal{doublepagestwistodd*}{\\AM@temp}\\or
+              \\equal{duplicatepages}{\\AM@temp}\\or
+              \\equal{signature}{\\AM@temp}\\or
+              \\equal{signature*}{\\AM@temp}\\or
+              \\equal{booklet}{\\AM@temp}\\or
+              \\equal{booklet*}{\\AM@temp}\\or
+              \\equal{flip-other-edge}{\\AM@temp}\\or
+              \\equal{pagetemplate}{\\AM@temp}\\or
+              \\equal{templatesize}{\\AM@temp}\\or
+              \\equal{rotateoversize}{\\AM@temp}\\or
+              \\equal{picturecommand}{\\AM@temp}\\or
+              \\equal{picturecommand*}{\\AM@temp}\\or
+              \\equal{newwindow}{\\AM@temp}\\or
+              \\equal{reflect}{\\AM@temp}\\or
+              \\equal{reflect*}{\\AM@temp}\\or
+              \\equal{lastpage}{\\AM@temp}}
+             {\\AM@pdfpages@optionstrue}{}%
+  \\ifthenelse{\\equal{scale}{\\AM@temp}}{%
+    \\AM@scaletrue
+    \\def\\AM@ooo##1={##1}%
+    \\setlength{\\@tempdima}{\\p@ * \\AM@scale@factor * \\real{\\AM@ooo#2}}%
+    \\edef\\AM@scale@factor{\\strip@pt\\@tempdima}%
+  }{}%
+}
+\\newcommand{\\AM@trim@space}{}\\newcommand{\\AM@trim@spacei}{}
+\\newcommand{\\AM@trim@spaceii}{}
+\\def\\AM@trim@space#1{%
+  \\expandafter\\AM@trim@spacei\\expandafter{\\ifdim\\z@=0pt#1}\\fi}
+\\def\\AM@trim@spacei#1{\\AM@trim@spaceii#1 \\END}
+\\def\\AM@trim@spaceii#1 #2\\END{#1}
+\\DeclareRobustCommand{\\AM@trim@leadingspace}[1]{\\ifdim\\z@=0pt#1\\fi}
+\\newif\\ifAM@phantompage
+\\newcommand*{\\AM@isphantom}{%
+  \\expandafter\\ifx\\expandafter\\\\\\AM@nextpage\\\\%
+    \\let\\AM@nextpage\\AM@phantompage
+    \\let\\AM@ph\\phantom
+    \\AM@phantompagetrue
+  \\else
+    \\let\\AM@ph\\relax
+    \\AM@phantompagefalse
+  \\fi
+}
+\\newcommand{\\AM@hyper@begin@i}{%
+  \\ifAM@link \\AM@dest@special\\fi
+}
+\\newcommand{\\AM@hyper@begin@ii}{%
+  \\ifAM@survey \\ifAM@surveynolink\\else
+    \\AM@survey@special@begin
+  \\fi\\fi
+  \\ifAM@linktodoc\\AM@linktodoc@special@begin\\fi
+  \\ifAM@thread\\AM@thread@special@begin\\fi
+}
+\\newcommand{\\AM@hyper@end}{%
+  \\ifAM@survey \\ifAM@surveynolink\\else
+    \\AM@survey@special@end
+  \\fi \\fi
+  \\ifAM@linktodoc\\AM@linktodoc@special@end\\fi
+  \\ifAM@thread\\AM@thread@special@end\\fi
+}
+\\newcommand{\\AM@openright}{}
+\\def\\AM@openright{%
+  \\edef\\AM@pagelist{,\\AM@pagelist}%
+  \\edef\\AM@doclist{\\AM@phantomdoc,\\AM@doclist}%
+}
+\\newcommand{\\AM@countpagelist}{}
+\\def\\AM@countpagelist{%
+  \\@tempcnta=\\z@
+  \\expandafter\\AM@countpagelisti\\AM@pagelist,\\END,
+}
+\\newcommand{\\AM@countpagelisti}{}
+\\def\\AM@countpagelisti#1,{%
+  \\ifx\\END#1
+  \\else
+    \\advance\\@tempcnta\\@ne
+    \\expandafter\\AM@countpagelisti
+  \\fi
+}
+\\newcommand{\\AM@filluppagelist}{}
+\\def\\AM@filluppagelist{%
+  \\@tempcnta=\\AM@xnup\\relax
+  \\@tempcntb=\\AM@ynup\\relax
+  \\multiply\\@tempcnta\\@tempcntb
+  \\edef\\AM@nup{\\the\\@tempcnta}%
+  \\AM@countpagelist
+  \\@tempcntb=\\@tempcnta
+  \\divide\\@tempcntb\\AM@nup
+  \\multiply\\@tempcntb\\AM@nup
+  \\advance\\@tempcnta-\\@tempcntb
+  \\ifnum\\@tempcnta=\\z@
+    \\else
+      \\advance\\@tempcnta-\\AM@nup
+      \\multiply\\@tempcnta\\m@ne
+  \\fi
+  \\whiledo{\\@tempcnta > \\z@}{%
+    \\let\\saveAM@pagelist\\AM@pagelist
+    \\edef\\AM@pagelist{\\saveAM@pagelist,}%
+    \\advance\\@tempcnta\\m@ne
+    \\let\\saveAM@doclist\\AM@doclist
+    \\edef\\AM@doclist{\\saveAM@doclist,\\AM@phantomdoc}%
+  }%
+}
+\\newcommand{\\AM@prepare@signature}{}
+\\def\\AM@prepare@signature{%
+  \\def\\AM@newpagelist{}%
+  \\def\\AM@newdoclist{}%
+  \\ifAM@booklet
+    \\AM@countpagelist
+    \\@tempcntb=\\@tempcnta
+    \\divide\\@tempcnta by 4
+    \\multiply\\@tempcnta by 4
+    \\advance\\@tempcntb-\\@tempcnta
+    \\ifnum\\@tempcntb=0\\else \\advance\\@tempcnta by 4\\fi
+    \\edef\\AM@signature{\\the\\@tempcnta}%
+  \\fi
+  \\@tempcnta=\\AM@signature\\relax
+  \\divide\\@tempcnta by 4
+  \\multiply\\@tempcnta by 4
+  \\ifnum\\@tempcnta=0\\@tempcnta=4\\fi
+  \\edef\\AM@signature{\\the\\@tempcnta}%
+  \\AM@countpagelist
+  \\count@=\\@tempcnta
+  \\@tempcntb=\\AM@signature\\relax
+  \\divide\\count@\\@tempcntb
+  \\multiply\\count@\\@tempcntb
+  \\advance\\@tempcnta-\\count@
+  \\ifnum\\@tempcnta=0 \\@tempcntb=0
+  \\else\\advance\\@tempcntb-\\@tempcnta
+  \\fi
+  \\whiledo{\\@tempcntb>\\z@}{%
+    \\edef\\AM@pagelist{\\AM@pagelist,}%
+    \\edef\\AM@doclist{\\AM@doclist,\\AM@phantomdoc}%
+    \\advance\\@tempcntb\\m@ne
+  }%
+  \\def\\AM@sort{%
+    \\def\\AM@sigpagelist{}%
+    \\def\\AM@sigdoclist{}%
+    \\AM@split@firstn{\\AM@pagelist}{\\AM@signature}%
+    \\AM@split@firstn{\\AM@doclist}{\\AM@signature}%
+    \\def\\AM@first{%
+      \\AM@getfirst{\\AM@pagelist@firstn}%
+      \\edef\\AM@sigpagelist{\\AM@sigpagelist,\\the\\toks@}%
+      \\AM@getfirst{\\AM@doclist@firstn}%
+      \\edef\\AM@sigdoclist{\\AM@sigdoclist,\\the\\toks@}%
+    }%
+    \\def\\AM@last{%
+      \\AM@getfirst{\\AM@pagelist@lastn}%
+      \\edef\\AM@sigpagelist{\\AM@sigpagelist,\\the\\toks@}%
+      \\AM@getfirst{\\AM@doclist@lastn}%
+      \\edef\\AM@sigdoclist{\\AM@sigdoclist,\\the\\toks@}%
+    }%
+    \\@tempcnta=\\z@
+    \\@tempcntb=\\AM@signature\\relax
+    \\whiledo{\\@tempcnta<\\@tempcntb}{%
+      \\ifAM@landscape
+        \\ifAM@signaturestar
+          \\ifAM@swap@flip@edge
+            \\AM@last\\AM@first\\AM@last\\AM@first
+          \\else
+            \\AM@first\\AM@last\\AM@last\\AM@first
+          \\fi
+        \\else
+          \\ifAM@swap@flip@edge
+            \\AM@first\\AM@last\\AM@first\\AM@last
+          \\else
+            \\AM@last\\AM@first\\AM@first\\AM@last
+          \\fi
+        \\fi
+      \\else
+        \\ifAM@signaturestar
+          \\ifAM@swap@flip@edge
+            \\AM@last\\AM@first\\AM@last\\AM@first
+          \\else
+            \\AM@first\\AM@last\\AM@last\\AM@first
+          \\fi
+        \\else
+          \\ifAM@swap@flip@edge
+            \\AM@first\\AM@last\\AM@first\\AM@last
+          \\else
+            \\AM@last\\AM@first\\AM@first\\AM@last
+          \\fi
+        \\fi
+      \\fi
+      \\advance\\@tempcnta by 4
+    }%
+    \\edef\\AM@newpagelist{\\AM@newpagelist\\AM@sigpagelist}%
+    \\edef\\AM@newdoclist{\\AM@newdoclist\\AM@sigdoclist}%
+    \\ifx\\AM@pagelist\\@empty
+    \\else\\expandafter\\AM@sort
+    \\fi
+  }%
+  \\AM@sort
+  \\edef\\AM@pagelist{\\expandafter\\@gobble\\AM@newpagelist}%
+  \\edef\\AM@doclist{\\expandafter\\@gobble\\AM@newdoclist}%
+  \\AM@pagesize@boogie
+  \\ifnum\\AM@xnup=1\\relax
+    \\ifnum\\AM@ynup=1\\relax
+      \\ifdim\\AM@pagewidth<\\AM@pageheight
+        \\def\\AM@xnup{1}\\def\\AM@ynup{2}%
+      \\else
+        \\def\\AM@xnup{2}\\def\\AM@ynup{1}%
+      \\fi
+      \\PackageWarningNoLine{pdfpages}{%
+        Option \`nup' not set correctly. \\MessageBreak
+        I will continue with \`nup=\\AM@xnup x\\AM@ynup'. Please remember\\MessageBreak
+        to set \`nup' correctly when using \`\\ifAM@booklet booklet\\else signature\\fi'}
+    \\fi
+  \\fi
+}
+\\newcommand*{\\AM@setphantom}{%
+  \\@ifundefined{AM@pagetemplate}
+    {\\expandafter\\AM@setphantompage\\AM@pagelist,\\END,}
+    {\\edef\\AM@phantompage{\\AM@pagetemplate}}%
+  \\expandafter\\AM@setphantomdoc\\AM@doclist,\\END
+}
+\\newcommand{\\AM@setphantompage}{}
+\\def\\AM@setphantompage#1,{%
+  \\def\\AM@gobble##1\\END,{}%
+  \\ifx\\\\#1\\\\%
+    \\expandafter\\AM@setphantompage
+  \\else
+    \\def\\AM@phantompage{#1}%
+    \\expandafter\\AM@gobble
+  \\fi
+}
+\\newcommand{\\AM@setphantomdoc}{}
+\\def\\AM@setphantomdoc#1,#2\\END{\\edef\\AM@phantomdoc{#1}}
+\\newcommand{\\AM@addtotoc@hook}{\\relax}
+\\newcommand{\\AM@addtotoc}{}
+\\def\\AM@addtotoc{%
+  \\begingroup
+  \\def\\@seccntformat##1{}\\def\\@makechapterhead##1{}%
+  \\def\\@endpart{}\\def\\partname{}%
+  \\def\\autodot{}% KOMA classes
+  \\edef\\ch@pt@c{\\the\\AM@toc@title}% memoir classes
+  \\let\\AM@addcontentsline\\addcontentsline
+  \\def\\addcontentsline##1##2##3{%
+    \\AM@addcontentsline{##1}{##2}{##3}%
+    \\def\\thepart{}}%
+  \\AM@addtotoc@hook
+  \\edef\\AM@temp{{\\AM@toc@section}{\\AM@toc@level}%
+           {\\z@}{\\z@}{\\z@}{}[\\the\\AM@toc@title]{}}%
+  \\edef\\AM@tempi{\\leavevmode\\noexpand\\csname @\\AM@toc@section\\noexpand\\endcsname%
+                 [\\the\\AM@toc@title]{}}%
+  \\@ifundefined{@\\AM@toc@section}
+    {\\expandafter\\@sect\\AM@temp
+     \\hskip\\z@\\par\\vskip-\\parskip\\vskip-\\baselineskip\\hskip\\z@}
+    {\\AM@tempi}%
+  \\xdef\\@currentlabel{\\@currentlabel}%
+  \\label{\\AM@toc@label}%
+  \\endgroup
+}
+\\newcommand{\\AM@parse@toclist}{}
+\\def\\AM@parse@toclist{%
+  \\ifx\\AM@toclist\\empty \\def\\AM@toc@page{0}%
+  \\else \\expandafter\\AM@parse@toclisti\\AM@toclist\\END
+  \\fi
+}
+\\newtoks\\AM@toc@title
+\\newcommand{\\AM@parse@toclisti}{}
+\\def\\AM@parse@toclisti#1,#2,#3,#4,#5,#6\\END{%
+  \\edef\\AM@toc@page{\\AM@trim@space{#1}}%
+  \\edef\\AM@toc@section{\\AM@trim@space{#2}}%
+  \\edef\\AM@toc@level{\\AM@trim@space{#3}}%
+  \\AM@toc@title{\\ignorespaces #4}%
+  \\edef\\AM@toc@label{\\AM@trim@space{#5}}%
+  \\AM@checkinteger{\\AM@toc@page}%
+  \\ifAM@integer\\else
+    \\PackageError{pdfpages}
+         {Missing number.\\MessageBreak
+          Page number in option \`addtotoc' is not a number}
+         {See the pdfpages manual for explanation.}%
+   \\fi
+}
+\\newcommand{\\AM@rm@from@toclist}{}
+\\def\\AM@rm@from@toclist{%
+    \\expandafter\\AM@rm@from@toclisti\\AM@toclist\\END
+}
+\\newcommand{\\AM@rm@from@toclisti}{}
+\\def\\AM@rm@from@toclisti#1,#2,#3,#4,#5,#6\\END{%
+  \\def\\AM@toclist{#6}%
+}
+\\newcommand{\\AM@addtolist@hook}{\\relax}
+\\newcommand{\\AM@addtolist}{}
+\\def\\AM@addtolist{%
+  \\def\\@captype{\\AM@lof@list}%
+  \\long\\def\\@makecaption##1##2{}%
+  \\def\\@fs@capt##1##2{}% float.sty
+  \\edef\\@currentlabelname{\\the\\AM@lof@heading}% float.sty
+  \\AM@addtolist@hook
+  \\@ifundefined{hyper@@anchor}{%
+    \\expandafter\\caption\\expandafter{\\the\\AM@lof@heading}%
+  }{%
+    \\hyper@makecurrent{\\@captype}%
+    \\expandafter\\caption\\expandafter{\\the\\AM@lof@heading}%
+    \\hyper@@anchor{\\@currentHref}{\\relax}%
+    \\let\\Hy@float@currentHref\\@undefined
+  }%
+  \\label{\\AM@lof@label}%
+  \\vskip-\\baselineskip
+}
+\\newcommand{\\AM@parse@loflist}{}
+\\def\\AM@parse@loflist{%
+  \\ifx\\AM@loflist\\empty \\def\\AM@lof@page{0}%
+  \\else \\expandafter\\AM@parse@loflisti\\AM@loflist\\END
+  \\fi
+}
+\\newtoks\\AM@lof@heading
+\\newcommand{\\AM@parse@loflisti}{}
+\\def\\AM@parse@loflisti#1,#2,#3,#4,#5\\END{%
+  \\edef\\AM@lof@page{\\AM@trim@space{#1}}%
+  \\edef\\AM@lof@list{\\AM@trim@space{#2}}%
+  \\AM@lof@heading{#3}%
+  \\edef\\AM@lof@label{\\AM@trim@space{#4}}%
+  \\AM@checkinteger{\\AM@lof@page}%
+  \\ifAM@integer\\else
+    \\PackageError{pdfpages}
+         {Missing number.\\MessageBreak
+          Page number in option \`addtolist' is not a number}
+         {See the pdfpages manual for explanation.}%
+  \\fi
+}
+\\newcommand{\\AM@rm@fromloflist}{}
+\\def\\AM@rm@from@loflist{%
+    \\expandafter\\AM@rm@from@loflisti\\AM@loflist\\END
+}
+\\newcommand{\\AM@rm@from@loflisti}{}
+\\def\\AM@rm@from@loflisti#1,#2,#3,#4,#5\\END{%
+  \\def\\AM@loflist{#5}%
+}
+\\newcommand{\\AM@toclof}{}
+\\def\\AM@toclof#1{%
+  \\ifAM@phantompage
+  \\else
+    \\AM@parse@toclist
+    \\whiledo{#1=\\AM@toc@page}{%
+      \\ifx\\AM@toclist\\empty
+      \\else
+        \\AM@addtotoc
+        \\AM@rm@from@toclist
+        \\def\\AM@toc@page{0}%
+        \\AM@parse@toclist
+      \\fi
+    }%
+    \\AM@parse@loflist
+    \\whiledo{#1=\\AM@lof@page}{%
+      \\ifx\\AM@loflist\\empty
+      \\else
+        \\AM@addtolist
+        \\AM@rm@from@loflist
+        \\def\\AM@lof@page{0}%
+        \\AM@parse@loflist
+      \\fi
+    }%
+  \\fi
+}
+\\ifAM@pkg@survey
+  \\newcommand{\\AddToSurvey}{%
+      \\protected@write\\@auxout{\\let\\AM@abs@page\\relax}
+         {\\string\\newlabel{\\AM@xrprefix pdfpages@page\\the\\c@AM@survey}%
+            {{}{\\AM@abs@page}}}%
+      \\stepcounter{AM@survey}%
+  }%
+  \\let\\r@TotalPages\\undefined
+\\else
+  \\newcommand{\\AddToSurvey}{}
+\\fi
+\\newcounter{AM@survey}
+\\def\\AM@abs@page{\\the\\count1}
+\\newcommand{\\AM@pageref}{}
+\\newcommand{\\AM@@pageref}{}
+\\newcommand{\\AM@secondarg}{}
+\\def\\AM@pageref#1{\\expandafter\\AM@@pageref\\csname r@#1\\endcsname}
+\\def\\AM@@pageref#1{\\expandafter\\AM@secondarg#1\\@nil}
+\\def\\AM@secondarg#1#2#3\\@nil{#2}
+\\def\\AM@TeXpower@hook{%
+  \\ifAM@pkg@survey
+  \\@ifpackageloaded{texpower}{%
+    \\releasecounter{AM@survey}%
+    \\let\\AM@SetLabel\\relax
+    \\g@addto@macro\\do@insert@firstanchor@TP{%
+      \\AM@SetLabel\\AM@SetTarget}%
+    \\g@addto@macro\\dont@insert@firstanchor@TP{%
+      \\AM@SetLabel\\AM@SetTarget}%
+    \\let\\AM@setanchor\\relax
+    \\def\\AM@SetTarget{%
+      \\begingroup
+      \\advance\\count1\\m@ne
+      \\AM@anchor@special
+      \\endgroup
+    }%
+    \\let\\OrigAddToSurvey\\AddToSurvey
+    \\def\\AddToSurvey{%
+      \\ifthenelse{\\boolean{instepwise@TP}}
+        {\\ifthenelse{\\boolean{firstactivation}}{\\AM@AddLabel}{}}
+        {\\AM@AddLabel}%
+    }%
+    \\def\\AM@AddLabel{\\global\\let\\AM@SetLabel\\OrigAddToSurvey
+      \\AtShipout{\\AM@KillLabel}}%
+    \\def\\AM@KillLabel{\\global\\let\\AM@SetLabel\\relax}%
+  }{}%
+  \\fi
+}
+\\AtBeginDocument{\\AM@TeXpower@hook}
+\\def\\AM@CheckValue#1#2{%
+  \\ifx\\\\#2\\\\\\PackageError{pdfpages}
+             {Option \`#1' must have a non-empty value}{}%
+  \\fi
+}
+\\define@key{pdfpages}{page}{\\PackageWarningNoLine{pdfpages}{%
+    Option \`page' is unknow to \\string\\includepdf.\\MessageBreak
+    Did you mean \`pages'? (Note the \`s'!)\\MessageBreak
+    OK, I'll proceed as if it were \`pages'}%
+  \\AM@CheckValue{pages}{#1}%
+  \\def\\AM@pagestemp{#1}}
+\\define@key{pdfpages}{pages}{\\AM@CheckValue{pages}{#1}%
+                             \\edef\\AM@pagestemp{#1}}
+\\define@key{pdfpages}{nup}{\\expandafter\\AM@parse@nup\\expanded{#1}x\\END}
+\\define@key{pdfpages}{deltax}{\\expandafter\\AM@parse@deltax\\expanded{#1} \\\\}
+\\define@key{pdfpages}{deltay}{\\expandafter\\AM@parse@deltay\\expanded{#1} \\\\}
+\\define@key{pdfpages}{delta}{\\expandafter\\AM@parse@delta\\expanded{#1} \\\\}
+\\define@key{pdfpages}{offset}{\\expandafter\\AM@parse@offset\\expanded{#1} \\\\}
+\\define@key{pdfpages}{frame}[true]{\\setboolean{AM@frame}{#1}}
+\\define@key{pdfpages}{openright}[true]{\\setboolean{AM@openright}{#1}}
+\\define@key{pdfpages}{openrighteach}[true]{\\setboolean{AM@openrighteach}{#1}}
+\\define@key{pdfpages}{pagecommand}{\\def\\AM@pagecommand{#1}}
+\\define@key{pdfpages}{pagecommand*}{\\def\\AM@pagecommandstar{#1}}
+\\define@key{pdfpages}{landscape}[true]{\\setboolean{AM@landscape}{#1}}
+\\define@key{pdfpages}{turn}[true]{\\setboolean{AM@turn}{#1}}
+\\define@key{pdfpages}{column}[true]{\\setboolean{AM@column}{#1}}
+\\define@key{pdfpages}{columnstrict}[true]%
+                     {\\setboolean{AM@columnstrict}{#1}}
+\\define@key{pdfpages}{noautoscale}[true]%
+                     {\\setboolean{AM@noautoscale}{#1}}
+\\define@key{pdfpages}{thread}[true]{\\setboolean{AM@thread}{#1}}
+\\define@key{pdfpages}{threadname}{\\edef\\AM@threadname{#1}}
+\\define@key{pdfpages}{link}[true]{\\setboolean{AM@link}{#1}}
+\\define@key{pdfpages}{linkfit}{\\expandafter\\AM@convert@dest\\expanded{{#1}}}
+\\define@key{pdfpages}{linkname}{\\edef\\AM@linkname@option{#1}}
+\\define@key{pdfpages}{linktodoc}[true]{\\setboolean{AM@linktodoc}{#1}}
+\\define@key{pdfpages}{linktodocfit}{\\edef\\AM@linktodocfit{#1}}
+\\define@key{pdfpages}{linkfilename}{\\pdfstringdef\\AM@linkfilename{#1}%
+                               \\AM@linkfilenametrue}
+\\define@key{pdfpages}{survey}[true]{%
+                      \\ifAM@pkg@survey\\setboolean{AM@survey}{#1}%
+                      \\else\\AM@outputfalse\\fi}
+\\define@key{pdfpages}{survey-nolink}[true]{%
+                      \\ifAM@pkg@survey\\setboolean{AM@surveynolink}{#1}%
+                                      \\setboolean{AM@survey}{#1}
+                      \\else\\AM@outputfalse\\fi}
+\\define@key{pdfpages}{xr-prefix}{\\edef\\AM@xrprefix{#1}}
+\\define@key{pdfpages}{fitpaper}[true]{\\setboolean{AM@fitpaper}{#1}}
+\\define@key{pdfpages}{addtotoc}{\\protected@edef\\AM@toclist{#1,}}
+\\define@key{pdfpages}{addtolist}{\\protected@edef\\AM@loflist{#1,}}
+\\define@key{pdfpages}{doublepages}[true]%
+                     {\\setboolean{AM@doublepages}{#1}}
+\\define@key{pdfpages}{doublepagestwist}[true]%
+                     {\\setboolean{AM@doublepages}{#1}%
+                      \\setboolean{AM@doublepagestwist}{#1}%
+                      \\AM@doublepagestmptrue\\AM@doublepagestmpitrue}
+\\define@key{pdfpages}{doublepagestwistodd}[true]%
+                     {\\setboolean{AM@doublepages}{#1}%
+                      \\setboolean{AM@doublepagestwist}{#1}%
+                      \\AM@doublepagestmpfalse\\AM@doublepagestmpitrue}
+\\define@key{pdfpages}{doublepagestwist*}[true]%
+                     {\\setboolean{AM@doublepages}{#1}%
+                      \\setboolean{AM@doublepagestwist}{#1}%
+                      \\AM@doublepagestmptrue\\AM@doublepagestmpitrue
+                      \\AM@doublepagestwistxtrue}
+\\define@key{pdfpages}{doublepagestwistodd*}[true]%
+                     {\\setboolean{AM@doublepages}{#1}%
+                      \\setboolean{AM@doublepagestwist}{#1}%
+                      \\AM@doublepagestmpfalse\\AM@doublepagestmpitrue
+                      \\AM@doublepagestwistxtrue}
+\\define@key{pdfpages}{duplicatepages}[2]%
+                     {\\edef\\AM@nduplicatepages{#1}%
+                      \\AM@duplicatepagestrue}
+\\define@key{pdfpages}{signature}{\\edef\\AM@signature{#1}}
+\\define@key{pdfpages}{signature*}{\\edef\\AM@signature{#1}%
+                                  \\AM@signaturestartrue}
+\\define@key{pdfpages}{booklet}[true]{
+  \\setboolean{AM@booklet}{#1}%
+  \\ifAM@booklet
+    \\def\\AM@signature{non-empty}
+  \\fi}
+\\define@key{pdfpages}{booklet*}[true]{
+  \\ifstrequal{#1}{true}{%
+      \\setboolean{AM@booklet}{#1}
+      \\ifAM@booklet
+        \\def\\AM@signature{non-empty}
+        \\AM@signaturestartrue
+      \\fi}}
+\\define@key{pdfpages}{flip-other-edge}[true]{\\setboolean{AM@swap@flip@edge}{#1}}
+\\define@key{pdfpages}{pagetemplate}{\\AM@CheckValue{pagetemplate}{#1}%
+                                    \\def\\AM@pagetemplate{#1}}
+\\define@key{pdfpages}{templatesize}{\\expandafter\\AM@parse@templatesize\\expanded{#1}\\END}
+\\define@key{pdfpages}{rotateoversize}[true]%
+                     {\\setboolean{AM@rotateoversize}{#1}}
+\\define@key{pdfpages}{picturecommand}{\\def\\AM@picturecommand{#1}}
+\\define@key{pdfpages}{picturecommand*}{\\def\\AM@picturecommandstar{#1}}
+\\define@key{pdfpages}{newwindow}[true]{\\setboolean{AM@newwindow}{#1}}
+\\define@key{pdfpages}{reflect*}[true]{\\setboolean{AM@reflect}{#1}}
+\\define@key{pdfpages}{reflect}[true]{\\setboolean{AM@reflectall}{#1}}
+\\define@key{pdfpages}{lastpage}{\\edef\\AM@pagecount{#1}}
+\\newcommand{\\AM@parse@nup}{}
+\\def\\AM@parse@nup#1x#2\\END{%
+  \\ifx\\\\#2\\\\%
+    \\def\\AM@shortnupsyntax{}%
+    \\def\\AM@xnup{\\@ne}%
+    \\def\\AM@ynup{\\@ne}%
+    \\ifnum#1=\\tw@
+      \\def\\AM@xnup{\\tw@}%
+      \\def\\AM@ynup{\\@ne}%
+    \\fi
+    \\ifnum#1=4
+      \\def\\AM@xnup{\\tw@}%
+      \\def\\AM@ynup{\\tw@}%
+    \\fi
+  \\else
+    \\def\\AM@xnup{#1}%
+    \\AM@parse@nupi#2%
+  \\fi
+}
+\\def\\AM@parse@nupi#1x{\\def\\AM@ynup{#1}}
+\\newcommand{\\AM@parse@templatesize}{}
+\\def\\AM@parse@templatesize#1#2\\END{%
+  \\setbox\\AM@templatesizebox=\\hbox{\\rule{#1}{#2}}%
+  \\AM@templatesizetrue
+}
+\\newbox\\AM@templatesizebox
+\\newif\\ifAM@templatesize\\AM@templatesizefalse
+\\def\\AM@parse@deltax#1 #2\\\\{\\AMGin@defaultbp\\AM@deltax{#1}}
+\\def\\AM@parse@deltay#1 #2\\\\{\\AMGin@defaultbp\\AM@deltay{#1}}
+\\def\\AM@parse@delta#1 #2 #3\\\\{%
+  \\AMGin@defaultbp\\AM@deltax{#1}%
+  \\AMGin@defaultbp\\AM@deltay{#2}}
+\\def\\AM@parse@offset#1 #2 #3\\\\{%
+  \\AMGin@defaultbp\\AM@xoffset{#1}%
+  \\AMGin@defaultbp\\AM@yoffset{#2}}
+\\def\\AMGin@defaultbp#1#2{%
+  \\afterassignment\\AMGin@def@bp\\dimen@#2bp\\relax{#1}{#2}}
+\\def\\AMGin@def@bp#1\\relax#2#3{%
+   \\if!#1!%
+     \\def#2{#3bp}%
+    \\else
+      \\dimen@.99626\\dimen@
+      \\edef#2{\\strip@pt\\dimen@ bp}%
+    \\fi
+  }
+\\def\\AM@thousand#1{\\AM@thousand@i#1.0000.\\END}
+\\def\\AM@thousand@i#1.#2.#3\\END{\\AM@thousand@ii#1.#2#3\\END}
+\\def\\AM@thousand@ii#1.#2#3#4#5#6\\END{#1#2#3#4}
+\\InputIfFileExists{pdfpages.fix}{%
+  \\PackageInfo{pdfpages}{Loading patch file \`pdfpages.fix'}}{}
+\\endinput
+%%
+%% End of file \`pdfpages.sty'.
+` },
   { format: 27, filename: 'pdftexcmds.sty', content: `
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- ViewVC :: http://www.viewvc.org/ -->
+<head>
+<title>ViewVC Error</title>
+</head>
+<body>
+<h3>An Error Has Occurred</h3>
+
+ <p>Unknown location: /trunk/Master/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty</p>
+
+
+ <h4>HTTP Response Status</h4>
+ <p><pre>404 Not Found</pre></p>
+ <hr />
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</body>
+</html>
+` },
+  { format: 26, filename: 'pdftexcmds.sty', content: `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -23625,6 +45459,411 @@ end
 %%
 %% End of file \`refcount.sty'.
 ` },
+  { format: 26, filename: 'refcount.sty', content: `
+%%
+%% This is file \`refcount.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% refcount.dtx  (with options: \`package')
+%% 
+%% This is a generated file.
+%% 
+%% Project: refcount
+%% Version: 2019/12/15 v3.6
+%% 
+%% Copyright (C)
+%%    1998, 2000, 2006, 2008, 2010, 2011 Heiko Oberdiek
+%%    2016-2019 Oberdiek Package Support Group
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either
+%% version 1.3c of this license or (at your option) any later
+%% version. This version of this license is in
+%%    https://www.latex-project.org/lppl/lppl-1-3c.txt
+%% and the latest version of this license is in
+%%    https://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of
+%% LaTeX version 2005/12/01 or later.
+%% 
+%% This work has the LPPL maintenance status "maintained".
+%% 
+%% The Current Maintainers of this work are
+%% Heiko Oberdiek and the Oberdiek Package Support Group
+%% https://github.com/ho-tex/refcount/issues
+%% 
+%% 
+%% This work consists of the main source file refcount.dtx
+%% and the derived files
+%%    refcount.sty, refcount.pdf, refcount.ins, refcount.drv,
+%%    refcount-test1.tex, refcount-test2.tex, refcount-test3.tex,
+%%    refcount-test4.tex, refcount-test5.tex.
+%% 
+\\begingroup\\catcode61\\catcode48\\catcode32=10\\relax%
+  \\catcode13=5 % ^^M
+  \\endlinechar=13 %
+  \\catcode35=6 % #
+  \\catcode39=12 % '
+  \\catcode44=12 % ,
+  \\catcode45=12 % -
+  \\catcode46=12 % .
+  \\catcode58=12 % :
+  \\catcode64=11 % @
+  \\catcode123=1 % {
+  \\catcode125=2 % }
+  \\expandafter\\let\\expandafter\\x\\csname ver@refcount.sty\\endcsname
+  \\ifx\\x\\relax % plain-TeX, first loading
+  \\else
+    \\def\\empty{}%
+    \\ifx\\x\\empty % LaTeX, first loading,
+      % variable is initialized, but \\ProvidesPackage not yet seen
+    \\else
+      \\expandafter\\ifx\\csname PackageInfo\\endcsname\\relax
+        \\def\\x#1#2{%
+          \\immediate\\write-1{Package #1 Info: #2.}%
+        }%
+      \\else
+        \\def\\x#1#2{\\PackageInfo{#1}{#2, stopped}}%
+      \\fi
+      \\x{refcount}{The package is already loaded}%
+      \\aftergroup\\endinput
+    \\fi
+  \\fi
+\\endgroup%
+\\begingroup\\catcode61\\catcode48\\catcode32=10\\relax%
+  \\catcode13=5 % ^^M
+  \\endlinechar=13 %
+  \\catcode35=6 % #
+  \\catcode39=12 % '
+  \\catcode40=12 % (
+  \\catcode41=12 % )
+  \\catcode44=12 % ,
+  \\catcode45=12 % -
+  \\catcode46=12 % .
+  \\catcode47=12 % /
+  \\catcode58=12 % :
+  \\catcode64=11 % @
+  \\catcode91=12 % [
+  \\catcode93=12 % ]
+  \\catcode123=1 % {
+  \\catcode125=2 % }
+  \\expandafter\\ifx\\csname ProvidesPackage\\endcsname\\relax
+    \\def\\x#1#2#3[#4]{\\endgroup
+      \\immediate\\write-1{Package: #3 #4}%
+      \\xdef#1{#4}%
+    }%
+  \\else
+    \\def\\x#1#2[#3]{\\endgroup
+      #2[{#3}]%
+      \\ifx#1\\@undefined
+        \\xdef#1{#3}%
+      \\fi
+      \\ifx#1\\relax
+        \\xdef#1{#3}%
+      \\fi
+    }%
+  \\fi
+\\expandafter\\x\\csname ver@refcount.sty\\endcsname
+\\ProvidesPackage{refcount}%
+  [2019/12/15 v3.6 Data extraction from label references (HO)]%
+\\begingroup\\catcode61\\catcode48\\catcode32=10\\relax%
+  \\catcode13=5 % ^^M
+  \\endlinechar=13 %
+  \\catcode123=1 % {
+  \\catcode125=2 % }
+  \\catcode64=11 % @
+  \\def\\x{\\endgroup
+    \\expandafter\\edef\\csname rc@AtEnd\\endcsname{%
+      \\endlinechar=\\the\\endlinechar\\relax
+      \\catcode13=\\the\\catcode13\\relax
+      \\catcode32=\\the\\catcode32\\relax
+      \\catcode35=\\the\\catcode35\\relax
+      \\catcode61=\\the\\catcode61\\relax
+      \\catcode64=\\the\\catcode64\\relax
+      \\catcode123=\\the\\catcode123\\relax
+      \\catcode125=\\the\\catcode125\\relax
+    }%
+  }%
+\\x\\catcode61\\catcode48\\catcode32=10\\relax%
+\\catcode13=5 % ^^M
+\\endlinechar=13 %
+\\catcode35=6 % #
+\\catcode64=11 % @
+\\catcode123=1 % {
+\\catcode125=2 % }
+\\def\\TMP@EnsureCode#1#2{%
+  \\edef\\rc@AtEnd{%
+    \\rc@AtEnd
+    \\catcode#1=\\the\\catcode#1\\relax
+  }%
+  \\catcode#1=#2\\relax
+}
+\\TMP@EnsureCode{33}{12}% !
+\\TMP@EnsureCode{39}{12}% '
+\\TMP@EnsureCode{42}{12}% *
+\\TMP@EnsureCode{45}{12}% -
+\\TMP@EnsureCode{46}{12}% .
+\\TMP@EnsureCode{47}{12}% /
+\\TMP@EnsureCode{91}{12}% [
+\\TMP@EnsureCode{93}{12}% ]
+\\TMP@EnsureCode{96}{12}% \`
+\\edef\\rc@AtEnd{\\rc@AtEnd\\noexpand\\endinput}
+\\begingroup\\expandafter\\expandafter\\expandafter\\endgroup
+\\expandafter\\ifx\\csname RequirePackage\\endcsname\\relax
+  \\input ltxcmds.sty\\relax
+  \\input infwarerr.sty\\relax
+\\else
+  \\RequirePackage{ltxcmds}[2011/11/09]%
+  \\RequirePackage{infwarerr}[2010/04/08]%
+\\fi
+\\ltx@IfUndefined{@ifdefinable}{%
+  \\def\\rc@IfDefinable#1{%
+    \\ifx#1\\ltx@undefined
+      \\expandafter\\ltx@firstofone
+    \\else
+      \\ifx#1\\relax
+        \\expandafter\\expandafter\\expandafter\\ltx@firstofone
+      \\else
+        \\@PackageError{refcount}{%
+          Command \\string#1 is already defined.\\MessageBreak
+          It will not redefined by this package%
+        }\\@ehc
+        \\expandafter\\expandafter\\expandafter\\ltx@gobble
+      \\fi
+    \\fi
+  }%
+}{%
+  \\let\\rc@IfDefinable\\@ifdefinable
+}
+\\ltx@IfUndefined{protected}{%
+  \\ltx@IfUndefined{DeclareRobustCommand}{%
+    \\def\\rc@RobustDefOne#1#2#3#4{%
+      \\rc@IfDefinable#3{%
+        #1\\def#3##1{#4}%
+      }%
+    }%
+    \\def\\rc@RobustDefZero#1#2{%
+      \\rc@IfDefinable#1{%
+        \\def#1{#2}%
+      }%
+    }%
+  }{%
+    \\def\\rc@RobustDefOne#1#2#3#4{%
+      \\rc@IfDefinable#3{%
+        \\DeclareRobustCommand#2#3[1]{#4}%
+      }%
+    }%
+    \\def\\rc@RobustDefZero#1#2{%
+      \\rc@IfDefinable#1{%
+        \\DeclareRobustCommand#1{#2}%
+      }%
+    }%
+  }%
+}{%
+  \\def\\rc@RobustDefOne#1#2#3#4{%
+    \\rc@IfDefinable#3{%
+      \\protected#1\\def#3##1{#4}%
+    }%
+  }%
+  \\def\\rc@RobustDefZero#1#2{%
+    \\rc@IfDefinable#1{%
+      \\protected\\def#1{#2}%
+    }%
+  }%
+}
+\\ltx@IfUndefined{newcommand}{%
+  \\def\\rc@newcommand*#1[#2]#3{% hash-ok
+    \\rc@IfDefinable#1{%
+      \\ifcase#2 %
+        \\def#1{#3}%
+      \\or
+        \\def#1##1{#3}%
+      \\or
+        \\def#1##1##2{#3}%
+      \\else
+        \\rc@InternalError
+      \\fi
+    }%
+  }%
+}{%
+  \\let\\rc@newcommand\\newcommand
+}
+\\rc@RobustDefOne\\long{}\\setrefcountdefault{%
+  \\def\\rc@default{#1}%
+}
+\\setrefcountdefault{0}
+\\ltx@IfUndefined{G@refundefinedtrue}{%
+  \\rc@RobustDefOne{}{*}\\refused{%
+    \\begingroup
+      \\csname @safe@activestrue\\endcsname
+      \\ltx@IfUndefined{r@#1}{%
+        \\protect\\G@refundefinedtrue
+        \\rc@WarningUndefined{#1}%
+      }{}%
+    \\endgroup
+  }%
+}{%
+  \\rc@RobustDefOne{}{*}\\refused{%
+    \\begingroup
+      \\csname @safe@activestrue\\endcsname
+      \\ltx@IfUndefined{r@#1}{%
+        \\csname protect\\expandafter\\endcsname
+        \\csname G@refundefinedtrue\\endcsname
+        \\rc@WarningUndefined{#1}%
+      }{}%
+    \\endgroup
+  }%
+}
+\\ltx@IfUndefined{@latex@warning}{%
+  \\def\\rc@WarningUndefined#1{%
+    \\ltx@ifundefined{thepage}{%
+      \\def\\thepage{\\number\\count0 }%
+    }{}%
+    \\@PackageWarning{refcount}{%
+      Reference \`#1' on page \\thepage\\space undefined%
+    }%
+  }%
+}{%
+  \\def\\rc@WarningUndefined#1{%
+    \\@latex@warning{%
+      Reference \`#1' on page \\thepage\\space undefined%
+    }%
+  }%
+}
+\\def\\rc@set#1#2#3#4{%
+  \\begingroup
+    \\csname @safe@activestrue\\endcsname
+    \\refused{#4}%
+    \\expandafter\\rc@@set\\csname r@#4\\endcsname{#1}{#2}{#3}%
+  \\endgroup
+}
+\\def\\rc@@set#1#2#3#4{%
+  \\ifx#1\\relax
+    #2{#4}{\\rc@default}%
+  \\else
+    #2{#4}{%
+      \\expandafter#3#1\\rc@default\\rc@default\\@nil
+    }%
+  \\fi
+}
+\\rc@RobustDefZero\\setcounterref{%
+  \\rc@set\\setcounter\\ltx@car
+}
+\\rc@RobustDefZero\\addtocounterref{%
+  \\rc@set\\addtocounter\\ltx@car
+}
+\\rc@RobustDefZero\\setcounterpageref{%
+  \\rc@set\\setcounter\\ltx@carsecond
+}
+\\rc@RobustDefZero\\addtocounterpageref{%
+  \\rc@set\\addtocounter\\ltx@carsecond
+}
+\\rc@newcommand*{\\getrefnumber}[1]{%
+  \\romannumeral
+  \\ltx@ifundefined{r@#1}{%
+    \\expandafter\\ltx@zero
+    \\rc@default
+  }{%
+    \\expandafter\\expandafter\\expandafter\\rc@extract@
+    \\expandafter\\expandafter\\expandafter!%
+    \\csname r@#1\\expandafter\\endcsname
+    \\expandafter{\\rc@default}\\@nil
+  }%
+}
+\\rc@newcommand*{\\getpagerefnumber}[1]{%
+  \\romannumeral
+  \\ltx@ifundefined{r@#1}{%
+    \\expandafter\\ltx@zero
+    \\rc@default
+  }{%
+    \\expandafter\\expandafter\\expandafter\\rc@extract@page
+    \\expandafter\\expandafter\\expandafter!%
+    \\csname r@#1\\expandafter\\expandafter\\expandafter\\endcsname
+    \\expandafter\\expandafter\\expandafter{%
+      \\expandafter\\rc@default
+    \\expandafter}\\expandafter{\\rc@default}\\@nil
+  }%
+}
+\\rc@newcommand*{\\getrefbykeydefault}[2]{%
+  \\romannumeral
+  \\expandafter\\rc@getrefbykeydefault
+    \\csname r@#1\\expandafter\\endcsname
+    \\csname rc@extract@#2\\endcsname
+}
+\\long\\def\\rc@getrefbykeydefault#1#2#3{%
+  \\ifx#1\\relax
+    % reference is undefined
+    \\ltx@ReturnAfterElseFi{%
+      \\ltx@zero
+      #3%
+    }%
+  \\else
+    \\ltx@ReturnAfterFi{%
+      \\ifx#2\\relax
+        % extract method is missing
+        \\ltx@ReturnAfterElseFi{%
+          \\ltx@zero
+          #3%
+        }%
+      \\else
+        \\ltx@ReturnAfterFi{%
+          \\expandafter
+          \\rc@generic#1{#3}{#3}{#3}{#3}{#3}\\@nil#2{#3}%
+        }%
+      \\fi
+    }%
+  \\fi
+}
+\\long\\def\\rc@generic#1#2\\@nil#3#4{%
+  #3{#1\\TR@TitleReference\\@empty{#4}\\@nil}{#1}#2\\@nil
+}
+\\long\\def\\rc@extract@#1#2#3\\@nil{%
+  \\ltx@zero
+  #2%
+}
+\\long\\def\\rc@extract@page#1#2#3#4\\@nil{%
+  \\ltx@zero
+  #3%
+}
+\\long\\def\\rc@extract@name#1#2#3#4#5\\@nil{%
+  \\ltx@zero
+  #4%
+}
+\\long\\def\\rc@extract@anchor#1#2#3#4#5#6\\@nil{%
+  \\ltx@zero
+  #5%
+}
+\\long\\def\\rc@extract@url#1#2#3#4#5#6#7\\@nil{%
+  \\ltx@zero
+  #6%
+}
+\\long\\def\\rc@extract@title#1#2\\@nil{%
+  \\rc@@extract@title#1%
+}
+\\long\\def\\rc@@extract@title#1\\TR@TitleReference#2#3#4\\@nil{%
+  \\ltx@zero
+  #3%
+}
+\\rc@newcommand*{\\IfRefUndefinedExpandable}[1]{%
+  \\ltx@ifundefined{r@#1}\\ltx@firstoftwo\\ltx@secondoftwo
+}
+\\rc@RobustDefOne{}*\\IfRefUndefinedBabel{%
+  \\begingroup
+    \\csname safe@actives@true\\endcsname
+  \\expandafter\\expandafter\\expandafter\\endgroup
+  \\expandafter\\ifx\\csname r@#1\\endcsname\\relax
+    \\expandafter\\ltx@firstoftwo
+  \\else
+    \\expandafter\\ltx@secondoftwo
+  \\fi
+}
+\\rc@AtEnd%
+%% \\section{Installation}
+\\endinput
+%%
+%% End of file \`refcount.sty'.
+` },
   { format: 27, filename: 'rerunfilecheck.sty', content: `
 
 		<!DOCTYPE html>
@@ -23638,7 +45877,597 @@ end
 		and try again.
 		<p><a href="https://tug.org">Return to the main site.</a>
 		` },
+  { format: 26, filename: 'rerunfilecheck.sty', content: `
+
+		<!DOCTYPE html>
+		<html lang="en">
+		<meta charset="UTF-8">
+		<title>Too Many Requests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+		<meta name="color-scheme" content="light dark">
+		<h1>Too Many Requests</h1>
+		<p>You can only make 10 requests per minute. Please wait a little bit
+		and try again.
+		<p><a href="https://tug.org">Return to the main site.</a>
+		` },
   { format: 27, filename: 'setspace.sty', content: `
+% \\iffalse meta-comment
+%
+% Copyright (C) 2022 by LaTeX Team 
+% Copyright (C) 2011 by Robin Fairbairns (rf10@cam.ac.uk)
+% Copyright (C) 2000 by Geoffrey Tobin
+%
+% ---------------------------------------------------------------------------
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status \`maintained'.
+%
+% The Current Maintainer of this work is Robin Fairbairns
+%
+% This work consists of the files setspace.sty and setspace-test.tex
+%
+% \\fi
+%
+%%% ======================================================================
+%%%  @LaTeX-style-file{
+%%%     filename        = "setspace.sty",
+%%%     version         = "6.7b",
+%%%     date            = "4 December 2022",
+%%%     supported       = "yes",
+%%%     archived        = "CTAN",
+%%%     keywords        = "LaTeX package, line spacing",
+%%%     codetable       = "ISO/ASCII",
+%%%     docstring       = "setspace.sty is a LaTeX (2e) package.
+%%%                        Comments and bug reports welcome!
+%%%                        
+%%%                        This includes GDG's modification to Erica Harris'
+%%%                        setspace.sty.  The main aspects of this
+%%%                        modification deal with the definitions of
+%%%                        \\singlespacing \\onehalfspacing, and
+%%%                        \\doublespacing, (these are near the beginning of
+%%%                        the file).  Primarily, these deal with adding
+%%%                        fontsize changes to guarantee that the new
+%%%                        baseline is properly defined and placed into
+%%%                        action.  The extra \\vskip in the definition of
+%%%                        \\singlespacing seems to  make for a cleaner
+%%%                        transition from multiple spacing back to single
+%%%                        spacing.  These did not appear warrranted for
+%%%                        other size changes.
+%%%
+%%%                        Modified by GDG on November 1, 1992, to allow
+%%%                        for use of New Font Selection Scheme.
+%%%
+%%%                        Modified by GDG on June 4, 1993, to correct
+%%%                        for spacing tokens in definition of \\@setsize
+%%%                        Thanks to Kaja P. Christiansen <kaja@daimi.aau.dk>
+%%%                        for the fix!!
+%%%
+%%%                        Modified by GDG on May 24, 1994, to change toggle
+%%%                        definition from \\selectfont to \\@newbaseline.
+%%%
+%%%                        Modified by GDG on May 25, 1994, to add
+%%%                        definition of \\everydisplay -- this part of
+%%%                        the code was apparently written by Geoffrey
+%%%                        Tobin on Thu 23 Jan 1992 and was provided by
+%%%                        stanton@haas.berkeley.edu (Richard Stanton). 
+%%%                        This should help with some of the awkward math
+%%%                        placements in changing spacings.
+%%%
+%%%                        Modified by GT on 23 Jan 1996, to correct
+%%%                        \\everymath bug, first reported by Mario
+%%%                        Wolczko <mario@cs.man.ac.uk> on 9 June 1992.
+%%%                        
+%%%                        Modified by GT on 23 Jan 1996, to correct
+%%%                        usage of comment characters in macro
+%%%                        definitions.
+%%%
+%%%                        Modified by GT on 23 Jan 1996, to update
+%%%                        (adjusted) \\@xfloat definition for LaTeX2e.
+%%%                        Bug report was courtesy of Kay Nettle.
+%%%
+%%%                        Modified by GT on 24 Jan 1996, to update
+%%%                        (adjusted) \\@footnotetext definition for
+%%%                        LaTeX2e, and to add an adjusted LaTeX2e
+%%%                        \\@mpfootnotext definition for minipages.
+%%%                        Bug report was courtesy Kay Nettle.
+%%%
+%%%                        Changed by GT on 6 Feb 1996, into a LaTeX2e
+%%%                        package.
+%%%
+%%%			   Made more package-like by GT on 14 Feb 1996,
+%%%			   by adding standard messages.
+%%%
+%%%			   GT replaced \\@normalsize by \\normalsize on 28
+%%%			   Sep 1996.  This change was successively
+%%%			   advised by:
+%%%
+%%%			     Rowland J.~Bartlett
+%%%			     <R.J.Bartlett@bolton.ac.uk>
+%%%			     on Tue 6 Aug 96,
+%%%
+%%%			     Ted Stern
+%%%			     <stern@amath.washington.edu>
+%%%			     on Wed 7 Aug 96,
+%%%
+%%%			     Michal Jaegermann
+%%%			     <michal@ellpspace.math.ualberta.ca>
+%%%			     on Fri 27 Sep 96.
+%%%
+%%%                        GT:  Sat 28 Sep 1996:  Added call to
+%%%                        \\setspace@size in \\setstretch, as suggested
+%%%                        by David Hull <hull@cs.uiuc.edu>
+%%%                        on Wed 24 July 1996.
+%%%
+%%%                        GT:  Sat 28 Sep 1996:  Pared \\setspace@size
+%%%                        mercilessly down to \\@currsize, following
+%%%                        advice given on Fri 27 Sep 1996 by Michal
+%%%                        Jaegermann <michal@ellpspace.math.ualberta.ca>.
+%%%                        Retained this macro for flexibility.
+%%%
+%%%			   Code rearranged by GT, Sat 28 Sep 1996, to give
+%%%			   greater prominence to \\setstretch.
+%%%
+%%%			   Also, GT changed (Sat 28 Sep 1996) many
+%%%			   occurrences of \\def to \\newcommand,
+%%%			   \\renewcommand, or \\newenvironment,
+%%%			   as seemed appropriate.
+%%%
+%%%                        GT, Tue 10 Dec 1996:  Following a suggestion
+%%%                        by Ted Stern, the \`single' spacing is now
+%%%                        settable by the user.  This is for slightly
+%%%                        large fonts such as Lucida Bright.
+%%%
+%%%                        GT, Wed 11 Dec 1996:  For simplicity and
+%%%                        maintainability, call \\onehalfspacing in
+%%%                        the onehalfspace environment, and
+%%%                        \\doublespacing in the doublespace
+%%%                        environment.
+%%%
+%%%                        GT, Wed 11 Dec 1996:  Also deleted
+%%%                        \\setspace@size from \\setstretch,
+%%%                        as \\@currsize suffices.
+%%%
+%%%                        Modified by Brett Presnell (BP)
+%%%                        <presnell@maths.anu.edu.au> on 21 Mar 1998
+%%%                        to add nodisplayskipstretch option, which
+%%%                        turns off the stretching of the space
+%%%                        before and after displays, which is often
+%%%                        excessive, particularly with doublespaced
+%%%                        documents.  Also added the
+%%%                        setdisplayskipstretch command, which allows
+%%%                        the user to choose by how much to stretch
+%%%                        the space before and after displays
+%%%                        independently from the setting of
+%%%                        baselinestretch.  This works regardless of
+%%%                        whether the nodisplayskipstretch option is
+%%%                        in effect.
+%%%
+%%%                        GT, Wed 15 Apr 1998:  Added the singlespace*
+%%%                        environment requested by
+%%%                        Mark Olesen <olesen@weber.me.queensu.ca>
+%%%                        on Sat 24 May 1997 and Wed 18 June 1997.
+%%%                        This is reported to give improved vertical
+%%%                        spacing around itemize and quote environments.
+%%%
+%%%                        GT, Wed 15 Apr 1998:  David Hull pointed out on
+%%%                        Fri 12 Dec 1997 that the \\belowdisplayskip line
+%%%                        in the \\everydisplay was mistyped.  Now fixed.
+%%%
+%%%                        GT, Thu 26 Nov 1998:  Finally got round to
+%%%                        fixing the absence of \\begingroup from
+%%%                        onehalfspace and doublespace environments.
+%%%                        Thanks to:  Bernd Schandl, Ron Smith,
+%%%                        Himanshu Gohel, and Kevin Ruland, for bringing
+%%%                        it to my long overdue attention.
+%%%
+%%%                        GT, Tue 27 July 1999:  On Saturday 24 July
+%%%                        1999, Alexander L. Wolf <alw@cs.colrado.edu>
+%%%                        informed me that the \\doublespace and
+%%%                        \\onehalfspace _macros_ are still at fault.
+%%%
+%%%                        GT, Fri 3 March 2000:  Today Stefano
+%%%                        Lacaprara of Italy brought my attention to
+%%%                        the need to extend the commands and macros
+%%%                        to point sizes other than 10, 11 and 12.
+%%%                        Since there's no general formula for the
+%%%                        line stretch values in terms of point size,
+%%%                        and they vary only slightly between 10, 11
+%%%                        and 12 pt, and furthermore the values were
+%%%                        presumably optimised specifically for the
+%%%                        Computer Modern fonts, i've chosen to use
+%%%                        the 10 pt values as the generic defaults.
+%%%
+%%%                        GT, Fri 1 December 2000:  George Pearson
+%%%                        requested package options for the three
+%%%                        common spacings.
+%%%
+%%%                        DPC Guard against \\@ptsize not being defined
+%%%                        https://github.com/rf-latex/setspace/issues/5
+%%%
+%%% }
+%%% ======================================================================
+%% FILE:   setspace.sty in SYS2.TEX.PUB.ISULATEX.STYLES
+%% AUTHOR: Erica M. S. Harris
+%% DATE:   April 1990
+%% MOD:    March 1991
+%%%
+%%% Update to LaTeX (2e) :  6 Feb 1996.
+%%% Description:  LaTeX Document Package "setspace"
+%%%
+%%% Usage:
+%%%                \\documentclass[...]{...}
+%%%                \\usepackage{setspace}
+%%%
+%%         Based on the doublespace option created by Stephen Page.
+%%
+%%         This style option provides commands and environments for doing
+%%         double and  one-and-a-half spacing based on pt size.
+%%
+%%         Single spacing is the default.
+%%
+%%         Three commands, \\singlespacing, \\onehalfspacing, and
+%%         \\doublespacing, are for use in the preamble to set the overall
+%%         spacing for the document.  If a different spacing is required then
+%%         the \\setstretch{baselinestretch} command can be used in the
+%%         preamble to set the baselinestretch appropriately.  The default
+%%         spacing with this style option is single spacing.
+%%
+%%         Three environments, singlespace, onehalfspace, and doublespace,
+%%         allow the spacing to be changed within the document.  Both the
+%%         onehalfspace and doublespace environments are intended to increase
+%%         the spacing, so the onehalfspace environment should not be used in
+%%         a double spaced document.  If an increased spacing different from
+%%         one-and-a-half or double spacing is required then the spacing
+%%         environment can be used.  The spacing environment takes one
+%%         argument which is the larger baselinestretch to use,
+%%         e.g., \\begin{spacing}{2.5}.
+%%
+%%         \\footins is adjusted the same as \\parskip - appears to work. Lose
+%%         stretch parts but don't consider that to be crucial
+%%
+%%         Removed code for altering spacing before and after displayed
+%%         equations - just looked too much.
+%%
+%% MODS:
+%%         Redefinition of \\spacing and \\endspacing for consistency with
+%%         TeX 3.x inserted by George Greenwade.  Modification provided by
+%%         Philip Ross (ROSS@UK.AC.ABDN.BIOMED) and John Byrne via INFO-TeX.
+%%
+%% PLEASE REPORT ANY BUGS
+%%
+%%   Old Documentation follows:
+%%         1. A new environment "singlespace" is provided, within which single
+%%            spacing will apply.
+%%            JFL - changed so that it works in regular text and so that
+%%            vertical space before and after is correctly computed
+%%         2. Double spacing is turned off within footnotes and floats (figures
+%%            and tables).
+%%         3. Proper double spacing happens below tabular environments and in
+%%            other places where LaTeX uses a strut.
+%%         4. Slightly more space is inserted before footnotes.
+%%         5. JFL - fixes spacing before and after displayed math
+%%
+%%
+%%    mods:   Jean-Francois Lamy
+%%            lamy@ai.toronto.edu
+%%            lamy@utai.uucp
+%%
+%% POSSIBLE BUGS:
+%%    . Increasing struts may possibly cause some other obscure part of
+%%      formatting to fall over.
+%%    . \\begin{singlespace}\\begin{quote} produces the wrong spacing before
+%%      the quote (extra glue is inserted).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\\@ifundefined{NeedsTeXFormat}{% 2.09 version
+\\def \\filename {setspace.sty}
+\\def \\filedate {2022/12/04}
+\\def \\fileversion {6.7b}
+\\typeout {Package: \`setspace' \\fileversion\\space <\\filedate>}
+}{% 2e version
+\\NeedsTeXFormat {LaTeX2e}[1994/12/01]
+\\ProvidesPackage {setspace}[2022/12/04 v6.7b set line spacing]
+}
+
+% BP: add nodisplayskipstretch option and \\setdisplayskipstretch command.
+
+\\newcommand{\\displayskipstretch}{\\baselinestretch}
+\\newcommand{\\setdisplayskipstretch}[1]{\\renewcommand{\\displayskipstretch}{#1}}
+\\DeclareOption{nodisplayskipstretch}{\\setdisplayskipstretch{1.0}}
+
+% GT: add George Pearsons' suggested options.
+
+\\DeclareOption{singlespacing}{\\AtEndOfPackage{\\singlespacing}}
+\\DeclareOption{onehalfspacing}{\\AtEndOfPackage{\\onehalfspacing}}
+\\DeclareOption{doublespacing}{\\AtEndOfPackage{\\doublespacing}}
+
+\\ProcessOptions
+
+% GT:  Sat 28 Sep 1996:  Widely using \\newcommand, \\renewcommand, and
+% \\newenvironment, instead of \\def.
+
+% ** Line space commands.
+
+\\newcommand{\\setstretch}[1]{%
+  \\def\\baselinestretch{#1}%
+  \\@currsize
+}
+
+% GT:  Sat 28 Sep 1996:  spacing commands and environments modified to
+% use \\setstretch instead of \\baselinestretch.
+%
+% GT:  Sat 28 Sep 1996:  No, I don't know understand the line spacing
+% algorithms!  If someone (LaTeX team) can enlighten me as to the
+% general rule, please do!  It would be very pleasant if setspace.sty
+% were suited for document font sizes other than 10, 11 and 12 pt.
+%
+% GT:  Tue 10 Dec 1996:  Instead of fixing singlespacing to exact unity,
+% allow user to redefine it (only slightly, please!) from its initial
+% value of unity, in the case when a particular font is slightly larger
+% or slightly smaller than its point size would indicate.  This change
+% affects setspace's single spacing commands, and LaTeX's footnote and
+% float environments.  The one and a half, double, and arbitrary
+% spacing commands are unaltered.
+
+\\newcommand{\\SetSinglespace}[1]{%
+  \\def\\setspace@singlespace{#1}%
+}
+
+% Here's the default single line spacing value.
+\\SetSinglespace{1}
+
+\\newcommand{\\singlespacing}{%
+  \\setstretch {\\setspace@singlespace}%  normally 1
+  \\vskip \\baselineskip  % Correction for coming into singlespace
+}
+
+\\newcommand{\\onehalfspacing}{%
+  \\setstretch{1.25}%  default
+% DPC 6.7b guard \\@ptsize
+  \\ifx\\@ptsize\\@undefined\\else
+  \\ifcase \\@ptsize \\relax % 10pt
+    \\setstretch {1.25}%
+  \\or % 11pt
+    \\setstretch {1.213}%
+  \\or % 12pt
+    \\setstretch {1.241}%
+  \\fi
+  \\fi
+}
+
+\\newcommand{\\doublespacing}{%
+  \\setstretch {1.667}%  default
+% DPC 6.7b guard \\@ptsize
+  \\ifx\\@ptsize\\@undefined\\else
+  \\ifcase \\@ptsize \\relax % 10pt
+    \\setstretch {1.667}%
+  \\or % 11pt
+    \\setstretch {1.618}%
+  \\or % 12pt
+    \\setstretch {1.655}%
+  \\fi
+  \\fi
+}
+
+% ** Modification of the LaTeX command \\@setsize.
+
+%---Stretch the baseline BEFORE calculating the strut size. This improves
+%   spacing below tabular environments etc., probably...
+%   Comments are welcomed.
+
+% GT:  Sun 29 Sep 1996:  Question:  Is this code anywhere near correct
+% since this part of LaTeX (in, eg, latex.ltx) has been greatly changed?
+
+% GT:  Sun 29 Sep 1996:  The meanings of the arguments to \\@setsize
+% appear to be (whatever these may signify) :
+% current size; font baselineskip; ignored (!); and font size.
+
+% GT:  Sun 29 Sep 1996:  Note that \\@setsize (in latest LaTeX,
+% \\@setfontsize, which is called by \\@setsize) seems to be the only
+% place in purely modern LaTeX where \\@currsize is set, and ltxguide.cls
+% seems to be the only file in the LaTeX base distribution that uses it!
+
+% RF: 2011-12-19: only redefine \\@setsize if under 2e; there have been
+% reports of ltx209 packages failing when run with setspace under
+% ltx2e, with this definition
+\\@ifundefined{NeedsTeXFormat}{%
+\\def\\@setsize#1#2#3#4{%
+  % Modified 1993.04.07--GDG per KPC
+  \\@nomath#1%
+  \\let\\@currsize#1%
+  \\baselineskip #2%
+  \\baselineskip \\baselinestretch\\baselineskip
+  \\parskip \\baselinestretch\\parskip
+  \\setbox\\strutbox \\hbox{%
+    \\vrule height.7\\baselineskip
+           depth.3\\baselineskip
+           width\\z@}%
+  \\skip\\footins \\baselinestretch\\skip\\footins
+  \\normalbaselineskip\\baselineskip#3#4}%
+}{}%
+
+% ** Float and footnote adjustments to compensate for a change in the
+% ** main text's line spacing.
+
+%---Increase the space between last line of text and footnote rule.
+%\\skip\\footins 20pt plus4pt minus4pt
+
+%---Reset baselinestretch within floats and footnotes.
+
+% GT:  Tue 23 Jan 1996:  This is where the conflict with the combination
+% of the color package and the figure environment used to occur.
+
+% Floats.
+
+% GT:  Sat 28 Sep 1996:  \\@xfloat is the only place where \\normalsize
+% is still used in setspace.sty !
+
+\\let\\latex@xfloat=\\@xfloat
+\\def\\@xfloat #1[#2]{%
+  \\latex@xfloat #1[#2]%
+  \\def\\baselinestretch{\\setspace@singlespace}%
+  \\normalsize
+}
+
+% GT:  Wed 24 Jan 1996:  This footnote code was copied from LaTeX and
+% modified rather naively.  It had to be brought up to date, not only
+% because of LaTeX's new color ability, but also because there had
+% been major changes to this code in LaTeX at least as far back as
+% March 1992.
+
+% Normal, bottom of the page, footnotes.
+%
+% GT:  Based HEAVILY on original LaTeX (2e) code.  A standard hook would
+% be MUCH preferred, so that LaTeX's footnote implementation needn't be
+% copied each time it changes.
+%
+% GT:  The \\protected@edef requires at least the December 1994 LaTeX.
+% This is precisely the kind of VERSION DEPENDENCY situation that
+% cannot (AFAIK) be avoided, because LaTeX (2e) LACKS appropriate
+% standard hooks and/or context markers.
+
+\\long\\def\\@footnotetext#1{%
+  \\insert\\footins{%
+% GT:  Next line added.  Hook desired here!
+    \\def\\baselinestretch {\\setspace@singlespace}%
+    \\reset@font\\footnotesize
+    \\interlinepenalty\\interfootnotelinepenalty
+    \\splittopskip\\footnotesep
+    \\splitmaxdepth \\dp\\strutbox \\floatingpenalty \\@MM
+    \\hsize\\columnwidth
+    \\@parboxrestore
+% DPC 6.7b added from latex.ltx
+    \\def\\@currentcounter{footnote}%
+    \\protected@edef\\@currentlabel{%
+      \\csname p@footnote\\endcsname\\@thefnmark
+    }%
+    \\color@begingroup
+      \\@makefntext{%
+        \\rule\\z@\\footnotesep\\ignorespaces#1\\@finalstrut\\strutbox}%
+% DPC 6.7b added from latex.ltx
+    \\par
+    \\color@endgroup}}
+
+% Minipage footnotes.
+
+\\long\\def\\@mpfootnotetext#1{%
+  \\global\\setbox\\@mpfootins\\vbox{%
+    \\unvbox \\@mpfootins
+%  GT:  Next line added.  Hook desired here!
+    \\def\\baselinestretch {\\setspace@singlespace}%
+    \\reset@font\\footnotesize
+    \\hsize\\columnwidth
+    \\@parboxrestore
+% DPC 6.7b added from latex.ltx
+    \\def\\@currentcounter{mpfootnote}%
+    \\protected@edef\\@currentlabel{%
+      \\csname p@mpfootnote\\endcsname\\@thefnmark}%
+    \\color@begingroup
+      \\@makefntext{%
+       \\rule\\z@\\footnotesep\\ignorespaces#1\\@finalstrut\\strutbox}%
+% DPC 6.7b added from latex.ltx
+    \\par
+   \\color@endgroup}}
+
+% ** Line space environments.
+
+% A single spaced quote (say) is done by surrounding singlespace with quote.
+
+\\newenvironment{singlespace}{%
+  \\vskip \\baselineskip
+  \\setstretch {\\setspace@singlespace}%
+  \\vskip -\\baselineskip
+}{%
+  \\par
+}
+
+% GT (c/o Mark Olesen), Wed 15 April 1998.
+
+\\newenvironment{singlespace*}{%
+  \\setstretch {\\setspace@singlespace}%
+  \\vskip -\\baselineskip
+}{%
+  \\vskip -0.5\\baselineskip
+}
+
+%  spacing, doublespace and onehalfspace all are meant to INCREASE the
+%  spacing (i.e. calling onehalfspace from within doublespace will not
+%  produce a graceful transition between spacings)
+%
+% Next two definitions fixed for consistency with TeX 3.x
+
+% In order to use \\newenvironment, while easily using same code for
+% end of each environment, the code that used to be in \\endspacing has
+% been moved into a new (but internal) macro, \\restore@spacing.
+
+\\newcommand{\\restore@spacing}{%
+    \\par
+    \\vskip \\parskip
+    \\vskip \\baselineskip
+  \\endgroup
+  \\vskip -\\parskip
+  \\vskip -\\baselineskip
+}
+
+\\newenvironment{spacing}[1]{%
+  \\par
+  \\begingroup             % moved from \\endspacing by PGBR 29-1-91
+    \\setstretch {#1}%
+}{%
+  \\restore@spacing
+}
+
+% one and a half spacing is 1.5 x pt size
+\\newenvironment{onehalfspace}{%
+  \\begingroup
+    \\onehalfspacing
+}{%
+  \\restore@spacing
+}
+
+% double spacing is 2 x pt size
+\\newenvironment{doublespace}{%
+  \\begingroup
+    \\doublespacing
+}{%
+  \\restore@spacing
+}
+
+% GT:  EMSH chose to omit display math part that follows.
+% She wrote (see above) that the "altered spacing before and after displayed
+% equations ... just looked too much".
+%
+% Fix up spacing before and after displayed math
+% (arraystretch seems to do a fine job for inside LaTeX displayed math,
+% since array and eqnarray seem to be affected as expected).
+% Changing \\baselinestretch and doing a font change also works if done here,
+% but then you have to change @setsize to remove the call to @nomath)
+%
+% GT:  The \\belowdisplayskip line was mistyped; now fixed, courtesy of
+% David Hull.
+%
+% GT:  Brett Parnell has addressed EMSH's concern by replacing
+% \\baselinestretch by \\displayskipstretch in displays, as follows.
+
+\\everydisplay\\expandafter{%
+  \\the\\everydisplay
+  \\abovedisplayskip \\displayskipstretch\\abovedisplayskip
+  \\belowdisplayskip \\displayskipstretch\\belowdisplayskip
+  \\abovedisplayshortskip \\displayskipstretch\\abovedisplayshortskip
+  \\belowdisplayshortskip \\displayskipstretch\\belowdisplayshortskip
+}
+
+\\endinput
+
+%%% EOF.
+` },
+  { format: 26, filename: 'setspace.sty', content: `
 % \\iffalse meta-comment
 %
 % Copyright (C) 2022 by LaTeX Team 
@@ -24255,7 +47084,278 @@ end
 </body>
 </html>
 ` },
+  { format: 26, filename: 'stringenc.sty', content: `
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- ViewVC :: http://www.viewvc.org/ -->
+<head>
+<title>ViewVC Error</title>
+</head>
+<body>
+<h3>An Error Has Occurred</h3>
+
+ <p>Unknown location: /trunk/Master/texmf-dist/tex/latex/stringenc/stringenc.sty</p>
+
+
+ <h4>HTTP Response Status</h4>
+ <p><pre>404 Not Found</pre></p>
+ <hr />
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</body>
+</html>
+` },
   { format: 27, filename: 'tabularx.sty', content: `
+%%
+%% This is file \`tabularx.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% tabularx.dtx  (with options: \`package')
+%% 
+%% This is a generated file.
+%% 
+%% The source is maintained by the LaTeX Project team and bug
+%% reports for it can be opened at https://latex-project.org/bugs/
+%% (but please observe conditions on bug reports sent to that address!)
+%% 
+%% Copyright (C) 1993-2020
+%% The LaTeX3 Project and any individual authors listed elsewhere
+%% in this file.
+%% 
+%% This file was generated from file(s) of the Standard LaTeX \`Tools Bundle'.
+%% --------------------------------------------------------------------------
+%% 
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    https://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%% 
+%% This file may only be distributed together with a copy of the LaTeX
+%% \`Tools Bundle'. You may however distribute the LaTeX \`Tools Bundle'
+%% without such generated files.
+%% 
+%% The list of all files belonging to the LaTeX \`Tools Bundle' is
+%% given in the file \`manifest.txt'.
+%% 
+%% File: tabularx.dtx Copyright (C) 1991-1999 2012 2014 2016 2017 David Carlisle
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{tabularx}
+          [2020/01/15 v2.11c \`tabularx' package (DPC)]
+\\DeclareOption{infoshow}{\\AtEndOfPackage\\tracingtabularx}
+\\DeclareOption{debugshow}{\\AtEndOfPackage\\tracingtabularx}
+\\ProcessOptions
+\\RequirePackage{array}[1994/02/03]
+\\newdimen\\TX@col@width
+\\newdimen\\TX@old@table
+\\newdimen\\TX@old@col
+\\newdimen\\TX@target
+\\newdimen\\TX@delta
+\\newcount\\TX@cols
+\\newif\\ifTX@
+\\def\\tabularx#1{%
+\\edef\\TX@{\\@currenvir}%
+  {\\ifnum0=\`}\\fi
+  \\setlength\\TX@target{#1}%
+  \\TX@typeout{Target width: #1 = \\the\\TX@target}%
+  \\toks@{}\\TX@get@body}
+
+\\let\\endtabularx\\relax
+\\long\\def\\TX@get@body#1\\end
+  {\\toks@\\expandafter{\\the\\toks@#1}\\TX@find@end}
+\\def\\TX@find@end#1{%
+  \\def\\@tempa{#1}%
+  \\ifx\\@tempa\\TX@\\expandafter\\TX@endtabularx
+  \\else\\toks@\\expandafter
+    {\\the\\toks@\\end{#1}}\\expandafter\\TX@get@body\\fi}
+\\long\\def\\TX@find@endtabularxa
+       #1\\endtabularx#2\\endtabularx#3\\TX@find@endtabularxa{%
+  \\ifx\\TX@#2\\relax\\else
+  \\toks@\\expandafter{\\the\\toks@#1}%
+  \\fi}
+\\long\\def\\TX@find@endtabularxb
+       #1\\endtabularx#2\\endtabularx#3\\TX@find@endtabularxb{%
+  \\ifx\\TX@#2%
+    \\expandafter\\@firstoftwo
+  \\else
+     \\expandafter\\@secondoftwo
+  \\fi
+  {#1}{#2}}
+\\def\\TX@find@endtabularxbb{%
+  \\expandafter\\expandafter\\expandafter
+  \\TX@find@endtabularxb
+}
+\\def\\TX@{tabularx}
+\\def\\TX@endtabularx{%
+   \\expandafter\\expandafter\\expandafter
+     \\TX@find@endtabularxa\\csname end\\TX@\\endcsname
+     \\endtabularx\\TX@\\endtabularx\\TX@find@endtabularxa
+  \\expandafter\\TX@newcol\\expandafter{\\tabularxcolumn{\\TX@col@width}}%
+  \\let\\verb\\TX@verb
+  \\def\\@elt##1{\\global\\value{##1}\\the\\value{##1}\\relax}%
+  \\edef\\TX@ckpt{\\cl@@ckpt}%
+  \\let\\@elt\\relax
+  \\TX@old@table\\maxdimen
+  \\TX@col@width\\TX@target
+  \\global\\TX@cols\\@ne
+  \\TX@typeout@
+    {\\@spaces Table Width\\@spaces Column Width\\@spaces X Columns}%
+  \\TX@trial{\\def\\NC@rewrite@X{%
+          \\global\\advance\\TX@cols\\@ne\\NC@find p{\\TX@col@width}}}%
+  \\loop
+    \\TX@arith
+    \\ifTX@
+    \\TX@trial{}%
+  \\repeat
+  {\\let\\@footnotetext\\TX@ftntext\\let\\@xfootnotenext\\TX@xftntext
+    \\csname tabular*\\expandafter\\endcsname\\expandafter\\TX@target
+      \\the\\toks@
+    \\csname endtabular*\\endcsname}%
+  \\global\\TX@ftn\\expandafter{\\expandafter}\\the\\TX@ftn
+  \\ifnum0=\`{\\fi}%
+   \\expandafter\\expandafter\\expandafter
+   \\TX@find@endtabularxbb
+    \\expandafter\\end\\expandafter{\\TX@}%
+    \\endtabularx\\TX@\\endtabularx\\TX@find@endtabularxb
+}
+\\def\\TX@arith{%
+  \\TX@false
+  \\@tempdimb\\maxdimen
+  \\divide\\@tempdimb\\TX@cols
+  \\ifdim\\TX@col@width>\\@tempdimb
+    \\TX@typeout@{Don't exceed \\maxdimen}%
+    \\wd\\@tempboxa\\maxdimen
+  \\fi
+  \\ifdim\\TX@old@table=\\wd\\@tempboxa
+    \\TX@col@width\\TX@old@col
+    \\TX@typeout@{Reached minimum width, backing up.}%
+  \\else
+    \\dimen@\\wd\\@tempboxa
+    \\advance\\dimen@ -\\TX@target
+    \\ifdim\\dimen@<\\TX@delta
+      \\TX@typeout@{Reached target.}%
+    \\else
+      \\ifnum\\TX@cols>\\@ne
+        \\advance\\TX@cols\\m@ne
+      \\fi
+      \\divide\\dimen@\\TX@cols
+      \\advance\\dimen@ -\\TX@col@width
+      \\ifdim \\dimen@ >\\z@
+        \\PackageWarning{tabularx}%
+           {X Columns too narrow (table too wide)\\MessageBreak}%
+        \\TX@col@width\\TX@error@width\\relax
+      \\else
+        \\TX@old@col\\TX@col@width
+        \\TX@old@table\\wd\\@tempboxa
+        \\TX@col@width-\\dimen@
+        \\TX@true
+      \\fi
+    \\fi
+  \\fi}
+\\def\\TX@error@width{1em}
+\\TX@delta\\hfuzz
+\\newcolumntype{X}{}
+\\def\\tabularxcolumn#1{p{#1}}
+\\def\\TX@newcol{\\newcol@{X}[0]}
+\\def\\TX@trial#1{%
+  \\setbox\\@tempboxa\\hbox{%
+    #1\\relax
+  \\let\\@footnotetext\\TX@trial@ftn
+  \\let\\TX@vwarn\\@empty
+   \\expandafter\\let\\expandafter\\tabularx\\csname tabular*\\endcsname
+   \\expandafter\\let\\expandafter\\endtabularx\\csname endtabular*\\endcsname
+   \\def\\write{\\begingroup
+     \\def\\let{\\afterassignment\\endgroup\\toks@}%
+        \\afterassignment\\let\\count@}%
+    \\hbadness\\@M
+    \\hfuzz\\maxdimen
+    \\let\\hbadness\\@tempcnta
+    \\let\\hfuzz\\@tempdima
+    \\expandafter\\tabular\\the\\toks@
+    \\endtabular}%
+  \\TX@ckpt
+  \\TX@typeout@{\\@spaces
+     \\expandafter\\TX@align
+        \\the\\wd\\@tempboxa\\space\\space\\space\\space\\space\\@@
+     \\expandafter\\TX@align
+        \\the\\TX@col@width\\space\\space\\space\\space\\space\\@@
+     \\@spaces\\the\\TX@cols}}
+\\def\\TX@align#1.#2#3#4#5#6#7#8#9\\@@{%
+  \\ifnum#1<10 \\space\\fi
+  \\ifnum#1<100 \\space\\fi
+  \\ifnum#1<\\@m\\space\\fi
+  \\ifnum#1<\\@M\\space\\fi
+  #1.#2#3#4#5#6#7#8\\space\\space}
+\\ifx\\arraybackslash\\@undefined
+\\def\\arraybackslash{\\let\\\\\\tabularnewline}
+\\fi
+\\def\\tracingtabularx{%
+  \\def\\TX@typeout{\\PackageWarningNoLine{tabularx}}%
+  \\def\\TX@typeout@##1{\\typeout{(tabularx) ##1}}}
+\\let\\TX@typeout\\@gobble
+\\let\\TX@typeout@\\@gobble
+\\newtoks\\TX@ftn
+\\long\\def\\TX@ftntext#1{%
+  \\edef\\@tempa{\\the\\TX@ftn\\noexpand\\footnotetext
+                    [\\the\\csname c@\\@mpfn\\endcsname]}%
+  \\global\\TX@ftn\\expandafter{\\@tempa{#1}}}%
+\\long\\def\\TX@xftntext[#1]#2{%
+  \\global\\TX@ftn\\expandafter{\\the\\TX@ftn\\footnotetext[#1]{#2}}}
+\\long\\def\\TX@trial@ftn#1{}
+{\\uccode\`\\*=\`\\ %
+\\uppercase{\\gdef\\TX@verb{%
+  \\leavevmode\\null\\TX@vwarn
+  {\\ifnum0=\`}\\fi\\ttfamily\\let\\\\\\ignorespaces
+  \\@ifstar{\\let~*\\TX@vb}{\\TX@vb}}}}
+\\def\\TX@vb#1{\\def\\@tempa##1#1{\\toks@{##1}\\edef\\@tempa{\\the\\toks@}%
+    \\expandafter\\TX@v\\meaning\\@tempa\\\\ \\\\\\ifnum0=\`{\\fi}}\\@tempa!}
+\\def\\TX@v#1!{\\afterassignment\\TX@vfirst\\let\\@tempa= }
+\\begingroup
+\\catcode\`\\*=\\catcode\`\\#
+\\catcode\`\\#=12
+\\gdef\\TX@vfirst{%
+  \\if\\@tempa#%
+    \\def\\@tempb{\\TX@v@#}%
+  \\else
+    \\let\\@tempb\\TX@v@
+    \\if\\@tempa\\space~\\else\\@tempa\\fi
+  \\fi
+  \\@tempb}
+\\gdef\\TX@v@*1 *2{%
+  \\TX@v@hash*1##\\relax\\if*2\\\\\\else~\\expandafter\\TX@v@\\fi*2}
+\\gdef\\TX@v@hash*1##*2{*1\\ifx*2\\relax\\else#\\expandafter\\TX@v@hash\\fi*2}
+\\endgroup
+\\def\\TX@vwarn{%
+  \\@warning{\\noexpand\\verb may be unreliable inside tabularx}%
+  \\global\\let\\TX@vwarn\\@empty}
+\\endinput
+%%
+%% End of file \`tabularx.sty'.
+` },
+  { format: 26, filename: 'tabularx.sty', content: `
 %%
 %% This is file \`tabularx.sty',
 %% generated with the docstrip utility.
@@ -24907,6 +48007,427 @@ end
 %%
 %% End of file \`textpos.sty'.
 ` },
+  { format: 26, filename: 'textpos.sty', content: `
+%%
+%% This is file \`textpos.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% textpos.dtx  (with options: \`package')
+%% Textpos: absolute positioning of text on the page
+%%%% File: textpos.dtx
+%%%% Copyright 1999-2020, Norman Gray
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   https://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status \`maintained'.
+%%
+%% The Current Maintainer of this work is Norman Gray <https://nxg.me.uk>
+%%
+%% This work consists of the files textpos.dtx and textpos.ins,
+%% and the derived file textpos.sty.
+%%
+%% Author: Norman Gray, gray@nxg.name
+%% Department of Physics and Astronomy, University of Glasgow, UK
+%%
+%% See the file LICENCE for a copy of the LPPL.
+%%
+%% Mercurial ident: 1.10.1 (@VCSINFO)
+%%
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{textpos}[2022/07/23 v1.10.1]
+ 
+\\newif\\ifTPshowboxes
+\\TPshowboxesfalse
+\\DeclareOption{showboxes}{\\TPshowboxestrue}
+\\newif\\ifTP@showtext
+\\TP@showtexttrue
+\\DeclareOption{noshowtext}{\\TP@showtextfalse}
+\\newif\\ifTP@abspos
+\\TP@absposfalse
+\\DeclareOption{absolute}{\\TP@abspostrue}
+\\DeclareOption{relative}{\\TP@absposfalse}
+\\newif\\ifTP@overlay
+\\TP@overlayfalse
+\\DeclareOption{overlay}{\\TP@overlaytrue}
+\\newif\\ifTP@chatter
+\\TP@chattertrue
+\\DeclareOption{quiet}{\\TP@chatterfalse}
+\\DeclareOption{verbose}{\\TP@chattertrue}
+\\newif\\ifTP@displayholdbox
+  \\TP@displayholdboxtrue
+\\DeclareOption{discardcontent}{\\TP@displayholdboxfalse}
+\\ProcessOptions
+\\newif\\ifTP@Liii
+\\@ifl@t@r\\fmtversion{2020/10/01}\\TP@Liiitrue\\TP@Liiifalse
+\\PackageInfo{textpos}{choosing support for \\ifTP@Liii LaTeX3\\else LaTeX2e\\fi}
+\\ifTP@Liii\\else
+  \\ifTP@abspos
+    \\RequirePackage{everyshi}
+  \\fi
+\\fi
+\\RequirePackage{keyval}
+\\define@key{tp}{absolute}{\\csname TP@abspos#1\\endcsname}
+\\define@key{tp}{overlay}{\\PackageWarning{textpos}{The overlay option
+    to TPoptions is not implemented and has been ignored}}
+\\define@key{tp}{verbose}{\\csname TP@chatter#1\\endcsname}
+\\define@key{tp}{showboxes}{\\csname TPshowboxes#1\\endcsname}
+\\define@key{tp}{showtext}{\\csname TP@showtext#1\\endcsname}
+\\define@key{tp}{discardcontent}{%
+  \\csname @tempswa#1\\endcsname
+  \\if@tempswa\\TP@displayholdboxfalse\\else\\TP@displayholdboxtrue\\fi}
+\\def\\TPoptions{\\setkeys{tp}}
+\\def\\TP@xfloat#1[#2]{
+  \\par\\def\\@captype{#1}%
+  \\@floatpenalty\\z@
+  \\color@vbox
+    \\normalcolor
+    \\vbox\\bgroup
+}
+\\def\\TP@xympar{
+  \\PackageError{textpos}
+    {You can't use \\protect\\marginpar\\space within a textblock}
+    {You're using textpos because you _don't_ want things to float around, yes?}}
+\\newbox\\TP@textbox
+\\newif\\ifTP@vmode
+\\ifTP@abspos
+  \\newbox\\TP@holdbox            % starts off void
+  \\AtEndDocument{\\ifTP@displayholdbox\\ifvoid\\TP@holdbox \\else \\hbox{}\\fi\\fi}
+\\fi
+\\newdimen\\TPHorizModule
+\\newdimen\\TPVertModule
+\\newdimen\\TP@margin
+\\TP@margin=0pt
+\\newdimen\\TP@absmargin
+\\TP@absmargin=0pt
+\\newcommand{\\TPMargin}{%
+  \\@ifstar\\TPMargin@outer\\TPMargin@inner
+}
+\\newcommand{\\TPMargin@inner}[1]{%
+  \\TP@margin=#1\\relax
+  \\ifdim\\TP@margin < 0pt
+    \\PackageError{textpos}
+      {\\protect\\TPMargin\\space must have a positive argument}
+      {\\protect\\TPMargin\\space must have a positive argument}
+  \\fi
+  \\TP@absmargin=\\TP@margin
+}
+\\newcommand\\TPMargin@outer[1]{%
+  \\TP@margin=-#1\\relax
+  \\ifdim\\TP@margin > 0pt
+    \\PackageError{textpos}
+      {\\protect\\TPMargin*\\space must have a positive argument}
+      {\\protect\\TPMargin*\\space must have a positive argument}
+  \\fi
+  \\TP@absmargin=-\\TP@margin
+}
+\\def\\TPGrid{%
+  \\@ifnextchar[{\\@tempswatrue\\TP@Grid}{\\@tempswafalse\\TP@Grid[0pt,0pt]}}
+\\def\\TP@Grid[#1,#2]#3#4{
+  \\setlength{\\@tempdima}{#1}
+  \\multiply\\@tempdima by 2
+  \\TPHorizModule=\\paperwidth
+  \\advance\\TPHorizModule by -\\@tempdima
+  \\divide\\TPHorizModule by #3
+  \\setlength{\\@tempdima}{#2}
+  \\multiply\\@tempdima by 2
+  \\TPVertModule=\\paperheight
+  \\advance\\TPVertModule by -\\@tempdima
+  \\divide\\TPVertModule by #4
+  \\ifTP@chatter
+    \\typeout{Grid set #3 x #4 = \\the\\TPHorizModule\\space x \\the\\TPVertModule}%
+  \\fi
+  \\ifTP@abspos\\if@tempswa \\textblockorigin{#1}{#2}\\fi\\fi
+}
+\\TPGrid{16}{16}
+\\newdimen\\TPboxrulesize
+\\setlength{\\TPboxrulesize}{0.4pt}
+\\def\\showtextsize{\\normalsize}
+\\def\\TPShowGrid{\\@ifstar{\\@tempswatrue\\@TPShowGrid}{\\@tempswafalse\\@TPShowGrid}}
+\\def\\@TPShowGrid#1#2{
+  \\begin{textblock}{#1}(0,0)
+    \\lineskip=0pt % abut boxes directly
+    \\setbox0=\\hbox{(0)}%
+    \\@tempdima=\\TPVertModule
+    \\advance\\@tempdima -1.1\\ht0
+    \\@tempcnta=0
+    \\hrule
+    \\loop
+      \\vbox to \\TPVertModule{\\noindent
+        \\@tempcntb=0
+        \\vrule
+        \\loop
+          \\hbox to \\TPHorizModule{%
+            \\if@tempswa\\raise\\@tempdima\\hbox{(\\the\\@tempcntb,\\the\\@tempcnta)}\\fi
+            \\hfil \\vrule height \\TPVertModule}%
+          \\advance\\@tempcntb 1
+        \\ifnum\\@tempcntb<#1 \\repeat
+        \\vss \\hrule}
+      \\advance\\@tempcnta 1
+    \\ifnum\\@tempcnta<#2 \\repeat
+  \\end{textblock}}
+\\ifTP@abspos
+  \\newdimen\\TP@ox
+  \\newdimen\\TP@oy
+\\fi
+\\def\\textblockorigin#1#2{%
+  \\ifTP@abspos
+    \\TP@ox=-1in    \\addtolength\\TP@ox{#1}
+    \\TP@oy=-1in    \\addtolength\\TP@oy{#2}
+    \\ifTP@chatter\\typeout{TextBlockOrigin set to #1 x #2}\\fi
+  \\else
+    \\PackageError{textpos}
+      {The \\protect\\textblockorigin\\space command\\MessageBreak
+       may only be used if the package was given\\MessageBreak
+       the\`absolute' option when it was invoked}
+      {If you want to use the \\protect\\textblockorigin\\space command, then
+         \\MessageBreak
+       invoke the package with the syntax\\MessageBreak
+       \\protect\\usepackage[absolute]{textpos}}
+  \\fi
+  }
+\\def\\textblocklabel#1{\\gdef\\TP@textblocklabel{#1}}
+\\def\\textblockcolour#1{%
+  \\@ifundefined{color}%
+    {\\PackageWarning{textpos}{command textblockcolour used,\\MessageBreak
+       but {color} package not loaded.\\MessageBreak
+       Colour changes ignored.}}
+    {\\gdef\\TP@blockcolour{#1}
+     \\ifx\\TP@defaultblockcolour\\@undefined
+       \\gdef\\TP@defaultblockcolour{#1}
+     \\fi
+    }}
+\\def\\TP@blockcolour{}           % safe initial default
+\\let\\textblockcolor\\textblockcolour
+\\let\\tekstblokkulur\\textblockcolour
+\\def\\textblockrulecolour#1{%
+  \\@ifundefined{color}%
+    {\\PackageWarning{textpos}{command textblockrulecolour used,\\MessageBreak
+       but {color} package not loaded.\\MessageBreak
+       Colour changes ignored.}}
+    {\\gdef\\TP@rulecolour{#1}}}
+\\def\\TP@rulecolour{black}
+\\let\\textblockrulecolor\\textblockrulecolour
+\\let\\tekstblokroolkulur\\textblockrulecolour
+\\gdef\\TP@color[#1]#2{}
+\\def\\TP@dummycolorpackage{
+  \\@ifundefined{color}
+    {\\globaldefs=1
+       \\DeclareRobustCommand\\color[2][]{}
+       \\def\\color@block##1##2##3{}
+     \\globaldefs=0 }
+    {}
+}
+\\ifTP@Liii
+  \\AddToHook{env/document/before}{\\TP@dummycolorpackage}
+  \\AddToHook{file/color.sty/after}{\\let\\TP@dummycolorpackage\\relax}
+\\else
+  \\AtBeginDocument{\\TP@dummycolorpackage}
+\\fi
+\\def\\TP@referenceposition{0,0}
+\\def\\TPReferencePosition#1{\\def\\TP@referenceposition{#1}}
+\\def\\textblock#1{%
+  \\@tempdima=#1\\TPHorizModule
+  \\TP@begintextblock
+}
+\\def\\TP@textblockstar#1{%
+  \\setlength{\\@tempdima}{#1}%
+  \\TP@begintextblock
+}
+\\expandafter\\let\\csname textblock*\\endcsname\\TP@textblockstar
+\\def\\TP@begintextblock{%
+  \\ifvmode
+    \\TP@vmodetrue
+  \\else
+    \\ifmmode
+      \\PackageError{textpos}
+        {You cannot use textblock in maths mode}
+        {You may use the textblock environment only in \\MessageBreak
+         vertical mode or horizontal mode.  You cannot use it in maths mode.}
+    \\else % in horizontal mode
+      \\TP@vmodefalse
+      \\@bsphack
+      \\unskip
+    \\fi
+  \\fi
+  \\@ifnextchar[{\\TP@textblock}{\\expandafter\\TP@textblock\\expandafter[\\TP@referenceposition]}%] bracematch
+}
+\\newtoks\\TP@tbargs
+\\def\\TP@textblock[#1,#2](#3,#4){%
+  \\TP@tbargs={{#1}{#2}{#3}{#4}}%
+  \\let\\@xfloat\\TP@xfloat
+  \\let\\@xympar\\TP@xympar
+  \\setbox\\TP@textbox=\\vbox\\bgroup
+    \\ifTPshowboxes
+      {\\color{\\TP@rulecolour}\\hrule height0pt depth \\TPboxrulesize }%
+      \\vskip-\\TPboxrulesize
+    \\fi
+    \\ifdim\\TP@margin = 0pt
+      \\hsize=\\@tempdima
+      \\textwidth\\hsize \\columnwidth\\hsize \\linewidth\\hsize
+    \\else
+      \\vskip\\TP@absmargin
+      \\@tempdimb=\\@tempdima % \\@tempdimb is outer box width
+      \\hsize=\\@tempdima     % \\hsize is inner box width
+      \\ifdim\\TP@margin < 0pt
+        \\advance\\@tempdimb by 2\\TP@absmargin % bigger box
+      \\else
+        \\advance\\hsize by -2\\TP@absmargin    % narrower content
+      \\fi
+      \\hbox to \\@tempdimb\\bgroup
+        \\hskip\\TP@absmargin\\vbox\\bgroup
+          \\textwidth\\hsize \\columnwidth\\hsize \\linewidth\\hsize
+    \\fi
+}
+\\def\\endtextblock{\\global\\@tempswatrue\\TP@commonendtextblock}
+\\@namedef{endtextblock*}{\\global\\@tempswafalse\\TP@commonendtextblock}
+\\def\\TP@commonendtextblock{%
+    \\ifdim\\TP@margin = 0pt
+      \\relax
+    \\else
+      \\egroup % end of inner vbox
+      \\hskip\\TP@absmargin % (just \\hfil would work here, too)
+      \\egroup % end of inner hbox
+      \\vskip\\TP@absmargin
+    \\fi
+    \\ifTPshowboxes
+        \\vskip-\\TPboxrulesize
+        {\\color{\\TP@rulecolour}\\hrule depth 0pt height \\TPboxrulesize}%
+    \\fi
+    \\egroup % end of \\TP@textbox
+  \\expandafter\\TP@endtextblock\\the\\TP@tbargs
+}
+\\def\\TP@endtextblock#1#2#3#4{%
+  \\if@tempswa % modular/unstarred endtextblock
+    \\@tempdima=#3\\TPHorizModule
+    \\@tempdimb=#4\\TPVertModule
+  \\else % absolute/starred endtextblock
+    \\setlength{\\@tempdima}{#3}%
+    \\setlength{\\@tempdimb}{#4}%
+  \\fi
+  \\ifdim\\TP@margin < 0pt
+    \\advance\\@tempdima \\TP@margin
+    \\advance\\@tempdimb \\TP@margin
+    \\@tempdimc=\\wd\\TP@textbox
+    \\advance\\@tempdimc 2\\TP@margin % now \\@tempdimc is width of textblock
+    \\multiply\\@tempdimc #1
+    \\advance\\@tempdima -\\@tempdimc
+    \\@tempdimc=\\ht\\TP@textbox
+    \\advance\\@tempdimc 2\\TP@margin % now \\@tempdimc is height of textblock
+    \\multiply\\@tempdimc #2
+    \\advance\\@tempdimb -\\@tempdimc
+  \\else
+    \\@tempdimc=#1\\wd\\TP@textbox
+    \\advance\\@tempdima -\\@tempdimc
+    \\@tempdimc=#2\\ht\\TP@textbox
+    \\advance\\@tempdimb -\\@tempdimc
+  \\fi
+  \\ifTP@abspos
+    \\advance\\@tempdima by \\TP@ox
+    \\advance\\@tempdimb by \\TP@oy
+  \\fi
+  \\setbox0=\\vbox to 0pt{\\vskip\\@tempdimb
+    \\hbox to 0pt{\\hskip\\@tempdima
+    \\ifx\\TP@blockcolour\\@empty \\else
+      {\\color{\\TP@blockcolour}%
+       \\color@block{\\wd\\TP@textbox}{\\ht\\TP@textbox}{\\dp\\TP@textbox}%
+      }%
+    \\fi
+    \\ifx\\TP@defaultblockcolour\\@undefined \\else
+      \\global\\let\\TP@blockcolour\\TP@defaultblockcolour
+    \\fi
+    \\ifTPshowboxes
+      {\\color{\\TP@rulecolour}\\vrule width \\TPboxrulesize}%
+      \\hskip -\\TPboxrulesize
+    \\fi
+    \\ifTP@showtext
+      \\box\\TP@textbox
+    \\else
+      \\vbox to\\ht\\TP@textbox{%
+        \\ifTPshowboxes
+          {\\color{\\TP@rulecolour}\\hrule depth 0pt height \\TPboxrulesize \\vskip-\\TPboxrulesize}%
+        \\fi
+        \\vskip\\smallskipamount
+        \\hbox to\\wd\\TP@textbox{%
+          \\ifx\\TP@textblocklabel\\undefined
+            \\hbox{}%
+          \\else
+            \\hskip\\smallskipamount
+            \\fbox{\\showtextsize \\TP@textblocklabel}%
+            \\global\\let\\TP@textblocklabel\\undefined
+          \\fi
+          \\hss
+        }%
+        \\vss
+        \\ifTPshowboxes
+          \\vskip -\\TPboxrulesize
+          {\\color{\\TP@rulecolour}\\hrule depth 0pt height \\TPboxrulesize}%
+        \\fi
+      }%
+    \\fi
+    \\ifTPshowboxes
+      \\hskip -\\TPboxrulesize
+      {\\color{\\TP@rulecolour}\\vrule width \\TPboxrulesize}%
+    \\fi
+    \\hss}%
+  \\vss
+  }%  end of box0
+  \\ifTP@abspos
+    \\global\\setbox\\TP@holdbox\\vbox{%
+      \\unvbox\\TP@holdbox
+      \\box0
+    }%
+  \\else
+    \\ifTP@vmode
+      \\@tempdima=\\prevdepth
+      \\prevdepth=-1000pt  % = \\nointerlineskip, supressing interline glue
+      \\box0               % zero height+depth
+      \\prevdepth=\\@tempdima
+    \\else
+      \\vadjust{\\box0}%
+      \\@esphack
+    \\fi
+  \\fi
+}
+\\ifTP@abspos
+  \\ifTP@Liii
+    \\ifTP@overlay
+      \\AddToHook{shipout/foreground}{%
+        \\ifTP@displayholdbox\\put(\\strip@pt\\dimexpr1in,-\\strip@pt\\dimexpr1in){\\box\\TP@holdbox}\\fi}
+    \\else
+      \\AddToHook{shipout/background}{%
+         \\ifTP@displayholdbox\\put(\\strip@pt\\dimexpr1in,-\\strip@pt\\dimexpr1in){\\box\\TP@holdbox}\\fi}
+    \\fi
+  \\else
+    \\ifTP@overlay
+      \\EveryShipout{\\ifTP@displayholdbox
+        \\global\\setbox\\@cclv\\vbox{%
+          \\vbox to 0pt{\\ifvbox\\@cclv \\unvbox\\@cclv \\else \\box\\@cclv \\fi \\vss}%
+          \\unvbox\\TP@holdbox      % TP@holdbox is now void
+        }%
+      \\fi}%
+    \\else
+      \\EveryShipout{\\ifTP@displayholdbox
+        \\global\\setbox\\@cclv\\vbox{%
+          \\unvbox\\TP@holdbox
+          \\ifvbox\\@cclv \\unvbox\\@cclv \\else \\box\\@cclv \\fi
+        }%
+      \\fi}%
+    \\fi
+  \\fi % ifTP@Liii
+  \\textblockorigin{0pt}{0pt}%
+\\fi % ifTP@abspos
+\\endinput
+%%
+%% End of file \`textpos.sty'.
+` },
   { format: 27, filename: 'uniquecounter.sty', content: `
 
 		<!DOCTYPE html>
@@ -24920,7 +48441,335 @@ end
 		and try again.
 		<p><a href="https://tug.org">Return to the main site.</a>
 		` },
+  { format: 26, filename: 'uniquecounter.sty', content: `
+
+		<!DOCTYPE html>
+		<html lang="en">
+		<meta charset="UTF-8">
+		<title>Too Many Requests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+		<meta name="color-scheme" content="light dark">
+		<h1>Too Many Requests</h1>
+		<p>You can only make 10 requests per minute. Please wait a little bit
+		and try again.
+		<p><a href="https://tug.org">Return to the main site.</a>
+		` },
   { format: 27, filename: 'url.sty', content: `
+% url.sty  ver 3.4    16-Sep-2013   Donald Arseneau   asnd@triumf.ca
+% Copyright 1996-2013 Donald Arseneau,  Vancouver, Canada.
+% This program can be used, distributed, and modified under the terms
+% of the LaTeX Project Public License, version 2 or later.
+%
+% A form of \\verb that allows linebreaks at certain characters or
+% combinations of characters, accepts reconfiguration, and can usually
+% be used in the argument to another command.  It is intended for email
+% addresses, hypertext links, directories/paths, etc., which normally
+% have no spaces.  The font may be selected using the \\urlstyle command,
+% and new url-like commands can be defined using \\urldef.
+%
+% Usage:    Conditions:
+% \\url{ }   If the argument contains any "%" or "^^", or ends with
+%           "\\", it can't be used in the argument to another command.
+%           The argument must not contain unbalanced braces.
+% \\url|  |  ...where "|" is any character not used in the argument and not
+%           "{" or a space.  The same restrictions as above except that the
+%           argument may contain unbalanced braces.
+% \\urldef\\xyz\\url{ }
+% \\xyz      a defined-url: "\\xyz" can be used anywhere, no matter what
+%           characters it contains.
+% \\DeclareUrlCommand\\abc{settings}: makes \\abc{ } like \\url{ } with settings
+%
+% See url.tex/url.pdf for documentation.  Some info after \\endinput
+%
+% Required catcodes during loading:  letters @ = letter, 
+%        \` = > < . [ ] + - digits = other,  
+%        { } \\ ~ # % \$ _ ^ = their normal
+
+% default style assignments
+\\def\\UrlBreaks{\\do\\.\\do\\@\\do\\\\\\do\\/\\do\\!\\do\\_\\do\\|\\do\\;\\do\\>\\do\\]%
+ \\do\\)\\do\\,\\do\\?\\do\\&\\do\\'\\do+\\do\\=\\do\\#}%
+\\def\\UrlBigBreaks{\\do\\:\\do@url@hyp}%
+\\def\\UrlNoBreaks{\\do\\(\\do\\[\\do\\{\\do\\<}%
+% any ordinary characters that aren't usually:
+\\def\\UrlOrds{\\do\\*\\do\\-\\do\\~\\do\\'\\do\\"\\do\\-}%
+\\def\\UrlSpecials{\\do\\ {\\Url@space}\\do\\%{\\Url@percent}\\do\\^^M{\\Url@space}%
+   \\Url@force@Tilde}% package option may force faked text-ascii-tilde
+
+\\@namedef{Url@OT1encSpecials}{%
+  %  *Some* latin-1 or windows characters that ot1 has elsewhere:  OE  oe  ss
+  \\do\\^^8c{\\mathchar30 }\\do\\^^9c{\\mathchar27 }\\do\\^^df{\\mathchar25 }%
+  \\do\\~{\\lower.45ex\\hbox{\\m@th\$\\mathchar126\$}}% For tt style
+  % lots more to add, but I should later link into inputenc
+  \\do\\^^b5{\\mu}%
+  \\Url@OTnonTT % more for any but typewriter
+  }
+
+\\def\\Url@OTnonTT{\\do\\<{\\langle}\\do\\>{\\mathbin{\\rangle}}\\do
+  \\_{\\_\\penalty\\@m}\\do\\|{\\mid}\\do\\{{\\lbrace}\\do\\}{\\mathbin{\\rbrace}}\\do
+  \\\\{\\mathbin{\\backslash}}\\UrlTildeSpecial}
+
+% *Some* latin-1 or windows characters. Most will pass through safely to T1 enc
+% mu  inverted-?  OE  oe
+% lots more to add, but I should later link into inputenc
+\\@namedef{Url@T1encSpecials}{\\do\\^^b5{\\mu}\\do\\^^bf{\\mathchar190 }%
+  \\do\\^^8c{\\mathchar215 }\\do\\^^9c{\\mathchar247 }\\do\\^^df{\\mathchar255 }%
+  \\do\\^^ff{\\mathchar184 }}
+
+\\@namedef{Url@LY1encSpecials}{\\do\\~{\\mathchar158 }}
+
+\\def\\UrlTildeSpecial{\\do\\~{\\raise.45ex\\hbox{\\m@th\$\\scriptstyle\\sim\$}}}
+\\let\\Url@force@Tilde\\relax
+
+\\def\\url@ttstyle{%
+ \\@ifundefined{selectfont}{\\def\\UrlFont{\\tt}}{\\def\\UrlFont{\\ttfamily}}}
+
+\\def\\url@rmstyle{%
+ \\@ifundefined{selectfont}{\\def\\UrlFont{\\rm}}{\\def\\UrlFont{\\rmfamily}}}
+
+\\def\\url@sfstyle{%
+ \\@ifundefined{selectfont}{\\def\\UrlFont{\\sf}}{\\def\\UrlFont{\\sffamily}}}
+
+\\def\\url@samestyle{\\def\\UrlFont{}}
+
+\\@ifundefined{strip@prefix}{\\def\\strip@prefix#1>{}}{}
+\\@ifundefined{verbatim@nolig@list}{\\def\\verbatim@nolig@list{\\do\\\`}}{}
+
+% \\Url sets up the reading the argument verbatim if possible
+\\def\\Url{%
+ \\Url@movingtest
+ \\ifmmode\\@inmatherr\$\\fi %\$
+ \\let\\do\\@makeother \\dospecials % verbatim catcodes
+ \\catcode\`{\\@ne \\catcode\`}\\tw@ % with exceptions
+ \\catcode\`\\ =10 % allow "\\url {x}"
+ \\catcode\`\\#=6  % always # -> ##, so I can later convert ## -> #
+ \\@ifnextchar\\bgroup{\\obeyspaces\\obeylines\\Url@z}\\Url@y}
+
+% \\Url@y read arguments delimited like |...|, passing to \\Url@z
+\\def\\Url@y#1{\\catcode\`{11 \\catcode\`}11\\obeyspaces\\obeylines
+  \\def\\@tempa##1#1{\\Url@z{##1}}\\@tempa}
+
+% \\Url@z read arguments delimited like {...}, verbatimizes with \\meaning,
+% performs character translations, then invokes the formatter.
+\\def\\Url@z#1{\\toks@{#1}\\edef\\Url@String{\\the\\toks@}%
+  \\edef\\Url@String{\\expandafter\\strip@prefix\\meaning\\Url@String}%
+%\\if\\urldebug \\message{------------------------------------------------------}%
+%\\message{ \\Url@String}\\fi
+% \\meaning introduces spurious spaces in the text, so it would be nice
+% to preserve the real spaces before \\meaning, but that doesn't work --
+% we can only do replacement on streams of non-syntactic characters.
+  \\Url@ObeySp % may be no-op; otherwise put ordinary (12) space characters
+%\\if\\urldebug \\message{ \\Url@String}\\fi
+% we left the catcode of # with its normal value (6) so \\meaning
+% doubles it to ##.  Now we convert back to single #.  This allows
+% \\url{#} to appear in the arguments of other commands, where we can't
+% make # be an ordinary character.  We make the single # active rather
+% than \`other' to support hyperref.sty.
+  \\Url@acthash
+%\\if\\urldebug \\message{ \\Url@String}\\fi
+% Also make % active to support hyperref.
+  \\Url@actpercent
+% now do any hyper referencing due to hyperref (or perform a url-def)
+  \\Url@HyperHook
+% Now do the formatting in a group (can also have \\Url@HyperHook take
+% this as an argument.
+  {\\Url@FormatString}%
+  \\endgroup}
+
+\\let\\Url@ObeySp\\@empty
+\\let\\UrlRight\\@empty
+\\let\\UrlLeft\\@empty
+\\let\\Url@HyperHook\\@empty
+
+% This is the normal way to format the strings, using math mode.
+\\def\\Url@FormatString{%
+ \\UrlFont \\Url@MathSetup 
+ \$\\fam\\z@ \\textfont\\z@\\font
+ \\expandafter\\UrlLeft\\Url@String\\UrlRight
+ \\m@th\$%
+% \\if\\urldebug \\showlists \\fi 
+}%
+
+\\def\\Url@MathSetup{%
+ \\medmuskip\\Urlmuskip \\thickmuskip\\medmuskip \\thinmuskip0mu%
+ \\relpenalty\\UrlBigBreakPenalty \\binoppenalty\\UrlBreakPenalty
+ \\expandafter\\let\\expandafter\\UrlEncSpecials\\csname Url@\\f@encoding encSpecials\\endcsname
+ % Insert test for unknown encodings here \\ifx\\UrlEncSpecials\\relax
+ \\ifdim\\fontdimen\\thr@@\\font=\\z@ \\let\\Url@OTnonTT\\relax \\fi
+ \\@tempcnta\\z@ %  \\fam\\multiply\\@tempcnta\\@cclvi
+ \\let\\do\\set@mathcode \\UrlOrds % ordinary characters that were special
+ \\advance\\@tempcnta 8192 \\UrlBreaks % bin
+ \\advance\\@tempcnta 4096 \\UrlBigBreaks % rel
+ \\advance\\@tempcnta 4096 \\UrlNoBreaks % open
+ \\let\\do\\set@mathact \\UrlSpecials \\UrlEncSpecials % active
+ \\let\\do\\set@mathnolig \\verbatim@nolig@list % prevent ligatures
+}
+
+\\def\\set@mathcode#1{\\count@\`#1\\advance\\count@\\@tempcnta
+%\\message{Set mathcode of \\string #1 (\\number\`#1) = \\number\`#1 + \\number\\@tempcnta. }%
+\\mathcode\`#1\\count@}
+\\def\\set@mathact#1#2{\\mathcode\`#1=32768 \\begingroup 
+    \\lccode\`\\~\`#1\\lowercase{\\endgroup\\def~}{#2}}
+\\def\\set@mathnolig#1{\\ifnum\\mathcode\`#1<32768
+   \\begingroup\\lccode\`\\~\`#1\\lowercase{\\endgroup
+     \\edef~}{\\mathchar\\number\\mathcode\`#1\\sb{\\/}}%
+   \\mathcode\`#1=32768 \\fi}
+
+\\def\\Url@movingtest{\\begingroup
+ \\ifx\\let\\HyPsd@LetCommand % we are already in a pdf string!
+  \\expandafter\\Url@unmove \\fi % give the argument and hope for the best
+ \\let\\Url@moving\\relax\\relax\\relax
+ \\ifx\\Url@moving\\relax\\else \\expandafter\\Url@unmove \\fi
+ \\endgroup}
+\\long\\def\\Url@unmove#1\\Url@y{\\endgroup \\ifx\\protect\\relax\\else\\protect\\Url\\fi}
+\\edef\\Url@moving{\\csname Url Error\\endcsname}
+\\expandafter\\edef\\Url@moving
+ {\\csname url used in a moving argument.\\endcsname}
+\\expandafter\\expandafter\\expandafter \\let \\Url@moving\\@undefined
+
+\\def\\urldef#1#2{\\begingroup \\setbox\\z@\\hbox\\bgroup
+  \\def\\Url@HyperHook##1\\endgroup{\\Url@def{#1}{#2}}%
+  % Because hyperref breaks \\urldef and does not define its own (Grrrr!)...
+  \\def\\url@##1{\\egroup\\endgroup\\DeclareRobustCommand#1{#2{##1}}}%
+ #2}
+\\def\\Url@def#1#2{%
+   \\toks0\\expandafter{\\Url@String}%
+   \\protected@edef\\Url@String{\\Url@String}%
+   \\toks1\\expandafter{\\Url@String}%
+   \\edef\\Url@String{\\endgroup\\egroup\\endgroup\\def
+     \\expandafter\\noexpand\\csname\\expandafter\\@gobble\\string#1 \\endcsname
+     {\\noexpand\\Url@eitherdef{\\the\\toks1}{\\noexpand#2{\\the\\toks0}}}}%
+   \\Url@String
+   \\edef#1{\\noexpand\\protect
+      \\expandafter\\noexpand\\csname\\expandafter\\@gobble\\string#1 \\endcsname}%
+  }
+\\def\\Url@eitherdef{\\ifx\\let\\HyPsd@LetCommand % we are already in a pdf string!
+  \\expandafter\\@firstoftwo \\else \\expandafter\\@secondoftwo \\fi}
+
+\\def\\urlstyle#1{\\expandafter\\protect\\csname url@#1style\\endcsname}
+
+\\def\\DeclareUrlCommand#1#2{\\def#1{\\leavevmode\\begingroup #2\\Url}}
+
+% Sample (and default) configuration:
+%
+\\DeclareUrlCommand\\url{}
+\\urlstyle{tt}
+%
+\\newmuskip\\Urlmuskip \\Urlmuskip=0mu
+\\mathchardef\\UrlBreakPenalty=\\binoppenalty
+\\mathchardef\\UrlBigBreakPenalty=\\relpenalty
+%
+% picTeX defines \\path, so declare it optionally:
+\\@ifundefined{path}{\\DeclareUrlCommand\\path{\\urlstyle{tt}}}{}
+%
+% too many styles define \\email like \\address, so I will not define it.
+% \\DeclareUrlCommand\\email{\\urlstyle{rm}}
+
+% Process LaTeX \\package options
+%
+\\let\\Url@sppen\\@M
+\\def\\Url@space{\\penalty\\Url@sppen}
+\\def\\do@url@hyp{}% by default, no breaks after hyphens
+
+\\@ifundefined{ProvidesPackage}{
+}{\\ProvidesPackage
+ {url}[2013/09/16 \\space ver 3.4 \\space Verb mode for urls, etc.]
+\\DeclareOption{hyphens}{\\def\\do@url@hyp{\\do\\-}}% allow breaks after hyphens
+\\DeclareOption{obeyspaces}{\\let\\Url@ObeySp\\relax}% a flag for later
+\\DeclareOption{spaces}{\\def\\Url@sppen{\\UrlBreakPenalty}}
+\\DeclareOption{LY1}{}
+\\DeclareOption{T1}{}
+\\DeclareOption{allowmove}{\\let\\Url@moving\\@empty}
+\\DeclareOption{lowtilde}{%
+  \\def\\UrlTildeSpecial{\\do\\~{\\raise.2ex\\hbox{\\m@th\$\\scriptstyle\\sim\$}}}
+  \\let\\Url@force@Tilde\\UrlTildeSpecial
+}
+\\ProcessOptions\\relax
+\\ifx\\Url@ObeySp\\relax % [obeyspaces] was declared
+  \\begingroup \\lccode\`+=32 \\lowercase
+   {\\endgroup \\def\\Url@ObeySp{\\Url@Edit\\Url@String{ }{+}}}
+   \\def\\Url@space{\\penalty\\Url@sppen\\ }
+\\fi
+}
+\\ifx\\f@encoding\\undefined \\def\\f@encoding{OT1}\\fi
+
+\\begingroup
+% \\Url@acthash:    convert \`other' (doubled) ## to active #
+% \\Url@actpercent: convert \`other' % to active %
+ \\lccode\`+=\`\\# \\lccode\`\\~=\`\\#
+  \\lowercase {\\long\\gdef\\Url@acthash{\\Url@Edit\\Url@String{++}{~}%
+     \\ifnum\\mathcode\`\\#<32768 \\def~{\\#}\\fi}}%
+ \\lccode\`+=\`\\% \\lccode\`\\~=\`\\%
+  \\lowercase {\\long\\gdef\\Url@actpercent{\\Url@Edit\\Url@String{+}{~}%
+    \\ifnum\\mathcode\`\\%<32768 \\def~{\\%}\\fi}}%
+ \\catcode13=12 %
+ \\gdef\\Url@percent{\\@ifnextchar^^M{\\@gobble}{\\mathbin{\\mathchar\`\\%}}}%
+\\endgroup%
+
+%   Edit macro #1 changing all appearances of pattern #2 to replacement #3.
+%   The replacement is recursive, so don't put the search pattern into the
+%   replacement text!
+
+{ \\catcode\`Q=3
+
+\\gdef\\Url@Edit#1#2#3{%
+ \\begingroup % \\tracingall
+ \\def\\DOE@a{\\endgroup\\def#1}% Just so I can \\expandafter it safely.
+ \\def\\DOE@b##1#2##2Q##3{\\@ifblank{##2}% if finished,
+   {\\DOE@c ##1Q}% then remove \\@empty's and redefine macro
+   {\\DOE@b##1##3##2Q{##3}}% else, re-iterate
+ }%  the leading \\@empty preserves braces, as does the trailing pattern:
+ \\expandafter\\DOE@b\\expandafter\\@empty #1\\@empty#2Q{#3}}
+\\gdef\\DOE@c#1\\@empty Q{\\expandafter\\DOE@a\\expandafter{#1}}
+%
+%  \\@ifblank (LaTeX syntax) --- checks if parameter is blank (Spaces
+%     count as blank) use \\@ifblank{#1}{true case}{false case} etc
+\\long\\gdef\\@ifblank#1{\\@Ifbl@nk#1QQ\\@secondoftwo\\@firstoftwo!}%
+\\long\\gdef\\@Ifbl@nk#1#2Q#3#4#5!{#4}
+
+} % restore Q catcode
+
+
+%\\ifx\\urldebug\\@undefined \\def\\urldebug{01}\\fi
+
+\\endinput
+% For documentation, please see accompanying url.tex (url.pdf)
+% Package Options:  obeyspaces, hyphens, spaces, lowtilde
+%
+% Revision History:
+% ver 1.1 6-Feb-1996:
+% Fix hyphens that wouldn't break and ligatures that weren't suppressed.
+% ver 1.2 19-Oct-1996:
+% Package option for T1 encoding; Hooks: "\\UrlLeft" and "\\UrlRight".
+% ver 1.3 21-Jul-1997:
+% Prohibit spaces as delimiter characters; change ascii tilde in OT1.
+% ver 1.4 02-Mar-1999:
+% LaTeX license; moving-argument-error
+% ver 1.5 28-Mar-1999:
+% possibility of spacing around break characters; re-settable penalties
+% ver 1.6 20-Jun-2002:
+% un-double #, fix obeyed-spaces, ignore trailing %, hook for hyperref
+% (\\Url@HyperHook), no macros in pre-processed url string (in \\Url@String),
+% limit catcode change of ~.
+% ver 3.0 June 2003/Nov 2003:
+% \\DeclareUrlCommand; make font encoding automatic (only a few inputenc characters
+% are supported yet - needs refactoring); reverse penalties. 
+% ver 3.1 Mar 2004:
+% Remove spurious spaces in \\url@XXstyle commands.
+% ver 3.2 June 2005:
+% Fix cmsy-symbols in tt bug (from 3.0); LY1 encoding bug; Enable plain
+% with miniltx (again); Define the \\urldef for hyperref; Lower "sim" tilde
+% a little; fix \\lowercase error in \\UrlSpecials handling.
+% ver 3.3 April 2006:
+% Fix some encoding bugs and remove 8-bit characters.  lowtilde option
+% ver 3.4 Sept 2013:
+% \\@nomatherr->\\@inmatherr. & is now another \\UrlBreak character.
+% The End
+
+Test file integrity:  ASCII 32-57, 58-126:  !"#\$%&'()*+,-./0123456789
+:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_\`abcdefghijklmnopqrstuvwxyz{|}~
+
+` },
+  { format: 26, filename: 'url.sty', content: `
 % url.sty  ver 3.4    16-Sep-2013   Donald Arseneau   asnd@triumf.ca
 % Copyright 1996-2013 Donald Arseneau,  Vancouver, Canada.
 % This program can be used, distributed, and modified under the terms
@@ -26697,6 +50546,1468 @@ Test file integrity:  ASCII 32-57, 58-126:  !"#\$%&'()*+,-./0123456789
 %%
 %% End of file \`xcolor.sty'.
 ` },
+  { format: 26, filename: 'xcolor.sty', content: `
+%%
+%% This is file \`xcolor.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% xcolor.dtx  (with options: \`package')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from xcolor.sty.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file xcolor.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+\\ProvidesPackage{xcolor}
+ [2016/05/11 v2.12 LaTeX color extensions (UK)]
+%%
+%% ----------------------------------------------------------------
+%% Copyright (C) 2003-2016 by Dr. Uwe Kern <xcolor at ukern dot de>
+%% ----------------------------------------------------------------
+%%
+%% Please send error reports and suggestions for
+%% improvements to the above email address.
+%%
+%% This package contains code copied from
+%%
+%% color.dtx [1999/02/16 v1.0i Standard LaTeX Color (DPC)]
+%% Copyright (C) 1994--1999 David Carlisle
+%%
+%% which is part of the Standard LaTeX \`Graphics Bundle'.
+%%
+\\NeedsTeXFormat{LaTeX2e}
+\\expandafter\\edef\\csname XC@catcodes\\endcsname
+ {\\catcode33 \\the\\catcode33 % !
+  \\catcode34 \\the\\catcode34 % "
+  \\catcode39 \\the\\catcode39 % '
+  \\catcode42 \\the\\catcode42 % *
+  \\catcode44 \\the\\catcode44 % ,
+  \\catcode45 \\the\\catcode45 % -
+  \\catcode46 \\the\\catcode46 % .
+  \\catcode47 \\the\\catcode47 % /
+  \\catcode58 \\the\\catcode58 % :
+  \\catcode59 \\the\\catcode59 % ;
+  \\catcode60 \\the\\catcode60 % <
+  \\catcode61 \\the\\catcode61 % =
+  \\catcode62 \\the\\catcode62 % >
+  \\catcode63 \\the\\catcode63 % ?
+  \\catcode64 \\the\\catcode64 % @
+  \\catcode94 \\the\\catcode94 % ^
+  \\catcode96 \\the\\catcode96 % \`
+  \\catcode\`\\noexpand\\^^A\\the\\catcode\`\\^^A\\relax}
+\\catcode64 11 %
+\\@makeother\\! \\@makeother\\" \\@makeother\\' \\@makeother\\* \\@makeother\\,
+\\@makeother\\- \\@makeother\\. \\@makeother\\/ \\@makeother\\: \\@makeother\\;
+\\@makeother\\< \\@makeother\\= \\@makeother\\> \\@makeother\\? \\@makeother\\\`
+\\catcode94 7 %
+\\catcode\`\\^^A=14 %
+\\edef\\XC@@{\\expandafter\\noexpand\\csname\\string\\XC@@\\endcsname}
+\\newif\\ifcolors@ \\colors@true
+\\newif\\ifcolorerrors@
+\\newif\\ifglobalcolors \\globalcolorsfalse
+\\newif\\ifdefinecolors \\definecolorstrue
+\\newif\\ifconvertcolorsD
+\\newif\\ifconvertcolorsU
+\\newif\\ifblendcolors
+\\newif\\ifmaskcolors
+\\newif\\ifXC@@fbox \\XC@@fboxtrue
+\\newif\\ifXC@@tst
+\\def\\c@lor@error#1%
+ {\\ifcolorerrors@\\PackageError{xcolor}{Undefined color #1}\\@ehc
+  \\else\\PackageWarning{xcolor}{Undefined color #1}\\fi}
+\\def\\XC@append#1#2%
+ {\\ifx#1\\@undefined\\def#1{#2}\\else\\ifx#1\\relax\\def#1{#2}\\else
+  \\toks@\\expandafter{#1#2}\\edef#1{\\the\\toks@}\\fi\\fi}
+\\def\\XC@let@cc#1{\\expandafter\\XC@let@Nc\\csname#1\\endcsname}
+\\providecommand*\\@namelet[1]{\\expandafter\\XC@let@Nc\\csname#1\\endcsname}
+\\def\\XC@let@Nc#1#2{\\expandafter\\let\\expandafter#1\\csname#2\\endcsname}
+\\def\\XC@let@cN#1{\\expandafter\\let\\csname#1\\endcsname}
+\\def\\@namexdef#1{\\expandafter\\xdef\\csname #1\\endcsname}
+\\def\\aftergroupdef#1#2%
+ {\\expandafter\\endgroup\\expandafter\\def\\expandafter#1\\expandafter{#2}}
+\\def\\aftergroupedef#1#2%
+ {\\edef\\@@tmp{\\def\\noexpand#1{#2}}\\expandafter\\endgroup\\@@tmp}
+\\begingroup
+\\catcode\`\\!=13 \\catcode\`\\:=13 \\catcode\`\\-=13 \\catcode\`\\+=13
+\\catcode\`\\;=13 \\catcode\`\\/=13 \\catcode\`\\"=13 \\catcode\`\\>=13
+\\gdef\\XC@edef#1#2%
+ {\\begingroup
+  \\ifnum\\catcode\`\\!=13 \\edef!{\\string!}\\fi
+  \\ifnum\\catcode\`\\:=13 \\edef:{\\string:}\\fi
+  \\ifnum\\catcode\`\\-=13 \\edef-{\\string-}\\fi
+  \\ifnum\\catcode\`\\+=13 \\edef+{\\string+}\\fi
+  \\ifnum\\catcode\`\\;=13 \\edef;{\\string;}\\fi
+  \\ifnum\\catcode\`\\"=13 \\edef"{\\string"}\\fi
+  \\ifnum\\catcode\`\\>=13 \\edef>{\\string>}\\fi
+  \\edef#1{#2}\\@onelevel@sanitize#1\\aftergroupdef#1#1}
+\\gdef\\XC@mdef#1#2%
+ {\\begingroup
+  \\ifnum\\catcode\`\\/=13 \\edef/{\\string/}\\fi
+  \\ifnum\\catcode\`\\:=13 \\edef:{\\string:}\\fi
+  \\edef#1{#2}\\@onelevel@sanitize#1\\aftergroupdef#1#1}
+\\endgroup
+\\def\\XC@sdef#1#2{\\edef#1{#2}\\@onelevel@sanitize#1}
+\\def\\@ifxempty#1{\\@@ifxempty#1\\@@ifxempty\\XC@@}
+\\def\\@@ifxempty#1#2\\XC@@
+ {\\ifx#1\\@@ifxempty
+  \\expandafter\\@firstoftwo\\else\\expandafter\\@secondoftwo\\fi}
+\\long\\def\\XC@ifxcase#1#2#3%
+ {\\long\\def\\XC@if@##1##2%
+   {\\ifx#1##1%
+      \\toks@{##2}\\expandafter\\remove@to@nnil\\else\\expandafter\\XC@if@\\fi}%
+  \\XC@if@#2#1{#3}\\@nnil\\the\\toks@}
+\\long\\def\\XC@ifcase#1#2#3%
+ {\\long\\def\\XC@if@##1##2%
+   {\\@expandtwoargs\\in@{,#1,}{,##1,}\\ifin@
+      \\toks@{##2}\\expandafter\\remove@to@nnil\\else\\expandafter\\XC@if@\\fi}%
+  \\XC@if@#2{#1}{#3}\\@nnil\\the\\toks@}
+\\def\\XC@@opt{,}
+\\def\\@ifXCopt#1%
+ {\\@expandtwoargs\\in@{,#1,}{\\XC@@opt}%
+  \\ifin@\\expandafter\\@firstoftwo\\else\\expandafter\\@secondoftwo\\fi}
+\\let\\XC@@pkg\\relax
+\\let\\XC@declareoption\\@declareoption
+\\long\\def\\@declareoption#1#2%
+ {\\XC@declareoption{#1}{\\edef\\XC@@opt{\\XC@@opt#1,}#2}}
+\\def\\selectcolormodel#1%
+ {\\@ifundefined{XC@mod@#1}%
+   {\\c@lor@error{target model \`#1'}}%
+   {\\expandafter\\ifx\\csname XC@mod@#1\\endcsname\\XC@mod@natural
+      \\def\\XC@tgt@mod##1{##1}\\convertcolorsDfalse\\convertcolorsUfalse
+    \\else\\expandafter\\ifx\\csname XC@mod@#1\\endcsname\\XC@mod@named
+      \\c@lor@error{target model \`#1'}
+    \\else
+      \\edef\\XC@tgt@mod##1{#1}\\convertcolorsDtrue\\convertcolorsUtrue
+    \\fi\\fi}}
+\\@tfor\\@@tmp:={Hsb}{tHsb}{ignore}{named}{ps}{wave}\\do
+ {\\expandafter\\XC@sdef\\csname XC@mod@\\@@tmp\\endcsname{\\@@tmp}}
+\\@tfor\\@@tmp:={natural}{rgb}{cmy}{cmyk}{hsb}{gray}{RGB}{HTML}{HSB}{Gray}\\do
+ {\\expandafter\\XC@sdef\\csname XC@mod@\\@@tmp\\endcsname{\\@@tmp}%
+  \\edef\\@@tmp
+   {\\noexpand\\DeclareOption{\\@@tmp}{\\noexpand\\selectcolormodel{\\@@tmp}}}%
+  \\@@tmp}
+\\DeclareOption{monochrome}
+ {\\ExecuteOptions{hideerrors}%
+  \\AtEndOfPackage
+   {\\colors@false
+    \\def\\set@color{\\c@lor@special\\m@ne
+      {color push \\current@color}\\aftergroup\\reset@color}%
+    \\def\\reset@color{\\c@lor@special\\m@ne{color pop}}%
+    \\def\\set@page@color{\\c@lor@special\\m@ne{background \\current@color}}}}
+\\let\\XC@@names\\relax
+\\providecommand*\\colornameprefix{XC@}
+\\let\\XC@@nameprefix\\colornameprefix
+\\def\\XC@declarenames#1#2#3%
+ {\\DeclareOption{#1}{\\XC@append\\XC@@names
+   {#3\\definecolorstrue\\input{#2.def}\\definecolorstrue
+    \\let\\colornameprefix\\XC@@nameprefix}}
+  \\DeclareOption{#1*}{\\XC@append\\XC@@names
+   {#3\\definecolorsfalse\\input{#2.def}\\definecolorstrue
+    \\let\\colornameprefix\\XC@@nameprefix}}}
+\\XC@declarenames{dvipsnames}{dvipsnam}{\\let\\colornameprefix\\@empty}
+\\XC@declarenames{svgnames}{svgnam}{}
+\\XC@declarenames{x11names}{x11nam}{}
+\\XC@declarenames{hksnames}%
+ {hks\\ifcase\\paperquality k\\or n\\or k\\or z\\else n\\fi nam}{}
+\\XC@declarenames{pmsnames}{pmsnam}{}
+\\XC@declarenames{ralnames}{ralnam}{}
+\\DeclareOption{table}{\\XC@append\\XC@@pkg{\\RequirePackage{colortbl}}}
+\\DeclareOption{fixpdftex}{\\XC@append\\XC@@pkg{\\RequirePackage{pdfcolmk}}}
+\\DeclareOption{hyperref}
+ {\\@tfor\\@@tmp:={cite}{file}{link}{menu}{page}{run}{url}\\do
+   {\\expandafter\\edef\\csname KV@Hyp@x\\@@tmp bordercolor\\endcsname #1%
+     {\\noexpand\\XC@bordercolor{\\@@tmp}{#1}}}%
+  \\AtEndOfPackage
+   {\\GetGinDriver\\def\\KV@Hyp@xpdfborder#1{\\edef\\@pdfborder{#1}}%
+    \\@tfor\\@@tmp:={dvips}\\do
+     {\\ifx\\GinDriver\\@@tmp
+       \\def\\KV@Hyp@xpdfborder#1%
+        {\\edef\\@pdfborder{#1}\\expandafter\\XC@pdfborder\\@pdfborder\\relax}%
+      \\@break@tfor\\fi}}}
+\\providecommand*\\Gin@driver{}
+\\@tfor\\@@tmp:={dvipdf}{dvipdfm}{dvipdfmx}{dvips}{dvipsone}{dviwin}%
+              {emtex}{luatex}{pctex32}{pctexhp}{pctexps}{pctexwin}{pdftex}%
+              {tcidvi}{textures}{truetex}{vtex}{xetex}\\do
+ {\\edef\\@@tmp{\\noexpand\\DeclareOption{\\@@tmp}%
+    {\\def\\noexpand\\Gin@driver{\\@@tmp.def}}}%
+  \\@@tmp}
+\\DeclareOption{dviwindo}{\\ExecuteOptions{dvipsone}}
+\\DeclareOption{oztex}{\\ExecuteOptions{dvips}}
+\\DeclareOption{xdvi}{\\ExecuteOptions{dvips,monochrome}}
+\\DeclareOption{xcdraw}{\\def\\XC@@xcd@{1}}
+\\DeclareOption{noxcdraw}{\\def\\XC@@xcd@{-1}}
+\\DeclareOption{fixinclude}{\\def\\XC@@xcf@{1}}
+\\DeclareOption{prologue}{\\def\\XC@@xcp@{1}}
+\\DeclareOption{kernelfbox}{\\XC@@fboxfalse}
+\\DeclareOption{showerrors}{\\colorerrors@true}
+\\DeclareOption{hideerrors}{\\colorerrors@false}
+\\DeclareOption{debugshow}{\\catcode\`\\^^A=9 \\let\\GDebug\\typeout}
+\\DeclareOption*%
+ {\\PackageInfo{xcolor}{Package option \`\\CurrentOption' ignored}}
+\\def\\XC@@xcd@{-1}
+\\def\\XC@@xcf@{-1}
+\\def\\XC@@xcp@{-1}
+\\ExecuteOptions{natural,showerrors}
+\\InputIfFileExists{color.cfg}{}{}
+\\let\\@declareoption\\XC@declareoption
+\\ProcessOptions\\relax
+\\edef\\Gin@driver{\\Gin@driver}
+\\if!\\Gin@driver!
+  \\PackageError{xcolor}
+    {No driver specified}
+    {You should make a default driver option in a file \\MessageBreak
+     color.cfg\\MessageBreak
+     eg: \\protect\\ExecuteOptions{dvips}}
+\\else
+  \\PackageInfo{xcolor}{Driver file: \\Gin@driver}
+  \\@ifundefined{ver@\\Gin@driver}{\\input{\\Gin@driver}}{}
+  \\def\\@@tmp#1.def{\\def\\XC@@drv{#1}}
+  \\expandafter\\@@tmp\\Gin@driver
+\\fi
+\\count@\\XC@@xcd@ \\advance\\count@\\XC@@xcf@ \\advance\\count@\\XC@@xcp@\\relax
+\\ifnum\\count@>-3
+  \\XC@ifcase\\XC@@drv
+   {{dvips,pctex32}%
+    {\\def\\@tempa{0}
+     \\def\\XC@special#1{\\special{ps:XC!b}\\special{"#1}\\special{ps:XC!e}}}%
+    {pdftex}%
+    {\\def\\@tempa{1}
+     \\def\\XC@special#1{\\pdfliteral{ q #1 Q }}}%
+    {luatex}%
+    {\\def\\@tempa{1}
+     \\ifnum\\luatexversion<87%
+       \\def\\XC@special#1{\\pdfliteral{ q #1 Q }}%
+     \\else%
+       \\def\\XC@special#1{\\pdfextension literal{ q #1 Q }}%
+     \\fi}%
+    {dvipdfm}%
+    {\\def\\@tempa{1}
+     \\def\\XC@special#1{\\special{pdf: content #1}}}%
+   }{\\def\\@tempa{-1}}
+  \\ifnum\\XC@@xcd@>\\m@ne\\let\\XC@@xcd@\\@tempa\\fi
+  \\ifnum\\XC@@xcf@>\\m@ne\\let\\XC@@xcf@\\@tempa\\fi
+  \\ifnum\\XC@@xcp@>\\m@ne\\let\\XC@@xcp@\\@tempa\\fi
+  \\ifnum\\@tempa=0 \\AtBeginDvi{\\special{header=xcolor.pro}}\\fi
+  \\ifcase\\XC@@xcf@
+    \\AtBeginDvi{\\special{! XCfixnormalscale}}
+  \\fi
+  \\ifcase\\XC@@xcp@
+    \\AtBeginDvi{\\special{header=\\jobname.xcp}}
+    \\newwrite\\XC@@xcp\\immediate\\openout\\XC@@xcp=\\jobname.xcp
+    \\immediate\\write\\XC@@xcp{\\@percentchar!}
+    \\immediate\\write\\XC@@xcp{TeXDict begin}
+    \\AtEndDocument
+     {\\immediate\\write\\XC@@xcp{end}\\immediate\\closeout\\XC@@xcp}
+  \\fi
+\\fi
+\\@namedef{ver@color.sty}{1999/02/16}
+\\XC@@pkg
+\\long\\def\\@secondoffive#1#2#3#4#5{#2}
+\\long\\def\\@thirdoffive#1#2#3#4#5{#3}
+\\def\\xglobal{\\xglobal@stop\\begingroup\\futurelet\\@@tok\\xglobal@test}
+\\def\\xglobal@test
+ {\\expandafter\\@tfor\\expandafter\\@@tmp
+   \\expandafter:\\expandafter=\\xglobal@list\\do
+    {\\expandafter\\ifx\\@@tmp\\@@tok
+       \\aftergroup\\let\\aftergroup\\xglobal@\\@break@tfor\\fi}%
+  \\endgroup\\global}
+\\def\\xglobal@stop{\\let\\xglobal@\\@empty}
+\\xglobal@stop
+\\def\\xglobal@list
+ {\\definecolor\\definecolors\\definecolorset\\colorlet\\providecolor
+  \\providecolors\\providecolorset\\blendcolors\\maskcolors
+  \\substitutecolormodel}
+\\def\\xglobalize@#1{\\ifx\\xglobal@\\global\\global\\let#1#1\\fi}
+\\def\\GetGinDriver
+ {\\@tempswafalse
+  \\@tfor\\@@tmp:={dvips}{luatex}{pdftex}{dvipdf}{dvipdfm}{dvipsone}{vtex}{textures}%
+  \\do{\\ifx\\XC@@drv\\@@tmp\\@tempswatrue\\@break@tfor\\fi}%
+  \\edef\\GinDriver{\\if@tempswa\\XC@@drv\\else hypertex\\fi}}
+\\def\\@hex@Hex#1{\\ifx#1\\relax\\else\\expandafter\\@hex@@Hex\\expandafter#1\\fi}
+\\def\\@hex@@Hex#1%
+ {\\if a#1A\\else \\if b#1B\\else \\if c#1C\\else \\if d#1D\\else
+  \\if e#1E\\else \\if f#1F\\else #1\\fi\\fi\\fi\\fi\\fi\\fi \\@hex@Hex}
+\\def\\XC@strip@comma#1,#2%
+ {\\ifx,#2%
+    #1\\expandafter\\remove@to@nnil\\else#1 \\expandafter\\XC@strip@comma\\fi
+  #2}
+{\\catcode\`Q=3
+ \\gdef\\XC@replace#1#2#3%
+  {\\begingroup
+   \\def\\XC@repl@ce##1#2##2Q##3%
+    {\\@ifxempty{##2}{\\XC@r@pl@ce##1Q}{\\XC@repl@ce##1##3##2Q{##3}}}%
+   \\def\\XC@r@pl@ce##1\\@empty Q%
+    {\\expandafter\\endgroup\\expandafter\\def\\expandafter#1\\expandafter{##1}}%
+   \\expandafter\\XC@repl@ce\\expandafter\\@empty #1\\@empty#2Q{#3}}
+}
+\\def\\XC@clean#1%
+ {\\edef#1{ #1 }%
+  \\XC@cle@n#1,{ }\\XC@cle@n#1{. }{ }\\XC@cle@n#1{ },%
+  \\edef#1{\\expandafter\\@gobbletwo#1}}
+\\def\\XC@cle@n#1#2#3%
+ {\\def\\XC@cl@@n##1#2##2{#3##1\\ifx##2\\@empty\\else\\expandafter\\XC@cl@@n\\fi##2}%
+  \\edef#1{\\expandafter\\XC@cl@@n#1#2\\@empty}}%
+\\def\\rdivide#1#2%
+ {\\begingroup\\toks@{#1}\\edef\\@@tmp{\\noexpand\\@tempdima\\the#1}%
+  \\@defaultunits\\@tempdimb=#2pt\\relax\\@nnil \\@@tmp\\relax
+  \\ifdim\\@tempdima<\\z@ \\@tempdima-\\@tempdima\\def\\@sign{-}\\else
+    \\def\\@sign{}\\fi
+  \\ifdim\\@tempdimb<\\z@ \\@tempdimb-\\@tempdimb\\edef\\@sign{\\@sign-}\\fi
+  \\ifdim\\@tempdima<.1\\maxdimen \\ifdim\\@tempdimb<.01\\maxdimen
+    \\lshift\\@tempdima \\lshift\\@tempdimb \\fi\\fi
+  \\@tempcnta=\\@tempdima \\@tempcntb=\\@tempdimb
+  \\count@=\\@tempcnta \\divide\\count@\\@tempcntb
+  \\edef\\@@tmp{\\number\\count@.}%
+  \\@tempswatrue  \\@rdivide \\@rdivide \\@rdivide \\@rdivide \\@rdivide
+  \\@tempswafalse \\@rdivide
+  \\dimen@\\@@tmp\\p@ \\ifnum\\count@>4\\advance\\dimen@1sp\\fi
+  \\dimen@\\@sign\\dimen@
+  \\edef\\@@tmp{\\the\\toks@\\the\\dimen@}%
+  \\expandafter\\endgroup\\@@tmp}
+\\def\\@rdivide
+ {\\multiply\\count@\\@tempcntb \\advance\\@tempcnta-\\count@
+  \\multiply\\@tempcnta10 \\count@=\\@tempcnta \\divide\\count@\\@tempcntb
+  \\if@tempswa\\edef\\@@tmp{\\@@tmp\\number\\count@}\\fi}
+\\def\\rmultiply#1#2%
+ {\\begingroup
+  \\edef\\@@mul{#2}\\@tempdima\\the#1\\relax
+  \\afterassignment\\@tempdimb\\@tempcntb=\\@@mul\\p@
+  \\ifdim\\@tempdima<\\z@ \\@tempdima-\\@tempdima\\def\\@sign{-}\\else
+    \\def\\@sign{}\\fi
+  \\ifnum\\@tempcntb<\\z@ \\@tempcntb-\\@tempcntb\\edef\\@sign{\\@sign-}\\fi
+  \\lshift\\@tempdima \\dimen@\\z@
+  \\expandafter\\@rmultiply\\@@mul.0.\\@nil
+  \\advance\\dimen@\\@tempcntb\\@tempdima \\rshift\\dimen@
+  \\dimen@\\@sign\\dimen@
+  \\edef\\@@tmp{#1\\the\\dimen@}%
+  \\expandafter\\endgroup\\@@tmp}
+\\def\\@rmultiply#1.#2.#3\\@nil
+ {\\def\\@@tmp{}%
+  \\@tfor\\@@mul:=#2\\do
+   {\\edef\\@@tmp
+     {\\advance\\dimen@\\@@mul\\@tempdima \\divide\\dimen@10 \\@@tmp}}%
+  \\@@tmp}
+\\def\\lshift#1{#1\\expandafter\\lshift@\\the#1}
+\\def\\llshift#1{\\lshift#1\\lshift#1}
+\\def\\lshiftnum#1{\\expandafter\\lshiftnum@#1.00.:}
+\\def\\lshiftnum@#1.#2#3.#4:{#1#2\\ifnum0#3>\\z@.#3\\fi}
+\\def\\llshiftnum#1{\\expandafter\\llshiftnum@#1\\@empty.00.:}
+\\def\\llshiftnum@#1.#2#3#4.#5:%
+ {#1#2\\ifnum0#3>\\z@#3\\else0\\fi\\ifnum0#4>\\z@.#4\\fi}
+\\def\\lshiftset#1#2{\\edef\\@@XC{\\noexpand\\lshiftnum{#2}}#1\\@@XC\\p@}
+\\def\\llshiftset#1#2{\\edef\\@@XC{\\noexpand\\llshiftnum{#2}}#1\\@@XC\\p@}
+\\def\\rshift#1{#1\\expandafter\\rshift@\\the#1}
+\\def\\rrshift#1{\\rshift#1\\rshift#1}
+\\begingroup
+\\catcode\`P=12
+\\catcode\`T=12
+\\lowercase
+ {\\def\\@@tmp{\\def\\lshift@##1.##2##3PT{##1##2\\ifnum0##3>\\z@.##3\\fi\\p@}
+             \\def\\rshift@##1.##2PT{\\rshift@@##1\\relax##2\\p@}}}
+\\expandafter\\endgroup\\@@tmp
+\\def\\rshift@@#1#2%
+ {\\ifx#2\\relax.#1\\else#1\\expandafter\\rshift@@\\expandafter#2\\fi}
+\\def\\XC@inflate#1#2#3#4%
+ {\\edef#4{#2,\\ifx#1\\XC@mod@cmyk #3\\else
+             \\ifx#1\\XC@mod@gray ,,,#3,,,\\else ,#3,\\fi\\fi}}
+\\def\\XC@vec#1,#2,#3,#4,#5,#6,#7,#8,#9%
+ {\\def\\@@tmp{}%
+  \\XC@vec@{#1}{#5}%
+  \\ifx,#2,\\else
+  \\XC@vec@{#2}{#6}\\XC@vec@{#3}{#7}\\ifx,#4,\\else\\XC@vec@{#4}{#8}\\fi\\fi
+  \\aftergroupdef#9\\@@tmp}
+\\def\\XC@vec@@{\\edef\\@@tmp{\\ifx\\@@tmp\\@empty\\else\\@@tmp,\\fi\\strip@pt\\dimen@}}
+\\def\\XC@add{\\begingroup \\let\\XC@vec@\\XC@add@ \\XC@vec}
+\\def\\XC@add@#1#2%
+ {\\llshiftset\\dimen@{#1}\\llshiftset\\@tempdima{#2}%
+  \\advance\\dimen@\\@tempdima \\rrshift\\dimen@ \\XC@vec@@}
+\\def\\XC@sub{\\begingroup \\let\\XC@vec@\\XC@sub@ \\XC@vec}
+\\def\\XC@sub@#1#2{\\XC@add@{#1}{-#2}}
+\\def\\XC@mul{\\begingroup \\let\\XC@vec@\\XC@mul@ \\XC@vec}
+\\def\\XC@mul@#1#2%
+ {\\llshiftset\\dimen@{#1}\\rmultiply\\dimen@{#2}\\rrshift\\dimen@ \\XC@vec@@}
+\\def\\XC@mix%
+ {\\begingroup
+  \\@tempdima\\dimen@ \\@tempdimb100\\p@ \\advance\\@tempdimb-\\@tempdima
+  \\let\\XC@vec@\\XC@mix@ \\XC@vec}
+\\def\\XC@mix@#1#2%
+ {\\dimen@#1\\@tempdima \\advance\\dimen@#2\\@tempdimb \\rrshift\\dimen@ \\XC@vec@@}
+\\def\\XC@calc@#1,#2,#3,#4,#5:#6%
+ {\\XC@let@Nc\\@@cmd{XC@calc#6}\\@@cmd{#1}\\@@tmp
+  \\ifx,#2,\\else
+    \\@@cmd{#2}\\@tempa\\@@cmd{#3}\\@tempb
+    \\ifx,#4,%
+      \\edef\\@@tmp{\\@@tmp,\\@tempa,\\@tempb}\\else
+      \\@@cmd{#4}\\@tempc\\edef\\@@tmp{\\@@tmp,\\@tempa,\\@tempb,\\@tempc}\\fi\\fi}
+\\def\\XC@calcC#1#2%
+ {\\llshiftset\\dimen@{-#1}\\advance\\dimen@100\\p@
+  \\rrshift\\dimen@ \\XC@calcN{\\strip@pt\\dimen@}#2}
+\\def\\XC@calcD{\\XC@c@lcD\\@@scl{}}
+\\def\\XC@c@lcD#1#2#3#4%
+ {\\dimen@#3\\p@ \\rdivide\\dimen@{#1}\\edef#4{\\strip@pt\\dimen@#2}}
+\\def\\XC@calcF#1#2%
+ {\\edef#2{#1}\\expandafter\\XC@c@lcF#2.0.:#2}
+\\def\\XC@c@lcF#1.#2.#3:#4%
+ {\\edef#4{\\XC@c@@cR#200000:}%
+  \\dimen@#1.5\\p@ \\afterassignment\\dimen@\\count@=\\the\\dimen@
+  \\edef#4%
+   {\\ifnum#4>0 \\ifnum\\count@=0 \\ifdim#1.5\\p@<\\z@ -\\fi\\fi\\fi
+    \\number\\count@.#4}}
+\\def\\XC@calcH#1#2%
+ {\\count@#1 \\divide\\count@\\sixt@@n \\edef\\XC@@tmp{\\hexnumber@\\count@}%
+  \\multiply\\count@-\\sixt@@n \\advance\\count@#1
+  \\edef#2{\\XC@@tmp\\hexnumber@\\count@}}
+\\def\\XC@calcM#1#2%
+ {\\dimen@#1\\p@ \\dimen@\\@@scl\\dimen@ \\advance\\dimen@.5\\p@
+  \\afterassignment\\dimen@\\count@=\\the\\dimen@ \\edef#2{\\number\\count@}}
+\\def\\XC@calcN#1#2%
+ {\\XC@calcR{#1}#2\\edef#2{\\expandafter\\XC@c@lcN#200000:}}
+\\def\\XC@c@lcN#1.#200000#3:{#1\\ifnum0#2=0 \\else.#2\\fi}
+\\def\\XC@calcR#1#2{\\edef#2{#1}\\edef#2{\\expandafter\\XC@c@lcR#2.0.:}}
+\\def\\XC@c@lcR#1.#2.#3:%
+ {\\ifnum#10>0 1.00000\\else 0.\\ifnum#11<0 00000\\else
+  \\XC@c@@cR#200000:\\fi\\fi}
+\\def\\XC@c@@cR#1#2#3#4#5#6:{#1#2#3#4#5}
+\\def\\XC@calcS{\\XC@c@lcS\\@@scl{}}
+\\def\\XC@c@lcS#1#2#3#4%
+ {\\lshiftset\\dimen@{#3}%
+  \\ifdim#1\\p@<100\\p@
+    \\dimen@\\lshiftnum#1\\dimen@ \\rrshift\\dimen@ \\else
+    \\dimen@#1\\dimen@ \\rshift\\dimen@ \\fi
+  \\edef#4{\\strip@pt\\dimen@#2}}
+\\def\\XC@calcT#1#2%
+ {\\lshiftset\\dimen@{#1}\\advance\\dimen@\\lshiftnum\\@@arg\\p@ \\rshift\\dimen@
+  \\edef#2%
+   {\\ifdim\\dimen@>\\p@1\\else\\ifdim\\dimen@<\\z@0\\else\\strip@pt\\dimen@\\fi\\fi}}
+\\def\\XC@calcU#1#2%
+ {\\dimen@#1\\p@
+  \\ifdim\\dimen@=\\p@\\else
+    \\afterassignment\\dimen@\\count@=\\the\\dimen@
+    \\relax\\ifdim\\dimen@=\\z@\\else
+      \\ifdim#1\\p@<\\z@ \\dimen@-\\dimen@ \\advance\\dimen@\\p@ \\fi
+    \\fi
+  \\fi
+  \\edef#2{\\strip@pt\\dimen@}}
+\\providecommand*\\rangeRGB{255}
+\\providecommand*\\rangeHSB{240}
+\\providecommand*\\rangeHsb{360}
+\\providecommand*\\rangetHsb{60,30;120,60;180,120;210,180;240,240}
+\\providecommand*\\rangeGray{15}
+\\providecommand*\\adjustUCRBG{1,1,1,1}
+\\providecommand*\\paperquality{1}
+\\providecommand*\\colorseriescycle{16}
+\\def\\XC@clr@rgb@white{1,1,1}
+\\def\\XC@clr@cmy@white{0,0,0}
+\\def\\XC@clr@cmyk@white{0,0,0,0}
+\\def\\XC@clr@hsb@white{\\@@hue,0,1}
+\\def\\XC@clr@hsb@gray{\\@@hue,0,0.5}
+\\def\\XC@clr@hsb@black{\\@@hue,0,0}
+\\def\\XC@clr@gray@white{1}
+\\@tfor\\@@tmp:={grad}{last}{step}\\do
+ {\\XC@let@cN{XC@met@\\@@tmp}\\@@tmp}
+\\def\\definecolor{\\@testopt{\\XC@definecolor}{}}
+\\def\\XC@definecolor[#1]#2%
+ {\\@testopt{\\XC@definec@lor[#1]{#2}}\\colornameprefix}
+\\def\\XC@definec@lor[#1]#2[#3]#4#5%
+ {\\begingroup
+  \\XC@sdef\\@@cls{#1}\\XC@edef\\@@nam{#2}\\edef\\colornameprefix{#3}%
+  \\XC@logdef\\@@nam
+  \\XC@getmodclr02{#4}{#5}{\\let\\@@tmp\\relax}%
+   {\\ifx\\@@mod\\XC@mod@named
+      \\XC@c@l@rlet\\@@nam\\@@clr
+    \\else
+      \\ifx\\@@cls\\XC@mod@ps
+        \\edef\\@@drv{\\@@mod\\space\\@@clr}\\def\\@@hue{0}%
+        \\edef\\@@clr{\\@nameuse{XC@clr@\\@@mod @white}}%
+      \\else
+        \\ifconvertcolorsD
+          \\let\\@@tmp\\@@mod\\XC@sdef\\@@mod{\\XC@tgt@mod\\@@tmp}%
+          \\convertcolorspec\\@@tmp\\@@clr\\@@mod\\@@clr
+        \\fi
+        \\XC@coremodel\\@@mod\\@@clr
+        \\csname color@\\@@mod\\expandafter\\endcsname
+          \\expandafter\\@@drv\\expandafter{\\@@clr}%
+        \\ifcase\\XC@@xcp@
+          \\immediate\\write\\XC@@xcp{/\\colornameprefix\\@@nam{\\expandafter
+            \\XC@strip@comma\\@@clr,,\\@nnil}XC\\@@mod}%
+          \\let\\@@cls\\XC@mod@named
+        \\fi
+        \\ifx\\@@cls\\@empty\\else
+          \\let\\@@tmp\\@@cls
+          \\@nameuse{define@color@\\@@cls}\\@@nam\\@@drv
+          \\csname color@\\@@tmp\\expandafter\\endcsname
+            \\expandafter\\@@drv\\expandafter{\\@@nam}%
+        \\fi
+      \\fi
+      \\toks@\\expandafter{\\@@drv}%
+      \\edef\\@@tmp
+       {\\ifglobalcolors\\global\\else\\xglobal@\\fi
+        \\noexpand\\@namedef{\\string\\color@\\@@nam}%
+         {\\noexpand\\xcolor@{\\@@cls}{\\the\\toks@}{\\@@mod}{\\@@clr}}}%
+    \\fi}%
+  \\expandafter\\endgroup\\@@tmp\\xglobal@stop}
+\\def\\XC@getmodclr#1#2#3#4%
+ {\\ifnum\\ifcase#1 \\ifXC@@getmod1\\else0 \\fi \\or1 \\fi>0
+    \\XC@mdef\\@@mod{#3}\\expandafter\\XC@getmod\\@@mod////////\\XC@@
+    \\@ifundefinedmodel\\@@Mod{\\let\\@@Mod\\XC@mod@ignore}{}\\fi
+  \\@ifundefined{XC@mod@\\@@mod}%
+   {\\c@lor@error{model \`\\@@mod'}\\@firstoftwo}%
+   {\\ifcase#2\\else
+      \\XC@mdef\\@@clr{#4}%
+      \\edef\\@@clr{\\expandafter\\XC@getclr\\@@clr////////\\XC@@}%
+      \\ifx\\@@cls\\XC@mod@ps\\else\\XC@clean\\@@clr\\fi
+      \\ifx\\@@Mod\\XC@mod@ignore\\else
+        \\convertcolorspec\\@@mod\\@@clr\\@@Mod\\@@clr
+        \\ifnum#2>1 \\let\\@@mod\\@@Mod\\fi
+      \\fi
+    \\fi \\@secondoftwo}}
+\\def\\XC@getmod#1/#2/#3/#4/#5/#6/#7/#8/#9\\XC@@
+ {\\XC@g@tm@d0#1::\\XC@@ \\XC@getm@d1{#2}\\XC@getm@d2{#3}%
+  \\XC@getm@d3{#4}\\XC@getm@d4{#5}\\XC@getm@d5{#6}\\XC@getm@d6{#7}%
+  \\XC@getm@d7{#8}\\def\\XC@@pos{0}\\def\\@@mod{#1}\\@gobble\\@nnil}%
+\\def\\XC@getm@d#1#2%
+ {\\edef\\XC@@pos{#2}\\XC@sdef\\@@mod{\\XC@tgt@mod\\XC@@pos}%
+  \\ifx\\XC@@pos\\@@mod\\def\\XC@@pos{#1}\\expandafter\\remove@to@nnil\\fi}%
+\\def\\XC@g@tm@d#1#2:#3:#4\\XC@@
+ {\\@ifxempty{#3}{\\let\\@@Mod\\XC@mod@ignore\\XC@getm@d0{#2}}%
+    {\\def\\@@Mod{#2}\\XC@getm@d0{#3}}}%
+\\def\\XC@getclr#1/#2/#3/#4/#5/#6/#7/#8/#9\\XC@@
+ {\\ifcase\\XC@@pos\\space #1\\or#2\\or#3\\or#4\\or#5\\or#6\\or#7\\or#8\\fi}
+\\newif\\ifXC@@getmod \\XC@@getmodtrue
+\\let\\xdefinecolor\\definecolor
+\\def\\providecolor{\\@testopt{\\XC@providecolor}{}}
+\\def\\XC@providecolor[#1]#2%
+ {\\@testopt{\\XC@providec@lor[#1]{#2}}\\colornameprefix}
+\\def\\XC@providec@lor[#1]#2[#3]%
+ {\\XC@edef\\XC@@tmp{#2}%
+  \\@ifundefinedcolor\\XC@@tmp{\\XC@definecolor[#1]{#2}[#3]}%
+   {\\ifnum\\XC@tracing>0
+      \\PackageInfo{xcolor}{Ignoring color definition \`\\XC@@tmp'}\\fi
+    \\@gobbletwo}}
+\\def\\xcolor@#1#2#3#4{#2}
+\\def\\colorlet{\\@testopt{\\XC@colorlet}{}}
+\\def\\XC@colorlet[#1]#2{\\@testopt{\\XC@col@rlet[#1]{#2}}{}}
+\\def\\XC@col@rlet[#1]#2[#3]#4%
+ {\\begingroup
+  \\edef\\@@cls{#1}\\XC@edef\\@@nam{#2}\\XC@sdef\\@@mod{#3}\\XC@edef\\@@clr{#4}%
+  \\XC@info\\@@clr\\@@tmp\\XC@@tstfalse
+  \\ifnum\\@@tmp=\\@ne\\ifx\\@@mod\\@empty
+    \\ifx\\@@cls\\@empty
+      \\XC@@tsttrue
+    \\else
+      \\edef\\@@tmp
+       {\\expandafter\\expandafter\\expandafter\\@secondoffive
+         \\csname\\string\\color@\\@@clr\\endcsname}%
+      \\ifx\\@@cls\\@@tmp\\XC@@tsttrue\\fi
+    \\fi
+  \\fi\\fi
+  \\ifXC@@tst
+    \\XC@logdef\\@@nam\\XC@c@l@rlet\\@@nam\\@@clr
+  \\else
+    \\extractcolorspec\\@@clr\\@@clr
+    \\ifx\\@@mod\\@empty\\else
+      \\expandafter\\convertcolorspec\\@@clr\\@@mod\\@@clr
+      \\edef\\@@clr{{\\@@mod}{\\@@clr}}\\fi
+    \\edef\\@@tmp{\\noexpand\\XC@definecolor[\\@@cls]{\\@@nam}\\@@clr}%
+  \\fi
+  \\expandafter\\endgroup\\@@tmp\\xglobal@stop}
+\\def\\XC@c@l@rlet#1#2%
+ {\\@ifundefinedcolor{#2}%
+   {\\c@lor@error{\`#2'}\\let\\@@tmp\\@empty}%
+   {\\edef\\@@tmp
+     {\\ifglobalcolors\\global\\else\\xglobal@\\fi
+      \\noexpand\\XC@let@cc{\\string\\color@#1}{\\string\\color@#2}}}}
+\\def\\DefineNamedColor#1%
+ {\\@nameuse{XC@\\ifdefinecolors defin\\else prepar\\fi ecolor}[#1]}
+\\def\\preparecolor{\\@testopt{\\XC@preparecolor}{}}
+\\def\\XC@preparecolor[#1]#2%
+ {\\@testopt{\\XC@preparec@lor[#1]{#2}}\\colornameprefix}
+\\def\\XC@preparec@lor[#1]#2[#3]#4#5%
+ {\\XC@sdef\\@@cls{#1}\\XC@edef\\@@nam{#2}%
+  \\XC@getmodclr01{#4}{#5}{}%
+   {\\xdef\\XC@@stack
+     {\\ifx\\XC@@stack\\@empty\\else\\XC@@stack,\\fi{#1}{\\@@nam}{#3}%
+      {\\ifx\\@@Mod\\XC@mod@ignore\\@@mod\\else\\@@Mod\\fi}{\\@@clr}}}}
+\\let\\XC@@stack\\@empty
+\\def\\definecolors#1%
+ {\\let\\XC@@cmd\\definecolor\\let\\XC@@glb\\xglobal@
+  \\expandafter\\XC@definecolors#1,,}
+\\def\\XC@definecolors#1,%
+ {\\@ifxempty{#1}{}{\\expandafter\\XC@definec@lors#1=#1=:\\XC@definecolors}}
+\\def\\XC@definec@lors#1=#2=#3:%
+ {\\XC@edef\\@@nam{#1}\\XC@edef\\@@arg{#2}%
+  \\let\\next\\XC@definec@l@rs\\expandafter\\next\\XC@@stack,,\\@nnil}
+\\def\\XC@definec@l@rs#1,%
+ {\\ifx,#1,\\let\\next\\remove@to@nnil\\else\\XC@defin@c@l@rs#1\\fi\\next}
+\\def\\XC@defin@c@l@rs#1#2#3#4#5%
+ {\\def\\@@tmp{#2}%
+  \\ifx\\@@tmp\\@@arg
+    \\let\\xglobal@\\XC@@glb\\XC@@cmd[#1]{\\@@nam}[#3]{#4}{#5}%
+    \\let\\next\\remove@to@nnil
+  \\fi}
+\\def\\providecolors#1%
+ {\\let\\XC@@cmd\\providecolor\\let\\XC@@glb\\xglobal@
+  \\expandafter\\XC@definecolors#1,,}
+\\def\\definecolorset
+ {\\let\\XC@@cmd\\definecolor\\@testopt{\\XC@definecolorset}{}}
+\\def\\XC@definecolorset[#1]#2#3#4#5%
+ {\\XC@getmodclr10{#2}{}{}%
+   {\\XC@@getmodfalse\\XC@edef\\XC@@tmp{#5}\\let\\XC@@glb\\xglobal@
+    \\def\\XC@definec@lorset##1,##2;%
+     {\\@ifxempty{##1}{}%
+       {\\let\\xglobal@\\XC@@glb
+        \\XC@@cmd[#1]{#3##1#4}{\\@@mod}{##2}\\XC@definec@lorset}}%
+    \\expandafter\\XC@definec@lorset\\XC@@tmp;,;\\XC@@getmodtrue}}
+\\def\\providecolorset
+ {\\let\\XC@@cmd\\providecolor\\@testopt{\\XC@definecolorset}{}}
+\\def\\preparecolorset
+ {\\ifdefinecolors\\let\\XC@@cmd\\definecolor\\else\\let\\XC@@cmd\\preparecolor\\fi
+  \\@testopt{\\XC@definecolorset}{}}
+\\def\\definecolorseries#1#2#3%
+ {\\@testopt{\\XC@definecolorseries{#1}{#2}{#3}}{}}
+\\def\\XC@definecolorseries#1#2#3[#4]#5%
+ {\\@testopt{\\XC@definec@lorseries{#1}{#2}{#3}[#4]{#5}}{}}
+\\def\\XC@definec@lorseries#1#2#3[#4]#5[#6]#7%
+ {\\begingroup
+  \\XC@sdef\\@@mod{#2}%
+  \\@ifxempty{#4}{\\extractcolorspec{#5}\\@@clr}{\\edef\\@@clr{{#4}{#5}}}%
+  \\expandafter\\convertcolorspec\\@@clr\\@@mod\\@@clr
+  \\@namexdef{\\string\\colorB@#1}{{\\@@mod}{\\@@clr}}%
+  \\edef\\@@met{#3}%
+  \\ifx\\@@met\\XC@met@last
+    \\@ifxempty{#6}{\\extractcolorspec{#7}\\@@tmp}{\\edef\\@@tmp{{#6}{#7}}}%
+    \\expandafter\\convertcolorspec\\@@tmp\\@@mod\\@@tmp
+    \\XC@inflate\\@@mod\\@@tmp\\@@clr\\@@tmp
+    \\expandafter\\XC@sub\\@@tmp,\\@@tmp
+  \\else
+    \\edef\\@@tmp{#7}%
+  \\fi
+  \\@namexdef{\\string\\colorD@#1}{{\\@@met}{\\@@tmp}}%
+  \\endgroup}
+\\def\\resetcolorseries{\\@testopt{\\XC@resetcolorseries}{}}
+\\def\\XC@resetcolorseries[#1]#2%
+ {\\begingroup
+  \\@namexdef
+   {\\string\\color@#2}{\\noexpand\\xcolor@{}{}\\@nameuse{\\string\\colorB@#2}}%
+  \\XC@let@Nc\\@@tmp{\\string\\colorD@#2}%
+  \\edef\\@@met{\\expandafter\\@firstoftwo\\@@tmp}%
+  \\edef\\@@tmp{\\expandafter\\@secondoftwo\\@@tmp}%
+  \\ifx\\@@met\\XC@met@step\\else
+    \\edef\\@@scl{\\@ifxempty{#1}\\colorseriescycle{#1}}%
+    \\expandafter\\XC@calc@\\@@tmp,,,,:D%
+  \\fi
+  \\@namexdef{\\string\\colorS@#2}{\\@@tmp}%
+  \\endgroup}
+\\def\\XC@step#1%
+ {\\let\\xcolor@\\@gobbletwo\\edef\\@@tmp{\\@nameuse{\\string\\color@#1}}%
+  \\expandafter\\XC@st@p\\@@tmp{#1}%
+  \\@namexdef{\\string\\color@#1}{\\noexpand\\xcolor@{}{}{\\@@mod}{\\@@tmp}}}
+\\def\\XC@st@p#1#2#3%
+ {\\def\\@@mod{#1}\\def\\@@tmp{#2}\\edef\\@@vec{\\@nameuse{\\string\\colorS@#3}}%
+  \\@whilenum\\@tempcnta>\\z@\\do
+   {\\XC@inflate\\@@mod\\@@tmp\\@@vec\\@@tmp
+    \\expandafter\\XC@add\\@@tmp,\\@@tmp \\expandafter\\XC@calc@\\@@tmp,,,,:U%
+    \\advance\\@tempcnta\\m@ne}}
+\\def\\XC@stepabs#1%
+ {\\edef\\@@tmp{\\@nameuse{\\string\\colorB@#1}}%
+  \\expandafter\\XC@st@p\\@@tmp{#1}%
+  \\edef\\@@tmp
+   {\\def\\noexpand\\@@mod{\\@@mod}\\def\\noexpand\\@@clr{\\@@tmp}}}
+\\def\\blendcolors{\\@ifstar{\\XC@blendcolors\\colorblend}{\\XC@blendcolors{}}}
+\\def\\XC@blendcolors#1#2%
+ {\\edef\\colorblend{#1}\\XC@edef\\XC@@tmp{#2}%
+  \\ifx\\XC@@tmp\\@empty
+    \\xglobal@\\blendcolorsfalse
+  \\else
+    \\xglobal@\\blendcolorstrue
+    \\expandafter\\XC@blendc@lors\\XC@@tmp!!\\@nil
+  \\fi
+  \\xglobalize@\\colorblend \\xglobal@stop}
+\\def\\XC@blendc@lors!#1!#2!#3\\@nil
+ {\\@ifxempty{#1}{}%
+   {\\@ifxempty{#2}%
+    {\\edef\\colorblend{\\colorblend!#1!white}}%
+    {\\edef\\colorblend{\\colorblend!#1!#2}\\XC@blendc@lors!#3!\\@nil}}}
+\\blendcolors{}
+\\def\\maskcolors{\\@testopt{\\XC@maskcolors}{}}
+\\def\\XC@maskcolors[#1]#2%
+ {\\XC@edef\\colormask{#2}%
+  \\ifx\\colormask\\@empty
+    \\xglobal@\\maskcolorsfalse \\def\\XC@mmod{}\\def\\XC@mclr{}%
+  \\else
+    \\xglobal@\\maskcolorstrue \\extractcolorspecs\\colormask\\XC@mmod\\XC@mclr
+    \\@ifxempty{#1}{}%
+     {\\convertcolorspec\\XC@mmod\\XC@mclr{#1}\\XC@mclr \\XC@sdef\\XC@mmod{#1}}%
+    \\XC@coremodel\\XC@mmod\\XC@mclr
+  \\fi
+  \\xglobalize@\\colormask \\xglobalize@\\XC@mmod \\xglobalize@\\XC@mclr
+  \\xglobal@stop}
+\\maskcolors{}
+\\DeclareRobustCommand\\color
+ {\\@ifnextchar[\\@undeclaredcolor\\@declaredcolor}
+\\def\\@undeclaredcolor[#1]#2%
+ {\\begingroup
+  \\let\\@@cls\\@empty
+  \\XC@getmodclr12{#1}{#2}{}%
+   {\\ifblendcolors
+      \\ifx\\colorblend\\@empty\\else
+        \\edef\\@@mix{\\expandafter\\@gobble\\colorblend}\\@tempswafalse
+        \\XC@coremodel\\@@mod\\@@clr\\@xcolor@{}{}\\@@mod\\@@clr
+      \\fi
+    \\fi
+    \\ifconvertcolorsU
+      \\edef\\@@tmp{\\XC@tgt@mod{\\@@mod}}%
+      \\convertcolorspec\\@@mod\\@@clr\\@@tmp\\@@clr \\let\\@@mod\\@@tmp
+    \\fi
+    \\ifmaskcolors
+      \\convertcolorspec\\@@mod\\@@clr\\XC@mmod\\@@clr
+      \\let\\@@mod\\XC@mmod
+      \\XC@inflate\\@@mod\\XC@mclr\\@@clr\\@@tmp
+      \\expandafter\\XC@mul\\@@tmp,\\@@clr
+    \\fi
+    \\edef\\@@tmp{\\noexpand\\XC@undeclaredcolor{\\@@mod}{\\@@clr}}%
+    \\expandafter\\endgroup\\@@tmp}}
+\\def\\XC@undeclaredcolor#1#2%
+ {\\@ifundefinedmodel{#1}%
+   {\\c@lor@error{model \`#1'}}%
+   {\\@nameuse{color@#1}\\current@color{#2}%
+    \\edef\\XC@current@color{\\noexpand\\xcolor@{}{\\current@color}{#1}{#2}}%
+    \\XC@display}}
+\\def\\@declaredcolor#1%
+ {\\XC@edef\\XC@@tmp{#1}\\XC@@tstfalse
+  \\ifcase\\XC@type\\XC@@tmp\\relax \\XC@@tsttrue\\or \\relax\\else
+    \\ifblendcolors\\XC@@tsttrue\\fi \\ifmaskcolors\\XC@@tsttrue\\fi
+    \\ifconvertcolorsU\\XC@@tsttrue\\fi
+  \\fi
+  \\ifXC@@tst
+    \\expandafter\\XC@declaredcolor\\else
+    \\expandafter\\XC@declaredc@lor\\fi}
+\\def\\XC@declaredcolor
+ {\\XC@split\\XC@@tmp
+  \\edef\\@@tmp{\\noexpand\\@undeclaredcolor[\\@@mod]{\\@@clr}}%
+  \\expandafter\\endgroup\\@@tmp}
+\\def\\XC@declaredc@lor
+ {\\XC@let@Nc\\XC@current@color{\\string\\color@\\XC@@tmp}%
+  \\edef\\current@color{\\XC@current@color}%
+  \\XC@display}
+\\def\\textcolor#1#{\\@textcolor{#1}}
+\\def\\@textcolor#1#2#3{\\protect\\leavevmode{\\color#1{#2}#3}}
+\\def\\pagecolor
+ {\\begingroup
+  \\let\\ignorespaces\\endgroup \\let\\set@color\\set@page@color
+  \\color}
+\\def\\nopagecolor
+ {\\@ifundefined{no@page@color}%
+   {\\PackageInfo{xcolor}{\\string\\nopagecolor\\space is not supported}}%
+   {\\no@page@color}}
+\\def\\colorbox#1#{\\protect\\color@box{#1}}
+\\def\\color@box#1#2{\\color@b@x\\relax{\\color#1{#2}}}
+\\def\\fcolorbox#1#{\\color@fbox{#1}}
+\\def\\color@fbox#1#2#3#{\\protect\\color@fb@x{#1}{#2}{#3}}
+\\def\\color@fb@x#1#2#3#4%
+ {\\color@b@x{\\fboxsep\\z@\\color#1{#2}\\XC@fbox}%
+   {\\@ifxempty{#3}{\\color#1}{\\color#3}{#4}}}
+\\long\\def\\color@b@x#1#2#3%
+ {\\leavevmode
+  \\setbox\\z@\\hbox{\\kern\\fboxsep{\\set@color#3}\\kern\\fboxsep}%
+  \\dimen@\\ht\\z@\\advance\\dimen@\\fboxsep\\ht\\z@\\dimen@
+  \\dimen@\\dp\\z@\\advance\\dimen@\\fboxsep\\dp\\z@\\dimen@
+  {#1{#2\\color@block{\\wd\\z@}{\\ht\\z@}{\\dp\\z@}\\box\\z@}}}
+\\def\\XC@frameb@x#1%
+ {\\hbox
+   {\\@tempdima\\fboxrule \\advance\\@tempdima\\fboxsep
+    \\advance\\@tempdima\\dp\\@tempboxa
+    \\setbox\\@tempboxa\\hbox
+     {\\lower\\@tempdima\\hbox
+       {\\vbox
+         {\\kern\\fboxrule
+          \\hbox{\\kern\\fboxrule#1%
+                \\vbox{\\kern\\fboxsep\\box\\@tempboxa\\kern\\fboxsep}%
+                #1\\kern\\fboxrule}%
+          \\kern\\fboxrule}}}%
+    \\@tempdima\\wd\\@tempboxa
+    \\edef\\@tempa{{\\the\\@tempdima}{\\the\\ht\\@tempboxa}{\\the\\dp\\@tempboxa}}%
+    \\box\\@tempboxa\\kern-\\@tempdima\\expandafter\\boxframe\\@tempa}}
+\\ifXC@@fbox
+  \\let\\@frameb@x\\XC@frameb@x \\let\\XC@fbox\\fbox
+\\else
+  \\def\\XC@fbox{\\let\\@frameb@x\\XC@frameb@x\\fbox}
+\\fi
+
+\\ifnum\\XC@@xcd@>\\m@ne
+\\def\\XC@boxframe#1#2#3#4%
+ {\\hbox{\\sbox\\z@{\\ifdim\\fboxrule>\\z@ #4\\fi}%
+    \\wd\\z@#1\\relax\\ht\\z@#2\\relax\\dp\\z@#3\\relax\\box\\z@}}
+\\fi
+\\ifcase\\XC@@xcd@
+\\providecommand*\\color@block[3]%
+ {{\\set@color\\hbox
+    {\\dimen@#3\\edef\\@tempa{ \\number\\dimen@\\space}%
+     \\dimen@#2\\edef\\@tempa{ \\number\\dimen@\\@tempa}%
+     \\dimen@#1\\relax
+     \\XC@special{\\number\\dimen@\\@tempa XCcolorblock}}}}
+\\providecommand*\\boxframe[3]%
+ {\\XC@boxframe{#1}{#2}{#3}%
+   {\\dimen@#3\\edef\\@tempa{ \\number\\dimen@\\space}%
+    \\dimen@#2\\edef\\@tempa{ \\number\\dimen@\\@tempa}%
+    \\dimen@#1\\relax
+    \\XC@special{\\number\\fboxrule\\space\\number\\dimen@\\@tempa XCboxframe}}}
+\\or
+\\providecommand*\\boxframe[3]%
+ {\\XC@boxframe{#1}{#2}{#3}%
+   {\\dimen@#3\\edef\\@tempa{ 0 -\\strip@pt\\dimen@\\space}%
+    \\edef\\@tempb{\\advance\\dimen@\\the\\dimen@}%
+    \\dimen@#2\\advance\\dimen@-\\fboxrule\\@tempb
+    \\edef\\@tempb{ \\strip@pt\\dimen@\\space re s}%
+    \\dimen@#1\\advance\\dimen@-\\fboxrule
+    \\edef\\@tempb{ cm\\@tempa\\strip@pt\\dimen@\\@tempb}%
+    \\dimen@.5\\fboxrule\\edef\\@tempa{ \\strip@pt\\dimen@}%
+    \\XC@special
+     {0.996264 0 0 0.996264 0 0 cm
+      \\strip@pt\\fboxrule\\space w [] 0 d 2 J 0 j 4 M
+      1 0 0 1\\@tempa\\@tempa\\@tempb}}}
+\\fi
+\\providecommand*\\color@block[3]%
+ {{\\set@color\\rlap{\\ifcolors@\\vrule\\@width#1\\@height#2\\@depth#3\\fi}}}
+\\providecommand*\\boxframe[3]%
+ {\\hbox
+   {\\dimen@#2\\advance\\dimen@#3\\relax
+    \\lower#3\\vbox
+     {\\hrule\\@height\\fboxrule
+      \\@tempdima-0.5\\fboxrule \\ifodd\\fboxrule\\advance\\@tempdima\\m@ne sp\\fi
+      \\kern\\@tempdima
+      \\hbox
+       {\\advance\\dimen@-\\fboxrule
+        \\vrule\\@width\\fboxrule\\@height\\dimen@\\@depth\\z@
+        \\@tempdima#1\\advance\\@tempdima-\\tw@\\fboxrule \\kern\\@tempdima
+        \\vrule\\@width\\fboxrule\\@height\\dimen@\\@depth\\z@}%
+      \\kern-0.5\\fboxrule
+      \\hrule\\@height\\fboxrule}}}
+\\def\\@xcolor@#1#2#3#4%
+ {\\XC@sdef\\@@mod{#3}\\edef\\@@clr{#4}%
+  \\ifx\\@@mix\\@empty\\else\\expandafter\\@xcolor@@\\@@mix!!!!\\@nil\\fi
+  \\if@tempswa
+    \\XC@let@Nc\\@@tmp{XC@cnv@\\@@mod @compl}%
+    \\ifx\\@@tmp\\relax \\expandafter\\XC@calc@\\@@clr,,,,:C\\else
+                     \\expandafter\\@@tmp\\@@clr,\\fi
+    \\let\\@@clr\\@@tmp
+  \\fi}
+\\def\\@xcolor@@#1!#2!#3!#4!#5\\@nil
+ {\\dimen@\\@ifxempty{#1}{100}{#1}\\p@
+  \\edef\\@@mix{\\@ifxempty{#2}{white}{#2}}%
+  \\ifdim\\dimen@=100\\p@
+    \\expandafter\\XC@postfix\\@@mix]\\relax
+  \\else\\ifdim\\dimen@=\\z@
+    \\extractcolorspecs\\@@mix\\@@mod\\@@clr
+  \\else
+    \\XC@let@Nc\\@@tmp{XC@clr@\\@@mod @\\@@mix}%
+    \\ifx\\@@tmp\\relax
+      \\extractcolorspec\\@@mix\\@@tmp
+      \\ifx\\@@mod\\XC@mod@gray
+        \\edef\\@@mod{\\expandafter\\@firstoftwo\\@@tmp}%
+        \\edef\\@@tmp{\\expandafter\\@secondoftwo\\@@tmp}%
+        \\convertcolorspec\\XC@mod@gray\\@@clr\\@@mod\\@@clr
+      \\else
+        \\expandafter\\convertcolorspec\\@@tmp\\@@mod\\@@tmp
+      \\fi
+    \\else
+      \\ifx\\@@mod\\XC@mod@hsb\\expandafter\\XC@extract@hue\\@@clr:\\@@hue\\fi
+    \\fi
+    \\XC@inflate\\@@mod\\@@clr\\@@tmp\\@@tmp
+    \\expandafter\\XC@mix\\@@tmp,\\@@clr
+  \\fi\\fi
+  \\@ifxempty{#3}%
+   {\\@ifxempty{#4}{}{\\@xcolor@@!#4!#5\\@nil}}%
+   {\\@xcolor@@#3!#4!#5\\@nil}}
+\\def\\XC@split#1%
+ {\\begingroup\\XC@edef\\@@tmp{#1}\\expandafter\\XC@split@i\\@@tmp>>\\@nnil}
+\\def\\XC@split@i#1>%
+ {\\def\\@@tmp{#1}\\XC@split@ii#1:\\@nil \\XC@func}
+\\def\\XC@split@ii#1:#2\\@nil
+ {\\@ifxempty{#2}{\\XC@split@vi}{\\XC@split@iii#1,,:#2}}
+\\def\\XC@split@iii#1,#2,#3:#4:%
+ {\\edef\\XC@@mod{#1}\\let\\@tempa\\@empty
+  \\ifx,#2,\\XC@@tsttrue\\@tempdima\\z@\\else\\XC@@tstfalse\\@tempdima#2\\p@\\fi
+  \\XC@split@iv#4;,;}
+\\def\\XC@split@iv#1,#2;%
+ {\\@ifxempty{#1}%
+   {\\let\\XC@@clr\\@empty \\@tempa \\expandafter\\XC@calc@\\XC@@clr,,,,:U%
+    \\let\\@@mod\\XC@@mod \\let\\@@clr\\@@tmp}
+   {\\XC@append\\@tempa{\\XC@split@v{#1}{#2}}%
+    \\ifXC@@tst\\advance\\@tempdima#2\\p@\\fi
+    \\XC@split@iv}}
+\\def\\XC@split@v#1#2%
+ {\\def\\@@tmp{#1}\\XC@split@vi
+  \\ifx\\@@mod\\XC@@mod\\else
+    \\convertcolorspec\\@@mod\\@@clr\\XC@@mod\\@@clr
+  \\fi
+  \\dimen@#2\\p@ \\rdivide\\dimen@\\@tempdima
+  \\edef\\@@scl{\\strip@pt\\dimen@}%
+  \\expandafter\\XC@calc@\\@@clr,,,,:S%
+  \\ifx\\XC@@clr\\@empty\\let\\XC@@clr\\@@tmp\\else
+    \\XC@inflate\\XC@@mod\\XC@@clr\\@@tmp\\@@tmp
+    \\expandafter\\XC@add\\@@tmp,\\XC@@clr
+  \\fi}
+\\def\\XC@split@vi{\\count@\\z@ \\expandafter\\XC@split@vii\\@@tmp!\\@nil}
+\\def\\XC@split@vii#1%
+ {\\ifx#1-\\advance\\count@\\@ne\\expandafter\\XC@split@vii
+  \\else\\expandafter\\XC@split@viii\\expandafter#1\\fi}
+\\def\\XC@split@viii#1!#2\\@nil
+ {\\edef\\@@nam{#1}\\edef\\@@mix{#2}%
+  \\ifodd\\count@\\@tempswatrue\\else\\@tempswafalse\\fi
+  \\@ifundefinedcolor\\@@nam
+   {\\c@lor@error{\`\\@@nam'}\\def\\@@nam{black}}{}%
+  \\let\\xcolor@\\@xcolor@\\@nameuse{\\string\\color@\\@@nam}}
+\\def\\XC@postfix#1#2]#3\\relax
+ {\\begingroup
+  \\if[#1\\@tempcnta#2\\relax\\XC@stepabs\\@@nam
+  \\else\\@tempcnta\\z@
+    \\@tfor\\@@tok:=#1#2\\do
+     {\\if+\\@@tok\\advance\\@tempcnta\\@ne
+      \\else\\if-\\@@tok\\advance\\@tempcnta\\m@ne
+      \\else\\@tempcnta\\z@\\expandafter\\@break@tfor\\fi\\fi}%
+    \\ifnum\\@tempcnta=\\z@\\relax\\else\\XC@step\\@@nam\\fi
+    \\let\\@@tmp\\@empty
+  \\fi\\expandafter\\endgroup\\@@tmp}
+\\def\\XC@func#1>{\\@ifxempty{#1}{\\remove@to@nnil}{\\XC@fun@#1,>\\XC@func}}
+\\def\\XC@fun@#1,#2>{\\@nameuse{XC@func@#1}#2,,>}
+\\def\\XC@func@wheel#1,#2,#3>{\\XC@func@wh@el{#1}{#2}0}
+\\def\\XC@func@twheel#1,#2,#3>{\\XC@func@wh@el{#1}{#2}1}
+\\def\\XC@func@wh@el#1#2#3%
+ {\\convertcolorspec\\@@mod\\@@clr
+   {\\ifcase#3 \\XC@mod@Hsb\\or\\XC@mod@tHsb\\fi}\\@@clr
+  \\expandafter\\XC@extract@hue\\@@clr:\\@@hue \\dimen@#1\\p@
+  \\@ifxempty{#2}{}%
+   {\\rdivide\\dimen@{#2}\\lshift\\dimen@
+    \\dimen@\\rangeHsb\\dimen@\\rshift\\dimen@}%
+  \\advance\\dimen@\\@@hue\\p@ \\rdivide\\dimen@\\rangeHsb
+  \\edef\\@@hue{\\strip@pt\\dimen@}\\XC@calcU\\@@hue\\@@hue
+  \\ifcase#3
+    \\expandafter\\XC@replace@hue\\@@clr:\\@@hue,\\@@clr
+  \\or
+    \\XC@c@lcS\\rangeHsb{}\\@@hue\\@@hue
+    \\expandafter\\XC@replace@hue\\@@clr:\\@@hue,\\@@clr
+    \\convertcolorspec\\XC@mod@tHsb\\@@clr\\XC@mod@hsb\\@@clr
+  \\fi
+  \\let\\@@mod\\XC@mod@hsb}
+\\def\\XC@display
+ {\\XC@bcolor\\XC@let@cN{\\string\\color@.}\\XC@current@color
+  \\ifnum\\XC@type{.}=1
+    \\PackageWarning{xcolor}{Incompatible color definition}\\else
+  \\ifnum\\XC@tracing>2
+    \\begingroup \\let\\xcolor@\\@empty \\def\\@nil{\\string\\@nil}%
+    \\PackageInfo{xcolor}{Setting color \`\\XC@current@color'}%
+    \\endgroup
+  \\fi\\fi
+  \\XC@mcolor\\set@color\\XC@ecolor\\ignorespaces}
+\\let\\XC@bcolor\\relax
+\\let\\XC@mcolor\\relax
+\\let\\XC@ecolor\\relax
+\\def\\XC@bordercolor#1#2%
+ {\\extractcolorspec{#2}\\XC@@tmp
+  \\expandafter\\convertcolorspec\\XC@@tmp\\XC@mod@rgb\\XC@@tmp
+  \\expandafter\\edef\\csname @#1bordercolor\\endcsname
+   {\\expandafter\\XC@strip@comma\\XC@@tmp,,\\@nnil}}
+\\def\\XC@pdfborder#1 #2 #3\\relax
+ {\\def\\@@scl{80}\\XC@calc@#1,#2,#3,,:S%
+  \\edef\\@pdfborder{\\expandafter\\XC@strip@comma\\@@tmp,,\\@nnil}}
+\\@ifXCopt{table}{%
+ \\def\\rowcolors
+  {\\@ifstar{\\@rowcmdfalse\\rowc@lors}{\\@rowcmdtrue\\rowc@lors}}
+ \\def\\rowc@lors{\\@testopt{\\rowc@l@rs}{}}
+ \\def\\rowc@l@rs[#1]#2#3#4%
+  {\\global\\rownum=\\z@
+   \\global\\@rowcolorstrue
+   \\@ifxempty{#3}%
+     {\\def\\@oddrowcolor{\\@norowcolor}}%
+     {\\def\\@oddrowcolor{\\gdef\\CT@row@color{\\CT@color{#3}}}}%
+   \\@ifxempty{#4}%
+     {\\def\\@evenrowcolor{\\@norowcolor}}%
+     {\\def\\@evenrowcolor{\\gdef\\CT@row@color{\\CT@color{#4}}}}%
+   \\if@rowcmd
+     \\def\\@rowcolors
+      {#1\\if@rowcolors
+         \\noalign{\\relax\\ifnum\\rownum<#2\\@norowcolor\\else
+                  \\ifodd\\rownum\\@oddrowcolor\\else\\@evenrowcolor\\fi\\fi}%
+       \\fi}%
+   \\else
+     \\def\\@rowcolors
+      {\\if@rowcolors
+         \\ifnum\\rownum<#2\\noalign{\\@norowcolor}\\else
+         #1\\noalign{\\ifodd\\rownum\\@oddrowcolor\\else\\@evenrowcolor\\fi}\\fi
+       \\fi}%
+   \\fi
+   \\CT@everycr{\\@rowc@lors\\the\\everycr}%
+   \\ignorespaces}
+ \\def\\@rowc@lors{\\noalign{\\global\\advance\\rownum\\@ne}\\@rowcolors}
+ \\let\\@rowcolors\\@empty
+ \\def\\showrowcolors{\\noalign{\\global\\@rowcolorstrue}\\@rowcolors}
+ \\def\\hiderowcolors{\\noalign{\\global\\@rowcolorsfalse\\@norowcolor}}
+ \\def\\@norowcolor{\\global\\let\\CT@row@color\\relax}
+ \\@norowcolor
+ \\newif\\if@rowcolors
+ \\newif\\if@rowcmd
+ \\@ifundefined{rownum}{\\newcount\\rownum}{}
+ \\def\\CT@extract#1\\columncolor#2#3\\@nil
+  {\\if!#2%
+     \\let\\CT@column@color\\@empty
+   \\else
+     \\if[#2%
+       \\expandafter\\CT@extractb
+     \\else
+       \\XC@edef\\XC@@tmp{#2}%
+       \\edef\\CT@column@color{\\noexpand\\CT@color{\\XC@@tmp}}%
+       \\expandafter\\CT@extractd
+     \\fi
+     {#1}#3\\@nil
+   \\fi}
+}{}
+\\def\\extractcolorspec#1#2%
+ {\\XC@split{#1}\\edef\\@@tmp{{\\@@mod}{\\@@clr}}\\aftergroupdef#2\\@@tmp}
+\\def\\extractcolorspecs#1#2#3%
+ {\\extractcolorspec{#1}#3%
+  \\edef#2{\\expandafter\\@firstoftwo#3}%
+  \\edef#3{\\expandafter\\@secondoftwo#3}}
+\\def\\XC@extract@hue#1,#2:#3{\\edef#3{#1}}
+\\def\\XC@replace@hue#1,#2:#3,#4{\\edef#4{#3,#2}}
+\\def\\@ifundefinedcolor#1{\\@ifundefined{\\string\\color@#1}}
+\\def\\@ifundefinedmodel#1{\\@ifundefined{color@#1}}
+\\def\\XC@type#1%
+ {\\expandafter\\expandafter\\expandafter\\XC@typ@
+  \\csname\\string\\color@#1\\endcsname\\@empty\\@empty\\@empty\\XC@@}
+\\def\\XC@typ@#1#2#3#4\\XC@@
+ {\\ifx#1\\relax 0\\else
+    \\ifx#1\\xcolor@
+      \\ifx\$#2\$%
+        \\ifx\$#3\$4\\else3\\fi\\@gobbletwo
+      \\else2\\fi\\@gobbletwo
+    \\else1\\fi
+  \\fi}
+\\def\\XC@info#1#2%
+ {\\XC@edef#2{#1}%
+  \\if.#2\\def#2{0}\\else\\expandafter\\in@\\expandafter>\\expandafter{#2}%
+  \\ifin@\\def#2{4}\\else\\expandafter\\in@\\expandafter:\\expandafter{#2}%
+  \\ifin@\\def#2{3}\\else\\expandafter\\in@\\expandafter!\\expandafter{#2}%
+  \\ifin@\\def#2{2}\\else\\edef#2{\\noexpand\\in@{/-}{/#2}}#2%
+  \\edef#2{\\ifin@2\\else1\\fi}\\fi\\fi\\fi\\fi}
+\\def\\tracingcolors{\\begingroup\\afterassignment\\XC@tracingcolors\\count@}
+\\def\\XC@tracingcolors{\\aftergroupdef\\XC@tracing{\\the\\count@}}
+\\tracingcolors=0
+\\def\\XC@logdef#1%
+ {\\ifnum\\XC@tracing>1
+    \\@ifundefinedcolor{#1}%
+     {\\ifnum\\XC@tracing>2
+        \\PackageInfo{xcolor}{Defining color \`#1'}%
+      \\fi}%
+     {\\PackageInfo{xcolor}{Redefining color \`#1'}}%
+  \\fi}
+\\newenvironment*{testcolors}[1][rgb,cmyk,hsb,HTML]%
+ {\\let\\@@nam\\@empty\\count@\\z@
+  \\@for\\@@tmp:=#1\\do
+    {\\advance\\count@\\@ne
+     \\XC@sdef\\@@tmp{\\@@tmp}\\edef\\@@nam{\\@@nam{\\@@tmp}}}%
+  \\edef\\@@num{\\the\\count@}%
+  \\def\\XC@@gt{\\textgreater}\\def\\@@tmp{OT1}%
+  \\ifx\\f@encoding\\@@tmp
+    \\@expandtwoargs\\in@{,\\f@family,}{,cmtt,pcr,}%
+    \\ifin@\\def\\XC@@gt{>}\\fi
+  \\fi
+  \\def\\XC@@xcp@{-1}\\ifnum\\XC@tracing>1 \\def\\XC@tracing{1}\\fi
+  \\def\\testcolor{\\@testopt{\\@testcolor}{}}%
+  \\def\\@testcolor[##1]##2%
+   {\\XC@mdef\\@@mod{##1}\\XC@edef\\@@clr{##2}%
+    \\ifx\\@@mod\\@empty
+      \\let\\@@arg\\@@clr\\XC@replace\\@@arg>\\XC@@gt\\else
+      \\edef\\@@arg{[\\@@mod]{\\@@clr}}\\XC@definecolor[]{*}\\@@mod\\@@clr
+      \\def\\@@clr{*}\\fi
+    \\XC@append\\@@arg{&}\\extractcolorspecs\\@@clr\\@@mod\\@@clr
+    \\@testc@lor}%
+  \\def\\@testc@lor
+   {\\count@\\z@
+    \\expandafter\\@tfor\\expandafter\\@@tmp\\expandafter:\\expandafter=\\@@nam\\do
+     {\\ifx\\@@clr\\@empty
+        \\edef\\@@cmd{\\noexpand\\textbf{\\@@tmp}}%
+      \\else
+        \\convertcolorspec\\@@mod\\@@clr\\@@tmp\\@@cmd
+        \\edef\\@@cmd
+         {\\noexpand\\@testc@l@r{\\@@tmp}{\\@@cmd}%
+          \\ifx\\@@mod\\@@tmp\\noexpand\\underline\\fi
+          {\\expandafter\\XC@strip@comma\\@@cmd,,\\@nnil}}%
+      \\fi
+      \\expandafter\\XC@append\\expandafter\\@@arg\\expandafter{\\@@cmd}%
+      \\advance\\count@\\@ne
+      \\ifnum\\count@=\\@@num\\XC@append\\@@arg{\\\\}\\else\\XC@append\\@@arg{&}\\fi}%
+    \\@@arg}%
+  \\def\\@testc@l@r##1##2%
+   {\\fboxsep\\z@\\fbox{\\colorbox[##1]{##2}{\\phantom{XX}}} }%
+  \\tabular{@{}l*{\\@@num}{l}@{}}%
+  \\def\\@@arg{\\textbf{color}& }\\let\\@@clr\\@empty\\@testc@lor}%
+ {\\endtabular\\ignorespacesafterend}
+\\def\\color@setgroup{\\begingroup\\set@color}
+\\let\\color@begingroup\\begingroup
+\\def\\color@endgroup{\\endgraf\\endgroup}
+\\def\\color@hbox{\\hbox\\bgroup\\color@begingroup}
+\\def\\color@vbox{\\vbox\\bgroup\\color@begingroup}
+\\def\\color@endbox{\\color@endgroup\\egroup}
+\\def\\convertcolorspec#1#2#3#4%
+ {\\begingroup
+  \\XC@sdef\\sm{#1}\\XC@sdef\\tm{#3}\\edef\\@@tmp{#2}%
+  \\ifx\\sm\\XC@mod@named\\extractcolorspecs\\@@tmp\\sm\\@@tmp\\fi
+  \\ifx\\sm\\tm\\else\\csname XC@cnv@\\sm\\expandafter\\endcsname\\@@tmp,\\fi
+  \\aftergroupdef#4\\@@tmp}
+\\def\\XC@coremodel#1#2%
+ {\\XC@ifxcase#1%
+   {\\XC@mod@RGB {\\convertcolorspec#1#2\\XC@mod@rgb#2\\let#1\\XC@mod@rgb}%
+    \\XC@mod@HTML{\\convertcolorspec#1#2\\XC@mod@rgb#2\\let#1\\XC@mod@rgb}%
+    \\XC@mod@Hsb {\\convertcolorspec#1#2\\XC@mod@hsb#2\\let#1\\XC@mod@hsb}%
+    \\XC@mod@tHsb{\\convertcolorspec#1#2\\XC@mod@hsb#2\\let#1\\XC@mod@hsb}%
+    \\XC@mod@HSB {\\convertcolorspec#1#2\\XC@mod@hsb#2\\let#1\\XC@mod@hsb}%
+    \\XC@mod@Gray{\\convertcolorspec#1#2\\XC@mod@gray#2\\let#1\\XC@mod@gray}%
+    \\XC@mod@wave{\\convertcolorspec#1#2\\XC@mod@hsb#2\\let#1\\XC@mod@hsb}%
+    \\XC@mod@named{}%
+    \\XC@mod@ps{}}%
+   {\\expandafter\\XC@calc@#2,,,,:N\\let#2\\@@tmp}}
+\\def\\XC@cnv@rgb#1,#2,#3,%
+ {\\XC@ifxcase\\tm
+   {\\XC@mod@cmy {\\XC@calc@#1,#2,#3,,:C}%
+    \\XC@mod@cmyk
+     {\\XC@calc@#1,#2,#3,,:C\\expandafter\\XC@cnv@cmy@cmyk\\@@tmp,}%
+    \\XC@mod@RGB {\\edef\\@@scl{\\rangeRGB}\\XC@calc@#1,#2,#3,,:M}%
+    \\XC@mod@HTML{\\edef\\@@scl{\\@cclv}\\XC@calc@#1,#2,#3,,:M%
+      \\expandafter\\XC@calc@\\@@tmp,,:H%
+      \\expandafter\\XC@cnv@rgb@HTML\\@@tmp,}%
+    \\XC@mod@gray{\\XC@cnv@rgb@gray#1,#2,#3,}%
+    \\XC@mod@Gray{\\XC@cnv@rgb@gray#1,#2,#3,\\XC@cnv@gray\\@@tmp,}}%
+   {\\XC@cnv@rgb@hsb#1,#2,#3,\\XC@cnv@hsb@}}
+\\def\\XC@cnv@rgb@
+ {\\ifx\\tm\\XC@mod@rgb\\else\\expandafter\\XC@cnv@rgb\\@@tmp,\\fi}
+\\def\\XC@cnv@rgb@hsb#1,#2,#3,%
+ {\\count@\\z@
+  \\ifdim#2\\p@>#1\\p@ \\else\\advance\\count@4 \\fi
+  \\ifdim#3\\p@>#2\\p@ \\else\\advance\\count@2 \\fi
+  \\ifdim#1\\p@>#3\\p@ \\else\\advance\\count@1 \\fi
+  \\ifcase\\count@\\or
+  \\XC@c@v@rgb@hsb{#3}{#2}{#1}3{}\\or
+  \\XC@c@v@rgb@hsb{#2}{#1}{#3}1{}\\or
+  \\XC@c@v@rgb@hsb{#2}{#3}{#1}3-\\or
+  \\XC@c@v@rgb@hsb{#1}{#3}{#2}5{}\\or
+  \\XC@c@v@rgb@hsb{#3}{#1}{#2}5-\\or
+  \\XC@c@v@rgb@hsb{#1}{#2}{#3}1-\\or
+  \\def\\@tempa{0}\\def\\@tempb{0}\\XC@calcN{#3}\\@tempc
+  \\fi
+  \\edef\\@@tmp{\\@tempa,\\@tempb,\\@tempc}}
+\\def\\XC@c@v@rgb@hsb#1#2#3#4#5%
+ {\\XC@calcN{#1}\\@tempc \\llshiftset\\dimen@{#1}%
+  \\llshiftset\\@tempdimb{-#3}\\advance\\@tempdimb\\dimen@
+  \\llshiftset\\@tempdima{-#5#2}\\advance\\@tempdima#5\\dimen@
+  \\advance\\@tempdima#4\\@tempdimb \\rdivide\\@tempdima{6\\@tempdimb}%
+  \\edef\\@tempa{\\ifdim\\@tempdima>\\p@1\\else\\strip@pt\\@tempdima\\fi}%
+  \\rdivide\\@tempdimb\\dimen@
+  \\edef\\@tempb{\\strip@pt\\@tempdimb}}
+\\def\\XC@cnv@rgb@gray#1,#2,#3,%
+ {\\llshiftset\\dimen@{#1}\\@tempdima30\\dimen@
+  \\llshiftset\\dimen@{#2}\\advance\\@tempdima59\\dimen@
+  \\llshiftset\\dimen@{#3}\\advance\\@tempdima11\\dimen@
+  \\rrshift\\@tempdima \\rdivide\\@tempdima{100}%
+  \\edef\\@@tmp{\\strip@pt\\@tempdima}}
+\\def\\XC@cnv@rgb@HTML#1,#2,#3,%
+ {\\edef\\@@tmp{#1#2#3}}
+\\def\\XC@cnv@cmy#1,#2,#3,%
+ {\\XC@ifxcase\\tm
+   {\\XC@mod@cmyk{\\XC@cnv@cmy@cmyk#1,#2,#3,}%
+    \\XC@mod@gray{\\XC@cnv@rgb@gray#1,#2,#3,\\XC@calcC\\@@tmp\\@@tmp}%
+    \\XC@mod@Gray{\\XC@cnv@rgb@gray#1,#2,#3,\\XC@calcC\\@@tmp\\@@tmp
+      \\XC@cnv@gray\\@@tmp,}}%
+   {\\XC@calc@#1,#2,#3,,:C\\XC@cnv@rgb@}}
+\\def\\XC@cnv@cmy@cmyk#1,#2,#3,%
+ {\\edef\\@@scl
+   {\\ifdim#1\\p@<#2\\p@
+    \\ifdim#1\\p@<#3\\p@ #1\\else #3\\fi \\else
+    \\ifdim#2\\p@<#3\\p@ #2\\else #3\\fi \\fi}%
+  \\expandafter\\XC@calc@\\adjustUCRBG,:S%
+  \\expandafter\\XC@c@v@cmy@cmyk\\@@tmp,#1,#2,#3,}
+\\def\\XC@c@v@cmy@cmyk#1,#2,#3,#4,#5,#6,#7,%
+ {\\XC@add#5,#6,#7,,-#1,-#2,-#3,,\\@@tmp \\edef\\@@tmp{\\@@tmp,#4}%
+  \\expandafter\\XC@calc@\\@@tmp,:N}
+\\def\\XC@cnv@cmyk#1,#2,#3,#4,%
+ {\\XC@ifxcase\\tm
+   {\\XC@mod@gray{\\XC@cnv@rgb@gray#1,#2,#3,\\edef\\@@arg{#4}%
+      \\XC@calcT\\@@tmp\\@@tmp \\XC@calcC\\@@tmp\\@@tmp}%
+    \\XC@mod@Gray{\\XC@cnv@rgb@gray#1,#2,#3,\\edef\\@@arg{#4}%
+      \\XC@calcT\\@@tmp\\@@tmp \\XC@calcC\\@@tmp\\@@tmp \\XC@cnv@gray\\@@tmp,}}%
+   {\\XC@cnv@cmyk@cmy#1,#2,#3,#4,%
+    \\ifx\\tm\\XC@mod@cmy\\else\\expandafter\\XC@cnv@cmy\\@@tmp,\\fi}}
+\\def\\XC@cnv@cmyk@cmy#1,#2,#3,#4,%
+ {\\edef\\@@arg{#4}\\XC@calc@#1,#2,#3,,:T}
+\\def\\XC@cnv@hsb#1,#2,#3,%
+ {\\XC@ifxcase\\tm
+   {\\XC@mod@Hsb {\\XC@cnv@hsb@Hsb#1,#2,#3,}%
+    \\XC@mod@tHsb{\\XC@cnv@hsb@Hsb#1,#2,#3,\\expandafter\\XC@cnv@Hsb\\@@tmp,}%
+    \\XC@mod@HSB {\\edef\\@@scl{\\rangeHSB}\\XC@calc@#1,#2,#3,,:M}}%
+   {\\XC@cnv@hsb@rgb#1,#2,#3,\\XC@cnv@rgb@}}
+\\def\\XC@cnv@hsb@
+ {\\ifx\\tm\\XC@mod@hsb\\else\\expandafter\\XC@cnv@hsb\\@@tmp,\\fi}
+\\def\\XC@cnv@hsb@rgb#1,#2,#3,%
+ {\\llshiftset\\dimen@{#1}\\dimen@6\\dimen@ \\rrshift\\dimen@
+  \\afterassignment\\dimen@\\count@=\\the\\dimen@
+  \\edef\\@@tmp{\\strip@pt\\dimen@}%
+  \\ifodd\\count@\\else\\XC@calcC\\@@tmp\\@@tmp\\fi
+  \\edef\\@@tmp
+   {\\ifcase\\count@ 0,\\@@tmp,1\\or \\@@tmp,0,1\\or 1,0,\\@@tmp\\or
+    1,\\@@tmp,0\\or \\@@tmp,1,0\\or 0,1,\\@@tmp\\or 0,\\@@tmp,1\\fi}%
+  \\edef\\@@scl{#2}\\expandafter\\XC@calc@\\@@tmp,,:S%
+  \\expandafter\\XC@calc@\\@@tmp,,:C%
+  \\edef\\@@scl{#3}\\expandafter\\XC@calc@\\@@tmp,,:S%
+  \\expandafter\\XC@calc@\\@@tmp,,:N}
+\\def\\XC@cnv@hsb@Hsb#1,#2,#3,%
+ {\\XC@c@lcS\\rangeHsb{,#2,#3}{#1}\\@@tmp}
+\\def\\XC@cnv@gray#1,%
+ {\\XC@ifxcase\\tm
+   {\\XC@mod@rgb {\\XC@calcN{#1}\\@@tmp \\edef\\@@tmp{\\@@tmp,\\@@tmp,\\@@tmp}}%
+    \\XC@mod@cmy {\\XC@calcC{#1}\\@@tmp \\edef\\@@tmp{\\@@tmp,\\@@tmp,\\@@tmp}}%
+    \\XC@mod@cmyk{\\XC@calcC{#1}\\@@tmp \\edef\\@@tmp{0,0,0,\\@@tmp}}%
+    \\XC@mod@RGB {\\edef\\@@scl{\\rangeRGB}\\XC@calcM{#1}\\@@tmp
+      \\edef\\@@tmp{\\@@tmp,\\@@tmp,\\@@tmp}}%
+    \\XC@mod@HTML{\\edef\\@@scl{\\@cclv}\\XC@calcM{#1}\\@@tmp
+      \\XC@calcH\\@@tmp\\@@tmp \\edef\\@@tmp{\\@@tmp\\@@tmp\\@@tmp}}%
+    \\XC@mod@HSB {\\edef\\@@scl{\\rangeHSB}\\XC@calcM{#1}\\@@tmp
+      \\edef\\@@tmp{0,0,\\@@tmp}}%
+    \\XC@mod@Gray{\\edef\\@@scl{\\rangeGray}\\XC@calcM{#1}\\@@tmp}}%
+   {\\XC@calcN{#1}\\@@tmp \\edef\\@@tmp{0,0,\\@@tmp}}}
+\\def\\XC@cnv@RGB#1,#2,#3,%
+ {\\edef\\@@scl{\\rangeRGB}\\XC@calc@#1,#2,#3,,:D\\XC@cnv@rgb@}
+\\def\\XC@cnv@HTML#1,%
+ {\\edef\\@@tmp{\\expandafter\\@hex@Hex#1\\relax}\\expandafter\\XC@cnv@HTML@\\@@tmp
+  \\edef\\@@scl{\\@cclv}\\expandafter\\XC@calc@\\@@tmp,,:D\\XC@cnv@rgb@}
+\\def\\XC@cnv@HTML@#1#2#3#4#5#6%
+ {\\edef\\@@tmp{\\number"#1#2,\\number"#3#4,\\number"#5#6}}
+\\def\\XC@cnv@Hsb#1,#2,#3,%
+ {\\ifx\\tm\\XC@mod@tHsb\\XC@cnv@@Hsb#1,#2,#3,\\XC@cnv@Hsb@
+  \\else\\XC@cnv@Hsb@hsb#1,#2,#3,\\XC@cnv@hsb@\\fi}
+\\def\\XC@cnv@Hsb@hsb#1,#2,#3,%
+ {\\XC@c@lcD\\rangeHsb{,#2,#3}{#1}\\@@tmp}
+\\def\\XC@cnv@@Hsb#1,#2,#3,#4%
+ {\\dimen@\\rangeHsb\\p@ \\advance\\dimen@\\p@ \\edef\\@@tmp{\\strip@pt\\dimen@}%
+  \\edef\\@@tmp{0,0;\\rangetHsb;\\rangeHsb,\\rangeHsb;\\@@tmp,\\@@tmp;}%
+  \\dimen@#1\\p@ \\expandafter#4\\@@tmp\\@nnil
+  \\edef\\@@tmp{\\strip@pt\\dimen@,#2,#3}}
+\\def\\XC@cnv@Hsb@#1,#2;#3,#4;%
+ {\\ifdim\\dimen@<#4\\p@
+    \\@tempdima#3\\p@ \\advance\\@tempdima-#1\\p@
+    \\@tempdimb#4\\p@ \\advance\\@tempdimb-#2\\p@
+    \\rdivide\\@tempdima\\@tempdimb
+    \\advance\\dimen@-#2\\p@ \\rmultiply\\dimen@{\\strip@pt\\@tempdima}%
+    \\advance\\dimen@#1\\p@ \\expandafter\\remove@to@nnil
+  \\else
+    \\def\\@@tmp{\\XC@cnv@Hsb@#3,#4;}\\expandafter\\@@tmp
+  \\fi}
+\\def\\XC@cnv@tHsb#1,#2,#3,%
+ {\\XC@cnv@@Hsb#1,#2,#3,\\XC@cnv@tHsb@
+  \\ifx\\tm\\XC@mod@Hsb\\else\\expandafter\\XC@cnv@Hsb\\@@tmp,\\fi}
+\\def\\XC@cnv@tHsb@#1,#2;#3,#4;%
+ {\\ifdim\\dimen@<#3\\p@
+    \\@tempdima#4\\p@ \\advance\\@tempdima-#2\\p@
+    \\@tempdimb#3\\p@ \\advance\\@tempdimb-#1\\p@
+    \\rdivide\\@tempdima\\@tempdimb
+    \\advance\\dimen@-#1\\p@ \\rmultiply\\dimen@{\\strip@pt\\@tempdima}%
+    \\advance\\dimen@#2\\p@ \\expandafter\\remove@to@nnil
+  \\else
+    \\def\\@@tmp{\\XC@cnv@tHsb@#3,#4;}\\expandafter\\@@tmp
+  \\fi}
+\\def\\XC@cnv@HSB#1,#2,#3,%
+ {\\edef\\@@scl{\\rangeHSB}\\XC@calc@#1,#2,#3,,:D\\XC@cnv@hsb@}
+\\def\\XC@cnv@Gray#1,%
+ {\\XC@c@lcD\\rangeGray{}{#1}\\@@tmp \\XC@cnv@gray\\@@tmp,}
+\\def\\XC@cnv@wave#1,%
+ {\\XC@cnv@wave@hsb#1,\\XC@cnv@hsb@}
+\\def\\XC@cnv@wave@hsb#1,%
+ {\\@tempdima#1\\p@
+  \\ifdim\\@tempdima<440\\p@
+    \\XC@c@v@wave@hsb{-.0166667}{7.33333}4{}\\else
+  \\ifdim\\@tempdima<490\\p@
+    \\XC@c@v@wave@hsb{.02}{-8.8}4-\\else
+  \\ifdim\\@tempdima<510\\p@
+    \\XC@c@v@wave@hsb{-.05}{25.5}2{}\\else
+  \\ifdim\\@tempdima<580\\p@
+    \\XC@c@v@wave@hsb{.0142857}{-7.28571}2-\\else
+  \\ifdim\\@tempdima<645\\p@
+    \\XC@c@v@wave@hsb{-.0153846}{9.92308}0{}\\else
+  \\dimen@\\z@ \\fi\\fi\\fi\\fi\\fi
+  \\divide\\dimen@6\\relax
+  \\edef\\@@tmp{\\strip@pt\\dimen@,1,}%
+  \\ifdim\\@tempdima<420\\p@
+    \\XC@c@v@wave@hsb{.0175}{-6.35}0{}\\else
+  \\ifdim\\@tempdima>700\\p@
+    \\XC@c@v@wave@hsb{-.00875}{7.125}0{}\\else
+  \\dimen@\\p@ \\fi\\fi
+  \\edef\\@@tmp{\\@@tmp\\strip@pt\\dimen@}}
+\\def\\XC@c@v@wave@hsb#1#2#3#4%
+ {\\dimen@#1\\@tempdima \\advance\\dimen@#2\\p@
+  \\XC@calcR{\\strip@pt\\dimen@}\\@tempa
+  \\dimen@#4\\@tempa\\p@ \\advance\\dimen@#3\\p@}
+\\def\\XC@cnv@cmyk@compl#1,#2,#3,#4,%
+ {\\XC@cnv@cmyk@cmy#1,#2,#3,#4,%
+  \\expandafter\\XC@calc@\\@@tmp,,:C\\expandafter\\XC@cnv@cmy@cmyk\\@@tmp,}
+\\def\\XC@cnv@hsb@compl#1,#2,#3,%
+ {\\lshiftset\\dimen@{#1}\\advance\\dimen@\\ifdim\\dimen@<5\\p@-\\fi-5\\p@
+  \\rshift\\dimen@ \\edef\\@@tmp{\\strip@pt\\dimen@}%
+  \\lshiftset\\dimen@{#3}\\@tempdima#2\\dimen@
+  \\@tempdimb\\@tempdima \\advance\\@tempdimb10\\p@ \\advance\\@tempdimb-\\dimen@
+  \\ifdim\\@tempdimb=\\z@
+    \\edef\\@@tmp{\\@@tmp,0,0}%
+  \\else
+    \\rdivide\\@tempdima\\@tempdimb \\rshift\\@tempdimb
+    \\edef\\@@tmp{\\@@tmp,\\strip@pt\\@tempdima,\\strip@pt\\@tempdimb}%
+  \\fi}
+\\def\\substitutecolormodel#1#2%
+ {\\XC@sdef\\XC@@tmp{\\expandafter\\XC@substitutecolormodel#2/ignore/\\@nnil}%
+  \\ifx\\XC@@tmp\\XC@mod@ignore
+    \\XC@let@cN{color@#1}\\color@ignore
+  \\else
+    \\expandafter\\edef\\csname color@#1\\endcsname##1##2%
+     {\\noexpand\\convertcolorspec
+      \\expandafter\\noexpand\\csname XC@mod@#1\\endcsname{##2}%
+      \\expandafter\\noexpand\\csname XC@mod@\\XC@@tmp\\endcsname
+      \\noexpand\\XC@@tmp\\noexpand\\expandafter
+      \\expandafter\\noexpand\\csname color@\\XC@@tmp\\endcsname
+      \\noexpand\\expandafter##1\\noexpand\\expandafter{\\noexpand\\XC@@tmp}}%
+  \\fi
+  \\expandafter\\xglobalize@\\csname color@#1\\endcsname \\xglobal@stop
+  \\PackageInfo{xcolor}{Model \`#1' substituted by \`\\XC@@tmp'}}
+\\def\\XC@substitutecolormodel#1/%
+ {\\@ifundefinedmodel{#1}{\\XC@substitutecolormodel}{#1\\remove@to@nnil}}
+\\def\\color@ignore#1#2{\\def#1{}}
+\\@ifundefinedmodel{rgb}%
+ {\\substitutecolormodel{rgb}{RGB/HTML/hsb/Hsb/HSB/cmy/cmyk/gray/Gray}}{}
+\\@ifundefinedmodel{cmyk}{\\substitutecolormodel{cmyk}{cmy/rgb}}{}
+\\@ifundefinedmodel{cmy}%
+ {\\PackageInfo{xcolor}{Model \`cmy' substituted by \`cmy0'}
+  \\def\\color@cmy#1#2{\\color@cmyk#1{#2,0}}}{}
+\\@ifundefinedmodel{hsb}{\\@tempswatrue}%
+ {\\XC@ifcase\\XC@@drv{{dvipdfm,textures}\\@tempswatrue}\\@tempswafalse}
+\\if@tempswa
+  \\substitutecolormodel{hsb}{Hsb/HSB/rgb}
+\\fi
+\\@ifundefinedmodel{RGB}%
+ {\\substitutecolormodel{RGB}{HTML/rgb}}
+ {\\PackageInfo{xcolor}{Model \`RGB' extended}
+  \\let\\XC@color@RGB\\color@RGB
+  \\def\\color@RGB#1#2%
+   {\\relax\\ifnum\\rangeRGB=255
+      \\XC@color@RGB#1{#2}%
+    \\else
+      \\convertcolorspec\\XC@mod@RGB{#2}\\XC@mod@rgb\\XC@@tmp
+      \\expandafter\\color@rgb\\expandafter#1\\expandafter{\\XC@@tmp}%
+    \\fi}}
+\\@ifundefinedmodel{gray}{\\substitutecolormodel{gray}{Gray/rgb}}{}
+\\@ifundefinedmodel{HTML}{\\substitutecolormodel{HTML}{rgb}}{}
+\\@ifundefinedmodel{Hsb}{\\substitutecolormodel{Hsb}{hsb}}{}
+\\@ifundefinedmodel{tHsb}{\\substitutecolormodel{tHsb}{hsb}}{}
+\\@ifundefinedmodel{HSB}{\\substitutecolormodel{HSB}{hsb}}{}
+\\@ifundefinedmodel{Gray}{\\substitutecolormodel{Gray}{gray}}{}
+\\@ifundefinedmodel{wave}{\\substitutecolormodel{wave}{hsb}}{}
+\\def\\XC@getcolor#1#2%
+ {\\begingroup\\toks@{#1}\\XC@getc@lor#1\\XC@@\\aftergroupdef#2{\\@@tmp}}
+\\def\\XC@getc@lor#1#2\\XC@@
+ {\\@ifxempty{#2}%
+   {\\expandafter\\XC@getc@l@r#1\\XC@@}%
+   {\\let\\set@color\\relax
+    \\ifx#1[%
+      \\expandafter\\@undeclaredcolor\\the\\toks@\\else
+      \\expandafter\\@declaredcolor\\expandafter{\\the\\toks@}\\fi
+    \\let\\@@tmp\\XC@current@color}}
+\\def\\XC@getc@l@r#1#2\\XC@@
+ {\\ifx#1\\xcolor@
+    \\def\\@@tmp{\\xcolor@#2}%
+  \\else
+    \\let\\set@color\\relax
+    \\expandafter\\@declaredcolor\\expandafter{\\the\\toks@}%
+    \\let\\@@tmp\\XC@current@color
+  \\fi}
+\\def\\XC@usecolor#1{\\expandafter\\XC@usec@lor#1\\XC@@}
+\\def\\XC@usec@lor#1#2\\XC@@
+ {\\ifx#1\\xcolor@
+    \\expandafter\\expandafter\\expandafter\\c@lor@to@ps#1#2\\@@
+  \\else
+    \\expandafter\\expandafter\\expandafter\\expandafter\\expandafter\\expandafter
+    \\expandafter\\c@lor@to@ps\\csname\\string\\color@#1#2\\endcsname\\@@
+  \\fi
+  \\space}
+\\let\\XC@c@lor@to@ps\\XC@usecolor
+\\let\\pst@getcolor\\XC@getcolor
+\\let\\pst@usecolor\\XC@usecolor
+\\def\\c@lor@special#1#2{\\edef\\@tempa{\\write#1{#2}}\\@tempa}
+\\def\\normalcolor{\\let\\current@color\\default@color\\set@color}
+\\AtBeginDocument{\\let\\default@color\\current@color}
+\\XC@ifcase\\XC@@drv
+ {{dvipdf,dvipdfm,dvipdfmx,dvips,pctex32}%
+  {\\def\\c@lor@@named#1,#2,#3\\@@#4%
+    {\\edef#4{\\expandafter\\expandafter\\expandafter\\@thirdoffive
+             \\csname\\string\\color@#1\\endcsname}}
+   \\def\\define@color@named#1#2%
+    {\\@namedef{\\string\\color@#1}{{}{}{ \\colornameprefix#1}{}{}}}}%
+  {dvipsone,luatex,pctexps,pdftex,tcidvi,truetex,vtex,xetex}%
+  {\\def\\c@lor@@named#1,#2,#3\\@@#4%
+    {\\edef#4{\\expandafter\\expandafter\\expandafter\\@thirdoffive
+             \\csname\\string\\color@#1\\endcsname}}
+   \\def\\define@color@named#1#2%
+    {\\let\\@@cls\\@empty\\@namedef{\\string\\color@#1}{{}{}{#2}{}{}}}}%
+  {textures}%
+  {\\def\\c@lor@@named#1,#2,#3\\@@#4%
+    {\\edef\\@tempa{\\color@P@custom{#1}{\\if!#2!1\\else#2\\fi}}%
+     \\expandafter\\def\\expandafter#4\\@tempa}
+   \\def\\define@color@named#1#2%
+    {\\edef\\@tempa{{#1}{#2}}\\expandafter\\AddCustomColor\\@tempa}
+   \\def\\c@lor@ps@#1 #2\\@@
+    {\\expandafter\\expandafter\\expandafter\\expandafter\\expandafter
+     \\expandafter\\expandafter\\c@lor@to@ps@
+     \\csname\\string\\color@#1\\expandafter\\endcsname\\space
+     #2. \\@@{#1}}}%
+ }{}
+\\definecolorset{rgb/hsb/cmyk/gray}{}{}%
+ {red,1,0,0/0,1,1/0,1,1,0/.3;%
+  green,0,1,0/.33333,1,1/1,0,1,0/.59;%
+  blue,0,0,1/.66667,1,1/1,1,0,0/.11;%
+  brown,.75,.5,.25/.083333,.66667,.75/0,.25,.5,.25/.5475;%
+  lime,.75,1,0/.20833,1,1/.25,0,1,0/.815;%
+  orange,1,.5,0/.083333,1,1/0,.5,1,0/.595;%
+  pink,1,.75,.75/0,.25,1/0,.25,.25,0/.825;%
+  purple,.75,0,.25/.94444,1,.75/0,.75,.5,.25/.2525;%
+  teal,0,.5,.5/.5,1,.5/.5,0,0,.5/.35;%
+  violet,.5,0,.5/.83333,1,.5/0,.5,0,.5/.205}%
+\\definecolorset{cmyk/rgb/hsb/gray}{}{}%
+ {cyan,1,0,0,0/0,1,1/.5,1,1/.7;%
+  magenta,0,1,0,0/1,0,1/.83333,1,1/.41;%
+  yellow,0,0,1,0/1,1,0/.16667,1,1/.89;%
+  olive,0,0,1,.5/.5,.5,0/.16667,1,.5/.39}
+\\definecolorset{gray/rgb/hsb/cmyk}{}{}%
+ {black,0/0,0,0/0,0,0/0,0,0,1;%
+  darkgray,.25/.25,.25,.25/0,0,.25/0,0,0,.75;%
+  gray,.5/.5,.5,.5/0,0,.5/0,0,0,.5;%
+  lightgray,.75/.75,.75,.75/0,0,.75/0,0,0,.25;%
+  white,1/1,1,1/0,0,1/0,0,0,0}
+\\XC@@names
+\\AtBeginDocument{\\let\\XC@@stack\\@empty}
+\\let\\colornameprefix\\XC@@nameprefix
+\\XC@catcodes
+\\csname xcolorcmd\\endcsname
+\\color{black}
+\\endinput
+%%
+%% End of file \`xcolor.sty'.
+` },
   { format: 27, filename: 'xkeyval.sty', content: `
 %%
 %% This is file \`xkeyval.sty',
@@ -26848,7 +52159,484 @@ Test file integrity:  ASCII 32-57, 58-126:  !"#\$%&'()*+,-./0123456789
 %%
 %% End of file \`xkeyval.sty'.
 ` },
+  { format: 26, filename: 'xkeyval.sty', content: `
+%%
+%% This is file \`xkeyval.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% xkeyval.dtx  (with options: \`xkvlatex')
+%% 
+%% ---------------------------------------
+%% Copyright (C) 2004-2022 Hendri Adriaens
+%%               2025 David Carlisle for latex-package-repositories
+%% ---------------------------------------
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%
+%% This work has the LPPL maintenance status "maintained".
+%%
+%% This Current Maintainer of this work is Hendri Adriaens.
+%%
+%% This work consists of the file xkeyval.dtx and derived files
+%% keyval.tex, xkvtxhdr.tex, xkeyval.sty, xkeyval.tex, xkvview.sty,
+%% xkvltxp.sty, xkvutils.tex, pst-xkey.tex, pst-xkey.sty, xkveca.cls,
+%% xkvecb.cls, xkvesa.sty, xkvesb.sty, xkvesc.sty, xkvex1.tex,
+%% xkvex2.tex, xkvex3.tex and xkvex4.tex.
+%%
+%% The following files constitute the xkeyval bundle and must be
+%% distributed as a whole: readme, xkeyval.pdf, keyval.tex,
+%% pst-xkey.sty, pst-xkey.tex, xkeyval.sty, xkeyval.tex, xkvview.sty,
+%% xkvltxp.sty, xkvtxhdr.tex, xkvutils.tex, pst-xkey.dtx and xkeyval.dtx.
+%%
+\\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\\ProvidesPackage{xkeyval}
+  [2025/11/04 v2.10 package option processing (HA)]
+\\ifx\\XKeyValLoaded\\endinput\\else\\input xkeyval \\fi
+\\edef\\XKVcatcodes{%
+  \\catcode\`\\noexpand\\=\\the\\catcode\`\\=\\relax
+  \\catcode\`\\noexpand\\,\\the\\catcode\`\\,\\relax
+  \\let\\noexpand\\XKVcatcodes\\relax
+}
+\\catcode\`\\=12\\relax
+\\catcode\`\\,12\\relax
+\\let\\XKV@doxs\\relax
+\\def\\XKV@warn#1{\\PackageWarning{xkeyval}{#1}}
+\\def\\XKV@err#1{\\PackageError{xkeyval}{#1}\\@ehc}
+\\XKV@whilist\\@filelist\\XKV@tempa\\ifx\\XKV@documentclass\\@undefined\\fi{%
+  \\filename@parse\\XKV@tempa
+  \\ifx\\filename@ext\\@clsextension
+    \\XKV@ifundefined{opt@\\filename@base.\\filename@ext
+    }{}{\\edef\\XKV@documentclass{\\filename@base.\\filename@ext}}%
+  \\fi
+}
+\\ifx\\XKV@documentclass\\@undefined
+  \\XKV@err{xkeyval loaded before \\protect\\documentclass}%
+  \\let\\XKV@documentclass\\@empty
+  \\let\\XKV@classoptionslist\\@empty
+\\else
+  \\let\\XKV@classoptionslist\\@classoptionslist
+  \\def\\XKV@tempa#1{%
+    \\let\\@classoptionslist\\@empty
+    \\XKV@for@n{#1}\\XKV@tempa{%
+      \\expandafter\\in@\\expandafter=\\expandafter{\\XKV@tempa}%
+      \\ifin@\\else\\XKV@addtolist@o\\@classoptionslist\\XKV@tempa\\fi
+    }%
+  }
+  \\expandafter\\XKV@tempa\\expandafter{\\@classoptionslist}
+\\fi
+\\def\\XKV@testopte#1{%
+  \\XKV@ifstar{\\XKV@sttrue\\XKV@t@stopte#1}{\\XKV@stfalse\\XKV@t@stopte#1}%
+}
+\\def\\XKV@t@stopte#1{\\@testopt{\\XKV@t@st@pte#1}{KV}}
+\\def\\XKV@t@st@pte#1[#2]{%
+  \\XKV@makepf{#2}%
+  \\@ifnextchar<{\\XKV@@t@st@pte#1}%
+    {\\XKV@@t@st@pte#1<\\@currname.\\@currext>}%
+}
+\\def\\XKV@@t@st@pte#1<#2>{%
+  \\XKV@sp@deflist\\XKV@fams{#2}%
+  \\@testopt#1{}%
+}
+\\def\\DeclareOptionX{%
+  \\let\\@fileswith@pti@ns\\@badrequireerror
+  \\XKV@ifstar\\XKV@dox\\XKV@d@x
+}
+\\long\\def\\XKV@dox#1{\\XKV@toks{#1}\\edef\\XKV@doxs{\\the\\XKV@toks}}
+\\def\\XKV@d@x{\\@testopt\\XKV@@d@x{KV}}
+\\def\\XKV@@d@x[#1]{%
+  \\@ifnextchar<{\\XKV@@@d@x[#1]}{\\XKV@@@d@x[#1]<\\@currname.\\@currext>}%
+}
+\\def\\XKV@@@d@x[#1]<#2>#3{\\@testopt{\\define@key[#1]{#2}{#3}}{}}
+\\def\\ExecuteOptionsX{\\XKV@stfalse\\XKV@plfalse\\XKV@t@stopte\\XKV@setkeys}
+\\def\\ProcessOptionsX{\\XKV@plfalse\\XKV@testopte\\XKV@pox}
+\\def\\XKV@pox[#1]{%
+  \\let\\XKV@tempa\\@empty
+  \\XKV@inpoxtrue
+  \\let\\@fileswith@pti@ns\\@badrequireerror
+  \\edef\\XKV@testclass{\\@currname.\\@currext}%
+  \\ifx\\XKV@testclass\\XKV@documentclass
+    \\let\\@unusedoptionlist\\XKV@classoptionslist
+    \\XKV@ifundefined{ver@xkvltxp.sty}{}{%
+      \\@onelevel@sanitize\\@unusedoptionlist
+    }%
+  \\else
+    \\ifXKV@st
+      \\def\\XKV@tempb##1,{%
+        \\def\\CurrentOption{##1}%
+        \\ifx\\CurrentOption\\@nnil\\else
+          \\XKV@g@tkeyname##1=\\@nil\\CurrentOption
+          \\XKV@key@if@ndefined{\\CurrentOption}{}{%
+            \\XKV@useoption{##1}%
+            \\XKV@addtolist@n\\XKV@tempa{##1}%
+          }%
+          \\expandafter\\XKV@tempb
+        \\fi
+      }%
+      \\expandafter\\XKV@tempb\\XKV@classoptionslist,\\@nil,%
+    \\fi
+  \\fi
+  \\expandafter\\XKV@addtolist@o\\expandafter
+    \\XKV@tempa\\csname opt@\\@currname.\\@currext\\endcsname
+  \\def\\XKV@tempb{\\XKV@setkeys[#1]}%
+  \\expandafter\\XKV@tempb\\expandafter{\\XKV@tempa}%
+  \\let\\XKV@doxs\\relax
+  \\let\\XKV@rm\\@empty
+  \\XKV@inpoxfalse
+  \\let\\@fileswith@pti@ns\\@@fileswith@pti@ns
+  \\AtEndOfPackage{\\let\\@unprocessedoptions\\relax}%
+}
+\\def\\XKV@useoption#1{%
+  \\def\\XKV@resa{#1}%
+  \\XKV@ifundefined{ver@xkvltxp.sty}{}{%
+    \\@onelevel@sanitize\\XKV@resa
+  }%
+  \\@expandtwoargs\\@removeelement{\\expandafter\\@remove@eq@value\\XKV@resa=\\@nil}%
+    {\\@unusedoptionlist}\\@unusedoptionlist
+}
+\\DeclareOptionX*{%
+  \\PackageWarning{xkeyval}{Unknown option \`\\CurrentOption'}%
+}
+\\ProcessOptionsX
+\\XKVcatcodes
+\\endinput
+%%
+%% End of file \`xkeyval.sty'.
+` },
   { format: 27, filename: 'xparse.sty', content: `
+%%
+%% This is file \`xparse.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% xparse.dtx  (with options: \`package')
+%% 
+%% Copyright (C) 2009-2025 The LaTeX Project
+%% 
+%% It may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License (LPPL), either version 1.3c of
+%% this license or (at your option) any later version.  The latest
+%% version of this license is in the file:
+%% 
+%%    http://www.latex-project.org/lppl.txt
+%% 
+%% This file is part of the "l3packages bundle" (The Work in LPPL)
+%% and all files in that bundle must be distributed together.
+%% 
+%% File: xparse.dtx
+\\RequirePackage{expl3}[2018-04-12]
+\\@ifpackagelater{expl3}{2018-04-12}
+  {}
+  {%
+    \\PackageError{xparse}{Support package l3kernel too old}
+      {%
+        Please install an up to date version of l3kernel\\MessageBreak
+        using your TeX package manager or from CTAN.\\MessageBreak
+        \\MessageBreak
+        Loading xparse will abort!%
+      }%
+    \\endinput
+  }
+\\ExplSyntaxOn
+\\cs_set_protected:Npn \\__cmd_tmp:w #1
+  {
+    \\DeclareOption* { \\PassOptionsToPackage { \\CurrentOption } {#1} }
+    \\ProcessOptions \\relax
+    \\RequirePackage {#1}
+  }
+\\cs_if_free:NTF \\NewDocumentCommand
+  {
+    \\ExplSyntaxOff
+    \\ifnum\\expandafter
+        \\@parse@version\\fmtversion//00\\@nil <
+        \\@parse@version 2020-10-01//00\\@nil
+      \\__cmd_tmp:w { xparse-2018-04-12 }
+    \\else
+      \\__cmd_tmp:w { xparse-2020-10-01 }
+    \\fi
+    \\file_input_stop:
+  }
+  {
+    \\ExplSyntaxOff
+    \\cs_if_exist:NF \\__cmd_start:nNNnnn
+      {
+        \\__cmd_tmp:w { xparse-2020-10-01 }
+        \\file_input_stop:
+      }
+  }
+\\ExplSyntaxOff
+\\ProvidesExplPackage{xparse}{2025-10-09}{}
+  {L3 Experimental document command parser}
+\\clist_new:N \\l__cmd_options_clist
+\\DeclareOption* { \\clist_put_right:NV \\l__cmd_options_clist \\CurrentOption }
+\\ProcessOptions \\relax
+\\cs_set_protected:Npn \\__cmd_tmp:w #1
+  {
+    \\keys_define:nn {#1}
+      {
+        log-declarations .bool_set:N = \\l__cmd_log_bool ,
+        log-declarations .initial:n  = false
+      }
+    \\keys_set:nV {#1} \\l__cmd_options_clist
+    \\bool_if:NTF \\l__cmd_log_bool
+      { \\msg_redirect_module:nnn {#1} { info } { } }
+      { \\msg_redirect_module:nnn {#1} { info } { none } }
+    \\cs_new_protected:Npn \\__cmd_unknown_argument_type_error:n ##1
+      {
+        \\msg_error:nnee {#1} { unknown-argument-type }
+          { \\__cmd_environment_or_command: } { \\tl_to_str:n {##1} }
+      }
+  }
+\\msg_if_exist:nnTF { cmd } { define-command }
+  { \\__cmd_tmp:w { cmd } }
+  { \\__cmd_tmp:w { ltcmd } }
+\\cs_gset_protected:Npn \\__cmd_normalize_arg_spec_loop:n #1
+  {
+    \\quark_if_recursion_tail_stop:n {#1}
+    \\int_incr:N \\l__cmd_current_arg_int
+    \\cs_if_exist_use:cF { __cmd_normalize_type_ \\tl_to_str:n {#1} :w }
+      {
+        \\__cmd_unknown_argument_type_error:n {#1}
+        \\__cmd_bad_def:wn
+      }
+  }
+\\cs_new_protected:Npe \\__cmd_normalize_type_g:w
+  { \\exp_not:N \\__cmd_normalize_type_G:w { \\exp_not:V \\c_novalue_tl } }
+\\cs_new_protected:Npn \\__cmd_normalize_type_G:w #1
+  {
+    \\quark_if_recursion_tail_stop_do:nn {#1} { \\__cmd_bad_arg_spec:wn }
+    \\__cmd_normalize_check_gv:N G
+    \\__cmd_add_arg_spec:n { G {#1} }
+    \\tl_put_right:Nn \\l__cmd_last_delimiters_tl { { } }
+    \\__cmd_normalize_arg_spec_loop:n
+  }
+\\cs_new_protected:Npn \\__cmd_normalize_type_l:w
+  {
+    \\__cmd_normalize_check_lu:N l
+    \\__cmd_add_arg_spec_mandatory:n { l }
+    \\__cmd_normalize_arg_spec_loop:n
+  }
+\\cs_new_protected:Npn \\__cmd_normalize_type_u:w #1
+  {
+    \\quark_if_recursion_tail_stop_do:nn {#1} { \\__cmd_bad_arg_spec:wn }
+    \\__cmd_normalize_check_lu:N u
+    \\__cmd_add_arg_spec_mandatory:n { u {#1} }
+    \\__cmd_normalize_arg_spec_loop:n
+  }
+\\cs_new_protected:Npn \\__cmd_add_type_G:w #1
+  {
+    \\__cmd_flush_m_args:
+    \\__cmd_add_default:n {#1}
+    \\__cmd_add_grabber:N G
+    \\__cmd_prepare_signature:N
+  }
+\\cs_new_protected:Npn \\__cmd_add_type_l:w
+  {
+    \\__cmd_flush_m_args:
+    \\__cmd_add_default:
+    \\__cmd_add_grabber:N l
+    \\__cmd_prepare_signature:N
+  }
+\\cs_new_protected:Npn \\__cmd_add_type_u:w #1
+  {
+    \\__cmd_flush_m_args:
+    \\__cmd_add_default:
+    \\__cmd_add_grabber:N u
+    \\tl_put_right:Nn \\l__cmd_signature_tl { {#1} }
+    \\__cmd_prepare_signature:N
+  }
+\\cs_new_protected:Npn \\__cmd_add_expandable_type_l:w
+  { \\__cmd_add_expandable_type_u:w ## }
+\\cs_new_protected:Npn \\__cmd_add_expandable_type_u:w #1
+  {
+    \\__cmd_add_default:
+    \\bool_if:NTF \\l__cmd_long_bool
+      { \\cs_set:cpn }
+      { \\cs_set_nopar:cpn }
+      { \\l__cmd_expandable_aux_name_tl } ##1 \\q__cmd ##2 ##3 ##4 #1
+      { ##1 {##4} \\q__cmd ##2 ##3 }
+    \\__cmd_add_expandable_grabber:nn { u }
+      { \\exp_not:c  { \\l__cmd_expandable_aux_name_tl } }
+    \\__cmd_prepare_signature:N
+  }
+\\cs_new_protected:Npn \\__cmd_copy_grabber_u:w #1 #2 #3
+  { \\__cmd_copy_grabber_D:w {#1} {#2} {#3} { } { } }
+\\tl_const:Nn \\c__cmd_show_type_u_tl { 3 }
+\\tl_const:Nn \\c__cmd_show_type_G_tl { 3 }
+\\cs_new_protected:Npn \\__cmd_grab_G:w #1 \\__cmd_run_code:
+  {
+    \\__cmd_grab_G_aux:nNN {#1} \\cs_set_protected_nopar:Npn
+      \\__cmd_peek_nonspace:NTF
+  }
+\\cs_new_protected:Npn \\__cmd_grab_G_long:w #1 \\__cmd_run_code:
+  {
+    \\__cmd_grab_G_aux:nNN {#1} \\cs_set_protected:Npn
+      \\__cmd_peek_nonspace:NTF
+  }
+\\cs_new_protected:Npn \\__cmd_grab_G_obey_spaces:w #1 \\__cmd_run_code:
+  {
+    \\__cmd_grab_G_aux:nNN {#1} \\cs_set_protected_nopar:Npn
+      \\peek_meaning:NTF
+  }
+\\cs_new_protected:Npn \\__cmd_grab_G_long_obey_spaces:w #1 \\__cmd_run_code:
+  {
+    \\__cmd_grab_G_aux:nNN {#1} \\cs_set_protected:Npn
+      \\peek_meaning:NTF
+  }
+\\cs_new_protected:Npn \\__cmd_grab_G_aux:nNN #1#2#3
+  {
+    \\tl_set:Nn \\l__cmd_signature_tl {#1}
+    \\exp_after:wN #2 \\l__cmd_fn_tl ##1
+      { \\__cmd_add_arg:n {##1} }
+    #3 \\c_group_begin_token
+      { \\l__cmd_fn_tl }
+      { \\__cmd_add_arg:o \\c_novalue_tl }
+  }
+\\cs_new_protected:Npn \\__cmd_grab_l:w #1 \\__cmd_run_code:
+  { \\__cmd_grab_l_aux:nN {#1} \\cs_set_protected_nopar:Npn }
+\\cs_new_protected:Npn \\__cmd_grab_l_long:w #1 \\__cmd_run_code:
+  { \\__cmd_grab_l_aux:nN {#1} \\cs_set_protected:Npn }
+\\cs_new_protected:Npn \\__cmd_grab_l_aux:nN #1#2
+  {
+    \\tl_set:Nn \\l__cmd_signature_tl {#1}
+    \\exp_after:wN #2 \\l__cmd_fn_tl ##1##
+      { \\__cmd_add_arg:n {##1} }
+    \\l__cmd_fn_tl
+  }
+\\cs_new_protected:Npn \\__cmd_grab_u:w #1#2 \\__cmd_run_code:
+  { \\__cmd_grab_u_aux:nnN {#1} {#2} \\cs_set_protected_nopar:Npn }
+\\cs_new_protected:Npn \\__cmd_grab_u_long:w #1#2 \\__cmd_run_code:
+  { \\__cmd_grab_u_aux:nnN {#1} {#2} \\cs_set_protected:Npn }
+\\cs_new_protected:Npn \\__cmd_grab_u_aux:nnN #1#2#3
+  {
+    \\tl_set:Nn \\l__cmd_signature_tl {#2}
+    \\exp_after:wN #3 \\l__cmd_fn_tl ##1 #1
+      { \\__cmd_add_arg:n {##1} }
+    \\l__cmd_fn_tl
+  }
+\\cs_new_eq:NN \\__cmd_expandable_grab_u:w \\prg_do_nothing:
+\\cs_gset_protected:Npn \\__cmd_get_arg_spec_error:N #1
+  {
+    \\bool_set_false:N \\l__cmd_environment_bool
+    \\tl_set:Nn \\l__cmd_fn_tl {#1}
+    \\__cmd_get_arg_spec_error_aux:n { \\cs_if_exist:NTF #1 }
+  }
+\\cs_gset_protected:Npn \\__cmd_get_arg_spec_error:n #1
+  {
+    \\bool_set_true:N \\l__cmd_environment_bool
+    \\str_set:Ne \\l__cmd_environment_str {#1}
+    \\__cmd_get_arg_spec_error_aux:n
+      { \\cs_if_exist:cTF { \\l__cmd_environment_str } }
+  }
+\\cs_gset_protected:Npn \\__cmd_get_arg_spec_error_aux:n #1
+  {
+    #1
+      {
+        \\msg_error:nne { cmd } { non-xparse }
+          { \\__cmd_environment_or_command: }
+      }
+      {
+        \\msg_error:nne { cmd } { unknown }
+          { \\__cmd_environment_or_command: }
+      }
+  }
+\\cs_gset_protected:Npn \\__cmd_get_arg_spec:NTF #1#2#3
+  {
+    \\__kernel_cmd_if_xparse:NTF #1
+      {
+        \\tl_set:Ne \\ArgumentSpecification
+          {
+            \\exp_args:No \\tl_if_head_eq_meaning:nNTF {#1} \\__cmd_start_optimized:
+              {
+                \\prg_replicate:nn
+                  {
+                    \\str_count:e
+                      {
+                        \\exp_args:Nc \\cs_parameter_spec:N
+                          { \\cs_to_str:N #1 \\c_space_tl code }
+                      } / 2
+                  }
+                  {
+                    \\exp_args:Nc \\token_if_protected_long_macro:NTF
+                      { \\cs_to_str:N #1 \\c_space_tl code }
+                      { + }
+                      {
+                        \\exp_args:Nc \\token_if_long_macro:NT
+                        { \\cs_to_str:N #1 \\c_space_tl code }
+                        { + }
+                      }
+                    m
+                  }
+              }
+              { \\tl_item:Nn #1 { 2 } }
+          }
+        #2
+      }
+      {#3}
+  }
+\\tl_clear_new:N \\ArgumentSpecification
+\\cs_gset_protected:Npn \\__cmd_get_arg_spec:N #1
+  {
+    \\__cmd_get_arg_spec:NTF #1 { }
+      { \\__cmd_get_arg_spec_error:N #1 }
+  }
+\\cs_gset_protected:Npn \\__cmd_get_arg_spec:n #1
+  {
+    \\exp_args:Nc \\__cmd_get_arg_spec:NTF
+      { environment~ \\tl_to_str:n {#1} }
+      { }
+      { \\__cmd_get_arg_spec_error:n {#1} }
+  }
+\\cs_gset_protected:Npn \\__cmd_show_arg_spec:N #1
+  {
+    \\__cmd_get_arg_spec:NTF #1
+      { \\tl_show:N \\ArgumentSpecification }
+      { \\__cmd_get_arg_spec_error:N #1 }
+  }
+\\cs_gset_protected:Npn \\__cmd_show_arg_spec:n #1
+  {
+    \\exp_args:Nc \\__cmd_get_arg_spec:NTF
+      { environment~ \\tl_to_str:n {#1} }
+      { \\tl_show:N \\ArgumentSpecification }
+      { \\__cmd_get_arg_spec_error:n {#1} }
+  }
+\\cs_gset_protected:Npn \\GetDocumentCommandArgSpec #1
+  {
+    \\__cmd_check_definable:nNT {#1} \\GetDocumentCommandArgSpec
+      { \\__cmd_get_arg_spec:N #1 }
+  }
+\\cs_gset_eq:NN \\GetDocumentEnvironmentArgSpec \\__cmd_get_arg_spec:n
+\\cs_gset_protected:Npn \\ShowDocumentCommandArgSpec #1
+  {
+    \\__cmd_check_definable:nNT {#1} \\ShowDocumentCommandArgSpec
+      { \\__cmd_show_arg_spec:N #1 }
+  }
+\\cs_gset_eq:NN \\ShowDocumentEnvironmentArgSpec \\__cmd_show_arg_spec:n
+\\msg_set:nnnn { cmd } { non-xparse }
+  { \\str_uppercase:n #1~not~defined~using~xparse. }
+  {
+    You~have~asked~for~the~argument~specification~for~the~#1,~
+    but~this~was~not~defined~using~xparse.
+  }
+\\msg_set:nnnn { cmd } { unknown }
+  { Unknown~document~#1. }
+  {
+    You~have~asked~for~the~argument~specification~for~the~#1,~
+    but~it~is~not~defined.
+  }
+%% 
+%%
+%% End of file \`xparse.sty'.
+` },
+  { format: 26, filename: 'xparse.sty', content: `
 %%
 %% This is file \`xparse.sty',
 %% generated with the docstrip utility.
