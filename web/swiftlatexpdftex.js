@@ -1,1 +1,0 @@
-lib/swiftlatexpdftex.js
