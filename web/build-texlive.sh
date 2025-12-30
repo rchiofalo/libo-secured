@@ -58,9 +58,10 @@ for f in web/lib/texlive/pdftex/28/*.fd; do
     [ -f "$f" ] && add_file "$f" "$(basename "$f")" 28
 done
 
-# Add .cfg files (format 10)
+# Add .cfg files (format 10 AND format 26 - TeX may request either)
 for f in web/lib/texlive/pdftex/10/*.cfg; do
     [ -f "$f" ] && add_file "$f" "$(basename "$f")" 10
+    [ -f "$f" ] && add_file "$f" "$(basename "$f")" 26
 done
 
 # Add pdftex.map (format 11 - font map)
