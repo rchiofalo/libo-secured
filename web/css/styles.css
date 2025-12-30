@@ -191,6 +191,20 @@ button.primary:hover {
     background: #218838;
 }
 
+.help-text {
+    font-size: 11px;
+    color: #888;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.help-text code {
+    background: #0f3460;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #4ade80;
+}
+
 /* =============================================================================
    STATUS & NOTIFICATIONS
    ============================================================================= */
