@@ -1,7 +1,7 @@
 /**
  * TeX Live Packages for SwiftLaTeX Browser Compilation
  * Auto-generated - DO NOT EDIT
- * Generated: Tue Dec 30 12:59:07 PST 2025
+ * Generated: Tue Dec 30 13:01:26 PST 2025
  * Format codes: 3=tfm, 10=cfg/fmt, 26=cls/clo, 27=sty, 28=fd, 32=def
  */
 
@@ -35385,22 +35385,24 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 %% End of file \`hyperref.sty'.
 ` },
   { format: 27, filename: 'ifluatex.sty', content: `
-<html>
-<head><title>404 Not Found</title></head>
-<body>
-<center><h1>404 Not Found</h1></center>
-<hr><center>nginx/1.18.0 (Ubuntu)</center>
-</body>
-</html>
+%% ifluatex.sty - Stub for SwiftLaTeX
+%% Provides \\ifluatex conditional (always false for pdfTeX)
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{ifluatex}[2019/10/25 v1.5 Detect LuaTeX and its facilities]
+\\newif\\ifluatex
+\\luatexfalse
+\\let\\luatexversion\\@undefined
+\\endinput
 ` },
   { format: 26, filename: 'ifluatex.sty', content: `
-<html>
-<head><title>404 Not Found</title></head>
-<body>
-<center><h1>404 Not Found</h1></center>
-<hr><center>nginx/1.18.0 (Ubuntu)</center>
-</body>
-</html>
+%% ifluatex.sty - Stub for SwiftLaTeX
+%% Provides \\ifluatex conditional (always false for pdfTeX)
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{ifluatex}[2019/10/25 v1.5 Detect LuaTeX and its facilities]
+\\newif\\ifluatex
+\\luatexfalse
+\\let\\luatexversion\\@undefined
+\\endinput
 ` },
   { format: 27, filename: 'iftex.sty', content: `
 %% iftex TeX engine tests
@@ -36313,22 +36315,22 @@ end
 %% End of file \`ifthen.sty'.
 ` },
   { format: 27, filename: 'ifvtex.sty', content: `
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>404 Not Found</title>
-</head><body>
-<h1>Not Found</h1>
-<p>The requested URL was not found on this server.</p>
-</body></html>
+%% ifvtex.sty - Stub for SwiftLaTeX
+%% Provides \\ifvtex conditional (always false for pdfTeX)
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{ifvtex}[2019/10/25 v1.7 Detect VTeX and its facilities]
+\\newif\\ifvtex
+\\vtexfalse
+\\endinput
 ` },
   { format: 26, filename: 'ifvtex.sty', content: `
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>404 Not Found</title>
-</head><body>
-<h1>Not Found</h1>
-<p>The requested URL was not found on this server.</p>
-</body></html>
+%% ifvtex.sty - Stub for SwiftLaTeX
+%% Provides \\ifvtex conditional (always false for pdfTeX)
+\\NeedsTeXFormat{LaTeX2e}
+\\ProvidesPackage{ifvtex}[2019/10/25 v1.7 Detect VTeX and its facilities]
+\\newif\\ifvtex
+\\vtexfalse
+\\endinput
 ` },
   { format: 27, filename: 'infwarerr.sty', content: `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
