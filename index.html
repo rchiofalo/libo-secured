@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naval Letter Generator - Test</title>
+    <title>libo-secured | USMC Correspondence Generator</title>
     <style>
         * {
             box-sizing: border-box;
@@ -31,7 +31,13 @@
         h1 {
             text-align: center;
             color: #0f4c75;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
             margin-bottom: 20px;
+            font-style: italic;
         }
         h2 {
             color: #3282b8;
@@ -118,11 +124,23 @@
         .status.success { background: #1b4332; }
         .status.error { background: #5c1a1a; }
         .status.loading { background: #3d3d0a; }
+        .security-note {
+            text-align: center;
+            color: #1b4332;
+            background: #d4edda;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 11px;
+        }
     </style>
 </head>
 <body>
-    <h1>USMC Correspondence Generator</h1>
-    <p style="text-align: center; color: #666;">Bare Bones Test - SwiftLaTeX Integration</p>
+    <h1>libo-secured</h1>
+    <p class="subtitle">"Libo isn't secured until the paperwork is done."</p>
+    <div class="security-note">
+        All data stays local in your browser. Nothing is sent to any server.
+    </div>
 
     <div class="container">
         <!-- FORM PANEL -->
@@ -138,10 +156,10 @@
             </select>
 
             <label>SSIC</label>
-            <input type="text" id="ssic" value="5041" placeholder="5041">
+            <input type="text" id="ssic" value="5216" placeholder="5216">
 
             <label>Serial</label>
-            <input type="text" id="serial" value="Ser HQ/001" placeholder="Ser HQ/001">
+            <input type="text" id="serial" value="Ser ADM/001" placeholder="Ser ADM/001">
 
             <label>Date</label>
             <input type="text" id="date" value="1 Jan 2025" placeholder="1 Jan 2025">
@@ -149,13 +167,13 @@
             <h2>Addresses</h2>
 
             <label>From</label>
-            <input type="text" id="from" value="Corporal Roberto L. Chiofalo, USMC" placeholder="Rank Name, Service">
+            <input type="text" id="from" value="Sergeant John A. Doe, USMC" placeholder="Rank Name, Service">
 
             <label>To</label>
-            <input type="text" id="to" value="Inspector General of the Marine Corps" placeholder="Addressee">
+            <input type="text" id="to" value="Commanding Officer, 6th Marine Regiment" placeholder="Addressee">
 
             <label>Subject</label>
-            <input type="text" id="subject" value="TEST DOCUMENT" placeholder="SUBJECT IN ALL CAPS">
+            <input type="text" id="subject" value="REQUEST FOR EQUIPMENT" placeholder="SUBJECT IN ALL CAPS">
 
             <h2>Body</h2>
 
@@ -175,23 +193,23 @@
             <div id="preview">
                 <div class="letterhead">
                     <div class="title">UNITED STATES MARINE CORPS</div>
-                    <div class="unit">HEADQUARTERS COMPANY, 23D MARINE REGIMENT</div>
-                    <div class="unit">SAN BRUNO, CALIFORNIA 94066-2402</div>
+                    <div class="unit">1ST BATTALION, 6TH MARINES</div>
+                    <div class="unit">CAMP LEJEUNE, NC 28542</div>
                 </div>
 
                 <div class="ssic-block">
-                    <span id="prev-ssic">5041</span><br>
-                    <span id="prev-serial">Ser HQ/001</span><br>
+                    <span id="prev-ssic">5216</span><br>
+                    <span id="prev-serial">Ser ADM/001</span><br>
                     <span id="prev-date">1 Jan 2025</span>
                 </div>
 
                 <div class="address-block">
-                    <span>From:</span> <span id="prev-from">Corporal Roberto L. Chiofalo, USMC</span><br>
-                    <span>To:</span> <span id="prev-to">Inspector General of the Marine Corps</span>
+                    <span>From:</span> <span id="prev-from">Sergeant John A. Doe, USMC</span><br>
+                    <span>To:</span> <span id="prev-to">Commanding Officer, 6th Marine Regiment</span>
                 </div>
 
                 <div class="address-block">
-                    <span>Subj:</span> <span id="prev-subject">TEST DOCUMENT</span>
+                    <span>Subj:</span> <span id="prev-subject">REQUEST FOR EQUIPMENT</span>
                 </div>
 
                 <div class="body-content" id="prev-body">1.  This is a test document generated using SwiftLaTeX in the browser.
@@ -199,7 +217,7 @@
 2.  No server required. All compilation happens client-side using WebAssembly.</div>
 
                 <div class="signature-block">
-                    <div>R. L. CHIOFALO</div>
+                    <div id="prev-sig">J. A. DOE</div>
                 </div>
             </div>
         </div>
@@ -209,6 +227,19 @@
     <script src="https://cdn.jsdelivr.net/npm/@aspect-build/aspect-lib@0.0.2-build.159/dist/pdftex.min.js"></script>
 
     <script>
+        // Extract signature from From field
+        function getSignature(fromValue) {
+            // Try to extract name parts from "Rank First M. Last, Service"
+            const match = fromValue.match(/(?:Private|PFC|LCpl|Cpl|Sgt|SSgt|GySgt|MSgt|1stSgt|MGySgt|SgtMaj|2ndLt|1stLt|Capt|Maj|LtCol|Col|BGen|MajGen|LtGen|Gen|Pvt|Lance Corporal|Corporal|Sergeant|Staff Sergeant|Gunnery Sergeant|Master Sergeant|First Sergeant|Master Gunnery Sergeant|Sergeant Major)?\s*([A-Z][a-z]+)\s+([A-Z]\.?)\s+([A-Z][a-z]+)/i);
+            if (match) {
+                const firstInitial = match[1].charAt(0).toUpperCase();
+                const middleInitial = match[2].replace('.', '').toUpperCase();
+                const lastName = match[3].toUpperCase();
+                return `${firstInitial}. ${middleInitial}. ${lastName}`;
+            }
+            return 'J. A. DOE';
+        }
+
         // Update live preview
         function updatePreview() {
             document.getElementById('prev-ssic').textContent = document.getElementById('ssic').value;
@@ -218,6 +249,7 @@
             document.getElementById('prev-to').textContent = document.getElementById('to').value;
             document.getElementById('prev-subject').textContent = document.getElementById('subject').value;
             document.getElementById('prev-body').textContent = document.getElementById('body').value;
+            document.getElementById('prev-sig').textContent = getSignature(document.getElementById('from').value);
         }
 
         // Generate LaTeX content
@@ -230,6 +262,7 @@
             const to = document.getElementById('to').value;
             const subject = document.getElementById('subject').value;
             const body = document.getElementById('body').value;
+            const sig = getSignature(from);
 
             return `\\documentclass[12pt, letterpaper]{article}
 \\usepackage[margin=1in]{geometry}
@@ -242,8 +275,8 @@
 
 \\begin{center}
 {\\textbf{UNITED STATES MARINE CORPS}}\\\\
-{\\small HEADQUARTERS COMPANY, 23D MARINE REGIMENT}\\\\
-{\\small SAN BRUNO, CALIFORNIA 94066-2402}
+{\\small 1ST BATTALION, 6TH MARINES}\\\\
+{\\small CAMP LEJEUNE, NC 28542}
 \\end{center}
 
 \\vspace{0.5in}
@@ -270,7 +303,7 @@ ${body.split('\n').map(line => '\\noindent ' + line).join('\n\n')}
 
 \\vspace{0.5in}
 
-\\hspace{3.25in}R. L. CHIOFALO
+\\hspace{3.25in}${sig}
 
 \\end{document}`;
         }
@@ -339,4 +372,3 @@ ${body.split('\n').map(line => '\\noindent ' + line).join('\n\n')}
     </script>
 </body>
 </html>
-
