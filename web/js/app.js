@@ -653,34 +653,64 @@ async function loadSSICData() {
     }
 }
 
+// Store loaded unit data globally for selectUnit function
+let unitData = [];
+
 /**
- * Load unit data from JSON and populate datalist
+ * Load unit data from JSON and populate dropdown
  */
 async function loadUnitData() {
     try {
         const response = await fetch('data/units.json');
         const data = await response.json();
-        const datalist = document.getElementById('units-list');
+        unitData = data.units;
 
+        const select = document.getElementById('unitSelect');
+
+        // Group units by base for easier navigation
+        const baseGroups = {};
         for (const unit of data.units) {
-            const option = document.createElement('option');
-            option.value = unit.name;
-            option.setAttribute('data-hq', unit.higherHQ);
-            option.setAttribute('data-address', unit.address);
-            datalist.appendChild(option);
+            const base = unit.base || 'Other';
+            if (!baseGroups[base]) {
+                baseGroups[base] = [];
+            }
+            baseGroups[base].push(unit);
         }
 
-        // Auto-fill higher HQ and address when unit is selected
-        document.getElementById('unitLine1').addEventListener('change', function() {
-            const selectedUnit = data.units.find(u => u.name === this.value);
-            if (selectedUnit) {
-                document.getElementById('unitLine2').value = selectedUnit.higherHQ;
-                document.getElementById('unitAddress').value = selectedUnit.address;
-                updatePreview();
+        // Create optgroups for each base
+        for (const [base, units] of Object.entries(baseGroups).sort()) {
+            const optgroup = document.createElement('optgroup');
+            optgroup.label = base;
+
+            for (const unit of units) {
+                const option = document.createElement('option');
+                option.value = unit.name;
+                option.textContent = unit.name;
+                optgroup.appendChild(option);
             }
-        });
+
+            select.appendChild(optgroup);
+        }
     } catch (error) {
         console.warn('Could not load unit data:', error);
+    }
+}
+
+/**
+ * Handle unit selection from dropdown
+ */
+function selectUnit() {
+    const select = document.getElementById('unitSelect');
+    const selectedName = select.value;
+
+    if (!selectedName) return;
+
+    const selectedUnit = unitData.find(u => u.name === selectedName);
+    if (selectedUnit) {
+        document.getElementById('unitLine1').value = selectedUnit.name;
+        document.getElementById('unitLine2').value = selectedUnit.higherHQ;
+        document.getElementById('unitAddress').value = selectedUnit.address;
+        updatePreview();
     }
 }
 
