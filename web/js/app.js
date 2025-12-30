@@ -122,7 +122,7 @@ async function compileLatex() {
     pdfTexEngine.makeMemFSFolder('enclosures');
 
     // Test with minimal document first (for debugging)
-    const USE_MINIMAL_TEST = true; // Set to true to test basic compilation
+    const USE_MINIMAL_TEST = false; // Set to true to test basic compilation
 
     if (USE_MINIMAL_TEST) {
         const minimalTex = `\\documentclass{article}
