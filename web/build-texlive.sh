@@ -53,6 +53,12 @@ for f in web/lib/texlive/pdftex/32/*.def; do
     [ -f "$f" ] && add_file "$f" "$(basename "$f")" 26
 done
 
+# Add .dfu files (format 32 AND format 26 - unicode definition files)
+for f in web/lib/texlive/pdftex/32/*.dfu; do
+    [ -f "$f" ] && add_file "$f" "$(basename "$f")" 32
+    [ -f "$f" ] && add_file "$f" "$(basename "$f")" 26
+done
+
 # Add .fd files (format 28)
 for f in web/lib/texlive/pdftex/28/*.fd; do
     [ -f "$f" ] && add_file "$f" "$(basename "$f")" 28
