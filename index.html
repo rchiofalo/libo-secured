@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naval Letter Generator - Test</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .form-panel, .preview-panel {
+            flex: 1;
+            background: #16213e;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #0f4c75;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #3282b8;
+            border-bottom: 1px solid #3282b8;
+            padding-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            color: #bbe1fa;
+            font-size: 12px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            background: #0f3460;
+            border: 1px solid #3282b8;
+            color: #fff;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: #3282b8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:hover {
+            background: #0f4c75;
+        }
+        .preview-panel {
+            background: #fff;
+            color: #000;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        .letterhead {
+            text-align: center;
+            color: #002855;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .letterhead .title {
+            font-size: 10px;
+        }
+        .letterhead .unit {
+            font-size: 8px;
+        }
+        .ssic-block {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .address-block {
+            margin-bottom: 15px;
+        }
+        .address-block span {
+            display: inline-block;
+            width: 50px;
+        }
+        .body-content {
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+        .signature-block {
+            margin-top: 40px;
+            margin-left: 50%;
+        }
+        .status {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .status.success { background: #1b4332; }
+        .status.error { background: #5c1a1a; }
+        .status.loading { background: #3d3d0a; }
+    </style>
+</head>
+<body>
+    <h1>USMC Correspondence Generator</h1>
+    <p style="text-align: center; color: #666;">Bare Bones Test - SwiftLaTeX Integration</p>
+
+    <div class="container">
+        <!-- FORM PANEL -->
+        <div class="form-panel">
+            <h2>Document Settings</h2>
+
+            <label>Document Type</label>
+            <select id="docType">
+                <option value="naval_letter">Naval Letter</option>
+                <option value="mfr">Memorandum for the Record</option>
+                <option value="standard_letter">Standard Letter</option>
+                <option value="business_letter">Business Letter</option>
+            </select>
+
+            <label>SSIC</label>
+            <input type="text" id="ssic" value="5041" placeholder="5041">
+
+            <label>Serial</label>
+            <input type="text" id="serial" value="Ser HQ/001" placeholder="Ser HQ/001">
+
+            <label>Date</label>
+            <input type="text" id="date" value="1 Jan 2025" placeholder="1 Jan 2025">
+
+            <h2>Addresses</h2>
+
+            <label>From</label>
+            <input type="text" id="from" value="Corporal Roberto L. Chiofalo, USMC" placeholder="Rank Name, Service">
+
+            <label>To</label>
+            <input type="text" id="to" value="Inspector General of the Marine Corps" placeholder="Addressee">
+
+            <label>Subject</label>
+            <input type="text" id="subject" value="TEST DOCUMENT" placeholder="SUBJECT IN ALL CAPS">
+
+            <h2>Body</h2>
+
+            <label>Content</label>
+            <textarea id="body" placeholder="1.  First paragraph...">1.  This is a test document generated using SwiftLaTeX in the browser.
+
+2.  No server required. All compilation happens client-side using WebAssembly.</textarea>
+
+            <button onclick="updatePreview()">Update Preview</button>
+            <button onclick="compilePDF()" style="background: #0f4c75;">Generate PDF</button>
+
+            <div id="status" class="status" style="display: none;"></div>
+        </div>
+
+        <!-- PREVIEW PANEL -->
+        <div class="preview-panel">
+            <div id="preview">
+                <div class="letterhead">
+                    <div class="title">UNITED STATES MARINE CORPS</div>
+                    <div class="unit">HEADQUARTERS COMPANY, 23D MARINE REGIMENT</div>
+                    <div class="unit">SAN BRUNO, CALIFORNIA 94066-2402</div>
+                </div>
+
+                <div class="ssic-block">
+                    <span id="prev-ssic">5041</span><br>
+                    <span id="prev-serial">Ser HQ/001</span><br>
+                    <span id="prev-date">1 Jan 2025</span>
+                </div>
+
+                <div class="address-block">
+                    <span>From:</span> <span id="prev-from">Corporal Roberto L. Chiofalo, USMC</span><br>
+                    <span>To:</span> <span id="prev-to">Inspector General of the Marine Corps</span>
+                </div>
+
+                <div class="address-block">
+                    <span>Subj:</span> <span id="prev-subject">TEST DOCUMENT</span>
+                </div>
+
+                <div class="body-content" id="prev-body">1.  This is a test document generated using SwiftLaTeX in the browser.
+
+2.  No server required. All compilation happens client-side using WebAssembly.</div>
+
+                <div class="signature-block">
+                    <div>R. L. CHIOFALO</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SwiftLaTeX Engine -->
+    <script src="https://cdn.jsdelivr.net/npm/@aspect-build/aspect-lib@0.0.2-build.159/dist/pdftex.min.js"></script>
+
+    <script>
+        // Update live preview
+        function updatePreview() {
+            document.getElementById('prev-ssic').textContent = document.getElementById('ssic').value;
+            document.getElementById('prev-serial').textContent = document.getElementById('serial').value;
+            document.getElementById('prev-date').textContent = document.getElementById('date').value;
+            document.getElementById('prev-from').textContent = document.getElementById('from').value;
+            document.getElementById('prev-to').textContent = document.getElementById('to').value;
+            document.getElementById('prev-subject').textContent = document.getElementById('subject').value;
+            document.getElementById('prev-body').textContent = document.getElementById('body').value;
+        }
+
+        // Generate LaTeX content
+        function generateTeX() {
+            const docType = document.getElementById('docType').value;
+            const ssic = document.getElementById('ssic').value;
+            const serial = document.getElementById('serial').value;
+            const date = document.getElementById('date').value;
+            const from = document.getElementById('from').value;
+            const to = document.getElementById('to').value;
+            const subject = document.getElementById('subject').value;
+            const body = document.getElementById('body').value;
+
+            return `\\documentclass[12pt, letterpaper]{article}
+\\usepackage[margin=1in]{geometry}
+\\usepackage{fancyhdr}
+\\usepackage{courier}
+\\renewcommand{\\familydefault}{\\ttdefault}
+\\pagestyle{empty}
+
+\\begin{document}
+
+\\begin{center}
+{\\textbf{UNITED STATES MARINE CORPS}}\\\\
+{\\small HEADQUARTERS COMPANY, 23D MARINE REGIMENT}\\\\
+{\\small SAN BRUNO, CALIFORNIA 94066-2402}
+\\end{center}
+
+\\vspace{0.5in}
+
+\\hfill
+\\begin{tabular}[t]{@{}l@{}}
+${ssic}\\\\
+${serial}\\\\
+${date}
+\\end{tabular}
+
+\\vspace{0.25in}
+
+\\noindent From: ${from}\\\\
+To: ${to}
+
+\\vspace{0.15in}
+
+\\noindent Subj: ${subject}
+
+\\vspace{0.25in}
+
+${body.split('\n').map(line => '\\noindent ' + line).join('\n\n')}
+
+\\vspace{0.5in}
+
+\\hspace{3.25in}R. L. CHIOFALO
+
+\\end{document}`;
+        }
+
+        // Compile PDF using SwiftLaTeX
+        async function compilePDF() {
+            const status = document.getElementById('status');
+            status.style.display = 'block';
+            status.className = 'status loading';
+            status.textContent = 'Initializing LaTeX engine...';
+
+            try {
+                // Check if PdfTeXEngine is available
+                if (typeof PdfTeXEngine === 'undefined') {
+                    throw new Error('SwiftLaTeX engine not loaded. Using fallback...');
+                }
+
+                const engine = new PdfTeXEngine();
+                status.textContent = 'Loading engine (first time may take 30s)...';
+                await engine.loadEngine();
+
+                status.textContent = 'Compiling document...';
+                const texContent = generateTeX();
+                engine.writeMemFSFile('main.tex', texContent);
+                engine.setEngineMainFile('main.tex');
+
+                const result = await engine.compileLaTeX();
+
+                if (result.pdf) {
+                    const blob = new Blob([result.pdf], { type: 'application/pdf' });
+                    const url = URL.createObjectURL(blob);
+
+                    // Download
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'correspondence.pdf';
+                    a.click();
+
+                    status.className = 'status success';
+                    status.textContent = 'PDF generated successfully!';
+                } else {
+                    throw new Error(result.log || 'Compilation failed');
+                }
+            } catch (error) {
+                console.error(error);
+                status.className = 'status error';
+                status.textContent = 'Error: ' + error.message;
+
+                // Fallback: just show the TeX
+                if (confirm('SwiftLaTeX failed to load. Download .tex file instead?')) {
+                    const tex = generateTeX();
+                    const blob = new Blob([tex], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'correspondence.tex';
+                    a.click();
+                }
+            }
+        }
+
+        // Auto-update preview on input
+        document.querySelectorAll('input, textarea, select').forEach(el => {
+            el.addEventListener('input', updatePreview);
+        });
+    </script>
+</body>
+</html>
