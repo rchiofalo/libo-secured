@@ -1,6 +1,7 @@
 #!/bin/bash
 # Bundle TeX Live packages into JavaScript for SwiftLaTeX
 # This avoids HTTP fetching issues and works fully offline
+# Packages are organized by kpathsea format code for proper loading
 
 OUTPUT="web/js/texlive-packages.js"
 
@@ -8,69 +9,74 @@ echo "/**" > "$OUTPUT"
 echo " * TeX Live Packages for SwiftLaTeX Browser Compilation" >> "$OUTPUT"
 echo " * Auto-generated - DO NOT EDIT" >> "$OUTPUT"
 echo " * Generated: $(date)" >> "$OUTPUT"
+echo " * Format codes: 3=tfm, 10=cfg/fmt, 26=cls/clo, 27=sty, 28=fd, 32=def" >> "$OUTPUT"
 echo " */" >> "$OUTPUT"
 echo "" >> "$OUTPUT"
-echo "const TEXLIVE_PACKAGES = {" >> "$OUTPUT"
 
-# Function to add a file
+# Use array format with format code for each file
+echo "const TEXLIVE_PACKAGES = [" >> "$OUTPUT"
+
+# Function to add a file with format code
 add_file() {
     local filepath="$1"
-    local key="$2"
-    
+    local filename="$2"
+    local format="$3"
+
     if [ -f "$filepath" ]; then
-        echo "  '$key': \`" >> "$OUTPUT"
+        echo "  { format: $format, filename: '$filename', content: \`" >> "$OUTPUT"
         # Escape backticks and backslashes for JS template literal
         sed 's/\\/\\\\/g; s/`/\\`/g; s/\$/\\$/g' "$filepath" >> "$OUTPUT"
-        echo "\`," >> "$OUTPUT"
-        echo "  Added: $key"
+        echo "\` }," >> "$OUTPUT"
+        echo "  Added: $filename (format $format)"
     fi
 }
 
-# Add all .cls files (document classes)
+# Add .cls files (format 26)
 for f in web/lib/texlive/pdftex/26/*.cls; do
-    [ -f "$f" ] && add_file "$f" "$(basename "$f")"
+    [ -f "$f" ] && add_file "$f" "$(basename "$f")" 26
 done
 
-# Add all .clo files (class options)  
+# Add .clo files (format 26)
 for f in web/lib/texlive/pdftex/26/*.clo; do
-    [ -f "$f" ] && add_file "$f" "$(basename "$f")"
+    [ -f "$f" ] && add_file "$f" "$(basename "$f")" 26
 done
 
-# Add all .sty files (style packages)
+# Add .sty files (format 27)
 for f in web/lib/texlive/pdftex/27/*.sty; do
-    [ -f "$f" ] && add_file "$f" "$(basename "$f")"
+    [ -f "$f" ] && add_file "$f" "$(basename "$f")" 27
 done
 
-# Add all .def files
+# Add .def files (format 32)
 for f in web/lib/texlive/pdftex/32/*.def; do
-    [ -f "$f" ] && add_file "$f" "$(basename "$f")"
+    [ -f "$f" ] && add_file "$f" "$(basename "$f")" 32
 done
 
-# Add .fd files (font definitions)
+# Add .fd files (format 28)
 for f in web/lib/texlive/pdftex/28/*.fd; do
-    [ -f "$f" ] && add_file "$f" "$(basename "$f")"
+    [ -f "$f" ] && add_file "$f" "$(basename "$f")" 28
 done
 
-# Add .cfg files
+# Add .cfg files (format 10)
 for f in web/lib/texlive/pdftex/10/*.cfg; do
-    [ -f "$f" ] && add_file "$f" "$(basename "$f")"
+    [ -f "$f" ] && add_file "$f" "$(basename "$f")" 10
 done
 
-echo "};" >> "$OUTPUT"
+echo "];" >> "$OUTPUT"
 echo "" >> "$OUTPUT"
-echo "// Font metrics (binary - base64 encoded)" >> "$OUTPUT"
-echo "const TEXLIVE_FONTS = {" >> "$OUTPUT"
 
-# Add font metrics as base64
+# Font metrics (binary - base64 encoded)
+echo "// Font metrics (binary - base64 encoded, format 3)" >> "$OUTPUT"
+echo "const TEXLIVE_FONTS = [" >> "$OUTPUT"
+
 for f in web/lib/texlive/pdftex/3/*; do
     if [ -f "$f" ] && [[ ! "$f" == *.tfm ]]; then
-        basename=$(basename "$f")
-        echo "  '$basename': '$(base64 < "$f" | tr -d '\n')'," >> "$OUTPUT"
-        echo "  Added font: $basename"
+        filename=$(basename "$f")
+        echo "  { format: 3, filename: '$filename', content: '$(base64 < "$f" | tr -d '\n')' }," >> "$OUTPUT"
+        echo "  Added font: $filename"
     fi
 done
 
-echo "};" >> "$OUTPUT"
+echo "];" >> "$OUTPUT"
 
 echo ""
 echo "Generated $OUTPUT"

@@ -231,6 +231,12 @@ var PdfTeXEngine = /** @class */ (function () {
             this.latexWorker.postMessage({ 'cmd': 'flushcache' });
         }
     };
+    PdfTeXEngine.prototype.preloadTexliveFile = function (format, filename, content) {
+        this.checkEngineStatus();
+        if (this.latexWorker !== undefined) {
+            this.latexWorker.postMessage({ 'cmd': 'preloadtex', 'format': format, 'filename': filename, 'content': content });
+        }
+    };
     PdfTeXEngine.prototype.setTexliveEndpoint = function (url) {
         if (this.latexWorker !== undefined) {
             this.latexWorker.postMessage({ 'cmd': 'settexliveurl', 'url': url });

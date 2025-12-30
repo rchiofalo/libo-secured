@@ -41,35 +41,35 @@ async function initLatexEngine() {
         pdfTexEngine = new PdfTeXEngine();
         await pdfTexEngine.loadEngine();
 
-        // Pre-load bundled TeX Live packages into virtual filesystem
-        // This avoids HTTP fetch issues and works fully offline
-        if (typeof TEXLIVE_PACKAGES !== 'undefined') {
-            console.log('Loading bundled TeX Live packages...');
+        // Pre-load bundled TeX Live packages into kpathsea cache
+        // This bypasses HTTP fetch and works fully offline
+        if (typeof TEXLIVE_PACKAGES !== 'undefined' && Array.isArray(TEXLIVE_PACKAGES)) {
+            console.log('Preloading TeX Live packages into kpathsea cache...');
             let packageCount = 0;
-            for (const [filename, content] of Object.entries(TEXLIVE_PACKAGES)) {
-                pdfTexEngine.writeMemFSFile(filename, content);
+            for (const pkg of TEXLIVE_PACKAGES) {
+                pdfTexEngine.preloadTexliveFile(pkg.format, pkg.filename, pkg.content);
                 packageCount++;
             }
-            console.log(`Loaded ${packageCount} TeX Live packages`);
+            console.log(`Preloaded ${packageCount} TeX Live packages`);
         }
 
         // Pre-load bundled font metrics (base64 decoded)
-        if (typeof TEXLIVE_FONTS !== 'undefined') {
-            console.log('Loading bundled font metrics...');
+        if (typeof TEXLIVE_FONTS !== 'undefined' && Array.isArray(TEXLIVE_FONTS)) {
+            console.log('Preloading font metrics...');
             let fontCount = 0;
-            for (const [filename, base64Data] of Object.entries(TEXLIVE_FONTS)) {
+            for (const font of TEXLIVE_FONTS) {
                 // Decode base64 to binary
-                const binaryString = atob(base64Data);
+                const binaryString = atob(font.content);
                 const bytes = new Uint8Array(binaryString.length);
                 for (let i = 0; i < binaryString.length; i++) {
                     bytes[i] = binaryString.charCodeAt(i);
                 }
-                pdfTexEngine.writeMemFSFile(filename, bytes);
-                // Also write with .tfm extension for compatibility
-                pdfTexEngine.writeMemFSFile(filename + '.tfm', bytes);
+                pdfTexEngine.preloadTexliveFile(font.format, font.filename, bytes);
+                // Also preload with .tfm extension
+                pdfTexEngine.preloadTexliveFile(font.format, font.filename + '.tfm', bytes);
                 fontCount++;
             }
-            console.log(`Loaded ${fontCount} font metrics`);
+            console.log(`Preloaded ${fontCount} font metrics`);
         }
 
         engineReady = true;
