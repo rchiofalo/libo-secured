@@ -1,12 +1,27 @@
+%%
+%% atveryend.sty - Stub for SwiftLaTeX
+%% Provides hooks for executing code at the very end of the document
+%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{atveryend}[2020/01/01 v1.0 Hooks at the very end (stub)]
 
-		<!DOCTYPE html>
-		<html lang="en">
-		<meta charset="UTF-8">
-		<title>Too Many Requests</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
-		<meta name="color-scheme" content="light dark">
-		<h1>Too Many Requests</h1>
-		<p>You can only make 10 requests per minute. Please wait a little bit
-		and try again.
-		<p><a href="https://tug.org">Return to the main site.</a>
-		
+% Check if we're using a newer LaTeX with native support
+\@ifundefined{AddToHook}{%
+  % Old LaTeX - provide simple implementation
+  \let\AfterLastShipout\AtEndDocument
+  \let\AtVeryEndDocument\AtEndDocument
+  \let\AtEndAfterFileList\AtEndDocument
+  \let\AtVeryVeryEnd\AtEndDocument
+  \newcommand*{\AtVeryEnd}[1]{\AtEndDocument{#1}}
+  \newcommand*{\BeforeClearDocument}[1]{\AtEndDocument{#1}}
+}{%
+  % LaTeX 2020-10-01 or later has hooks
+  \newcommand*{\AtVeryEnd}[1]{\AddToHook{enddocument/end}{#1}}
+  \newcommand*{\AfterLastShipout}[1]{\AddToHook{enddocument/afterlastpage}{#1}}
+  \newcommand*{\AtVeryEndDocument}[1]{\AddToHook{enddocument/afteraux}{#1}}
+  \newcommand*{\AtEndAfterFileList}[1]{\AddToHook{enddocument/info}{#1}}
+  \newcommand*{\AtVeryVeryEnd}[1]{\AddToHook{enddocument/end}{#1}}
+  \newcommand*{\BeforeClearDocument}[1]{\AddToHook{enddocument}{#1}}
+}
+
+\endinput
