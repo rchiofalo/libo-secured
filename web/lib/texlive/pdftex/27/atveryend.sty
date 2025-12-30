@@ -1,27 +1,49 @@
 %%
-%% atveryend.sty - Stub for SwiftLaTeX
-%% Provides hooks for executing code at the very end of the document
+%% This is file `atveryend.sty',
+%% generated with the docstrip utility.
 %%
+%% The original source files were:
+%%
+%% atveryend.dtx  (with options: `package')
+%% 
+%% This is a generated file.
+%% 
+%% Project: atveryend
+%% Version: 2024-08-06 v1.12
+%% 
+%% Copyright (C)
+%%    2009-2011 Heiko Oberdiek
+%%    2016-2024 Oberdiek Package Support Group
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either
+%% version 1.3c of this license or (at your option) any later
+%% version. This version of this license is in
+%%    https://www.latex-project.org/lppl/lppl-1-3c.txt
+%% and the latest version of this license is in
+%%    https://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of
+%% LaTeX version 2005/12/01 or later.
+%% 
+%% This work has the LPPL maintenance status "maintained".
+%% 
+%% The Current Maintainers of this work are
+%% Heiko Oberdiek and the Oberdiek Package Support Group
+%% https://github.com/ho-tex/atveryend/issues
+%% 
+%% This work consists of the main source file atveryend.dtx
+%% and the derived files
+%%    atveryend.sty, atveryend.pdf, atveryend.ins, atveryend.drv,
+%%    atveryend-test1.tex.
+%% 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{atveryend}[2020/01/01 v1.0 Hooks at the very end (stub)]
-
-% Check if we're using a newer LaTeX with native support
-\@ifundefined{AddToHook}{%
-  % Old LaTeX - provide simple implementation
-  \let\AfterLastShipout\AtEndDocument
-  \let\AtVeryEndDocument\AtEndDocument
-  \let\AtEndAfterFileList\AtEndDocument
-  \let\AtVeryVeryEnd\AtEndDocument
-  \newcommand*{\AtVeryEnd}[1]{\AtEndDocument{#1}}
-  \newcommand*{\BeforeClearDocument}[1]{\AtEndDocument{#1}}
-}{%
-  % LaTeX 2020-10-01 or later has hooks
-  \newcommand*{\AtVeryEnd}[1]{\AddToHook{enddocument/end}{#1}}
-  \newcommand*{\AfterLastShipout}[1]{\AddToHook{enddocument/afterlastpage}{#1}}
-  \newcommand*{\AtVeryEndDocument}[1]{\AddToHook{enddocument/afteraux}{#1}}
-  \newcommand*{\AtEndAfterFileList}[1]{\AddToHook{enddocument/info}{#1}}
-  \newcommand*{\AtVeryVeryEnd}[1]{\AddToHook{enddocument/end}{#1}}
-  \newcommand*{\BeforeClearDocument}[1]{\AddToHook{enddocument}{#1}}
-}
-
+\ProvidesPackage{atveryend}%
+  [2024-08-06 v1.12 Hooks at the very end of document (HO)]
+\newcommand\AfterLastShipout  {\AddToHook{enddocument/afterlastpage}}
+\newcommand\AtVeryEndDocument {\AddToHook{enddocument/afteraux}}
+\newcommand\AtEndAfterFileList{\AddToHook{enddocument/info}}
+\newcommand\AtVeryVeryEnd     {\AddToHook{enddocument/end}}
+\newcommand\BeforeClearDocument{\AddToHook{enddocument}}
 \endinput
+%%
+%% End of file `atveryend.sty'.

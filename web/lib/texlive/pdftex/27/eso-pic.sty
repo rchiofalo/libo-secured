@@ -23,7 +23,7 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}[2020/10/01]
 \ProvidesPackage{eso-pic}
-   [2025/12/10 v3.0d eso-pic (RN)]
+   [2023/05/03 v3.0c eso-pic (RN)]
 \providecommand*\LenToUnit[1]{#1}
 \newdimen\ESO@tempdima
 \newdimen\ESO@tempdimb
@@ -160,6 +160,7 @@
     \ESO@tempdimb=\ESO@yoffsetI
     \advance\ESO@tempdimb-\trimtop
   }
+  \nointerlineskip
   \AddToHook{shipout/background}{%
     \ESO@MEMOIR@corr
     \put(\ESO@tempdima,\ESO@tempdimb){%
@@ -175,6 +176,7 @@
     }%
   }%
 }{%
+  \nointerlineskip
   \AddToHook{shipout/background}{%
     \put(0,\ESO@yoffsetI){%
       \ESO@HookIIIBG\ESO@HookIBG\ESO@HookIIBG

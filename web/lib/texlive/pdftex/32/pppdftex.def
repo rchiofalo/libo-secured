@@ -24,9 +24,9 @@
 %% Please send error reports and suggestions for improvements to
 %%   Andreas MATTHIAS <andreas.matthias@gmail.com>.
 %%
-\def\AM@git@tag{v0.6g}
-\def\AM@git@date{2025/07/23}
-\def\AM@git@hash{b55a30b6b0}
+\def\AM@git@tag{v0.6e}
+\def\AM@git@date{2025/01/30}
+\def\AM@git@hash{927d2bc548}
 \ProvidesFile{pppdftex.def}
    [\AM@git@date\space\AM@git@tag\space
     Pdfpages driver for pdfTeX (AM)]

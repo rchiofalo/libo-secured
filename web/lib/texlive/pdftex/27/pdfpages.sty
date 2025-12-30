@@ -24,9 +24,9 @@
 %% Please send error reports and suggestions for improvements to
 %%   Andreas MATTHIAS <andreas.matthias@gmail.com>.
 %%
-\def\AM@git@tag{v0.6g}
-\def\AM@git@date{2025/07/23}
-\def\AM@git@hash{b55a30b6b0}
+\def\AM@git@tag{v0.6e}
+\def\AM@git@date{2025/01/30}
+\def\AM@git@hash{927d2bc548}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{pdfpages}
    [\AM@git@date\space\AM@git@tag\space
@@ -1516,29 +1516,26 @@
 }
 \newcommand{\AM@toclof}{}
 \def\AM@toclof#1{%
-  \ifAM@phantompage
-  \else
-    \AM@parse@toclist
-    \whiledo{#1=\AM@toc@page}{%
-      \ifx\AM@toclist\empty
-      \else
-        \AM@addtotoc
-        \AM@rm@from@toclist
-        \def\AM@toc@page{0}%
-        \AM@parse@toclist
-      \fi
-    }%
-    \AM@parse@loflist
-    \whiledo{#1=\AM@lof@page}{%
-      \ifx\AM@loflist\empty
-      \else
-        \AM@addtolist
-        \AM@rm@from@loflist
-        \def\AM@lof@page{0}%
-        \AM@parse@loflist
-      \fi
-    }%
-  \fi
+  \AM@parse@toclist
+  \whiledo{#1=\AM@toc@page}{%
+    \ifx\AM@toclist\empty
+    \else
+      \AM@addtotoc
+      \AM@rm@from@toclist
+      \def\AM@toc@page{0}%
+      \AM@parse@toclist
+    \fi
+  }%
+  \AM@parse@loflist
+  \whiledo{#1=\AM@lof@page}{%
+    \ifx\AM@loflist\empty
+    \else
+      \AM@addtolist
+      \AM@rm@from@loflist
+      \def\AM@lof@page{0}%
+      \AM@parse@loflist
+    \fi
+  }%
 }
 \ifAM@pkg@survey
   \newcommand{\AddToSurvey}{%
