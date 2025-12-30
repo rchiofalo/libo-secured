@@ -85,14 +85,14 @@ done
 echo "];" >> "$OUTPUT"
 echo "" >> "$OUTPUT"
 
-# Type1 fonts (binary - base64 encoded, format 4)
-echo "// Type1 fonts (binary - base64 encoded, format 4)" >> "$OUTPUT"
+# Type1 fonts (binary - base64 encoded, format 32 - same as .def files)
+echo "// Type1 fonts (binary - base64 encoded, format 32)" >> "$OUTPUT"
 echo "const TEXLIVE_TYPE1_FONTS = [" >> "$OUTPUT"
 
 for f in web/lib/texlive/pdftex/pfb/*.pfb; do
     if [ -f "$f" ]; then
         filename=$(basename "$f")
-        echo "  { format: 4, filename: '$filename', content: '$(base64 < "$f" | tr -d '\n')' }," >> "$OUTPUT"
+        echo "  { format: 32, filename: '$filename', content: '$(base64 < "$f" | tr -d '\n')' }," >> "$OUTPUT"
         echo "  Added Type1 font: $filename"
     fi
 done
