@@ -40,9 +40,41 @@ async function initLatexEngine() {
     try {
         pdfTexEngine = new PdfTeXEngine();
         await pdfTexEngine.loadEngine();
+
+        // Pre-load bundled TeX Live packages into virtual filesystem
+        // This avoids HTTP fetch issues and works fully offline
+        if (typeof TEXLIVE_PACKAGES !== 'undefined') {
+            console.log('Loading bundled TeX Live packages...');
+            let packageCount = 0;
+            for (const [filename, content] of Object.entries(TEXLIVE_PACKAGES)) {
+                pdfTexEngine.writeMemFSFile(filename, content);
+                packageCount++;
+            }
+            console.log(`Loaded ${packageCount} TeX Live packages`);
+        }
+
+        // Pre-load bundled font metrics (base64 decoded)
+        if (typeof TEXLIVE_FONTS !== 'undefined') {
+            console.log('Loading bundled font metrics...');
+            let fontCount = 0;
+            for (const [filename, base64Data] of Object.entries(TEXLIVE_FONTS)) {
+                // Decode base64 to binary
+                const binaryString = atob(base64Data);
+                const bytes = new Uint8Array(binaryString.length);
+                for (let i = 0; i < binaryString.length; i++) {
+                    bytes[i] = binaryString.charCodeAt(i);
+                }
+                pdfTexEngine.writeMemFSFile(filename, bytes);
+                // Also write with .tfm extension for compatibility
+                pdfTexEngine.writeMemFSFile(filename + '.tfm', bytes);
+                fontCount++;
+            }
+            console.log(`Loaded ${fontCount} font metrics`);
+        }
+
         engineReady = true;
         engineLoading = false;
-        console.log('SwiftLaTeX engine ready');
+        console.log('SwiftLaTeX engine ready with bundled packages');
     } catch (error) {
         console.error('Failed to load SwiftLaTeX engine:', error);
         engineLoading = false;
