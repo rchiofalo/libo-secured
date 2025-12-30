@@ -68,11 +68,22 @@ async function compileLatex() {
     pdfTexEngine.makeMemFSFolder('attachments');
     pdfTexEngine.makeMemFSFolder('enclosures');
 
-    // Write main.tex from templates
-    if (window.LATEX_TEMPLATES && window.LATEX_TEMPLATES['main.tex']) {
-        pdfTexEngine.writeMemFSFile('main.tex', window.LATEX_TEMPLATES['main.tex']);
+    // Test with minimal document first (for debugging)
+    const USE_MINIMAL_TEST = true; // Set to true to test basic compilation
+
+    if (USE_MINIMAL_TEST) {
+        const minimalTex = `\\documentclass{article}
+\\begin{document}
+Hello World!
+\\end{document}`;
+        pdfTexEngine.writeMemFSFile('main.tex', minimalTex);
     } else {
-        throw new Error('LaTeX templates not loaded');
+        // Write main.tex from templates
+        if (window.LATEX_TEMPLATES && window.LATEX_TEMPLATES['main.tex']) {
+            pdfTexEngine.writeMemFSFile('main.tex', window.LATEX_TEMPLATES['main.tex']);
+        } else {
+            throw new Error('LaTeX templates not loaded');
+        }
     }
 
     // Write format files from templates
