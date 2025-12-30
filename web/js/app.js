@@ -864,7 +864,7 @@ async function downloadPDF() {
         // Encls (using global enclosures array)
         if (enclosures.length > 0) {
             enclosures.forEach((e, i) => {
-                pdf.text((i === 0 ? 'Encl:  ' : '       ') + `(${i + 1}) ${e.title || 'Untitled'}`, MARGIN_LEFT, y);
+                pdf.text((i === 0 ? 'Encl:   ' : '        ') + `(${i + 1}) ${e.title || 'Untitled'}`, MARGIN_LEFT, y);
                 y += 14;
             });
         }
