@@ -7,7 +7,7 @@
     <style>
         * {
             box-sizing: border-box;
-            font-family: 'Courier New', monospace;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
             margin: 0;
@@ -19,18 +19,28 @@
         .container {
             display: flex;
             gap: 20px;
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
         }
-        .form-panel, .preview-panel {
+        .form-panel {
             flex: 1;
             background: #16213e;
             border-radius: 8px;
             padding: 20px;
+            max-width: 500px;
+        }
+        .preview-panel {
+            flex: 1.5;
+            background: #fff;
+            border-radius: 8px;
+            padding: 0;
+            min-height: 800px;
+            display: flex;
+            flex-direction: column;
         }
         h1 {
             text-align: center;
-            color: #0f4c75;
+            color: #3282b8;
             margin-bottom: 5px;
         }
         .subtitle {
@@ -43,95 +53,111 @@
             color: #3282b8;
             border-bottom: 1px solid #3282b8;
             padding-bottom: 10px;
+            margin-top: 20px;
+            font-size: 14px;
         }
         label {
             display: block;
-            margin-top: 15px;
+            margin-top: 12px;
             color: #bbe1fa;
-            font-size: 12px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         input, textarea, select {
             width: 100%;
-            padding: 10px;
-            margin-top: 5px;
+            padding: 8px 10px;
+            margin-top: 4px;
             background: #0f3460;
             border: 1px solid #3282b8;
             color: #fff;
             border-radius: 4px;
             font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #bbe1fa;
+            box-shadow: 0 0 0 2px rgba(187, 225, 250, 0.2);
         }
         textarea {
-            min-height: 150px;
+            min-height: 200px;
             resize: vertical;
+            line-height: 1.5;
+        }
+        .btn-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
         }
         button {
-            margin-top: 20px;
-            padding: 15px 30px;
+            flex: 1;
+            padding: 12px 20px;
             background: #3282b8;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
-            width: 100%;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.2s;
         }
         button:hover {
             background: #0f4c75;
         }
-        .preview-panel {
-            background: #fff;
-            color: #000;
-            font-size: 11px;
-            line-height: 1.4;
+        button.secondary {
+            background: #0f3460;
+            border: 1px solid #3282b8;
         }
-        .letterhead {
+        button.secondary:hover {
+            background: #16213e;
+        }
+        .security-note {
             text-align: center;
-            color: #002855;
-            font-weight: bold;
-            margin-bottom: 30px;
-        }
-        .letterhead .title {
-            font-size: 10px;
-        }
-        .letterhead .unit {
-            font-size: 8px;
-        }
-        .ssic-block {
-            text-align: right;
+            color: #155724;
+            background: #d4edda;
+            padding: 8px 15px;
+            border-radius: 4px;
             margin-bottom: 20px;
+            font-size: 11px;
         }
-        .address-block {
-            margin-bottom: 15px;
+        /* PDF Preview Styling */
+        #pdfPreview {
+            flex: 1;
+            border: none;
+            border-radius: 8px;
         }
-        .address-block span {
-            display: inline-block;
-            width: 50px;
-        }
-        .body-content {
-            margin-top: 20px;
-            white-space: pre-wrap;
-        }
-        .signature-block {
-            margin-top: 40px;
-            margin-left: 50%;
+        .preview-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #666;
+            font-style: italic;
+            background: #f5f5f5;
+            border-radius: 8px;
         }
         .status {
-            padding: 10px;
+            padding: 8px 12px;
             margin-top: 10px;
             border-radius: 4px;
             text-align: center;
+            font-size: 12px;
         }
-        .status.success { background: #1b4332; }
-        .status.error { background: #5c1a1a; }
-        .status.loading { background: #3d3d0a; }
-        .security-note {
-            text-align: center;
-            color: #1b4332;
-            background: #d4edda;
-            padding: 10px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            font-size: 11px;
+        .status.success { background: #1b4332; color: #d4edda; }
+        .status.error { background: #5c1a1a; color: #f8d7da; }
+        .status.loading { background: #3d3d0a; color: #fff3cd; }
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .container {
+                flex-direction: column;
+            }
+            .form-panel {
+                max-width: 100%;
+            }
+            .preview-panel {
+                min-height: 600px;
+            }
         }
     </style>
 </head>
@@ -145,230 +171,367 @@
     <div class="container">
         <!-- FORM PANEL -->
         <div class="form-panel">
-            <h2>Document Settings</h2>
-
-            <label>Document Type</label>
-            <select id="docType">
+            <h2>Document Type</h2>
+            <select id="docType" onchange="updatePreview()">
                 <option value="naval_letter">Naval Letter</option>
                 <option value="mfr">Memorandum for the Record</option>
-                <option value="standard_letter">Standard Letter</option>
+                <option value="standard_letter">Standard Letter (Plain Bond)</option>
                 <option value="business_letter">Business Letter</option>
             </select>
 
-            <label>SSIC</label>
-            <input type="text" id="ssic" value="5216" placeholder="5216">
+            <h2>Header Information</h2>
 
-            <label>Serial</label>
-            <input type="text" id="serial" value="Ser ADM/001" placeholder="Ser ADM/001">
+            <label>Unit Name (Line 1)</label>
+            <input type="text" id="unitLine1" value="1ST BATTALION, 6TH MARINES" onchange="updatePreview()">
+
+            <label>Higher HQ (Line 2)</label>
+            <input type="text" id="unitLine2" value="6TH MARINE REGIMENT, 2D MARINE DIVISION" onchange="updatePreview()">
+
+            <label>Address</label>
+            <input type="text" id="unitAddress" value="PSC BOX 20123, CAMP LEJEUNE, NC 28542" onchange="updatePreview()">
+
+            <div style="display: flex; gap: 10px;">
+                <div style="flex: 1;">
+                    <label>SSIC</label>
+                    <input type="text" id="ssic" value="5216" onchange="updatePreview()">
+                </div>
+                <div style="flex: 1;">
+                    <label>Serial</label>
+                    <input type="text" id="serial" value="Ser ADM/001" onchange="updatePreview()">
+                </div>
+            </div>
 
             <label>Date</label>
-            <input type="text" id="date" value="1 Jan 2025" placeholder="1 Jan 2025">
+            <input type="text" id="date" value="1 Jan 2025" onchange="updatePreview()">
 
-            <h2>Addresses</h2>
+            <h2>Addressing</h2>
 
             <label>From</label>
-            <input type="text" id="from" value="Sergeant John A. Doe, USMC" placeholder="Rank Name, Service">
+            <input type="text" id="from" value="Commanding Officer, 1st Battalion, 6th Marines" onchange="updatePreview()">
 
             <label>To</label>
-            <input type="text" id="to" value="Commanding Officer, 6th Marine Regiment" placeholder="Addressee">
+            <input type="text" id="to" value="Commanding Officer, 6th Marine Regiment" onchange="updatePreview()">
 
             <label>Subject</label>
-            <input type="text" id="subject" value="REQUEST FOR EQUIPMENT" placeholder="SUBJECT IN ALL CAPS">
+            <input type="text" id="subject" value="REQUEST FOR ADMINISTRATIVE SUPPORT" onchange="updatePreview()">
 
             <h2>Body</h2>
 
-            <label>Content</label>
-            <textarea id="body" placeholder="1.  First paragraph...">1.  This is a test document generated using SwiftLaTeX in the browser.
+            <textarea id="body" onchange="updatePreview()">1.  Per reference (a), this correspondence serves as an example of the naval letter format.
 
-2.  No server required. All compilation happens client-side using WebAssembly.</textarea>
+2.  The purpose of this letter is to demonstrate proper formatting in accordance with SECNAV M-5216.5.
 
-            <button onclick="updatePreview()">Update Preview</button>
-            <button onclick="compilePDF()" style="background: #0f4c75;">Generate PDF</button>
+3.  Point of contact for this matter is the undersigned at (910) 555-1234.</textarea>
+
+            <h2>Signature</h2>
+
+            <div style="display: flex; gap: 10px;">
+                <div style="flex: 1;">
+                    <label>First Name</label>
+                    <input type="text" id="sigFirst" value="John" onchange="updatePreview()">
+                </div>
+                <div style="flex: 0.5;">
+                    <label>M.I.</label>
+                    <input type="text" id="sigMiddle" value="A." onchange="updatePreview()">
+                </div>
+                <div style="flex: 1;">
+                    <label>Last Name</label>
+                    <input type="text" id="sigLast" value="Doe" onchange="updatePreview()">
+                </div>
+            </div>
+
+            <div class="btn-row">
+                <button onclick="generatePDF()">Generate PDF</button>
+                <button class="secondary" onclick="downloadTeX()">Download .tex</button>
+            </div>
 
             <div id="status" class="status" style="display: none;"></div>
         </div>
 
         <!-- PREVIEW PANEL -->
         <div class="preview-panel">
-            <div id="preview">
-                <div class="letterhead">
-                    <div class="title">UNITED STATES MARINE CORPS</div>
-                    <div class="unit">1ST BATTALION, 6TH MARINES</div>
-                    <div class="unit">CAMP LEJEUNE, NC 28542</div>
-                </div>
-
-                <div class="ssic-block">
-                    <span id="prev-ssic">5216</span><br>
-                    <span id="prev-serial">Ser ADM/001</span><br>
-                    <span id="prev-date">1 Jan 2025</span>
-                </div>
-
-                <div class="address-block">
-                    <span>From:</span> <span id="prev-from">Sergeant John A. Doe, USMC</span><br>
-                    <span>To:</span> <span id="prev-to">Commanding Officer, 6th Marine Regiment</span>
-                </div>
-
-                <div class="address-block">
-                    <span>Subj:</span> <span id="prev-subject">REQUEST FOR EQUIPMENT</span>
-                </div>
-
-                <div class="body-content" id="prev-body">1.  This is a test document generated using SwiftLaTeX in the browser.
-
-2.  No server required. All compilation happens client-side using WebAssembly.</div>
-
-                <div class="signature-block">
-                    <div id="prev-sig">J. A. DOE</div>
-                </div>
+            <iframe id="pdfPreview" style="display: none;"></iframe>
+            <div id="previewPlaceholder" class="preview-placeholder">
+                Click "Generate PDF" to preview your document
             </div>
         </div>
     </div>
 
-    <!-- SwiftLaTeX Engine -->
-    <script src="https://cdn.jsdelivr.net/npm/@aspect-build/aspect-lib@0.0.2-build.159/dist/pdftex.min.js"></script>
+    <!-- jsPDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <script>
-        // Extract signature from From field
-        function getSignature(fromValue) {
-            // Try to extract name parts from "Rank First M. Last, Service"
-            const match = fromValue.match(/(?:Private|PFC|LCpl|Cpl|Sgt|SSgt|GySgt|MSgt|1stSgt|MGySgt|SgtMaj|2ndLt|1stLt|Capt|Maj|LtCol|Col|BGen|MajGen|LtGen|Gen|Pvt|Lance Corporal|Corporal|Sergeant|Staff Sergeant|Gunnery Sergeant|Master Sergeant|First Sergeant|Master Gunnery Sergeant|Sergeant Major)?\s*([A-Z][a-z]+)\s+([A-Z]\.?)\s+([A-Z][a-z]+)/i);
-            if (match) {
-                const firstInitial = match[1].charAt(0).toUpperCase();
-                const middleInitial = match[2].replace('.', '').toUpperCase();
-                const lastName = match[3].toUpperCase();
-                return `${firstInitial}. ${middleInitial}. ${lastName}`;
-            }
-            return 'J. A. DOE';
+        const { jsPDF } = window.jspdf;
+
+        // Constants for SECNAV M-5216.5 compliance (in points, 72pt = 1 inch)
+        const PAGE_WIDTH = 612;   // 8.5 inches
+        const PAGE_HEIGHT = 792;  // 11 inches
+        const MARGIN_LEFT = 72;   // 1 inch
+        const MARGIN_RIGHT = 72;  // 1 inch
+        const MARGIN_TOP = 72;    // 1 inch
+        const MARGIN_BOTTOM = 72; // 1 inch
+        const CONTENT_WIDTH = PAGE_WIDTH - MARGIN_LEFT - MARGIN_RIGHT; // 468pt = 6.5 inches
+
+        // Collect form data
+        function collectData() {
+            return {
+                docType: document.getElementById('docType').value,
+                unitLine1: document.getElementById('unitLine1').value,
+                unitLine2: document.getElementById('unitLine2').value,
+                unitAddress: document.getElementById('unitAddress').value,
+                ssic: document.getElementById('ssic').value,
+                serial: document.getElementById('serial').value,
+                date: document.getElementById('date').value,
+                from: document.getElementById('from').value,
+                to: document.getElementById('to').value,
+                subject: document.getElementById('subject').value,
+                body: document.getElementById('body').value,
+                sigFirst: document.getElementById('sigFirst').value,
+                sigMiddle: document.getElementById('sigMiddle').value,
+                sigLast: document.getElementById('sigLast').value
+            };
         }
 
-        // Update live preview
-        function updatePreview() {
-            document.getElementById('prev-ssic').textContent = document.getElementById('ssic').value;
-            document.getElementById('prev-serial').textContent = document.getElementById('serial').value;
-            document.getElementById('prev-date').textContent = document.getElementById('date').value;
-            document.getElementById('prev-from').textContent = document.getElementById('from').value;
-            document.getElementById('prev-to').textContent = document.getElementById('to').value;
-            document.getElementById('prev-subject').textContent = document.getElementById('subject').value;
-            document.getElementById('prev-body').textContent = document.getElementById('body').value;
-            document.getElementById('prev-sig').textContent = getSignature(document.getElementById('from').value);
+        // Get abbreviated signature (F. M. LASTNAME)
+        function getAbbrevSignature(data) {
+            const firstInit = data.sigFirst ? data.sigFirst.charAt(0).toUpperCase() + '.' : '';
+            const middleInit = data.sigMiddle ? data.sigMiddle.replace('.', '').toUpperCase() + '.' : '';
+            const lastName = data.sigLast ? data.sigLast.toUpperCase() : '';
+            return `${firstInit} ${middleInit} ${lastName}`.replace(/\s+/g, ' ').trim();
         }
 
-        // Generate LaTeX content
-        function generateTeX() {
-            const docType = document.getElementById('docType').value;
-            const ssic = document.getElementById('ssic').value;
-            const serial = document.getElementById('serial').value;
-            const date = document.getElementById('date').value;
-            const from = document.getElementById('from').value;
-            const to = document.getElementById('to').value;
-            const subject = document.getElementById('subject').value;
-            const body = document.getElementById('body').value;
-            const sig = getSignature(from);
-
-            return `\\documentclass[12pt, letterpaper]{article}
-\\usepackage[margin=1in]{geometry}
-\\usepackage{fancyhdr}
-\\usepackage{courier}
-\\renewcommand{\\familydefault}{\\ttdefault}
-\\pagestyle{empty}
-
-\\begin{document}
-
-\\begin{center}
-{\\textbf{UNITED STATES MARINE CORPS}}\\\\
-{\\small 1ST BATTALION, 6TH MARINES}\\\\
-{\\small CAMP LEJEUNE, NC 28542}
-\\end{center}
-
-\\vspace{0.5in}
-
-\\hfill
-\\begin{tabular}[t]{@{}l@{}}
-${ssic}\\\\
-${serial}\\\\
-${date}
-\\end{tabular}
-
-\\vspace{0.25in}
-
-\\noindent From: ${from}\\\\
-To: ${to}
-
-\\vspace{0.15in}
-
-\\noindent Subj: ${subject}
-
-\\vspace{0.25in}
-
-${body.split('\n').map(line => '\\noindent ' + line).join('\n\n')}
-
-\\vspace{0.5in}
-
-\\hspace{3.25in}${sig}
-
-\\end{document}`;
-        }
-
-        // Compile PDF using SwiftLaTeX
-        async function compilePDF() {
+        // Generate PDF using jsPDF
+        function generatePDF() {
             const status = document.getElementById('status');
             status.style.display = 'block';
             status.className = 'status loading';
-            status.textContent = 'Initializing LaTeX engine...';
+            status.textContent = 'Generating PDF...';
 
             try {
-                // Check if PdfTeXEngine is available
-                if (typeof PdfTeXEngine === 'undefined') {
-                    throw new Error('SwiftLaTeX engine not loaded. Using fallback...');
+                const data = collectData();
+                const pdf = new jsPDF({
+                    orientation: 'portrait',
+                    unit: 'pt',
+                    format: 'letter'
+                });
+
+                let y = MARGIN_TOP;
+
+                // --- LETTERHEAD ---
+                pdf.setFont('helvetica', 'bold');
+                pdf.setFontSize(11);
+                pdf.setTextColor(0, 40, 85); // Navy blue
+
+                // UNITED STATES MARINE CORPS
+                pdf.text('UNITED STATES MARINE CORPS', PAGE_WIDTH / 2, y, { align: 'center' });
+                y += 14;
+
+                pdf.setFontSize(9);
+                pdf.text(data.unitLine1, PAGE_WIDTH / 2, y, { align: 'center' });
+                y += 11;
+
+                pdf.setFont('helvetica', 'normal');
+                pdf.text(data.unitLine2, PAGE_WIDTH / 2, y, { align: 'center' });
+                y += 11;
+
+                pdf.setFontSize(8);
+                pdf.text(data.unitAddress, PAGE_WIDTH / 2, y, { align: 'center' });
+                y += 36;
+
+                // --- SSIC/SERIAL/DATE BLOCK (right aligned) ---
+                pdf.setFont('courier', 'normal');
+                pdf.setFontSize(12);
+                pdf.setTextColor(0, 0, 0);
+
+                const rightX = PAGE_WIDTH - MARGIN_RIGHT;
+                pdf.text(data.ssic, rightX, y, { align: 'right' });
+                y += 14;
+                pdf.text(data.serial, rightX, y, { align: 'right' });
+                y += 14;
+                pdf.text(data.date, rightX, y, { align: 'right' });
+                y += 28;
+
+                // --- FROM/TO BLOCK ---
+                pdf.text('From:  ' + data.from, MARGIN_LEFT, y);
+                y += 14;
+                pdf.text('To:    ' + data.to, MARGIN_LEFT, y);
+                y += 28;
+
+                // --- SUBJECT ---
+                pdf.text('Subj:  ' + data.subject.toUpperCase(), MARGIN_LEFT, y);
+                y += 28;
+
+                // --- BODY ---
+                const bodyLines = data.body.split('\n');
+                for (const line of bodyLines) {
+                    // Word wrap long lines
+                    const wrappedLines = pdf.splitTextToSize(line, CONTENT_WIDTH);
+                    for (const wrappedLine of wrappedLines) {
+                        // Check if we need a new page
+                        if (y > PAGE_HEIGHT - MARGIN_BOTTOM - 72) {
+                            pdf.addPage();
+                            y = MARGIN_TOP;
+                            // Add continuation header
+                            pdf.setFontSize(10);
+                            pdf.text('Subj:  ' + data.subject.toUpperCase(), MARGIN_LEFT, y);
+                            y += 28;
+                            pdf.setFontSize(12);
+                        }
+                        pdf.text(wrappedLine, MARGIN_LEFT, y);
+                        y += 14;
+                    }
+                    y += 4; // Extra space between paragraphs
                 }
 
-                const engine = new PdfTeXEngine();
-                status.textContent = 'Loading engine (first time may take 30s)...';
-                await engine.loadEngine();
+                // --- SIGNATURE BLOCK ---
+                y += 28;
 
-                status.textContent = 'Compiling document...';
-                const texContent = generateTeX();
-                engine.writeMemFSFile('main.tex', texContent);
-                engine.setEngineMainFile('main.tex');
-
-                const result = await engine.compileLaTeX();
-
-                if (result.pdf) {
-                    const blob = new Blob([result.pdf], { type: 'application/pdf' });
-                    const url = URL.createObjectURL(blob);
-
-                    // Download
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'correspondence.pdf';
-                    a.click();
-
-                    status.className = 'status success';
-                    status.textContent = 'PDF generated successfully!';
-                } else {
-                    throw new Error(result.log || 'Compilation failed');
+                // Check if signature fits on current page
+                if (y > PAGE_HEIGHT - MARGIN_BOTTOM - 36) {
+                    pdf.addPage();
+                    y = MARGIN_TOP + 72;
                 }
+
+                const sigX = PAGE_WIDTH / 2 + 36; // Right half of page
+                pdf.text(getAbbrevSignature(data), sigX, y);
+
+                // --- OUTPUT ---
+                const pdfBlob = pdf.output('blob');
+                const pdfUrl = URL.createObjectURL(pdfBlob);
+
+                // Show in preview
+                const iframe = document.getElementById('pdfPreview');
+                const placeholder = document.getElementById('previewPlaceholder');
+                iframe.src = pdfUrl;
+                iframe.style.display = 'block';
+                placeholder.style.display = 'none';
+
+                status.className = 'status success';
+                status.textContent = 'PDF generated! Right-click preview to save.';
+
+                // Auto-download
+                const link = document.createElement('a');
+                link.href = pdfUrl;
+                link.download = 'correspondence.pdf';
+                link.click();
+
             } catch (error) {
                 console.error(error);
                 status.className = 'status error';
                 status.textContent = 'Error: ' + error.message;
-
-                // Fallback: just show the TeX
-                if (confirm('SwiftLaTeX failed to load. Download .tex file instead?')) {
-                    const tex = generateTeX();
-                    const blob = new Blob([tex], { type: 'text/plain' });
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'correspondence.tex';
-                    a.click();
-                }
             }
         }
 
-        // Auto-update preview on input
-        document.querySelectorAll('input, textarea, select').forEach(el => {
-            el.addEventListener('input', updatePreview);
-        });
+        // Generate LaTeX and download
+        function downloadTeX() {
+            const data = collectData();
+            const sig = getAbbrevSignature(data);
+
+            const tex = `\\documentclass[12pt, letterpaper]{article}
+
+\\usepackage[
+    letterpaper,
+    top=1in,
+    bottom=1in,
+    left=1in,
+    right=1in
+]{geometry}
+
+\\usepackage[T1]{fontenc}
+\\usepackage{courier}
+\\usepackage{fancyhdr}
+\\usepackage{xcolor}
+
+\\renewcommand{\\familydefault}{\\ttdefault}
+\\raggedright
+\\setlength{\\parindent}{0pt}
+\\setlength{\\parskip}{0pt}
+
+\\definecolor{navyblue}{RGB}{0, 40, 85}
+
+\\pagestyle{empty}
+
+\\begin{document}
+
+% --- LETTERHEAD ---
+\\begin{center}
+{\\color{navyblue}\\textbf{UNITED STATES MARINE CORPS}}\\\\[2pt]
+{\\color{navyblue}\\small\\textbf{${escapeLatex(data.unitLine1)}}}\\\\[2pt]
+{\\color{navyblue}\\small ${escapeLatex(data.unitLine2)}}\\\\[2pt]
+{\\color{navyblue}\\scriptsize ${escapeLatex(data.unitAddress)}}
+\\end{center}
+
+\\vspace{0.5in}
+
+% --- SSIC/SERIAL/DATE ---
+\\hfill
+\\begin{tabular}[t]{@{}l@{}}
+${escapeLatex(data.ssic)}\\\\
+${escapeLatex(data.serial)}\\\\
+${escapeLatex(data.date)}
+\\end{tabular}
+
+\\vspace{0.25in}
+
+% --- FROM/TO ---
+From:  ${escapeLatex(data.from)}\\\\
+To:    ${escapeLatex(data.to)}
+
+\\vspace{0.25in}
+
+% --- SUBJECT ---
+Subj:  ${escapeLatex(data.subject.toUpperCase())}
+
+\\vspace{0.25in}
+
+% --- BODY ---
+${data.body.split('\n').map(line => escapeLatex(line)).join('\n\n')}
+
+\\vspace{0.5in}
+
+% --- SIGNATURE ---
+\\hspace{3.25in}${escapeLatex(sig)}
+
+\\end{document}
+`;
+
+            const blob = new Blob([tex], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'correspondence.tex';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Escape special LaTeX characters
+        function escapeLatex(str) {
+            if (!str) return '';
+            return str
+                .replace(/\\/g, '\\textbackslash{}')
+                .replace(/&/g, '\\&')
+                .replace(/%/g, '\\%')
+                .replace(/\$/g, '\\$')
+                .replace(/#/g, '\\#')
+                .replace(/_/g, '\\_')
+                .replace(/\{/g, '\\{')
+                .replace(/\}/g, '\\}')
+                .replace(/~/g, '\\textasciitilde{}')
+                .replace(/\^/g, '\\textasciicircum{}');
+        }
+
+        // Update preview (debounced)
+        let previewTimeout;
+        function updatePreview() {
+            clearTimeout(previewTimeout);
+            previewTimeout = setTimeout(() => {
+                // Only auto-update if preview is already visible
+                const iframe = document.getElementById('pdfPreview');
+                if (iframe.style.display !== 'none') {
+                    generatePDF();
+                }
+            }, 500);
+        }
     </script>
 </body>
 </html>
