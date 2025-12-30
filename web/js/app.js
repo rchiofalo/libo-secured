@@ -224,7 +224,7 @@ function updatePreview() {
     const viaBlock = document.getElementById('prev-via-block');
     if (config.via && data.via.trim()) {
         viaBlock.style.display = 'block';
-        document.getElementById('prev-via').innerHTML = data.via.split('\n').join('<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+        document.getElementById('prev-via').innerHTML = data.via.split('\n').join('<br>');
     } else {
         viaBlock.style.display = 'none';
     }
@@ -236,7 +236,7 @@ function updatePreview() {
     const refBlock = document.getElementById('prev-ref-block');
     if (refs.length > 0) {
         refBlock.style.display = 'block';
-        document.getElementById('prev-refs').innerHTML = refs.map(r => `(${r.letter}) ${r.title}`).join('<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+        document.getElementById('prev-refs').innerHTML = refs.map(r => `(${r.letter}) ${r.title}`).join('<br>');
     } else {
         refBlock.style.display = 'none';
     }
@@ -245,7 +245,7 @@ function updatePreview() {
     const enclBlock = document.getElementById('prev-encl-block');
     if (encls.length > 0) {
         enclBlock.style.display = 'block';
-        document.getElementById('prev-encls').innerHTML = encls.map(e => `(${e.num}) ${e.title}`).join('<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+        document.getElementById('prev-encls').innerHTML = encls.map(e => `(${e.num}) ${e.title}`).join('<br>');
     } else {
         enclBlock.style.display = 'none';
     }

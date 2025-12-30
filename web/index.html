@@ -152,54 +152,64 @@ b | MCO 5216.20B</textarea>
             <div id="status" class="status" style="display: none;"></div>
         </div>
 
-        <!-- LIVE PREVIEW PANEL -->
+        <!-- LIVE PREVIEW PANEL - Mimics LaTeX letter paper output -->
         <div class="preview-panel" id="livePreview">
+            <!-- Letterhead -->
             <div class="letterhead" id="prev-letterhead">
                 <img src="../attachments/dod-seal.png" alt="DoD Seal" class="letterhead-seal" id="prev-seal">
                 <div class="letterhead-title">UNITED STATES MARINE CORPS</div>
                 <div class="letterhead-unit" id="prev-unit1">1ST BATTALION, 6TH MARINES</div>
                 <div class="letterhead-hq" id="prev-unit2">6TH MARINE REGIMENT</div>
-                <div class="letterhead-address" id="prev-address">PSC BOX 20123, CAMP LEJEUNE, NC 28542</div>
+                <div class="letterhead-address" id="prev-address">PSC BOX 20123<br>CAMP LEJEUNE, NC 28542</div>
             </div>
 
+            <!-- Memo Header (for MFR, MOA, etc) -->
             <div class="memo-header" id="prev-memo-header" style="display: none;"></div>
 
+            <!-- SSIC Block - right aligned -->
             <div class="ssic-block" id="prev-ssic-block">
                 <span id="prev-ssic">5216</span><br>
                 <span id="prev-serial">Ser ADM/001</span><br>
                 <span id="prev-date">1 Jan 2025</span>
             </div>
 
+            <!-- Date only for memos -->
             <div class="date-only" id="prev-date-only" style="display: none;"></div>
 
+            <!-- From/To/Via blocks -->
             <div class="address-block" id="prev-from-block">
-                From:  <span id="prev-from">Commanding Officer, 1st Battalion, 6th Marines</span>
+                <span class="label">From:</span><span id="prev-from">Commanding Officer, 1st Battalion, 6th Marines</span>
             </div>
             <div class="address-block" id="prev-to-block">
-                To:    <span id="prev-to">Commanding Officer, 6th Marine Regiment</span>
+                <span class="label">To:</span><span id="prev-to">Commanding Officer, 6th Marine Regiment</span>
             </div>
             <div class="address-block" id="prev-via-block" style="display: none;">
-                Via:   <span id="prev-via"></span>
+                <span class="label">Via:</span><span id="prev-via"></span>
             </div>
 
+            <!-- Subject -->
             <div class="subject-block">
-                Subj:  <span id="prev-subject">REQUEST FOR ADMINISTRATIVE SUPPORT</span>
+                <span class="label">Subj:</span><span id="prev-subject">REQUEST FOR ADMINISTRATIVE SUPPORT</span>
             </div>
 
+            <!-- References -->
             <div class="ref-block" id="prev-ref-block">
-                Ref:   <span id="prev-refs">(a) SECNAV M-5216.5<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) MCO 5216.20B</span>
+                <span class="label">Ref:</span><span class="content" id="prev-refs">(a) SECNAV M-5216.5<br>(b) MCO 5216.20B</span>
             </div>
 
+            <!-- Enclosures -->
             <div class="encl-block" id="prev-encl-block" style="display: none;">
-                Encl:  <span id="prev-encls"></span>
+                <span class="label">Encl:</span><span class="content" id="prev-encls"></span>
             </div>
 
+            <!-- Body -->
             <div class="body-content" id="prev-body">1.  Per reference (a), this correspondence serves as an example of the naval letter format.
 
 2.  The purpose of this letter is to demonstrate proper formatting in accordance with SECNAV M-5216.5.
 
 3.  Point of contact for this matter is the undersigned at (910) 555-1234.</div>
 
+            <!-- Signature -->
             <div class="signature-block">
                 <span id="prev-sig">J. A. DOE</span>
             </div>
