@@ -483,15 +483,16 @@
 \newcommand{\SignatoryName}{}
 \newcommand{\SignatoryAbbrev}{}
 
-\makeatletter
 \newcommand{\setSignatory}[5]{%
-    % Debugging: Empty implementation to test argument parsing
+    \renewcommand{\SignatoryFirstName}{#1}%
+    \renewcommand{\SignatoryMiddleInitial}{#2}%
+    \renewcommand{\SignatoryLastName}{#3}%
+    \renewcommand{\SignatoryRank}{#4}%
+    \renewcommand{\SignatoryTitle}{#5}%
 }
-\makeatother
 
 \newcommand{\setSignatoryName}[1]{\renewcommand{\SignatoryName}{#1}}
 \newcommand{\setSignatoryAbbrev}[1]{\renewcommand{\SignatoryAbbrev}{#1}}
-\makeatother
 
 % setSignatureImage: If non-empty, redefine SignatureImage so \ifx check works
 \newcommand{\setSignatureImage}[1]{%
