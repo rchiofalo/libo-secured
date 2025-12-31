@@ -24,6 +24,17 @@ let engineReady = false;
 let engineLoading = false;
 
 /**
+ * Reset the LaTeX engine (required after fatal errors)
+ */
+async function resetLatexEngine() {
+    console.log('Resetting LaTeX engine...');
+    engineReady = false;
+    engineLoading = false;
+    pdfTexEngine = null;
+    await initLatexEngine();
+}
+
+/**
  * Initialize SwiftLaTeX PdfTeX engine
  */
 async function initLatexEngine() {
@@ -211,6 +222,12 @@ Hello World!
         return result.pdf;
     } else {
         console.error('LaTeX compilation failed:', result.log);
+
+        // Check for fatal format error - engine needs reset
+        if (result.log && result.log.includes('Fatal format file error')) {
+            console.warn('Fatal format error detected - engine needs reset');
+            throw new Error('ENGINE_RESET_NEEDED');
+        }
 
         // Debug: Show log in UI
         const existingDebug = document.getElementById('latex-debug-log');
@@ -1438,7 +1455,7 @@ function hidePdfPreviewStatus() {
 /**
  * Compile and display PDF in the preview iframe
  */
-async function updatePdfPreview() {
+async function updatePdfPreview(retryAfterReset = false) {
     const frame = document.getElementById('pdfPreviewFrame');
     if (!frame) return;
 
@@ -1465,6 +1482,16 @@ async function updatePdfPreview() {
 
     } catch (error) {
         console.error('PDF preview error:', error);
+
+        // Auto-recover from fatal format errors by resetting engine
+        if (error.message === 'ENGINE_RESET_NEEDED' && !retryAfterReset) {
+            console.log('Auto-recovering from fatal format error...');
+            setPdfPreviewStatus('Resetting engine...', 'loading');
+            await resetLatexEngine();
+            // Retry once after reset
+            return updatePdfPreview(true);
+        }
+
         setPdfPreviewStatus('Compilation failed: ' + error.message, 'error');
     }
 }
