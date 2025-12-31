@@ -3848,8 +3848,14 @@ function restoreDraft() {
         const enclJson = localStorage.getItem(STORAGE_KEY_ENCLS);
         if (enclJson) {
             const enclMeta = JSON.parse(enclJson);
+            // Restore enclosures array with metadata (without file data)
+            enclosures = enclMeta.map(e => ({
+                title: e.title || '',
+                file: null // Files can't be serialized, user must re-upload
+            }));
+            renderEnclosures();
             if (enclMeta.length > 0) {
-                console.log('Enclosure metadata restored. Files need to be re-uploaded.');
+                console.log('Enclosure titles restored. PDF files need to be re-uploaded.');
             }
         }
 
