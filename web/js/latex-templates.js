@@ -89,7 +89,7 @@ const LATEX_TEMPLATES = {
     bottom  = 1in,
     left    = 1in,
     right   = 1in,
-    headheight = 14pt,
+    headheight = 15pt,
     headsep    = 0pt,
     footskip   = 0.5in
 ]{geometry}
