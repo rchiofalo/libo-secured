@@ -496,6 +496,7 @@ let enclosures = [];
  * Add a new enclosure (manual or with file)
  */
 function addEnclosure(title = '', file = null) {
+    console.log('addEnclosure called with title:', title, 'file:', file);
     const enclosure = {
         title: title,
         file: file ? {
@@ -506,6 +507,7 @@ function addEnclosure(title = '', file = null) {
     };
 
     enclosures.push(enclosure);
+    console.log('enclosures array after push:', enclosures.length, enclosures);
     renderEnclosures();
     updatePreview();
 
@@ -597,7 +599,9 @@ function handleEnclFileUpload(event) {
  * Render the enclosures list with drag-and-drop support
  */
 function renderEnclosures() {
+    console.log('renderEnclosures called, enclosures.length:', enclosures.length);
     const container = document.getElementById('enclosuresList');
+    console.log('enclosuresList container:', container);
 
     if (enclosures.length === 0) {
         container.innerHTML = '';
