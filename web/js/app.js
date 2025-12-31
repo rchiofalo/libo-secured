@@ -1209,7 +1209,7 @@ async function downloadPDF() {
  * Download PDF compiled using SwiftLaTeX (proper LaTeX formatting)
  * Enclosure PDFs are merged by JavaScript with proper formatting overlays.
  */
-async function downloadLatexPDF() {
+async function downloadLatexPDF(retryAfterReset = false) {
     try {
         showStatus('Compiling LaTeX...', 'success');
 
@@ -1236,6 +1236,16 @@ async function downloadLatexPDF() {
         }
     } catch (error) {
         console.error('LaTeX compilation error:', error);
+
+        // Auto-recover from fatal format errors by resetting engine
+        if (error.message === 'ENGINE_RESET_NEEDED' && !retryAfterReset) {
+            console.log('Auto-recovering from fatal format error...');
+            showStatus('Resetting engine and retrying...', 'success');
+            await resetLatexEngine();
+            // Retry once after reset
+            return downloadLatexPDF(true);
+        }
+
         showStatus('LaTeX compilation failed: ' + error.message, 'error');
     }
 }
