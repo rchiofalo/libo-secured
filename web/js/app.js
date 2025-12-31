@@ -151,6 +151,20 @@ async function compileLatex() {
     pdfTexEngine.makeMemFSFolder('attachments');
     pdfTexEngine.makeMemFSFolder('enclosures');
 
+    // Write bundled attachment files (like dod-seal.png)
+    if (typeof TEXLIVE_ATTACHMENTS !== 'undefined' && Array.isArray(TEXLIVE_ATTACHMENTS)) {
+        for (const attachment of TEXLIVE_ATTACHMENTS) {
+            // Decode base64 to binary
+            const binaryString = atob(attachment.content);
+            const bytes = new Uint8Array(binaryString.length);
+            for (let i = 0; i < binaryString.length; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            pdfTexEngine.writeMemFSFile(`attachments/${attachment.filename}`, bytes);
+            console.log(`Wrote attachment: ${attachment.filename}`);
+        }
+    }
+
     // Test with minimal document first (for debugging)
     // Set to true to test basic compilation without complex packages
     const USE_MINIMAL_TEST = false; // Full template mode

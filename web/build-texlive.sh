@@ -135,6 +135,20 @@ for f in "$LIB_DIR"/33/*.vf; do
 done
 
 echo "];" >> "$OUTPUT"
+echo "" >> "$OUTPUT"
+
+# Attachment files (images, etc. - base64 encoded)
+echo "// Attachment files (images - base64 encoded)" >> "$OUTPUT"
+echo "const TEXLIVE_ATTACHMENTS = [" >> "$OUTPUT"
+
+# Include dod-seal.png from the repo's attachments folder
+REPO_DIR="$(dirname "$SCRIPT_DIR")"
+if [ -f "$REPO_DIR/attachments/dod-seal.png" ]; then
+    echo "  { filename: 'dod-seal.png', content: '$(base64 < "$REPO_DIR/attachments/dod-seal.png" | tr -d '\n')' }," >> "$OUTPUT"
+    echo "  Added attachment: dod-seal.png"
+fi
+
+echo "];" >> "$OUTPUT"
 
 echo ""
 echo "Generated $OUTPUT"
