@@ -564,7 +564,7 @@ function handleEnclFileUpload(event) {
 }
 
 /**
- * Render the enclosures list
+ * Render the enclosures list with drag-and-drop support
  */
 function renderEnclosures() {
     const container = document.getElementById('enclosuresList');
@@ -575,7 +575,8 @@ function renderEnclosures() {
     }
 
     container.innerHTML = enclosures.map((encl, index) => `
-        <div class="enclosure-item">
+        <div class="enclosure-item" draggable="true" data-index="${index}">
+            <span class="enclosure-drag-handle" title="Drag to reorder">⋮⋮</span>
             <span class="enclosure-number">(${index + 1})</span>
             <input type="text"
                    class="enclosure-input"
@@ -592,6 +593,98 @@ function renderEnclosures() {
             <button type="button" class="enclosure-remove" onclick="removeEnclosure(${index})">×</button>
         </div>
     `).join('');
+
+    // Add drag-and-drop event listeners
+    initEnclosureDragDrop();
+}
+
+/**
+ * Initialize drag-and-drop for enclosure reordering
+ */
+function initEnclosureDragDrop() {
+    const container = document.getElementById('enclosuresList');
+    const items = container.querySelectorAll('.enclosure-item');
+
+    let draggedItem = null;
+    let draggedIndex = null;
+
+    items.forEach(item => {
+        item.addEventListener('dragstart', (e) => {
+            draggedItem = item;
+            draggedIndex = parseInt(item.dataset.index);
+            item.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/plain', draggedIndex);
+        });
+
+        item.addEventListener('dragend', () => {
+            item.classList.remove('dragging');
+            draggedItem = null;
+            draggedIndex = null;
+            // Remove all drag-over states
+            items.forEach(i => i.classList.remove('drag-over-above', 'drag-over-below'));
+        });
+
+        item.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+
+            if (item === draggedItem) return;
+
+            const rect = item.getBoundingClientRect();
+            const midY = rect.top + rect.height / 2;
+
+            // Remove previous indicators
+            items.forEach(i => i.classList.remove('drag-over-above', 'drag-over-below'));
+
+            // Add indicator based on mouse position
+            if (e.clientY < midY) {
+                item.classList.add('drag-over-above');
+            } else {
+                item.classList.add('drag-over-below');
+            }
+        });
+
+        item.addEventListener('dragleave', () => {
+            item.classList.remove('drag-over-above', 'drag-over-below');
+        });
+
+        item.addEventListener('drop', (e) => {
+            e.preventDefault();
+
+            if (item === draggedItem) return;
+
+            const targetIndex = parseInt(item.dataset.index);
+            const rect = item.getBoundingClientRect();
+            const midY = rect.top + rect.height / 2;
+
+            // Determine insert position
+            let newIndex = e.clientY < midY ? targetIndex : targetIndex + 1;
+
+            // Adjust for removal of original item
+            if (draggedIndex < newIndex) {
+                newIndex--;
+            }
+
+            // Reorder the array
+            reorderEnclosure(draggedIndex, newIndex);
+
+            // Remove indicators
+            items.forEach(i => i.classList.remove('drag-over-above', 'drag-over-below'));
+        });
+    });
+}
+
+/**
+ * Reorder enclosure from one index to another
+ */
+function reorderEnclosure(fromIndex, toIndex) {
+    if (fromIndex === toIndex) return;
+
+    const item = enclosures.splice(fromIndex, 1)[0];
+    enclosures.splice(toIndex, 0, item);
+    renderEnclosures();
+    updatePreview();
 }
 
 /**
@@ -1059,7 +1152,7 @@ ${data.inReplyTo ? '\\enableInReplyReferTo' : '% \\enableInReplyReferTo'}
 \\setBusinessSalutation{Dear Sir or Madam:}
 \\setBusinessClose{Very respectfully,}
 
-\\setPOC{example@usmc.mil}
+\\setPOC{${escapeLatex(data.pocEmail)}}
 `;
     }
     // Joint Letter/Memo specific configuration
@@ -1097,7 +1190,7 @@ ${data.inReplyTo ? '\\enableInReplyReferTo' : '% \\enableInReplyReferTo'}
 \\setBusinessSalutation{Dear Sir or Madam:}
 \\setBusinessClose{Very respectfully,}
 
-\\setPOC{example@usmc.mil}
+\\setPOC{${escapeLatex(data.pocEmail)}}
 `;
     }
     // Standard configuration
@@ -1125,7 +1218,7 @@ ${data.via.trim() ? `\\setVia
 \\setBusinessSalutation{Dear Sir or Madam:}
 \\setBusinessClose{Very respectfully,}
 
-\\setPOC{example@usmc.mil}
+\\setPOC{${escapeLatex(data.pocEmail)}}
 `;
     }
 

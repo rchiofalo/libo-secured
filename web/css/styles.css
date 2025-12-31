@@ -662,6 +662,44 @@ button.primary:hover {
     align-items: center;
     gap: 8px;
     margin-bottom: 6px;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background 0.2s, border 0.2s;
+    border: 1px solid transparent;
+}
+
+.enclosure-item:hover {
+    background: rgba(50, 130, 184, 0.05);
+}
+
+.enclosure-item.dragging {
+    opacity: 0.5;
+    background: rgba(50, 130, 184, 0.1);
+}
+
+.enclosure-item.drag-over-above {
+    border-top: 2px solid #3282b8;
+}
+
+.enclosure-item.drag-over-below {
+    border-bottom: 2px solid #3282b8;
+}
+
+.enclosure-drag-handle {
+    cursor: grab;
+    color: #666;
+    font-size: 12px;
+    padding: 2px 4px;
+    user-select: none;
+    letter-spacing: 1px;
+}
+
+.enclosure-drag-handle:hover {
+    color: #3282b8;
+}
+
+.enclosure-drag-handle:active {
+    cursor: grabbing;
 }
 
 .enclosure-number {
