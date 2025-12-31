@@ -39,17 +39,17 @@
 %   - mf                        "Memorandum For" (MCO 5216.20B)
 %
 % CONFIGURATION:
-%   Edit files in the config/ folder:
-%   - config/document.tex      - Document type, SSIC, Date, From, To, Via, Subject
-%   - config/letterhead.tex    - Unit name and address
-%   - config/classification.tex - CUI markings and distribution
-%   - config/signatory.tex     - Signature block (full and abbreviated)
-%   - config/references.tex    - Reference list
-%   - config/reference-urls.tex - Clickable URLs for references
-%   - config/enclosures.tex    - Enclosure list (PDFs go in enclosures/ folder)
-%   - config/body.tex          - Document body content
+%   Edit files in the tex/ folder:
+%   - document.tex       - Document type, SSIC, Date, From, To, Via, Subject
+%   - letterhead.tex     - Unit name and address
+%   - classification.tex - CUI markings and distribution
+%   - signatory.tex      - Signature block (full and abbreviated)
+%   - references.tex     - Reference list
+%   - reference-urls.tex - Clickable URLs for references
+%   - enclosures.tex     - Enclosure list (PDFs go in enclosures/ folder)
+%   - body.tex           - Document body content
 %
-% Format-specific code is in the formats/ folder
+% Format-specific code is in the templates/ folder
 %
 %=============================================================================
 
@@ -700,7 +700,7 @@
 }
 \makeatother
 
-\input{config/reference-urls}
+\input{reference-urls}
 
 \makeatletter
 \newcommand{\refitem}[2]{%
@@ -718,7 +718,7 @@
     \noindent
     \begin{tabular}{@{}l@{}p{5.9in}@{}}
         Ref:\hspace{4\fontdimen2\font} & \begin{minipage}[t]{5.9in}
-                   \input{config/references}
+                   \input{references}
                \end{minipage}
     \end{tabular}%
 }
@@ -908,7 +908,7 @@
 %=============================================================================
 
 % Load enclosure definitions first (so counter is set before document)
-\input{config/enclosures}
+\input{enclosures}
 
 
 %=============================================================================
@@ -927,10 +927,10 @@
 % LOAD CONFIGURATION FROM EXTERNAL FILES
 %=============================================================================
 
-\input{config/letterhead}
-\input{config/classification}
-\input{config/document}
-\input{config/signatory}
+\input{letterhead}
+\input{classification}
+\input{document}
+\input{signatory}
 
 % Apply font settings after config is loaded
 \applyFontSettings
@@ -944,7 +944,7 @@
 %   - formats/business_letter.tex
 %=============================================================================
 
-\input{formats/\DocumentType}
+\input{templates/\DocumentType}
 
 
 %=============================================================================
@@ -973,7 +973,7 @@
 % BODY CONTENT - Edit in config/body.tex
 %=============================================================================
 
-\input{config/body}
+\input{body}
 
 
 %=============================================================================

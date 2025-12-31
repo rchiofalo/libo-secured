@@ -198,25 +198,25 @@ Hello World!
         }
     }
 
-    // Write format files from templates
+    // Write format files from templates (tex/templates/)
     for (const [filename, content] of Object.entries(window.LATEX_TEMPLATES)) {
-        if (filename.startsWith('formats/')) {
+        if (filename.startsWith('tex/templates/')) {
             pdfTexEngine.writeMemFSFile(filename, content);
         }
     }
 
-    // Generate and write config files dynamically from form data
-    pdfTexEngine.writeMemFSFile('config/document.tex', generateDocumentTex(data));
-    pdfTexEngine.writeMemFSFile('config/letterhead.tex', generateLetterheadTex(data));
-    pdfTexEngine.writeMemFSFile('config/signatory.tex', generateSignatoryTex(data));
-    pdfTexEngine.writeMemFSFile('config/references.tex', generateReferencesTex());
-    pdfTexEngine.writeMemFSFile('config/reference-urls.tex', generateReferenceUrlsTex());
-    pdfTexEngine.writeMemFSFile('config/enclosures.tex', generateEnclosuresTex());
-    pdfTexEngine.writeMemFSFile('config/body.tex', generateBodyTex(data));
-    pdfTexEngine.writeMemFSFile('config/classification.tex', generateClassificationTex(data));
+    // Generate and write config files dynamically from form data (tex/)
+    pdfTexEngine.writeMemFSFile('tex/document.tex', generateDocumentTex(data));
+    pdfTexEngine.writeMemFSFile('tex/letterhead.tex', generateLetterheadTex(data));
+    pdfTexEngine.writeMemFSFile('tex/signatory.tex', generateSignatoryTex(data));
+    pdfTexEngine.writeMemFSFile('tex/references.tex', generateReferencesTex());
+    pdfTexEngine.writeMemFSFile('tex/reference-urls.tex', generateReferenceUrlsTex());
+    pdfTexEngine.writeMemFSFile('tex/enclosures.tex', generateEnclosuresTex());
+    pdfTexEngine.writeMemFSFile('tex/body.tex', generateBodyTex(data));
+    pdfTexEngine.writeMemFSFile('tex/classification.tex', generateClassificationTex(data));
 
     // Set main file and compile
-    pdfTexEngine.setEngineMainFile('main.tex');
+    pdfTexEngine.setEngineMainFile('tex/main.tex');
 
     showStatus('Compiling LaTeX...', 'success');
     const result = await pdfTexEngine.compileLaTeX();

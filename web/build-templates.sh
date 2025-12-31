@@ -14,17 +14,17 @@ echo " */" >> "$OUTPUT"
 echo "" >> "$OUTPUT"
 echo "const LATEX_TEMPLATES = {" >> "$OUTPUT"
 
-# Add main.tex
-echo "  'main.tex': \`" >> "$OUTPUT"
-cat main.tex | sed 's/\\/\\\\/g' | sed 's/`/\\`/g' | sed 's/\$/\\$/g' >> "$OUTPUT"
+# Add main.tex from tex/
+echo "  'tex/main.tex': \`" >> "$OUTPUT"
+cat tex/main.tex | sed 's/\\/\\\\/g' | sed 's/`/\\`/g' | sed 's/\$/\\$/g' >> "$OUTPUT"
 echo "\`," >> "$OUTPUT"
 
-# Add format files
+# Add template files from tex/templates/
 echo "" >> "$OUTPUT"
-echo "  // Format files" >> "$OUTPUT"
-for file in formats/*.tex; do
+echo "  // Template files" >> "$OUTPUT"
+for file in tex/templates/*.tex; do
     name=$(basename "$file")
-    echo "  'formats/$name': \`" >> "$OUTPUT"
+    echo "  'tex/templates/$name': \`" >> "$OUTPUT"
     cat "$file" | sed 's/\\/\\\\/g' | sed 's/`/\\`/g' | sed 's/\$/\\$/g' >> "$OUTPUT"
     echo "\`," >> "$OUTPUT"
 done
