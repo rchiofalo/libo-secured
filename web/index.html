@@ -311,15 +311,18 @@
 
             <h2 class="collapsible" onclick="toggleSection(this)">References & Enclosures</h2>
             <div class="collapsible-content">
-                <label>References (one per line: letter | title)</label>
-                <textarea id="refs" class="small" oninput="updatePreview()" placeholder="a | SECNAV M-5216.5
-b | MCO 5216.20B">a | SECNAV M-5216.5
-b | MCO 5216.20B</textarea>
-                <div class="hint">Format: a | Reference Title</div>
+                <div class="references-header">
+                    <label>References</label>
+                    <span class="references-hint">auto-letters (a), (b), (c)... - drag to reorder</span>
+                </div>
+                <div id="referencesList" class="references-list"></div>
+                <div class="reference-add-row">
+                    <button type="button" class="btn-add-reference" onclick="addReference()">+ Add Reference</button>
+                </div>
 
                 <div class="enclosures-header">
                     <label>Enclosures</label>
-                    <span class="enclosures-hint">auto-numbers (1), (2), (3)...</span>
+                    <span class="enclosures-hint">auto-numbers (1), (2), (3)... - drag to reorder</span>
                 </div>
                 <div id="enclosuresList" class="enclosures-list"></div>
                 <div class="enclosure-add-row">
