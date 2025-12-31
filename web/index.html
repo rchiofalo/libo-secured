@@ -515,6 +515,14 @@
                         <input type="text" id="sigTitle" value="Operations NCO" oninput="updatePreview()">
                     </div>
                 </div>
+                <div class="checkbox-row">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="byDirection" onchange="updateByDirectionFields(); updatePreview()">
+                        <span>By direction</span>
+                    </label>
+                    <input type="text" id="byDirectionAuthority" placeholder="e.g., the Commanding Officer"
+                           oninput="updatePreview()" style="flex: 1; display: none;">
+                </div>
             </div>
 
             <!-- MOA/MOU Dual Signatures -->
@@ -587,6 +595,11 @@
                 <button class="secondary" onclick="downloadTeX()">Download .tex</button>
             </div>
 
+            <!-- Show Preview button (visible when preview is hidden on desktop) -->
+            <div id="showPreviewBtn" class="show-preview-btn" style="display: none;">
+                <button onclick="togglePreviewPanel()">Show Preview</button>
+            </div>
+
             <div id="status" class="status" style="display: none;"></div>
         </div>
 
@@ -594,7 +607,10 @@
         <div class="preview-panel" id="pdfPreviewPanel">
             <div class="pdf-preview-header">
                 <span class="pdf-preview-title">PDF Preview</span>
-                <button class="pdf-refresh-btn" onclick="refreshPdfPreview()" title="Refresh Preview">&#x21bb;</button>
+                <div class="pdf-header-buttons">
+                    <button class="pdf-refresh-btn" onclick="refreshPdfPreview()" title="Refresh Preview">&#x21bb;</button>
+                    <button class="pdf-toggle-btn" id="previewToggleBtn" onclick="togglePreviewPanel()" title="Hide Preview">&#x2715;</button>
+                </div>
             </div>
             <div class="pdf-preview-status" id="pdfPreviewStatus">
                 <span class="pdf-loading">Initializing LaTeX engine...</span>
@@ -682,7 +698,7 @@
     <script src="js/texlive-packages.js?v=10"></script>
 
     <!-- Application JavaScript -->
-    <script src="js/app.js?v=22"></script>
+    <script src="js/app.js?v=23"></script>
 </body>
 
 </html>

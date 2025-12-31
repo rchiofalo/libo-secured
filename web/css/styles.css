@@ -272,6 +272,37 @@ body {
     flex: 1;
 }
 
+/* Checkbox row (for By direction, etc.) */
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.checkbox-row input[type="text"] {
+    padding: 8px 10px;
+    background: #16213e;
+    border: 1px solid #3282b8;
+    border-radius: 4px;
+    color: #eee;
+    font-size: 14px;
+}
+
 /* =============================================================================
    TYPOGRAPHY
    ============================================================================= */
@@ -618,6 +649,67 @@ button.primary:hover {
 
 .pdf-refresh-btn:active {
     transform: rotate(180deg);
+}
+
+/* PDF header buttons container */
+.pdf-header-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+/* PDF toggle/close button */
+.pdf-toggle-btn {
+    background: transparent;
+    border: 1px solid #555;
+    color: #aaa;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.pdf-toggle-btn:hover {
+    background: #442222;
+    border-color: #884444;
+    color: #ff6666;
+}
+
+/* Show Preview button (when preview is hidden) */
+.show-preview-btn {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.show-preview-btn button {
+    padding: 10px 20px;
+    background: #0f3460;
+    border: 1px solid #3282b8;
+    color: #3282b8;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.show-preview-btn button:hover {
+    background: #3282b8;
+    color: #fff;
+}
+
+/* Preview panel hidden state */
+.preview-panel.hidden {
+    display: none !important;
+}
+
+/* Expand form panel when preview is hidden */
+.form-panel.expanded {
+    max-width: 100%;
+    margin-right: 0;
 }
 
 /* PDF preview status */
