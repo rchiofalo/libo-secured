@@ -20,9 +20,27 @@
         <button id="modeCorrespondence" class="mode-btn active" onclick="switchMode('correspondence')">
             Correspondence
         </button>
-        <button id="modeForms" class="mode-btn" onclick="switchMode('forms')">
-            Forms
-        </button>
+        <div class="mode-btn-wrapper">
+            <button id="modeForms" class="mode-btn disabled" disabled>
+                Forms
+                <span class="wip-badge">WIP</span>
+            </button>
+            <button class="info-btn" onclick="showFormsInfo()" title="Why is this disabled?">?</button>
+        </div>
+    </div>
+
+    <!-- Forms Info Modal -->
+    <div id="formsInfoModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>🚧 Forms - Under Construction</h3>
+            <p>The Forms feature is currently being developed. This will allow you to fill out official USMC forms like:</p>
+            <ul>
+                <li>NAVMC 118(11) - Administrative Remarks (Page 11)</li>
+                <li>NAVMC 10274 - Administrative Action (6105)</li>
+            </ul>
+            <p>The official forms use a proprietary Adobe format (XFA) that requires special handling. We're working on a solution that maintains compatibility while keeping everything 100% offline.</p>
+            <button onclick="closeFormsInfo()">Got it</button>
+        </div>
     </div>
 
     <div class="container">

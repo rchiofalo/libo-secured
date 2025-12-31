@@ -2655,6 +2655,12 @@ let lastY = 0;
  * Switch between correspondence and forms mode
  */
 function switchMode(mode) {
+    // Forms mode is currently disabled
+    if (mode === 'forms') {
+        showFormsInfo();
+        return;
+    }
+
     currentMode = mode;
 
     // Update button states
@@ -2669,6 +2675,20 @@ function switchMode(mode) {
     if (mode === 'forms') {
         initSignaturePad();
     }
+}
+
+/**
+ * Show the Forms info modal
+ */
+function showFormsInfo() {
+    document.getElementById('formsInfoModal').style.display = 'flex';
+}
+
+/**
+ * Close the Forms info modal
+ */
+function closeFormsInfo() {
+    document.getElementById('formsInfoModal').style.display = 'none';
 }
 
 /**
