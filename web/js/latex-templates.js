@@ -459,6 +459,7 @@ const LATEX_TEMPLATES = {
 \\newcommand{\\SignatoryRank}{}
 \\newcommand{\\SignatoryTitle}{}
 \\newcommand{\\SignatureImage}{}
+\\newcommand{\\SignatureImageSet}{false}
 
 % Legacy compatibility
 \\newcommand{\\SignatoryName}{}
@@ -474,7 +475,7 @@ const LATEX_TEMPLATES = {
 \\newcommand{\\setSignatoryAbbrev}[1]{\\renewcommand{\\SignatoryAbbrev}{#1}}
 \\makeatother
 
-\\newcommand{\\setSignatureImage}[1]{\\renewcommand{\\SignatureImage}{#1}}
+\\newcommand{\\setSignatureImage}[1]{\\renewcommand{\\SignatureImage}{#1}\\renewcommand{\\SignatureImageSet}{true}}
 
 
 %=============================================================================
@@ -928,7 +929,7 @@ const LATEX_TEMPLATES = {
     \\hspace{3.25in}%
     \\begin{minipage}{3in}
         \\raggedright
-        \\ifx\\SignatureImage\\empty\\else
+        \\if\\SignatureImageSet true%
             \\IfFileExists{attachments/\\SignatureImage}{%
                 \\includegraphics[width=1.5in,height=0.5in,keepaspectratio]{attachments/\\SignatureImage}\\\\[6pt]%
             }{}%
@@ -1025,7 +1026,7 @@ const LATEX_TEMPLATES = {
     \\noindent
     \\begin{minipage}{3in}
         \\raggedright
-        \\ifx\\SignatureImage\\empty\\else
+        \\if\\SignatureImageSet true%
             \\IfFileExists{attachments/\\SignatureImage}{%
                 \\includegraphics[width=1.5in,height=0.5in,keepaspectratio]{attachments/\\SignatureImage}\\\\[6pt]%
             }{}%
@@ -1149,7 +1150,7 @@ const LATEX_TEMPLATES = {
     \\hspace{3.25in}%
     \\begin{minipage}{3in}
         \\raggedright
-        \\ifx\\SignatureImage\\empty\\else
+        \\if\\SignatureImageSet true%
             \\IfFileExists{attachments/\\SignatureImage}{%
                 \\includegraphics[width=1.5in,height=0.5in,keepaspectratio]{attachments/\\SignatureImage}\\\\[6pt]%
             }{}%
@@ -1875,7 +1876,7 @@ const LATEX_TEMPLATES = {
     \\hspace{3.25in}%
     \\begin{minipage}{3in}
         \\raggedright
-        \\ifx\\SignatureImage\\empty\\else
+        \\if\\SignatureImageSet true%
             \\IfFileExists{attachments/\\SignatureImage}{%
                 \\includegraphics[width=1.5in,height=0.5in,keepaspectratio]{attachments/\\SignatureImage}\\\\[6pt]%
             }{}%
@@ -2000,7 +2001,7 @@ const LATEX_TEMPLATES = {
     \\hspace{3.25in}%
     \\begin{minipage}{3in}
         \\raggedright
-        \\ifx\\SignatureImage\\empty\\else
+        \\if\\SignatureImageSet true%
             \\IfFileExists{attachments/\\SignatureImage}{%
                 \\includegraphics[width=1.5in,height=0.5in,keepaspectratio]{attachments/\\SignatureImage}\\\\[6pt]%
             }{}%
@@ -2101,7 +2102,7 @@ const LATEX_TEMPLATES = {
     \\hspace{3.25in}%
     \\begin{minipage}{3in}
         \\raggedright
-        \\ifx\\SignatureImage\\empty\\else
+        \\if\\SignatureImageSet true%
             \\IfFileExists{attachments/\\SignatureImage}{%
                 \\includegraphics[width=1.5in,height=0.5in,keepaspectratio]{attachments/\\SignatureImage}\\\\[6pt]%
             }{}%
@@ -2603,7 +2604,7 @@ const LATEX_TEMPLATES = {
     \\hspace{3.25in}%
     \\begin{minipage}{3in}
         \\raggedright
-        \\ifx\\SignatureImage\\empty\\else
+        \\if\\SignatureImageSet true%
             \\IfFileExists{attachments/\\SignatureImage}{%
                 \\includegraphics[width=1.5in,height=0.5in,keepaspectratio]{attachments/\\SignatureImage}\\\\[6pt]%
             }{}%
@@ -2747,7 +2748,7 @@ const LATEX_TEMPLATES = {
     \\hspace{3.25in}%
     \\begin{minipage}{3in}
         \\raggedright
-        \\ifx\\SignatureImage\\empty\\else
+        \\if\\SignatureImageSet true%
             \\IfFileExists{attachments/\\SignatureImage}{%
                 \\includegraphics[width=1.5in,height=0.5in,keepaspectratio]{attachments/\\SignatureImage}\\\\[6pt]%
             }{}%
@@ -2906,7 +2907,7 @@ const LATEX_TEMPLATES = {
     \\hspace{3.25in}%
     \\begin{minipage}{3in}
         \\raggedright
-        \\ifx\\SignatureImage\\empty\\else
+        \\if\\SignatureImageSet true%
             \\IfFileExists{attachments/\\SignatureImage}{%
                 \\includegraphics[width=1.5in,height=0.5in,keepaspectratio]{attachments/\\SignatureImage}\\\\[6pt]%
             }{}%
@@ -3021,7 +3022,7 @@ const LATEX_TEMPLATES = {
     \\hspace{3.25in}%
     \\begin{minipage}{3in}
         \\raggedright
-        \\ifx\\SignatureImage\\empty\\else
+        \\if\\SignatureImageSet true%
             \\IfFileExists{attachments/\\SignatureImage}{%
                 \\includegraphics[width=1.5in,height=0.5in,keepaspectratio]{attachments/\\SignatureImage}\\\\[6pt]%
             }{}%
@@ -3157,7 +3158,7 @@ const LATEX_TEMPLATES = {
     \\hspace{3.25in}%
     \\begin{minipage}{3in}
         \\raggedright
-        \\ifx\\SignatureImage\\empty\\else
+        \\if\\SignatureImageSet true%
             \\IfFileExists{attachments/\\SignatureImage}{%
                 \\includegraphics[width=1.5in,height=0.5in,keepaspectratio]{attachments/\\SignatureImage}\\\\[6pt]%
             }{}%
@@ -3332,7 +3333,7 @@ const LATEX_TEMPLATES = {
     \\hspace{3.25in}%
     \\begin{minipage}{3in}
         \\raggedright
-        \\ifx\\SignatureImage\\empty\\else
+        \\if\\SignatureImageSet true%
             \\IfFileExists{attachments/\\SignatureImage}{%
                 \\includegraphics[width=1.5in,height=0.5in,keepaspectratio]{attachments/\\SignatureImage}\\\\[6pt]%
             }{}%
@@ -3476,7 +3477,7 @@ const LATEX_TEMPLATES = {
     \\hspace{3.25in}%
     \\begin{minipage}{3in}
         \\raggedright
-        \\ifx\\SignatureImage\\empty\\else
+        \\if\\SignatureImageSet true%
             \\IfFileExists{attachments/\\SignatureImage}{%
                 \\includegraphics[width=1.5in,height=0.5in,keepaspectratio]{attachments/\\SignatureImage}\\\\[6pt]%
             }{}%
