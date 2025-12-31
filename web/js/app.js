@@ -1812,7 +1812,9 @@ function escapeLatexUrl(url) {
  * 2. PDF enclosures show up in the enclosure list but NO placeholder (JS appends them)
  */
 function generateEnclosuresTex() {
-    console.log('generateEnclosuresTex called, enclosures:', enclosures);
+    console.log('generateEnclosuresTex called');
+    console.log('  enclosures.length:', enclosures.length);
+    console.log('  enclosures:', JSON.stringify(enclosures, null, 2));
     if (enclosures.length === 0) {
         console.log('No enclosures, returning empty');
         return '% No enclosures\n';
@@ -1828,7 +1830,9 @@ ${enclosures.map((e, i) => {
     // LaTeX will recognize this and NOT create a placeholder page
     // JS will append the actual PDF pages later
     const filename = (e.file && e.file.data) ? 'JSPDF' : '';
-    return `\\enclosure{${i + 1}}{${filename}}{${escapeLatex(e.title || 'Untitled')}}`;
+    const line = `\\enclosure{${i + 1}}{${filename}}{${escapeLatex(e.title || 'Untitled')}}`;
+    console.log('  enclosure line:', line);
+    return line;
 }).join('\n')}
 `;
     console.log('Generated enclosures.tex:', tex);
