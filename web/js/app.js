@@ -15,6 +15,15 @@ const MARGIN_TOP = 72;
 const MARGIN_BOTTOM = 72;
 const CONTENT_WIDTH = PAGE_WIDTH - MARGIN_LEFT - MARGIN_RIGHT;
 
+// Storage keys
+const STORAGE_KEY_PROFILES = 'libo_profiles';
+const STORAGE_KEY_DRAFT = 'libo_draft';
+const STORAGE_KEY_REFS = 'libo_draft_refs';
+const STORAGE_KEY_ENCLS = 'libo_draft_encls';
+
+// Auto-save debounce timer
+let autoSaveTimer = null;
+
 // =============================================================================
 // SWIFTLATEX ENGINE
 // =============================================================================
@@ -3189,6 +3198,295 @@ async function generateFormPDFWithPdfLib(data) {
 }
 
 // =============================================================================
+// PROFILE MANAGEMENT
+// =============================================================================
+
+/**
+ * Get all saved profiles
+ */
+function getProfiles() {
+    try {
+        const data = localStorage.getItem(STORAGE_KEY_PROFILES);
+        return data ? JSON.parse(data) : {};
+    } catch (e) {
+        console.error('Error loading profiles:', e);
+        return {};
+    }
+}
+
+/**
+ * Save profiles to localStorage
+ */
+function saveProfiles(profiles) {
+    try {
+        localStorage.setItem(STORAGE_KEY_PROFILES, JSON.stringify(profiles));
+    } catch (e) {
+        console.error('Error saving profiles:', e);
+    }
+}
+
+/**
+ * Populate the profile dropdown
+ */
+function populateProfileDropdown() {
+    const select = document.getElementById('profileSelect');
+    const profiles = getProfiles();
+
+    // Clear existing options except the first
+    select.innerHTML = '<option value="">-- Select Profile --</option>';
+
+    // Add saved profiles
+    for (const name of Object.keys(profiles).sort()) {
+        const option = document.createElement('option');
+        option.value = name;
+        option.textContent = name;
+        select.appendChild(option);
+    }
+}
+
+/**
+ * Save current form data as a profile
+ */
+function saveProfileAs() {
+    const name = prompt('Enter profile name (e.g., "1/6 - SSgt Smith"):');
+    if (!name || !name.trim()) return;
+
+    const profileName = name.trim();
+    const profiles = getProfiles();
+
+    // Check if overwriting
+    if (profiles[profileName]) {
+        if (!confirm(`Profile "${profileName}" already exists. Overwrite?`)) {
+            return;
+        }
+    }
+
+    // Save profile data (only user-specific fields, not document content)
+    profiles[profileName] = {
+        // Letterhead
+        unitLine1: document.getElementById('unitLine1').value,
+        unitLine2: document.getElementById('unitLine2').value,
+        unitAddress: document.getElementById('unitAddress').value,
+        // Signatory
+        from: document.getElementById('from').value,
+        sigFirst: document.getElementById('sigFirst').value,
+        sigMiddle: document.getElementById('sigMiddle').value,
+        sigLast: document.getElementById('sigLast').value,
+        sigRank: document.getElementById('sigRank').value,
+        sigTitle: document.getElementById('sigTitle').value,
+        // Classification defaults
+        cuiControlledBy: document.getElementById('cuiControlledBy').value,
+        pocEmail: document.getElementById('pocEmail').value,
+    };
+
+    saveProfiles(profiles);
+    populateProfileDropdown();
+
+    // Select the newly saved profile
+    document.getElementById('profileSelect').value = profileName;
+
+    showAutoSaveStatus('Profile saved!');
+}
+
+/**
+ * Load selected profile
+ */
+function loadProfile() {
+    const select = document.getElementById('profileSelect');
+    const profileName = select.value;
+
+    if (!profileName) return;
+
+    const profiles = getProfiles();
+    const profile = profiles[profileName];
+
+    if (!profile) return;
+
+    // Apply profile data to form
+    if (profile.unitLine1 !== undefined) document.getElementById('unitLine1').value = profile.unitLine1;
+    if (profile.unitLine2 !== undefined) document.getElementById('unitLine2').value = profile.unitLine2;
+    if (profile.unitAddress !== undefined) document.getElementById('unitAddress').value = profile.unitAddress;
+    if (profile.from !== undefined) document.getElementById('from').value = profile.from;
+    if (profile.sigFirst !== undefined) document.getElementById('sigFirst').value = profile.sigFirst;
+    if (profile.sigMiddle !== undefined) document.getElementById('sigMiddle').value = profile.sigMiddle;
+    if (profile.sigLast !== undefined) document.getElementById('sigLast').value = profile.sigLast;
+    if (profile.sigRank !== undefined) document.getElementById('sigRank').value = profile.sigRank;
+    if (profile.sigTitle !== undefined) document.getElementById('sigTitle').value = profile.sigTitle;
+    if (profile.cuiControlledBy !== undefined) document.getElementById('cuiControlledBy').value = profile.cuiControlledBy;
+    if (profile.pocEmail !== undefined) document.getElementById('pocEmail').value = profile.pocEmail;
+
+    showAutoSaveStatus('Profile loaded');
+    updatePreview();
+}
+
+/**
+ * Delete selected profile
+ */
+function deleteProfile() {
+    const select = document.getElementById('profileSelect');
+    const profileName = select.value;
+
+    if (!profileName) {
+        alert('Please select a profile to delete.');
+        return;
+    }
+
+    if (!confirm(`Delete profile "${profileName}"?`)) {
+        return;
+    }
+
+    const profiles = getProfiles();
+    delete profiles[profileName];
+    saveProfiles(profiles);
+
+    populateProfileDropdown();
+    showAutoSaveStatus('Profile deleted');
+}
+
+
+// =============================================================================
+// DRAFT AUTO-SAVE
+// =============================================================================
+
+/**
+ * Show auto-save status message
+ */
+function showAutoSaveStatus(message) {
+    const status = document.getElementById('autoSaveStatus');
+    status.textContent = message;
+    status.className = 'auto-save-status saved';
+
+    setTimeout(() => {
+        status.textContent = '';
+        status.className = 'auto-save-status';
+    }, 2000);
+}
+
+/**
+ * Save current draft to localStorage
+ */
+function saveDraft() {
+    try {
+        const data = collectData();
+        localStorage.setItem(STORAGE_KEY_DRAFT, JSON.stringify(data));
+
+        // Save references and enclosures separately (they're arrays)
+        localStorage.setItem(STORAGE_KEY_REFS, JSON.stringify(references));
+        // Note: enclosures contain File objects which can't be serialized
+        // We'll save the metadata only
+        const enclMeta = enclosures.map(e => ({
+            name: e.name,
+            title: e.title
+            // file: cannot be serialized
+        }));
+        localStorage.setItem(STORAGE_KEY_ENCLS, JSON.stringify(enclMeta));
+
+        showAutoSaveStatus('Draft saved');
+    } catch (e) {
+        console.error('Error saving draft:', e);
+    }
+}
+
+/**
+ * Schedule auto-save (debounced)
+ */
+function scheduleAutoSave() {
+    if (autoSaveTimer) {
+        clearTimeout(autoSaveTimer);
+    }
+
+    const status = document.getElementById('autoSaveStatus');
+    status.textContent = 'Saving...';
+    status.className = 'auto-save-status saving';
+
+    autoSaveTimer = setTimeout(() => {
+        saveDraft();
+    }, 1000); // Save 1 second after last change
+}
+
+/**
+ * Restore draft from localStorage
+ */
+function restoreDraft() {
+    try {
+        const draftJson = localStorage.getItem(STORAGE_KEY_DRAFT);
+        if (!draftJson) return false;
+
+        const data = JSON.parse(draftJson);
+
+        // Restore form fields
+        for (const [key, value] of Object.entries(data)) {
+            const el = document.getElementById(key);
+            if (el) {
+                if (el.type === 'checkbox') {
+                    el.checked = value;
+                } else {
+                    el.value = value;
+                }
+            }
+        }
+
+        // Restore references
+        const refsJson = localStorage.getItem(STORAGE_KEY_REFS);
+        if (refsJson) {
+            references = JSON.parse(refsJson);
+            renderReferences();
+        }
+
+        // Restore enclosure metadata (files need to be re-uploaded)
+        const enclJson = localStorage.getItem(STORAGE_KEY_ENCLS);
+        if (enclJson) {
+            const enclMeta = JSON.parse(enclJson);
+            if (enclMeta.length > 0) {
+                // Show a hint that enclosures need to be re-uploaded
+                console.log('Enclosure metadata restored. Files need to be re-uploaded.');
+            }
+        }
+
+        // Update UI based on restored docType
+        updateDocTypeFields();
+
+        return true;
+    } catch (e) {
+        console.error('Error restoring draft:', e);
+        return false;
+    }
+}
+
+/**
+ * Clear draft and reset form
+ */
+function clearDraft() {
+    if (!confirm('Clear all form data and start fresh?')) {
+        return;
+    }
+
+    // Clear localStorage
+    localStorage.removeItem(STORAGE_KEY_DRAFT);
+    localStorage.removeItem(STORAGE_KEY_REFS);
+    localStorage.removeItem(STORAGE_KEY_ENCLS);
+
+    // Reset form to defaults
+    location.reload();
+}
+
+/**
+ * Hook into form inputs to trigger auto-save
+ */
+function initAutoSave() {
+    // Add listeners to all form inputs
+    const inputs = document.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+        // Skip profile select to avoid saving when loading profile
+        if (input.id === 'profileSelect') return;
+
+        input.addEventListener('input', scheduleAutoSave);
+        input.addEventListener('change', scheduleAutoSave);
+    });
+}
+
+
+// =============================================================================
 // INITIALIZATION
 // =============================================================================
 
@@ -3202,6 +3500,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize drag-drop for PDF uploads
     initDragDrop();
 
+    // Populate profile dropdown
+    populateProfileDropdown();
+
+    // Restore draft if exists
+    const restored = restoreDraft();
+    if (restored) {
+        showAutoSaveStatus('Draft restored');
+    }
+
     // Initialize references and enclosures lists
     renderReferences();
     renderEnclosures();
@@ -3211,6 +3518,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialize mobile responsive features
     initMobilePreview();
+
+    // Initialize auto-save
+    initAutoSave();
 
     // Initialize PDF preview (this replaces updatePreview for initial load)
     initPdfPreview();
