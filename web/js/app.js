@@ -101,7 +101,10 @@ async function initLatexEngine() {
 
         // Wait for worker to process all preload messages
         // postMessage is async, so we need to give the worker time to process
-        await new Promise(resolve => setTimeout(resolve, 200));
+        // Increased from 200ms to 1000ms to ensure all TFM fonts are preloaded
+        console.log('Waiting for worker to process preload messages...');
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        console.log('Preload wait complete');
 
         engineReady = true;
         engineLoading = false;
@@ -132,7 +135,8 @@ async function compileLatex() {
     pdfTexEngine.makeMemFSFolder('enclosures');
 
     // Test with minimal document first (for debugging)
-    const USE_MINIMAL_TEST = false; // Set to true to test basic compilation
+    // Set to true to test basic compilation without complex packages
+    const USE_MINIMAL_TEST = true; // DEBUGGING: testing minimal document
 
     if (USE_MINIMAL_TEST) {
         const minimalTex = `\\documentclass{article}
