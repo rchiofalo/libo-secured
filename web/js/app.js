@@ -205,9 +205,9 @@ Hello World!
 \\end{document}`;
         pdfTexEngine.writeMemFSFile('main.tex', minimalTex);
     } else {
-        // Write main.tex from templates
-        if (window.LATEX_TEMPLATES && window.LATEX_TEMPLATES['main.tex']) {
-            pdfTexEngine.writeMemFSFile('main.tex', window.LATEX_TEMPLATES['main.tex']);
+        // Write main.tex from templates (stored at tex/main.tex after consolidation)
+        if (window.LATEX_TEMPLATES && window.LATEX_TEMPLATES['tex/main.tex']) {
+            pdfTexEngine.writeMemFSFile('tex/main.tex', window.LATEX_TEMPLATES['tex/main.tex']);
         } else {
             throw new Error('LaTeX templates not loaded');
         }
