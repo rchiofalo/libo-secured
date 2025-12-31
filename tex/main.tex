@@ -711,6 +711,10 @@
 %                            REFERENCES BLOCK
 %=============================================================================
 
+% Counter to track number of references
+\newcounter{refcount}
+\setcounter{refcount}{0}
+
 \makeatletter
 \newcommand{\setRefURL}[2]{%
     \expandafter\gdef\csname ref@url@#1\endcsname{#2}%
@@ -721,6 +725,7 @@
 
 \makeatletter
 \newcommand{\refitem}[2]{%
+    \stepcounter{refcount}%
     \@ifundefined{ref@url@#1}{%
         (#1) #2\\%
     }{%
@@ -729,15 +734,23 @@
 }
 \makeatother
 
+% Pre-load references to count them (sets refcount)
+\input{references}
+
 % SECNAV M-5216.5 Ch 7, Para 10.c: 4 spaces after "Ref:"
+% Only print if there are references
 \newcommand{\printReferences}{%
-    \vspace{12pt}
-    \noindent
-    \begin{tabular}{@{}l@{}p{5.9in}@{}}
-        Ref:\hspace{4\fontdimen2\font} & \begin{minipage}[t]{5.9in}
-                   \input{references}
-               \end{minipage}
-    \end{tabular}%
+    \ifnum\value{refcount}>0
+        \vspace{12pt}
+        \noindent
+        \begin{tabular}{@{}l@{}p{5.9in}@{}}
+            Ref:\hspace{4\fontdimen2\font} & \begin{minipage}[t]{5.9in}
+                       % Reset counter and re-input to actually display
+                       \setcounter{refcount}{0}%
+                       \input{references}
+                   \end{minipage}
+        \end{tabular}%
+    \fi
 }
 
 
@@ -822,6 +835,9 @@
     \renewcommand{\footrulewidth}{0pt}%
 }
 
+% Helper to check for JSPDF marker (PDF will be appended by JavaScript)
+\newcommand{\jspdfmarker}{JSPDF}
+
 \makeatletter
 \newcommand{\includeEnclosures}{%
     \ifnum\value{enclmax}>0
@@ -836,7 +852,7 @@
                 % Reset page counter for this enclosure
                 \setcounter{enclpagenum}{1}%
                 \ifx\currentfile\empty
-                    % No PDF - create placeholder page
+                    % No PDF - create placeholder page for text-only enclosure
                     \newpage
                     \hypertarget{enclosure\currentenclnum}{}%
                     \thispagestyle{enclosurefirstpage}%
@@ -848,25 +864,31 @@
                         \textit{(Physical document attached separately)}
                     \end{center}
                 \else
-                    % Include PDF with proper SECNAV enclosure marking
-                    \includepdf[
-                        pages=-,
-                        scale=0.85,
-                        frame,
-                        pagecommand={%
-                            % Capture current page number for footer before incrementing
-                            \xdef\currentenclpagenum{\arabic{enclpagenum}}%
-                            % Set hyperlink target on first page
-                            \ifnum\value{enclpagenum}=1
-                                \hypertarget{enclosure\currentenclnum}{}%
-                                \thispagestyle{enclosurefirstpage}%
-                            \else
-                                \thispagestyle{enclosurepage}%
-                            \fi
-                            % Increment page counter for next page
-                            \stepcounter{enclpagenum}%
-                        }
-                    ]{enclosures/\currentfile}
+                    \ifx\currentfile\jspdfmarker
+                        % JSPDF marker: JavaScript will append this PDF
+                        % Do NOT create placeholder - JS handles it
+                    \else
+                        % Include PDF with proper SECNAV enclosure marking
+                        % (Note: SwiftLaTeX doesn't support \includepdf)
+                        \includepdf[
+                            pages=-,
+                            scale=0.85,
+                            frame,
+                            pagecommand={%
+                                % Capture current page number for footer before incrementing
+                                \xdef\currentenclpagenum{\arabic{enclpagenum}}%
+                                % Set hyperlink target on first page
+                                \ifnum\value{enclpagenum}=1
+                                    \hypertarget{enclosure\currentenclnum}{}%
+                                    \thispagestyle{enclosurefirstpage}%
+                                \else
+                                    \thispagestyle{enclosurepage}%
+                                \fi
+                                % Increment page counter for next page
+                                \stepcounter{enclpagenum}%
+                            }
+                        ]{enclosures/\currentfile}
+                    \fi
                 \fi
             }%
         \repeat
