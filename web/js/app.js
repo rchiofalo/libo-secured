@@ -256,29 +256,61 @@ Hello World!
 
 const docTypeConfig = {
     // Letters - have letterhead, SSIC, From/To
-    naval_letter: { letterhead: true, ssic: true, fromTo: true, via: true, memoHeader: false, signature: 'abbrev' },
-    standard_letter: { letterhead: false, ssic: true, fromTo: true, via: true, memoHeader: false, signature: 'abbrev' },
-    business_letter: { letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: false, signature: 'full', business: true },
-    multiple_address_letter: { letterhead: true, ssic: true, fromTo: true, via: true, memoHeader: false, signature: 'abbrev' },
-    joint_letter: { letterhead: true, ssic: true, fromTo: true, via: false, memoHeader: false, signature: 'abbrev' },
+    naval_letter: { letterhead: true, ssic: true, fromTo: true, via: true, memoHeader: false, signature: 'abbrev', uiMode: 'standard' },
+    standard_letter: { letterhead: false, ssic: true, fromTo: true, via: true, memoHeader: false, signature: 'abbrev', uiMode: 'standard' },
+    business_letter: { letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: false, signature: 'full', business: true, uiMode: 'standard' },
+    multiple_address_letter: { letterhead: true, ssic: true, fromTo: true, via: true, memoHeader: false, signature: 'abbrev', uiMode: 'standard' },
+    joint_letter: { letterhead: true, ssic: true, fromTo: true, via: false, memoHeader: false, signature: 'abbrev', uiMode: 'joint' },
     // Endorsements
-    same_page_endorsement: { letterhead: false, ssic: false, fromTo: true, via: false, memoHeader: false, signature: 'abbrev', endorsement: true },
-    new_page_endorsement: { letterhead: true, ssic: true, fromTo: true, via: false, memoHeader: false, signature: 'abbrev', endorsement: true },
+    same_page_endorsement: { letterhead: false, ssic: false, fromTo: true, via: false, memoHeader: false, signature: 'abbrev', endorsement: true, uiMode: 'standard' },
+    new_page_endorsement: { letterhead: true, ssic: true, fromTo: true, via: false, memoHeader: false, signature: 'abbrev', endorsement: true, uiMode: 'standard' },
     // Memorandums
-    mfr: { letterhead: false, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM FOR THE RECORD', signature: 'full' },
-    plain_paper_memorandum: { letterhead: false, ssic: false, fromTo: true, via: false, memoHeader: 'MEMORANDUM', signature: 'full' },
-    letterhead_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'MEMORANDUM', signature: 'full' },
-    decision_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'DECISION MEMORANDUM', signature: 'full' },
-    moa: { letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM OF AGREEMENT', signature: 'full' },
-    mou: { letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM OF UNDERSTANDING', signature: 'full' },
-    joint_memorandum: { letterhead: true, ssic: true, fromTo: true, via: false, memoHeader: 'JOINT MEMORANDUM', signature: 'full' },
+    mfr: { letterhead: false, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM FOR THE RECORD', signature: 'full', uiMode: 'standard' },
+    plain_paper_memorandum: { letterhead: false, ssic: false, fromTo: true, via: false, memoHeader: 'MEMORANDUM', signature: 'full', uiMode: 'standard' },
+    letterhead_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'MEMORANDUM', signature: 'full', uiMode: 'standard' },
+    decision_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'DECISION MEMORANDUM', signature: 'full', uiMode: 'standard' },
+    moa: { letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM OF AGREEMENT', signature: 'full', uiMode: 'moa' },
+    mou: { letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM OF UNDERSTANDING', signature: 'full', uiMode: 'moa' },
+    joint_memorandum: { letterhead: true, ssic: true, fromTo: true, via: false, memoHeader: 'JOINT MEMORANDUM', signature: 'full', uiMode: 'joint' },
     // Executive
-    standard_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'MEMORANDUM', signature: 'full' },
-    action_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'ACTION MEMORANDUM', signature: 'full' },
-    information_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'INFORMATION MEMORANDUM', signature: 'full' },
+    standard_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'MEMORANDUM', signature: 'full', uiMode: 'standard' },
+    action_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'ACTION MEMORANDUM', signature: 'full', uiMode: 'standard' },
+    information_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'INFORMATION MEMORANDUM', signature: 'full', uiMode: 'standard' },
     // USMC-Specific
-    mf: { letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM FOR', signature: 'full', memoFor: true }
+    mf: { letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM FOR', signature: 'full', memoFor: true, uiMode: 'standard' }
 };
+
+/**
+ * Update UI fields visibility based on document type
+ */
+function updateDocTypeFields() {
+    const docType = document.getElementById('docType').value;
+    const config = docTypeConfig[docType] || docTypeConfig.naval_letter;
+    const uiMode = config.uiMode || 'standard';
+
+    // Hide all mode-specific sections
+    document.getElementById('standardAddressing').style.display = 'none';
+    document.getElementById('moaFields').style.display = 'none';
+    document.getElementById('jointFields').style.display = 'none';
+    document.getElementById('standardSignature').style.display = 'none';
+    document.getElementById('moaSignatures').style.display = 'none';
+    document.getElementById('jointSignatures').style.display = 'none';
+
+    // Show appropriate sections based on uiMode
+    if (uiMode === 'moa') {
+        document.getElementById('moaFields').style.display = 'block';
+        document.getElementById('moaSignatures').style.display = 'block';
+    } else if (uiMode === 'joint') {
+        document.getElementById('jointFields').style.display = 'block';
+        document.getElementById('jointSignatures').style.display = 'block';
+    } else {
+        document.getElementById('standardAddressing').style.display = 'block';
+        document.getElementById('standardSignature').style.display = 'block';
+    }
+
+    // Update preview
+    updatePreview();
+}
 
 // =============================================================================
 // UI HELPERS
@@ -534,11 +566,47 @@ function collectData() {
         // Refs/Body
         refs: document.getElementById('refs').value,
         body: document.getElementById('body').value,
+        // Standard signature
         sigFirst: document.getElementById('sigFirst').value,
         sigMiddle: document.getElementById('sigMiddle').value,
         sigLast: document.getElementById('sigLast').value,
         sigRank: document.getElementById('sigRank').value,
-        sigTitle: document.getElementById('sigTitle').value
+        sigTitle: document.getElementById('sigTitle').value,
+        // MOA/MOU fields
+        seniorCommandName: document.getElementById('seniorCommandName').value,
+        seniorSSIC: document.getElementById('seniorSSIC').value,
+        seniorSerial: document.getElementById('seniorSerial').value,
+        seniorDate: document.getElementById('seniorDate').value,
+        juniorCommandName: document.getElementById('juniorCommandName').value,
+        juniorSSIC: document.getElementById('juniorSSIC').value,
+        juniorSerial: document.getElementById('juniorSerial').value,
+        juniorDate: document.getElementById('juniorDate').value,
+        moaSubject: document.getElementById('moaSubject').value,
+        seniorSigName: document.getElementById('seniorSigName').value,
+        seniorSigRank: document.getElementById('seniorSigRank').value,
+        seniorSigTitle: document.getElementById('seniorSigTitle').value,
+        juniorSigName: document.getElementById('juniorSigName').value,
+        juniorSigRank: document.getElementById('juniorSigRank').value,
+        juniorSigTitle: document.getElementById('juniorSigTitle').value,
+        // Joint Letter/Memo fields
+        jointSeniorName: document.getElementById('jointSeniorName').value,
+        jointSeniorCode: document.getElementById('jointSeniorCode').value,
+        jointSeniorZip: document.getElementById('jointSeniorZip').value,
+        jointSeniorFrom: document.getElementById('jointSeniorFrom').value,
+        jointJuniorName: document.getElementById('jointJuniorName').value,
+        jointJuniorCode: document.getElementById('jointJuniorCode').value,
+        jointJuniorZip: document.getElementById('jointJuniorZip').value,
+        jointJuniorSSIC: document.getElementById('jointJuniorSSIC').value,
+        jointJuniorSerial: document.getElementById('jointJuniorSerial').value,
+        jointJuniorDate: document.getElementById('jointJuniorDate').value,
+        jointJuniorFrom: document.getElementById('jointJuniorFrom').value,
+        jointCommonLocation: document.getElementById('jointCommonLocation').value,
+        jointTo: document.getElementById('jointTo').value,
+        jointSubject: document.getElementById('jointSubject').value,
+        jointSeniorSigName: document.getElementById('jointSeniorSigName').value,
+        jointSeniorSigTitle: document.getElementById('jointSeniorSigTitle').value,
+        jointJuniorSigName: document.getElementById('jointJuniorSigName').value,
+        jointJuniorSigTitle: document.getElementById('jointJuniorSigTitle').value
     };
 }
 
@@ -832,7 +900,10 @@ function escapeLatex(str) {
  * Generate config/document.tex
  */
 function generateDocumentTex(data) {
-    return `%=============================================================================
+    const config = docTypeConfig[data.docType] || docTypeConfig.naval_letter;
+    const uiMode = config.uiMode || 'standard';
+
+    let tex = `%=============================================================================
 % DOCUMENT CONFIGURATION - Generated by libo-secured
 %=============================================================================
 
@@ -844,7 +915,74 @@ function generateDocumentTex(data) {
 
 ${data.inReplyTo ? '\\enableInReplyReferTo' : '% \\enableInReplyReferTo'}
 
+`;
+
+    // MOA/MOU specific configuration
+    if (uiMode === 'moa') {
+        tex += `% MOA/MOU Configuration
+\\setSeniorCommand{${escapeLatex(data.seniorCommandName)}}
+\\setSSIC{${escapeLatex(data.seniorSSIC)}}
+\\setSerial{${escapeLatex(data.seniorSerial)}}
+\\setDocumentDate{${escapeLatex(data.seniorDate)}}
+
+\\setJuniorCommand
+    {${escapeLatex(data.juniorCommandName)}}
+    {${escapeLatex(data.juniorSSIC)}}
+    {${escapeLatex(data.juniorSerial)}}
+    {${escapeLatex(data.juniorDate)}}
+    {${escapeLatex(data.juniorSigName)}}
+    {${escapeLatex(data.juniorSigRank)}}
+    {${escapeLatex(data.juniorSigTitle)}}
+
+\\setSubject{${escapeLatex(data.moaSubject)}}
+
+\\setBusinessSalutation{Dear Sir or Madam:}
+\\setBusinessClose{Very respectfully,}
+
+\\setPOC{example@usmc.mil}
+`;
+    }
+    // Joint Letter/Memo specific configuration
+    else if (uiMode === 'joint') {
+        tex += `% Joint Letter/Memo Configuration
+\\setSeniorCommand
+    {${escapeLatex(data.jointSeniorName)}}
+    {${escapeLatex(data.jointSeniorZip)}}
+    {${escapeLatex(data.jointSeniorCode)}}
+    {${escapeLatex(data.jointSeniorFrom)}}
+
 \\setSSIC{${escapeLatex(data.ssic)}}
+\\setSerial{${escapeLatex(data.serial)}}
+\\setDocumentDate{${escapeLatex(data.date)}}
+
+\\setJuniorCommand
+    {${escapeLatex(data.jointJuniorName)}}
+    {${escapeLatex(data.jointJuniorZip)}}
+    {${escapeLatex(data.jointJuniorCode)}}
+    {${escapeLatex(data.jointJuniorSSIC)}}
+    {${escapeLatex(data.jointJuniorSerial)}}
+    {${escapeLatex(data.jointJuniorDate)}}
+    {${escapeLatex(data.jointJuniorSigName)}}
+    {${escapeLatex(data.jointJuniorSigTitle)}}
+    {${escapeLatex(data.jointJuniorFrom)}}
+
+\\setCommonLocation{${escapeLatex(data.jointCommonLocation)}}
+
+\\setTo
+    {${escapeLatex(data.jointTo)}}
+    {}{}{}
+
+\\setSubject{${escapeLatex(data.jointSubject)}}
+
+\\setBusinessSalutation{Dear Sir or Madam:}
+\\setBusinessClose{Very respectfully,}
+
+\\setPOC{example@usmc.mil}
+`;
+    }
+    // Standard configuration
+    else {
+        tex += `\\setSSIC{${escapeLatex(data.ssic)}}
 \\setSerial{${escapeLatex(data.serial)}}
 \\setDocumentDate{${escapeLatex(data.date)}}
 
@@ -869,6 +1007,9 @@ ${data.via.trim() ? `\\setVia
 
 \\setPOC{example@usmc.mil}
 `;
+    }
+
+    return tex;
 }
 
 /**
@@ -891,6 +1032,41 @@ function generateLetterheadTex(data) {
  * Generate config/signatory.tex
  */
 function generateSignatoryTex(data) {
+    const config = docTypeConfig[data.docType] || docTypeConfig.naval_letter;
+    const uiMode = config.uiMode || 'standard';
+
+    // For MOA/MOU, use the senior signatory fields
+    if (uiMode === 'moa') {
+        return `%=============================================================================
+% SIGNATURE CONFIGURATION - Generated by libo-secured (MOA/MOU)
+%=============================================================================
+
+% Senior command signatory (signs last)
+\\setSignatoryName{${escapeLatex(data.seniorSigName)}}
+\\setSignatoryAbbrev{${escapeLatex(data.seniorSigName.toUpperCase())}}
+\\renewcommand{\\SignatoryRank}{${escapeLatex(data.seniorSigRank)}}
+\\renewcommand{\\SignatoryTitle}{${escapeLatex(data.seniorSigTitle)}}
+
+\\setSignatureImage{}
+`;
+    }
+
+    // For Joint Letter/Memo, use joint signatory fields
+    if (uiMode === 'joint') {
+        return `%=============================================================================
+% SIGNATURE CONFIGURATION - Generated by libo-secured (Joint)
+%=============================================================================
+
+% Senior command signatory (signs last)
+\\setSignatoryName{${escapeLatex(data.jointSeniorSigName)}}
+\\setSignatoryAbbrev{${escapeLatex(data.jointSeniorSigName.toUpperCase())}}
+\\renewcommand{\\SignatoryTitle}{${escapeLatex(data.jointSeniorSigTitle)}}
+
+\\setSignatureImage{}
+`;
+    }
+
+    // Standard signature
     const fullName = getFullSignature(data);
     const abbrevName = getAbbrevSignature(data);
 

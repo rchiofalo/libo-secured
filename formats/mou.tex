@@ -72,26 +72,27 @@
     \begin{tabular}[t]{@{}p{3in}@{\hfill}p{3in}@{}}
         % Senior command (LEFT)
         \begin{tabular}[t]{@{}l@{}}
-            \DocumentSSIC\\
-            \DocumentSerial\\
-            \DocumentDate
+            \optionalLine{\DocumentSSIC}%
+            \optionalLine{\DocumentSerial}%
+            \optionalField{\DocumentDate}%
         \end{tabular}
         &
         % Junior command (RIGHT)
         \begin{tabular}[t]{@{}l@{}}
-            \JuniorSSIC\\
-            \JuniorSerial\\
-            \JuniorDate
+            \optionalLine{\JuniorSSIC}%
+            \optionalLine{\JuniorSerial}%
+            \optionalField{\JuniorDate}%
         \end{tabular}
-    \end{tabular}\\[24pt]
+    \end{tabular}
+    \par\vspace{24pt}%
     %
     % Title block - centered (MOU instead of MOA)
     \begin{center}
         MEMORANDUM OF UNDERSTANDING\\
         BETWEEN\\
-        \MakeUppercase{\SeniorCommandName}\\
+        \ifNotEmptyElse{\SeniorCommandName}{\MakeUppercase{\SeniorCommandName}\\}{[SENIOR COMMAND]\\}%
         AND\\
-        \MakeUppercase{\JuniorCommandName}
+        \ifNotEmptyElse{\JuniorCommandName}{\MakeUppercase{\JuniorCommandName}}{[JUNIOR COMMAND]}%
     \end{center}
     \vspace{12pt}
 }
