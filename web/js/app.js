@@ -322,18 +322,22 @@ function addEnclosure(title = '', file = null) {
         } : null
     };
 
-    // If file provided, read it
+    enclosures.push(enclosure);
+    renderEnclosures();
+    updatePreview();
+
+    // If file provided, read it and update preview when ready
     if (file) {
         const reader = new FileReader();
         reader.onload = function (e) {
             enclosure.file.data = e.target.result;
+            // Trigger PDF preview update to include the new enclosure
+            if (engineReady) {
+                schedulePdfPreviewUpdate();
+            }
         };
         reader.readAsArrayBuffer(file);
     }
-
-    enclosures.push(enclosure);
-    renderEnclosures();
-    updatePreview();
 }
 
 /**
@@ -370,6 +374,10 @@ function attachFileToEnclosure(index, file) {
             data: e.target.result
         };
         renderEnclosures();
+        // Trigger PDF preview update to include the new enclosure
+        if (engineReady) {
+            schedulePdfPreviewUpdate();
+        }
     };
     reader.readAsArrayBuffer(file);
 }
@@ -1465,13 +1473,44 @@ async function updatePdfPreview(retryAfterReset = false) {
         // Compile LaTeX document
         const pdfBytes = await compileLatex();
 
+        // Get enclosures with attached PDF files
+        const enclosuresWithFiles = enclosures.filter(e => e.file && e.file.data);
+
+        let finalPdfBytes = pdfBytes;
+
+        // Merge enclosure PDFs if any
+        if (enclosuresWithFiles.length > 0) {
+            setPdfPreviewStatus(`Merging ${enclosuresWithFiles.length} enclosure(s)...`, 'loading');
+
+            const { PDFDocument } = PDFLib;
+            const mergedPdf = await PDFDocument.create();
+
+            // Load and copy main document pages
+            const mainDoc = await PDFDocument.load(pdfBytes);
+            const mainPages = await mergedPdf.copyPages(mainDoc, mainDoc.getPageIndices());
+            mainPages.forEach(page => mergedPdf.addPage(page));
+
+            // Append each enclosure PDF
+            for (const encl of enclosuresWithFiles) {
+                try {
+                    const enclDoc = await PDFDocument.load(encl.file.data);
+                    const enclPages = await mergedPdf.copyPages(enclDoc, enclDoc.getPageIndices());
+                    enclPages.forEach(page => mergedPdf.addPage(page));
+                } catch (enclError) {
+                    console.warn(`Could not merge enclosure "${encl.title}":`, enclError);
+                }
+            }
+
+            finalPdfBytes = await mergedPdf.save();
+        }
+
         // Revoke previous blob URL to free memory
         if (currentPdfUrl) {
             URL.revokeObjectURL(currentPdfUrl);
         }
 
         // Create blob URL for the PDF
-        const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+        const blob = new Blob([finalPdfBytes], { type: 'application/pdf' });
         currentPdfUrl = URL.createObjectURL(blob);
 
         // Display in iframe
