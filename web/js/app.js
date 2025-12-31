@@ -2653,11 +2653,11 @@ let lastY = 0;
 
 /**
  * Switch between correspondence and forms mode
+ * Note: Forms mode is currently disabled (coming soon)
  */
 function switchMode(mode) {
     // Forms mode is currently disabled
     if (mode === 'forms') {
-        showFormsInfo();
         return;
     }
 
@@ -2675,20 +2675,6 @@ function switchMode(mode) {
     if (mode === 'forms') {
         initSignaturePad();
     }
-}
-
-/**
- * Show the Forms info modal
- */
-function showFormsInfo() {
-    document.getElementById('formsInfoModal').style.display = 'flex';
-}
-
-/**
- * Close the Forms info modal
- */
-function closeFormsInfo() {
-    document.getElementById('formsInfoModal').style.display = 'none';
 }
 
 /**
