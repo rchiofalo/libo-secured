@@ -205,33 +205,35 @@ Hello World!
 \\end{document}`;
         pdfTexEngine.writeMemFSFile('main.tex', minimalTex);
     } else {
-        // Write main.tex from templates (stored at tex/main.tex after consolidation)
+        // Write main.tex from templates (stored at tex/main.tex, written to root for SwiftLaTeX)
         if (window.LATEX_TEMPLATES && window.LATEX_TEMPLATES['tex/main.tex']) {
-            pdfTexEngine.writeMemFSFile('tex/main.tex', window.LATEX_TEMPLATES['tex/main.tex']);
+            pdfTexEngine.writeMemFSFile('main.tex', window.LATEX_TEMPLATES['tex/main.tex']);
         } else {
             throw new Error('LaTeX templates not loaded');
         }
     }
 
-    // Write format files from templates (tex/templates/)
+    // Write format files from templates (tex/templates/ -> root level for SwiftLaTeX)
     for (const [filename, content] of Object.entries(window.LATEX_TEMPLATES)) {
         if (filename.startsWith('tex/templates/')) {
-            pdfTexEngine.writeMemFSFile(filename, content);
+            // Strip tex/templates/ prefix - SwiftLaTeX doesn't support subdirectories
+            const flatName = filename.replace('tex/templates/', '');
+            pdfTexEngine.writeMemFSFile(flatName, content);
         }
     }
 
-    // Generate and write config files dynamically from form data (tex/)
-    pdfTexEngine.writeMemFSFile('tex/document.tex', generateDocumentTex(data));
-    pdfTexEngine.writeMemFSFile('tex/letterhead.tex', generateLetterheadTex(data));
-    pdfTexEngine.writeMemFSFile('tex/signatory.tex', generateSignatoryTex(data));
-    pdfTexEngine.writeMemFSFile('tex/references.tex', generateReferencesTex());
-    pdfTexEngine.writeMemFSFile('tex/reference-urls.tex', generateReferenceUrlsTex());
-    pdfTexEngine.writeMemFSFile('tex/enclosures.tex', generateEnclosuresTex());
-    pdfTexEngine.writeMemFSFile('tex/body.tex', generateBodyTex(data));
-    pdfTexEngine.writeMemFSFile('tex/classification.tex', generateClassificationTex(data));
+    // Generate and write config files dynamically (all at root level for SwiftLaTeX)
+    pdfTexEngine.writeMemFSFile('document.tex', generateDocumentTex(data));
+    pdfTexEngine.writeMemFSFile('letterhead.tex', generateLetterheadTex(data));
+    pdfTexEngine.writeMemFSFile('signatory.tex', generateSignatoryTex(data));
+    pdfTexEngine.writeMemFSFile('references.tex', generateReferencesTex());
+    pdfTexEngine.writeMemFSFile('reference-urls.tex', generateReferenceUrlsTex());
+    pdfTexEngine.writeMemFSFile('enclosures.tex', generateEnclosuresTex());
+    pdfTexEngine.writeMemFSFile('body.tex', generateBodyTex(data));
+    pdfTexEngine.writeMemFSFile('classification.tex', generateClassificationTex(data));
 
     // Set main file and compile
-    pdfTexEngine.setEngineMainFile('tex/main.tex');
+    pdfTexEngine.setEngineMainFile('main.tex');
 
     showStatus('Compiling LaTeX...', 'success');
     const result = await pdfTexEngine.compileLaTeX();
