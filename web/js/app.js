@@ -599,7 +599,7 @@ function renderEnclosures() {
 }
 
 /**
- * Initialize drag-and-drop for enclosure reordering
+ * Initialize drag-and-drop for enclosure reordering (mouse + touch)
  */
 function initEnclosureDragDrop() {
     const container = document.getElementById('enclosuresList');
@@ -608,6 +608,7 @@ function initEnclosureDragDrop() {
     let draggedItem = null;
     let draggedIndex = null;
 
+    // Mouse drag events
     items.forEach(item => {
         item.addEventListener('dragstart', (e) => {
             draggedItem = item;
@@ -621,7 +622,6 @@ function initEnclosureDragDrop() {
             item.classList.remove('dragging');
             draggedItem = null;
             draggedIndex = null;
-            // Remove all drag-over states
             items.forEach(i => i.classList.remove('drag-over-above', 'drag-over-below'));
         });
 
@@ -634,10 +634,8 @@ function initEnclosureDragDrop() {
             const rect = item.getBoundingClientRect();
             const midY = rect.top + rect.height / 2;
 
-            // Remove previous indicators
             items.forEach(i => i.classList.remove('drag-over-above', 'drag-over-below'));
 
-            // Add indicator based on mouse position
             if (e.clientY < midY) {
                 item.classList.add('drag-over-above');
             } else {
@@ -658,20 +656,179 @@ function initEnclosureDragDrop() {
             const rect = item.getBoundingClientRect();
             const midY = rect.top + rect.height / 2;
 
-            // Determine insert position
             let newIndex = e.clientY < midY ? targetIndex : targetIndex + 1;
 
-            // Adjust for removal of original item
             if (draggedIndex < newIndex) {
                 newIndex--;
             }
 
-            // Reorder the array
             reorderEnclosure(draggedIndex, newIndex);
 
-            // Remove indicators
             items.forEach(i => i.classList.remove('drag-over-above', 'drag-over-below'));
         });
+    });
+
+    // Touch drag events for mobile
+    initTouchDragForList(container, 'enclosure-item', 'enclosure-drag-handle', reorderEnclosure);
+}
+
+/**
+ * Generic touch drag handler for sortable lists
+ * @param {HTMLElement} container - The list container
+ * @param {string} itemClass - CSS class of draggable items
+ * @param {string} handleClass - CSS class of drag handle
+ * @param {Function} reorderFn - Function to call with (fromIndex, toIndex)
+ */
+function initTouchDragForList(container, itemClass, handleClass, reorderFn) {
+    let touchDraggedItem = null;
+    let touchDraggedIndex = null;
+    let touchClone = null;
+    let touchStartY = 0;
+    let scrollInterval = null;
+
+    container.addEventListener('touchstart', (e) => {
+        const handle = e.target.closest('.' + handleClass);
+        if (!handle) return;
+
+        const item = handle.closest('.' + itemClass);
+        if (!item) return;
+
+        e.preventDefault();
+        touchDraggedItem = item;
+        touchDraggedIndex = parseInt(item.dataset.index);
+        touchStartY = e.touches[0].clientY;
+
+        // Create a clone for visual feedback
+        touchClone = item.cloneNode(true);
+        touchClone.classList.add('touch-dragging-clone');
+        touchClone.style.position = 'fixed';
+        touchClone.style.left = item.getBoundingClientRect().left + 'px';
+        touchClone.style.top = e.touches[0].clientY - 20 + 'px';
+        touchClone.style.width = item.offsetWidth + 'px';
+        touchClone.style.zIndex = '9999';
+        touchClone.style.opacity = '0.9';
+        touchClone.style.pointerEvents = 'none';
+        touchClone.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+        document.body.appendChild(touchClone);
+
+        item.classList.add('dragging');
+    }, { passive: false });
+
+    container.addEventListener('touchmove', (e) => {
+        if (!touchDraggedItem || !touchClone) return;
+
+        e.preventDefault();
+        const touchY = e.touches[0].clientY;
+
+        // Move the clone
+        touchClone.style.top = touchY - 20 + 'px';
+
+        // Auto-scroll if near edges
+        const scrollThreshold = 50;
+        if (touchY < scrollThreshold) {
+            if (!scrollInterval) {
+                scrollInterval = setInterval(() => window.scrollBy(0, -10), 16);
+            }
+        } else if (touchY > window.innerHeight - scrollThreshold) {
+            if (!scrollInterval) {
+                scrollInterval = setInterval(() => window.scrollBy(0, 10), 16);
+            }
+        } else {
+            if (scrollInterval) {
+                clearInterval(scrollInterval);
+                scrollInterval = null;
+            }
+        }
+
+        // Find which item we're over
+        const items = container.querySelectorAll('.' + itemClass);
+        items.forEach(item => item.classList.remove('drag-over-above', 'drag-over-below'));
+
+        for (const item of items) {
+            if (item === touchDraggedItem) continue;
+
+            const rect = item.getBoundingClientRect();
+            if (touchY >= rect.top && touchY <= rect.bottom) {
+                const midY = rect.top + rect.height / 2;
+                if (touchY < midY) {
+                    item.classList.add('drag-over-above');
+                } else {
+                    item.classList.add('drag-over-below');
+                }
+                break;
+            }
+        }
+    }, { passive: false });
+
+    container.addEventListener('touchend', (e) => {
+        if (!touchDraggedItem) return;
+
+        // Clear auto-scroll
+        if (scrollInterval) {
+            clearInterval(scrollInterval);
+            scrollInterval = null;
+        }
+
+        // Remove clone
+        if (touchClone) {
+            touchClone.remove();
+            touchClone = null;
+        }
+
+        // Find drop target
+        const items = container.querySelectorAll('.' + itemClass);
+        let targetIndex = touchDraggedIndex;
+        let insertAfter = false;
+
+        for (const item of items) {
+            if (item.classList.contains('drag-over-above')) {
+                targetIndex = parseInt(item.dataset.index);
+                break;
+            }
+            if (item.classList.contains('drag-over-below')) {
+                targetIndex = parseInt(item.dataset.index) + 1;
+                insertAfter = true;
+                break;
+            }
+        }
+
+        // Adjust for removal
+        if (touchDraggedIndex < targetIndex && !insertAfter) {
+            targetIndex--;
+        } else if (touchDraggedIndex < targetIndex && insertAfter) {
+            targetIndex--;
+        }
+
+        // Clean up
+        touchDraggedItem.classList.remove('dragging');
+        items.forEach(item => item.classList.remove('drag-over-above', 'drag-over-below'));
+
+        // Reorder if position changed
+        if (targetIndex !== touchDraggedIndex) {
+            reorderFn(touchDraggedIndex, targetIndex);
+        }
+
+        touchDraggedItem = null;
+        touchDraggedIndex = null;
+    });
+
+    // Handle touch cancel
+    container.addEventListener('touchcancel', () => {
+        if (scrollInterval) {
+            clearInterval(scrollInterval);
+            scrollInterval = null;
+        }
+        if (touchClone) {
+            touchClone.remove();
+            touchClone = null;
+        }
+        if (touchDraggedItem) {
+            touchDraggedItem.classList.remove('dragging');
+        }
+        const items = container.querySelectorAll('.' + itemClass);
+        items.forEach(item => item.classList.remove('drag-over-above', 'drag-over-below'));
+        touchDraggedItem = null;
+        touchDraggedIndex = null;
     });
 }
 
@@ -775,7 +932,7 @@ function renderReferences() {
 }
 
 /**
- * Initialize drag-and-drop for reference reordering
+ * Initialize drag-and-drop for reference reordering (mouse + touch)
  */
 function initReferenceDragDrop() {
     const container = document.getElementById('referencesList');
@@ -784,6 +941,7 @@ function initReferenceDragDrop() {
     let draggedItem = null;
     let draggedIndex = null;
 
+    // Mouse drag events
     items.forEach(item => {
         item.addEventListener('dragstart', (e) => {
             draggedItem = item;
@@ -842,6 +1000,9 @@ function initReferenceDragDrop() {
             items.forEach(i => i.classList.remove('drag-over-above', 'drag-over-below'));
         });
     });
+
+    // Touch drag events for mobile
+    initTouchDragForList(container, 'reference-item', 'reference-drag-handle', reorderReference);
 }
 
 /**
@@ -2155,6 +2316,7 @@ async function mergeEnclosurePdfs(mainPdfBytes) {
 // Debounce timer for PDF preview
 let pdfPreviewTimer = null;
 let currentPdfUrl = null;
+let currentPdfBytes = null; // Store raw bytes for iOS compatibility
 
 /**
  * Update the PDF preview status message
@@ -2181,6 +2343,14 @@ function hidePdfPreviewStatus() {
 }
 
 /**
+ * Check if running on iOS
+ */
+function isIOS() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+}
+
+/**
  * Compile and display PDF in the preview iframe
  * Note: Enclosure PDFs are now embedded by LaTeX via \includepdf, not merged by JS.
  */
@@ -2197,6 +2367,9 @@ async function updatePdfPreview(retryAfterReset = false) {
         // Merge enclosure PDFs if any
         const finalPdfBytes = await mergeEnclosurePdfs(pdfBytes);
 
+        // Store raw bytes for iOS compatibility
+        currentPdfBytes = finalPdfBytes;
+
         // Revoke previous blob URL to free memory
         if (currentPdfUrl) {
             URL.revokeObjectURL(currentPdfUrl);
@@ -2206,7 +2379,7 @@ async function updatePdfPreview(retryAfterReset = false) {
         const blob = new Blob([finalPdfBytes], { type: 'application/pdf' });
         currentPdfUrl = URL.createObjectURL(blob);
 
-        // Display in iframe
+        // Display in iframe (even if hidden on mobile, keep it updated)
         frame.src = currentPdfUrl;
 
         // Hide status after successful compilation
@@ -2318,18 +2491,35 @@ function updateMobileUI() {
 
 /**
  * Open fullscreen PDF preview modal (mobile)
+ * Uses data URL on iOS for better compatibility
  */
 function openMobilePreview() {
     const modal = document.getElementById('pdfPreviewModal');
     const modalFrame = document.getElementById('modalPdfFrame');
-    const mainFrame = document.getElementById('pdfPreviewFrame');
 
-    if (modal && modalFrame && mainFrame) {
-        // Copy the current PDF to modal frame
-        modalFrame.src = mainFrame.src;
-        modal.classList.add('active');
-        document.body.classList.add('modal-open');
+    if (!modal || !modalFrame) return;
+
+    // On iOS, use data URL for better blob handling
+    // On other platforms, use the blob URL directly
+    if (isIOS() && currentPdfBytes) {
+        // Convert bytes to base64 data URL for iOS
+        const base64 = btoa(
+            new Uint8Array(currentPdfBytes).reduce((data, byte) => data + String.fromCharCode(byte), '')
+        );
+        modalFrame.src = 'data:application/pdf;base64,' + base64;
+    } else if (currentPdfUrl) {
+        // Use blob URL on other platforms
+        modalFrame.src = currentPdfUrl;
+    } else {
+        // Fallback: try main frame src
+        const mainFrame = document.getElementById('pdfPreviewFrame');
+        if (mainFrame && mainFrame.src) {
+            modalFrame.src = mainFrame.src;
+        }
     }
+
+    modal.classList.add('active');
+    document.body.classList.add('modal-open');
 }
 
 /**
