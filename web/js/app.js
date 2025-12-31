@@ -21,8 +21,14 @@ const STORAGE_KEY_DRAFT = 'libo_draft';
 const STORAGE_KEY_REFS = 'libo_draft_refs';
 const STORAGE_KEY_ENCLS = 'libo_draft_encls';
 
+// Draft data version (increment when format changes)
+const DRAFT_VERSION = '1.0';
+
 // Auto-save debounce timer
 let autoSaveTimer = null;
+
+// Pending restore callback
+let pendingRestoreCallback = null;
 
 // =============================================================================
 // SWIFTLATEX ENGINE
@@ -3343,6 +3349,85 @@ function deleteProfile() {
     showAutoSaveStatus('Profile deleted');
 }
 
+/**
+ * Export all profiles to a JSON file
+ */
+function exportProfiles() {
+    const profiles = getProfiles();
+
+    if (Object.keys(profiles).length === 0) {
+        alert('No profiles to export. Save a profile first.');
+        return;
+    }
+
+    const exportData = {
+        version: '1.0',
+        exportedAt: new Date().toISOString(),
+        profiles: profiles
+    };
+
+    const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `libo-profiles-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    showAutoSaveStatus('Profiles exported!');
+}
+
+/**
+ * Import profiles from a JSON file
+ */
+function importProfiles(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            const importData = JSON.parse(e.target.result);
+
+            // Validate structure
+            if (!importData.profiles || typeof importData.profiles !== 'object') {
+                throw new Error('Invalid profile file format');
+            }
+
+            const existingProfiles = getProfiles();
+            const importedCount = Object.keys(importData.profiles).length;
+
+            // Check for conflicts
+            const conflicts = Object.keys(importData.profiles).filter(name => existingProfiles[name]);
+
+            let proceed = true;
+            if (conflicts.length > 0) {
+                proceed = confirm(
+                    `${conflicts.length} profile(s) already exist:\n${conflicts.join(', ')}\n\nOverwrite existing profiles?`
+                );
+            }
+
+            if (proceed) {
+                // Merge profiles
+                const mergedProfiles = { ...existingProfiles, ...importData.profiles };
+                saveProfiles(mergedProfiles);
+                populateProfileDropdown();
+                showAutoSaveStatus(`Imported ${importedCount} profile(s)`);
+            }
+        } catch (err) {
+            console.error('Error importing profiles:', err);
+            alert('Failed to import profiles. Make sure the file is a valid libo-profiles JSON file.');
+        }
+    };
+    reader.readAsText(file);
+
+    // Reset file input so same file can be selected again
+    event.target.value = '';
+}
+
 
 // =============================================================================
 // DRAFT AUTO-SAVE
@@ -3363,12 +3448,52 @@ function showAutoSaveStatus(message) {
 }
 
 /**
+ * Get relative time string (e.g., "2 hours ago", "yesterday")
+ */
+function getRelativeTime(date) {
+    const now = new Date();
+    const diffMs = now - date;
+    const diffSecs = Math.floor(diffMs / 1000);
+    const diffMins = Math.floor(diffSecs / 60);
+    const diffHours = Math.floor(diffMins / 60);
+    const diffDays = Math.floor(diffHours / 24);
+
+    if (diffSecs < 60) {
+        return 'just now';
+    } else if (diffMins < 60) {
+        return `${diffMins} minute${diffMins > 1 ? 's' : ''} ago`;
+    } else if (diffHours < 24) {
+        return `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
+    } else if (diffDays === 1) {
+        return 'yesterday';
+    } else if (diffDays < 7) {
+        return `${diffDays} days ago`;
+    } else {
+        // Format as date
+        return date.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit'
+        });
+    }
+}
+
+/**
  * Save current draft to localStorage
  */
 function saveDraft() {
     try {
         const data = collectData();
-        localStorage.setItem(STORAGE_KEY_DRAFT, JSON.stringify(data));
+
+        // Add metadata
+        const draftData = {
+            version: DRAFT_VERSION,
+            savedAt: new Date().toISOString(),
+            formData: data
+        };
+
+        localStorage.setItem(STORAGE_KEY_DRAFT, JSON.stringify(draftData));
 
         // Save references and enclosures separately (they're arrays)
         localStorage.setItem(STORAGE_KEY_REFS, JSON.stringify(references));
@@ -3405,14 +3530,78 @@ function scheduleAutoSave() {
 }
 
 /**
- * Restore draft from localStorage
+ * Check for saved draft and show restore modal if found
+ * Returns true if a draft exists and modal is shown
+ */
+function checkForDraft() {
+    try {
+        const draftJson = localStorage.getItem(STORAGE_KEY_DRAFT);
+        if (!draftJson) return false;
+
+        const draftData = JSON.parse(draftJson);
+
+        // Check version compatibility
+        if (draftData.version !== DRAFT_VERSION) {
+            console.log('Draft version mismatch, clearing old draft');
+            clearDraftStorage();
+            return false;
+        }
+
+        // Check if we have actual form data
+        if (!draftData.formData || Object.keys(draftData.formData).length === 0) {
+            return false;
+        }
+
+        // Show restore modal with timestamp
+        const savedAt = new Date(draftData.savedAt);
+        const relativeTime = getRelativeTime(savedAt);
+
+        document.getElementById('restoreTimestamp').textContent = relativeTime;
+        document.getElementById('restoreModal').style.display = 'flex';
+
+        return true;
+    } catch (e) {
+        console.error('Error checking for draft:', e);
+        return false;
+    }
+}
+
+/**
+ * Handle user's restore decision from modal
+ */
+function confirmRestore(shouldRestore) {
+    document.getElementById('restoreModal').style.display = 'none';
+
+    if (shouldRestore) {
+        restoreDraft();
+        showAutoSaveStatus('Draft restored');
+    } else {
+        clearDraftStorage();
+        showAutoSaveStatus('Started fresh');
+    }
+}
+
+/**
+ * Clear draft from storage without resetting form
+ */
+function clearDraftStorage() {
+    localStorage.removeItem(STORAGE_KEY_DRAFT);
+    localStorage.removeItem(STORAGE_KEY_REFS);
+    localStorage.removeItem(STORAGE_KEY_ENCLS);
+}
+
+/**
+ * Restore draft data to form
  */
 function restoreDraft() {
     try {
         const draftJson = localStorage.getItem(STORAGE_KEY_DRAFT);
         if (!draftJson) return false;
 
-        const data = JSON.parse(draftJson);
+        const draftData = JSON.parse(draftJson);
+
+        // Extract form data from wrapper (or use data directly for old format)
+        const data = draftData.formData || draftData;
 
         // Restore form fields
         for (const [key, value] of Object.entries(data)) {
@@ -3438,7 +3627,6 @@ function restoreDraft() {
         if (enclJson) {
             const enclMeta = JSON.parse(enclJson);
             if (enclMeta.length > 0) {
-                // Show a hint that enclosures need to be re-uploaded
                 console.log('Enclosure metadata restored. Files need to be re-uploaded.');
             }
         }
@@ -3503,11 +3691,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Populate profile dropdown
     populateProfileDropdown();
 
-    // Restore draft if exists
-    const restored = restoreDraft();
-    if (restored) {
-        showAutoSaveStatus('Draft restored');
-    }
+    // Check for saved draft and show restore modal if exists
+    checkForDraft();
 
     // Initialize references and enclosures lists
     renderReferences();
