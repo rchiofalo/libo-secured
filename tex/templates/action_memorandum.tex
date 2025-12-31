@@ -15,7 +15,7 @@
 %   - Length: One page (unless complex)
 %   - Style: Short, concise bullet statements (black dot preferred)
 %   - Font: Times New Roman, 12-point
-%   - Margins: 1" all sides
+%   - Margins: 2" top first page (may reduce to 1.75"), 1" sides/bottom
 %   - Spacing: Double space between headings and bullets
 %   - Page numbers: Bottom center, starting page 2
 %   - Assembly: Do NOT staple or use clam clips
@@ -56,6 +56,8 @@
 %=============================================================================
 
 \newcommand{\printDateAndTitle}{%
+    % SECNAV Ch 12: 2" top margin on first page (1" from geometry + 1" here)
+    \vspace*{1in}%
     \begin{center}
         \textbf{ACTION MEMO}
     \end{center}
@@ -108,8 +110,12 @@
         }%
         % Required: Name (use abbreviated if available, else full name uppercased)
         \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev\\}{\MakeUppercase{\SignatoryName}\\}%
+        % Optional: Rank
+        \optionalLine{\SignatoryRank}%
         % Optional: Title
-        \optionalField{\SignatoryTitle}%
+        \optionalLine{\SignatoryTitle}%
+        % Optional: By direction authority line (e.g., "By direction of the Commander")
+        \optionalField{\ByDirection}%
     \end{minipage}
 }
 

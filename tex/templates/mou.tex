@@ -130,7 +130,8 @@
             \rule{2in}{0.4pt}\\
             \MakeUppercase{\JuniorSignatoryName}\\
             \optionalLine{\JuniorSignatoryRank}%
-            \optionalField{\JuniorSignatoryTitle}%
+            \optionalLine{\JuniorSignatoryTitle}%
+            \optionalField{\JuniorByDirection}%
         \end{minipage}
         &
         % Senior command signature (RIGHT) - signs LAST
@@ -139,7 +140,8 @@
             \rule{2in}{0.4pt}\\
             \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev\\}{\MakeUppercase{\SignatoryName}\\}%
             \optionalLine{\SignatoryRank}%
-            \optionalField{\SignatoryTitle}%
+            \optionalLine{\SignatoryTitle}%
+            \optionalField{\ByDirection}%
         \end{minipage}
     \end{tabular}
 }

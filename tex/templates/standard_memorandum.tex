@@ -111,7 +111,9 @@
         % Required: Name (use abbreviated if available, else full name uppercased)
         \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev\\}{\MakeUppercase{\SignatoryName}\\}%
         % Optional: Title
-        \optionalField{\SignatoryTitle}%
+        \optionalLine{\SignatoryTitle}%
+        % Optional: By direction authority line
+        \optionalField{\ByDirection}%
     \end{minipage}%
     %
     % Distribution list (if 16+ addressees)

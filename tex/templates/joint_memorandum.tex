@@ -142,14 +142,16 @@
         \begin{minipage}[t]{2.5in}
             \raggedright
             \MakeUppercase{\JuniorSignatoryName}\\
-            \optionalField{\JuniorSignatoryTitle}%
+            \optionalLine{\JuniorSignatoryTitle}%
+            \optionalField{\JuniorByDirection}%
         \end{minipage}
         &
         % Senior command signature (RIGHT) - signs LAST
         \begin{minipage}[t]{2.5in}
             \raggedright
             \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev\\}{\MakeUppercase{\SignatoryName}\\}%
-            \optionalField{\SignatoryTitle}%
+            \optionalLine{\SignatoryTitle}%
+            \optionalField{\ByDirection}%
         \end{minipage}
     \end{tabular}
 }

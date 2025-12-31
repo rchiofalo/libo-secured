@@ -105,7 +105,7 @@
 % Use \setSignatoryAbbrev{J. M. SMITH} in config/signatory.tex
 
 \newcommand{\printSignature}{%
-    \vspace{36pt}%  % ~3 lines, close to "fourth line below"
+    \vspace{48pt}%  % 4 blank lines below text per SECNAV Ch 7, Para 14
     \hspace{3.25in}%
     \begin{minipage}{3in}
         \raggedright
@@ -116,7 +116,9 @@
             }{}%
         }%
         % Required: Use abbreviated format (J. M. LASTNAME) if set, otherwise full name
-        \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev}{\MakeUppercase{\SignatoryName}}%
+        \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev\\}{\MakeUppercase{\SignatoryName}\\}%
+        % Optional: By direction authority line (e.g., "By direction")
+        \optionalField{\ByDirection}%
     \end{minipage}
 }
 

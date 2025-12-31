@@ -96,7 +96,9 @@
             }{}%
         }%
         % Required: Name only (abbreviated format preferred)
-        \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev}{\MakeUppercase{\SignatoryName}}%
+        \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev\\}{\MakeUppercase{\SignatoryName}\\}%
+        % Optional: By direction authority line
+        \optionalField{\ByDirection}%
     \end{minipage}
 }
 

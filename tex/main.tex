@@ -471,6 +471,18 @@
 \newcommand{\BusinessClose}{}
 \newcommand{\setBusinessClose}[1]{\renewcommand{\BusinessClose}{#1}}
 
+% Business letter date format: Month spelled out (January 5, 2015)
+\newcommand{\BusinessDate}{}
+\newcommand{\setBusinessDate}[1]{\renewcommand{\BusinessDate}{#1}}
+
+% Business letter attention line (optional)
+\newcommand{\AttentionLine}{}
+\newcommand{\setAttentionLine}[1]{\renewcommand{\AttentionLine}{#1}}
+
+% Business letter enclosures (mentioned in body, listed after signature)
+\newcommand{\BusinessEnclosures}{}
+\newcommand{\setBusinessEnclosures}[1]{\renewcommand{\BusinessEnclosures}{#1}}
+
 
 %-----------------------------------------------------------------------------
 % POC Email
@@ -591,6 +603,10 @@
 \newcommand{\setSignatoryName}[1]{\renewcommand{\SignatoryName}{#1}}
 \newcommand{\setSignatoryAbbrev}[1]{\renewcommand{\SignatoryAbbrev}{#1}}
 
+% By direction authority line (e.g., "By direction", "By direction of the Commander")
+\newcommand{\ByDirection}{}
+\newcommand{\setByDirection}[1]{\renewcommand{\ByDirection}{#1}}
+
 % setSignatureImage: If non-empty, redefine SignatureImage so \ifx check works
 \newcommand{\setSignatureImage}[1]{%
     \def\temp{#1}%
@@ -618,6 +634,7 @@
 \newcommand{\JuniorSignatoryName}{}
 \newcommand{\JuniorSignatoryRank}{}
 \newcommand{\JuniorSignatoryTitle}{}
+\newcommand{\JuniorByDirection}{}
 \newcommand{\JuniorFromLine}{}
 
 \newcommand{\CommonLocation}{}

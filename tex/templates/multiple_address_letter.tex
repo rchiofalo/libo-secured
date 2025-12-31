@@ -28,8 +28,11 @@
 %=============================================================================
 %                    DISTRIBUTION LIST CONFIGURATION
 %=============================================================================
-% For Method 2 and 3: List of distribution addressees
+% SECNAV Ch 8 distinguishes between:
+%   - Distribution: = ACTION addressees (who must take action)
+%   - Copy to: = INFO addressees (for information only)
 
+% Distribution list (action addressees) - for Method 2 and 3
 \newcommand{\DistributionList}{}
 \newcommand{\setDistribution}[1]{\renewcommand{\DistributionList}{#1}}
 
@@ -38,6 +41,10 @@
 \DistributionEnabledfalse
 
 \newcommand{\enableDistribution}{\DistributionEnabledtrue}
+
+% Copy to list (info addressees) - separate from Distribution
+\newcommand{\CopyToList}{}
+\newcommand{\setCopyTo}[1]{\renewcommand{\CopyToList}{#1}}
 
 
 %=============================================================================
@@ -123,18 +130,27 @@
         }%
         % Required: Name (use abbreviated if available, else full name uppercased)
         \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev\\}{\MakeUppercase{\SignatoryName}\\}%
-        % Optional: Rank and Title
+        % Optional: Rank
         \optionalLine{\SignatoryRank}%
-        \optionalField{\SignatoryTitle}%
+        % Optional: Title
+        \optionalLine{\SignatoryTitle}%
+        % Optional: By direction authority line
+        \optionalField{\ByDirection}%
     \end{minipage}%
     %
-    % Distribution line (for Method 2 and 3)
+    % Distribution line (for Method 2 and 3) - ACTION addressees
     \ifDistributionEnabled
-        \vspace{24pt}%
-
+        \par\vspace{24pt}%
         \noindent Distribution:\\
         \DistributionList
     \fi
+    %
+    % Copy to line - INFO addressees (separate from Distribution)
+    \ifNotEmpty{\CopyToList}{%
+        \par\vspace{24pt}%
+        \noindent Copy to:\\
+        \CopyToList
+    }%
 }
 
 

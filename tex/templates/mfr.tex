@@ -84,7 +84,9 @@
         \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev\\}{\MakeUppercase{\SignatoryName}\\}%
         % Optional: Rank and Title
         \optionalLine{\SignatoryRank}%
-        \optionalField{\SignatoryTitle}%
+        \optionalLine{\SignatoryTitle}%
+        % Optional: By direction authority line
+        \optionalField{\ByDirection}%
     \end{minipage}
 }
 
