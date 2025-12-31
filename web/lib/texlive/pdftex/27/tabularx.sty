@@ -97,7 +97,7 @@
   \global\TX@cols\@ne
   \TX@typeout@
     {\@spaces Table Width\@spaces Column Width\@spaces X Columns}%
-   \SuspendTagging {tabularx}%
+   %% Removed \SuspendTagging for SwiftLaTeX 2020 compatibility
   \TX@trial{\def\NC@rewrite@X{%
           \global\advance\TX@cols\@ne\NC@find p{\TX@col@width}}}%
   \loop
@@ -105,7 +105,7 @@
     \ifTX@
     \TX@trial{}%
   \repeat
-  \ResumeTagging {tabularx}%
+  %% Removed \ResumeTagging for SwiftLaTeX 2020 compatibility
   {\let\@footnotetext\TX@ftntext\let\@xfootnotenext\TX@xftntext
     \csname tabular*\expandafter\endcsname\expandafter\TX@target
       \the\toks@
