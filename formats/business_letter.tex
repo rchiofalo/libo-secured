@@ -37,8 +37,8 @@
     % CUI block
     \ifCUIEnabled
         \par\vspace{12pt}%
-        \noindent \textbf{CUI//\CUICategory}\\
-        \noindent \CUIDistStatement
+        \noindent \textbf{CUI//\CUICategory}%
+        \par\noindent \CUIDistStatement
     \fi
 }
 
@@ -77,7 +77,7 @@
 \fancypagestyle{documentpage}{%
     \fancyhf{}%
     \fancyhead[C]{\placeClassificationMarkings}%
-    \fancyfoot[C]{\thepage\ of \pageref{LastPage}}%
+    \fancyfoot[C]{\smartPageNumber}%
     \renewcommand{\headrulewidth}{0pt}%
     \renewcommand{\footrulewidth}{0pt}%
 }

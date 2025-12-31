@@ -104,6 +104,20 @@
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 
+% Smart page numbering: Shows "X of Y" only when Y is known (requires 2 passes)
+% On first pass or single-page docs, shows just page number or nothing
+\makeatletter
+\newcommand{\smartPageNumber}{%
+    \@ifundefined{r@LastPage}{%
+        % LastPage not defined yet (first pass) - show just page number
+        \thepage
+    }{%
+        % LastPage defined - show "X of Y"
+        \thepage\ of \pageref{LastPage}%
+    }%
+}
+\makeatother
+
 
 %-----------------------------------------------------------------------------
 % GRAPHICS AND COLORS
