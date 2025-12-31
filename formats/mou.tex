@@ -148,17 +148,17 @@
             \centering
             \rule{2in}{0.4pt}\\
             \MakeUppercase{\JuniorSignatoryName}\\
-            \JuniorSignatoryRank\\
-            \JuniorSignatoryTitle
+            \optionalLine{\JuniorSignatoryRank}%
+            \optionalField{\JuniorSignatoryTitle}%
         \end{minipage}
         &
         % Senior command signature (RIGHT) - signs LAST
         \begin{minipage}[t]{2.5in}
             \centering
             \rule{2in}{0.4pt}\\
-            \MakeUppercase{\SignatoryName}\\
-            \SignatoryRank\\
-            \SignatoryTitle
+            \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev\\}{\MakeUppercase{\SignatoryName}\\}%
+            \optionalLine{\SignatoryRank}%
+            \optionalField{\SignatoryTitle}%
         \end{minipage}
     \end{tabular}
 }

@@ -461,6 +461,66 @@
 
 
 %=============================================================================
+%                    CONDITIONAL/OPTIONAL FIELD HELPERS
+%=============================================================================
+% These macros allow format templates to conditionally print fields.
+% Use these for OPTIONAL fields that may or may not be provided.
+% REQUIRED fields per SECNAV compliance should be printed directly.
+%
+% Available helpers:
+%   \optionalLine{macro}        - Prints macro\\ if non-empty
+%   \optionalField{macro}       - Prints macro if non-empty (no newline)
+%   \optionalWithLabel{Label}{macro} - Prints "Label: macro\\" if non-empty
+%   \ifNotEmpty{macro}{content} - Executes content if macro is non-empty
+%   \ifNotEmptyElse{macro}{if-set}{if-empty} - Branch based on macro value
+%
+% Usage examples:
+%   \optionalLine{\SignatoryRank}     % Prints "Major\\" or nothing
+%   \optionalField{\SignatoryTitle}   % Prints title or nothing
+%   \ifNotEmpty{\SignatureImage}{...} % Conditional block
+%=============================================================================
+
+% Print field followed by \\ if non-empty, nothing if empty
+% Usage: \optionalLine{\SignatoryRank}
+\newcommand{\optionalLine}[1]{%
+    \ifx#1\empty\else#1\\\fi
+}
+
+% Print field without trailing newline if non-empty
+% Usage: \optionalField{\SignatoryTitle}
+\newcommand{\optionalField}[1]{%
+    \ifx#1\empty\else#1\fi
+}
+
+% Print "Label: value\\" if value is non-empty
+% Usage: \optionalWithLabel{POC}{\POCEmail}
+\newcommand{\optionalWithLabel}[2]{%
+    \ifx#2\empty\else#1: #2\\\fi
+}
+
+% Execute content if macro is non-empty
+% Usage: \ifNotEmpty{\SignatoryRank}{Rank: \SignatoryRank\\}
+\newcommand{\ifNotEmpty}[2]{%
+    \ifx#1\empty\else#2\fi
+}
+
+% Execute first content if non-empty, else execute second content
+% Usage: \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev}{\MakeUppercase{\SignatoryName}}
+\newcommand{\ifNotEmptyElse}[3]{%
+    \ifx#1\empty#3\else#2\fi
+}
+
+% Legacy compatibility - string-based field name version
+\newcommand{\ifHasValue}[2]{%
+    \expandafter\ifx\csname #1\endcsname\empty\else#2\fi
+}
+
+\newcommand{\ifHasValueElse}[3]{%
+    \expandafter\ifx\csname #1\endcsname\empty#3\else#2\fi
+}
+
+
+%=============================================================================
 %                        SIGNATORY CONFIGURATION
 %=============================================================================
 % SECNAV M-5216.5 Ch 7, Para 14.a.(1):
