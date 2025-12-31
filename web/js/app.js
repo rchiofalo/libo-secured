@@ -767,6 +767,11 @@ function updatePreview() {
     } else {
         document.getElementById('prev-sig').textContent = getAbbrevSignature(data);
     }
+
+    // Schedule PDF preview update (debounced)
+    if (engineReady) {
+        schedulePdfPreviewUpdate();
+    }
 }
 
 // =============================================================================
@@ -1399,6 +1404,115 @@ function selectUnit() {
 }
 
 // =============================================================================
+// PDF PREVIEW
+// =============================================================================
+
+// Debounce timer for PDF preview
+let pdfPreviewTimer = null;
+let currentPdfUrl = null;
+
+/**
+ * Update the PDF preview status message
+ */
+function setPdfPreviewStatus(message, type = 'loading') {
+    const statusEl = document.getElementById('pdfPreviewStatus');
+    if (statusEl) {
+        statusEl.className = 'pdf-preview-status' + (type !== 'loading' ? ' ' + type : '');
+        statusEl.innerHTML = type === 'loading'
+            ? `<span class="pdf-loading">${message}</span>`
+            : message;
+        statusEl.classList.remove('hidden');
+    }
+}
+
+/**
+ * Hide the PDF preview status
+ */
+function hidePdfPreviewStatus() {
+    const statusEl = document.getElementById('pdfPreviewStatus');
+    if (statusEl) {
+        statusEl.classList.add('hidden');
+    }
+}
+
+/**
+ * Compile and display PDF in the preview iframe
+ */
+async function updatePdfPreview() {
+    const frame = document.getElementById('pdfPreviewFrame');
+    if (!frame) return;
+
+    try {
+        setPdfPreviewStatus('Compiling LaTeX...', 'loading');
+
+        // Compile LaTeX document
+        const pdfBytes = await compileLatex();
+
+        // Revoke previous blob URL to free memory
+        if (currentPdfUrl) {
+            URL.revokeObjectURL(currentPdfUrl);
+        }
+
+        // Create blob URL for the PDF
+        const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+        currentPdfUrl = URL.createObjectURL(blob);
+
+        // Display in iframe
+        frame.src = currentPdfUrl;
+
+        // Hide status after successful compilation
+        hidePdfPreviewStatus();
+
+    } catch (error) {
+        console.error('PDF preview error:', error);
+        setPdfPreviewStatus('Compilation failed: ' + error.message, 'error');
+    }
+}
+
+/**
+ * Debounced PDF preview update
+ * Waits 1.5 seconds after last change before recompiling
+ */
+function schedulePdfPreviewUpdate() {
+    if (pdfPreviewTimer) {
+        clearTimeout(pdfPreviewTimer);
+    }
+    setPdfPreviewStatus('Waiting for changes...', 'loading');
+    pdfPreviewTimer = setTimeout(updatePdfPreview, 1500);
+}
+
+/**
+ * Force refresh the PDF preview immediately
+ */
+function refreshPdfPreview() {
+    if (pdfPreviewTimer) {
+        clearTimeout(pdfPreviewTimer);
+        pdfPreviewTimer = null;
+    }
+    updatePdfPreview();
+}
+
+/**
+ * Initialize PDF preview on engine ready
+ */
+async function initPdfPreview() {
+    setPdfPreviewStatus('Initializing LaTeX engine...', 'loading');
+
+    try {
+        await initLatexEngine();
+        if (engineReady) {
+            setPdfPreviewStatus('Engine ready. Compiling...', 'loading');
+            await updatePdfPreview();
+        } else {
+            setPdfPreviewStatus('LaTeX engine unavailable', 'error');
+        }
+    } catch (error) {
+        console.error('Failed to initialize PDF preview:', error);
+        setPdfPreviewStatus('Failed to initialize: ' + error.message, 'error');
+    }
+}
+
+// =============================================================================
 // INITIALIZATION
 // =============================================================================
 
@@ -1411,6 +1525,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize drag-drop for PDF uploads
     initDragDrop();
 
-    // Initialize preview
-    updatePreview();
+    // Initialize PDF preview (this replaces updatePreview for initial load)
+    initPdfPreview();
 });
