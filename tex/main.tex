@@ -711,10 +711,10 @@
 %                            REFERENCES BLOCK
 %=============================================================================
 
-% Flag set by \setHasReferences command from JavaScript
+% Flag set by \setHasReferences command from JavaScript (in preamble)
 \newif\ifhasrefs
 \hasrefsfalse
-\newcommand{\setHasReferences}{\hasrefstrue}
+\newcommand{\setHasReferences}{\global\hasrefstrue}
 
 \makeatletter
 \newcommand{\setRefURL}[2]{%
@@ -724,18 +724,15 @@
 
 \input{reference-urls}
 
-\makeatletter
-\newcommand{\refitem}[2]{%
-    \@ifundefined{ref@url@#1}{%
-        (#1) #2\\%
-    }{%
-        (\href{\csname ref@url@#1\endcsname}{\textcolor{blue}{#1}}) #2\\%
-    }%
-}
-\makeatother
+% In preamble, refitem just sets the flag (no output)
+% We redefine it after \begin{document} to produce output
+\newcommand{\refitem}[2]{\setHasReferences}
+
+% Pre-load references in preamble to set the hasrefs flag
+\input{references}
 
 % SECNAV M-5216.5 Ch 7, Para 10.c: 4 spaces after "Ref:"
-% Only print if hasrefs flag is set (by \setHasReferences in references.tex)
+% Only print if hasrefs flag is set
 \newcommand{\printReferences}{%
     \ifhasrefs
         \vspace{12pt}
@@ -746,6 +743,19 @@
                    \end{minipage}
         \end{tabular}%
     \fi
+}
+
+% Redefine refitem after document begins to actually output references
+\AtBeginDocument{%
+    \makeatletter
+    \renewcommand{\refitem}[2]{%
+        \@ifundefined{ref@url@##1}{%
+            (##1) ##2\\%
+        }{%
+            (\href{\csname ref@url@##1\endcsname}{\textcolor{blue}{##1}}) ##2\\%
+        }%
+    }%
+    \makeatother
 }
 
 
