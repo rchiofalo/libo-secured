@@ -608,17 +608,28 @@ function initEnclosureDragDrop() {
     let draggedItem = null;
     let draggedIndex = null;
 
-    // Mouse drag events
+    // Mouse/HTML5 drag events (also works on iOS Safari with proper setup)
     items.forEach(item => {
+        // Make handle the drag initiator
+        const handle = item.querySelector('.enclosure-drag-handle');
+        if (handle) {
+            handle.style.webkitUserDrag = 'element';
+        }
+
         item.addEventListener('dragstart', (e) => {
             draggedItem = item;
             draggedIndex = parseInt(item.dataset.index);
             item.classList.add('dragging');
+            // iOS Safari requires setData to be called
             e.dataTransfer.effectAllowed = 'move';
-            e.dataTransfer.setData('text/plain', draggedIndex);
+            e.dataTransfer.setData('text/plain', String(draggedIndex));
+            // Set drag image if supported
+            if (e.dataTransfer.setDragImage) {
+                e.dataTransfer.setDragImage(item, 10, 10);
+            }
         });
 
-        item.addEventListener('dragend', () => {
+        item.addEventListener('dragend', (e) => {
             item.classList.remove('dragging');
             draggedItem = null;
             draggedIndex = null;
@@ -627,6 +638,7 @@ function initEnclosureDragDrop() {
 
         item.addEventListener('dragover', (e) => {
             e.preventDefault();
+            e.stopPropagation();
             e.dataTransfer.dropEffect = 'move';
 
             if (item === draggedItem) return;
@@ -643,12 +655,13 @@ function initEnclosureDragDrop() {
             }
         });
 
-        item.addEventListener('dragleave', () => {
+        item.addEventListener('dragleave', (e) => {
             item.classList.remove('drag-over-above', 'drag-over-below');
         });
 
         item.addEventListener('drop', (e) => {
             e.preventDefault();
+            e.stopPropagation();
 
             if (item === draggedItem) return;
 
@@ -668,7 +681,7 @@ function initEnclosureDragDrop() {
         });
     });
 
-    // Touch drag events for mobile
+    // Touch drag events for mobile (fallback for devices where HTML5 drag doesn't work)
     initTouchDragForList(container, 'enclosure-item', 'enclosure-drag-handle', reorderEnclosure);
 }
 
@@ -941,17 +954,28 @@ function initReferenceDragDrop() {
     let draggedItem = null;
     let draggedIndex = null;
 
-    // Mouse drag events
+    // Mouse/HTML5 drag events (also works on iOS Safari with proper setup)
     items.forEach(item => {
+        // Make handle the drag initiator
+        const handle = item.querySelector('.reference-drag-handle');
+        if (handle) {
+            handle.style.webkitUserDrag = 'element';
+        }
+
         item.addEventListener('dragstart', (e) => {
             draggedItem = item;
             draggedIndex = parseInt(item.dataset.index);
             item.classList.add('dragging');
+            // iOS Safari requires setData to be called
             e.dataTransfer.effectAllowed = 'move';
-            e.dataTransfer.setData('text/plain', draggedIndex);
+            e.dataTransfer.setData('text/plain', String(draggedIndex));
+            // Set drag image if supported
+            if (e.dataTransfer.setDragImage) {
+                e.dataTransfer.setDragImage(item, 10, 10);
+            }
         });
 
-        item.addEventListener('dragend', () => {
+        item.addEventListener('dragend', (e) => {
             item.classList.remove('dragging');
             draggedItem = null;
             draggedIndex = null;
@@ -960,6 +984,7 @@ function initReferenceDragDrop() {
 
         item.addEventListener('dragover', (e) => {
             e.preventDefault();
+            e.stopPropagation();
             e.dataTransfer.dropEffect = 'move';
 
             if (item === draggedItem) return;
@@ -976,12 +1001,13 @@ function initReferenceDragDrop() {
             }
         });
 
-        item.addEventListener('dragleave', () => {
+        item.addEventListener('dragleave', (e) => {
             item.classList.remove('drag-over-above', 'drag-over-below');
         });
 
         item.addEventListener('drop', (e) => {
             e.preventDefault();
+            e.stopPropagation();
 
             if (item === draggedItem) return;
 
@@ -1001,7 +1027,7 @@ function initReferenceDragDrop() {
         });
     });
 
-    // Touch drag events for mobile
+    // Touch drag events for mobile (fallback for devices where HTML5 drag doesn't work)
     initTouchDragForList(container, 'reference-item', 'reference-drag-handle', reorderReference);
 }
 
@@ -2464,17 +2490,20 @@ let currentMobileState = false;
 
 /**
  * Update UI based on mobile/desktop state
+ * @param {boolean} force - Force update even if state hasn't changed
  */
-function updateMobileUI() {
+function updateMobileUI(force = false) {
     const isMobile = isMobileDevice();
 
-    // Only update if state changed
-    if (isMobile === currentMobileState) return;
+    // Only update if state changed (unless forced)
+    if (!force && isMobile === currentMobileState) return;
     currentMobileState = isMobile;
 
     const previewPanel = document.getElementById('pdfPreviewPanel');
     const mobilePreviewBtn = document.getElementById('mobilePreviewBtn');
     const previewModal = document.getElementById('pdfPreviewModal');
+
+    console.log('updateMobileUI:', { isMobile, width: window.innerWidth });
 
     if (isMobile) {
         // Mobile: hide inline preview, show toggle button
@@ -2570,12 +2599,16 @@ function initMobilePreview() {
         document.body.appendChild(modal);
     }
 
-    // Set initial state
-    currentMobileState = !isMobileDevice(); // Force update on first call
-    updateMobileUI();
+    // Set initial state - force update on first call
+    currentMobileState = null; // Reset to force initial update
+    updateMobileUI(true);
 
-    // Listen for window resize
-    window.addEventListener('resize', updateMobileUI);
+    // Listen for window resize and orientation change
+    window.addEventListener('resize', () => updateMobileUI(false));
+    window.addEventListener('orientationchange', () => {
+        // Delay to let orientation settle
+        setTimeout(() => updateMobileUI(true), 100);
+    });
 }
 
 // =============================================================================

@@ -692,6 +692,8 @@ button.primary:hover {
     padding: 2px 4px;
     user-select: none;
     letter-spacing: 1px;
+    -webkit-user-drag: element;
+    -webkit-touch-callout: none;
 }
 
 .reference-drag-handle:hover {
@@ -827,6 +829,8 @@ button.primary:hover {
     padding: 2px 4px;
     user-select: none;
     letter-spacing: 1px;
+    -webkit-user-drag: element;
+    -webkit-touch-callout: none;
 }
 
 .enclosure-drag-handle:hover {
