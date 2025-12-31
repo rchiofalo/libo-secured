@@ -147,6 +147,100 @@ body {
     color: #fff;
 }
 
+/* Profile Editor Modal */
+.profile-editor-modal {
+    max-width: 550px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #3a3a4e;
+}
+
+.modal-header h3 {
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: #fff;
+}
+
+.profile-editor-body {
+    margin-bottom: 20px;
+}
+
+.profile-editor-body h4 {
+    margin: 15px 0 10px 0;
+    color: #3282b8;
+    font-size: 14px;
+}
+
+.profile-editor-body hr {
+    border: none;
+    border-top: 1px solid #3a3a4e;
+    margin: 15px 0;
+}
+
+.profile-field {
+    margin-bottom: 12px;
+}
+
+.profile-field label {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.profile-field input {
+    width: 100%;
+    padding: 8px 10px;
+    background: #1a1a2e;
+    border: 1px solid #3a3a4e;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.profile-field input:focus {
+    outline: none;
+    border-color: #3282b8;
+}
+
+.profile-field input::placeholder {
+    color: #555;
+}
+
+.profile-row {
+    display: flex;
+    gap: 10px;
+}
+
+.profile-row .profile-field {
+    flex: 1;
+}
+
+.profile-row .profile-field:nth-child(2) {
+    flex: 0 0 60px;
+}
+
 /* =============================================================================
    LAYOUT
    ============================================================================= */

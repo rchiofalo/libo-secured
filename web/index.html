@@ -21,7 +21,8 @@
             <select id="profileSelect" onchange="loadProfile()">
                 <option value="">-- Select Profile --</option>
             </select>
-            <button class="icon-btn" onclick="saveProfileAs()" title="Save Profile As...">💾</button>
+            <button class="icon-btn" onclick="openProfileEditor()" title="Create/Edit Profile">+</button>
+            <button class="icon-btn" onclick="editCurrentProfile()" title="Edit Selected Profile">✏️</button>
             <button class="icon-btn" onclick="deleteProfile()" title="Delete Profile">🗑️</button>
             <span class="save-bar-divider"></span>
             <button class="icon-btn" onclick="exportProfiles()" title="Export All Profiles">📤</button>
@@ -31,6 +32,74 @@
         <div class="save-bar-right">
             <span id="autoSaveStatus" class="auto-save-status"></span>
             <button class="icon-btn" onclick="clearDraft()" title="Clear Draft & Reset Form">🔄</button>
+        </div>
+    </div>
+
+    <!-- Profile Editor Modal -->
+    <div id="profileEditorModal" class="modal" style="display: none;">
+        <div class="modal-content profile-editor-modal">
+            <div class="modal-header">
+                <h3 id="profileEditorTitle">Create New Profile</h3>
+                <button class="modal-close" onclick="closeProfileEditor()">&times;</button>
+            </div>
+            <div class="profile-editor-body">
+                <div class="profile-field">
+                    <label for="profileName">Profile Name *</label>
+                    <input type="text" id="profileName" placeholder="e.g., My Unit Profile">
+                </div>
+                <hr>
+                <h4>Unit Information</h4>
+                <div class="profile-field">
+                    <label for="profileCommandName">Command Name</label>
+                    <input type="text" id="profileCommandName" placeholder="e.g., MARINE CORPS DETACHMENT">
+                </div>
+                <div class="profile-field">
+                    <label for="profileCommandAddress">Command Address</label>
+                    <input type="text" id="profileCommandAddress" placeholder="e.g., 250 CHAMBERS AVENUE">
+                </div>
+                <div class="profile-field">
+                    <label for="profileCommandCity">City, State ZIP</label>
+                    <input type="text" id="profileCommandCity" placeholder="e.g., PENSACOLA, FLORIDA 32508-5217">
+                </div>
+                <div class="profile-field">
+                    <label for="profileSSIC">Default SSIC</label>
+                    <input type="text" id="profileSSIC" placeholder="e.g., 5216">
+                </div>
+                <hr>
+                <h4>Signatory Information</h4>
+                <div class="profile-row">
+                    <div class="profile-field">
+                        <label for="profileFirstName">First Name</label>
+                        <input type="text" id="profileFirstName" placeholder="John">
+                    </div>
+                    <div class="profile-field">
+                        <label for="profileMiddleInitial">M.I.</label>
+                        <input type="text" id="profileMiddleInitial" placeholder="A." maxlength="3">
+                    </div>
+                    <div class="profile-field">
+                        <label for="profileLastName">Last Name</label>
+                        <input type="text" id="profileLastName" placeholder="Doe">
+                    </div>
+                </div>
+                <div class="profile-row">
+                    <div class="profile-field">
+                        <label for="profileRank">Rank</label>
+                        <input type="text" id="profileRank" placeholder="e.g., Sgt, USMC">
+                    </div>
+                    <div class="profile-field">
+                        <label for="profileTitle">Title/Position</label>
+                        <input type="text" id="profileTitle" placeholder="e.g., Operations NCO">
+                    </div>
+                </div>
+                <div class="profile-field">
+                    <label for="profileFromLine">From Line</label>
+                    <input type="text" id="profileFromLine" placeholder="e.g., Commanding Officer, Marine Corps Detachment">
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button onclick="saveProfileFromEditor()" class="primary">Save Profile</button>
+                <button onclick="closeProfileEditor()" class="secondary">Cancel</button>
+            </div>
         </div>
     </div>
 
@@ -607,7 +676,7 @@
     <script src="lib/PdfTeXEngine.js?v=5"></script>
 
     <!-- LaTeX Templates -->
-    <script src="js/latex-templates.js?v=4"></script>
+    <script src="js/latex-templates.js?v=5"></script>
 
     <!-- Bundled TeX Live Packages (avoids HTTP fetch issues) -->
     <script src="js/texlive-packages.js?v=10"></script>

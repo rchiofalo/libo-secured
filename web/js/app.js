@@ -3314,6 +3314,7 @@ function loadProfile() {
     if (profile.unitLine1 !== undefined) document.getElementById('unitLine1').value = profile.unitLine1;
     if (profile.unitLine2 !== undefined) document.getElementById('unitLine2').value = profile.unitLine2;
     if (profile.unitAddress !== undefined) document.getElementById('unitAddress').value = profile.unitAddress;
+    if (profile.ssic !== undefined) document.getElementById('ssic').value = profile.ssic;
     if (profile.from !== undefined) document.getElementById('from').value = profile.from;
     if (profile.sigFirst !== undefined) document.getElementById('sigFirst').value = profile.sigFirst;
     if (profile.sigMiddle !== undefined) document.getElementById('sigMiddle').value = profile.sigMiddle;
@@ -3349,6 +3350,133 @@ function deleteProfile() {
 
     populateProfileDropdown();
     showAutoSaveStatus('Profile deleted');
+}
+
+// Track if we're editing an existing profile
+let editingProfileName = null;
+
+/**
+ * Open profile editor modal for creating a new profile
+ */
+function openProfileEditor() {
+    editingProfileName = null;
+    document.getElementById('profileEditorTitle').textContent = 'Create New Profile';
+
+    // Clear all fields
+    document.getElementById('profileName').value = '';
+    document.getElementById('profileCommandName').value = '';
+    document.getElementById('profileCommandAddress').value = '';
+    document.getElementById('profileCommandCity').value = '';
+    document.getElementById('profileSSIC').value = '';
+    document.getElementById('profileFirstName').value = '';
+    document.getElementById('profileMiddleInitial').value = '';
+    document.getElementById('profileLastName').value = '';
+    document.getElementById('profileRank').value = '';
+    document.getElementById('profileTitle').value = '';
+    document.getElementById('profileFromLine').value = '';
+
+    document.getElementById('profileEditorModal').style.display = 'flex';
+    document.getElementById('profileName').focus();
+}
+
+/**
+ * Edit the currently selected profile
+ */
+function editCurrentProfile() {
+    const select = document.getElementById('profileSelect');
+    const profileName = select.value;
+
+    if (!profileName) {
+        alert('Please select a profile to edit, or click + to create a new one.');
+        return;
+    }
+
+    const profiles = getProfiles();
+    const profile = profiles[profileName];
+
+    if (!profile) return;
+
+    editingProfileName = profileName;
+    document.getElementById('profileEditorTitle').textContent = 'Edit Profile';
+
+    // Populate fields from profile
+    document.getElementById('profileName').value = profileName;
+    document.getElementById('profileCommandName').value = profile.unitLine1 || '';
+    document.getElementById('profileCommandAddress').value = profile.unitLine2 || '';
+    document.getElementById('profileCommandCity').value = profile.unitAddress || '';
+    document.getElementById('profileSSIC').value = profile.ssic || '';
+    document.getElementById('profileFirstName').value = profile.sigFirst || '';
+    document.getElementById('profileMiddleInitial').value = profile.sigMiddle || '';
+    document.getElementById('profileLastName').value = profile.sigLast || '';
+    document.getElementById('profileRank').value = profile.sigRank || '';
+    document.getElementById('profileTitle').value = profile.sigTitle || '';
+    document.getElementById('profileFromLine').value = profile.from || '';
+
+    document.getElementById('profileEditorModal').style.display = 'flex';
+}
+
+/**
+ * Close profile editor modal
+ */
+function closeProfileEditor() {
+    document.getElementById('profileEditorModal').style.display = 'none';
+    editingProfileName = null;
+}
+
+/**
+ * Save profile from editor modal
+ */
+function saveProfileFromEditor() {
+    const profileName = document.getElementById('profileName').value.trim();
+
+    if (!profileName) {
+        alert('Please enter a profile name.');
+        document.getElementById('profileName').focus();
+        return;
+    }
+
+    const profiles = getProfiles();
+
+    // Check for name conflicts (unless we're editing the same profile)
+    if (profiles[profileName] && editingProfileName !== profileName) {
+        if (!confirm(`Profile "${profileName}" already exists. Overwrite?`)) {
+            return;
+        }
+    }
+
+    // If renaming a profile, delete the old one
+    if (editingProfileName && editingProfileName !== profileName) {
+        delete profiles[editingProfileName];
+    }
+
+    // Build profile data
+    profiles[profileName] = {
+        // Letterhead
+        unitLine1: document.getElementById('profileCommandName').value,
+        unitLine2: document.getElementById('profileCommandAddress').value,
+        unitAddress: document.getElementById('profileCommandCity').value,
+        ssic: document.getElementById('profileSSIC').value,
+        // Signatory
+        from: document.getElementById('profileFromLine').value,
+        sigFirst: document.getElementById('profileFirstName').value,
+        sigMiddle: document.getElementById('profileMiddleInitial').value,
+        sigLast: document.getElementById('profileLastName').value,
+        sigRank: document.getElementById('profileRank').value,
+        sigTitle: document.getElementById('profileTitle').value,
+        // Preserve existing classification defaults if editing
+        cuiControlledBy: editingProfileName ? (profiles[editingProfileName]?.cuiControlledBy || '') : '',
+        pocEmail: editingProfileName ? (profiles[editingProfileName]?.pocEmail || '') : '',
+    };
+
+    saveProfiles(profiles);
+    populateProfileDropdown();
+
+    // Select and load the saved profile
+    document.getElementById('profileSelect').value = profileName;
+    loadProfile();
+
+    closeProfileEditor();
+    showAutoSaveStatus('Profile saved!');
 }
 
 /**
