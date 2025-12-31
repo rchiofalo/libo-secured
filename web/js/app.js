@@ -2272,6 +2272,123 @@ async function initPdfPreview() {
 }
 
 // =============================================================================
+// MOBILE DETECTION & RESPONSIVE FEATURES
+// =============================================================================
+
+/**
+ * Check if device is mobile based on viewport width only
+ * Uses 768px breakpoint - avoids touch detection which causes false positives
+ * on touchscreen laptops
+ */
+function isMobileDevice() {
+    return window.innerWidth <= 768;
+}
+
+/**
+ * Track mobile state for responsive UI updates
+ */
+let currentMobileState = false;
+
+/**
+ * Update UI based on mobile/desktop state
+ */
+function updateMobileUI() {
+    const isMobile = isMobileDevice();
+
+    // Only update if state changed
+    if (isMobile === currentMobileState) return;
+    currentMobileState = isMobile;
+
+    const previewPanel = document.getElementById('pdfPreviewPanel');
+    const mobilePreviewBtn = document.getElementById('mobilePreviewBtn');
+    const previewModal = document.getElementById('pdfPreviewModal');
+
+    if (isMobile) {
+        // Mobile: hide inline preview, show toggle button
+        if (previewPanel) previewPanel.style.display = 'none';
+        if (mobilePreviewBtn) mobilePreviewBtn.style.display = 'flex';
+    } else {
+        // Desktop: show inline preview, hide toggle button and modal
+        if (previewPanel) previewPanel.style.display = 'flex';
+        if (mobilePreviewBtn) mobilePreviewBtn.style.display = 'none';
+        if (previewModal) previewModal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+    }
+}
+
+/**
+ * Open fullscreen PDF preview modal (mobile)
+ */
+function openMobilePreview() {
+    const modal = document.getElementById('pdfPreviewModal');
+    const modalFrame = document.getElementById('modalPdfFrame');
+    const mainFrame = document.getElementById('pdfPreviewFrame');
+
+    if (modal && modalFrame && mainFrame) {
+        // Copy the current PDF to modal frame
+        modalFrame.src = mainFrame.src;
+        modal.classList.add('active');
+        document.body.classList.add('modal-open');
+    }
+}
+
+/**
+ * Close fullscreen PDF preview modal
+ */
+function closeMobilePreview() {
+    const modal = document.getElementById('pdfPreviewModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+    }
+}
+
+/**
+ * Initialize mobile preview button and modal
+ */
+function initMobilePreview() {
+    // Create mobile preview button if it doesn't exist
+    if (!document.getElementById('mobilePreviewBtn')) {
+        const btn = document.createElement('button');
+        btn.id = 'mobilePreviewBtn';
+        btn.className = 'mobile-preview-btn';
+        btn.innerHTML = '<span class="mobile-preview-icon">📄</span><span>View PDF</span>';
+        btn.onclick = openMobilePreview;
+        btn.style.display = 'none'; // Initially hidden, shown by updateMobileUI
+        document.body.appendChild(btn);
+    }
+
+    // Create modal if it doesn't exist
+    if (!document.getElementById('pdfPreviewModal')) {
+        const modal = document.createElement('div');
+        modal.id = 'pdfPreviewModal';
+        modal.className = 'pdf-preview-modal';
+        modal.innerHTML = `
+            <div class="modal-header">
+                <span class="modal-title">PDF Preview</span>
+                <button class="modal-close-btn" onclick="closeMobilePreview()">×</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="modalPdfFrame" class="modal-pdf-frame"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-download-btn" onclick="downloadLatexPDF(); closeMobilePreview();">
+                    Download PDF
+                </button>
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+
+    // Set initial state
+    currentMobileState = !isMobileDevice(); // Force update on first call
+    updateMobileUI();
+
+    // Listen for window resize
+    window.addEventListener('resize', updateMobileUI);
+}
+
+// =============================================================================
 // INITIALIZATION
 // =============================================================================
 
@@ -2290,6 +2407,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialize regulation hints on load
     updateRegulationHighlights();
+
+    // Initialize mobile responsive features
+    initMobilePreview();
 
     // Initialize PDF preview (this replaces updatePreview for initial load)
     initPdfPreview();
