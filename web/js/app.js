@@ -99,6 +99,23 @@ async function initLatexEngine() {
             console.log(`Preloaded ${type1Count} Type1 fonts`);
         }
 
+        // Pre-load Virtual fonts (base64 decoded)
+        if (typeof TEXLIVE_VF_FONTS !== 'undefined' && Array.isArray(TEXLIVE_VF_FONTS)) {
+            console.log('Preloading Virtual fonts...');
+            let vfCount = 0;
+            for (const font of TEXLIVE_VF_FONTS) {
+                // Decode base64 to binary
+                const binaryString = atob(font.content);
+                const bytes = new Uint8Array(binaryString.length);
+                for (let i = 0; i < binaryString.length; i++) {
+                    bytes[i] = binaryString.charCodeAt(i);
+                }
+                pdfTexEngine.preloadTexliveFile(font.format, font.filename, bytes);
+                vfCount++;
+            }
+            console.log(`Preloaded ${vfCount} Virtual fonts`);
+        }
+
         // Wait for worker to process all preload messages
         // postMessage is async, so we need to give the worker time to process
         // Increased from 200ms to 1000ms to ensure all TFM fonts are preloaded

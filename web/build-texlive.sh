@@ -120,6 +120,21 @@ for f in "$LIB_DIR"/pfb/*.pfb; do
 done
 
 echo "];" >> "$OUTPUT"
+echo "" >> "$OUTPUT"
+
+# Virtual fonts (binary - base64 encoded, format 33)
+echo "// Virtual fonts (binary - base64 encoded, format 33)" >> "$OUTPUT"
+echo "const TEXLIVE_VF_FONTS = [" >> "$OUTPUT"
+
+for f in "$LIB_DIR"/33/*.vf; do
+    if [ -f "$f" ]; then
+        filename=$(basename "$f")
+        echo "  { format: 33, filename: '$filename', content: '$(base64 < "$f" | tr -d '\n')' }," >> "$OUTPUT"
+        echo "  Added VF font: $filename"
+    fi
+done
+
+echo "];" >> "$OUTPUT"
 
 echo ""
 echo "Generated $OUTPUT"
