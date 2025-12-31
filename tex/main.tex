@@ -711,9 +711,9 @@
 %                            REFERENCES BLOCK
 %=============================================================================
 
-% Flag to track if any references exist (set by JavaScript in references.tex)
-\newif\ifhasreferences
-\hasreferencesfalse
+% Counter to track number of references
+\newcounter{refcount}
+\setcounter{refcount}{0}
 
 \makeatletter
 \newcommand{\setRefURL}[2]{%
@@ -725,7 +725,7 @@
 
 \makeatletter
 \newcommand{\refitem}[2]{%
-    \hasreferencestrue% Mark that we have at least one reference
+    \stepcounter{refcount}%
     \@ifundefined{ref@url@#1}{%
         (#1) #2\\%
     }{%
@@ -735,19 +735,14 @@
 \makeatother
 
 % SECNAV M-5216.5 Ch 7, Para 10.c: 4 spaces after "Ref:"
-% References are loaded inside a box to check if any exist, then displayed
-\newsavebox{\refbox}
 \newcommand{\printReferences}{%
-    % First, silently load references into a box to set the hasreferences flag
-    \savebox{\refbox}{\parbox{5.9in}{\input{references}}}%
-    % Only print if we have references
-    \ifhasreferences
-        \vspace{12pt}
-        \noindent
-        \begin{tabular}{@{}l@{}p{5.9in}@{}}
-            Ref:\hspace{4\fontdimen2\font} & \usebox{\refbox}
-        \end{tabular}%
-    \fi
+    \vspace{12pt}
+    \noindent
+    \begin{tabular}{@{}l@{}p{5.9in}@{}}
+        Ref:\hspace{4\fontdimen2\font} & \begin{minipage}[t]{5.9in}
+                   \input{references}
+               \end{minipage}
+    \end{tabular}%
 }
 
 
