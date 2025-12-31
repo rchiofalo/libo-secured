@@ -27,37 +27,17 @@
 
 
 %=============================================================================
-%                    JUNIOR COMMAND CONFIGURATION
+%                    COMMAND CONFIGURATION
 %=============================================================================
-% The junior command's identification symbols (right side)
-
-\newcommand{\JuniorCommandName}{}
-\newcommand{\JuniorSSIC}{}
-\newcommand{\JuniorSerial}{}
-\newcommand{\JuniorDate}{}
-\newcommand{\JuniorSignatoryName}{}
-\newcommand{\JuniorSignatoryRank}{}
-\newcommand{\JuniorSignatoryTitle}{}
-
-\newcommand{\setJuniorCommand}[7]{%
-    \renewcommand{\JuniorCommandName}{#1}%
-    \renewcommand{\JuniorSSIC}{#2}%
-    \renewcommand{\JuniorSerial}{#3}%
-    \renewcommand{\JuniorDate}{#4}%
-    \renewcommand{\JuniorSignatoryName}{#5}%
-    \renewcommand{\JuniorSignatoryRank}{#6}%
-    \renewcommand{\JuniorSignatoryTitle}{#7}%
-}
-
-
-%=============================================================================
-%                    SENIOR COMMAND CONFIGURATION
-%=============================================================================
-% The senior command's identification symbols (left side)
-% Note: Senior command uses the standard \setFrom, \setSSIC, etc.
-
-\newcommand{\SeniorCommandName}{}
-\newcommand{\setSeniorCommand}[1]{\renewcommand{\SeniorCommandName}{#1}}
+% Commands are pre-defined in main.tex, format file just uses them.
+% Junior command: left side, signs FIRST
+% Senior command: right side, signs LAST
+%
+% For MOA/MOU, uses a subset of the Joint Letter fields:
+%   - JuniorCommandName, JuniorSSIC, JuniorSerial, JuniorDate
+%   - JuniorSignatoryName, JuniorSignatoryRank (from main.tex stubs)
+%   - JuniorSignatoryTitle
+%   - SeniorCommandName
 
 
 %=============================================================================
