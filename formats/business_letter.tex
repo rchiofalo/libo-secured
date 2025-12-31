@@ -25,18 +25,18 @@
 %=============================================================================
 
 \newcommand{\printAddressBlock}{%
-    \\[12pt]%
+    \par\vspace{12pt}%
     \noindent
-    \ToLine\\
-    \ifx\ToLineTwo\empty\else\ToLineTwo\\\fi
-    \ifx\ToLineThree\empty\else\ToLineThree\\\fi
-    \ifx\ToLineFour\empty\else\ToLineFour\\\fi
-    \\[12pt]%
+    \optionalLine{\ToLine}%
+    \optionalLine{\ToLineTwo}%
+    \optionalLine{\ToLineThree}%
+    \optionalField{\ToLineFour}%
+    \par\vspace{12pt}%
     \noindent \BusinessSalutation
     %
     % CUI block
     \ifCUIEnabled
-        \\[12pt]%
+        \par\vspace{12pt}%
         \noindent \textbf{CUI//\CUICategory}\\
         \noindent \CUIDistStatement
     \fi
