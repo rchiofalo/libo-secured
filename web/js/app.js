@@ -1236,9 +1236,7 @@ async function downloadLatexPDF() {
         }
     } catch (error) {
         console.error('LaTeX compilation error:', error);
-        showStatus('LaTeX failed: ' + error.message + '. Using Quick PDF...', 'error');
-        // Fallback to jsPDF
-        setTimeout(() => downloadPDF(), 1500);
+        showStatus('LaTeX compilation failed: ' + error.message, 'error');
     }
 }
 
