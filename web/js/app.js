@@ -696,8 +696,8 @@ function initTouchDragForList(container, itemClass, handleClass, reorderFn) {
     let touchDraggedItem = null;
     let touchDraggedIndex = null;
     let touchClone = null;
-    let touchStartY = 0;
     let scrollInterval = null;
+    let lastTargetIndex = null;
 
     container.addEventListener('touchstart', (e) => {
         const handle = e.target.closest('.' + handleClass);
@@ -709,7 +709,7 @@ function initTouchDragForList(container, itemClass, handleClass, reorderFn) {
         e.preventDefault();
         touchDraggedItem = item;
         touchDraggedIndex = parseInt(item.dataset.index);
-        touchStartY = e.touches[0].clientY;
+        lastTargetIndex = null;
 
         // Create a clone for visual feedback
         touchClone = item.cloneNode(true);
@@ -753,22 +753,46 @@ function initTouchDragForList(container, itemClass, handleClass, reorderFn) {
             }
         }
 
-        // Find which item we're over
-        const items = container.querySelectorAll('.' + itemClass);
+        // Find the closest item and determine drop position
+        const items = Array.from(container.querySelectorAll('.' + itemClass));
         items.forEach(item => item.classList.remove('drag-over-above', 'drag-over-below'));
 
-        for (const item of items) {
-            if (item === touchDraggedItem) continue;
+        // Build list of item centers (excluding dragged item)
+        const otherItems = items.filter(item => item !== touchDraggedItem);
+        if (otherItems.length === 0) return;
 
+        // Find which gap/position the touch is closest to
+        let closestItem = null;
+        let insertBefore = true;
+        let minDistance = Infinity;
+
+        for (const item of otherItems) {
             const rect = item.getBoundingClientRect();
-            if (touchY >= rect.top && touchY <= rect.bottom) {
-                const midY = rect.top + rect.height / 2;
-                if (touchY < midY) {
-                    item.classList.add('drag-over-above');
-                } else {
-                    item.classList.add('drag-over-below');
-                }
-                break;
+            const itemCenter = rect.top + rect.height / 2;
+
+            // Distance to top edge (insert before)
+            const distToTop = Math.abs(touchY - rect.top);
+            // Distance to bottom edge (insert after)
+            const distToBottom = Math.abs(touchY - rect.bottom);
+
+            if (distToTop < minDistance) {
+                minDistance = distToTop;
+                closestItem = item;
+                insertBefore = true;
+            }
+            if (distToBottom < minDistance) {
+                minDistance = distToBottom;
+                closestItem = item;
+                insertBefore = false;
+            }
+        }
+
+        // Show indicator on closest item
+        if (closestItem) {
+            if (insertBefore) {
+                closestItem.classList.add('drag-over-above');
+            } else {
+                closestItem.classList.add('drag-over-below');
             }
         }
     }, { passive: false });
@@ -788,28 +812,28 @@ function initTouchDragForList(container, itemClass, handleClass, reorderFn) {
             touchClone = null;
         }
 
-        // Find drop target
-        const items = container.querySelectorAll('.' + itemClass);
+        // Find drop target based on visual indicators
+        const items = Array.from(container.querySelectorAll('.' + itemClass));
         let targetIndex = touchDraggedIndex;
-        let insertAfter = false;
 
         for (const item of items) {
+            const itemIndex = parseInt(item.dataset.index);
             if (item.classList.contains('drag-over-above')) {
-                targetIndex = parseInt(item.dataset.index);
+                // Insert before this item
+                targetIndex = itemIndex;
+                if (touchDraggedIndex < itemIndex) {
+                    targetIndex--; // Adjust because we're removing from before
+                }
                 break;
             }
             if (item.classList.contains('drag-over-below')) {
-                targetIndex = parseInt(item.dataset.index) + 1;
-                insertAfter = true;
+                // Insert after this item
+                targetIndex = itemIndex + 1;
+                if (touchDraggedIndex < itemIndex + 1) {
+                    targetIndex--; // Adjust because we're removing from before
+                }
                 break;
             }
-        }
-
-        // Adjust for removal
-        if (touchDraggedIndex < targetIndex && !insertAfter) {
-            targetIndex--;
-        } else if (touchDraggedIndex < targetIndex && insertAfter) {
-            targetIndex--;
         }
 
         // Clean up
@@ -817,7 +841,7 @@ function initTouchDragForList(container, itemClass, handleClass, reorderFn) {
         items.forEach(item => item.classList.remove('drag-over-above', 'drag-over-below'));
 
         // Reorder if position changed
-        if (targetIndex !== touchDraggedIndex) {
+        if (targetIndex !== touchDraggedIndex && targetIndex >= 0) {
             reorderFn(touchDraggedIndex, targetIndex);
         }
 
