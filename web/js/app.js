@@ -504,6 +504,10 @@ function initDragDrop() {
 function collectData() {
     return {
         docType: document.getElementById('docType').value,
+        // Font options
+        fontSize: document.getElementById('fontSize').value,
+        fontFamily: document.getElementById('fontFamily').value,
+        // Letterhead
         unitLine1: document.getElementById('unitLine1').value,
         unitLine2: document.getElementById('unitLine2').value,
         unitAddress: document.getElementById('unitAddress').value,
@@ -833,6 +837,10 @@ function generateDocumentTex(data) {
 %=============================================================================
 
 \\setDocumentType{${data.docType}}
+
+% Font options
+\\setFontSize{${data.fontSize || '12pt'}}
+\\setFontFamily{${data.fontFamily || 'courier'}}
 
 ${data.inReplyTo ? '\\enableInReplyReferTo' : '% \\enableInReplyReferTo'}
 

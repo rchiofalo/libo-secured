@@ -50,6 +50,24 @@
                 </optgroup>
             </select>
 
+            <h2>Font Options</h2>
+            <div class="row">
+                <div>
+                    <label>Font Size</label>
+                    <select id="fontSize" onchange="updatePreview()">
+                        <option value="12pt" selected>12pt (Standard)</option>
+                        <option value="10pt">10pt</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Font Family</label>
+                    <select id="fontFamily" onchange="updatePreview()">
+                        <option value="courier" selected>Courier New</option>
+                        <option value="times">Times New Roman</option>
+                    </select>
+                </div>
+            </div>
+
             <h2>Letterhead</h2>
             <label>Select from Known Units</label>
             <select id="unitSelect" onchange="selectUnit()">
@@ -341,7 +359,7 @@ b | MCO 5216.20B</textarea>
     <script src="js/texlive-packages.js?v=10"></script>
 
     <!-- Application JavaScript -->
-    <script src="js/app.js?v=15"></script>
+    <script src="js/app.js?v=16"></script>
 </body>
 
 </html>
