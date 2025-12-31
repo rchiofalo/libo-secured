@@ -136,7 +136,7 @@ async function compileLatex() {
 
     // Test with minimal document first (for debugging)
     // Set to true to test basic compilation without complex packages
-    const USE_MINIMAL_TEST = true; // DEBUGGING: testing minimal document
+    const USE_MINIMAL_TEST = false; // Full template mode
 
     if (USE_MINIMAL_TEST) {
         const minimalTex = `\\documentclass{article}
