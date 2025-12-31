@@ -89,6 +89,11 @@ for f in "$LIB_DIR"/11/*.map; do
     [ -f "$f" ] && add_file "$f" "$(basename "$f")" 11
 done
 
+# Add encoding files (format 44 - enc files)
+for f in "$LIB_DIR"/enc/*.enc; do
+    [ -f "$f" ] && add_file "$f" "$(basename "$f")" 44
+done
+
 echo "];" >> "$OUTPUT"
 echo "" >> "$OUTPUT"
 

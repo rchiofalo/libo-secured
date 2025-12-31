@@ -51,3 +51,8 @@ cmssi8 CMSSI8 <cmssi8.pfb
 cmssi9 CMSSI9 <cmssi9.pfb
 cmssbx10 CMSSBX10 <cmssbx10.pfb
 cmssdc10 CMSSDC10 <cmssdc10.pfb
+% Courier fonts (URW NimbusMonL)
+pcrr8r NimbusMonL-Regu " TeXBase1Encoding ReEncodeFont " <8r.enc <ucrr8a.pfb
+pcrb8r NimbusMonL-Bold " TeXBase1Encoding ReEncodeFont " <8r.enc <ucrb8a.pfb
+pcrro8r NimbusMonL-ReguObli " TeXBase1Encoding ReEncodeFont " <8r.enc <ucrro8a.pfb
+pcrbo8r NimbusMonL-BoldObli " TeXBase1Encoding ReEncodeFont " <8r.enc <ucrbo8a.pfb
