@@ -50,20 +50,37 @@
                 </optgroup>
             </select>
 
-            <h2>Font Options</h2>
+            <h2>Format Options</h2>
+            <!-- Regulation hints panel -->
+            <div id="regulationHints" class="regulation-hints" style="display: none;">
+                <div class="regulation-header">SECNAV M-5216.5 Recommended:</div>
+                <div id="regulationContent"></div>
+            </div>
             <div class="row">
                 <div>
                     <label>Font Size</label>
-                    <select id="fontSize" onchange="updatePreview()">
-                        <option value="12pt" selected>12pt (Standard)</option>
+                    <select id="fontSize" onchange="updatePreview(); updateRegulationHighlights()">
+                        <option value="12pt" selected>12pt</option>
                         <option value="10pt">10pt</option>
                     </select>
+                    <span id="fontSizeHint" class="reg-hint"></span>
                 </div>
                 <div>
                     <label>Font Family</label>
-                    <select id="fontFamily" onchange="updatePreview()">
+                    <select id="fontFamily" onchange="updatePreview(); updateRegulationHighlights()">
                         <option value="courier" selected>Courier New</option>
                         <option value="times">Times New Roman</option>
+                    </select>
+                    <span id="fontFamilyHint" class="reg-hint"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label>Page Numbers</label>
+                    <select id="pageNumberStyle" onchange="updatePreview()">
+                        <option value="xofy" selected>1 of X, 2 of X...</option>
+                        <option value="simple">2, 3, 4... (no first page)</option>
+                        <option value="none">No page numbers</option>
                     </select>
                 </div>
             </div>

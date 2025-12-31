@@ -811,6 +811,60 @@ button.primary:hover {
 }
 
 /* =============================================================================
+   REGULATION HINTS
+   ============================================================================= */
+
+.regulation-hints {
+    background: rgba(40, 167, 69, 0.1);
+    border: 1px solid #28a745;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    font-size: 10px;
+}
+
+.regulation-header {
+    color: #28a745;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.regulation-hints ul {
+    margin: 0;
+    padding-left: 16px;
+    color: #9fdfad;
+}
+
+.regulation-hints li {
+    margin: 2px 0;
+}
+
+/* Inline regulation hint badges */
+.reg-hint {
+    display: inline-block;
+    font-size: 8px;
+    padding: 1px 4px;
+    border-radius: 2px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+.reg-hint.compliant {
+    background: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+}
+
+.reg-hint.non-compliant {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+/* Highlight non-compliant select options */
+select option.non-compliant-option {
+    color: #ffc107;
+}
+
+/* =============================================================================
    RESPONSIVE
    ============================================================================= */
 

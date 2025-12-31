@@ -104,16 +104,39 @@
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 
-% Smart page numbering: Shows "X of Y" only when Y is known (requires 2 passes)
-% On first pass or single-page docs, shows just page number or nothing
+%-----------------------------------------------------------------------------
+% Page Numbering Style Configuration
+%-----------------------------------------------------------------------------
+% Options:
+%   simple  - No number on page 1, then "2", "3", "4"...
+%   xofy    - "1 of X", "2 of X", "3 of X"... (default)
+%   none    - No page numbers at all
+%-----------------------------------------------------------------------------
+
+\newcommand{\PageNumberStyle}{xofy}
+\newcommand{\setPageNumberStyle}[1]{\renewcommand{\PageNumberStyle}{#1}}
+
+% Smart page numbering based on style setting
 \makeatletter
 \newcommand{\smartPageNumber}{%
-    \@ifundefined{r@LastPage}{%
-        % LastPage not defined yet (first pass) - show just page number
-        \thepage
+    \ifthenelse{\equal{\PageNumberStyle}{none}}{%
+        % No page numbers
     }{%
-        % LastPage defined - show "X of Y"
-        \thepage\ of \pageref{LastPage}%
+        \ifthenelse{\equal{\PageNumberStyle}{simple}}{%
+            % Simple style: no number on page 1, then 2, 3, 4...
+            \ifnum\value{page}>1
+                \thepage
+            \fi
+        }{%
+            % X of Y style (default)
+            \@ifundefined{r@LastPage}{%
+                % LastPage not defined yet (first pass) - show just page number
+                \thepage
+            }{%
+                % LastPage defined - show "X of Y"
+                \thepage\ of \pageref{LastPage}%
+            }%
+        }%
     }%
 }
 \makeatother

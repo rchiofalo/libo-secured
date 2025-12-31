@@ -256,28 +256,83 @@ Hello World!
 
 const docTypeConfig = {
     // Letters - have letterhead, SSIC, From/To
-    naval_letter: { letterhead: true, ssic: true, fromTo: true, via: true, memoHeader: false, signature: 'abbrev', uiMode: 'standard' },
-    standard_letter: { letterhead: false, ssic: true, fromTo: true, via: true, memoHeader: false, signature: 'abbrev', uiMode: 'standard' },
-    business_letter: { letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: false, signature: 'full', business: true, uiMode: 'standard' },
-    multiple_address_letter: { letterhead: true, ssic: true, fromTo: true, via: true, memoHeader: false, signature: 'abbrev', uiMode: 'standard' },
-    joint_letter: { letterhead: true, ssic: true, fromTo: true, via: false, memoHeader: false, signature: 'abbrev', uiMode: 'joint' },
+    // regulations: { fontSize, fontFamily } - what's compliant per SECNAV M-5216.5
+    naval_letter: {
+        letterhead: true, ssic: true, fromTo: true, via: true, memoHeader: false, signature: 'abbrev', uiMode: 'standard',
+        regulations: { fontSize: '12pt', fontFamily: 'courier', ref: 'Ch 2-20' }
+    },
+    standard_letter: {
+        letterhead: false, ssic: true, fromTo: true, via: true, memoHeader: false, signature: 'abbrev', uiMode: 'standard',
+        regulations: { fontSize: '12pt', fontFamily: 'courier', ref: 'Ch 2-20' }
+    },
+    business_letter: {
+        letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: false, signature: 'full', business: true, uiMode: 'standard',
+        regulations: { fontSize: '12pt', fontFamily: 'times', ref: 'Ch 3' }
+    },
+    multiple_address_letter: {
+        letterhead: true, ssic: true, fromTo: true, via: true, memoHeader: false, signature: 'abbrev', uiMode: 'standard',
+        regulations: { fontSize: '12pt', fontFamily: 'courier', ref: 'Ch 8' }
+    },
+    joint_letter: {
+        letterhead: true, ssic: true, fromTo: true, via: false, memoHeader: false, signature: 'abbrev', uiMode: 'joint',
+        regulations: { fontSize: '12pt', fontFamily: 'courier', ref: 'Ch 7' }
+    },
     // Endorsements
-    same_page_endorsement: { letterhead: false, ssic: false, fromTo: true, via: false, memoHeader: false, signature: 'abbrev', endorsement: true, uiMode: 'standard' },
-    new_page_endorsement: { letterhead: true, ssic: true, fromTo: true, via: false, memoHeader: false, signature: 'abbrev', endorsement: true, uiMode: 'standard' },
+    same_page_endorsement: {
+        letterhead: false, ssic: false, fromTo: true, via: false, memoHeader: false, signature: 'abbrev', endorsement: true, uiMode: 'standard',
+        regulations: { fontSize: '12pt', fontFamily: 'courier', ref: 'Ch 9' }
+    },
+    new_page_endorsement: {
+        letterhead: true, ssic: true, fromTo: true, via: false, memoHeader: false, signature: 'abbrev', endorsement: true, uiMode: 'standard',
+        regulations: { fontSize: '12pt', fontFamily: 'courier', ref: 'Ch 9' }
+    },
     // Memorandums
-    mfr: { letterhead: false, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM FOR THE RECORD', signature: 'full', uiMode: 'standard' },
-    plain_paper_memorandum: { letterhead: false, ssic: false, fromTo: true, via: false, memoHeader: 'MEMORANDUM', signature: 'full', uiMode: 'standard' },
-    letterhead_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'MEMORANDUM', signature: 'full', uiMode: 'standard' },
-    decision_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'DECISION MEMORANDUM', signature: 'full', uiMode: 'standard' },
-    moa: { letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM OF AGREEMENT', signature: 'full', uiMode: 'moa' },
-    mou: { letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM OF UNDERSTANDING', signature: 'full', uiMode: 'moa' },
-    joint_memorandum: { letterhead: true, ssic: true, fromTo: true, via: false, memoHeader: 'JOINT MEMORANDUM', signature: 'full', uiMode: 'joint' },
+    mfr: {
+        letterhead: false, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM FOR THE RECORD', signature: 'full', uiMode: 'standard',
+        regulations: { fontSize: '12pt', fontFamily: 'courier', ref: 'Ch 10-1' }
+    },
+    plain_paper_memorandum: {
+        letterhead: false, ssic: false, fromTo: true, via: false, memoHeader: 'MEMORANDUM', signature: 'full', uiMode: 'standard',
+        regulations: { fontSize: '12pt', fontFamily: 'courier', ref: 'Ch 10-3' }
+    },
+    letterhead_memorandum: {
+        letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'MEMORANDUM', signature: 'full', uiMode: 'standard',
+        regulations: { fontSize: '12pt', fontFamily: 'courier', ref: 'Ch 10-4' }
+    },
+    decision_memorandum: {
+        letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'DECISION MEMORANDUM', signature: 'full', uiMode: 'standard',
+        regulations: { fontSize: '12pt', fontFamily: 'courier', ref: 'Ch 10-5' }
+    },
+    moa: {
+        letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM OF AGREEMENT', signature: 'full', uiMode: 'moa',
+        regulations: { fontSize: '12pt', fontFamily: 'courier', ref: 'Ch 10-6' }
+    },
+    mou: {
+        letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM OF UNDERSTANDING', signature: 'full', uiMode: 'moa',
+        regulations: { fontSize: '12pt', fontFamily: 'courier', ref: 'Ch 10-6' }
+    },
+    joint_memorandum: {
+        letterhead: true, ssic: true, fromTo: true, via: false, memoHeader: 'JOINT MEMORANDUM', signature: 'full', uiMode: 'joint',
+        regulations: { fontSize: '12pt', fontFamily: 'courier', ref: 'Ch 7' }
+    },
     // Executive
-    standard_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'MEMORANDUM', signature: 'full', uiMode: 'standard' },
-    action_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'ACTION MEMORANDUM', signature: 'full', uiMode: 'standard' },
-    information_memorandum: { letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'INFORMATION MEMORANDUM', signature: 'full', uiMode: 'standard' },
+    standard_memorandum: {
+        letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'MEMORANDUM', signature: 'full', uiMode: 'standard',
+        regulations: { fontSize: '12pt', fontFamily: 'times', ref: 'Ch 12' }
+    },
+    action_memorandum: {
+        letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'ACTION MEMORANDUM', signature: 'full', uiMode: 'standard',
+        regulations: { fontSize: '12pt', fontFamily: 'times', ref: 'Ch 12' }
+    },
+    information_memorandum: {
+        letterhead: true, ssic: false, fromTo: true, via: false, memoHeader: 'INFORMATION MEMORANDUM', signature: 'full', uiMode: 'standard',
+        regulations: { fontSize: '12pt', fontFamily: 'times', ref: 'Ch 12' }
+    },
     // USMC-Specific
-    mf: { letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM FOR', signature: 'full', memoFor: true, uiMode: 'standard' }
+    mf: {
+        letterhead: true, ssic: false, fromTo: false, via: false, memoHeader: 'MEMORANDUM FOR', signature: 'full', memoFor: true, uiMode: 'standard',
+        regulations: { fontSize: '12pt', fontFamily: 'courier', ref: 'MCO 5216.20B' }
+    }
 };
 
 /**
@@ -308,8 +363,71 @@ function updateDocTypeFields() {
         document.getElementById('standardSignature').style.display = 'block';
     }
 
+    // Update regulation hints
+    updateRegulationHighlights();
+
     // Update preview
     updatePreview();
+}
+
+/**
+ * Update regulation compliance hints based on current selections
+ */
+function updateRegulationHighlights() {
+    const docType = document.getElementById('docType').value;
+    const config = docTypeConfig[docType] || docTypeConfig.naval_letter;
+    const regs = config.regulations || {};
+
+    const currentFontSize = document.getElementById('fontSize').value;
+    const currentFontFamily = document.getElementById('fontFamily').value;
+
+    const fontSizeHint = document.getElementById('fontSizeHint');
+    const fontFamilyHint = document.getElementById('fontFamilyHint');
+    const regPanel = document.getElementById('regulationHints');
+    const regContent = document.getElementById('regulationContent');
+
+    // Check font size compliance
+    if (regs.fontSize) {
+        if (currentFontSize === regs.fontSize) {
+            fontSizeHint.textContent = '✓';
+            fontSizeHint.className = 'reg-hint compliant';
+        } else {
+            fontSizeHint.textContent = regs.fontSize + ' recommended';
+            fontSizeHint.className = 'reg-hint non-compliant';
+        }
+    } else {
+        fontSizeHint.textContent = '';
+        fontSizeHint.className = 'reg-hint';
+    }
+
+    // Check font family compliance
+    if (regs.fontFamily) {
+        const regFontName = regs.fontFamily === 'courier' ? 'Courier New' : 'Times New Roman';
+        if (currentFontFamily === regs.fontFamily) {
+            fontFamilyHint.textContent = '✓';
+            fontFamilyHint.className = 'reg-hint compliant';
+        } else {
+            fontFamilyHint.textContent = regFontName + ' recommended';
+            fontFamilyHint.className = 'reg-hint non-compliant';
+        }
+    } else {
+        fontFamilyHint.textContent = '';
+        fontFamilyHint.className = 'reg-hint';
+    }
+
+    // Show regulation panel with details
+    if (regs.ref) {
+        const regFontName = regs.fontFamily === 'courier' ? 'Courier New' : 'Times New Roman';
+        regContent.innerHTML = `
+            <ul>
+                <li>Font: ${regFontName} ${regs.fontSize}</li>
+                <li>Reference: SECNAV M-5216.5 ${regs.ref}</li>
+            </ul>
+        `;
+        regPanel.style.display = 'block';
+    } else {
+        regPanel.style.display = 'none';
+    }
 }
 
 // =============================================================================
@@ -539,6 +657,7 @@ function collectData() {
         // Font options
         fontSize: document.getElementById('fontSize').value,
         fontFamily: document.getElementById('fontFamily').value,
+        pageNumberStyle: document.getElementById('pageNumberStyle').value,
         // Letterhead
         unitLine1: document.getElementById('unitLine1').value,
         unitLine2: document.getElementById('unitLine2').value,
@@ -909,9 +1028,10 @@ function generateDocumentTex(data) {
 
 \\setDocumentType{${data.docType}}
 
-% Font options
+% Font and page options
 \\setFontSize{${data.fontSize || '12pt'}}
 \\setFontFamily{${data.fontFamily || 'courier'}}
+\\setPageNumberStyle{${data.pageNumberStyle || 'xofy'}}
 
 ${data.inReplyTo ? '\\enableInReplyReferTo' : '% \\enableInReplyReferTo'}
 
@@ -1875,6 +1995,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialize drag-drop for PDF uploads
     initDragDrop();
+
+    // Initialize regulation hints on load
+    updateRegulationHighlights();
 
     // Initialize PDF preview (this replaces updatePreview for initial load)
     initPdfPreview();
