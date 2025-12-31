@@ -89,7 +89,7 @@ echo "// Font metrics (binary - base64 encoded, format 3)" >> "$OUTPUT"
 echo "const TEXLIVE_FONTS = [" >> "$OUTPUT"
 
 for f in web/lib/texlive/pdftex/3/*; do
-    if [ -f "$f" ] && [[ ! "$f" == *.tfm ]]; then
+    if [ -f "$f" ] && [[ "$f" == *.tfm ]]; then
         filename=$(basename "$f")
         echo "  { format: 3, filename: '$filename', content: '$(base64 < "$f" | tr -d '\n')' }," >> "$OUTPUT"
         echo "  Added font: $filename"

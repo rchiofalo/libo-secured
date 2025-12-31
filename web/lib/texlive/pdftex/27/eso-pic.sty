@@ -21,7 +21,7 @@
 %% 
 %% This work has the LPPL maintenance status "author-maintained".
 %% 
-\NeedsTeXFormat{LaTeX2e}[2020/10/01]
+\NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{eso-pic}
    [2023/05/03 v3.0c eso-pic (RN)]
 \providecommand*\LenToUnit[1]{#1}
@@ -147,6 +147,8 @@
 \newcommand{\ClearShipoutPicture}{}
 \let\ClearShipoutPicture=\ClearShipoutPictureBG
 \newcommand{\ClearShipoutPictureFG}{\global\let\ESO@HookIFG\@empty}
+% Compatibility patch for SwiftLaTeX/LaTeX < 2020-10-01
+\RequirePackage{atbegshi}
 \ESO@isMEMOIR{%
   \newcommand*\ESO@MEMOIR@corr{%
     \ESO@tempdima=-\trimedge
@@ -160,33 +162,30 @@
     \ESO@tempdimb=\ESO@yoffsetI
     \advance\ESO@tempdimb-\trimtop
   }
-  \nointerlineskip
-  \AddToHook{shipout/background}{%
-    \ESO@MEMOIR@corr
-    \put(\ESO@tempdima,\ESO@tempdimb){%
-      \ESO@HookIIIBG\ESO@HookIBG\ESO@HookIIBG
-      \global\let\ESO@HookIIBG\@empty
-    }%
-  }%
-  \AddToHook{shipout/foreground}{%
-    \ESO@MEMOIR@corr
-    \put(\ESO@tempdima,\ESO@tempdimb){%
-      \ESO@HookIFG\ESO@HookIIFG\ESO@HookIIIFG
-      \global\let\ESO@HookIIFG\@empty
+  \AtBeginShipout{%
+    \AtBeginShipoutUpperLeft{%
+      \ESO@MEMOIR@corr
+      \put(\ESO@tempdima,\ESO@tempdimb){%
+        \ESO@HookIIIBG\ESO@HookIBG\ESO@HookIIBG
+        \global\let\ESO@HookIIBG\@empty
+      }%
+      \put(\ESO@tempdima,\ESO@tempdimb){%
+        \ESO@HookIFG\ESO@HookIIFG\ESO@HookIIIFG
+        \global\let\ESO@HookIIFG\@empty
+      }%
     }%
   }%
 }{%
-  \nointerlineskip
-  \AddToHook{shipout/background}{%
-    \put(0,\ESO@yoffsetI){%
-      \ESO@HookIIIBG\ESO@HookIBG\ESO@HookIIBG
-      \global\let\ESO@HookIIBG\@empty
-    }%
-  }%
-  \AddToHook{shipout/foreground}{%
-    \put(0,\ESO@yoffsetI){%
-      \ESO@HookIFG\ESO@HookIIFG\ESO@HookIIIFG
-      \global\let\ESO@HookIIFG\@empty
+  \AtBeginShipout{%
+    \AtBeginShipoutUpperLeft{%
+      \put(0,\ESO@yoffsetI){%
+        \ESO@HookIIIBG\ESO@HookIBG\ESO@HookIIBG
+        \global\let\ESO@HookIIBG\@empty
+      }%
+      \put(0,\ESO@yoffsetI){%
+        \ESO@HookIFG\ESO@HookIIFG\ESO@HookIIIFG
+        \global\let\ESO@HookIIFG\@empty
+      }%
     }%
   }%
 }

@@ -458,20 +458,12 @@
 
 \makeatletter
 \newcommand{\setSignatory}[5]{%
-    % Args: {First}{M.}{Last}{Rank}{Title}
-    \renewcommand{\SignatoryFirstName}{#1}%
-    \renewcommand{\SignatoryMiddleInitial}{#2}%
-    \renewcommand{\SignatoryLastName}{#3}%
-    \renewcommand{\SignatoryRank}{#4}%
-    \renewcommand{\SignatoryTitle}{#5}%
-    % Build full name for MFR/Business (First M. LASTNAME)
-    \renewcommand{\SignatoryName}{#1 #2 \MakeUppercase{#3}}%
-    % Build abbreviated for Naval Letter (F. M. LASTNAME)
-    % Extract first character of first name
-    \def\@tempfirst{#1}%
-    \expandafter\def\expandafter\@firstchar\expandafter{\expandafter\@car\@tempfirst\@nil}%
-    \edef\SignatoryAbbrev{\@firstchar. #2 \MakeUppercase{#3}}%
+    % Debugging: Empty implementation to test argument parsing
 }
+\makeatother
+
+\newcommand{\setSignatoryName}[1]{\renewcommand{\SignatoryName}{#1}}
+\newcommand{\setSignatoryAbbrev}[1]{\renewcommand{\SignatoryAbbrev}{#1}}
 \makeatother
 
 \newcommand{\setSignatureImage}[1]{\renewcommand{\SignatureImage}{#1}}

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>libo-secured | USMC Correspondence Generator</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <h1>libo-secured</h1>
     <p class="subtitle">"Libo isn't secured until the paperwork is done."</p>
@@ -66,7 +68,8 @@
             <h2>Document Info</h2>
             <div class="checkbox-row">
                 <input type="checkbox" id="inReplyTo" onchange="updatePreview()">
-                <label for="inReplyTo" class="checkbox-label">IN REPLY REFER TO (for replies to previous correspondence)</label>
+                <label for="inReplyTo" class="checkbox-label">IN REPLY REFER TO (for replies to previous
+                    correspondence)</label>
             </div>
             <div class="row">
                 <div>
@@ -86,7 +89,8 @@
 
             <h2>Addressing</h2>
             <label>From</label>
-            <input type="text" id="from" value="Commanding Officer, 1st Battalion, 6th Marines" oninput="updatePreview()">
+            <input type="text" id="from" value="Commanding Officer, 1st Battalion, 6th Marines"
+                oninput="updatePreview()">
 
             <label>To</label>
             <input type="text" id="to" value="Commanding Officer, 6th Marine Regiment" oninput="updatePreview()">
@@ -135,7 +139,8 @@
                     </select>
 
                     <label>Distribution Statement</label>
-                    <textarea id="cuiDistStatement" class="small" oninput="updatePreview()">Distribution authorized to DoD and DoD contractors only.</textarea>
+                    <textarea id="cuiDistStatement" class="small"
+                        oninput="updatePreview()">Distribution authorized to DoD and DoD contractors only.</textarea>
 
                     <label>POC Email</label>
                     <input type="email" id="pocEmail" value="" placeholder="name@usmc.mil" oninput="updatePreview()">
@@ -143,12 +148,15 @@
 
                 <!-- Classified Fields (shown when CONFIDENTIAL/SECRET/TS selected) -->
                 <div id="classifiedFields" style="display: none;">
-                    <div class="security-warning" style="background: #5c1a1a; color: #f8d7da; padding: 8px; margin: 10px 0; border-radius: 4px; font-size: 10px;">
-                        ⚠️ WARNING: Only process classified documents on systems authorized for that classification level.
+                    <div class="security-warning"
+                        style="background: #5c1a1a; color: #f8d7da; padding: 8px; margin: 10px 0; border-radius: 4px; font-size: 10px;">
+                        ⚠️ WARNING: Only process classified documents on systems authorized for that classification
+                        level.
                     </div>
 
                     <label>Classified By</label>
-                    <input type="text" id="classifiedBy" value="" placeholder="Original Classification Authority" oninput="updatePreview()">
+                    <input type="text" id="classifiedBy" value="" placeholder="Original Classification Authority"
+                        oninput="updatePreview()">
 
                     <label>Derived From</label>
                     <input type="text" id="derivedFrom" value="Multiple Sources" oninput="updatePreview()">
@@ -169,7 +177,8 @@
                     <input type="text" id="declassifyOn" value="" placeholder="20350101" oninput="updatePreview()">
 
                     <label>POC Email</label>
-                    <input type="email" id="classifiedPocEmail" value="" placeholder="name@usmc.mil" oninput="updatePreview()">
+                    <input type="email" id="classifiedPocEmail" value="" placeholder="name@usmc.mil"
+                        oninput="updatePreview()">
                 </div>
             </div>
 
@@ -189,7 +198,8 @@ b | MCO 5216.20B</textarea>
                 <div class="enclosure-add-row">
                     <button type="button" class="btn-add-enclosure" onclick="addEnclosure()">+ Add Enclosure</button>
                     <div class="enclosure-drop-zone" id="enclDropZone">
-                        <input type="file" id="enclFileUpload" accept=".pdf" multiple onchange="handleEnclFileUpload(event)">
+                        <input type="file" id="enclFileUpload" accept=".pdf" multiple
+                            onchange="handleEnclFileUpload(event)">
                         <span>or drop PDF here</span>
                     </div>
                 </div>
@@ -274,7 +284,8 @@ b | MCO 5216.20B</textarea>
 
             <!-- From/To/Via blocks -->
             <div class="address-block" id="prev-from-block">
-                <span class="label">From:</span><span id="prev-from">Commanding Officer, 1st Battalion, 6th Marines</span>
+                <span class="label">From:</span><span id="prev-from">Commanding Officer, 1st Battalion, 6th
+                    Marines</span>
             </div>
             <div class="address-block" id="prev-to-block">
                 <span class="label">To:</span><span id="prev-to">Commanding Officer, 6th Marine Regiment</span>
@@ -308,7 +319,8 @@ b | MCO 5216.20B</textarea>
 
             <!-- References -->
             <div class="ref-block" id="prev-ref-block">
-                <span class="label">Ref:</span><span class="content" id="prev-refs">(a) SECNAV M-5216.5<br>(b) MCO 5216.20B</span>
+                <span class="label">Ref:</span><span class="content" id="prev-refs">(a) SECNAV M-5216.5<br>(b) MCO
+                    5216.20B</span>
             </div>
 
             <!-- Enclosures -->
@@ -317,11 +329,12 @@ b | MCO 5216.20B</textarea>
             </div>
 
             <!-- Body -->
-            <div class="body-content" id="prev-body">1.  Per reference (a), this correspondence serves as an example of the naval letter format.
+            <div class="body-content" id="prev-body">1. Per reference (a), this correspondence serves as an example of
+                the naval letter format.
 
-2.  The purpose of this letter is to demonstrate proper formatting in accordance with SECNAV M-5216.5.
+                2. The purpose of this letter is to demonstrate proper formatting in accordance with SECNAV M-5216.5.
 
-3.  Point of contact for this matter is the undersigned at (910) 555-1234.</div>
+                3. Point of contact for this matter is the undersigned at (910) 555-1234.</div>
 
             <!-- Signature -->
             <div class="signature-block">
@@ -345,9 +358,10 @@ b | MCO 5216.20B</textarea>
     <script src="js/latex-templates.js"></script>
 
     <!-- Bundled TeX Live Packages (avoids HTTP fetch issues) -->
-    <script src="js/texlive-packages.js"></script>
+    <script src="js/texlive-packages.js?v=3"></script>
 
     <!-- Application JavaScript -->
     <script src="js/app.js"></script>
 </body>
+
 </html>
