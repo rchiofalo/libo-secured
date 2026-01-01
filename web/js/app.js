@@ -239,8 +239,8 @@ Hello World!
     pdfTexEngine.writeMemFSFile('reference-urls.tex', generateReferenceUrlsTex());
 
     const enclTex = generateEnclosuresTex();
-    console.log('Writing enclosures.tex:', enclTex);
-    pdfTexEngine.writeMemFSFile('enclosures.tex', enclTex);
+    console.log('Writing encl-config.tex:', enclTex);
+    pdfTexEngine.writeMemFSFile('encl-config.tex', enclTex);
 
     pdfTexEngine.writeMemFSFile('body.tex', generateBodyTex(data));
     pdfTexEngine.writeMemFSFile('classification.tex', generateClassificationTex(data));

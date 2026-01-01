@@ -790,8 +790,6 @@
 % Numbers in parentheses: (1), (2), (3)... EVEN IF ONLY ONE
 \makeatletter
 \newcommand{\printEnclosureList}{%
-    % DEBUG: Always show enclosure count
-    \noindent\textbf{DEBUG: enclmax = \arabic{enclmax}}\\
     \ifnum\value{enclmax}>0
         \vspace{12pt}
         \noindent
@@ -951,14 +949,8 @@
 %=============================================================================
 
 % Load enclosure definitions first (so counter is set before document)
-% DEBUG: Test if enclosures.tex is being read
-\IfFileExists{enclosures.tex}{%
-    \typeout{DEBUG: enclosures.tex EXISTS}%
-    \input{enclosures.tex}%
-}{%
-    \typeout{DEBUG: enclosures.tex NOT FOUND - using fallback}%
-}
-\typeout{DEBUG: After loading enclosures, enclmax = \arabic{enclmax}}
+% Note: Using encl-config.tex to avoid conflict with enclosures/ directory
+\input{encl-config}
 
 
 %=============================================================================
