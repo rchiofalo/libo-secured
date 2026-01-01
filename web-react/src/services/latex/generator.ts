@@ -337,16 +337,17 @@ export function generateClassificationTex(store: DocumentStore): string {
 }
 
 export function generateAllLatexFiles(store: DocumentStore): Record<string, string> {
+  // Files are written to root level to match \input{} paths in latex-templates.js
   return {
-    'config/document.tex': generateDocumentTex(store),
-    'config/letterhead.tex': generateLetterheadTex(store),
-    'config/signatory.tex': generateSignatoryTex(store),
-    'config/flags.tex': generateFlagsTex(store),
-    'config/references.tex': generateReferencesTex(store),
-    'config/reference-urls.tex': generateReferenceUrlsTex(store),
-    'config/encl-config.tex': generateEnclosuresTex(store),
-    'config/copyto-config.tex': generateCopyToTex(store),
-    'config/body.tex': generateBodyTex(store),
-    'config/classification.tex': generateClassificationTex(store),
+    'document.tex': generateDocumentTex(store),
+    'letterhead.tex': generateLetterheadTex(store),
+    'signatory.tex': generateSignatoryTex(store),
+    'flags.tex': generateFlagsTex(store),
+    'references.tex': generateReferencesTex(store),
+    'reference-urls.tex': generateReferenceUrlsTex(store),
+    'encl-config.tex': generateEnclosuresTex(store),
+    'copyto-config.tex': generateCopyToTex(store),
+    'body.tex': generateBodyTex(store),
+    'classification.tex': generateClassificationTex(store),
   };
 }

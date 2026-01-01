@@ -116,7 +116,6 @@ export function useLatexEngine() {
       engine.setTexliveEndpoint(texliveUrl);
 
       // Create virtual filesystem directories
-      engine.makeMemFSFolder('config');
       engine.makeMemFSFolder('formats');
       engine.makeMemFSFolder('attachments');
       engine.makeMemFSFolder('enclosures');
