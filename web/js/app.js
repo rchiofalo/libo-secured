@@ -1308,6 +1308,24 @@ function outdentParagraph(index) {
 }
 
 /**
+ * Move a paragraph up
+ */
+function moveParagraphUp(index) {
+    if (index > 0) {
+        reorderParagraph(index, index - 1);
+    }
+}
+
+/**
+ * Move a paragraph down
+ */
+function moveParagraphDown(index) {
+    if (index < paragraphs.length - 1) {
+        reorderParagraph(index, index + 1);
+    }
+}
+
+/**
  * Render the paragraphs list with drag-and-drop support
  */
 function renderParagraphs() {
@@ -1323,29 +1341,25 @@ function renderParagraphs() {
 
     container.innerHTML = paragraphs.map((para, index) => {
         const level = para.level || 0;
-        // Each level indents by 24px (consistent spacing regardless of label width)
-        const indentPx = level * 24;
+        // Each level indents by 30px
+        const indentPx = level * 30;
 
         return `
-            <div class="paragraph-item" draggable="true" data-index="${index}" data-level="${level}">
-                <div class="paragraph-controls">
-                    <span class="paragraph-drag-handle" title="Drag to reorder">⋮⋮</span>
-                    <div class="paragraph-indent-controls">
-                        <button type="button" class="btn-outdent" onclick="outdentParagraph(${index})" title="Outdent (Shift+Tab)" ${level === 0 ? 'disabled' : ''}>◀</button>
-                        <button type="button" class="btn-indent" onclick="indentParagraph(${index})" title="Indent (Tab)" ${level >= MAX_PARAGRAPH_LEVELS - 1 ? 'disabled' : ''}>▶</button>
+            <div class="paragraph-item" draggable="true" data-index="${index}" data-level="${level}" style="margin-left: ${indentPx}px;">
+                <div class="paragraph-header">
+                    <span class="paragraph-label">${labels[index]}</span>
+                    <div class="paragraph-actions">
+                        <button type="button" class="para-btn" onclick="outdentParagraph(${index})" title="Outdent (Shift+Tab)" ${level === 0 ? 'disabled' : ''}>←</button>
+                        <button type="button" class="para-btn" onclick="indentParagraph(${index})" title="Indent (Tab)" ${level >= MAX_PARAGRAPH_LEVELS - 1 ? 'disabled' : ''}>→</button>
+                        <button type="button" class="para-btn" onclick="moveParagraphUp(${index})" title="Move up (Alt+↑)" ${index === 0 ? 'disabled' : ''}>↑</button>
+                        <button type="button" class="para-btn" onclick="moveParagraphDown(${index})" title="Move down (Alt+↓)" ${index >= paragraphs.length - 1 ? 'disabled' : ''}>↓</button>
+                        <button type="button" class="para-btn para-btn-delete" onclick="removeParagraph(${index})" title="Delete" ${paragraphs.length <= 1 ? 'disabled' : ''}>×</button>
                     </div>
                 </div>
-                <div class="paragraph-body">
-                    <div class="paragraph-indent" style="width: ${indentPx}px;"></div>
-                    <span class="paragraph-number" title="Level ${level + 1} of 8">${labels[index]}</span>
-                    <div class="paragraph-content">
-                        <textarea class="paragraph-text"
-                                  placeholder="Enter paragraph text..."
-                                  data-index="${index}"
-                                  oninput="updateParagraphText(${index}, this.value)">${escapeHtml(para.text)}</textarea>
-                    </div>
-                </div>
-                <button type="button" class="paragraph-remove" onclick="removeParagraph(${index})" title="Remove paragraph">×</button>
+                <textarea class="paragraph-text"
+                          placeholder="Enter paragraph text..."
+                          data-index="${index}"
+                          oninput="updateParagraphText(${index}, this.value)">${escapeHtml(para.text)}</textarea>
             </div>
         `;
     }).join('');

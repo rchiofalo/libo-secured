@@ -2014,136 +2014,111 @@ body.modal-open {
 .paragraphs-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 }
 
+/* Paragraph card with colored left border based on level */
 .paragraph-item {
     display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    background: #16213e;
-    border: 1px solid #3282b8;
-    border-radius: 4px;
-    padding: 10px;
-    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    flex-direction: column;
+    background: rgba(15, 52, 96, 0.5);
+    border: 1px solid #2a4a6b;
+    border-radius: 8px;
+    padding: 12px;
+    transition: all 0.2s ease;
+    border-left: 4px solid #3282b8;
 }
 
 .paragraph-item:hover {
-    border-color: #bbe1fa;
+    background: rgba(15, 52, 96, 0.8);
+    border-color: #3282b8;
 }
 
 .paragraph-item.dragging {
-    opacity: 0.5;
-    border-color: #bbe1fa;
-    box-shadow: 0 4px 12px rgba(50, 130, 184, 0.3);
+    opacity: 0.6;
     transform: scale(0.98);
 }
 
 .paragraph-item.drag-over-above {
-    border-top: 3px solid #bbe1fa;
-    margin-top: -2px;
+    box-shadow: 0 -3px 0 0 #bbe1fa;
 }
 
 .paragraph-item.drag-over-below {
-    border-bottom: 3px solid #bbe1fa;
-    margin-bottom: -2px;
+    box-shadow: 0 3px 0 0 #bbe1fa;
 }
 
-/* Controls area - drag handle and indent buttons */
-.paragraph-controls {
+/* Level-based colors (matching competitor but for dark theme) */
+.paragraph-item[data-level="0"] { border-left-color: #3282b8; }
+.paragraph-item[data-level="1"] { border-left-color: #f0ad4e; }
+.paragraph-item[data-level="2"] { border-left-color: #5cb85c; }
+.paragraph-item[data-level="3"] { border-left-color: #5bc0de; }
+.paragraph-item[data-level="4"] { border-left-color: #9b59b6; }
+.paragraph-item[data-level="5"] { border-left-color: #e74c3c; }
+.paragraph-item[data-level="6"] { border-left-color: #fd7e14; }
+.paragraph-item[data-level="7"] { border-left-color: #e83e8c; }
+
+/* Header row with label and action buttons */
+.paragraph-header {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    gap: 4px;
-    flex-shrink: 0;
+    margin-bottom: 8px;
 }
 
-.paragraph-drag-handle {
-    cursor: grab;
-    color: #555;
-    font-size: 12px;
-    padding: 2px;
-    user-select: none;
-    transition: color 0.2s;
-}
-
-.paragraph-drag-handle:hover {
+.paragraph-label {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 14px;
     color: #bbe1fa;
+    padding: 2px 8px;
+    background: rgba(50, 130, 184, 0.2);
+    border-radius: 4px;
 }
 
-.paragraph-drag-handle:active {
-    cursor: grabbing;
-}
-
-/* Indent/Outdent controls */
-.paragraph-indent-controls {
+/* Action buttons row */
+.paragraph-actions {
     display: flex;
-    gap: 1px;
+    gap: 4px;
 }
 
-.btn-indent, .btn-outdent {
-    background: transparent;
-    border: none;
-    color: #555;
+.para-btn {
+    background: rgba(50, 130, 184, 0.15);
+    border: 1px solid #3a5a7c;
+    color: #8ab4d4;
     cursor: pointer;
-    padding: 2px 4px;
-    font-size: 9px;
-    transition: color 0.2s;
-    line-height: 1;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    transition: all 0.15s;
 }
 
-.btn-indent:hover:not(:disabled), .btn-outdent:hover:not(:disabled) {
-    color: #bbe1fa;
+.para-btn:hover:not(:disabled) {
+    background: rgba(50, 130, 184, 0.3);
+    border-color: #bbe1fa;
+    color: #fff;
 }
 
-.btn-indent:disabled, .btn-outdent:disabled {
-    opacity: 0.2;
+.para-btn:disabled {
+    opacity: 0.3;
     cursor: not-allowed;
 }
 
-/* Paragraph body - number and content */
-.paragraph-body {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    flex: 1;
-    min-width: 0;
+.para-btn-delete:hover:not(:disabled) {
+    background: rgba(231, 76, 60, 0.3);
+    border-color: #e74c3c;
+    color: #e74c3c;
 }
 
-/* Indent spacer - fixed width per level for consistent alignment */
-.paragraph-indent {
-    flex-shrink: 0;
-    transition: width 0.15s ease;
-}
-
-.paragraph-number {
-    color: #bbe1fa;
-    font-weight: 600;
-    font-size: 13px;
-    min-width: 28px;
-    flex-shrink: 0;
-    padding-top: 6px;
-    font-family: 'Courier New', monospace;
-    text-align: right;
-}
-
-.paragraph-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    min-width: 0;
-}
-
+/* Textarea */
 .paragraph-text {
     width: 100%;
-    min-height: 60px;
+    min-height: 70px;
     background: #0f3460;
-    border: 1px solid #3282b8;
+    border: 1px solid #2a4a6b;
     border-radius: 4px;
     color: #eee;
-    font-size: 12px;
-    padding: 8px;
+    font-size: 13px;
+    padding: 10px;
     resize: vertical;
     font-family: inherit;
     line-height: 1.5;
@@ -2151,39 +2126,21 @@ body.modal-open {
 
 .paragraph-text:focus {
     outline: none;
-    border-color: #bbe1fa;
+    border-color: #3282b8;
     background: #16213e;
 }
 
-.paragraph-remove {
-    background: transparent;
-    border: none;
-    color: #666;
-    cursor: pointer;
-    padding: 4px 8px;
-    font-size: 16px;
-    opacity: 0.7;
-    transition: opacity 0.2s, color 0.2s;
-    flex-shrink: 0;
-    align-self: flex-start;
-}
-
-.paragraph-remove:hover {
-    opacity: 1;
-    color: #e74c3c;
-}
-
 .paragraph-add-row {
-    margin-top: 8px;
+    margin-top: 12px;
 }
 
 .btn-add-paragraph {
     background: transparent;
     border: 1px dashed #3282b8;
     color: #3282b8;
-    padding: 8px 16px;
-    font-size: 12px;
-    border-radius: 4px;
+    padding: 10px 16px;
+    font-size: 13px;
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.2s;
     width: 100%;
