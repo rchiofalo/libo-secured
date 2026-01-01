@@ -146,11 +146,15 @@ echo "" >> "$OUTPUT"
 echo "// Attachment files (images - base64 encoded)" >> "$OUTPUT"
 echo "const TEXLIVE_ATTACHMENTS = [" >> "$OUTPUT"
 
-# Include dod-seal.png from the repo's attachments folder
+# Include seal images from the repo's attachments folder
 REPO_DIR="$(dirname "$SCRIPT_DIR")"
 if [ -f "$REPO_DIR/attachments/dod-seal.png" ]; then
     echo "  { filename: 'dod-seal.png', content: '$(base64 < "$REPO_DIR/attachments/dod-seal.png" | tr -d '\n')' }," >> "$OUTPUT"
     echo "  Added attachment: dod-seal.png"
+fi
+if [ -f "$REPO_DIR/attachments/dow-seal.png" ]; then
+    echo "  { filename: 'dow-seal.png', content: '$(base64 < "$REPO_DIR/attachments/dow-seal.png" | tr -d '\n')' }," >> "$OUTPUT"
+    echo "  Added attachment: dow-seal.png"
 fi
 
 echo "];" >> "$OUTPUT"

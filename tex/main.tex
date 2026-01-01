@@ -510,6 +510,23 @@
 
 
 %=============================================================================
+%                          SEAL CONFIGURATION
+%=============================================================================
+% Options:
+%   dod - Department of Defense seal (current, default)
+%   dow - Department of War seal (historical, pre-1947)
+%=============================================================================
+
+\newcommand{\SealType}{dod}
+\newcommand{\setSealType}[1]{\renewcommand{\SealType}{#1}}
+
+% Helper to get seal filename based on type
+\newcommand{\getSealFile}{%
+    \ifthenelse{\equal{\SealType}{dow}}{dow-seal.png}{dod-seal.png}%
+}
+
+
+%=============================================================================
 %                    CONDITIONAL/OPTIONAL FIELD HELPERS
 %=============================================================================
 % These macros allow format templates to conditionally print fields.
@@ -684,11 +701,11 @@
 
 \newcommand{\printLetterhead}{%
     \begin{textblock*}{1in}(0.5in, 0.5in)%
-        \IfFileExists{attachments/dod-seal.png}{%
-            \includegraphics[width=1in]{attachments/dod-seal.png}%
+        \IfFileExists{attachments/\getSealFile}{%
+            \includegraphics[width=1in]{attachments/\getSealFile}%
         }{%
             \framebox[1in][c]{%
-                \parbox{0.9in}{\centering\scriptsize DoD Seal\\(add dod-seal.png)}%
+                \parbox{0.9in}{\centering\scriptsize Seal\\(add \getSealFile)}%
             }%
         }%
     \end{textblock*}%

@@ -254,10 +254,21 @@
             </div>
 
             <h2>Letterhead</h2>
-            <label>Select from Known Units</label>
-            <select id="unitSelect" onchange="selectUnit()">
-                <option value="">-- Select a unit or type below --</option>
-            </select>
+            <div class="row">
+                <div>
+                    <label>Seal</label>
+                    <select id="sealType" onchange="updatePreview()">
+                        <option value="dod" selected>DoD Seal (Current)</option>
+                        <option value="dow">Dept of War Seal (Historical)</option>
+                    </select>
+                </div>
+                <div style="flex: 2;">
+                    <label>Select from Known Units</label>
+                    <select id="unitSelect" onchange="selectUnit()">
+                        <option value="">-- Select a unit or type below --</option>
+                    </select>
+                </div>
+            </div>
 
             <label>Unit Name (Line 1)</label>
             <input type="text" id="unitLine1" value="1ST BATTALION, 6TH MARINES" oninput="updatePreview()">
