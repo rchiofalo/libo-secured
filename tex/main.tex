@@ -553,32 +553,33 @@
 
 % Print field followed by \\ if non-empty, nothing if empty
 % Usage: \optionalLine{\SignatoryRank}
+% Note: Uses \ifdefempty from etoolbox for proper macro expansion check
 \newcommand{\optionalLine}[1]{%
-    \ifx#1\empty\else#1\\\fi
+    \ifdefempty{#1}{}{#1\\}%
 }
 
 % Print field without trailing newline if non-empty
 % Usage: \optionalField{\SignatoryTitle}
 \newcommand{\optionalField}[1]{%
-    \ifx#1\empty\else#1\fi
+    \ifdefempty{#1}{}{#1}%
 }
 
 % Print "Label: value\\" if value is non-empty
 % Usage: \optionalWithLabel{POC}{\POCEmail}
 \newcommand{\optionalWithLabel}[2]{%
-    \ifx#2\empty\else#1: #2\\\fi
+    \ifdefempty{#2}{}{#1: #2\\}%
 }
 
 % Execute content if macro is non-empty
 % Usage: \ifNotEmpty{\SignatoryRank}{Rank: \SignatoryRank\\}
 \newcommand{\ifNotEmpty}[2]{%
-    \ifx#1\empty\else#2\fi
+    \ifdefempty{#1}{}{#2}%
 }
 
 % Execute first content if non-empty, else execute second content
 % Usage: \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev}{\MakeUppercase{\SignatoryName}}
 \newcommand{\ifNotEmptyElse}[3]{%
-    \ifx#1\empty#3\else#2\fi
+    \ifdefempty{#1}{#3}{#2}%
 }
 
 % Legacy compatibility - string-based field name version
