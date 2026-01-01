@@ -60,7 +60,17 @@ var EngineStatus;
     EngineStatus[EngineStatus["Busy"] = 3] = "Busy";
     EngineStatus[EngineStatus["Error"] = 4] = "Error";
 })(EngineStatus = exports.EngineStatus || (exports.EngineStatus = {}));
-var ENGINE_PATH = 'lib/swiftlatexpdftex.js?v=6';
+// Detect base path from current script location or use default
+var scriptEl = document.currentScript;
+var basePath = '';
+if (scriptEl && scriptEl.src) {
+    // Extract base path from script src (e.g., /libo-secured/lib/PdfTeXEngine.js -> /libo-secured/)
+    var match = scriptEl.src.match(/(.*)\/lib\/PdfTeXEngine\.js/);
+    if (match) {
+        basePath = match[1];
+    }
+}
+var ENGINE_PATH = basePath + '/lib/swiftlatexpdftex.js?v=6';
 var CompileResult = /** @class */ (function () {
     function CompileResult() {
         this.pdf = undefined;

@@ -19,8 +19,9 @@ export function FormPanel() {
     <div className="flex flex-col h-full border-r border-border bg-card overflow-hidden">
       <ProfileBar />
 
-      <ScrollArea className="flex-1">
-        <div className="p-4 space-y-6">
+      <div className="flex-1 min-h-0 overflow-hidden">
+        <ScrollArea className="h-full">
+          <div className="p-4 space-y-6">
           <DocumentTypeSelector />
 
           {config.letterhead && <LetterheadSection />}
@@ -36,8 +37,9 @@ export function FormPanel() {
           <CopyToManager />
 
           <SignatureSection config={config} />
-        </div>
-      </ScrollArea>
+          </div>
+        </ScrollArea>
+      </div>
     </div>
   );
 }
