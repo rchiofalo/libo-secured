@@ -49,6 +49,62 @@
 
 ---
 
+## Why This Tool
+
+### The Problem with Existing Solutions
+
+Most military correspondence tools fall into one of these categories:
+
+| Approach | Limitations |
+|----------|-------------|
+| **Word Templates** | Manual formatting, easy to break compliance, no enclosure management |
+| **Cloud-Based Generators** | Data sent to external servers, unusable on classified networks, requires internet |
+| **Desktop Applications** | Requires installation, IT approval, often Windows-only |
+| **Basic Web Forms** | DOCX-only output, limited document types, no PDF enclosure merging |
+
+### How libo-secured Is Different
+
+| Capability | Other Tools | libo-secured |
+|------------|-------------|--------------|
+| **Data Privacy** | Cloud processing, data leaves your system | 100% client-side, zero network calls |
+| **Air-Gap Compatible** | Requires internet connection | Fully offline after initial load |
+| **Output Format** | DOCX only (requires Word to view) | Native PDF with embedded fonts |
+| **Enclosures** | Manual attachment, separate files | Auto-merged into single PDF with hyperlinks |
+| **Document Types** | 1-5 basic formats | 18 formats covering all SECNAV chapters |
+| **Paragraph Nesting** | 3-4 levels typical | Full 8 levels per SECNAV M-5216.5 |
+| **Classification Markings** | Basic or none | Full CUI/classified per DoDI 5200.48 |
+| **Typographic Quality** | Word processor rendering | LaTeX typesetting (publication quality) |
+| **Reference Library** | None or manual entry | 2,100+ references searchable by SSIC |
+| **Installation** | Software install required | Zero install, runs in any browser |
+
+### Key Advantages
+
+**Security & Compliance**
+- No data ever leaves your browser - critical for CUI and classified environments
+- Works on NIPR, SIPR, and air-gapped systems without modification
+- No server infrastructure to maintain, patch, or secure
+- NIST 800-53 controls satisfied by architecture (see compliance section)
+
+**Professional Output**
+- LaTeX produces typographically superior documents
+- Consistent spacing, hyphenation, and pagination
+- Embedded fonts ensure identical rendering on any system
+- Single PDF output with merged enclosures - no loose attachments
+
+**Operational Efficiency**
+- Profile system saves unit/signatory info across sessions
+- Draft auto-save prevents lost work
+- Reference library eliminates manual MCO/SECNAVINST lookup
+- Drag-and-drop enclosure upload with automatic numbering
+
+**True Portability**
+- Runs on Windows, Mac, Linux, tablets - any device with a browser
+- No IT ticket required, no admin rights needed
+- Copy to USB drive for fully disconnected operation
+- Same tool works from garrison to deployed environments
+
+---
+
 ## Architecture
 
 ### How It Works
