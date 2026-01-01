@@ -130,7 +130,8 @@
         \begin{minipage}[t]{2.5in}
             \centering
             \rule{2in}{0.4pt}\\
-            \MakeUppercase{\JuniorSignatoryName}\\
+            \MakeUppercase{\JuniorSignatoryName}%
+            \ifNotEmpty{\JuniorSignatoryRank}{\\}%
             \optionalLine{\JuniorSignatoryRank}%
             \optionalLine{\JuniorSignatoryTitle}%
             \optionalField{\JuniorByDirection}%
@@ -140,7 +141,8 @@
         \begin{minipage}[t]{2.5in}
             \centering
             \rule{2in}{0.4pt}\\
-            \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev\\}{\MakeUppercase{\SignatoryName}\\}%
+            \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev}{\MakeUppercase{\SignatoryName}}%
+            \ifNotEmpty{\SignatoryRank}{\\}%
             \optionalLine{\SignatoryRank}%
             \optionalLine{\SignatoryTitle}%
             \optionalField{\ByDirection}%
