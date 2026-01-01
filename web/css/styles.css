@@ -2109,6 +2109,24 @@ body.modal-open {
     color: #e74c3c;
 }
 
+.para-btn-add {
+    background: rgba(46, 204, 113, 0.15);
+    border-color: #2ecc71;
+    color: #2ecc71;
+}
+
+.para-btn-add:hover:not(:disabled) {
+    background: rgba(46, 204, 113, 0.3);
+    border-color: #2ecc71;
+    color: #fff;
+}
+
+.para-separator {
+    color: #3a5a7c;
+    margin: 0 2px;
+    user-select: none;
+}
+
 /* Textarea */
 .paragraph-text {
     width: 100%;

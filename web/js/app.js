@@ -1326,6 +1326,43 @@ function moveParagraphDown(index) {
 }
 
 /**
+ * Add a sub-paragraph after the current one (one level deeper)
+ */
+function addSubParagraph(afterIndex) {
+    const parentLevel = paragraphs[afterIndex].level || 0;
+    const newLevel = Math.min(parentLevel + 1, MAX_PARAGRAPH_LEVELS - 1);
+
+    // Insert after the current paragraph
+    paragraphs.splice(afterIndex + 1, 0, { text: '', level: newLevel });
+    renderParagraphs();
+    updatePreview();
+
+    // Focus the new paragraph
+    setTimeout(() => {
+        const textarea = document.querySelector(`.paragraph-text[data-index="${afterIndex + 1}"]`);
+        if (textarea) textarea.focus();
+    }, 50);
+}
+
+/**
+ * Add a sibling paragraph at the same level
+ */
+function addSiblingParagraph(afterIndex) {
+    const level = paragraphs[afterIndex].level || 0;
+
+    // Insert after the current paragraph
+    paragraphs.splice(afterIndex + 1, 0, { text: '', level: level });
+    renderParagraphs();
+    updatePreview();
+
+    // Focus the new paragraph
+    setTimeout(() => {
+        const textarea = document.querySelector(`.paragraph-text[data-index="${afterIndex + 1}"]`);
+        if (textarea) textarea.focus();
+    }, 50);
+}
+
+/**
  * Render the paragraphs list with drag-and-drop support
  */
 function renderParagraphs() {
@@ -1341,16 +1378,20 @@ function renderParagraphs() {
 
     container.innerHTML = paragraphs.map((para, index) => {
         const level = para.level || 0;
+        const nextLevelLabel = getParagraphLabel((level + 1) % 4, 1); // Preview what sub-para label would be
 
         return `
             <div class="paragraph-item" draggable="true" data-index="${index}" data-level="${level}">
                 <div class="paragraph-header">
                     <span class="paragraph-label">${labels[index]}</span>
                     <div class="paragraph-actions">
-                        <button type="button" class="para-btn" onclick="outdentParagraph(${index})" title="Outdent (Shift+Tab)" ${level === 0 ? 'disabled' : ''}>←</button>
-                        <button type="button" class="para-btn" onclick="indentParagraph(${index})" title="Indent (Tab)" ${level >= MAX_PARAGRAPH_LEVELS - 1 ? 'disabled' : ''}>→</button>
-                        <button type="button" class="para-btn" onclick="moveParagraphUp(${index})" title="Move up (Alt+↑)" ${index === 0 ? 'disabled' : ''}>↑</button>
-                        <button type="button" class="para-btn" onclick="moveParagraphDown(${index})" title="Move down (Alt+↓)" ${index >= paragraphs.length - 1 ? 'disabled' : ''}>↓</button>
+                        <button type="button" class="para-btn para-btn-add" onclick="addSubParagraph(${index})" title="Add sub-paragraph (${nextLevelLabel})" ${level >= MAX_PARAGRAPH_LEVELS - 1 ? 'disabled' : ''}>+ ${nextLevelLabel}</button>
+                        <button type="button" class="para-btn" onclick="addSiblingParagraph(${index})" title="Add paragraph at same level">+</button>
+                        <span class="para-separator">|</span>
+                        <button type="button" class="para-btn" onclick="moveParagraphUp(${index})" title="Move up" ${index === 0 ? 'disabled' : ''}>↑</button>
+                        <button type="button" class="para-btn" onclick="moveParagraphDown(${index})" title="Move down" ${index >= paragraphs.length - 1 ? 'disabled' : ''}>↓</button>
+                        <button type="button" class="para-btn" onclick="outdentParagraph(${index})" title="Outdent" ${level === 0 ? 'disabled' : ''}>←</button>
+                        <button type="button" class="para-btn" onclick="indentParagraph(${index})" title="Indent" ${level >= MAX_PARAGRAPH_LEVELS - 1 ? 'disabled' : ''}>→</button>
                         <button type="button" class="para-btn para-btn-delete" onclick="removeParagraph(${index})" title="Delete" ${paragraphs.length <= 1 ? 'disabled' : ''}>×</button>
                     </div>
                 </div>
@@ -2397,13 +2438,13 @@ function generateBodyTex(data) {
  */
 function getOpenEnvironment(level) {
     switch (level) {
-        case 1: return '\\begin{subpara}';
-        case 2: return '\\begin{subsubpara}';
-        case 3: return '\\begin{subsubsubpara}';
-        case 4: return '\\begin{subsubsubsubpara}';
-        case 5: return '\\begin{enumerate}[label=\\arabic*., leftmargin=1.6in]';
-        case 6: return '\\begin{enumerate}[label=\\alph*., leftmargin=2.0in]';
-        case 7: return '\\begin{enumerate}[label=(\\arabic*), leftmargin=2.4in]';
+        case 1: return '\\begin{subpara}';           // a., b., c.
+        case 2: return '\\begin{subsubpara}';        // (1), (2), (3)
+        case 3: return '\\begin{subsubsubpara}';     // (a), (b), (c)
+        case 4: return '\\begin{subsubsubsubpara}';  // 1., 2., 3.
+        case 5: return '\\begin{subsubsubsubsubpara}';     // a., b., c.
+        case 6: return '\\begin{subsubsubsubsubsubpara}';  // (1), (2), (3)
+        case 7: return '\\begin{subsubsubsubsubsubsubpara}'; // (a), (b), (c)
         default: return '\\begin{enumerate}';
     }
 }
@@ -2417,6 +2458,9 @@ function getCloseEnvironment(level) {
         case 2: return '\\end{subsubpara}';
         case 3: return '\\end{subsubsubpara}';
         case 4: return '\\end{subsubsubsubpara}';
+        case 5: return '\\end{subsubsubsubsubpara}';
+        case 6: return '\\end{subsubsubsubsubsubpara}';
+        case 7: return '\\end{subsubsubsubsubsubsubpara}';
         default: return '\\end{enumerate}';
     }
 }
