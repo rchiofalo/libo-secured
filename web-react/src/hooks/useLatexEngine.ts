@@ -5,7 +5,10 @@ declare global {
   interface Window {
     PdfTeXEngine: new () => PdfTeXEngine;
     LATEX_TEMPLATES: Record<string, string>;
-    TEXLIVE_PACKAGES: Array<{ format: string; filename: string; content: string }>;
+    TEXLIVE_PACKAGES: Array<{ format: number; filename: string; content: string }>;
+    TEXLIVE_FONTS: Array<{ format: number; filename: string; content: string }>;
+    TEXLIVE_TYPE1_FONTS: Array<{ format: number; filename: string; content: string }>;
+    TEXLIVE_VF_FONTS: Array<{ format: number; filename: string; content: string }>;
     SWIFTLATEX_BASE_PATH?: string;
   }
 }
@@ -17,8 +20,18 @@ interface PdfTeXEngine {
   makeMemFSFolder(path: string): void;
   setEngineMainFile(path: string): void;
   compileLaTeX(): Promise<{ status: number; pdf?: Uint8Array; log: string }>;
-  preloadTexliveFile(format: string, filename: string, content: string): void;
+  preloadTexliveFile(format: number, filename: string, content: string | Uint8Array): void;
   setTexliveEndpoint(url: string): void;
+}
+
+// Helper to decode base64 to Uint8Array
+function base64ToUint8Array(base64: string): Uint8Array {
+  const binaryString = atob(base64);
+  const bytes = new Uint8Array(binaryString.length);
+  for (let i = 0; i < binaryString.length; i++) {
+    bytes[i] = binaryString.charCodeAt(i);
+  }
+  return bytes;
 }
 
 interface LatexEngineState {
@@ -109,13 +122,46 @@ export function useLatexEngine() {
       engine.makeMemFSFolder('enclosures');
       engine.makeMemFSFolder('templates');
 
-      // Preload TeX Live packages
+      // Preload TeX Live packages (text files like .cls, .sty, .cfg)
       if (window.TEXLIVE_PACKAGES) {
         console.log(`Preloading ${window.TEXLIVE_PACKAGES.length} TeX Live packages...`);
         for (const pkg of window.TEXLIVE_PACKAGES) {
           engine.preloadTexliveFile(pkg.format, pkg.filename, pkg.content);
         }
       }
+
+      // Preload TFM font metrics (format 3, base64 encoded)
+      if (window.TEXLIVE_FONTS) {
+        console.log(`Preloading ${window.TEXLIVE_FONTS.length} TFM font metrics...`);
+        for (const font of window.TEXLIVE_FONTS) {
+          const bytes = base64ToUint8Array(font.content);
+          engine.preloadTexliveFile(font.format, font.filename, bytes);
+        }
+      }
+
+      // Preload Type1 fonts (format 4, base64 encoded)
+      if (window.TEXLIVE_TYPE1_FONTS) {
+        console.log(`Preloading ${window.TEXLIVE_TYPE1_FONTS.length} Type1 fonts...`);
+        for (const font of window.TEXLIVE_TYPE1_FONTS) {
+          const bytes = base64ToUint8Array(font.content);
+          engine.preloadTexliveFile(font.format, font.filename, bytes);
+        }
+      }
+
+      // Preload Virtual fonts (format 2, base64 encoded)
+      if (window.TEXLIVE_VF_FONTS) {
+        console.log(`Preloading ${window.TEXLIVE_VF_FONTS.length} Virtual fonts...`);
+        for (const font of window.TEXLIVE_VF_FONTS) {
+          const bytes = base64ToUint8Array(font.content);
+          engine.preloadTexliveFile(font.format, font.filename, bytes);
+        }
+      }
+
+      // Wait for worker to process all preload messages
+      // postMessage is async, so we need to give the worker time to process
+      console.log('Waiting for worker to process preload messages...');
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      console.log('Preload wait complete');
 
       // Write LaTeX templates
       // Templates are stored with 'tex/' prefix but need to be written to root for SwiftLaTeX
