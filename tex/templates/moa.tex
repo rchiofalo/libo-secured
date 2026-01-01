@@ -129,9 +129,9 @@
         % Junior command signature (LEFT) - signs FIRST
         \begin{minipage}[t]{2.5in}
             \centering
-            \rule{2in}{0.4pt}\\
+            \rule{2in}{0.4pt}%
+            \ifNotEmpty{\JuniorSignatoryName}{\\}%
             \MakeUppercase{\JuniorSignatoryName}%
-            \ifNotEmpty{\JuniorSignatoryRank}{\\}%
             \optionalLine{\JuniorSignatoryRank}%
             \optionalLine{\JuniorSignatoryTitle}%
             \optionalField{\JuniorByDirection}%
@@ -140,9 +140,9 @@
         % Senior command signature (RIGHT) - signs LAST
         \begin{minipage}[t]{2.5in}
             \centering
-            \rule{2in}{0.4pt}\\
+            \rule{2in}{0.4pt}%
+            \ifNotEmptyElse{\SignatoryAbbrev}{\\}{\ifNotEmpty{\SignatoryName}{\\}}%
             \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev}{\MakeUppercase{\SignatoryName}}%
-            \ifNotEmpty{\SignatoryRank}{\\}%
             \optionalLine{\SignatoryRank}%
             \optionalLine{\SignatoryTitle}%
             \optionalField{\ByDirection}%
