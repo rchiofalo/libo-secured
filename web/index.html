@@ -116,6 +116,28 @@
         </div>
     </div>
 
+    <!-- Reference Library Modal -->
+    <div id="referenceLibraryModal" class="modal" style="display: none;">
+        <div class="modal-content reference-library-modal">
+            <div class="modal-header">
+                <h3>📚 Reference Library</h3>
+                <button class="modal-close" onclick="closeReferenceLibrary()">&times;</button>
+            </div>
+            <div class="reference-library-search">
+                <input type="text" id="refLibrarySearch" placeholder="Search references (e.g., leave, PFT, awards...)" oninput="filterReferenceLibrary()">
+                <select id="refLibraryCategory" onchange="filterReferenceLibrary()">
+                    <option value="">All Categories</option>
+                </select>
+            </div>
+            <div class="reference-library-list" id="refLibraryList">
+                <!-- References will be populated here -->
+            </div>
+            <div class="modal-footer">
+                <span class="ref-library-hint">Click a reference to add it to your document</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Mode Switcher -->
     <div class="mode-switcher">
         <button id="modeCorrespondence" class="mode-btn active" onclick="switchMode('correspondence')">
@@ -464,6 +486,7 @@
                 <div id="referencesList" class="references-list"></div>
                 <div class="reference-add-row">
                     <button type="button" class="btn-add-reference" onclick="addReference()">+ Add Reference</button>
+                    <button type="button" class="btn-reference-library" onclick="openReferenceLibrary()">📚 Reference Library</button>
                 </div>
 
                 <div class="enclosures-header">
@@ -698,7 +721,7 @@
     <script src="js/texlive-packages.js?v=10"></script>
 
     <!-- Application JavaScript -->
-    <script src="js/app.js?v=31"></script>
+    <script src="js/app.js?v=32"></script>
 </body>
 
 </html>

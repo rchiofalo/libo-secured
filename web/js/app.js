@@ -2226,6 +2226,9 @@ ${data.body.split('\n').map(line => escapeLatex(line)).join('\n\n')}
 // DATA LOADING
 // =============================================================================
 
+// Store SSIC data globally for search
+let ssicData = [];
+
 /**
  * Load SSIC codes from JSON and populate datalist
  */
@@ -2233,26 +2236,17 @@ async function loadSSICData() {
     try {
         const response = await fetch('data/ssic.json');
         const data = await response.json();
+        ssicData = data.codes;
         const datalist = document.getElementById('ssic-list');
 
-        // Flatten codes into options
-        for (const [code, info] of Object.entries(data.codes)) {
-            // Add main category
+        // New format: array of {code, title} objects
+        for (const item of data.codes) {
             const option = document.createElement('option');
-            option.value = code;
-            option.label = `${code} - ${info.title}`;
+            option.value = item.code;
+            option.label = `${item.code} - ${item.title}`;
             datalist.appendChild(option);
-
-            // Add subcodes
-            if (info.subcodes) {
-                for (const [subcode, title] of Object.entries(info.subcodes)) {
-                    const subOption = document.createElement('option');
-                    subOption.value = subcode;
-                    subOption.label = `${subcode} - ${title}`;
-                    datalist.appendChild(subOption);
-                }
-            }
         }
+        console.log(`Loaded ${data.codes.length} SSIC codes`);
     } catch (error) {
         console.warn('Could not load SSIC data:', error);
     }
@@ -2272,30 +2266,33 @@ async function loadUnitData() {
 
         const select = document.getElementById('unitSelect');
 
-        // Group units by base for easier navigation
-        const baseGroups = {};
+        // Group units by type for easier navigation
+        const typeGroups = {};
         for (const unit of data.units) {
-            const base = unit.base || 'Other';
-            if (!baseGroups[base]) {
-                baseGroups[base] = [];
+            const type = unit.type || 'other';
+            // Capitalize first letter of type
+            const typeLabel = type.charAt(0).toUpperCase() + type.slice(1);
+            if (!typeGroups[typeLabel]) {
+                typeGroups[typeLabel] = [];
             }
-            baseGroups[base].push(unit);
+            typeGroups[typeLabel].push(unit);
         }
 
-        // Create optgroups for each base
-        for (const [base, units] of Object.entries(baseGroups).sort()) {
+        // Create optgroups for each type
+        for (const [type, units] of Object.entries(typeGroups).sort()) {
             const optgroup = document.createElement('optgroup');
-            optgroup.label = base;
+            optgroup.label = type;
 
             for (const unit of units) {
                 const option = document.createElement('option');
                 option.value = unit.name;
-                option.textContent = unit.name;
+                option.textContent = unit.abbrev ? `${unit.abbrev} - ${unit.name}` : unit.name;
                 optgroup.appendChild(option);
             }
 
             select.appendChild(optgroup);
         }
+        console.log(`Loaded ${data.units.length} units`);
     } catch (error) {
         console.warn('Could not load unit data:', error);
     }
@@ -2313,10 +2310,167 @@ function selectUnit() {
     const selectedUnit = unitData.find(u => u.name === selectedName);
     if (selectedUnit) {
         document.getElementById('unitLine1').value = selectedUnit.name;
-        document.getElementById('unitLine2').value = selectedUnit.higherHQ;
-        document.getElementById('unitAddress').value = selectedUnit.address;
+        // New format may not have higherHQ, use abbrev or leave blank
+        document.getElementById('unitLine2').value = selectedUnit.higherHQ || '';
+        // Address may have newlines, replace with actual line breaks for textarea
+        document.getElementById('unitAddress').value = selectedUnit.address ? selectedUnit.address.replace(/\\n/g, '\n') : '';
         updatePreview();
     }
+}
+
+// =============================================================================
+// REFERENCE LIBRARY
+// =============================================================================
+
+// Store reference library data globally
+let referenceLibrary = [];
+let referenceCategories = [];
+
+/**
+ * Load reference library from JSON
+ */
+async function loadReferenceLibrary() {
+    try {
+        const response = await fetch('data/references.json');
+        const data = await response.json();
+        referenceLibrary = data.references;
+        referenceCategories = data.categories || [];
+
+        // Populate category dropdown
+        const categorySelect = document.getElementById('refLibraryCategory');
+        if (categorySelect) {
+            for (const category of referenceCategories) {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category;
+                categorySelect.appendChild(option);
+            }
+        }
+        console.log(`Loaded ${referenceLibrary.length} references in ${referenceCategories.length} categories`);
+    } catch (error) {
+        console.warn('Could not load reference library:', error);
+    }
+}
+
+/**
+ * Open reference library modal
+ */
+function openReferenceLibrary() {
+    const modal = document.getElementById('referenceLibraryModal');
+    modal.style.display = 'flex';
+
+    // Reset search
+    document.getElementById('refLibrarySearch').value = '';
+    document.getElementById('refLibraryCategory').value = '';
+
+    // Populate list
+    renderReferenceLibrary(referenceLibrary);
+
+    // Focus search input
+    setTimeout(() => {
+        document.getElementById('refLibrarySearch').focus();
+    }, 100);
+}
+
+/**
+ * Close reference library modal
+ */
+function closeReferenceLibrary() {
+    document.getElementById('referenceLibraryModal').style.display = 'none';
+}
+
+// Close modal on escape key or clicking outside
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const refModal = document.getElementById('referenceLibraryModal');
+        if (refModal && refModal.style.display === 'flex') {
+            closeReferenceLibrary();
+        }
+    }
+});
+
+document.addEventListener('click', function(e) {
+    const refModal = document.getElementById('referenceLibraryModal');
+    if (e.target === refModal) {
+        closeReferenceLibrary();
+    }
+});
+
+/**
+ * Filter reference library based on search and category
+ */
+function filterReferenceLibrary() {
+    const searchTerm = document.getElementById('refLibrarySearch').value.toLowerCase().trim();
+    const category = document.getElementById('refLibraryCategory').value;
+
+    let filtered = referenceLibrary;
+
+    // Filter by category
+    if (category) {
+        filtered = filtered.filter(ref => ref.category === category);
+    }
+
+    // Filter by search term
+    if (searchTerm) {
+        filtered = filtered.filter(ref => {
+            const searchFields = [
+                ref.type,
+                ref.number,
+                ref.title,
+                ref.shortTitle || '',
+                ...(ref.keywords || [])
+            ].join(' ').toLowerCase();
+            return searchFields.includes(searchTerm);
+        });
+    }
+
+    renderReferenceLibrary(filtered);
+}
+
+/**
+ * Render reference library list
+ */
+function renderReferenceLibrary(refs) {
+    const list = document.getElementById('refLibraryList');
+
+    if (refs.length === 0) {
+        list.innerHTML = '<div class="ref-library-empty">No references found. Try a different search term.</div>';
+        return;
+    }
+
+    list.innerHTML = refs.map(ref => `
+        <div class="ref-library-item" onclick="addReferenceFromLibrary('${ref.type}', '${ref.number}', '${escapeHtml(ref.title)}')">
+            <div class="ref-library-item-header">
+                <span class="ref-library-item-type">${ref.type} ${ref.number}</span>
+                <span class="ref-library-item-category">${ref.category}</span>
+            </div>
+            <div class="ref-library-item-title">${ref.title}</div>
+            ${ref.shortTitle ? `<div class="ref-library-item-short">"${ref.shortTitle}"</div>` : ''}
+        </div>
+    `).join('');
+}
+
+/**
+ * Add a reference from the library to the document
+ */
+function addReferenceFromLibrary(type, number, title) {
+    // Format the reference text
+    const refText = `${type} ${number}`;
+
+    // Add a new reference with this text
+    addReference(refText);
+
+    // Close the modal
+    closeReferenceLibrary();
+}
+
+/**
+ * Escape HTML entities for safe rendering
+ */
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML.replace(/'/g, "\\'");
 }
 
 // =============================================================================
@@ -3947,6 +4101,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Load data files
     loadSSICData();
     loadUnitData();
+    loadReferenceLibrary();
     loadFormTemplates();
 
     // Initialize drag-drop for PDF uploads
