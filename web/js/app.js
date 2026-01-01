@@ -1724,36 +1724,20 @@ function reorderParagraph(fromIndex, toIndex) {
     tempParagraphs.splice(insertIndex, 0, item);
 
     // Check if this creates a valid hierarchy
-    let isValid = true;
-    let errorMsg = '';
-
-    // Check the moved paragraph against its new neighbors
+    // Rule: Can't place a lower-level para between two higher-level paras
+    // e.g., can't put level 0 between two level 5s
     const prevPara = insertIndex > 0 ? tempParagraphs[insertIndex - 1] : null;
     const nextPara = insertIndex < tempParagraphs.length - 1 ? tempParagraphs[insertIndex + 1] : null;
 
-    const prevLevel = prevPara ? (prevPara.level || 0) : -1;
-    const nextLevel = nextPara ? (nextPara.level || 0) : -1;
-
-    // Rule 1: Can't place a lower-level para between two higher-level paras
-    // e.g., can't put level 0 between two level 5s
     if (prevPara && nextPara) {
+        const prevLevel = prevPara.level || 0;
+        const nextLevel = nextPara.level || 0;
         const minNeighborLevel = Math.min(prevLevel, nextLevel);
+
         if (movingLevel < minNeighborLevel) {
-            isValid = false;
-            errorMsg = `Cannot place Level ${movingLevel + 1} between Level ${prevLevel + 1} and Level ${nextLevel + 1}`;
+            showStatus(`Cannot place Level ${movingLevel + 1} between Level ${prevLevel + 1} and Level ${nextLevel + 1}`, 'error');
+            return;
         }
-    }
-
-    // Rule 2: Can't jump more than 1 level down from previous paragraph
-    // (e.g., can't go from level 0 directly to level 3)
-    if (isValid && prevPara && movingLevel > prevLevel + 1) {
-        isValid = false;
-        errorMsg = `Level ${movingLevel + 1} cannot follow Level ${prevLevel + 1} (max 1 level deeper)`;
-    }
-
-    if (!isValid) {
-        showStatus(errorMsg, 'error');
-        return;
     }
 
     // Valid move - apply it
