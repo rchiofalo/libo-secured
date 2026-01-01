@@ -168,7 +168,9 @@ export function useLatexEngine() {
         console.log(`Writing ${Object.keys(window.LATEX_TEMPLATES).length} LaTeX templates...`);
         for (const [path, content] of Object.entries(window.LATEX_TEMPLATES)) {
           // Strip 'tex/' prefix if present - SwiftLaTeX expects files in root
-          const targetPath = path.startsWith('tex/') ? path.slice(4) : path;
+          let targetPath = path.startsWith('tex/') ? path.slice(4) : path;
+          // Also strip 'templates/' prefix - \input{\DocumentType} expects files at root
+          targetPath = targetPath.startsWith('templates/') ? targetPath.slice(10) : targetPath;
           engine.writeMemFSFile(targetPath, content);
         }
       }
