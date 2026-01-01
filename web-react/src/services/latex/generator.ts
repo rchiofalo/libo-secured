@@ -64,7 +64,7 @@ export function generateDocumentTex(store: DocumentStore): string {
 \\setDocumentType{${store.docType}}
 \\setFontSize{${data.fontSize || '12pt'}}
 \\setFontFamily{${data.fontFamily || 'courier'}}
-\\setPageNumbering{${data.pageNumbering || 'none'}}
+\\setPageNumberStyle{${data.pageNumbering || 'none'}}
 
 `;
 
