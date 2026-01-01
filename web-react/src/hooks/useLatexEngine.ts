@@ -18,6 +18,7 @@ interface PdfTeXEngine {
   setEngineMainFile(path: string): void;
   compileLaTeX(): Promise<{ status: number; pdf?: Uint8Array; log: string }>;
   preloadTexliveFile(format: string, filename: string, content: string): void;
+  setTexliveEndpoint(url: string): void;
 }
 
 interface LatexEngineState {
@@ -95,6 +96,11 @@ export function useLatexEngine() {
       console.log('Initializing LaTeX engine...');
       const engine = new window.PdfTeXEngine();
       await engine.loadEngine();
+
+      // Set texlive endpoint to correct path (relative to base URL)
+      // This tells the Worker where to fetch missing TeX packages from
+      const texliveUrl = `${BASE_PATH}lib/texlive/`;
+      engine.setTexliveEndpoint(texliveUrl);
 
       // Create virtual filesystem directories
       engine.makeMemFSFolder('config');
