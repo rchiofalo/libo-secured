@@ -1341,11 +1341,9 @@ function renderParagraphs() {
 
     container.innerHTML = paragraphs.map((para, index) => {
         const level = para.level || 0;
-        // Each level indents by 30px
-        const indentPx = level * 30;
 
         return `
-            <div class="paragraph-item" draggable="true" data-index="${index}" data-level="${level}" style="margin-left: ${indentPx}px;">
+            <div class="paragraph-item" draggable="true" data-index="${index}" data-level="${level}">
                 <div class="paragraph-header">
                     <span class="paragraph-label">${labels[index]}</span>
                     <div class="paragraph-actions">
