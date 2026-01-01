@@ -2,12 +2,14 @@ import { Label } from '@/components/ui/label';
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
 import { useDocumentStore } from '@/stores/documentStore';
-import { DOC_TYPE_LABELS, DOC_TYPE_CONFIG } from '@/types/document';
+import { DOC_TYPE_LABELS, DOC_TYPE_CONFIG, DOC_TYPE_CATEGORIES } from '@/types/document';
 import { Badge } from '@/components/ui/badge';
 
 export function DocumentTypeSelector() {
@@ -23,10 +25,15 @@ export function DocumentTypeSelector() {
             <SelectValue placeholder="Select document type" />
           </SelectTrigger>
           <SelectContent>
-            {Object.entries(DOC_TYPE_LABELS).map(([value, label]) => (
-              <SelectItem key={value} value={value}>
-                {label}
-              </SelectItem>
+            {DOC_TYPE_CATEGORIES.map((cat) => (
+              <SelectGroup key={cat.category}>
+                <SelectLabel>{cat.category}</SelectLabel>
+                {cat.types.map((type) => (
+                  <SelectItem key={type} value={type}>
+                    {DOC_TYPE_LABELS[type]}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
             ))}
           </SelectContent>
         </Select>

@@ -2,6 +2,8 @@ import { useEffect, useCallback, useState, useRef } from 'react';
 import { Header } from '@/components/layout/Header';
 import { FormPanel } from '@/components/layout/FormPanel';
 import { PreviewPanel } from '@/components/layout/PreviewPanel';
+import { ProfileModal } from '@/components/modals/ProfileModal';
+import { ReferenceLibraryModal } from '@/components/modals/ReferenceLibraryModal';
 import { useUIStore } from '@/stores/uiStore';
 import { useDocumentStore } from '@/stores/documentStore';
 import { useLatexEngine } from '@/hooks/useLatexEngine';
@@ -144,6 +146,10 @@ function App() {
           error={compileError || engineError}
         />
       </main>
+
+      {/* Modals */}
+      <ProfileModal />
+      <ReferenceLibraryModal />
     </div>
   );
 }

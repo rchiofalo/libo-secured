@@ -239,3 +239,27 @@ export const DOC_TYPE_LABELS: Record<string, string> = {
   mf: 'Memorandum For',
   executive_correspondence: 'Executive Correspondence',
 };
+
+// Categorized document types for the selector UI
+export const DOC_TYPE_CATEGORIES: { category: string; types: string[] }[] = [
+  {
+    category: 'Letters',
+    types: ['naval_letter', 'standard_letter', 'business_letter', 'multiple_address_letter', 'joint_letter'],
+  },
+  {
+    category: 'Endorsements',
+    types: ['same_page_endorsement', 'new_page_endorsement'],
+  },
+  {
+    category: 'Memoranda',
+    types: ['mfr', 'mf', 'plain_paper_memorandum', 'letterhead_memorandum', 'decision_memorandum', 'executive_memorandum', 'joint_memorandum'],
+  },
+  {
+    category: 'Agreements',
+    types: ['moa', 'mou'],
+  },
+  {
+    category: 'Executive',
+    types: ['executive_correspondence'],
+  },
+];
