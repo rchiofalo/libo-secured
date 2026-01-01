@@ -141,19 +141,17 @@
         % Junior command signature (LEFT) - signs FIRST
         \begin{minipage}[t]{2.5in}
             \raggedright
-            \MakeUppercase{\JuniorSignatoryName}%
-            \ifNotEmpty{\JuniorSignatoryTitle}{\\}%
-            \optionalLine{\JuniorSignatoryTitle}%
-            \optionalField{\JuniorByDirection}%
+            \MakeUppercase{\JuniorSignatoryName}\par
+            \JuniorSignatoryTitle\par
+            \JuniorByDirection
         \end{minipage}
         &
         % Senior command signature (RIGHT) - signs LAST
         \begin{minipage}[t]{2.5in}
             \raggedright
-            \ifNotEmptyElse{\SignatoryAbbrev}{\SignatoryAbbrev}{\MakeUppercase{\SignatoryName}}%
-            \ifNotEmpty{\SignatoryTitle}{\\}%
-            \optionalLine{\SignatoryTitle}%
-            \optionalField{\ByDirection}%
+            \ifdefempty{\SignatoryAbbrev}{\MakeUppercase{\SignatoryName}}{\SignatoryAbbrev}\par
+            \SignatoryTitle\par
+            \ByDirection
         \end{minipage}
     \end{tabular}
 }
