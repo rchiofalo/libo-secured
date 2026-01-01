@@ -951,7 +951,14 @@
 %=============================================================================
 
 % Load enclosure definitions first (so counter is set before document)
-\input{enclosures}
+% DEBUG: Test if enclosures.tex is being read
+\IfFileExists{enclosures.tex}{%
+    \typeout{DEBUG: enclosures.tex EXISTS}%
+    \input{enclosures.tex}%
+}{%
+    \typeout{DEBUG: enclosures.tex NOT FOUND - using fallback}%
+}
+\typeout{DEBUG: After loading enclosures, enclmax = \arabic{enclmax}}
 
 
 %=============================================================================
