@@ -1,6 +1,9 @@
+import { useState } from 'react';
+import { BookOpen } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
 import {
   Accordion,
   AccordionContent,
@@ -8,6 +11,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { useDocumentStore } from '@/stores/documentStore';
+import { SSICLookupModal } from '@/components/modals/SSICLookupModal';
 import type { DocTypeConfig } from '@/types/document';
 
 interface AddressingSectionProps {
@@ -16,25 +20,49 @@ interface AddressingSectionProps {
 
 export function AddressingSection({ config }: AddressingSectionProps) {
   const { formData, setField } = useDocumentStore();
+  const [ssicModalOpen, setSSICModalOpen] = useState(false);
+
+  const handleSSICSelect = (code: string) => {
+    setField('ssic', code);
+  };
 
   return (
-    <Accordion type="single" collapsible defaultValue="addressing">
-      <AccordionItem value="addressing">
-        <AccordionTrigger>Document Information</AccordionTrigger>
-        <AccordionContent>
-          <div className="space-y-4 pt-2">
-            {/* SSIC / Serial / Date */}
-            {config.ssic && (
-              <div className="grid grid-cols-3 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="ssic">SSIC</Label>
-                  <Input
-                    id="ssic"
-                    value={formData.ssic || ''}
-                    onChange={(e) => setField('ssic', e.target.value)}
-                    placeholder="5216"
-                  />
-                </div>
+    <>
+      <SSICLookupModal
+        open={ssicModalOpen}
+        onOpenChange={setSSICModalOpen}
+        onSelect={handleSSICSelect}
+      />
+
+      <Accordion type="single" collapsible defaultValue="addressing">
+        <AccordionItem value="addressing">
+          <AccordionTrigger>Document Information</AccordionTrigger>
+          <AccordionContent>
+            <div className="space-y-4 pt-2">
+              {/* SSIC / Serial / Date */}
+              {config.ssic && (
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="ssic">SSIC</Label>
+                    <div className="flex gap-1">
+                      <Input
+                        id="ssic"
+                        value={formData.ssic || ''}
+                        onChange={(e) => setField('ssic', e.target.value)}
+                        placeholder="5216"
+                        className="flex-1"
+                      />
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="icon"
+                        onClick={() => setSSICModalOpen(true)}
+                        title="Browse SSIC Codes"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
                 <div className="space-y-2">
                   <Label htmlFor="serial">Serial</Label>
                   <Input
@@ -109,5 +137,6 @@ export function AddressingSection({ config }: AddressingSectionProps) {
         </AccordionContent>
       </AccordionItem>
     </Accordion>
+    </>
   );
 }

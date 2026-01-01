@@ -116,17 +116,29 @@ export function generateLetterheadTex(store: DocumentStore): string {
 `;
 }
 
+// Capitalize first letter of each word
+function capitalizeWord(word: string | undefined): string {
+  if (!word) return '';
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
+
 export function generateSignatoryTex(store: DocumentStore): string {
   const data = store.formData;
 
-  const fullName = [data.sigFirst, data.sigMiddle, data.sigLast?.toUpperCase()]
+  // Properly capitalize names: First Middle LAST
+  const firstName = capitalizeWord(data.sigFirst);
+  const middleName = capitalizeWord(data.sigMiddle);
+  const lastName = data.sigLast?.toUpperCase() || '';
+
+  const fullName = [firstName, middleName, lastName]
     .filter(Boolean)
     .join(' ');
 
+  // Abbreviated format: F. M. LASTNAME
   const abbrevName = [
-    data.sigFirst?.[0] ? `${data.sigFirst[0]}.` : '',
-    data.sigMiddle?.[0] ? `${data.sigMiddle[0]}.` : '',
-    data.sigLast?.toUpperCase() || '',
+    firstName ? `${firstName[0].toUpperCase()}.` : '',
+    middleName ? `${middleName[0].toUpperCase()}.` : '',
+    lastName,
   ]
     .filter(Boolean)
     .join(' ');
@@ -142,9 +154,9 @@ export function generateSignatoryTex(store: DocumentStore): string {
 %=============================================================================
 
 \\setSignatory
-    {${escapeLatex(data.sigFirst)}}
-    {${escapeLatex(data.sigMiddle)}}
-    {${escapeLatex(data.sigLast)}}
+    {${escapeLatex(firstName)}}
+    {${escapeLatex(middleName)}}
+    {${escapeLatex(lastName)}}
     {${escapeLatex(data.sigRank)}}
     {${escapeLatex(data.sigTitle)}}
 

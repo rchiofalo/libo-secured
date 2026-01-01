@@ -1,5 +1,8 @@
+import { useState } from 'react';
+import { Building2 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
 import {
   Select,
   SelectContent,
@@ -14,25 +17,54 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { useDocumentStore } from '@/stores/documentStore';
+import { UnitLookupModal } from '@/components/modals/UnitLookupModal';
+import { formatUnitAddress, type UnitInfo } from '@/data/unitDirectory';
 
 export function LetterheadSection() {
   const { formData, setField } = useDocumentStore();
+  const [unitModalOpen, setUnitModalOpen] = useState(false);
+
+  const handleUnitSelect = (unit: UnitInfo) => {
+    setField('unitLine1', unit.fullName);
+    setField('unitLine2', unit.parentCommand || '');
+    setField('unitAddress', formatUnitAddress(unit));
+  };
 
   return (
-    <Accordion type="single" collapsible defaultValue="letterhead">
-      <AccordionItem value="letterhead">
-        <AccordionTrigger>Letterhead</AccordionTrigger>
-        <AccordionContent>
-          <div className="space-y-4 pt-2">
-            <div className="space-y-2">
-              <Label htmlFor="unitLine1">Command Name (Line 1)</Label>
-              <Input
-                id="unitLine1"
-                value={formData.unitLine1 || ''}
-                onChange={(e) => setField('unitLine1', e.target.value)}
-                placeholder="e.g., 1ST BATTALION, 6TH MARINES"
-              />
-            </div>
+    <>
+      <UnitLookupModal
+        open={unitModalOpen}
+        onOpenChange={setUnitModalOpen}
+        onSelect={handleUnitSelect}
+      />
+
+      <Accordion type="single" collapsible defaultValue="letterhead">
+        <AccordionItem value="letterhead">
+          <AccordionTrigger>Letterhead</AccordionTrigger>
+          <AccordionContent>
+            <div className="space-y-4 pt-2">
+              <div className="flex justify-end">
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setUnitModalOpen(true)}
+                  className="gap-2"
+                >
+                  <Building2 className="h-4 w-4" />
+                  Browse Units
+                </Button>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="unitLine1">Command Name (Line 1)</Label>
+                <Input
+                  id="unitLine1"
+                  value={formData.unitLine1 || ''}
+                  onChange={(e) => setField('unitLine1', e.target.value)}
+                  placeholder="e.g., 1ST BATTALION, 6TH MARINES"
+                />
+              </div>
 
             <div className="space-y-2">
               <Label htmlFor="unitLine2">Command Name (Line 2)</Label>
@@ -73,5 +105,6 @@ export function LetterheadSection() {
         </AccordionContent>
       </AccordionItem>
     </Accordion>
+    </>
   );
 }
