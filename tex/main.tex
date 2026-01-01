@@ -517,12 +517,17 @@
 %   dow - Department of War seal (historical, pre-1947)
 %=============================================================================
 
-\newcommand{\SealType}{dod}
-\newcommand{\setSealType}[1]{\renewcommand{\SealType}{#1}}
+\newcommand{\SealFile}{dod-seal.png}
 
-% Helper to get seal filename based on type
-\newcommand{\getSealFile}{%
-    \ifthenelse{\equal{\SealType}{dow}}{dow-seal.png}{dod-seal.png}%
+% Set seal type - converts type name to filename
+\newcommand{\setSealType}[1]{%
+    \def\temp{#1}%
+    \def\dowtype{dow}%
+    \ifx\temp\dowtype
+        \renewcommand{\SealFile}{dow-seal.png}%
+    \else
+        \renewcommand{\SealFile}{dod-seal.png}%
+    \fi
 }
 
 
@@ -701,11 +706,11 @@
 
 \newcommand{\printLetterhead}{%
     \begin{textblock*}{1in}(0.5in, 0.5in)%
-        \IfFileExists{attachments/\getSealFile}{%
-            \includegraphics[width=1in]{attachments/\getSealFile}%
+        \IfFileExists{attachments/\SealFile}{%
+            \includegraphics[width=1in]{attachments/\SealFile}%
         }{%
             \framebox[1in][c]{%
-                \parbox{0.9in}{\centering\scriptsize Seal\\(add \getSealFile)}%
+                \parbox{0.9in}{\centering\scriptsize Seal\\(add \SealFile)}%
             }%
         }%
     \end{textblock*}%
