@@ -996,6 +996,26 @@
     topsep     = 12pt
 }
 
+% Level 4: (a), (b), (c)... at 1.2in
+\newlist{subsubsubpara}{enumerate}{1}
+\setlist[subsubsubpara,1]{
+    label     = (\alph*),
+    leftmargin = 1.2in,
+    labelsep   = 0.1in,
+    itemsep    = 12pt,
+    topsep     = 12pt
+}
+
+% Level 5: 1., 2., 3... at 1.6in (pattern repeats)
+\newlist{subsubsubsubpara}{enumerate}{1}
+\setlist[subsubsubsubpara,1]{
+    label     = \arabic*.,
+    leftmargin = 1.6in,
+    labelsep   = 0.1in,
+    itemsep    = 12pt,
+    topsep     = 12pt
+}
+
 
 %=============================================================================
 %                        LOAD CONFIGURATION FILES
