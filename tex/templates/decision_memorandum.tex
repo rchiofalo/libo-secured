@@ -130,11 +130,22 @@
 %=============================================================================
 %                              PAGE STYLE
 %=============================================================================
+% SECNAV M-5216.5:
+%   - First page: Do NOT number
+%   - Second+ pages: Centered, 1/2" from bottom
+
+\fancypagestyle{firstpage}{%
+    \fancyhf{}%
+    \fancyhead[C]{\placeClassificationMarkings}%
+    \fancyfoot[C]{}%  % No page number on first page
+    \renewcommand{\headrulewidth}{0pt}%
+    \renewcommand{\footrulewidth}{0pt}%
+}
 
 \fancypagestyle{documentpage}{%
     \fancyhf{}%
     \fancyhead[C]{\placeClassificationMarkings}%
-    \fancyfoot[C]{\smartPageNumber}%
+    \fancyfoot[C]{\thepage}%
     \renewcommand{\headrulewidth}{0pt}%
     \renewcommand{\footrulewidth}{0pt}%
 }
