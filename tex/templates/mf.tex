@@ -65,19 +65,19 @@
     %
     % CUI block
     \ifCUIEnabled
-        \\[12pt]%
+        \par\vspace{12pt}%
         \noindent
         Controlled by: \CUIControlledBy\\
         CUI Category: \CUICategory\\
         Limited Dissemination Control: \CUIDissemination\\
         POC: \href{mailto:\POCEmail}{\POCEmail}%
-        \\[12pt]%
+        \par\vspace{12pt}%
         \noindent\CUIDistStatement
     \fi
     %
     % Classified block
     \ifClassifiedEnabled
-        \\[12pt]%
+        \par\vspace{12pt}%
         \noindent
         Classified by: \ClassifiedBy\\
         Derived from: \DerivedFrom\\
