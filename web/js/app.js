@@ -2539,7 +2539,8 @@ function generateBodyTex(data) {
 
         // Generate appropriate LaTeX based on level
         if (level === 0) {
-            // Top-level paragraph: just number and text
+            // Top-level paragraph: output the full line (label + text) since level 0 isn't in an environment
+            // The label is already included in trimmed, e.g. "1. paragraph text here"
             latex += `\\vspace{12pt}\n\\noindent ${escapeLatex(trimmed)}\n\n`;
         } else {
             // Sub-paragraph: need to open environment if not already open

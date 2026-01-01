@@ -986,72 +986,83 @@ const LATEX_TEMPLATES = {
     \\noindent\\arabic{mainpara}. \\underline{#1}:%
 }
 
+% =============================================================================
+% PARAGRAPH LEVELS PER SECNAV M-5216.5
+% Level 1 (main): 1., 2., 3. - handled by mainpara counter above
+% Level 2: a., b., c.
+% Level 3: (1), (2), (3)
+% Level 4: (a), (b), (c)
+% Levels 5-8: Same pattern but with UNDERLINED numbers/letters (not punctuation)
+% =============================================================================
+
+% Level 2 (JS level 1): a., b., c. at 0.25in, text at 0.5in
 \\newlist{subpara}{enumerate}{1}
 \\setlist[subpara,1]{
     label     = \\alph*.,
-    leftmargin = 0.4in,
-    labelsep   = 0.1in,
-    itemsep    = 12pt,
-    topsep     = 12pt
+    leftmargin = 0.5in,
+    labelsep   = 0.15in,
+    itemsep    = 0pt,
+    topsep     = 0pt
 }
 
+% Level 3 (JS level 2): (1), (2), (3) at 0.5in, text at 0.75in
 \\newlist{subsubpara}{enumerate}{1}
 \\setlist[subsubpara,1]{
     label     = (\\arabic*),
-    leftmargin = 0.8in,
-    labelsep   = 0.1in,
-    itemsep    = 12pt,
-    topsep     = 12pt
+    leftmargin = 0.75in,
+    labelsep   = 0.15in,
+    itemsep    = 0pt,
+    topsep     = 0pt
 }
 
-% Level 3 (JS level 3): (a), (b), (c)... at 1.2in
+% Level 4 (JS level 3): (a), (b), (c) at 0.75in, text at 1.0in
 \\newlist{subsubsubpara}{enumerate}{1}
 \\setlist[subsubsubpara,1]{
     label     = (\\alph*),
-    leftmargin = 1.2in,
-    labelsep   = 0.1in,
-    itemsep    = 12pt,
-    topsep     = 12pt
+    leftmargin = 1.0in,
+    labelsep   = 0.15in,
+    itemsep    = 0pt,
+    topsep     = 0pt
 }
 
-% Level 4 (JS level 4): 1., 2., 3... at 1.6in (pattern repeats)
+% Level 5 (JS level 4): 1., 2., 3. UNDERLINED at 1.0in, text at 1.25in
 \\newlist{subsubsubsubpara}{enumerate}{1}
 \\setlist[subsubsubsubpara,1]{
-    label     = \\arabic*.,
-    leftmargin = 1.6in,
-    labelsep   = 0.1in,
-    itemsep    = 12pt,
-    topsep     = 12pt
+    label     = \\underline{\\arabic*}.,
+    leftmargin = 1.25in,
+    labelsep   = 0.15in,
+    itemsep    = 0pt,
+    topsep     = 0pt
 }
 
-% Level 5 (JS level 5): a., b., c... at 2.0in
+% Level 6 (JS level 5): a., b., c. UNDERLINED at 1.25in, text at 1.5in
 \\newlist{subsubsubsubsubpara}{enumerate}{1}
 \\setlist[subsubsubsubsubpara,1]{
-    label     = \\alph*.,
-    leftmargin = 2.0in,
-    labelsep   = 0.1in,
-    itemsep    = 12pt,
-    topsep     = 12pt
+    label     = \\underline{\\alph*}.,
+    leftmargin = 1.5in,
+    labelsep   = 0.15in,
+    itemsep    = 0pt,
+    topsep     = 0pt
 }
 
-% Level 6 (JS level 6): (1), (2), (3)... at 2.4in
+% Level 7 (JS level 6): (1), (2), (3) UNDERLINED at 1.5in, text at 1.75in
 \\newlist{subsubsubsubsubsubpara}{enumerate}{1}
 \\setlist[subsubsubsubsubsubpara,1]{
-    label     = (\\arabic*),
-    leftmargin = 2.4in,
-    labelsep   = 0.1in,
-    itemsep    = 12pt,
-    topsep     = 12pt
+    label     = (\\underline{\\arabic*}),
+    leftmargin = 1.75in,
+    labelsep   = 0.15in,
+    itemsep    = 0pt,
+    topsep     = 0pt
 }
 
-% Level 7 (JS level 7): (a), (b), (c)... at 2.8in
+% Level 8 (JS level 7): (a), (b), (c) UNDERLINED at 1.75in, text at 2.0in
 \\newlist{subsubsubsubsubsubsubpara}{enumerate}{1}
 \\setlist[subsubsubsubsubsubsubpara,1]{
-    label     = (\\alph*),
-    leftmargin = 2.8in,
-    labelsep   = 0.1in,
-    itemsep    = 12pt,
-    topsep     = 12pt
+    label     = (\\underline{\\alph*}),
+    leftmargin = 2.0in,
+    labelsep   = 0.15in,
+    itemsep    = 0pt,
+    topsep     = 0pt
 }
 
 
