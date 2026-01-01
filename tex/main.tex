@@ -837,8 +837,14 @@
     \renewcommand{\footrulewidth}{0pt}%
 }
 
-% Helper to check for JSPDF marker (PDF will be appended by JavaScript)
-\newcommand{\jspdfmarker}{JSPDF}
+% Helper to check if string equals JSPDF
+\makeatletter
+\newcommand{\ifJSPDF}[3]{%
+    \def\@tempa{#1}%
+    \def\@tempb{JSPDF}%
+    \ifx\@tempa\@tempb #2\else #3\fi
+}
+\makeatother
 
 \makeatletter
 \newcommand{\includeEnclosures}{%
@@ -866,10 +872,11 @@
                         \textit{(Physical document attached separately)}
                     \end{center}
                 \else
-                    \ifx\currentfile\jspdfmarker
+                    % Check if this is JSPDF marker (JS will append actual PDF)
+                    \ifJSPDF{\currentfile}{%
                         % JSPDF marker: JavaScript will append this PDF
                         % Do NOT create placeholder - JS handles it
-                    \else
+                    }{%
                         % Include PDF with proper SECNAV enclosure marking
                         % (Note: SwiftLaTeX doesn't support \includepdf)
                         \includepdf[
@@ -890,7 +897,7 @@
                                 \stepcounter{enclpagenum}%
                             }
                         ]{enclosures/\currentfile}
-                    \fi
+                    }%
                 \fi
             }%
         \repeat
