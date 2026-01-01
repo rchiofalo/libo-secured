@@ -2025,7 +2025,7 @@ body.modal-open {
     border: 1px solid #3282b8;
     border-radius: 4px;
     padding: 10px;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
 }
 
 .paragraph-item:hover {
@@ -2036,40 +2036,107 @@ body.modal-open {
     opacity: 0.5;
     border-color: #bbe1fa;
     box-shadow: 0 4px 12px rgba(50, 130, 184, 0.3);
+    transform: scale(0.98);
 }
 
 .paragraph-item.drag-over-above {
-    border-top: 2px solid #bbe1fa;
+    border-top: 3px solid #bbe1fa;
+    margin-top: -2px;
 }
 
 .paragraph-item.drag-over-below {
-    border-bottom: 2px solid #bbe1fa;
+    border-bottom: 3px solid #bbe1fa;
+    margin-bottom: -2px;
+}
+
+/* Controls area - drag handle and indent buttons */
+.paragraph-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    padding: 2px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.paragraph-controls:hover {
+    background: rgba(50, 130, 184, 0.1);
 }
 
 .paragraph-drag-handle {
     cursor: grab;
     color: #666;
     font-size: 14px;
-    padding: 4px;
+    padding: 4px 8px;
     user-select: none;
-    flex-shrink: 0;
+    border-radius: 3px;
+    transition: color 0.2s, background 0.2s;
 }
 
 .paragraph-drag-handle:hover {
     color: #bbe1fa;
+    background: rgba(50, 130, 184, 0.2);
 }
 
 .paragraph-drag-handle:active {
     cursor: grabbing;
 }
 
+/* Indent/Outdent controls */
+.paragraph-indent-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.btn-indent, .btn-outdent {
+    background: transparent;
+    border: 1px solid #3282b8;
+    color: #3282b8;
+    cursor: pointer;
+    padding: 2px 6px;
+    font-size: 10px;
+    border-radius: 3px;
+    transition: all 0.2s;
+    line-height: 1;
+}
+
+.btn-indent:hover:not(:disabled), .btn-outdent:hover:not(:disabled) {
+    background: rgba(50, 130, 184, 0.2);
+    border-color: #bbe1fa;
+    color: #bbe1fa;
+}
+
+.btn-indent:disabled, .btn-outdent:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Paragraph body - number and content */
+.paragraph-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* Indent spacer - fixed width per level for consistent alignment */
+.paragraph-indent {
+    flex-shrink: 0;
+    transition: width 0.15s ease;
+}
+
 .paragraph-number {
     color: #bbe1fa;
     font-weight: 600;
     font-size: 14px;
-    min-width: 24px;
+    min-width: 36px;
     flex-shrink: 0;
     padding-top: 4px;
+    font-family: 'Courier New', monospace;
+    text-align: right;
 }
 
 .paragraph-content {
@@ -2077,6 +2144,7 @@ body.modal-open {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    min-width: 0;
 }
 
 .paragraph-text {
@@ -2109,6 +2177,7 @@ body.modal-open {
     opacity: 0.7;
     transition: opacity 0.2s, color 0.2s;
     flex-shrink: 0;
+    align-self: flex-start;
 }
 
 .paragraph-remove:hover {

@@ -1170,18 +1170,84 @@ function renderCopyTos() {
 // PARAGRAPH MANAGEMENT
 // =============================================================================
 
-// Store paragraphs as array
+// USMC paragraph numbering scheme per SECNAV M-5216.5 Chapter 7, Para 13
+// Maximum 8 levels of depth
+// Level 1: 1., 2., 3...       (left margin)
+// Level 2: a., b., c...       (4 spaces)
+// Level 3: (1), (2), (3)...   (8 spaces)
+// Level 4: (a), (b), (c)...   (12 spaces)
+// Level 5: 1., 2., 3...       (16 spaces) - repeats
+// Level 6: a., b., c...       (20 spaces)
+// Level 7: (1), (2), (3)...   (24 spaces)
+// Level 8: (a), (b), (c)...   (28 spaces)
+
+const PARAGRAPH_INDENT_SPACES = 4; // Spaces per level
+const MAX_PARAGRAPH_LEVELS = 8;
+
+// Store paragraphs with hierarchical structure
+// Each paragraph has: { text: string, level: number (0-7) }
 let paragraphs = [
-    { text: 'Per reference (a), this correspondence serves as an example of the naval letter format.' },
-    { text: 'The purpose of this letter is to demonstrate proper formatting in accordance with SECNAV M-5216.5.' },
-    { text: 'Point of contact for this matter is the undersigned at (910) 555-1234.' }
+    { text: 'Per reference (a), this correspondence serves as an example of the naval letter format.', level: 0 },
+    { text: 'The purpose of this letter is to demonstrate proper formatting in accordance with SECNAV M-5216.5.', level: 0 },
+    { text: 'Point of contact for this matter is the undersigned at (910) 555-1234.', level: 0 }
 ];
 
 /**
- * Add a new paragraph
+ * Get the paragraph numbering label for a given level and position
+ * @param {number} level - The indentation level (0-7)
+ * @param {number} count - The count within this level (1-based)
+ * @returns {string} The formatted label (e.g., "1.", "a.", "(1)", "(a)")
  */
-function addParagraph(text = '') {
-    paragraphs.push({ text: text });
+function getParagraphLabel(level, count) {
+    // Levels cycle through 4 patterns
+    const pattern = level % 4;
+
+    switch (pattern) {
+        case 0: // 1., 2., 3...
+            return count + '.';
+        case 1: // a., b., c...
+            return String.fromCharCode(96 + count) + '.';
+        case 2: // (1), (2), (3)...
+            return '(' + count + ')';
+        case 3: // (a), (b), (c)...
+            return '(' + String.fromCharCode(96 + count) + ')';
+        default:
+            return count + '.';
+    }
+}
+
+/**
+ * Calculate display labels for all paragraphs based on hierarchy
+ * @returns {string[]} Array of labels for each paragraph
+ */
+function calculateParagraphLabels() {
+    const labels = [];
+    const counters = [0, 0, 0, 0, 0, 0, 0, 0]; // Counter for each level
+
+    for (let i = 0; i < paragraphs.length; i++) {
+        const level = paragraphs[i].level || 0;
+
+        // Increment the counter for this level
+        counters[level]++;
+
+        // Reset counters for deeper levels
+        for (let j = level + 1; j < MAX_PARAGRAPH_LEVELS; j++) {
+            counters[j] = 0;
+        }
+
+        labels.push(getParagraphLabel(level, counters[level]));
+    }
+
+    return labels;
+}
+
+/**
+ * Add a new paragraph
+ * @param {string} text - Initial text for the paragraph
+ * @param {number} level - Indentation level (0-7), defaults to 0
+ */
+function addParagraph(text = '', level = 0) {
+    paragraphs.push({ text: text, level: level });
     renderParagraphs();
     updatePreview();
 
@@ -1216,6 +1282,32 @@ function updateParagraphText(index, text) {
 }
 
 /**
+ * Indent a paragraph (increase level)
+ */
+function indentParagraph(index) {
+    const para = paragraphs[index];
+    if (para.level < MAX_PARAGRAPH_LEVELS - 1) {
+        // Per SECNAV M-5216.5: Can only indent one level at a time
+        // and first sub-paragraph at a given level must be preceded by parent
+        para.level++;
+        renderParagraphs();
+        updatePreview();
+    }
+}
+
+/**
+ * Outdent a paragraph (decrease level)
+ */
+function outdentParagraph(index) {
+    const para = paragraphs[index];
+    if (para.level > 0) {
+        para.level--;
+        renderParagraphs();
+        updatePreview();
+    }
+}
+
+/**
  * Render the paragraphs list with drag-and-drop support
  */
 function renderParagraphs() {
@@ -1226,25 +1318,48 @@ function renderParagraphs() {
         return;
     }
 
-    container.innerHTML = paragraphs.map((para, index) => `
-        <div class="paragraph-item" draggable="true" data-index="${index}">
-            <span class="paragraph-drag-handle" title="Drag to reorder">⋮⋮</span>
-            <span class="paragraph-number">${index + 1}.</span>
-            <div class="paragraph-content">
-                <textarea class="paragraph-text"
-                          placeholder="Enter paragraph text..."
-                          oninput="updateParagraphText(${index}, this.value)">${escapeHtml(para.text)}</textarea>
+    // Calculate hierarchical labels
+    const labels = calculateParagraphLabels();
+
+    container.innerHTML = paragraphs.map((para, index) => {
+        const level = para.level || 0;
+        // Each level indents by 24px (consistent spacing regardless of label width)
+        const indentPx = level * 24;
+
+        return `
+            <div class="paragraph-item" draggable="true" data-index="${index}" data-level="${level}">
+                <div class="paragraph-controls">
+                    <span class="paragraph-drag-handle" title="Drag to reorder">⋮⋮</span>
+                    <div class="paragraph-indent-controls">
+                        <button type="button" class="btn-outdent" onclick="outdentParagraph(${index})" title="Outdent (Shift+Tab)" ${level === 0 ? 'disabled' : ''}>◀</button>
+                        <button type="button" class="btn-indent" onclick="indentParagraph(${index})" title="Indent (Tab)" ${level >= MAX_PARAGRAPH_LEVELS - 1 ? 'disabled' : ''}>▶</button>
+                    </div>
+                </div>
+                <div class="paragraph-body">
+                    <div class="paragraph-indent" style="width: ${indentPx}px;"></div>
+                    <span class="paragraph-number" title="Level ${level + 1} of 8">${labels[index]}</span>
+                    <div class="paragraph-content">
+                        <textarea class="paragraph-text"
+                                  placeholder="Enter paragraph text..."
+                                  data-index="${index}"
+                                  oninput="updateParagraphText(${index}, this.value)">${escapeHtml(para.text)}</textarea>
+                    </div>
+                </div>
+                <button type="button" class="paragraph-remove" onclick="removeParagraph(${index})" title="Remove paragraph">×</button>
             </div>
-            <button type="button" class="paragraph-remove" onclick="removeParagraph(${index})" title="Remove paragraph">×</button>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 
     // Add drag-and-drop event listeners
     initParagraphDragDrop();
+
+    // Add keyboard shortcuts for indent/outdent
+    initParagraphKeyboardShortcuts();
 }
 
 /**
  * Initialize drag-and-drop for paragraph reordering
+ * Improved: Drag works from anywhere on the left control area, not just the handle dots
  */
 function initParagraphDragDrop() {
     const container = document.getElementById('paragraphsList');
@@ -1254,17 +1369,35 @@ function initParagraphDragDrop() {
     let draggedIndex = null;
 
     items.forEach(item => {
-        const handle = item.querySelector('.paragraph-drag-handle');
-        if (handle) {
-            handle.style.webkitUserDrag = 'element';
+        // Make the whole controls area draggable, not just the handle
+        const controlsArea = item.querySelector('.paragraph-controls');
+        if (controlsArea) {
+            controlsArea.style.cursor = 'grab';
         }
 
+        // Start drag when mousedown on controls area
         item.addEventListener('dragstart', (e) => {
+            // Only allow drag from the controls area or the item itself (not from textarea)
+            if (e.target.closest('.paragraph-text') || e.target.closest('.paragraph-remove')) {
+                e.preventDefault();
+                return;
+            }
+
             draggedItem = item;
             draggedIndex = parseInt(item.dataset.index);
             item.classList.add('dragging');
             e.dataTransfer.effectAllowed = 'move';
             e.dataTransfer.setData('text/plain', String(draggedIndex));
+
+            // Create a better drag image
+            const dragImage = item.cloneNode(true);
+            dragImage.style.width = item.offsetWidth + 'px';
+            dragImage.style.opacity = '0.8';
+            dragImage.style.position = 'absolute';
+            dragImage.style.top = '-1000px';
+            document.body.appendChild(dragImage);
+            e.dataTransfer.setDragImage(dragImage, 20, 20);
+            setTimeout(() => dragImage.remove(), 0);
         });
 
         item.addEventListener('dragend', (e) => {
@@ -1279,35 +1412,47 @@ function initParagraphDragDrop() {
             e.stopPropagation();
             e.dataTransfer.dropEffect = 'move';
 
-            if (item === draggedItem) return;
+            if (item === draggedItem || !draggedItem) return;
 
             const rect = item.getBoundingClientRect();
-            const midY = rect.top + rect.height / 2;
+            // Use a larger zone (40% from top/bottom) instead of just midpoint
+            const topZone = rect.top + rect.height * 0.4;
+            const bottomZone = rect.top + rect.height * 0.6;
 
             items.forEach(i => i.classList.remove('drag-over-above', 'drag-over-below'));
 
-            if (e.clientY < midY) {
+            if (e.clientY < topZone) {
                 item.classList.add('drag-over-above');
-            } else {
+            } else if (e.clientY > bottomZone) {
                 item.classList.add('drag-over-below');
+            } else {
+                // In the middle zone - show based on relative position
+                if (parseInt(item.dataset.index) > draggedIndex) {
+                    item.classList.add('drag-over-below');
+                } else {
+                    item.classList.add('drag-over-above');
+                }
             }
         });
 
         item.addEventListener('dragleave', (e) => {
-            item.classList.remove('drag-over-above', 'drag-over-below');
+            // Only remove classes if actually leaving this item
+            if (!item.contains(e.relatedTarget)) {
+                item.classList.remove('drag-over-above', 'drag-over-below');
+            }
         });
 
         item.addEventListener('drop', (e) => {
             e.preventDefault();
             e.stopPropagation();
 
-            if (item === draggedItem) return;
+            if (item === draggedItem || draggedIndex === null) return;
 
             const targetIndex = parseInt(item.dataset.index);
             const rect = item.getBoundingClientRect();
-            const midY = rect.top + rect.height / 2;
+            const topZone = rect.top + rect.height * 0.4;
 
-            let newIndex = e.clientY < midY ? targetIndex : targetIndex + 1;
+            let newIndex = e.clientY < topZone ? targetIndex : targetIndex + 1;
 
             if (draggedIndex < newIndex) {
                 newIndex--;
@@ -1319,8 +1464,68 @@ function initParagraphDragDrop() {
         });
     });
 
-    // Touch drag events for mobile
-    initTouchDragForList(container, 'paragraph-item', 'paragraph-drag-handle', reorderParagraph);
+    // Also allow drag on the container itself (for dropping at the end)
+    container.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+    });
+
+    container.addEventListener('drop', (e) => {
+        // Only handle if not dropped on an item
+        if (e.target === container && draggedIndex !== null) {
+            e.preventDefault();
+            reorderParagraph(draggedIndex, paragraphs.length - 1);
+        }
+    });
+
+    // Touch drag events for mobile - use the controls area
+    initTouchDragForList(container, 'paragraph-item', 'paragraph-controls', reorderParagraph);
+}
+
+/**
+ * Initialize keyboard shortcuts for paragraph indent/outdent
+ */
+function initParagraphKeyboardShortcuts() {
+    const textareas = document.querySelectorAll('.paragraph-text');
+
+    textareas.forEach(textarea => {
+        textarea.addEventListener('keydown', (e) => {
+            const index = parseInt(textarea.dataset.index);
+
+            // Tab = indent, Shift+Tab = outdent
+            if (e.key === 'Tab') {
+                e.preventDefault();
+                if (e.shiftKey) {
+                    outdentParagraph(index);
+                } else {
+                    indentParagraph(index);
+                }
+                // Refocus the textarea after re-render
+                setTimeout(() => {
+                    const newTextarea = document.querySelector(`.paragraph-text[data-index="${index}"]`);
+                    if (newTextarea) {
+                        newTextarea.focus();
+                        // Restore cursor position
+                        newTextarea.setSelectionRange(textarea.selectionStart, textarea.selectionEnd);
+                    }
+                }, 10);
+            }
+
+            // Alt+Up = move paragraph up, Alt+Down = move paragraph down
+            if (e.altKey && (e.key === 'ArrowUp' || e.key === 'ArrowDown')) {
+                e.preventDefault();
+                const newIndex = e.key === 'ArrowUp' ? index - 1 : index + 1;
+                if (newIndex >= 0 && newIndex < paragraphs.length) {
+                    reorderParagraph(index, newIndex);
+                    // Refocus after move
+                    setTimeout(() => {
+                        const newTextarea = document.querySelector(`.paragraph-text[data-index="${newIndex}"]`);
+                        if (newTextarea) newTextarea.focus();
+                    }, 10);
+                }
+            }
+        });
+    });
 }
 
 /**
@@ -1338,10 +1543,18 @@ function reorderParagraph(fromIndex, toIndex) {
 
 /**
  * Get body text from paragraphs (for LaTeX generation)
+ * Generates proper indentation and hierarchical numbering per SECNAV M-5216.5
  */
 function getBodyText() {
+    const labels = calculateParagraphLabels();
+
     return paragraphs.map((para, index) => {
-        return `${index + 1}.  ${para.text}`;
+        const level = para.level || 0;
+        const indent = ' '.repeat(level * PARAGRAPH_INDENT_SPACES);
+        const label = labels[index];
+
+        // Format: indent + label + two spaces + text
+        return `${indent}${label}  ${para.text}`;
     }).join('\n\n');
 }
 
@@ -2622,14 +2835,22 @@ async function downloadDocx() {
             }
         }
 
-        // Body paragraphs
+        // Body paragraphs with hierarchical numbering
         children.push(new Paragraph({ spacing: { before: 300 } })); // Spacing before body
-        for (const para of paragraphs) {
-            const paraIndex = paragraphs.indexOf(para) + 1;
+        const paraLabels = calculateParagraphLabels();
+        for (let i = 0; i < paragraphs.length; i++) {
+            const para = paragraphs[i];
+            const level = para.level || 0;
+            const label = paraLabels[i];
+            // DOCX uses twips for indentation (1 inch = 1440 twips, 0.5 inch = 720)
+            // Each level = 4 spaces = ~0.33 inches = 480 twips
+            const indentTwips = level * 480;
+
             children.push(new Paragraph({
                 spacing: { after: 200 },
+                indent: { left: indentTwips },
                 children: [
-                    new TextRun({ text: `${paraIndex}.  ${para.text}`, size: 24, font: 'Times New Roman' })
+                    new TextRun({ text: `${label}  ${para.text}`, size: 24, font: 'Times New Roman' })
                 ]
             }));
         }
@@ -4536,7 +4757,12 @@ function restoreDraft() {
         // Restore paragraphs
         const parasJson = localStorage.getItem(STORAGE_KEY_PARAS);
         if (parasJson) {
-            paragraphs = JSON.parse(parasJson);
+            const savedParas = JSON.parse(parasJson);
+            // Ensure backward compatibility - add level: 0 if missing
+            paragraphs = savedParas.map(para => ({
+                text: para.text || '',
+                level: para.level || 0
+            }));
             renderParagraphs();
         }
 
