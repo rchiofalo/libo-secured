@@ -6,12 +6,15 @@ import { ProfileModal } from '@/components/modals/ProfileModal';
 import { ReferenceLibraryModal } from '@/components/modals/ReferenceLibraryModal';
 import { useUIStore } from '@/stores/uiStore';
 import { useDocumentStore } from '@/stores/documentStore';
+import { useProfileStore } from '@/stores/profileStore';
 import { useLatexEngine } from '@/hooks/useLatexEngine';
 import { generateAllLatexFiles } from '@/services/latex/generator';
 
 function App() {
   const { theme, setIsMobile } = useUIStore();
   const documentStore = useDocumentStore();
+  const { setFormData } = useDocumentStore();
+  const { selectedProfile, profiles } = useProfileStore();
   const { isReady, compile, error: engineError } = useLatexEngine();
 
   const [pdfUrl, setPdfUrl] = useState<string | null>(null);
@@ -33,6 +36,29 @@ function App() {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, [setIsMobile]);
+
+  // Sync selected profile with form data on initial load
+  useEffect(() => {
+    if (selectedProfile && profiles[selectedProfile]) {
+      const profile = profiles[selectedProfile];
+      setFormData({
+        unitLine1: profile.unitLine1,
+        unitLine2: profile.unitLine2,
+        unitAddress: profile.unitAddress,
+        ssic: profile.ssic,
+        from: profile.from,
+        sigFirst: profile.sigFirst,
+        sigMiddle: profile.sigMiddle,
+        sigLast: profile.sigLast,
+        sigRank: profile.sigRank,
+        sigTitle: profile.sigTitle,
+        cuiControlledBy: profile.cuiControlledBy,
+        pocEmail: profile.pocEmail,
+      });
+    }
+    // Only run on initial mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Compile PDF
   const compilePdf = useCallback(async () => {
