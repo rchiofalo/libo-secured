@@ -16,11 +16,11 @@ export function FormPanel() {
   const config = DOC_TYPE_CONFIG[docType] || DOC_TYPE_CONFIG.naval_letter;
 
   return (
-    <div className="flex flex-col h-full border-r border-border bg-card">
+    <div className="flex flex-col h-full border-r border-border bg-card overflow-hidden">
       <ProfileBar />
 
-      <ScrollArea className="flex-1 p-4">
-        <div className="space-y-6">
+      <ScrollArea className="flex-1">
+        <div className="p-4 space-y-6">
           <DocumentTypeSelector />
 
           {config.letterhead && <LetterheadSection />}

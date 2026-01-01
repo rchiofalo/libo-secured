@@ -26,19 +26,25 @@ interface LatexEngineState {
   error: string | null;
 }
 
+// Get base path from Vite (handles /libo-secured/ in production)
+const BASE_PATH = import.meta.env.BASE_URL || '/';
+
 // Helper to dynamically load a script
 function loadScript(src: string): Promise<void> {
+  // Prepend base path for production builds
+  const fullSrc = src.startsWith('/') ? `${BASE_PATH}${src.slice(1)}` : src;
+
   return new Promise((resolve, reject) => {
     // Check if already loaded
-    if (document.querySelector(`script[src="${src}"]`)) {
+    if (document.querySelector(`script[src="${fullSrc}"]`)) {
       resolve();
       return;
     }
 
     const script = document.createElement('script');
-    script.src = src;
+    script.src = fullSrc;
     script.onload = () => resolve();
-    script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
+    script.onerror = () => reject(new Error(`Failed to load script: ${fullSrc}`));
     document.head.appendChild(script);
   });
 }
