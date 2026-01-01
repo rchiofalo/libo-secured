@@ -790,6 +790,8 @@
 % Numbers in parentheses: (1), (2), (3)... EVEN IF ONLY ONE
 \makeatletter
 \newcommand{\printEnclosureList}{%
+    % DEBUG: Always show enclosure count
+    \noindent\textbf{DEBUG: enclmax = \arabic{enclmax}}\\
     \ifnum\value{enclmax}>0
         \vspace{12pt}
         \noindent
