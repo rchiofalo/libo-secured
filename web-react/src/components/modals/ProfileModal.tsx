@@ -35,7 +35,7 @@ export function ProfileModal() {
     pocEmail: '',
   });
 
-  const isEditing = selectedProfile && profiles[selectedProfile];
+  const isEditing = !!(selectedProfile && profiles[selectedProfile]);
 
   // Populate form when editing
   useEffect(() => {
