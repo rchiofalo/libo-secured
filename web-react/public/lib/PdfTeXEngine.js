@@ -60,17 +60,18 @@ var EngineStatus;
     EngineStatus[EngineStatus["Busy"] = 3] = "Busy";
     EngineStatus[EngineStatus["Error"] = 4] = "Error";
 })(EngineStatus = exports.EngineStatus || (exports.EngineStatus = {}));
-// Detect base path from current script location or use default
-var scriptEl = document.currentScript;
-var basePath = '';
-if (scriptEl && scriptEl.src) {
-    // Extract base path from script src (e.g., /libo-secured/lib/PdfTeXEngine.js -> /libo-secured/)
-    var match = scriptEl.src.match(/(.*)\/lib\/PdfTeXEngine\.js/);
-    if (match) {
-        basePath = match[1];
+// Detect base path - check global first (set by React), then try currentScript, then default
+var basePath = window.SWIFTLATEX_BASE_PATH || '';
+if (!basePath) {
+    var scriptEl = document.currentScript;
+    if (scriptEl && scriptEl.src) {
+        var match = scriptEl.src.match(/(.*)\/lib\/PdfTeXEngine\.js/);
+        if (match) {
+            basePath = match[1];
+        }
     }
 }
-var ENGINE_PATH = basePath + '/lib/swiftlatexpdftex.js?v=6';
+var ENGINE_PATH = (basePath || '') + '/lib/swiftlatexpdftex.js?v=6';
 var CompileResult = /** @class */ (function () {
     function CompileResult() {
         this.pdf = undefined;

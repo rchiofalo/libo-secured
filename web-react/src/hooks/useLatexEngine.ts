@@ -6,6 +6,7 @@ declare global {
     PdfTeXEngine: new () => PdfTeXEngine;
     LATEX_TEMPLATES: Record<string, string>;
     TEXLIVE_PACKAGES: Array<{ format: string; filename: string; content: string }>;
+    SWIFTLATEX_BASE_PATH?: string;
   }
 }
 
@@ -70,6 +71,10 @@ export function useLatexEngine() {
 
       // Load required scripts dynamically
       console.log('Loading LaTeX engine scripts...');
+
+      // Set base path for Worker to find swiftlatexpdftex.js
+      // Remove trailing slash for proper path joining
+      window.SWIFTLATEX_BASE_PATH = BASE_PATH.replace(/\/$/, '');
 
       // Load PdfTeXEngine first
       await loadScript('/lib/PdfTeXEngine.js');
