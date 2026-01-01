@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>libo-secured | USMC Correspondence Generator</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=18">
 </head>
 
 <body>
@@ -502,14 +502,27 @@
                         <span>or drop PDF here</span>
                     </div>
                 </div>
+
+                <div class="copyto-header">
+                    <label>Copy To (Distribution)</label>
+                    <span class="copyto-hint">Recipients who receive copies of this correspondence</span>
+                </div>
+                <div id="copyToList" class="copyto-list"></div>
+                <div class="copyto-add-row">
+                    <button type="button" class="btn-add-copyto" onclick="addCopyTo()">+ Add Copy To</button>
+                </div>
             </div>
 
-            <h2>Body</h2>
-            <textarea id="body" oninput="updatePreview()">1.  Per reference (a), this correspondence serves as an example of the naval letter format.
-
-2.  The purpose of this letter is to demonstrate proper formatting in accordance with SECNAV M-5216.5.
-
-3.  Point of contact for this matter is the undersigned at (910) 555-1234.</textarea>
+            <h2 class="collapsible" onclick="toggleSection(this)">Body Paragraphs</h2>
+            <div class="collapsible-content">
+                <div class="paragraphs-header">
+                    <span class="paragraphs-hint">Auto-numbered 1., 2., 3... - drag ⋮⋮ to reorder</span>
+                </div>
+                <div id="paragraphsList" class="paragraphs-list"></div>
+                <div class="paragraph-add-row">
+                    <button type="button" class="btn-add-paragraph" onclick="addParagraph()">+ Add Paragraph</button>
+                </div>
+            </div>
 
             <!-- Standard Signature (for most doc types) -->
             <div id="standardSignature">
@@ -701,6 +714,12 @@
                 <span id="prev-sig">J. A. DOE</span>
             </div>
 
+            <!-- Copy To (Distribution) -->
+            <div class="copyto-block" id="prev-copyto-block" style="display: none;">
+                <span class="label">Copy to:</span>
+                <span class="content" id="prev-copytos"></span>
+            </div>
+
             <!-- Classification Banner (bottom) -->
             <div class="class-banner class-banner-bottom" id="prev-class-banner-bottom" style="display: none;"></div>
         </div>
@@ -715,13 +734,13 @@
     <script src="lib/PdfTeXEngine.js?v=5"></script>
 
     <!-- LaTeX Templates -->
-    <script src="js/latex-templates.js?v=16"></script>
+    <script src="js/latex-templates.js?v=17"></script>
 
     <!-- Bundled TeX Live Packages (avoids HTTP fetch issues) -->
     <script src="js/texlive-packages.js?v=10"></script>
 
     <!-- Application JavaScript -->
-    <script src="js/app.js?v=32"></script>
+    <script src="js/app.js?v=33"></script>
 </body>
 
 </html>

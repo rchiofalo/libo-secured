@@ -1375,6 +1375,110 @@ button.primary:hover {
 }
 
 /* =============================================================================
+   COPY TO (DISTRIBUTION) SECTION
+   ============================================================================= */
+
+.copyto-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.copyto-header label {
+    font-weight: 600;
+    color: #bbe1fa;
+}
+
+.copyto-hint {
+    font-size: 10px;
+    color: #888;
+}
+
+.copyto-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.copyto-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #16213e;
+    border: 1px solid #3282b8;
+    border-radius: 4px;
+    padding: 6px 10px;
+}
+
+.copyto-item input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #eee;
+    font-size: 12px;
+    padding: 4px;
+}
+
+.copyto-item input:focus {
+    outline: none;
+    background: rgba(50, 130, 184, 0.1);
+    border-radius: 2px;
+}
+
+.copyto-remove {
+    background: transparent;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 2px 6px;
+    font-size: 14px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.copyto-remove:hover {
+    opacity: 1;
+    color: #e74c3c;
+}
+
+.copyto-add-row {
+    margin-top: 8px;
+}
+
+.btn-add-copyto {
+    background: transparent;
+    border: 1px dashed #3282b8;
+    color: #3282b8;
+    padding: 6px 12px;
+    font-size: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-add-copyto:hover {
+    background: rgba(50, 130, 184, 0.1);
+    border-color: #bbe1fa;
+    color: #bbe1fa;
+}
+
+/* Preview Copy To block */
+.copyto-block {
+    margin-top: 24px;
+    font-size: 10px;
+}
+
+.copyto-block .label {
+    font-weight: normal;
+}
+
+.copyto-block .content {
+    margin-left: 8px;
+}
+
+/* =============================================================================
    COLLAPSIBLE SECTIONS
    ============================================================================= */
 
@@ -1889,4 +1993,147 @@ body.modal-open {
     padding: 40px 20px;
     text-align: center;
     color: #888;
+}
+
+/* =============================================================================
+   BODY PARAGRAPHS
+   ============================================================================= */
+
+.paragraphs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.paragraphs-hint {
+    font-size: 10px;
+    color: #888;
+}
+
+.paragraphs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.paragraph-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    background: #16213e;
+    border: 1px solid #3282b8;
+    border-radius: 4px;
+    padding: 10px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.paragraph-item:hover {
+    border-color: #bbe1fa;
+}
+
+.paragraph-item.dragging {
+    opacity: 0.5;
+    border-color: #bbe1fa;
+    box-shadow: 0 4px 12px rgba(50, 130, 184, 0.3);
+}
+
+.paragraph-item.drag-over-above {
+    border-top: 2px solid #bbe1fa;
+}
+
+.paragraph-item.drag-over-below {
+    border-bottom: 2px solid #bbe1fa;
+}
+
+.paragraph-drag-handle {
+    cursor: grab;
+    color: #666;
+    font-size: 14px;
+    padding: 4px;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.paragraph-drag-handle:hover {
+    color: #bbe1fa;
+}
+
+.paragraph-drag-handle:active {
+    cursor: grabbing;
+}
+
+.paragraph-number {
+    color: #bbe1fa;
+    font-weight: 600;
+    font-size: 14px;
+    min-width: 24px;
+    flex-shrink: 0;
+    padding-top: 4px;
+}
+
+.paragraph-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.paragraph-text {
+    width: 100%;
+    min-height: 60px;
+    background: #0f3460;
+    border: 1px solid #3282b8;
+    border-radius: 4px;
+    color: #eee;
+    font-size: 12px;
+    padding: 8px;
+    resize: vertical;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+.paragraph-text:focus {
+    outline: none;
+    border-color: #bbe1fa;
+    background: #16213e;
+}
+
+.paragraph-remove {
+    background: transparent;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 16px;
+    opacity: 0.7;
+    transition: opacity 0.2s, color 0.2s;
+    flex-shrink: 0;
+}
+
+.paragraph-remove:hover {
+    opacity: 1;
+    color: #e74c3c;
+}
+
+.paragraph-add-row {
+    margin-top: 8px;
+}
+
+.btn-add-paragraph {
+    background: transparent;
+    border: 1px dashed #3282b8;
+    color: #3282b8;
+    padding: 8px 16px;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.btn-add-paragraph:hover {
+    background: rgba(50, 130, 184, 0.1);
+    border-color: #bbe1fa;
+    color: #bbe1fa;
 }

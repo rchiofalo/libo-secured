@@ -20,6 +20,8 @@ const STORAGE_KEY_PROFILES = 'libo_profiles';
 const STORAGE_KEY_DRAFT = 'libo_draft';
 const STORAGE_KEY_REFS = 'libo_draft_refs';
 const STORAGE_KEY_ENCLS = 'libo_draft_encls';
+const STORAGE_KEY_COPYTOS = 'libo_draft_copytos';
+const STORAGE_KEY_PARAS = 'libo_draft_paragraphs';
 
 // Draft data version (increment when format changes)
 const DRAFT_VERSION = '1.0';
@@ -241,6 +243,8 @@ Hello World!
     const enclTex = generateEnclosuresTex();
     console.log('Writing encl-config.tex:', enclTex);
     pdfTexEngine.writeMemFSFile('encl-config.tex', enclTex);
+
+    pdfTexEngine.writeMemFSFile('copyto-config.tex', generateCopyToTex());
 
     pdfTexEngine.writeMemFSFile('body.tex', generateBodyTex(data));
     pdfTexEngine.writeMemFSFile('classification.tex', generateClassificationTex(data));
@@ -1107,6 +1111,240 @@ function reorderReference(fromIndex, toIndex) {
     updatePreview();
 }
 
+// =============================================================================
+// COPY TO (DISTRIBUTION) MANAGEMENT
+// =============================================================================
+
+// Store copy-to recipients
+let copyTos = [];
+
+/**
+ * Add a new copy-to recipient
+ */
+function addCopyTo(recipient = '') {
+    copyTos.push({ text: recipient });
+    renderCopyTos();
+    updatePreview();
+}
+
+/**
+ * Remove a copy-to recipient
+ */
+function removeCopyTo(index) {
+    copyTos.splice(index, 1);
+    renderCopyTos();
+    updatePreview();
+}
+
+/**
+ * Update copy-to recipient text
+ */
+function updateCopyTo(index, text) {
+    copyTos[index].text = text;
+    updatePreview();
+}
+
+/**
+ * Render the copy-to list
+ */
+function renderCopyTos() {
+    const container = document.getElementById('copyToList');
+
+    if (copyTos.length === 0) {
+        container.innerHTML = '';
+        return;
+    }
+
+    container.innerHTML = copyTos.map((ct, index) => `
+        <div class="copyto-item">
+            <input type="text"
+                   value="${escapeHtml(ct.text)}"
+                   placeholder="e.g., CO, 1st Bn, 1st Mar"
+                   oninput="updateCopyTo(${index}, this.value)">
+            <button type="button" class="copyto-remove" onclick="removeCopyTo(${index})">×</button>
+        </div>
+    `).join('');
+}
+
+// =============================================================================
+// PARAGRAPH MANAGEMENT
+// =============================================================================
+
+// Store paragraphs as array
+let paragraphs = [
+    { text: 'Per reference (a), this correspondence serves as an example of the naval letter format.' },
+    { text: 'The purpose of this letter is to demonstrate proper formatting in accordance with SECNAV M-5216.5.' },
+    { text: 'Point of contact for this matter is the undersigned at (910) 555-1234.' }
+];
+
+/**
+ * Add a new paragraph
+ */
+function addParagraph(text = '') {
+    paragraphs.push({ text: text });
+    renderParagraphs();
+    updatePreview();
+
+    // Focus the new paragraph's textarea
+    setTimeout(() => {
+        const textareas = document.querySelectorAll('.paragraph-text');
+        if (textareas.length > 0) {
+            textareas[textareas.length - 1].focus();
+        }
+    }, 50);
+}
+
+/**
+ * Remove a paragraph
+ */
+function removeParagraph(index) {
+    if (paragraphs.length <= 1) {
+        alert('You must have at least one paragraph.');
+        return;
+    }
+    paragraphs.splice(index, 1);
+    renderParagraphs();
+    updatePreview();
+}
+
+/**
+ * Update paragraph text
+ */
+function updateParagraphText(index, text) {
+    paragraphs[index].text = text;
+    updatePreview();
+}
+
+/**
+ * Render the paragraphs list with drag-and-drop support
+ */
+function renderParagraphs() {
+    const container = document.getElementById('paragraphsList');
+
+    if (paragraphs.length === 0) {
+        container.innerHTML = '<p style="color: #888; font-size: 12px;">No paragraphs. Click "Add Paragraph" to start.</p>';
+        return;
+    }
+
+    container.innerHTML = paragraphs.map((para, index) => `
+        <div class="paragraph-item" draggable="true" data-index="${index}">
+            <span class="paragraph-drag-handle" title="Drag to reorder">⋮⋮</span>
+            <span class="paragraph-number">${index + 1}.</span>
+            <div class="paragraph-content">
+                <textarea class="paragraph-text"
+                          placeholder="Enter paragraph text..."
+                          oninput="updateParagraphText(${index}, this.value)">${escapeHtml(para.text)}</textarea>
+            </div>
+            <button type="button" class="paragraph-remove" onclick="removeParagraph(${index})" title="Remove paragraph">×</button>
+        </div>
+    `).join('');
+
+    // Add drag-and-drop event listeners
+    initParagraphDragDrop();
+}
+
+/**
+ * Initialize drag-and-drop for paragraph reordering
+ */
+function initParagraphDragDrop() {
+    const container = document.getElementById('paragraphsList');
+    const items = container.querySelectorAll('.paragraph-item');
+
+    let draggedItem = null;
+    let draggedIndex = null;
+
+    items.forEach(item => {
+        const handle = item.querySelector('.paragraph-drag-handle');
+        if (handle) {
+            handle.style.webkitUserDrag = 'element';
+        }
+
+        item.addEventListener('dragstart', (e) => {
+            draggedItem = item;
+            draggedIndex = parseInt(item.dataset.index);
+            item.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/plain', String(draggedIndex));
+        });
+
+        item.addEventListener('dragend', (e) => {
+            item.classList.remove('dragging');
+            draggedItem = null;
+            draggedIndex = null;
+            items.forEach(i => i.classList.remove('drag-over-above', 'drag-over-below'));
+        });
+
+        item.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            e.dataTransfer.dropEffect = 'move';
+
+            if (item === draggedItem) return;
+
+            const rect = item.getBoundingClientRect();
+            const midY = rect.top + rect.height / 2;
+
+            items.forEach(i => i.classList.remove('drag-over-above', 'drag-over-below'));
+
+            if (e.clientY < midY) {
+                item.classList.add('drag-over-above');
+            } else {
+                item.classList.add('drag-over-below');
+            }
+        });
+
+        item.addEventListener('dragleave', (e) => {
+            item.classList.remove('drag-over-above', 'drag-over-below');
+        });
+
+        item.addEventListener('drop', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (item === draggedItem) return;
+
+            const targetIndex = parseInt(item.dataset.index);
+            const rect = item.getBoundingClientRect();
+            const midY = rect.top + rect.height / 2;
+
+            let newIndex = e.clientY < midY ? targetIndex : targetIndex + 1;
+
+            if (draggedIndex < newIndex) {
+                newIndex--;
+            }
+
+            reorderParagraph(draggedIndex, newIndex);
+
+            items.forEach(i => i.classList.remove('drag-over-above', 'drag-over-below'));
+        });
+    });
+
+    // Touch drag events for mobile
+    initTouchDragForList(container, 'paragraph-item', 'paragraph-drag-handle', reorderParagraph);
+}
+
+/**
+ * Reorder paragraph from one index to another
+ */
+function reorderParagraph(fromIndex, toIndex) {
+    if (fromIndex === toIndex) return;
+
+    const item = paragraphs.splice(fromIndex, 1)[0];
+    paragraphs.splice(toIndex, 0, item);
+
+    renderParagraphs();
+    updatePreview();
+}
+
+/**
+ * Get body text from paragraphs (for LaTeX generation)
+ */
+function getBodyText() {
+    return paragraphs.map((para, index) => {
+        return `${index + 1}.  ${para.text}`;
+    }).join('\n\n');
+}
+
 /**
  * Format file size for display
  */
@@ -1195,8 +1433,8 @@ function collectData() {
         classReason: document.getElementById('classReason').value,
         declassifyOn: document.getElementById('declassifyOn').value,
         classifiedPocEmail: document.getElementById('classifiedPocEmail').value,
-        // Body
-        body: document.getElementById('body').value,
+        // Body (from paragraphs array)
+        body: getBodyText(),
         // Standard signature
         sigFirst: document.getElementById('sigFirst').value,
         sigMiddle: document.getElementById('sigMiddle').value,
@@ -1513,6 +1751,15 @@ function updatePreview() {
         document.getElementById('prev-sig').innerHTML = `${getFullSignature(data)}<br>${data.sigRank}<br>${data.sigTitle}`;
     } else {
         document.getElementById('prev-sig').textContent = getAbbrevSignature(data);
+    }
+
+    // Copy To (Distribution)
+    const copyToBlock = document.getElementById('prev-copyto-block');
+    if (copyTos.length > 0) {
+        copyToBlock.style.display = 'block';
+        document.getElementById('prev-copytos').innerHTML = copyTos.map(ct => ct.text).join('<br>');
+    } else {
+        copyToBlock.style.display = 'none';
     }
 
     // Schedule PDF preview update (debounced)
@@ -1841,6 +2088,24 @@ ${enclosures.map((e, i) => {
 `;
     console.log('Generated enclosures.tex:', tex);
     return tex;
+}
+
+/**
+ * Generate copyto-config.tex with copy-to recipients
+ */
+function generateCopyToTex() {
+    if (copyTos.length === 0) {
+        return '% No copy-to recipients\n';
+    }
+
+    return `%=============================================================================
+% COPY TO (DISTRIBUTION) - Generated by libo-secured
+% Count: ${copyTos.length} recipients
+%=============================================================================
+
+\\setHasCopyTo
+${copyTos.map((ct, i) => `\\copytoentry{${i + 1}}{${escapeLatex(ct.text)}}`).join('\n')}
+`;
 }
 
 /**
@@ -3918,6 +4183,12 @@ function saveDraft() {
         }));
         localStorage.setItem(STORAGE_KEY_ENCLS, JSON.stringify(enclMeta));
 
+        // Save copy-to recipients
+        localStorage.setItem(STORAGE_KEY_COPYTOS, JSON.stringify(copyTos));
+
+        // Save paragraphs
+        localStorage.setItem(STORAGE_KEY_PARAS, JSON.stringify(paragraphs));
+
         showAutoSaveStatus('Draft saved');
     } catch (e) {
         console.error('Error saving draft:', e);
@@ -4000,6 +4271,8 @@ function clearDraftStorage() {
     localStorage.removeItem(STORAGE_KEY_DRAFT);
     localStorage.removeItem(STORAGE_KEY_REFS);
     localStorage.removeItem(STORAGE_KEY_ENCLS);
+    localStorage.removeItem(STORAGE_KEY_COPYTOS);
+    localStorage.removeItem(STORAGE_KEY_PARAS);
 }
 
 /**
@@ -4049,6 +4322,20 @@ function restoreDraft() {
             }
         }
 
+        // Restore copy-to recipients
+        const copyToJson = localStorage.getItem(STORAGE_KEY_COPYTOS);
+        if (copyToJson) {
+            copyTos = JSON.parse(copyToJson);
+            renderCopyTos();
+        }
+
+        // Restore paragraphs
+        const parasJson = localStorage.getItem(STORAGE_KEY_PARAS);
+        if (parasJson) {
+            paragraphs = JSON.parse(parasJson);
+            renderParagraphs();
+        }
+
         // Update UI based on restored docType
         updateDocTypeFields();
 
@@ -4071,6 +4358,8 @@ function clearDraft() {
     localStorage.removeItem(STORAGE_KEY_DRAFT);
     localStorage.removeItem(STORAGE_KEY_REFS);
     localStorage.removeItem(STORAGE_KEY_ENCLS);
+    localStorage.removeItem(STORAGE_KEY_COPYTOS);
+    localStorage.removeItem(STORAGE_KEY_PARAS);
 
     // Reset form to defaults
     location.reload();
@@ -4113,9 +4402,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Check for saved draft and show restore modal if exists
     checkForDraft();
 
-    // Initialize references and enclosures lists
+    // Initialize references, enclosures, and paragraphs lists
     renderReferences();
     renderEnclosures();
+    renderParagraphs();
 
     // Initialize regulation hints on load
     updateRegulationHighlights();
