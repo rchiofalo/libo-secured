@@ -2057,74 +2057,120 @@ body.modal-open {
 .paragraph-item[data-level="6"] { margin-left: 180px; border-left-color: #fd7e14; }
 .paragraph-item[data-level="7"] { margin-left: 210px; border-left-color: #e83e8c; }
 
-/* Header row with label and action buttons */
+/* Header row with level badge and move buttons */
 .paragraph-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
-.paragraph-label {
-    font-family: 'Courier New', monospace;
+.paragraph-level-badge {
     font-weight: 700;
-    font-size: 14px;
-    color: #bbe1fa;
-    padding: 2px 8px;
-    background: rgba(50, 130, 184, 0.2);
-    border-radius: 4px;
+    font-size: 12px;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #b8860b, #daa520);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
-/* Action buttons row */
-.paragraph-actions {
+/* Move buttons in header */
+.paragraph-move-btns {
     display: flex;
     gap: 4px;
 }
 
-.para-btn {
-    background: rgba(50, 130, 184, 0.15);
-    border: 1px solid #3a5a7c;
-    color: #8ab4d4;
+.para-move-btn {
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+    color: #333;
     cursor: pointer;
     padding: 4px 10px;
-    font-size: 12px;
+    font-size: 14px;
     border-radius: 4px;
     transition: all 0.15s;
 }
 
-.para-btn:hover:not(:disabled) {
-    background: rgba(50, 130, 184, 0.3);
-    border-color: #bbe1fa;
-    color: #fff;
+.para-move-btn:hover:not(:disabled) {
+    background: #e0e0e0;
+    border-color: #999;
 }
 
-.para-btn:disabled {
+.para-move-btn:disabled {
     opacity: 0.3;
     cursor: not-allowed;
 }
 
-.para-btn-delete:hover:not(:disabled) {
-    background: rgba(231, 76, 60, 0.3);
-    border-color: #e74c3c;
-    color: #e74c3c;
+/* Action buttons row - below textarea */
+.paragraph-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
 }
 
-.para-btn-add {
-    background: rgba(46, 204, 113, 0.15);
-    border-color: #2ecc71;
-    color: #2ecc71;
-}
-
-.para-btn-add:hover:not(:disabled) {
-    background: rgba(46, 204, 113, 0.3);
-    border-color: #2ecc71;
+.para-action-btn {
+    border: none;
     color: #fff;
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.15s;
 }
 
-.para-separator {
-    color: #3a5a7c;
-    margin: 0 2px;
-    user-select: none;
+.para-action-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.para-action-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Main Paragraph - Blue */
+.para-action-main {
+    background: #007bff;
+}
+.para-action-main:hover:not(:disabled) {
+    background: #0056b3;
+}
+
+/* Sub-paragraph - Yellow/Gold */
+.para-action-sub {
+    background: #ffc107;
+    color: #333;
+}
+.para-action-sub:hover:not(:disabled) {
+    background: #e0a800;
+}
+
+/* Same - Green */
+.para-action-same {
+    background: #28a745;
+}
+.para-action-same:hover:not(:disabled) {
+    background: #1e7e34;
+}
+
+/* One Up - Teal */
+.para-action-up {
+    background: #17a2b8;
+}
+.para-action-up:hover:not(:disabled) {
+    background: #117a8b;
+}
+
+/* Delete - Red */
+.para-action-delete {
+    background: #dc3545;
+}
+.para-action-delete:hover:not(:disabled) {
+    background: #bd2130;
 }
 
 /* Textarea */

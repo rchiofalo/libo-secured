@@ -1363,6 +1363,41 @@ function addSiblingParagraph(afterIndex) {
 }
 
 /**
+ * Add a main (top-level) paragraph
+ */
+function addMainParagraph(afterIndex) {
+    // Insert after the current paragraph at level 0
+    paragraphs.splice(afterIndex + 1, 0, { text: '', level: 0 });
+    renderParagraphs();
+    updatePreview();
+
+    // Focus the new paragraph
+    setTimeout(() => {
+        const textarea = document.querySelector(`.paragraph-text[data-index="${afterIndex + 1}"]`);
+        if (textarea) textarea.focus();
+    }, 50);
+}
+
+/**
+ * Add a paragraph one level up (parent level)
+ */
+function addParentParagraph(afterIndex) {
+    const currentLevel = paragraphs[afterIndex].level || 0;
+    const parentLevel = Math.max(0, currentLevel - 1);
+
+    // Insert after the current paragraph at parent level
+    paragraphs.splice(afterIndex + 1, 0, { text: '', level: parentLevel });
+    renderParagraphs();
+    updatePreview();
+
+    // Focus the new paragraph
+    setTimeout(() => {
+        const textarea = document.querySelector(`.paragraph-text[data-index="${afterIndex + 1}"]`);
+        if (textarea) textarea.focus();
+    }, 50);
+}
+
+/**
  * Render the paragraphs list with drag-and-drop support
  */
 function renderParagraphs() {
@@ -1376,29 +1411,48 @@ function renderParagraphs() {
     // Calculate hierarchical labels
     const labels = calculateParagraphLabels();
 
+    // Build citation path like "1a(1)" for display
+    const getCitationPath = (idx) => {
+        let path = '';
+        let counters = [0, 0, 0, 0, 0, 0, 0, 0];
+        for (let i = 0; i <= idx; i++) {
+            const lvl = paragraphs[i].level || 0;
+            counters[lvl]++;
+            for (let j = lvl + 1; j < 8; j++) counters[j] = 0;
+            if (i === idx) {
+                // Build path from level 0 to current level
+                for (let l = 0; l <= lvl; l++) {
+                    path += getParagraphLabel(l, counters[l]).replace('.', '');
+                }
+            }
+        }
+        return path;
+    };
+
     container.innerHTML = paragraphs.map((para, index) => {
         const level = para.level || 0;
-        const nextLevelLabel = getParagraphLabel((level + 1) % 4, 1); // Preview what sub-para label would be
+        const citation = getCitationPath(index);
 
         return `
             <div class="paragraph-item" draggable="true" data-index="${index}" data-level="${level}">
                 <div class="paragraph-header">
-                    <span class="paragraph-label">${labels[index]}</span>
-                    <div class="paragraph-actions">
-                        <button type="button" class="para-btn para-btn-add" onclick="addSubParagraph(${index})" title="Add sub-paragraph (${nextLevelLabel})" ${level >= MAX_PARAGRAPH_LEVELS - 1 ? 'disabled' : ''}>+ ${nextLevelLabel}</button>
-                        <button type="button" class="para-btn" onclick="addSiblingParagraph(${index})" title="Add paragraph at same level">+</button>
-                        <span class="para-separator">|</span>
-                        <button type="button" class="para-btn" onclick="moveParagraphUp(${index})" title="Move up" ${index === 0 ? 'disabled' : ''}>↑</button>
-                        <button type="button" class="para-btn" onclick="moveParagraphDown(${index})" title="Move down" ${index >= paragraphs.length - 1 ? 'disabled' : ''}>↓</button>
-                        <button type="button" class="para-btn" onclick="outdentParagraph(${index})" title="Outdent" ${level === 0 ? 'disabled' : ''}>←</button>
-                        <button type="button" class="para-btn" onclick="indentParagraph(${index})" title="Indent" ${level >= MAX_PARAGRAPH_LEVELS - 1 ? 'disabled' : ''}>→</button>
-                        <button type="button" class="para-btn para-btn-delete" onclick="removeParagraph(${index})" title="Delete" ${paragraphs.length <= 1 ? 'disabled' : ''}>×</button>
+                    <span class="paragraph-level-badge">Level ${level + 1} ${citation}</span>
+                    <div class="paragraph-move-btns">
+                        <button type="button" class="para-move-btn" onclick="moveParagraphUp(${index})" title="Move up" ${index === 0 ? 'disabled' : ''}>↑</button>
+                        <button type="button" class="para-move-btn" onclick="moveParagraphDown(${index})" title="Move down" ${index >= paragraphs.length - 1 ? 'disabled' : ''}>↓</button>
                     </div>
                 </div>
                 <textarea class="paragraph-text"
-                          placeholder="Enter paragraph text..."
+                          placeholder="Enter your paragraph content here..."
                           data-index="${index}"
                           oninput="updateParagraphText(${index}, this.value)">${escapeHtml(para.text)}</textarea>
+                <div class="paragraph-actions">
+                    <button type="button" class="para-action-btn para-action-main" onclick="addMainParagraph(${index})">Main Paragraph</button>
+                    <button type="button" class="para-action-btn para-action-sub" onclick="addSubParagraph(${index})" ${level >= MAX_PARAGRAPH_LEVELS - 1 ? 'disabled' : ''}>Sub-paragraph</button>
+                    ${level > 0 ? `<button type="button" class="para-action-btn para-action-same" onclick="addSiblingParagraph(${index})">Same</button>` : ''}
+                    ${level > 1 ? `<button type="button" class="para-action-btn para-action-up" onclick="addParentParagraph(${index})">One Up</button>` : ''}
+                    <button type="button" class="para-action-btn para-action-delete" onclick="removeParagraph(${index})" ${paragraphs.length <= 1 ? 'disabled' : ''}>Delete</button>
+                </div>
             </div>
         `;
     }).join('');
