@@ -1363,17 +1363,35 @@ function addSiblingParagraph(afterIndex) {
 }
 
 /**
- * Add a main (top-level) paragraph
+ * Find the last index of the subtree starting at the given index
+ * A subtree includes all following paragraphs with level > the starting paragraph's level
  */
+function findSubtreeEnd(startIndex) {
+    const startLevel = paragraphs[startIndex].level || 0;
+    let endIndex = startIndex;
+
+    for (let i = startIndex + 1; i < paragraphs.length; i++) {
+        const level = paragraphs[i].level || 0;
+        if (level <= startLevel) {
+            break; // Found a paragraph at same or higher level, subtree ends
+        }
+        endIndex = i;
+    }
+
+    return endIndex;
+}
+
 function addMainParagraph(afterIndex) {
-    // Insert after the current paragraph at level 0
-    paragraphs.splice(afterIndex + 1, 0, { text: '', level: 0 });
+    // Find the end of the current subtree - main paragraph goes AFTER all children
+    const insertIndex = findSubtreeEnd(afterIndex) + 1;
+
+    paragraphs.splice(insertIndex, 0, { text: '', level: 0 });
     renderParagraphs();
     updatePreview();
 
     // Focus the new paragraph
     setTimeout(() => {
-        const textarea = document.querySelector(`.paragraph-text[data-index="${afterIndex + 1}"]`);
+        const textarea = document.querySelector(`.paragraph-text[data-index="${insertIndex}"]`);
         if (textarea) textarea.focus();
     }, 50);
 }
@@ -1385,14 +1403,16 @@ function addParentParagraph(afterIndex) {
     const currentLevel = paragraphs[afterIndex].level || 0;
     const parentLevel = Math.max(0, currentLevel - 1);
 
-    // Insert after the current paragraph at parent level
-    paragraphs.splice(afterIndex + 1, 0, { text: '', level: parentLevel });
+    // Find the end of the current subtree - parent level paragraph goes AFTER all children
+    const insertIndex = findSubtreeEnd(afterIndex) + 1;
+
+    paragraphs.splice(insertIndex, 0, { text: '', level: parentLevel });
     renderParagraphs();
     updatePreview();
 
     // Focus the new paragraph
     setTimeout(() => {
-        const textarea = document.querySelector(`.paragraph-text[data-index="${afterIndex + 1}"]`);
+        const textarea = document.querySelector(`.paragraph-text[data-index="${insertIndex}"]`);
         if (textarea) textarea.focus();
     }, 50);
 }
