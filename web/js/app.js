@@ -2475,7 +2475,8 @@ function generateBodyTex(data) {
         const level = Math.floor(leadingSpaces / PARAGRAPH_INDENT_SPACES);
 
         // Extract the text after the label
-        const textMatch = trimmed.match(/^(?:\d+\.|[a-z]\.|$$\d+$$|$$[a-z]$$)\s+(.*)$/s);
+        // Labels can be: 1. or a. or (1) or (a)
+        const textMatch = trimmed.match(/^(?:\d+\.|[a-z]\.|\(\d+\)|\([a-z]\))\s+(.*)$/s);
         const text = textMatch ? textMatch[1] : trimmed;
 
         // Close deeper environments if we're going back up
