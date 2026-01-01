@@ -2531,8 +2531,8 @@ function generateBodyTex(data) {
         const textMatch = trimmed.match(/^(?:\d+\.|[a-z]\.|\(\d+\)|\([a-z]\))\s+(.*)$/s);
         const text = textMatch ? textMatch[1] : trimmed;
 
-        // Close deeper environments if we're going back up
-        while (openLevels.length > 0 && openLevels[openLevels.length - 1] >= level) {
+        // Close current environment if level changes (don't nest - each level is independent)
+        if (openLevels.length > 0 && openLevels[openLevels.length - 1] !== level) {
             const closingLevel = openLevels.pop();
             latex += getCloseEnvironment(closingLevel) + '\n\n';
         }
@@ -2543,8 +2543,8 @@ function generateBodyTex(data) {
             // The label is already included in trimmed, e.g. "1. paragraph text here"
             latex += `\\vspace{12pt}\n\\noindent ${escapeLatex(trimmed)}\n\n`;
         } else {
-            // Sub-paragraph: need to open environment if not already open
-            if (openLevels.length === 0 || openLevels[openLevels.length - 1] < level) {
+            // Sub-paragraph: open environment if not already open at this level
+            if (openLevels.length === 0) {
                 latex += getOpenEnvironment(level) + '\n';
                 openLevels.push(level);
             }
