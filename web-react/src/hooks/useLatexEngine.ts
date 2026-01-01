@@ -112,10 +112,13 @@ export function useLatexEngine() {
       }
 
       // Write LaTeX templates
+      // Templates are stored with 'tex/' prefix but need to be written to root for SwiftLaTeX
       if (window.LATEX_TEMPLATES) {
         console.log(`Writing ${Object.keys(window.LATEX_TEMPLATES).length} LaTeX templates...`);
         for (const [path, content] of Object.entries(window.LATEX_TEMPLATES)) {
-          engine.writeMemFSFile(path, content);
+          // Strip 'tex/' prefix if present - SwiftLaTeX expects files in root
+          const targetPath = path.startsWith('tex/') ? path.slice(4) : path;
+          engine.writeMemFSFile(targetPath, content);
         }
       }
 
