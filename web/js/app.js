@@ -1382,8 +1382,24 @@ function findSubtreeEnd(startIndex) {
 }
 
 function addMainParagraph(afterIndex) {
-    // Find the end of the current subtree - main paragraph goes AFTER all children
-    const insertIndex = findSubtreeEnd(afterIndex) + 1;
+    // Find the level 0 ancestor of the current paragraph
+    let level0Index = afterIndex;
+    for (let i = afterIndex; i >= 0; i--) {
+        if ((paragraphs[i].level || 0) === 0) {
+            level0Index = i;
+            break;
+        }
+    }
+
+    // Find the end of that level 0 paragraph's entire subtree
+    let insertIndex = level0Index;
+    for (let i = level0Index + 1; i < paragraphs.length; i++) {
+        if ((paragraphs[i].level || 0) === 0) {
+            break; // Found next level 0 paragraph
+        }
+        insertIndex = i;
+    }
+    insertIndex++; // Insert after the last child
 
     paragraphs.splice(insertIndex, 0, { text: '', level: 0 });
     renderParagraphs();
@@ -1403,8 +1419,24 @@ function addParentParagraph(afterIndex) {
     const currentLevel = paragraphs[afterIndex].level || 0;
     const parentLevel = Math.max(0, currentLevel - 1);
 
-    // Find the end of the current subtree - parent level paragraph goes AFTER all children
-    const insertIndex = findSubtreeEnd(afterIndex) + 1;
+    // Find the parent at parentLevel
+    let parentIndex = afterIndex;
+    for (let i = afterIndex; i >= 0; i--) {
+        if ((paragraphs[i].level || 0) <= parentLevel) {
+            parentIndex = i;
+            break;
+        }
+    }
+
+    // Find the end of that parent's subtree (all paragraphs with level > parentLevel)
+    let insertIndex = parentIndex;
+    for (let i = parentIndex + 1; i < paragraphs.length; i++) {
+        if ((paragraphs[i].level || 0) <= parentLevel) {
+            break; // Found a paragraph at same or higher level
+        }
+        insertIndex = i;
+    }
+    insertIndex++; // Insert after the last child
 
     paragraphs.splice(insertIndex, 0, { text: '', level: parentLevel });
     renderParagraphs();
