@@ -3177,17 +3177,18 @@ const LATEX_TEMPLATES = {
 \\newcommand{\\printDateAndTitle}{%
     \\begingroup
     \\raggedleft
+    \\mbox{}% Start a line to prevent "no line to end" error
     % Optional "IN REPLY REFER TO" line per SECNAV M-5216.5 App C, Para 1.a
     \\ifInReplyEnabled
-        {\\fontsize{5pt}{6pt}\\selectfont IN REPLY REFER TO}\\\\
+        \\\\{\\fontsize{5pt}{6pt}\\selectfont IN REPLY REFER TO}%
     \\fi
-    \\ifx\\DocumentSSIC\\empty\\else
-        \\DocumentSSIC\\\\
-    \\fi
-    \\ifx\\DocumentSerial\\empty\\else
-        \\DocumentSerial\\\\
-    \\fi
-    \\DocumentDate\\par
+    \\ifdefempty{\\DocumentSSIC}{}{%
+        \\\\\\DocumentSSIC
+    }%
+    \\ifdefempty{\\DocumentSerial}{}{%
+        \\\\\\DocumentSerial
+    }%
+    \\\\\\DocumentDate\\par
     \\endgroup
 }
 
@@ -3793,17 +3794,18 @@ const LATEX_TEMPLATES = {
 \\newcommand{\\printDateAndTitle}{%
     \\begingroup
     \\raggedleft
+    \\mbox{}% Start a line to prevent "no line to end" error
     % Optional "IN REPLY REFER TO" line per SECNAV M-5216.5 App C, Para 1.a
     \\ifInReplyEnabled
-        {\\fontsize{5pt}{6pt}\\selectfont IN REPLY REFER TO}\\\\
+        \\\\{\\fontsize{5pt}{6pt}\\selectfont IN REPLY REFER TO}%
     \\fi
-    \\ifx\\DocumentSSIC\\empty\\else
-        \\DocumentSSIC\\\\
-    \\fi
-    \\ifx\\DocumentSerial\\empty\\else
-        \\DocumentSerial\\\\
-    \\fi
-    \\DocumentDate\\par
+    \\ifdefempty{\\DocumentSSIC}{}{%
+        \\\\\\DocumentSSIC
+    }%
+    \\ifdefempty{\\DocumentSerial}{}{%
+        \\\\\\DocumentSerial
+    }%
+    \\\\\\DocumentDate\\par
     \\endgroup
 }
 
