@@ -2487,6 +2487,210 @@ ${data.body.split('\n').map(line => escapeLatex(line)).join('\n\n')}
     showStatus('LaTeX file downloaded!', 'success');
 }
 
+/**
+ * Download as Word document (.docx)
+ */
+async function downloadDocx() {
+    showStatus('Generating Word document...', 'success');
+
+    try {
+        const data = collectData();
+        const sig = getAbbrevSignature(data);
+
+        // Get docx library from global scope
+        const { Document, Packer, Paragraph, TextRun, AlignmentType, Header, Footer, PageNumber } = docx;
+
+        // Build document sections
+        const children = [];
+
+        // Letterhead - centered
+        children.push(new Paragraph({
+            alignment: AlignmentType.CENTER,
+            spacing: { after: 100 },
+            children: [
+                new TextRun({ text: 'UNITED STATES MARINE CORPS', bold: true, size: 24 })
+            ]
+        }));
+        children.push(new Paragraph({
+            alignment: AlignmentType.CENTER,
+            spacing: { after: 100 },
+            children: [
+                new TextRun({ text: data.unitLine1, bold: true, size: 20 })
+            ]
+        }));
+        children.push(new Paragraph({
+            alignment: AlignmentType.CENTER,
+            spacing: { after: 100 },
+            children: [
+                new TextRun({ text: data.unitLine2, size: 20 })
+            ]
+        }));
+        children.push(new Paragraph({
+            alignment: AlignmentType.CENTER,
+            spacing: { after: 400 },
+            children: [
+                new TextRun({ text: data.unitAddress.replace(/\n/g, ' '), size: 18 })
+            ]
+        }));
+
+        // SSIC/Serial/Date block - right aligned
+        children.push(new Paragraph({
+            alignment: AlignmentType.RIGHT,
+            children: [new TextRun({ text: data.ssic, size: 24, font: 'Times New Roman' })]
+        }));
+        children.push(new Paragraph({
+            alignment: AlignmentType.RIGHT,
+            children: [new TextRun({ text: data.serial, size: 24, font: 'Times New Roman' })]
+        }));
+        children.push(new Paragraph({
+            alignment: AlignmentType.RIGHT,
+            spacing: { after: 300 },
+            children: [new TextRun({ text: data.date, size: 24, font: 'Times New Roman' })]
+        }));
+
+        // From/To
+        children.push(new Paragraph({
+            spacing: { after: 100 },
+            children: [
+                new TextRun({ text: 'From:  ', size: 24, font: 'Times New Roman' }),
+                new TextRun({ text: data.from, size: 24, font: 'Times New Roman' })
+            ]
+        }));
+        children.push(new Paragraph({
+            spacing: { after: 100 },
+            children: [
+                new TextRun({ text: 'To:    ', size: 24, font: 'Times New Roman' }),
+                new TextRun({ text: data.to, size: 24, font: 'Times New Roman' })
+            ]
+        }));
+
+        // Via (if present)
+        if (data.via.trim()) {
+            children.push(new Paragraph({
+                spacing: { after: 100 },
+                children: [
+                    new TextRun({ text: 'Via:   ', size: 24, font: 'Times New Roman' }),
+                    new TextRun({ text: data.via.split('\n')[0], size: 24, font: 'Times New Roman' })
+                ]
+            }));
+        }
+
+        // Subject
+        children.push(new Paragraph({
+            spacing: { before: 200, after: 200 },
+            children: [
+                new TextRun({ text: 'Subj:  ', size: 24, font: 'Times New Roman' }),
+                new TextRun({ text: data.subject.toUpperCase(), size: 24, font: 'Times New Roman' })
+            ]
+        }));
+
+        // References
+        if (references.length > 0) {
+            children.push(new Paragraph({
+                spacing: { after: 100 },
+                children: [
+                    new TextRun({ text: 'Ref:   ', size: 24, font: 'Times New Roman' }),
+                    new TextRun({ text: `(a) ${references[0].title}`, size: 24, font: 'Times New Roman' })
+                ]
+            }));
+            for (let i = 1; i < references.length; i++) {
+                children.push(new Paragraph({
+                    spacing: { after: 100 },
+                    children: [
+                        new TextRun({ text: `       (${references[i].letter}) ${references[i].title}`, size: 24, font: 'Times New Roman' })
+                    ]
+                }));
+            }
+        }
+
+        // Enclosures
+        if (enclosures.length > 0) {
+            children.push(new Paragraph({
+                spacing: { before: 200, after: 100 },
+                children: [
+                    new TextRun({ text: 'Encl:  ', size: 24, font: 'Times New Roman' }),
+                    new TextRun({ text: `(1) ${enclosures[0].title || 'Untitled'}`, size: 24, font: 'Times New Roman' })
+                ]
+            }));
+            for (let i = 1; i < enclosures.length; i++) {
+                children.push(new Paragraph({
+                    spacing: { after: 100 },
+                    children: [
+                        new TextRun({ text: `       (${i + 1}) ${enclosures[i].title || 'Untitled'}`, size: 24, font: 'Times New Roman' })
+                    ]
+                }));
+            }
+        }
+
+        // Body paragraphs
+        children.push(new Paragraph({ spacing: { before: 300 } })); // Spacing before body
+        for (const para of paragraphs) {
+            const paraIndex = paragraphs.indexOf(para) + 1;
+            children.push(new Paragraph({
+                spacing: { after: 200 },
+                children: [
+                    new TextRun({ text: `${paraIndex}.  ${para.text}`, size: 24, font: 'Times New Roman' })
+                ]
+            }));
+        }
+
+        // Signature block - centered right
+        children.push(new Paragraph({ spacing: { before: 600 } })); // Space before signature
+        children.push(new Paragraph({
+            alignment: AlignmentType.CENTER,
+            indent: { left: 4320 }, // 3 inches from left (in TWIPs)
+            children: [
+                new TextRun({ text: sig, size: 24, font: 'Times New Roman' })
+            ]
+        }));
+
+        // Copy To (if present)
+        if (copyTos.length > 0) {
+            children.push(new Paragraph({ spacing: { before: 400 } }));
+            children.push(new Paragraph({
+                children: [
+                    new TextRun({ text: 'Copy to:', size: 24, font: 'Times New Roman' })
+                ]
+            }));
+            for (const ct of copyTos) {
+                children.push(new Paragraph({
+                    spacing: { after: 50 },
+                    children: [
+                        new TextRun({ text: `    ${ct.text}`, size: 24, font: 'Times New Roman' })
+                    ]
+                }));
+            }
+        }
+
+        // Create document
+        const doc = new Document({
+            sections: [{
+                properties: {
+                    page: {
+                        margin: {
+                            top: 1440,    // 1 inch in TWIPs
+                            bottom: 1440,
+                            left: 1440,
+                            right: 1440
+                        }
+                    }
+                },
+                children: children
+            }]
+        });
+
+        // Generate and download
+        const blob = await Packer.toBlob(doc);
+        const filename = `${data.subject.substring(0, 30).replace(/[^a-zA-Z0-9]/g, '_') || 'correspondence'}.docx`;
+        saveAs(blob, filename);
+
+        showStatus('Word document downloaded!', 'success');
+    } catch (error) {
+        console.error('Error generating DOCX:', error);
+        showStatus('Error generating Word document: ' + error.message, 'error');
+    }
+}
+
 // =============================================================================
 // DATA LOADING
 // =============================================================================

@@ -627,8 +627,11 @@
                 <button class="primary" onclick="downloadLatexPDF()">Download PDF</button>
             </div>
             <div class="btn-row">
-                <button class="secondary" onclick="downloadConfigs()">Download Configs</button>
+                <button class="secondary" onclick="downloadDocx()">Download Word</button>
                 <button class="secondary" onclick="downloadTeX()">Download .tex</button>
+            </div>
+            <div class="btn-row">
+                <button class="secondary" onclick="downloadConfigs()">Download Configs</button>
             </div>
 
             <!-- Show Preview button (visible when preview is hidden on desktop) -->
@@ -729,6 +732,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
 
     <!-- SwiftLaTeX Engine -->
     <script src="lib/PdfTeXEngine.js?v=5"></script>
@@ -740,7 +745,7 @@
     <script src="js/texlive-packages.js?v=10"></script>
 
     <!-- Application JavaScript -->
-    <script src="js/app.js?v=33"></script>
+    <script src="js/app.js?v=34"></script>
 </body>
 
 </html>
