@@ -47,16 +47,16 @@
     \optionalLine{\ToLine}%
     \optionalLine{\ToLineTwo}%
     \optionalLine{\ToLineThree}%
-    \optionalField{\ToLineFour}%
+    \optionalLine{\ToLineFour}%
     %
     % Attention line (optional) - SECNAV Ch 11, Para 11-5
     \ifNotEmpty{\AttentionLine}{%
-        \par\vspace{12pt}%
-        \noindent Attention: \AttentionLine
+        \vspace{12pt}%
+        \noindent Attention: \AttentionLine\\
     }%
     %
     % Salutation with colon - SECNAV Ch 11, Para 11-6
-    \par\vspace{12pt}%
+    \vspace{12pt}%
     \noindent \BusinessSalutation
     %
     % Subject line (optional) - SECNAV Ch 11, Para 11-7

@@ -35,7 +35,7 @@
 % SSIC, originator code (Memo XX/###), and date in upper right
 
 \newcommand{\printDateAndTitle}{%
-    \vspace*{0.5in}%
+    % Letterhead already provides vertical offset via textblock positioning
     \hfill
     \begin{tabular}[t]{@{}l@{}}
         \ifInReplyEnabled
@@ -44,8 +44,10 @@
         \DocumentSSIC\\
         \DocumentSerial\\
         \DocumentDate
-    \end{tabular}\\[24pt]
-    \noindent MEMORANDUM\\[12pt]
+    \end{tabular}
+    \par\vspace{24pt}%
+    \noindent MEMORANDUM
+    \par\vspace{12pt}%
 }
 
 
