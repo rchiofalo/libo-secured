@@ -1412,21 +1412,41 @@ function renderParagraphs() {
     const labels = calculateParagraphLabels();
 
     // Build citation path like "1a(1)" for display
+    // This properly tracks the hierarchical numbering for nested paragraphs
     const getCitationPath = (idx) => {
-        let path = '';
-        let counters = [0, 0, 0, 0, 0, 0, 0, 0];
-        for (let i = 0; i <= idx; i++) {
-            const lvl = paragraphs[i].level || 0;
-            counters[lvl]++;
-            for (let j = lvl + 1; j < 8; j++) counters[j] = 0;
-            if (i === idx) {
-                // Build path from level 0 to current level
-                for (let l = 0; l <= lvl; l++) {
-                    path += getParagraphLabel(l, counters[l]).replace('.', '');
+        const currentLevel = paragraphs[idx].level || 0;
+
+        // For each level from 0 to currentLevel, find the citation part
+        const parts = [];
+
+        for (let targetLevel = 0; targetLevel <= currentLevel; targetLevel++) {
+            // Find where this level's list starts (after the parent at level-1)
+            let listStart = 0;
+            if (targetLevel > 0) {
+                // Look backwards for the parent paragraph at targetLevel-1
+                for (let i = idx; i >= 0; i--) {
+                    if (paragraphs[i].level < targetLevel) {
+                        listStart = i + 1;
+                        break;
+                    }
                 }
             }
+
+            // Count paragraphs at this level from listStart to idx
+            let count = 0;
+            for (let i = listStart; i <= idx; i++) {
+                if (paragraphs[i].level === targetLevel) {
+                    count++;
+                }
+            }
+
+            // Get label for this level and count
+            if (count > 0) {
+                parts.push(getParagraphLabel(targetLevel, count).replace('.', ''));
+            }
         }
-        return path;
+
+        return parts.join('');
     };
 
     container.innerHTML = paragraphs.map((para, index) => {

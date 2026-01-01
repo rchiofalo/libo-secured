@@ -1004,6 +1004,56 @@ const LATEX_TEMPLATES = {
     topsep     = 12pt
 }
 
+% Level 3 (JS level 3): (a), (b), (c)... at 1.2in
+\\newlist{subsubsubpara}{enumerate}{1}
+\\setlist[subsubsubpara,1]{
+    label     = (\\alph*),
+    leftmargin = 1.2in,
+    labelsep   = 0.1in,
+    itemsep    = 12pt,
+    topsep     = 12pt
+}
+
+% Level 4 (JS level 4): 1., 2., 3... at 1.6in (pattern repeats)
+\\newlist{subsubsubsubpara}{enumerate}{1}
+\\setlist[subsubsubsubpara,1]{
+    label     = \\arabic*.,
+    leftmargin = 1.6in,
+    labelsep   = 0.1in,
+    itemsep    = 12pt,
+    topsep     = 12pt
+}
+
+% Level 5 (JS level 5): a., b., c... at 2.0in
+\\newlist{subsubsubsubsubpara}{enumerate}{1}
+\\setlist[subsubsubsubsubpara,1]{
+    label     = \\alph*.,
+    leftmargin = 2.0in,
+    labelsep   = 0.1in,
+    itemsep    = 12pt,
+    topsep     = 12pt
+}
+
+% Level 6 (JS level 6): (1), (2), (3)... at 2.4in
+\\newlist{subsubsubsubsubsubpara}{enumerate}{1}
+\\setlist[subsubsubsubsubsubpara,1]{
+    label     = (\\arabic*),
+    leftmargin = 2.4in,
+    labelsep   = 0.1in,
+    itemsep    = 12pt,
+    topsep     = 12pt
+}
+
+% Level 7 (JS level 7): (a), (b), (c)... at 2.8in
+\\newlist{subsubsubsubsubsubsubpara}{enumerate}{1}
+\\setlist[subsubsubsubsubsubsubpara,1]{
+    label     = (\\alph*),
+    leftmargin = 2.8in,
+    labelsep   = 0.1in,
+    itemsep    = 12pt,
+    topsep     = 12pt
+}
+
 
 %=============================================================================
 %                        LOAD CONFIGURATION FILES
