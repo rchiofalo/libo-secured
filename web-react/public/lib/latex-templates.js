@@ -3265,14 +3265,15 @@ const LATEX_TEMPLATES = {
     \\hspace{3.25in}%
     \\begin{minipage}{3in}
         \\raggedright
+        \\mbox{}% Ensure line exists for potential line breaks
         % Optional: Signature image
         \\ifNotEmpty{\\SignatureImage}{%
             \\IfFileExists{attachments/\\SignatureImage}{%
-                \\includegraphics[width=1.5in,height=0.5in,keepaspectratio]{attachments/\\SignatureImage}\\\\[6pt]%
+                \\\\\\includegraphics[width=1.5in,height=0.5in,keepaspectratio]{attachments/\\SignatureImage}%
             }{}%
         }%
         % Required: Use abbreviated format (J. M. LASTNAME) if set, otherwise full name
-        \\ifNotEmptyElse{\\SignatoryAbbrev}{\\SignatoryAbbrev\\\\}{\\MakeUppercase{\\SignatoryName}\\\\}%
+        \\ifNotEmptyElse{\\SignatoryAbbrev}{\\\\\\SignatoryAbbrev}{\\\\\\MakeUppercase{\\SignatoryName}}%
         % Optional: By direction authority line (e.g., "By direction")
         \\optionalField{\\ByDirection}%
     \\end{minipage}
