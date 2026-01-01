@@ -175,6 +175,22 @@ export function useLatexEngine() {
         }
       }
 
+      // Load seal images into virtual filesystem
+      const sealFiles = ['dod-seal.png', 'dow-seal.png'];
+      console.log('Loading seal images...');
+      for (const sealFile of sealFiles) {
+        try {
+          const response = await fetch(`${BASE_PATH}attachments/${sealFile}`);
+          if (response.ok) {
+            const arrayBuffer = await response.arrayBuffer();
+            engine.writeMemFSFile(`attachments/${sealFile}`, new Uint8Array(arrayBuffer));
+            console.log(`Loaded seal: ${sealFile}`);
+          }
+        } catch (err) {
+          console.warn(`Could not load seal ${sealFile}:`, err);
+        }
+      }
+
       engineRef.current = engine;
       console.log('LaTeX engine ready!');
       setState({

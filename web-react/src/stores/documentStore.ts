@@ -60,26 +60,31 @@ const DEFAULT_FORM_DATA: Partial<DocumentData> = {
   fontSize: '12pt',
   fontFamily: 'courier',
   pageNumbering: 'none',
-  unitLine1: '',
-  unitLine2: '',
-  unitAddress: '',
+  // Letterhead - Example unit info
+  unitLine1: '1ST BATTALION, 6TH MARINES',
+  unitLine2: '2D MARINE DIVISION, II MEF',
+  unitAddress: 'PSC BOX 20123, CAMP LEJEUNE, NC 28542-0123',
   sealType: 'dod',
-  ssic: '',
-  serial: '',
+  // Document identification
+  ssic: '5216',
+  serial: '001',
   date: new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }),
-  from: '',
-  to: '',
+  // Addressing
+  from: 'Commanding Officer, 1st Battalion, 6th Marines',
+  to: 'Commanding General, 2d Marine Division',
   via: '',
-  subject: '',
-  sigFirst: '',
-  sigMiddle: '',
-  sigLast: '',
-  sigRank: '',
-  sigTitle: '',
+  subject: 'SAMPLE NAVAL LETTER FOR DEMONSTRATION',
+  // Signature
+  sigFirst: 'John',
+  sigMiddle: 'M',
+  sigLast: 'DOE',
+  sigRank: 'Lieutenant Colonel',
+  sigTitle: 'Commanding Officer',
   byDirection: false,
   byDirectionAuthority: '',
+  // Classification
   classLevel: 'unclassified',
-  pocEmail: '',
+  pocEmail: 'john.doe@usmc.mil',
 };
 
 export const useDocumentStore = create<DocumentState>((set) => ({
@@ -87,7 +92,10 @@ export const useDocumentStore = create<DocumentState>((set) => ({
   formData: { ...DEFAULT_FORM_DATA },
   references: [],
   enclosures: [],
-  paragraphs: [{ text: '', level: 0 }],
+  paragraphs: [
+    { text: 'This is a sample naval letter demonstrating the LIBO-SECURED correspondence generator. The system generates properly formatted military correspondence in accordance with SECNAV M-5216.5 (DON Correspondence Manual).', level: 0 },
+    { text: 'The letter format includes all required elements such as letterhead, SSIC, serial number, date, From/To/Via addressing, subject line, and signature block.', level: 0 },
+  ],
   copyTos: [],
 
   setDocType: (type) => set({ docType: type, formData: { ...DEFAULT_FORM_DATA, docType: type } }),
