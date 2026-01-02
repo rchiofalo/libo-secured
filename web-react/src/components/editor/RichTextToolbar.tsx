@@ -59,7 +59,7 @@ export function RichTextToolbar({ onFormat }: RichTextToolbarProps) {
         </Tooltip>
 
         <span className="text-xs text-muted-foreground ml-2">
-          Select text, then click to format
+          Select text to toggle formatting
         </span>
       </div>
     </TooltipProvider>
@@ -67,7 +67,9 @@ export function RichTextToolbar({ onFormat }: RichTextToolbarProps) {
 }
 
 /**
- * Wrap selected text in a textarea with formatting markers
+ * Toggle formatting markers on selected text in a textarea.
+ * If the selection already has the formatting, it will be removed.
+ * If not, the formatting will be applied.
  */
 export function applyFormat(
   textarea: HTMLTextAreaElement,
@@ -81,13 +83,34 @@ export function applyFormat(
   if (!selectedText) return text;
 
   const markers = {
-    bold: ['**', '**'],
-    italic: ['*', '*'],
-    underline: ['__', '__'],
+    bold: { open: '**', close: '**' },
+    italic: { open: '*', close: '*' },
+    underline: { open: '__', close: '__' },
   };
 
-  const [open, close] = markers[format];
-  const newText = text.substring(0, start) + open + selectedText + close + text.substring(end);
+  const { open, close } = markers[format];
 
-  return newText;
+  // Check if the selected text already has this formatting (inside the selection)
+  if (selectedText.startsWith(open) && selectedText.endsWith(close) && selectedText.length >= open.length + close.length) {
+    // Remove the formatting from inside the selection
+    const unformatted = selectedText.slice(open.length, -close.length);
+    return text.substring(0, start) + unformatted + text.substring(end);
+  }
+
+  // Check if the formatting markers are around the selection (outside)
+  const beforeStart = start - open.length;
+  const afterEnd = end + close.length;
+
+  if (beforeStart >= 0 && afterEnd <= text.length) {
+    const markerBefore = text.substring(beforeStart, start);
+    const markerAfter = text.substring(end, afterEnd);
+
+    if (markerBefore === open && markerAfter === close) {
+      // Remove the formatting markers from around the selection
+      return text.substring(0, beforeStart) + selectedText + text.substring(afterEnd);
+    }
+  }
+
+  // Apply formatting (wrap selection with markers)
+  return text.substring(0, start) + open + selectedText + close + text.substring(end);
 }

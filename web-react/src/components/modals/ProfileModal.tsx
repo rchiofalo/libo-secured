@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { X, Building2 } from 'lucide-react';
+import { X, Building2, BookOpen } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -29,6 +29,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { UnitLookupModal } from '@/components/modals/UnitLookupModal';
+import { SSICLookupModal } from '@/components/modals/SSICLookupModal';
 import { useUIStore } from '@/stores/uiStore';
 import { useProfileStore } from '@/stores/profileStore';
 import { useDocumentStore } from '@/stores/documentStore';
@@ -62,6 +63,7 @@ export function ProfileModal() {
   const [formState, setFormState] = useState<Profile>(EMPTY_PROFILE);
   const [showDiscardDialog, setShowDiscardDialog] = useState(false);
   const [showUnitLookup, setShowUnitLookup] = useState(false);
+  const [showSSICLookup, setShowSSICLookup] = useState(false);
 
   // Store initial state to compare for changes
   const initialStateRef = useRef<{ name: string; profile: Profile }>({ name: '', profile: EMPTY_PROFILE });
@@ -278,12 +280,24 @@ export function ProfileModal() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-2">
                     <Label htmlFor="ssic">Default SSIC</Label>
-                    <Input
-                      id="ssic"
-                      value={formState.ssic}
-                      onChange={(e) => updateField('ssic', e.target.value)}
-                      placeholder="5216"
-                    />
+                    <div className="flex gap-2">
+                      <Input
+                        id="ssic"
+                        value={formState.ssic}
+                        onChange={(e) => updateField('ssic', e.target.value)}
+                        placeholder="5216"
+                        className="flex-1"
+                      />
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="icon"
+                        onClick={() => setShowSSICLookup(true)}
+                        title="Browse SSIC Codes"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                      </Button>
+                    </div>
                   </div>
                   <div className="space-y-2 col-span-2">
                     <Label htmlFor="from">Default From</Label>
@@ -436,6 +450,12 @@ export function ProfileModal() {
         open={showUnitLookup}
         onOpenChange={setShowUnitLookup}
         onSelect={handleUnitSelect}
+      />
+
+      <SSICLookupModal
+        open={showSSICLookup}
+        onOpenChange={setShowSSICLookup}
+        onSelect={(code) => updateField('ssic', code)}
       />
     </>
   );
