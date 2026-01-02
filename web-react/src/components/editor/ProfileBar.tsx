@@ -103,8 +103,11 @@ export function ProfileBar() {
       <Button
         variant="ghost"
         size="icon"
-        onClick={() => setProfileModalOpen(true)}
-        title="Create/Edit Profile"
+        onClick={() => {
+          selectProfile(null); // Clear selection to create new
+          setProfileModalOpen(true);
+        }}
+        title="Create New Profile"
       >
         <Plus className="h-4 w-4" />
       </Button>
