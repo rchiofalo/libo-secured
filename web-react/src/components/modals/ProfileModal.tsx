@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { X } from 'lucide-react';
+import { X, Building2 } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -21,10 +21,12 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
+import { UnitLookupModal } from '@/components/modals/UnitLookupModal';
 import { useUIStore } from '@/stores/uiStore';
 import { useProfileStore } from '@/stores/profileStore';
 import { useDocumentStore } from '@/stores/documentStore';
 import type { Profile } from '@/types/document';
+import { formatUnitAddress, type UnitInfo } from '@/data/unitDirectory';
 
 const EMPTY_PROFILE: Profile = {
   unitLine1: '',
@@ -51,6 +53,7 @@ export function ProfileModal() {
   const [profileName, setProfileName] = useState('');
   const [formState, setFormState] = useState<Profile>(EMPTY_PROFILE);
   const [showDiscardDialog, setShowDiscardDialog] = useState(false);
+  const [showUnitLookup, setShowUnitLookup] = useState(false);
 
   // Store initial state to compare for changes
   const initialStateRef = useRef<{ name: string; profile: Profile }>({ name: '', profile: EMPTY_PROFILE });
@@ -153,6 +156,15 @@ export function ProfileModal() {
     setFormState((prev) => ({ ...prev, [field]: value }));
   };
 
+  const handleUnitSelect = (unit: UnitInfo) => {
+    setFormState((prev) => ({
+      ...prev,
+      unitLine1: unit.name.toUpperCase(),
+      unitLine2: unit.parentCommand?.toUpperCase() || '',
+      unitAddress: formatUnitAddress(unit),
+    }));
+  };
+
   return (
     <>
       <Dialog open={profileModalOpen} onOpenChange={() => {}}>
@@ -193,7 +205,18 @@ export function ProfileModal() {
               </div>
 
               <div className="border-t pt-4">
-                <h4 className="text-sm font-medium mb-3">Letterhead Information</h4>
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className="text-sm font-medium">Letterhead Information</h4>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setShowUnitLookup(true)}
+                  >
+                    <Building2 className="h-4 w-4 mr-2" />
+                    Browse Units
+                  </Button>
+                </div>
                 <div className="space-y-3">
                   <div className="space-y-2">
                     <Label htmlFor="unitLine1">Command Line 1</Label>
@@ -383,6 +406,12 @@ export function ProfileModal() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+
+      <UnitLookupModal
+        open={showUnitLookup}
+        onOpenChange={setShowUnitLookup}
+        onSelect={handleUnitSelect}
+      />
     </>
   );
 }
