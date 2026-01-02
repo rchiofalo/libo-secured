@@ -158,11 +158,11 @@ export function ProfileModal() {
     <>
       <Dialog open={profileModalOpen} onOpenChange={() => {}}>
         <DialogContent
-          className="sm:max-w-lg max-h-[90vh] flex flex-col p-0 gap-0"
+          className="sm:max-w-lg max-h-[90vh] flex flex-col p-0 gap-0 overflow-hidden"
           showCloseButton={false}
         >
           {/* Sticky Header */}
-          <DialogHeader className="sticky top-0 z-10 bg-background px-6 py-4 border-b shrink-0">
+          <DialogHeader className="bg-background px-6 py-4 border-b shrink-0">
             <div className="flex items-center justify-between">
               <DialogTitle>
                 {isEditing ? 'Edit Profile' : 'Create New Profile'}
@@ -180,7 +180,7 @@ export function ProfileModal() {
           </DialogHeader>
 
           {/* Scrollable Content */}
-          <ScrollArea className="flex-1 min-h-0">
+          <ScrollArea className="flex-1 overflow-hidden">
             <div className="space-y-4 px-6 py-4">
               <div className="space-y-2">
                 <Label htmlFor="profileName">Profile Name</Label>
@@ -357,7 +357,7 @@ export function ProfileModal() {
           </ScrollArea>
 
           {/* Sticky Footer */}
-          <DialogFooter className="sticky bottom-0 z-10 bg-background px-6 py-4 border-t shrink-0">
+          <DialogFooter className="bg-background px-6 py-4 border-t shrink-0">
             <Button variant="outline" onClick={handleClose}>
               Cancel
             </Button>
