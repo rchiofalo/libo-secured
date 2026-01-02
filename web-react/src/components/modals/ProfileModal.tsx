@@ -21,7 +21,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import { useUIStore } from '@/stores/uiStore';
 import { useProfileStore } from '@/stores/profileStore';
 import { useDocumentStore } from '@/stores/documentStore';
@@ -180,7 +179,7 @@ export function ProfileModal() {
           </DialogHeader>
 
           {/* Scrollable Content */}
-          <ScrollArea className="flex-1 overflow-hidden">
+          <div className="flex-1 overflow-y-auto min-h-0">
             <div className="space-y-4 px-6 py-4">
               <div className="space-y-2">
                 <Label htmlFor="profileName">Profile Name</Label>
@@ -354,7 +353,7 @@ export function ProfileModal() {
                 </div>
               </div>
             </div>
-          </ScrollArea>
+          </div>
 
           {/* Sticky Footer */}
           <DialogFooter className="bg-background px-6 py-4 border-t shrink-0">
