@@ -63,7 +63,7 @@ export function UnitLookupModal({ open, onOpenChange, onSelect }: UnitLookupModa
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl max-h-[80vh] flex flex-col">
+      <DialogContent className="sm:max-w-lg max-h-[80vh]">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Building2 className="h-5 w-5" />
@@ -96,7 +96,7 @@ export function UnitLookupModal({ open, onOpenChange, onSelect }: UnitLookupModa
           {search ? `${totalResults} units found` : 'Browse or search Marine Corps units'}
         </p>
 
-        <ScrollArea className="flex-1 -mx-6 px-6">
+        <ScrollArea className="h-[400px] pr-4">
           <Accordion type="multiple" className="w-full" defaultValue={search ? filteredCategories.map((c) => c.name) : []}>
             {filteredCategories.map((category) => (
               <AccordionItem key={category.name} value={category.name}>
@@ -151,7 +151,7 @@ export function UnitLookupModal({ open, onOpenChange, onSelect }: UnitLookupModa
           )}
         </ScrollArea>
 
-        <div className="text-xs text-muted-foreground border-t pt-3 -mx-6 px-6">
+        <div className="text-xs text-muted-foreground border-t pt-3">
           Click a unit to populate letterhead information
         </div>
       </DialogContent>

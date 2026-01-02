@@ -51,7 +51,7 @@ export function SSICLookupModal({ open, onOpenChange, onSelect }: SSICLookupModa
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl max-h-[80vh] flex flex-col">
+      <DialogContent className="sm:max-w-lg max-h-[80vh]">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <BookOpen className="h-5 w-5" />
@@ -84,7 +84,7 @@ export function SSICLookupModal({ open, onOpenChange, onSelect }: SSICLookupModa
           {search ? `${totalResults} results found` : 'Browse or search SSIC codes'}
         </p>
 
-        <ScrollArea className="flex-1 -mx-6 px-6">
+        <ScrollArea className="h-[400px] pr-4">
           <Accordion type="multiple" className="w-full" defaultValue={search ? filteredCategories.map((c) => c.range) : []}>
             {filteredCategories.map((category) => (
               <AccordionItem key={category.range} value={category.range}>
@@ -133,7 +133,7 @@ export function SSICLookupModal({ open, onOpenChange, onSelect }: SSICLookupModa
           )}
         </ScrollArea>
 
-        <div className="text-xs text-muted-foreground border-t pt-3 -mx-6 px-6">
+        <div className="text-xs text-muted-foreground border-t pt-3">
           Reference: SECNAV M-5210.2 (Department of the Navy Standard Subject Identification Codes)
         </div>
       </DialogContent>

@@ -2,6 +2,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { DocumentTypeSelector } from '@/components/editor/DocumentTypeSelector';
 import { LetterheadSection } from '@/components/editor/LetterheadSection';
 import { AddressingSection } from '@/components/editor/AddressingSection';
+import { ClassificationSection } from '@/components/editor/ClassificationSection';
 import { SignatureSection } from '@/components/editor/SignatureSection';
 import { ReferencesManager } from '@/components/editor/ReferencesManager';
 import { EnclosuresManager } from '@/components/editor/EnclosuresManager';
@@ -27,6 +28,8 @@ export function FormPanel() {
           {config.letterhead && <LetterheadSection />}
 
           <AddressingSection config={config} />
+
+          <ClassificationSection />
 
           <ParagraphsEditor />
 
