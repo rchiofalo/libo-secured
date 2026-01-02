@@ -42,6 +42,7 @@ function App() {
     if (selectedProfile && profiles[selectedProfile]) {
       const profile = profiles[selectedProfile];
       setFormData({
+        department: profile.department,
         unitLine1: profile.unitLine1,
         unitLine2: profile.unitLine2,
         unitAddress: profile.unitAddress,

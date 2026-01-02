@@ -28,6 +28,7 @@ export function ProfileBar() {
     const profile = profiles[name];
     if (profile) {
       setFormData({
+        department: profile.department,
         unitLine1: profile.unitLine1,
         unitLine2: profile.unitLine2,
         unitAddress: profile.unitAddress,

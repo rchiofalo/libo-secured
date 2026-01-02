@@ -108,6 +108,9 @@ export function generateLetterheadTex(store: DocumentStore): string {
 % Seal type: dod (current) or dow (historical Department of War)
 \\setSealType{${data.sealType || 'dod'}}
 
+% Department/Service: usmc, navy, or dod
+\\setDepartment{${data.department || 'usmc'}}
+
 \\setLetterhead
     {${escapeLatex(data.unitLine1)}}
     {${escapeLatex(data.unitLine2)}}

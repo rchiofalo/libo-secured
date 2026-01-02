@@ -540,6 +540,32 @@ const LATEX_TEMPLATES = {
 
 
 %=============================================================================
+%                       DEPARTMENT/SERVICE CONFIGURATION
+%=============================================================================
+% Options:
+%   usmc - United States Marine Corps (default)
+%   navy - Department of the Navy
+%   dod  - Department of Defense
+%=============================================================================
+
+\\newcommand{\\DepartmentText}{UNITED STATES MARINE CORPS}
+
+% Set department/service text based on code
+\\newcommand{\\setDepartment}[1]{%
+    \\def\\temp{#1}%
+    \\def\\navytype{navy}%
+    \\def\\dodtype{dod}%
+    \\ifx\\temp\\navytype
+        \\renewcommand{\\DepartmentText}{DEPARTMENT OF THE NAVY}%
+    \\else\\ifx\\temp\\dodtype
+        \\renewcommand{\\DepartmentText}{DEPARTMENT OF DEFENSE}%
+    \\else
+        \\renewcommand{\\DepartmentText}{UNITED STATES MARINE CORPS}%
+    \\fi\\fi
+}
+
+
+%=============================================================================
 %                    CONDITIONAL/OPTIONAL FIELD HELPERS
 %=============================================================================
 % These macros allow format templates to conditionally print fields.
@@ -727,7 +753,7 @@ const LATEX_TEMPLATES = {
         \\centering
         \\usefont{\\encodingdefault}{\\familydefault}{\\seriesdefault}{\\shapedefault}%
         \\fontsize{10pt}{11pt}\\selectfont
-        \\textcolor{navyblue}{\\textbf{UNITED STATES MARINE CORPS}}\\\\
+        \\textcolor{navyblue}{\\textbf{\\DepartmentText}}\\\\
         \\fontsize{8pt}{9pt}\\selectfont
         \\textcolor{navyblue}{\\UnitName}\\\\
         \\textcolor{navyblue}{\\UnitLineTwo}\\\\

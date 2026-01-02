@@ -23,6 +23,7 @@ export interface CopyTo {
 }
 
 export interface Profile {
+  department?: string;
   unitLine1: string;
   unitLine2: string;
   unitAddress: string;
@@ -51,6 +52,7 @@ export interface DocumentData {
   pageNumbering: string;
 
   // Letterhead
+  department: string;
   unitLine1: string;
   unitLine2: string;
   unitAddress: string;

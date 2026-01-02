@@ -21,6 +21,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { UnitLookupModal } from '@/components/modals/UnitLookupModal';
 import { useUIStore } from '@/stores/uiStore';
 import { useProfileStore } from '@/stores/profileStore';
@@ -29,6 +36,7 @@ import type { Profile } from '@/types/document';
 import { formatUnitAddress, type UnitInfo } from '@/data/unitDirectory';
 
 const EMPTY_PROFILE: Profile = {
+  department: 'usmc',
   unitLine1: '',
   unitLine2: '',
   unitAddress: '',
@@ -102,6 +110,7 @@ export function ProfileModal() {
       } else {
         // Creating new - use current form data as defaults
         const newProfile: Profile = {
+          department: formData.department || 'usmc',
           unitLine1: formData.unitLine1 || '',
           unitLine2: formData.unitLine2 || '',
           unitAddress: formData.unitAddress || '',
@@ -218,6 +227,22 @@ export function ProfileModal() {
                   </Button>
                 </div>
                 <div className="space-y-3">
+                  <div className="space-y-2">
+                    <Label>Department / Service</Label>
+                    <Select
+                      value={formState.department || 'usmc'}
+                      onValueChange={(v) => updateField('department', v)}
+                    >
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="usmc">United States Marine Corps</SelectItem>
+                        <SelectItem value="navy">Department of the Navy</SelectItem>
+                        <SelectItem value="dod">Department of Defense</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
                   <div className="space-y-2">
                     <Label htmlFor="unitLine1">Command Line 1</Label>
                     <Input

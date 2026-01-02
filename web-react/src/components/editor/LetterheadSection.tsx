@@ -57,6 +57,23 @@ export function LetterheadSection() {
               </div>
 
               <div className="space-y-2">
+                <Label>Department / Service</Label>
+                <Select
+                  value={formData.department || 'usmc'}
+                  onValueChange={(v) => setField('department', v)}
+                >
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="usmc">United States Marine Corps</SelectItem>
+                    <SelectItem value="navy">Department of the Navy</SelectItem>
+                    <SelectItem value="dod">Department of Defense</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
                 <Label htmlFor="unitLine1">Command Name (Line 1)</Label>
                 <Input
                   id="unitLine1"
