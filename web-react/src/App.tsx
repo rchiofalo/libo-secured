@@ -52,6 +52,8 @@ function App() {
         sigLast: profile.sigLast,
         sigRank: profile.sigRank,
         sigTitle: profile.sigTitle,
+        byDirection: profile.byDirection,
+        byDirectionAuthority: profile.byDirectionAuthority,
         cuiControlledBy: profile.cuiControlledBy,
         pocEmail: profile.pocEmail,
       });

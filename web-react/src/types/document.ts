@@ -33,6 +33,8 @@ export interface Profile {
   sigLast: string;
   sigRank: string;
   sigTitle: string;
+  byDirection?: boolean;
+  byDirectionAuthority?: string;
   cuiControlledBy?: string;
   pocEmail?: string;
 }

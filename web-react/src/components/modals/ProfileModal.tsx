@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { X } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -19,6 +20,8 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { useUIStore } from '@/stores/uiStore';
 import { useProfileStore } from '@/stores/profileStore';
 import { useDocumentStore } from '@/stores/documentStore';
@@ -35,6 +38,8 @@ const EMPTY_PROFILE: Profile = {
   sigLast: '',
   sigRank: '',
   sigTitle: '',
+  byDirection: false,
+  byDirectionAuthority: '',
   cuiControlledBy: '',
   pocEmail: '',
 };
@@ -65,8 +70,19 @@ export function ProfileModal() {
     // Check each field in formState
     const profileKeys = Object.keys(EMPTY_PROFILE) as (keyof Profile)[];
     for (const key of profileKeys) {
-      if ((formState[key] || '') !== (initial.profile[key] || '')) {
-        return true;
+      const currentVal = formState[key];
+      const initialVal = initial.profile[key];
+
+      // Handle boolean comparison
+      if (typeof currentVal === 'boolean' || typeof initialVal === 'boolean') {
+        if (Boolean(currentVal) !== Boolean(initialVal)) {
+          return true;
+        }
+      } else {
+        // String comparison
+        if ((currentVal || '') !== (initialVal || '')) {
+          return true;
+        }
       }
     }
 
@@ -79,8 +95,8 @@ export function ProfileModal() {
       if (isEditing && selectedProfile) {
         const profile = profiles[selectedProfile];
         setProfileName(selectedProfile);
-        setFormState(profile);
-        initialStateRef.current = { name: selectedProfile, profile: { ...profile } };
+        setFormState({ ...EMPTY_PROFILE, ...profile });
+        initialStateRef.current = { name: selectedProfile, profile: { ...EMPTY_PROFILE, ...profile } };
       } else {
         // Creating new - use current form data as defaults
         const newProfile: Profile = {
@@ -94,6 +110,8 @@ export function ProfileModal() {
           sigLast: formData.sigLast || '',
           sigRank: formData.sigRank || '',
           sigTitle: formData.sigTitle || '',
+          byDirection: formData.byDirection || false,
+          byDirectionAuthority: formData.byDirectionAuthority || '',
           cuiControlledBy: formData.cuiControlledBy || '',
           pocEmail: formData.pocEmail || '',
         };
@@ -132,175 +150,214 @@ export function ProfileModal() {
     setProfileModalOpen(false);
   };
 
-  const handleOpenChange = (open: boolean) => {
-    if (!open) {
-      handleClose();
-    }
-  };
-
-  const updateField = (field: keyof Profile, value: string) => {
+  const updateField = (field: keyof Profile, value: string | boolean) => {
     setFormState((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
     <>
-      <Dialog open={profileModalOpen} onOpenChange={handleOpenChange}>
-        <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle>
-              {isEditing ? 'Edit Profile' : 'Create New Profile'}
-            </DialogTitle>
+      <Dialog open={profileModalOpen} onOpenChange={() => {}}>
+        <DialogContent
+          className="sm:max-w-lg max-h-[90vh] flex flex-col p-0 gap-0"
+          showCloseButton={false}
+        >
+          {/* Sticky Header */}
+          <DialogHeader className="sticky top-0 z-10 bg-background px-6 py-4 border-b shrink-0">
+            <div className="flex items-center justify-between">
+              <DialogTitle>
+                {isEditing ? 'Edit Profile' : 'Create New Profile'}
+              </DialogTitle>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-7 w-7 rounded-sm opacity-70 hover:opacity-100"
+                onClick={handleClose}
+              >
+                <X className="h-4 w-4" />
+                <span className="sr-only">Close</span>
+              </Button>
+            </div>
           </DialogHeader>
 
-          <div className="space-y-4 py-4">
-            <div className="space-y-2">
-              <Label htmlFor="profileName">Profile Name</Label>
-              <Input
-                id="profileName"
-                value={profileName}
-                onChange={(e) => setProfileName(e.target.value)}
-                placeholder="e.g., My Command"
-                disabled={isEditing}
-              />
-            </div>
+          {/* Scrollable Content */}
+          <ScrollArea className="flex-1 min-h-0">
+            <div className="space-y-4 px-6 py-4">
+              <div className="space-y-2">
+                <Label htmlFor="profileName">Profile Name</Label>
+                <Input
+                  id="profileName"
+                  value={profileName}
+                  onChange={(e) => setProfileName(e.target.value)}
+                  placeholder="e.g., My Command"
+                  disabled={isEditing}
+                />
+              </div>
 
-            <div className="border-t pt-4">
-              <h4 className="text-sm font-medium mb-3">Letterhead Information</h4>
-              <div className="space-y-3">
-                <div className="space-y-2">
-                  <Label htmlFor="unitLine1">Command Line 1</Label>
-                  <Input
-                    id="unitLine1"
-                    value={formState.unitLine1}
-                    onChange={(e) => updateField('unitLine1', e.target.value)}
-                    placeholder="1ST BATTALION, 6TH MARINES"
-                  />
+              <div className="border-t pt-4">
+                <h4 className="text-sm font-medium mb-3">Letterhead Information</h4>
+                <div className="space-y-3">
+                  <div className="space-y-2">
+                    <Label htmlFor="unitLine1">Command Line 1</Label>
+                    <Input
+                      id="unitLine1"
+                      value={formState.unitLine1}
+                      onChange={(e) => updateField('unitLine1', e.target.value)}
+                      placeholder="1ST BATTALION, 6TH MARINES"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="unitLine2">Command Line 2</Label>
+                    <Input
+                      id="unitLine2"
+                      value={formState.unitLine2}
+                      onChange={(e) => updateField('unitLine2', e.target.value)}
+                      placeholder="6TH MARINE REGIMENT"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="unitAddress">Address</Label>
+                    <Input
+                      id="unitAddress"
+                      value={formState.unitAddress}
+                      onChange={(e) => updateField('unitAddress', e.target.value)}
+                      placeholder="PSC BOX 20123, CAMP LEJEUNE, NC 28542"
+                    />
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="unitLine2">Command Line 2</Label>
-                  <Input
-                    id="unitLine2"
-                    value={formState.unitLine2}
-                    onChange={(e) => updateField('unitLine2', e.target.value)}
-                    placeholder="6TH MARINE REGIMENT"
-                  />
+              </div>
+
+              <div className="border-t pt-4">
+                <h4 className="text-sm font-medium mb-3">Default Document Info</h4>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="space-y-2">
+                    <Label htmlFor="ssic">Default SSIC</Label>
+                    <Input
+                      id="ssic"
+                      value={formState.ssic}
+                      onChange={(e) => updateField('ssic', e.target.value)}
+                      placeholder="5216"
+                    />
+                  </div>
+                  <div className="space-y-2 col-span-2">
+                    <Label htmlFor="from">Default From</Label>
+                    <Input
+                      id="from"
+                      value={formState.from}
+                      onChange={(e) => updateField('from', e.target.value)}
+                      placeholder="Commanding Officer, 1st Battalion, 6th Marines"
+                    />
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="unitAddress">Address</Label>
-                  <Input
-                    id="unitAddress"
-                    value={formState.unitAddress}
-                    onChange={(e) => updateField('unitAddress', e.target.value)}
-                    placeholder="PSC BOX 20123, CAMP LEJEUNE, NC 28542"
-                  />
+              </div>
+
+              <div className="border-t pt-4">
+                <h4 className="text-sm font-medium mb-3">Signature Block</h4>
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="space-y-2">
+                    <Label htmlFor="sigFirst">First Name</Label>
+                    <Input
+                      id="sigFirst"
+                      value={formState.sigFirst}
+                      onChange={(e) => updateField('sigFirst', e.target.value)}
+                      placeholder="John"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="sigMiddle">Middle</Label>
+                    <Input
+                      id="sigMiddle"
+                      value={formState.sigMiddle}
+                      onChange={(e) => updateField('sigMiddle', e.target.value)}
+                      placeholder="Q."
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="sigLast">Last Name</Label>
+                    <Input
+                      id="sigLast"
+                      value={formState.sigLast}
+                      onChange={(e) => updateField('sigLast', e.target.value)}
+                      placeholder="SMITH"
+                    />
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-3 mt-3">
+                  <div className="space-y-2">
+                    <Label htmlFor="sigRank">Rank</Label>
+                    <Input
+                      id="sigRank"
+                      value={formState.sigRank}
+                      onChange={(e) => updateField('sigRank', e.target.value)}
+                      placeholder="LtCol, USMC"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="sigTitle">Title</Label>
+                    <Input
+                      id="sigTitle"
+                      value={formState.sigTitle}
+                      onChange={(e) => updateField('sigTitle', e.target.value)}
+                      placeholder="Commanding Officer"
+                    />
+                  </div>
+                </div>
+
+                {/* By Direction */}
+                <div className="space-y-3 mt-4">
+                  <div className="flex items-center space-x-2">
+                    <Checkbox
+                      id="byDirection"
+                      checked={formState.byDirection || false}
+                      onCheckedChange={(checked) => updateField('byDirection', !!checked)}
+                    />
+                    <Label htmlFor="byDirection" className="font-normal">
+                      By direction of...
+                    </Label>
+                  </div>
+
+                  {formState.byDirection && (
+                    <div className="space-y-2 ml-6">
+                      <Label htmlFor="byDirectionAuthority">Authority</Label>
+                      <Input
+                        id="byDirectionAuthority"
+                        value={formState.byDirectionAuthority || ''}
+                        onChange={(e) => updateField('byDirectionAuthority', e.target.value)}
+                        placeholder="the Commanding Officer"
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div className="border-t pt-4">
+                <h4 className="text-sm font-medium mb-3">CUI Information</h4>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="space-y-2">
+                    <Label htmlFor="cuiControlledBy">Controlled By</Label>
+                    <Input
+                      id="cuiControlledBy"
+                      value={formState.cuiControlledBy || ''}
+                      onChange={(e) => updateField('cuiControlledBy', e.target.value)}
+                      placeholder="DoD"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="pocEmail">POC Email</Label>
+                    <Input
+                      id="pocEmail"
+                      type="email"
+                      value={formState.pocEmail || ''}
+                      onChange={(e) => updateField('pocEmail', e.target.value)}
+                      placeholder="john.smith@usmc.mil"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
+          </ScrollArea>
 
-            <div className="border-t pt-4">
-              <h4 className="text-sm font-medium mb-3">Default Document Info</h4>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="space-y-2">
-                  <Label htmlFor="ssic">Default SSIC</Label>
-                  <Input
-                    id="ssic"
-                    value={formState.ssic}
-                    onChange={(e) => updateField('ssic', e.target.value)}
-                    placeholder="5216"
-                  />
-                </div>
-                <div className="space-y-2 col-span-2">
-                  <Label htmlFor="from">Default From</Label>
-                  <Input
-                    id="from"
-                    value={formState.from}
-                    onChange={(e) => updateField('from', e.target.value)}
-                    placeholder="Commanding Officer, 1st Battalion, 6th Marines"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="border-t pt-4">
-              <h4 className="text-sm font-medium mb-3">Signature Block</h4>
-              <div className="grid grid-cols-3 gap-3">
-                <div className="space-y-2">
-                  <Label htmlFor="sigFirst">First Name</Label>
-                  <Input
-                    id="sigFirst"
-                    value={formState.sigFirst}
-                    onChange={(e) => updateField('sigFirst', e.target.value)}
-                    placeholder="John"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="sigMiddle">Middle</Label>
-                  <Input
-                    id="sigMiddle"
-                    value={formState.sigMiddle}
-                    onChange={(e) => updateField('sigMiddle', e.target.value)}
-                    placeholder="Q."
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="sigLast">Last Name</Label>
-                  <Input
-                    id="sigLast"
-                    value={formState.sigLast}
-                    onChange={(e) => updateField('sigLast', e.target.value)}
-                    placeholder="SMITH"
-                  />
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-3 mt-3">
-                <div className="space-y-2">
-                  <Label htmlFor="sigRank">Rank</Label>
-                  <Input
-                    id="sigRank"
-                    value={formState.sigRank}
-                    onChange={(e) => updateField('sigRank', e.target.value)}
-                    placeholder="LtCol, USMC"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="sigTitle">Title</Label>
-                  <Input
-                    id="sigTitle"
-                    value={formState.sigTitle}
-                    onChange={(e) => updateField('sigTitle', e.target.value)}
-                    placeholder="Commanding Officer"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="border-t pt-4">
-              <h4 className="text-sm font-medium mb-3">CUI Information</h4>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="space-y-2">
-                  <Label htmlFor="cuiControlledBy">Controlled By</Label>
-                  <Input
-                    id="cuiControlledBy"
-                    value={formState.cuiControlledBy || ''}
-                    onChange={(e) => updateField('cuiControlledBy', e.target.value)}
-                    placeholder="DoD"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="pocEmail">POC Email</Label>
-                  <Input
-                    id="pocEmail"
-                    type="email"
-                    value={formState.pocEmail || ''}
-                    onChange={(e) => updateField('pocEmail', e.target.value)}
-                    placeholder="john.smith@usmc.mil"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <DialogFooter>
+          {/* Sticky Footer */}
+          <DialogFooter className="sticky bottom-0 z-10 bg-background px-6 py-4 border-t shrink-0">
             <Button variant="outline" onClick={handleClose}>
               Cancel
             </Button>
