@@ -221,10 +221,9 @@ export function generateEnclosuresTex(store: DocumentStore): string {
 
 ${store.enclosures
     .map((e, i) => {
-      // Use JSPDF marker if PDF attached (JS will merge after compilation)
-      // Empty string for text-only enclosures (LaTeX creates placeholder page)
-      const filename = e.file ? 'JSPDF' : '';
-      return `\\enclosure{${i + 1}}{${filename}}{${escapeLatex(e.title || 'Untitled')}}`;
+      // Always use JSPDF marker - JavaScript handles ALL enclosure pages
+      // This ensures correct ordering (text-only and PDF enclosures in sequence)
+      return `\\enclosure{${i + 1}}{JSPDF}{${escapeLatex(e.title || 'Untitled')}}`;
     })
     .join('\n')}
 `;
@@ -353,14 +352,16 @@ export function generateClassificationTex(store: DocumentStore): string {
 `;
 }
 
+export interface EnclosureData {
+  number: number;
+  title: string;
+  data?: ArrayBuffer; // undefined = text-only enclosure (no PDF)
+  pageStyle?: 'border' | 'fullpage' | 'fit';
+}
+
 export interface GeneratedFiles {
   texFiles: Record<string, string>;
-  enclosurePdfs: Array<{
-    number: number;
-    title: string;
-    data: ArrayBuffer;
-    pageStyle?: 'border' | 'fullpage' | 'fit';
-  }>;
+  enclosures: EnclosureData[];
 }
 
 export function generateAllLatexFiles(store: DocumentStore): GeneratedFiles {
@@ -378,18 +379,13 @@ export function generateAllLatexFiles(store: DocumentStore): GeneratedFiles {
     'classification.tex': generateClassificationTex(store),
   };
 
-  // Collect enclosure PDFs for JavaScript merging
-  const enclosurePdfs: GeneratedFiles['enclosurePdfs'] = [];
-  store.enclosures.forEach((encl, i) => {
-    if (encl.file?.data) {
-      enclosurePdfs.push({
-        number: i + 1,
-        title: encl.title || 'Untitled',
-        data: encl.file.data,
-        pageStyle: encl.pageStyle,
-      });
-    }
-  });
+  // Collect ALL enclosures for JavaScript handling (maintains correct order)
+  const enclosures: EnclosureData[] = store.enclosures.map((encl, i) => ({
+    number: i + 1,
+    title: encl.title || 'Untitled',
+    data: encl.file?.data, // undefined if no PDF attached
+    pageStyle: encl.pageStyle,
+  }));
 
-  return { texFiles, enclosurePdfs };
+  return { texFiles, enclosures };
 }

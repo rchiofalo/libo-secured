@@ -72,13 +72,13 @@ function App() {
     setCompileError(null);
 
     try {
-      const { texFiles, enclosurePdfs } = generateAllLatexFiles(documentStore);
+      const { texFiles, enclosures } = generateAllLatexFiles(documentStore);
       let pdfBytes = await compile(texFiles);
 
       if (pdfBytes) {
-        // Merge enclosure PDFs if any
-        if (enclosurePdfs.length > 0) {
-          pdfBytes = await mergeEnclosures(pdfBytes, enclosurePdfs);
+        // Merge enclosures if any (handles both PDF and text-only)
+        if (enclosures.length > 0) {
+          pdfBytes = await mergeEnclosures(pdfBytes, enclosures);
         }
 
         // Revoke old URL
@@ -130,13 +130,13 @@ function App() {
 
     setIsCompiling(true);
     try {
-      const { texFiles, enclosurePdfs } = generateAllLatexFiles(documentStore);
+      const { texFiles, enclosures } = generateAllLatexFiles(documentStore);
       let pdfBytes = await compile(texFiles);
 
       if (pdfBytes) {
-        // Merge enclosure PDFs if any
-        if (enclosurePdfs.length > 0) {
-          pdfBytes = await mergeEnclosures(pdfBytes, enclosurePdfs);
+        // Merge enclosures if any (handles both PDF and text-only)
+        if (enclosures.length > 0) {
+          pdfBytes = await mergeEnclosures(pdfBytes, enclosures);
         }
 
         const blob = new Blob([new Uint8Array(pdfBytes)], { type: 'application/pdf' });
