@@ -19,6 +19,14 @@ import { GripVertical, Plus, Trash2, Upload, FileText, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
+import { Label } from '@/components/ui/label';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import {
   Accordion,
   AccordionContent,
@@ -26,7 +34,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { useDocumentStore } from '@/stores/documentStore';
-import type { Enclosure } from '@/types/document';
+import type { Enclosure, EnclosurePageStyle } from '@/types/document';
 
 interface SortableEnclosureProps {
   enclosure: Enclosure;
@@ -35,6 +43,7 @@ interface SortableEnclosureProps {
   onAttachFile: (file: File) => void;
   onRemoveFile: () => void;
   onRemove: () => void;
+  onUpdatePageStyle: (style: EnclosurePageStyle) => void;
 }
 
 function SortableEnclosure({
@@ -44,6 +53,7 @@ function SortableEnclosure({
   onAttachFile,
   onRemoveFile,
   onRemove,
+  onUpdatePageStyle,
 }: SortableEnclosureProps) {
   const {
     attributes,
@@ -98,20 +108,38 @@ function SortableEnclosure({
           />
 
           {enclosure.file ? (
-            <div className="flex items-center gap-2 p-2 bg-secondary/30 rounded text-sm">
-              <FileText className="h-4 w-4 text-primary" />
-              <span className="flex-1 truncate">{enclosure.file.name}</span>
-              <span className="text-muted-foreground">
-                {(enclosure.file.size / 1024).toFixed(1)} KB
-              </span>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={onRemoveFile}
-                className="h-6 w-6 p-0"
-              >
-                <X className="h-3 w-3" />
-              </Button>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 p-2 bg-secondary/30 rounded text-sm">
+                <FileText className="h-4 w-4 text-primary" />
+                <span className="flex-1 truncate">{enclosure.file.name}</span>
+                <span className="text-muted-foreground">
+                  {(enclosure.file.size / 1024).toFixed(1)} KB
+                </span>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={onRemoveFile}
+                  className="h-6 w-6 p-0"
+                >
+                  <X className="h-3 w-3" />
+                </Button>
+              </div>
+              <div className="flex items-center gap-2">
+                <Label className="text-xs text-muted-foreground whitespace-nowrap">Page Style:</Label>
+                <Select
+                  value={enclosure.pageStyle || 'border'}
+                  onValueChange={(v) => onUpdatePageStyle(v as EnclosurePageStyle)}
+                >
+                  <SelectTrigger className="h-8 text-xs">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="border">85% with Border</SelectItem>
+                    <SelectItem value="fullpage">Full Page (No Margins)</SelectItem>
+                    <SelectItem value="fit">Fit to Margins</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
           ) : (
             <label className="flex items-center gap-2 p-2 border border-dashed border-border rounded cursor-pointer hover:bg-secondary/30 transition-colors">
@@ -219,6 +247,7 @@ export function EnclosuresManager() {
                     onAttachFile={(file) => handleAttachFile(index, file)}
                     onRemoveFile={() => updateEnclosure(index, { file: undefined })}
                     onRemove={() => removeEnclosure(index)}
+                    onUpdatePageStyle={(pageStyle) => updateEnclosure(index, { pageStyle })}
                   />
                 ))}
               </SortableContext>
@@ -231,7 +260,7 @@ export function EnclosuresManager() {
                 className="flex-1"
               >
                 <Plus className="h-4 w-4 mr-2" />
-                Add Manual
+                Add Enclosure
               </Button>
               <label className="flex-1">
                 <Button
@@ -241,7 +270,7 @@ export function EnclosuresManager() {
                 >
                   <span>
                     <Upload className="h-4 w-4 mr-2" />
-                    Upload PDF
+                    Upload / Drop PDF
                   </span>
                 </Button>
                 <input

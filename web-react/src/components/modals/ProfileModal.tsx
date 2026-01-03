@@ -370,33 +370,48 @@ export function ProfileModal() {
                     />
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-3 mt-3">
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <Label htmlFor="sigRank">Rank</Label>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setUseCustomRank(!useCustomRank);
-                          if (!useCustomRank) {
-                            updateField('sigRank', '');
-                          }
-                        }}
-                        className="text-xs text-primary hover:underline"
-                      >
-                        {useCustomRank ? 'Select from list' : 'Civilian/Custom'}
-                      </button>
-                    </div>
-                    {useCustomRank ? (
-                      <Input
-                        id="sigRank"
-                        value={formState.sigRank || ''}
-                        onChange={(e) => updateField('sigRank', e.target.value)}
-                        placeholder="e.g., Mr., Ms., Dr., Contractor"
-                      />
-                    ) : (
-                      <Select
-                        value={formState.sigRank || ''}
+                <div className="space-y-2 mt-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Button
+                      type="button"
+                      variant={!useCustomRank ? 'default' : 'outline'}
+                      size="sm"
+                      onClick={() => {
+                        if (useCustomRank) {
+                          setUseCustomRank(false);
+                          updateField('sigRank', '');
+                        }
+                      }}
+                    >
+                      Military
+                    </Button>
+                    <Button
+                      type="button"
+                      variant={useCustomRank ? 'default' : 'outline'}
+                      size="sm"
+                      onClick={() => {
+                        if (!useCustomRank) {
+                          setUseCustomRank(true);
+                          updateField('sigRank', '');
+                        }
+                      }}
+                    >
+                      Civilian / Other
+                    </Button>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="space-y-2">
+                      <Label htmlFor="sigRank">Rank / Title</Label>
+                      {useCustomRank ? (
+                        <Input
+                          id="sigRank"
+                          value={formState.sigRank || ''}
+                          onChange={(e) => updateField('sigRank', e.target.value)}
+                          placeholder="e.g., Mr., Ms., Dr., Contractor"
+                        />
+                      ) : (
+                        <Select
+                          value={formState.sigRank || ''}
                         onValueChange={(v) => updateField('sigRank', v)}
                       >
                         <SelectTrigger id="sigRank">
@@ -433,16 +448,17 @@ export function ProfileModal() {
                           ))}
                         </SelectContent>
                       </Select>
-                    )}
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="sigTitle">Title</Label>
-                    <Input
-                      id="sigTitle"
-                      value={formState.sigTitle}
-                      onChange={(e) => updateField('sigTitle', e.target.value)}
-                      placeholder="Commanding Officer"
-                    />
+                      )}
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="sigTitle">Position</Label>
+                      <Input
+                        id="sigTitle"
+                        value={formState.sigTitle}
+                        onChange={(e) => updateField('sigTitle', e.target.value)}
+                        placeholder="Commanding Officer"
+                      />
+                    </div>
                   </div>
                 </div>
 

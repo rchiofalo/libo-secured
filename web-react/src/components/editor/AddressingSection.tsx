@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { BookOpen } from 'lucide-react';
+import { useState, useMemo, useCallback } from 'react';
+import { BookOpen, Plus, Trash2 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import {
   Accordion,
   AccordionContent,
@@ -25,6 +25,33 @@ export function AddressingSection({ config }: AddressingSectionProps) {
   const handleSSICSelect = (code: string) => {
     setField('ssic', code);
   };
+
+  // Parse via string into array (split by newlines, filter empty)
+  const viaLines = useMemo(() => {
+    if (!formData.via) return [''];
+    const lines = formData.via.split('\n').filter((line) => line.trim() !== '');
+    return lines.length > 0 ? lines : [''];
+  }, [formData.via]);
+
+  // Update via field from array
+  const updateViaLines = useCallback((lines: string[]) => {
+    setField('via', lines.join('\n'));
+  }, [setField]);
+
+  const addViaLine = useCallback(() => {
+    updateViaLines([...viaLines, '']);
+  }, [viaLines, updateViaLines]);
+
+  const removeViaLine = useCallback((index: number) => {
+    const newLines = viaLines.filter((_, i) => i !== index);
+    updateViaLines(newLines.length > 0 ? newLines : ['']);
+  }, [viaLines, updateViaLines]);
+
+  const updateViaLine = useCallback((index: number, value: string) => {
+    const newLines = [...viaLines];
+    newLines[index] = value;
+    updateViaLines(newLines);
+  }, [viaLines, updateViaLines]);
 
   return (
     <>
@@ -111,14 +138,43 @@ export function AddressingSection({ config }: AddressingSectionProps) {
             {/* Via */}
             {config.via && (
               <div className="space-y-2">
-                <Label htmlFor="via">Via (one per line)</Label>
-                <Textarea
-                  id="via"
-                  value={formData.via || ''}
-                  onChange={(e) => setField('via', e.target.value)}
-                  placeholder="(1) Commanding Officer, 6th Marine Regiment&#10;(2) Commanding General, 2d Marine Division"
-                  rows={3}
-                />
+                <div className="flex items-center justify-between">
+                  <Label>Via</Label>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    onClick={addViaLine}
+                  >
+                    <Plus className="h-4 w-4 mr-1" />
+                    Add Via
+                  </Button>
+                </div>
+                <div className="space-y-2">
+                  {viaLines.map((line, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <Badge variant="secondary" className="shrink-0 min-w-[36px] justify-center">
+                        ({index + 1})
+                      </Badge>
+                      <Input
+                        value={line}
+                        onChange={(e) => updateViaLine(index, e.target.value)}
+                        placeholder="Commanding Officer, 6th Marine Regiment"
+                        className="flex-1"
+                      />
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => removeViaLine(index)}
+                        disabled={viaLines.length === 1 && !line}
+                        className="shrink-0 text-destructive hover:text-destructive"
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 

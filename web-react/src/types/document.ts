@@ -4,6 +4,8 @@ export interface Reference {
   url?: string;
 }
 
+export type EnclosurePageStyle = 'border' | 'fullpage' | 'fit';
+
 export interface Enclosure {
   title: string;
   file?: {
@@ -11,6 +13,7 @@ export interface Enclosure {
     size: number;
     data: ArrayBuffer;
   };
+  pageStyle?: EnclosurePageStyle; // 'border' = 85% with border, 'fullpage' = full page, 'fit' = fit to margins
 }
 
 export interface Paragraph {
