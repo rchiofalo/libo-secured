@@ -176,7 +176,8 @@ export function useLatexEngine() {
       }
 
       // Load seal images into virtual filesystem
-      const sealFiles = ['dod-seal.png', 'dow-seal.png'];
+      // Only load dod-seal.png (dow-seal.png is historical and not included)
+      const sealFiles = ['dod-seal.png'];
       console.log('Loading seal images...');
       for (const sealFile of sealFiles) {
         try {

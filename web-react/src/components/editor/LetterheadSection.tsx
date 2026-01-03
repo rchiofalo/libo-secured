@@ -103,21 +103,7 @@ export function LetterheadSection() {
               />
             </div>
 
-            <div className="space-y-2">
-              <Label>Seal Type</Label>
-              <Select
-                value={formData.sealType || 'dod'}
-                onValueChange={(v) => setField('sealType', v)}
-              >
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="dod">Department of Defense</SelectItem>
-                  <SelectItem value="dow">Department of War (Historical)</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+            {/* Seal type selector hidden - only DoD seal currently available */}
           </div>
         </AccordionContent>
       </AccordionItem>

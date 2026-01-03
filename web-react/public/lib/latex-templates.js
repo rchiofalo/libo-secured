@@ -344,6 +344,7 @@ const LATEX_TEMPLATES = {
 % CUI Field Setters
 %-----------------------------------------------------------------------------
 
+\\newcommand{\\setCUI}{\\CUIEnabledtrue\\ClassificationEnabledtrue}
 \\newcommand{\\setCUIControlledBy}[1]{\\renewcommand{\\CUIControlledBy}{#1}}
 \\newcommand{\\setCUICategory}[1]{\\renewcommand{\\CUICategory}{#1}}
 \\newcommand{\\setCUIDissemination}[1]{\\renewcommand{\\CUIDissemination}{#1}}
@@ -390,7 +391,9 @@ const LATEX_TEMPLATES = {
 \\newif\\ifInReplyEnabled
 \\InReplyEnabledfalse
 
+\\newcommand{\\InReplyReferToText}{}
 \\newcommand{\\enableInReplyReferTo}{\\InReplyEnabledtrue}
+\\newcommand{\\setInReplyReferTo}[1]{\\renewcommand{\\InReplyReferToText}{#1}}
 
 
 %-----------------------------------------------------------------------------
@@ -2292,6 +2295,7 @@ const LATEX_TEMPLATES = {
     \\begin{tabular}[t]{@{}l@{}}
         \\ifInReplyEnabled
             {\\fontsize{5pt}{6pt}\\selectfont IN REPLY REFER TO}\\\\
+            \\InReplyReferToText\\\\
         \\fi
         \\DocumentSSIC\\\\
         \\DocumentSerial\\\\
@@ -2438,6 +2442,7 @@ const LATEX_TEMPLATES = {
     \\begin{tabular}[t]{@{}l@{}}
         \\ifInReplyEnabled
             {\\fontsize{5pt}{6pt}\\selectfont IN REPLY REFER TO}\\\\
+            \\InReplyReferToText\\\\
         \\fi
         \\DocumentSSIC\\\\
         \\DocumentSerial\\\\
@@ -3058,6 +3063,7 @@ const LATEX_TEMPLATES = {
     \\begin{tabular}[t]{@{}l@{}}
         \\ifInReplyEnabled
             {\\fontsize{5pt}{6pt}\\selectfont IN REPLY REFER TO}\\\\
+            \\InReplyReferToText\\\\
         \\fi
         \\DocumentSSIC\\\\
         \\DocumentSerial\\\\
@@ -3207,6 +3213,7 @@ const LATEX_TEMPLATES = {
     % Optional "IN REPLY REFER TO" line per SECNAV M-5216.5 App C, Para 1.a
     \\ifInReplyEnabled
         \\\\{\\fontsize{5pt}{6pt}\\selectfont IN REPLY REFER TO}%
+        \\\\\\InReplyReferToText
     \\fi
     \\ifdefempty{\\DocumentSSIC}{}{%
         \\\\\\DocumentSSIC
@@ -3387,6 +3394,7 @@ const LATEX_TEMPLATES = {
     \\begin{tabular}[t]{@{}l@{}}
         \\ifInReplyEnabled
             {\\fontsize{5pt}{6pt}\\selectfont IN REPLY REFER TO}\\\\
+            \\InReplyReferToText\\\\
         \\fi
         \\DocumentSSIC\\\\
         \\DocumentSerial\\\\
@@ -3825,6 +3833,7 @@ const LATEX_TEMPLATES = {
     % Optional "IN REPLY REFER TO" line per SECNAV M-5216.5 App C, Para 1.a
     \\ifInReplyEnabled
         \\\\{\\fontsize{5pt}{6pt}\\selectfont IN REPLY REFER TO}%
+        \\\\\\InReplyReferToText
     \\fi
     \\ifdefempty{\\DocumentSSIC}{}{%
         \\\\\\DocumentSSIC

@@ -4,6 +4,7 @@ import { FormPanel } from '@/components/layout/FormPanel';
 import { PreviewPanel } from '@/components/layout/PreviewPanel';
 import { ProfileModal } from '@/components/modals/ProfileModal';
 import { ReferenceLibraryModal } from '@/components/modals/ReferenceLibraryModal';
+import { MobilePreviewModal } from '@/components/modals/MobilePreviewModal';
 import { useUIStore } from '@/stores/uiStore';
 import { useDocumentStore } from '@/stores/documentStore';
 import { useProfileStore } from '@/stores/profileStore';
@@ -190,6 +191,11 @@ function App() {
       {/* Modals */}
       <ProfileModal />
       <ReferenceLibraryModal />
+      <MobilePreviewModal
+        pdfUrl={pdfUrl}
+        isCompiling={isCompiling || !isReady}
+        error={compileError || engineError}
+      />
     </div>
   );
 }

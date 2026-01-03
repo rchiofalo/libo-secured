@@ -1,3 +1,5 @@
+export type DocumentMode = 'compliant' | 'custom';
+
 export interface Reference {
   letter: string;
   title: string;

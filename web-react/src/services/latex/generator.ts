@@ -73,6 +73,9 @@ export function generateDocumentTex(store: DocumentStore): string {
 \\setSerial{${escapeLatex(data.serial)}}
 \\setDocumentDate{${escapeLatex(data.date)}}
 
+${data.inReplyTo ? `\\enableInReplyReferTo
+\\setInReplyReferTo{${escapeLatex(data.inReplyToText)}}` : '% No In Reply Refer To'}
+
 \\setFrom
     {${escapeLatex(data.from)}}
     {}{}{}

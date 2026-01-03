@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Checkbox } from '@/components/ui/checkbox';
 import {
   Accordion,
   AccordionContent,
@@ -68,6 +69,7 @@ export function AddressingSection({ config }: AddressingSectionProps) {
             <div className="space-y-4 pt-2">
               {/* SSIC / Serial / Date */}
               {config.ssic && (
+                <>
                 <div className="grid grid-cols-3 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="ssic">SSIC</Label>
@@ -109,6 +111,28 @@ export function AddressingSection({ config }: AddressingSectionProps) {
                   />
                 </div>
               </div>
+
+              {/* In Reply Refer To */}
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <Checkbox
+                    id="inReplyTo"
+                    checked={formData.inReplyTo || false}
+                    onCheckedChange={(checked) => setField('inReplyTo', checked === true)}
+                  />
+                  <Label htmlFor="inReplyTo" className="cursor-pointer">
+                    In Reply Refer To
+                  </Label>
+                </div>
+                {formData.inReplyTo && (
+                  <Input
+                    value={formData.inReplyToText || ''}
+                    onChange={(e) => setField('inReplyToText', e.target.value)}
+                    placeholder="Reference letter/document (e.g., CO ltr 5216 Ser 001 of 1 Jan 25)"
+                  />
+                )}
+              </div>
+              </>
             )}
 
             {/* From / To */}

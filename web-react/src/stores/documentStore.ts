@@ -1,8 +1,10 @@
 import { create } from 'zustand';
-import type { Reference, Enclosure, Paragraph, CopyTo, DocumentData } from '@/types/document';
+import type { Reference, Enclosure, Paragraph, CopyTo, DocumentData, DocumentMode } from '@/types/document';
+import { DOC_TYPE_CONFIG } from '@/types/document';
 
 interface DocumentState {
   // Document data
+  documentMode: DocumentMode;
   docType: string;
   formData: Partial<DocumentData>;
   references: Reference[];
@@ -11,6 +13,7 @@ interface DocumentState {
   copyTos: CopyTo[];
 
   // Actions - Form
+  setDocumentMode: (mode: DocumentMode) => void;
   setDocType: (type: string) => void;
   setField: <K extends keyof DocumentData>(key: K, value: DocumentData[K]) => void;
   setFormData: (data: Partial<DocumentData>) => void;
@@ -88,6 +91,7 @@ const DEFAULT_FORM_DATA: Partial<DocumentData> = {
 };
 
 export const useDocumentStore = create<DocumentState>((set) => ({
+  documentMode: 'compliant',
   docType: 'naval_letter',
   formData: { ...DEFAULT_FORM_DATA },
   references: [],
@@ -98,7 +102,38 @@ export const useDocumentStore = create<DocumentState>((set) => ({
   ],
   copyTos: [],
 
-  setDocType: (type) => set({ docType: type, formData: { ...DEFAULT_FORM_DATA, docType: type } }),
+  setDocumentMode: (mode) => set((state) => {
+    if (mode === 'compliant') {
+      // Apply compliant formatting from doc type config
+      const config = DOC_TYPE_CONFIG[state.docType] || DOC_TYPE_CONFIG.naval_letter;
+      return {
+        documentMode: mode,
+        formData: {
+          ...state.formData,
+          fontSize: config.regulations.fontSize,
+          fontFamily: config.regulations.fontFamily,
+        },
+      };
+    }
+    return { documentMode: mode };
+  }),
+
+  setDocType: (type) => set((state) => {
+    const config = DOC_TYPE_CONFIG[type] || DOC_TYPE_CONFIG.naval_letter;
+    // In compliant mode, always apply the regulation fonts
+    if (state.documentMode === 'compliant') {
+      return {
+        docType: type,
+        formData: {
+          ...DEFAULT_FORM_DATA,
+          docType: type,
+          fontSize: config.regulations.fontSize,
+          fontFamily: config.regulations.fontFamily,
+        },
+      };
+    }
+    return { docType: type, formData: { ...DEFAULT_FORM_DATA, docType: type } };
+  }),
 
   setField: (key, value) => set((state) => ({
     formData: { ...state.formData, [key]: value },
