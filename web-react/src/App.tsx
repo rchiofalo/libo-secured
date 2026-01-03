@@ -9,6 +9,7 @@ import { useDocumentStore } from '@/stores/documentStore';
 import { useProfileStore } from '@/stores/profileStore';
 import { useLatexEngine } from '@/hooks/useLatexEngine';
 import { generateAllLatexFiles } from '@/services/latex/generator';
+import { mergeEnclosures } from '@/services/pdf/mergeEnclosures';
 
 function App() {
   const { theme, setIsMobile } = useUIStore();
@@ -71,10 +72,15 @@ function App() {
     setCompileError(null);
 
     try {
-      const files = generateAllLatexFiles(documentStore);
-      const pdfBytes = await compile(files);
+      const { texFiles, enclosurePdfs } = generateAllLatexFiles(documentStore);
+      let pdfBytes = await compile(texFiles);
 
       if (pdfBytes) {
+        // Merge enclosure PDFs if any
+        if (enclosurePdfs.length > 0) {
+          pdfBytes = await mergeEnclosures(pdfBytes, enclosurePdfs);
+        }
+
         // Revoke old URL
         if (pdfUrl) {
           URL.revokeObjectURL(pdfUrl);
@@ -124,10 +130,15 @@ function App() {
 
     setIsCompiling(true);
     try {
-      const files = generateAllLatexFiles(documentStore);
-      const pdfBytes = await compile(files);
+      const { texFiles, enclosurePdfs } = generateAllLatexFiles(documentStore);
+      let pdfBytes = await compile(texFiles);
 
       if (pdfBytes) {
+        // Merge enclosure PDFs if any
+        if (enclosurePdfs.length > 0) {
+          pdfBytes = await mergeEnclosures(pdfBytes, enclosurePdfs);
+        }
+
         const blob = new Blob([new Uint8Array(pdfBytes)], { type: 'application/pdf' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
@@ -144,8 +155,8 @@ function App() {
   }, [isReady, compile, documentStore]);
 
   const handleDownloadTex = useCallback(() => {
-    const files = generateAllLatexFiles(documentStore);
-    const mainTex = files['main.tex'] || '';
+    const { texFiles } = generateAllLatexFiles(documentStore);
+    const mainTex = texFiles['main.tex'] || '';
     const blob = new Blob([mainTex], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');

@@ -221,6 +221,8 @@ export function generateEnclosuresTex(store: DocumentStore): string {
 
 ${store.enclosures
     .map((e, i) => {
+      // Use JSPDF marker if PDF attached (JS will merge after compilation)
+      // Empty string for text-only enclosures (LaTeX creates placeholder page)
       const filename = e.file ? 'JSPDF' : '';
       return `\\enclosure{${i + 1}}{${filename}}{${escapeLatex(e.title || 'Untitled')}}`;
     })
@@ -351,9 +353,19 @@ export function generateClassificationTex(store: DocumentStore): string {
 `;
 }
 
-export function generateAllLatexFiles(store: DocumentStore): Record<string, string> {
+export interface GeneratedFiles {
+  texFiles: Record<string, string>;
+  enclosurePdfs: Array<{
+    number: number;
+    title: string;
+    data: ArrayBuffer;
+    pageStyle?: 'border' | 'fullpage' | 'fit';
+  }>;
+}
+
+export function generateAllLatexFiles(store: DocumentStore): GeneratedFiles {
   // Files are written to root level to match \input{} paths in latex-templates.js
-  return {
+  const texFiles: Record<string, string> = {
     'document.tex': generateDocumentTex(store),
     'letterhead.tex': generateLetterheadTex(store),
     'signatory.tex': generateSignatoryTex(store),
@@ -365,4 +377,19 @@ export function generateAllLatexFiles(store: DocumentStore): Record<string, stri
     'body.tex': generateBodyTex(store),
     'classification.tex': generateClassificationTex(store),
   };
+
+  // Collect enclosure PDFs for JavaScript merging
+  const enclosurePdfs: GeneratedFiles['enclosurePdfs'] = [];
+  store.enclosures.forEach((encl, i) => {
+    if (encl.file?.data) {
+      enclosurePdfs.push({
+        number: i + 1,
+        title: encl.title || 'Untitled',
+        data: encl.file.data,
+        pageStyle: encl.pageStyle,
+      });
+    }
+  });
+
+  return { texFiles, enclosurePdfs };
 }
