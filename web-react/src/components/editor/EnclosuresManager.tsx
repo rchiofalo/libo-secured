@@ -177,6 +177,17 @@ export function EnclosuresManager() {
     });
   }, [updateEnclosure]);
 
+  const handleUploadNewEnclosure = useCallback(async (file: File) => {
+    // Extract filename without extension for the title
+    const title = file.name.replace(/\.pdf$/i, '');
+    const data = await file.arrayBuffer();
+    addEnclosure(title, {
+      name: file.name,
+      size: file.size,
+      data,
+    });
+  }, [addEnclosure]);
+
   return (
     <Accordion type="single" collapsible>
       <AccordionItem value="enclosures">
@@ -213,14 +224,40 @@ export function EnclosuresManager() {
               </SortableContext>
             </DndContext>
 
-            <Button
-              variant="outline"
-              onClick={() => addEnclosure('')}
-              className="w-full mt-2"
-            >
-              <Plus className="h-4 w-4 mr-2" />
-              Add Enclosure
-            </Button>
+            <div className="flex gap-2 mt-2">
+              <Button
+                variant="outline"
+                onClick={() => addEnclosure('')}
+                className="flex-1"
+              >
+                <Plus className="h-4 w-4 mr-2" />
+                Add Manual
+              </Button>
+              <label className="flex-1">
+                <Button
+                  variant="outline"
+                  className="w-full"
+                  asChild
+                >
+                  <span>
+                    <Upload className="h-4 w-4 mr-2" />
+                    Upload PDF
+                  </span>
+                </Button>
+                <input
+                  type="file"
+                  accept=".pdf"
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file && file.type === 'application/pdf') {
+                      handleUploadNewEnclosure(file);
+                    }
+                    e.target.value = '';
+                  }}
+                  className="hidden"
+                />
+              </label>
+            </div>
           </div>
         </AccordionContent>
       </AccordionItem>

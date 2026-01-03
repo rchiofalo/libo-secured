@@ -24,7 +24,9 @@ import { Checkbox } from '@/components/ui/checkbox';
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
@@ -35,6 +37,7 @@ import { useProfileStore } from '@/stores/profileStore';
 import { useDocumentStore } from '@/stores/documentStore';
 import type { Profile } from '@/types/document';
 import { formatUnitAddress, type UnitInfo } from '@/data/unitDirectory';
+import { ALL_SERVICE_RANKS, formatRank } from '@/data/ranks';
 
 const EMPTY_PROFILE: Profile = {
   department: 'usmc',
@@ -56,7 +59,7 @@ const EMPTY_PROFILE: Profile = {
 
 export function ProfileModal() {
   const { profileModalOpen, setProfileModalOpen } = useUIStore();
-  const { profiles, selectedProfile, addProfile, updateProfile } = useProfileStore();
+  const { profiles, selectedProfile, addProfile, updateProfile, selectProfile } = useProfileStore();
   const { formData } = useDocumentStore();
 
   const [profileName, setProfileName] = useState('');
@@ -101,7 +104,7 @@ export function ProfileModal() {
     return false;
   }, [formState, profileName, isEditing]);
 
-  // Populate form when editing
+  // Populate form when modal opens (not on every formData change)
   useEffect(() => {
     if (profileModalOpen) {
       if (isEditing && selectedProfile) {
@@ -133,7 +136,8 @@ export function ProfileModal() {
         initialStateRef.current = { name: '', profile: { ...newProfile } };
       }
     }
-  }, [profileModalOpen, isEditing, selectedProfile, profiles, formData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [profileModalOpen]);
 
   const handleSave = () => {
     if (!profileName.trim()) {
@@ -141,10 +145,14 @@ export function ProfileModal() {
       return;
     }
 
+    const trimmedName = profileName.trim();
+
     if (isEditing && selectedProfile) {
       updateProfile(selectedProfile, formState);
     } else {
-      addProfile(profileName.trim(), formState);
+      addProfile(trimmedName, formState);
+      // Auto-select the newly created profile
+      selectProfile(trimmedName);
     }
 
     setProfileModalOpen(false);
@@ -345,12 +353,44 @@ export function ProfileModal() {
                 <div className="grid grid-cols-2 gap-3 mt-3">
                   <div className="space-y-2">
                     <Label htmlFor="sigRank">Rank</Label>
-                    <Input
-                      id="sigRank"
-                      value={formState.sigRank}
-                      onChange={(e) => updateField('sigRank', e.target.value)}
-                      placeholder="LtCol, USMC"
-                    />
+                    <Select
+                      value={formState.sigRank || ''}
+                      onValueChange={(v) => updateField('sigRank', v)}
+                    >
+                      <SelectTrigger id="sigRank">
+                        <SelectValue placeholder="Select rank..." />
+                      </SelectTrigger>
+                      <SelectContent className="max-h-[300px]">
+                        {ALL_SERVICE_RANKS.map((service) => (
+                          <SelectGroup key={service.suffix}>
+                            <SelectLabel className="font-bold text-primary">
+                              {service.service}
+                            </SelectLabel>
+                            {service.categories.map((category) => (
+                              <SelectGroup key={`${service.suffix}-${category.name}`}>
+                                <SelectLabel className="text-muted-foreground pl-2">
+                                  {category.name}
+                                </SelectLabel>
+                                {category.ranks.map((rank) => (
+                                  <SelectItem
+                                    key={`${service.suffix}-${rank.abbrev}`}
+                                    value={formatRank(rank.abbrev, service.suffix)}
+                                  >
+                                    <span className="flex items-center gap-2">
+                                      <span className="font-mono text-xs text-muted-foreground w-10">
+                                        {rank.grade}
+                                      </span>
+                                      <span>{rank.abbrev}</span>
+                                      <span className="text-muted-foreground">- {rank.title}</span>
+                                    </span>
+                                  </SelectItem>
+                                ))}
+                              </SelectGroup>
+                            ))}
+                          </SelectGroup>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="sigTitle">Title</Label>
