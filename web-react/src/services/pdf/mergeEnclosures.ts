@@ -34,7 +34,7 @@ export async function mergeEnclosures(
   for (const enclosure of enclosures) {
     try {
       if (enclosure.data) {
-        // PDF enclosure - load and copy pages
+        // PDF enclosure - load and add pages
         await addPdfEnclosure(mainPdf, enclosure, helveticaBold);
       } else {
         // Text-only enclosure - create placeholder page
@@ -62,31 +62,25 @@ async function addPdfEnclosure(
 
   const enclosurePdf = await PDFDocument.load(enclosure.data);
   const pageCount = enclosurePdf.getPageCount();
+  const style = enclosure.pageStyle || 'border';
 
-  // Copy all pages from the enclosure
-  const copiedPages = await mainPdf.copyPages(
-    enclosurePdf,
-    Array.from({ length: pageCount }, (_, i) => i)
-  );
-
-  // Add each page with enclosure marking
-  for (let i = 0; i < copiedPages.length; i++) {
-    const sourcePage = copiedPages[i];
-    const { width: srcWidth, height: srcHeight } = sourcePage.getSize();
+  // Process each page
+  for (let i = 0; i < pageCount; i++) {
+    const srcPage = enclosurePdf.getPage(i);
+    const { width: srcWidth, height: srcHeight } = srcPage.getSize();
 
     // Create a new page in the main document
     const page = mainPdf.addPage([PAGE_WIDTH, PAGE_HEIGHT]);
 
+    // Embed the source page
+    const embeddedPage = await mainPdf.embedPage(srcPage);
+
     // Calculate scaling and positioning based on page style
-    const style = enclosure.pageStyle || 'border';
     const { scale, x, y, drawBorder } = calculatePageLayout(
       srcWidth,
       srcHeight,
       style
     );
-
-    // Embed the source page as an embedded page
-    const embeddedPage = await mainPdf.embedPage(sourcePage);
 
     // Draw the embedded page with calculated position and scale
     page.drawPage(embeddedPage, {
