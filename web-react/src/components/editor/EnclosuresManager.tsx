@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import {
   DndContext,
   closestCenter,
@@ -216,6 +216,36 @@ export function EnclosuresManager() {
     });
   }, [addEnclosure]);
 
+  // Drag and drop state
+  const [isDraggingOver, setIsDraggingOver] = useState(false);
+
+  const handleDragOver = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.dataTransfer.types.includes('Files')) {
+      setIsDraggingOver(true);
+    }
+  }, []);
+
+  const handleDragLeave = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDraggingOver(false);
+  }, []);
+
+  const handleDrop = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDraggingOver(false);
+
+    const files = Array.from(e.dataTransfer.files);
+    const pdfFiles = files.filter((file) => file.type === 'application/pdf');
+
+    pdfFiles.forEach((file) => {
+      handleUploadNewEnclosure(file);
+    });
+  }, [handleUploadNewEnclosure]);
+
   return (
     <Accordion type="single" collapsible>
       <AccordionItem value="enclosures">
@@ -253,34 +283,42 @@ export function EnclosuresManager() {
               </SortableContext>
             </DndContext>
 
-            <div className="flex gap-2 mt-2">
+            <div className="space-y-2 mt-2">
               <Button
                 variant="outline"
                 onClick={() => addEnclosure('')}
-                className="flex-1"
+                className="w-full"
               >
                 <Plus className="h-4 w-4 mr-2" />
                 Add Enclosure
               </Button>
-              <label className="flex-1">
-                <Button
-                  variant="outline"
-                  className="w-full"
-                  asChild
-                >
-                  <span>
-                    <Upload className="h-4 w-4 mr-2" />
-                    Upload / Drop PDF
-                  </span>
-                </Button>
+
+              {/* Drop zone for PDFs */}
+              <label
+                className={`flex flex-col items-center justify-center gap-2 p-4 border-2 border-dashed rounded-lg cursor-pointer transition-colors ${
+                  isDraggingOver
+                    ? 'border-primary bg-primary/10'
+                    : 'border-border hover:border-primary/50 hover:bg-secondary/30'
+                }`}
+                onDragOver={handleDragOver}
+                onDragLeave={handleDragLeave}
+                onDrop={handleDrop}
+              >
+                <Upload className={`h-6 w-6 ${isDraggingOver ? 'text-primary' : 'text-muted-foreground'}`} />
+                <span className={`text-sm ${isDraggingOver ? 'text-primary font-medium' : 'text-muted-foreground'}`}>
+                  {isDraggingOver ? 'Drop PDF here' : 'Drag & drop PDF or click to browse'}
+                </span>
                 <input
                   type="file"
                   accept=".pdf"
+                  multiple
                   onChange={(e) => {
-                    const file = e.target.files?.[0];
-                    if (file && file.type === 'application/pdf') {
-                      handleUploadNewEnclosure(file);
-                    }
+                    const files = Array.from(e.target.files || []);
+                    files.forEach((file) => {
+                      if (file.type === 'application/pdf') {
+                        handleUploadNewEnclosure(file);
+                      }
+                    });
                     e.target.value = '';
                   }}
                   className="hidden"
