@@ -39,6 +39,21 @@ import type { Profile } from '@/types/document';
 import { formatUnitAddress, type UnitInfo } from '@/data/unitDirectory';
 import { ALL_SERVICE_RANKS, formatRank } from '@/data/ranks';
 
+// Check if a rank value is a standard military rank
+function isStandardMilitaryRank(rank: string): boolean {
+  if (!rank) return true; // Empty is considered standard (will show dropdown)
+  for (const service of ALL_SERVICE_RANKS) {
+    for (const category of service.categories) {
+      for (const r of category.ranks) {
+        if (formatRank(r.abbrev, service.suffix) === rank) {
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+}
+
 const EMPTY_PROFILE: Profile = {
   department: 'usmc',
   unitLine1: '',
@@ -67,6 +82,7 @@ export function ProfileModal() {
   const [showDiscardDialog, setShowDiscardDialog] = useState(false);
   const [showUnitLookup, setShowUnitLookup] = useState(false);
   const [showSSICLookup, setShowSSICLookup] = useState(false);
+  const [useCustomRank, setUseCustomRank] = useState(false);
 
   // Store initial state to compare for changes
   const initialStateRef = useRef<{ name: string; profile: Profile }>({ name: '', profile: EMPTY_PROFILE });
@@ -112,6 +128,8 @@ export function ProfileModal() {
         setProfileName(selectedProfile);
         setFormState({ ...EMPTY_PROFILE, ...profile });
         initialStateRef.current = { name: selectedProfile, profile: { ...EMPTY_PROFILE, ...profile } };
+        // Detect if profile has a custom rank
+        setUseCustomRank(!isStandardMilitaryRank(profile.sigRank || ''));
       } else {
         // Creating new - use current form data as defaults
         const newProfile: Profile = {
@@ -134,6 +152,8 @@ export function ProfileModal() {
         setProfileName('');
         setFormState(newProfile);
         initialStateRef.current = { name: '', profile: { ...newProfile } };
+        // Detect if current form has a custom rank
+        setUseCustomRank(!isStandardMilitaryRank(formData.sigRank || ''));
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -352,45 +372,68 @@ export function ProfileModal() {
                 </div>
                 <div className="grid grid-cols-2 gap-3 mt-3">
                   <div className="space-y-2">
-                    <Label htmlFor="sigRank">Rank</Label>
-                    <Select
-                      value={formState.sigRank || ''}
-                      onValueChange={(v) => updateField('sigRank', v)}
-                    >
-                      <SelectTrigger id="sigRank">
-                        <SelectValue placeholder="Select rank..." />
-                      </SelectTrigger>
-                      <SelectContent className="max-h-[300px]">
-                        {ALL_SERVICE_RANKS.map((service) => (
-                          <SelectGroup key={service.suffix}>
-                            <SelectLabel className="font-bold text-primary">
-                              {service.service}
-                            </SelectLabel>
-                            {service.categories.map((category) => (
-                              <SelectGroup key={`${service.suffix}-${category.name}`}>
-                                <SelectLabel className="text-muted-foreground pl-2">
-                                  {category.name}
-                                </SelectLabel>
-                                {category.ranks.map((rank) => (
-                                  <SelectItem
-                                    key={`${service.suffix}-${rank.abbrev}`}
-                                    value={formatRank(rank.abbrev, service.suffix)}
-                                  >
-                                    <span className="flex items-center gap-2">
-                                      <span className="font-mono text-xs text-muted-foreground w-10">
-                                        {rank.grade}
+                    <div className="flex items-center justify-between">
+                      <Label htmlFor="sigRank">Rank</Label>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setUseCustomRank(!useCustomRank);
+                          if (!useCustomRank) {
+                            updateField('sigRank', '');
+                          }
+                        }}
+                        className="text-xs text-primary hover:underline"
+                      >
+                        {useCustomRank ? 'Select from list' : 'Civilian/Custom'}
+                      </button>
+                    </div>
+                    {useCustomRank ? (
+                      <Input
+                        id="sigRank"
+                        value={formState.sigRank || ''}
+                        onChange={(e) => updateField('sigRank', e.target.value)}
+                        placeholder="e.g., Mr., Ms., Dr., Contractor"
+                      />
+                    ) : (
+                      <Select
+                        value={formState.sigRank || ''}
+                        onValueChange={(v) => updateField('sigRank', v)}
+                      >
+                        <SelectTrigger id="sigRank">
+                          <SelectValue placeholder="Select rank..." />
+                        </SelectTrigger>
+                        <SelectContent className="max-h-[300px]">
+                          {ALL_SERVICE_RANKS.map((service) => (
+                            <SelectGroup key={service.suffix}>
+                              <SelectLabel className="font-bold text-primary">
+                                {service.service}
+                              </SelectLabel>
+                              {service.categories.map((category) => (
+                                <SelectGroup key={`${service.suffix}-${category.name}`}>
+                                  <SelectLabel className="text-muted-foreground pl-2">
+                                    {category.name}
+                                  </SelectLabel>
+                                  {category.ranks.map((rank) => (
+                                    <SelectItem
+                                      key={`${service.suffix}-${rank.abbrev}`}
+                                      value={formatRank(rank.abbrev, service.suffix)}
+                                    >
+                                      <span className="flex items-center gap-2">
+                                        <span className="font-mono text-xs text-muted-foreground w-10">
+                                          {rank.grade}
+                                        </span>
+                                        <span>{rank.abbrev}</span>
+                                        <span className="text-muted-foreground">- {rank.title}</span>
                                       </span>
-                                      <span>{rank.abbrev}</span>
-                                      <span className="text-muted-foreground">- {rank.title}</span>
-                                    </span>
-                                  </SelectItem>
-                                ))}
-                              </SelectGroup>
-                            ))}
-                          </SelectGroup>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                                    </SelectItem>
+                                  ))}
+                                </SelectGroup>
+                              ))}
+                            </SelectGroup>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    )}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="sigTitle">Title</Label>
